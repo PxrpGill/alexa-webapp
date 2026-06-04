@@ -1,0 +1,21 @@
+.root {
+    @mixin responsive border-radius, 0, 30;
+    @mixin responsive padding-block, 0, 100;
+    @mixin responsive padding-inline, 0, 100;
+    @mixin responsive gap, 0, 15;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-white-0);
+}
+
+.title {
+    @mixin h4;
+
+    font-weight: 600;
+}
+
+.description {
+    @mixin b2;
+}

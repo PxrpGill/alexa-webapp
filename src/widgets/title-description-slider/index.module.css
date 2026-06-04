@@ -1,0 +1,17 @@
+.root {
+    @mixin responsive --first-col, 0, 590;
+    @mixin responsive gap, 0, 19; 
+    @mixin responsive min-height, 0, 500;
+
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+
+    &.right {
+        @mixin responsive --first-col, 0, 750;
+
+        .text {
+            order: 2;
+        }
+    }
+}
+

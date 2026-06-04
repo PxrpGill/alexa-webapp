@@ -1,4 +1,11 @@
-.cta,
-.description {
+.cta {
     @mixin responsive margin-block-end, 0, 60;
+}
+
+.description {
+    @mixin responsive margin-block-end, 0, 35;
+}
+
+.slider {
+    @mixin responsive margin-block-end, 0, 35;
 }

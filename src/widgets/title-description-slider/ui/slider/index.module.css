@@ -1,0 +1,54 @@
+.root {
+    @mixin responsive border-radius, 0, 30;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.buttonPrev,
+.buttonNext {
+    @mixin responsive width, 0, 30;
+    @mixin responsive height, 0, 30;
+    @mixin transitionOptions;
+
+    transition-property: opacity, background-color;
+
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+
+    background-color: var(--color-gray-4);
+
+    @media (hover:hover) {
+        &:hover {
+            background-color: var(--color-white-0);
+        }
+    }
+}
+
+.poster {
+    @mixin transitionOptions;
+
+    transition-property: opacity;
+    opacity: 0;
+}
+
+.poster.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.buttonPrev {
+    @mixin responsive margin-inline-start, 0, 20;
+
+    rotate: 180deg;
+    left: 0;
+}
+
+.buttonNext {
+    @mixin responsive margin-inline-end, 0, 20;
+
+    right: 0;
+}
