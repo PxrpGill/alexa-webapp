@@ -11,6 +11,7 @@
     "format": "biome format --write ."
   },
   "dependencies": {
+    "@pbe/react-yandex-maps": "^1.2.5",
     "@reduxjs/toolkit": "^2.11.2",
     "axios": "^1.16.0",
     "next": "16.2.6",
@@ -20,10 +21,12 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.5.0",
+    "babel-plugin-react-compiler": "^1.0.0",
     "postcss": "^8.5.14",
     "postcss-import": "^16.1.1",
     "postcss-mixins": "^12.1.2",

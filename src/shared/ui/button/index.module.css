@@ -1,0 +1,9 @@
+.root {
+    @mixin responsive padding-inline, 14, 14;
+    @mixin responsive padding-block, 14, 14;
+    @mixin button;
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    justify-content: center;
+}

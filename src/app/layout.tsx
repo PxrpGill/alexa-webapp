@@ -6,6 +6,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import { GENERAL_META } from "@/shared/config/general-meta.constants";
+import InvolveFont from "@/shared/config/local-font";
+import Layout from "@/widgets/layout";
 
 export const metadata: Metadata = {
 	title: GENERAL_META.title,
@@ -18,8 +20,10 @@ export default function RootLayout({
 	children: ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body>{children}</body>
+		<html lang="en" className={InvolveFont.className}>
+			<body>
+				<Layout>{children}</Layout>
+			</body>
 		</html>
 	);
 }
