@@ -7,14 +7,14 @@
 
 .phone {
     @mixin b2;
-    @mixin transition color;
+    @mixin transition opacity;
 
     font-weight: 600;
     color: var(--color-green-1);
 
     @media (hover:hover) {
         &:hover {
-            color: var(--color-green-4);
+            opacity: 0.6;
         }
     }
 }

@@ -1,0 +1,23 @@
+.wrapper {
+    @mixin responsive padding-inline, 0, 100;
+    @mixin responsive padding-block, 0, 64;
+    @mixin responsive border-radius, 0, 30;
+
+    @mixin responsive --first-col, 0, 700;
+    @mixin responsive gap, 0, 10;
+
+    background-color: var(--color-white-0);
+
+    display: grid;
+    align-items: end;
+
+    grid-template-columns: var(--first-col) auto;
+}
+
+.title {
+    @mixin h2;
+}
+
+.description {
+    @mixin h5;
+}

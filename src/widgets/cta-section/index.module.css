@@ -1,0 +1,64 @@
+.root {
+    @mixin responsive --first-col, 0, 680;
+    @mixin responsive gap, 0, 21;
+
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+}
+
+.posterWrapper {
+    @mixin responsive border-radius, 30, 30;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.posterWrapper,
+.content {
+    @mixin responsive border-radius, 30, 30;
+}
+
+.content {
+    @mixin responsive padding-block-start, 0, 64;
+    @mixin responsive padding-block-end, 0, 58;
+    @mixin responsive padding-inline-start, 0, 38;
+    @mixin responsive padding-inline-end, 0, 101;
+    @mixin responsive gap, 0, 30;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--color-white-0);
+}
+
+.descriptionBlock {
+    @mixin responsive gap, 5, 5;
+    
+    display: flex;
+}
+
+.icon {
+    @mixin responsive width, 20, 20;
+    @mixin responsive height, 20, 20;
+}
+
+.title {
+    @mixin h3;
+}
+
+.innerContent {
+    @mixin responsive gap, 0, 20;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.innerContent {
+    @mixin b1;
+}
+
+.descriptionText {
+    @mixin h6;
+
+    text-transform: uppercase;
+}

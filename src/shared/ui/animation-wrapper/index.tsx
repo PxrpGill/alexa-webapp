@@ -1,40 +1,47 @@
 "use client";
 
-import {
-	type ComponentPropsWithoutRef,
-	type ElementType,
-	type ReactNode,
-	useRef,
-} from "react";
+import { createElement } from "react";
 
-import { useIntersectionAnimation } from "@/shared/hooks/use-intersection-animation";
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
+import { useAnimatedEntering } from "./hooks/use-animated-entering";
 import css from "./index.module.css";
+import type { AnimatedEnteringProps } from "./type/index.types";
 
-type AnimationWrapperProps<T extends ElementType> = {
-	as?: T;
-	children: ReactNode;
-} & Omit<ComponentPropsWithoutRef<T>, "as" | "children"> &
-	PropsWithClassName;
-
-export function AnimationWrapper<T extends ElementType = "div">({
-	as,
+export const AnimationWrapper = ({
 	children,
-	className = "",
-	...rest
-}: AnimationWrapperProps<T>) {
-	const Component = as ?? "div";
-	const ref = useRef<HTMLElement>(null);
+	threshold,
+	direction,
+	distance,
+	duration,
+	easing,
+	delay,
+	once,
+	opacityOnly = false,
+	className,
+	style,
+	as: Component = "div",
+	animatedStyle,
+	id,
+}: AnimatedEnteringProps) => {
+	const { ref, animatedStyle: computedAnimatedStyle } = useAnimatedEntering({
+		threshold,
+		direction,
+		distance,
+		duration,
+		easing,
+		delay,
+		once,
+		opacityOnly,
+		animatedStyle,
+	});
 
-	useIntersectionAnimation(ref, css.visible);
-
-	return (
-		<Component
-			ref={ref as never}
-			className={`${css.wrapper} ${className}`.trim()}
-			{...rest}
-		>
-			{children}
-		</Component>
+	return createElement(
+		Component,
+		{
+			id,
+			ref,
+			className: `${css.root} ${className}`,
+			style: { ...style, ...computedAnimatedStyle },
+		},
+		children,
 	);
-}
+};

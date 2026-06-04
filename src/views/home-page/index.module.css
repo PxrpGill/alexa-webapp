@@ -1,0 +1,4 @@
+.cta,
+.description {
+    @mixin responsive margin-block-end, 0, 60;
+}
