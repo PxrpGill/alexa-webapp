@@ -13,11 +13,15 @@ module.exports = {
 				"mobile-min": "375px",
 				mobile: "767px",
 
-				"desktop-min": "768px",
-				desktop: "1440px",
+				"small-desktop-min": "768px",
+				"small-desktop": "1441px",
+
+				"desktop-min": "1442px",
+				desktop: "1920px",
 
 				"mobile-scale-factor": "3.75",
 				"standard-desktop-scale-factor": "14.4",
+				"big-desktop-scale-factor": "14.41",
 			},
 		},
 		"postcss-nested": {},

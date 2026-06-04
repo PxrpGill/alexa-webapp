@@ -7,6 +7,10 @@
 html {
     font-size: 1vw;
 
+	@media (min-width: 1441px) {
+		font-size: 14.41px;
+	}
+
     background-color: var(--color-white-1);
 }
 
@@ -20,4 +24,13 @@ main {
 
 .container {
     @mixin responsive padding-inline, 20, 40;
+
+    @media (max-width: $mobile) {
+		width: 100%;
+		margin-inline: unset;
+	}
+
+	@media (min-width: 1441px) {
+		padding-inline: calc(2em + (100vw - 1440px) / 2);
+	}
 }

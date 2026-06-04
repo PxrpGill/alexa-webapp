@@ -2,7 +2,7 @@ import type { PropsWithChildren, ReactNode } from "react";
 import type { PropsWithClassName } from "./props-with-classname";
 
 export type SiteLinkProps = {
-	href?: string;
+	href: string;
 	title?: string;
 	target?: "_self" | "_blank";
 };

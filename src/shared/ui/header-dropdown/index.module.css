@@ -1,0 +1,90 @@
+.root {
+    position: relative;
+
+    @media (hover:hover) {
+        &:hover {
+            .button {
+                color: var(--color-green-1);
+            }
+        }
+    }
+}
+
+.list {
+    @mixin transitionOptions;
+    @mixin responsive --border-radius, 20, 30;
+    @mixin responsive column-gap, 10, 20;
+    @mixin responsive row-gap, 20, 40;
+    @mixin responsive padding, 20, 20;
+    @mixin responsive margin-block-start, 10, 15;
+    @mixin responsive --shadow-1, 15, 15;
+    @mixin responsive --shadow-2, 30, 30;
+    @mixin responsive --shadow-3, -10, -10;
+    @mixin responsive width, 0, 600;
+
+    box-shadow: 0 var(--shadow-1) var(--shadow-2) var(--shadow-3) rgba(0, 11, 48, 0.2);
+
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    translate: -50% 0;
+    transition-property: opacity, visibility;
+
+    left: 50%;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+
+    background-color: var(--color-white-0);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &.show {
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+.button {
+    @mixin b4;
+    @mixin transition color;
+
+    font-weight: 500;
+}
+
+.link {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+
+    @media (hover:hover) {
+        &:hover {
+            .title {
+                color: var(--color-green-4);
+            }
+        }
+    }
+}
+
+.logo {
+    @mixin responsive width, 40, 30;
+    @mixin responsive height, 40, 30;
+
+    flex-shrink: 0;
+}
+
+.title {
+    @mixin transition color;
+    @mixin b3;
+    @mixin responsive padding-block-end, 5, 5;
+
+    font-weight: 600;
+    color: var(--color-green-1);
+}
+
+.description {
+    @mixin b4;
+
+    line-height: 1;
+    font-weight: 400;
+    color: var(--color-gray-3);
+}

@@ -1,0 +1,18 @@
+.root {
+    @mixin responsive gap, 20, 30;
+
+    display: flex;
+}
+
+.blog {
+    @mixin b4;
+    @mixin transition color;
+
+    font-weight: 500;
+
+    @media (hover:hover) {
+        &:hover {
+            color: var(--color-green-1);
+        }
+    }
+}

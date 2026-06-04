@@ -1,9 +1,24 @@
 .root {
-    @mixin responsive padding-inline, 14, 14;
-    @mixin responsive padding-block, 14, 14;
+    @mixin responsive padding, 14, 14;
     @mixin button;
     @mixin responsive gap, 10, 10;
+    @mixin responsive border-radius, 30, 30;
+    @mixin transitionOptions;
+
+    transition-property: all;
 
     display: flex;
     justify-content: center;
+    align-items: center;
+
+    &.green {
+        background-color: var(--color-green-1);
+        color: var(--color-white-0);
+
+        @media (hover:hover) {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
 }
