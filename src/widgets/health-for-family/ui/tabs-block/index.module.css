@@ -1,0 +1,4 @@
+.root {
+    @mixin responsive padding-block, 0, 64;
+    @mixin responsive padding-inline, 0, 330;
+}
