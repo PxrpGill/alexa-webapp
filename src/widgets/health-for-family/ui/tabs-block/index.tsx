@@ -2,12 +2,28 @@
 /** biome-ignore-all lint/performance/noImgElement: <explanation> */
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */
 
+import { useCallback } from "react";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
+import Button from "@/shared/ui/button";
 import type { TabsBlockProps } from "../../types/health-for-family.types";
-
 import css from "./index.module.css";
 
-export default function TabsBlock({ tabs, title, className }: TabsBlockProps) {
+export default function TabsBlock({
+	tabs,
+	title,
+	className,
+	activeKey,
+	setActiveKey,
+}: TabsBlockProps) {
+	const handleButtonClick = useCallback(
+		(tabKey?: string) => {
+			if (!(setActiveKey && activeKey)) return;
+
+			setActiveKey(tabKey);
+		},
+		[setActiveKey, activeKey],
+	);
+
 	return (
 		<AnimationWrapper as="nav" className={`${css.root} ${className}`}>
 			{title && (
@@ -16,10 +32,11 @@ export default function TabsBlock({ tabs, title, className }: TabsBlockProps) {
 			{tabs?.length && (
 				<div className={css.tabs}>
 					{tabs.map((tab, index) => (
-						<button
-							className={css.tab}
+						<Button
+							className={`${css.tab} ${activeKey === tab.slug && css.active}`}
 							type="button"
 							key={`${tab.slug}-${index}`}
+							onClick={() => handleButtonClick(tab.slug)}
 						>
 							<div className={css.imageWrapper}>
 								{tab.icon && (
@@ -30,7 +47,13 @@ export default function TabsBlock({ tabs, title, className }: TabsBlockProps) {
 									/>
 								)}
 							</div>
-						</button>
+							{tab.title && (
+								<span
+									dangerouslySetInnerHTML={{ __html: tab.title }}
+									className={css.text}
+								/>
+							)}
+						</Button>
 					))}
 				</div>
 			)}

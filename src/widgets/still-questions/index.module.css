@@ -1,0 +1,40 @@
+.root {
+    @mixin responsive --first-col, 0, 750;
+    @mixin responsive min-height, 0, 500;
+    @mixin responsive gap, 0, 20;
+
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+}
+
+.content,
+.imageWrapper {
+    @mixin responsive border-radius, 0, 30;
+
+    background-color: var(--color-white-0)
+}
+
+.imageWrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    @mixin responsive padding-inline, 0, 40;
+    @mixin responsive padding-block, 0, 74;
+}
+
+.title {
+    @mixin responsive padding-block-end, 0, 63;
+    @mixin h1;
+}
+
+.description {
+    @mixin responsive padding-block-end, 0, 28;
+    @mixin b2;
+}
+
+.icon {
+    @mixin responsive width, 0, 23;
+    @mixin responsive height, 0, 23;
+}

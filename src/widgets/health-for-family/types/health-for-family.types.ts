@@ -10,6 +10,8 @@ export type TabType = {
 export type TabsBlockProps = {
 	title?: string;
 	tabs?: TabType[];
+	activeKey?: string;
+	setActiveKey?: (arg?: string) => void;
 } & PropsWithClassName;
 
 export type ContentCardProps = {
@@ -19,7 +21,7 @@ export type ContentCardProps = {
 };
 
 export type TabContentProps = {
-	[key: string]: ContentCardProps[];
+	[key: string]: ContentCardProps[] | undefined;
 };
 
 export type HealthForFamilyProps = {

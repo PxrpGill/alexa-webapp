@@ -1,0 +1,85 @@
+.root {
+	cursor: pointer;
+}
+
+.details[open] + .accordionContent {
+	grid-template-rows: 1fr;
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0s;
+}
+
+.details[open] .icon {
+	rotate: 180deg;
+}
+
+.accordionContentBody {
+	overflow: hidden;
+	min-height: 0;
+}
+
+.summary {
+	cursor: pointer;
+	user-select: none;
+
+
+	position: relative;
+
+	display: flex;
+	align-items: center;
+
+	justify-content: space-between;
+
+	list-style: none;
+
+	-webkit-tap-highlight-color: transparent;
+
+	&:active {
+		transform: none;
+		background: none;
+		outline: none;
+		box-shadow: none;
+	}
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+
+	&::-moz-list-bullet {
+		list-style-type: none;
+	}
+}
+
+.accordionContent {
+	@mixin transitionOptions;
+
+	overflow: hidden;
+	display: grid;
+	grid-template-rows: 0fr;
+
+	padding-block-start: unset !important;
+
+	visibility: hidden;
+	opacity: 0;
+
+	transition-delay: 0s, 0s, 0.3s;
+	transition-property: opacity, grid-template-rows, visibility;
+}
+
+.accordionInnerContent {
+	@mixin b1;
+}
+
+.title {
+	@mixin h5;
+
+	font-weight: 600;
+}
+
+.icon {
+	@mixin transition rotate;
+	@mixin responsive width, 16, 28;
+	@mixin responsive height, 16, 28;
+
+	flex-shrink: 0;
+}

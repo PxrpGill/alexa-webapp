@@ -1,6 +1,7 @@
 .root {
     @mixin responsive padding-block, 0, 64;
-    @mixin responsive padding-inline, 0, 330;
+    @mixin responsive padding-inline, 0, 300;
+    @mixin responsive gap, 0, 40;
 
     display: flex;
     flex-direction: column;
@@ -11,4 +12,55 @@
 
 .title {
     @mixin h2;
+}
+
+.tab.tab[class] {
+    @mixin b1;
+
+    align-items: center;
+    font-weight: 600;
+}
+
+.imageWrapper {
+    @mixin responsive width, 0, 64;
+    @mixin responsive height, 0, 64;
+
+    flex-shrink: 0;
+
+    position: relative;
+}
+
+.tabIcon {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   object-fit: cover;
+}
+
+.tabs {
+    @mixin responsive gap, 0, 29;
+
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    flex-shrink: 0;
+}
+
+.tab.tab[class]:not(.active) {
+    background-color: var(--color-gray-6);
+    border-color: var(--color-gray-6);
+    color: var(--color-green-4);
+
+    @media (hover:hover) {
+        &:hover {
+            color: var(--color-white-0);
+            background-color: var(--color-green-1);
+            border-color: var(--color-green-1);
+            opacity: 1;
+        }
+    }
 }

@@ -1,0 +1,32 @@
+.root {
+    @mixin responsive gap, 0, 60;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    @mixin h3;
+
+    text-align: center;
+}
+
+.list {
+    @mixin responsive column-gap, 0, 40;
+    @mixin responsive row-gap, 0, 90;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card[class] {
+    height: 100%;
+}
+
+.button.button[class] {
+    @mixin responsive padding-inline, 0, 60;
+    @mixin responsive padding-block, 0, 18;
+
+    line-height: 1;
+}

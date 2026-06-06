@@ -28,4 +28,10 @@ export const SITE_NAVIGATION = {
 	pacientu: "/pacientu",
 	nalogovyjvychet: "/nalogovyjvychet",
 	blog: "/blog",
+	privacyPolicy: "/privacy",
+	userAgreement: "/personal-data",
+	letter: "/letter",
+	pravilaokazaniyamedicinskihuslug: "/pravilaokazaniyamedicinskihuslug",
+	pravilavneseniyaoplatyzamedicinskieuslugi:
+		"/pravilavneseniyaoplatyzamedicinskieuslugi",
 } as const;

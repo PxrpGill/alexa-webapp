@@ -1,0 +1,84 @@
+.root {
+    @mixin responsive gap, 0, 64;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.title {
+    @mixin h2;
+}
+
+.list {
+    @mixin responsive gap, 0, 20;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion {
+    @mixin responsive border-radius, 0, 30;
+    @mixin responsive padding-block, 0, 40;
+    @mixin responsive padding-inline, 0, 30;
+
+    background-color: var(--color-white-0);
+
+    &:has(> details[open]) {
+        .accordionIcon {
+            rotate: 45deg;
+
+            background-color: var(--color-green-1);
+        }
+
+        .icon g {
+            stroke: var(--color-white-0);
+        }
+    }
+
+    @media (hover:hover) {
+        &:hover {
+            .icon g {
+                stroke: var(--color-white-0);
+            }
+
+            .accordionIcon {
+                background-color: var(--color-green-1);
+            }
+        }
+    }
+}
+
+.accordionIcon {
+    @mixin responsive width, 0, 40;
+    @mixin responsive height, 0, 40;
+    @mixin transitionOptions;
+
+    transition-property: background-color, rotate;
+
+    position: relative;
+    border-radius: 100%;
+}
+
+.icon {
+    @mixin responsive width, 0, 26;
+    @mixin responsive height, 0, 26;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    g {
+        @mixin transition stroke;
+
+        stroke: var(--color-green-1);
+    }
+}
+
+.description {
+    @mixin responsive padding-block-start, 0, 40;
+    @mixin b2;
+
+    line-height: 1.55;
+}

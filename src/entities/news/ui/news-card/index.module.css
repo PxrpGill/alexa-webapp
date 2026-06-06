@@ -1,0 +1,53 @@
+.root {
+    @mixin responsive gap, 0, 28;
+    @mixin responsive border-radius, 0, 30;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--color-white-0);
+
+    overflow: hidden;
+}
+
+.wrapper {
+    @mixin responsive height, 0, 276;
+
+    position: relative;
+    background-color: var(--color-white-0);
+    flex-shrink: 0;
+}
+
+.info {
+    @mixin responsive padding-inline, 0, 30;
+    @mixin responsive padding-block-end, 0, 48;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%
+}
+
+.title {
+    @mixin h6;
+    @mixin responsive padding-block-end, 0, 8;
+}
+
+.description {
+    @mixin responsive padding-block-end, 0, 15;
+
+}
+
+.time,
+.description {
+    @mixin b3;
+
+    color: var(--color-black-580);
+}
+
+.description {
+    line-height: 1.55;
+}
+
+.time {
+    margin-block-start: auto;
+}

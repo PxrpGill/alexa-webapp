@@ -4,20 +4,36 @@
     @mixin responsive gap, 10, 10;
     @mixin responsive border-radius, 30, 30;
     @mixin transitionOptions;
+    @mixin responsive border-width, 1, 1;
 
     transition-property: all;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    border-style: solid;
 
     &.green {
         background-color: var(--color-green-1);
         color: var(--color-white-0);
+        border-color: var(--color-green-1);
 
         @media (hover:hover) {
             &:hover {
                 opacity: 0.6;
+            }
+        }
+    }
+
+    &.transparent {
+        border-color: var(--color-green-1);
+        background-color: var(--color-white-0);
+        color: var(--color-green-1);
+
+        @media (hover:hover) {
+            &:hover {
+                background-color: var(--color-green-1);
+                color: var(--color-white-0);
             }
         }
     }
