@@ -1,0 +1,55 @@
+.root {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    @mixin responsive width, 0, 120;
+}
+
+.baseLink{
+    @mixin responsive margin-block-end, 0, 34; 
+}
+
+.contacts {
+    @mixin responsive gap, 8, 8;
+    @mixin responsive padding-block-end, 0, 28;
+
+    display: flex;
+}
+
+.icon {
+    @mixin responsive width, 0, 25;
+}
+
+.contactLink,
+.baseLink {
+    @mixin transition opacity;
+
+    @media (hover:hover) {
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+.list {
+    @mixin responsive gap, 0, 6;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.link {
+    @mixin transition opacity;
+    @mixin b4;
+
+    color: #ff8562;
+    font-weight: 400;
+
+    @media (hover:hover) {
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}

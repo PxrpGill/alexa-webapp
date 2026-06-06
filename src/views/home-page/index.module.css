@@ -1,3 +1,7 @@
+.root {
+    @mixin responsive padding-block-start, 0, 100;
+}
+
 .family,
 .faqs,
 .questions,

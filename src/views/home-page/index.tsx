@@ -21,7 +21,7 @@ import {
 
 export default function HomePage() {
 	return (
-		<main>
+		<main className={css.root}>
 			<HeroSliderSection />
 			<CtaSection {...CTA_MOCK} className={css.cta} />
 			<DescriptionSection

@@ -19,17 +19,32 @@ import css from "./index.module.css";
 export default function StartPart() {
 	return (
 		<div className={css.root}>
-			<Link href={SITE_NAVIGATION.base} className={css.link}>
-				<LogoSvg />
+			<Link href={SITE_NAVIGATION.base} className={css.baseLink}>
+				<LogoSvg className={css.logo} />
 			</Link>
 			<div className={css.contacts}>
-				<a href={TELEGRAM} target="_blank" rel="noopener">
+				<a
+					href={TELEGRAM}
+					target="_blank"
+					rel="noopener"
+					className={css.contactLink}
+				>
 					<TelegramSVG className={css.icon} />
 				</a>
-				<a href={WHATSAPP} target="_blank" rel="noopener">
+				<a
+					href={WHATSAPP}
+					target="_blank"
+					rel="noopener"
+					className={css.contactLink}
+				>
 					<WhatsappSVG className={css.icon} />
 				</a>
-				<a href={MAX} target="_blank" rel="noopener">
+				<a
+					href={MAX}
+					target="_blank"
+					rel="noopener"
+					className={css.contactLink}
+				>
 					<MaxSVG className={css.icon} />
 				</a>
 			</div>

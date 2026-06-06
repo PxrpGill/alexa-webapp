@@ -1,0 +1,30 @@
+.root {
+    @mixin responsive gap, 0, 17;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    @mixin responsive gap, 0, 14;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin b2;
+
+    color: var(--color-gray-1);
+}
+
+.link {
+    @mixin transition color;
+    @mixin b3;
+
+    @media (hover:hover) {
+        &:hover {
+            color: var(--color-green-1);
+        }
+    }
+}
