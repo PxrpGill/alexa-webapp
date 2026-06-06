@@ -1,5 +1,6 @@
 import type { CtaSectionProps } from "@/widgets/cta-section/types/cta-section.types";
 import type { DescriptionSectionProps } from "@/widgets/description-section/types/description-section.types";
+import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 
 export const CTA_MOCK: CtaSectionProps = {
@@ -125,4 +126,14 @@ export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 			},
 		},
 	],
+};
+
+export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
+	tabsBlock: {
+		title: "Здоровье для всей семьи!",
+		tabs: [
+			{ title: "Стоматология для взрослых", slug: "stomatologiya-dlya-semi" },
+			{ title: "Стоматология для детей", slug: "stomatologiya-dlya-detey" },
+		],
+	},
 };
