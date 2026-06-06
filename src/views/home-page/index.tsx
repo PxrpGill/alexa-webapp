@@ -8,6 +8,7 @@ import {
 	CTA_MOCK,
 	DESCRIPTION_SECTION,
 	FIRST_TITLE_DESCRIPTION_SLIDER,
+	HEALTH_FOR_FAMILY,
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 } from "./models/home-page.constants";
@@ -34,7 +35,7 @@ export default function HomePage() {
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
 				className={css.slider}
 			/>
-			<HealthForFamily />
+			<HealthForFamily {...HEALTH_FOR_FAMILY} />
 		</main>
 	);
 }
