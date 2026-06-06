@@ -1,0 +1,91 @@
+.root {
+    @mixin responsive padding-block-start, 0, 95;
+    @mixin responsive padding-inline, 0, 100;
+    @mixin responsive gap, 0, 235;
+
+    width: 100%;
+    background-color: var(--color-gray-7);
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtitle {
+    @mixin responsive padding-block-end, 0, 3;
+    @mixin b2;
+
+    font-weight: 600;
+    line-height: 1;
+}
+
+.title {
+    @mixin h1;
+
+    color: var(--color-green-1);
+}
+
+.titleBlock {
+    @mixin responsive padding-block-start, 0, 30;
+    @mixin responsive max-width, 0, 306;
+    @mixin responsive padding-block-end, 0, 48;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    @mixin responsive border-radius, 0, 30;
+    @mixin responsive padding, 0, 35;
+    @mixin responsive max-width, 0, 450;
+    @mixin responsive gap, 0, 22;
+
+    display: flex;
+    flex-direction: column;
+
+    width: fit-content;
+
+    background-color: var(--color-white-0);
+}
+
+.cardTitle {
+    @mixin h6;
+}
+
+.cardContent {
+    @mixin b1;
+}
+
+.button.button[class] {
+    width: fit-content;
+}
+
+.icon {
+    @mixin responsive width, 0, 25;
+    @mixin responsive height, 0, 25;
+}
+
+.leftPart {
+    @mixin responsive gap, 0, 57;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.posterWrapper {
+    @mixin responsive width, 0, 467;
+    @mixin responsive height, 0, 345;
+
+    position: relative;
+}
+
+.legend {
+    @mixin b2;
+    @mixin responsive max-width, 0, 265;
+
+    text-align: center;
+    line-height: 1;
+
+    b {
+        font-weight: 600;
+    }
+}

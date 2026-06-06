@@ -2,9 +2,49 @@ import type { CtaSectionProps } from "@/widgets/cta-section/types/cta-section.ty
 import type { DescriptionSectionProps } from "@/widgets/description-section/types/description-section.types";
 import type { FaqSectionProps } from "@/widgets/faq-section/types/faq-section.types";
 import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
+import type { HeroSliderSectionProps } from "@/widgets/hero-slider-section/types/hero-slider-section.types";
 import type { ParentNewsSectionProps } from "@/widgets/parent-news-section/types/parent-news-section.types";
 import type { StillQuestionProps } from "@/widgets/still-questions/types/still-questions.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
+
+export const HERO_SLIDES: HeroSliderSectionProps = {
+	slides: [
+		{
+			type: "firstVariant",
+			title: "алекса",
+			card: {
+				title: "Никакого напряжения и&nbsp;тревоги",
+				content: "<p>Имплантация во&nbsp;сне под контролем врачей</p>",
+				buttonText: "Записаться на прием",
+			},
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/slider-1.webp",
+				},
+			},
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+		},
+		{
+			type: "firstVariant",
+			title: "алекса",
+			card: {
+				title: "Никакого напряжения и&nbsp;тревоги",
+				content: "<p>Имплантация во&nbsp;сне под контролем врачей</p>",
+				buttonText: "Записаться на прием",
+			},
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/slider-1.webp",
+				},
+			},
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+		},
+	],
+};
 
 export const CTA_MOCK: CtaSectionProps = {
 	poster: {

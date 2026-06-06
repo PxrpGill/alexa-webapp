@@ -12,6 +12,7 @@ import {
 	DESCRIPTION_SECTION,
 	FIRST_TITLE_DESCRIPTION_SLIDER,
 	HEALTH_FOR_FAMILY,
+	HERO_SLIDES,
 	MOCK_FAQ_SECTION,
 	PARENT_NEWS_SECTION_MOCK,
 	SECOND_TITLE_DESCRIPTION_SLIDER,
@@ -22,7 +23,7 @@ import {
 export default function HomePage() {
 	return (
 		<main className={css.root}>
-			<HeroSliderSection />
+			<HeroSliderSection className={css.hero} {...HERO_SLIDES} />
 			<CtaSection {...CTA_MOCK} className={css.cta} />
 			<DescriptionSection
 				{...DESCRIPTION_SECTION}

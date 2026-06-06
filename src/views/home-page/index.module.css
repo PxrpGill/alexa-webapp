@@ -2,6 +2,7 @@
     @mixin responsive padding-block-start, 0, 100;
 }
 
+.hero,
 .family,
 .faqs,
 .questions,
