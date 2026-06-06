@@ -14,6 +14,19 @@ export type FirstVariantProps = {
 	poster?: PictureFormatType;
 } & PropsWithClassName;
 
+export type SecondVariantProps = {
+	type: "secondVariant";
+	title?: string;
+	subtitle?: string;
+	legend?: string;
+	poster?: PictureFormatType;
+	card?: {
+		title?: string;
+		content?: string;
+		buttonText: string;
+	};
+} & PropsWithClassName;
+
 export type HeroSliderSectionProps = {
-	slides?: Array<FirstVariantProps>;
+	slides?: Array<FirstVariantProps | SecondVariantProps>;
 } & PropsWithClassName;

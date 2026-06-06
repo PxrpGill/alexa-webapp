@@ -27,16 +27,17 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
 		},
 		{
-			type: "firstVariant",
+			type: "secondVariant",
 			title: "алекса",
 			card: {
-				title: "Никакого напряжения и&nbsp;тревоги",
-				content: "<p>Имплантация во&nbsp;сне под контролем врачей</p>",
+				title: "Лечение во&nbsp;сне. Без боли и&nbsp;страха",
+				content:
+					"<p>Для тревожных малышей и&nbsp;взрослых, которым нужен бережный подход.</p><br /><br /><p>до&nbsp;1&nbsp;часа&nbsp;&mdash; <b>15&nbsp;100&nbsp;₽</b></p><p>до&nbsp;2&nbsp;часов&nbsp;&mdash; <b>19&nbsp;400&nbsp;₽</b></p><br /><br /><p>Проснётесь с&nbsp;красивой улыбкой и&nbsp;без воспоминаний о&nbsp;лечении</p>",
 				buttonText: "Записаться на прием",
 			},
 			poster: {
-				webp: {
-					src: "/mock/home/hero-slider/slider-1.webp",
+				original: {
+					src: "/mock/home/hero-slider/slider-2.jpg",
 				},
 			},
 			legend:
