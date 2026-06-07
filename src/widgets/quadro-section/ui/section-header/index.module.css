@@ -1,0 +1,62 @@
+.root {
+    @mixin responsive min-height, 0, 640;
+    @mixin responsive gap, 20, 20;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.imageBlock,
+.titleBlock {
+    @mixin responsive border-radius, 30, 30;
+
+    background-color: var(--color-white-0);
+    overflow: hidden;
+}
+
+.titleBlock {
+    @mixin responsive padding-block, 41, 103;
+    @mixin responsive padding-inline-start, 20, 100;
+    @mixin responsive padding-inline-end, 73, 190;
+}
+
+.description {
+    @mixin b2;
+    @mixin responsive padding-block-end, 20, 20;
+
+    color: var(--color-black-1);
+}
+
+.title {
+    @mixin responsive font-size, 30, 52;
+    @mixin responsive padding-block-end, 0, 33;
+
+    font-weight: 600;
+    color: var(--color-black-1);
+}
+
+.imageBlock {
+    @mixin responsive height, 281;
+    
+    position: relative;
+}
+
+.desktopCard[class] {
+    @media (max-width: $mobile) {
+        display: none;
+    }
+
+}
+
+.mobileCard[class] {
+    display: none;
+
+    @media (max-width: $mobile) {
+        display: flex;
+    }
+}

@@ -32,5 +32,12 @@
 	},
 	"[css]": {
 		"editor.defaultFormatter": "biomejs.biome"
-	}
+	},
+	"python-envs.pythonProjects": [
+		{
+			"path": "src/widgets/quadro-section/ui",
+			"envManager": "ms-python.python:venv",
+			"packageManager": "ms-python.python:pip"
+		}
+	]
 }

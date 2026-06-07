@@ -1,0 +1,36 @@
+.root {
+    @mixin responsive gap, 31, 33;
+    @mixin responsive padding-block, 40, 45;
+    @mixin responsive padding-inline-start, 30, 40;
+    @mixin responsive padding-inline-end, 30, 79;
+    @mixin responsive border-radius, 30, 30;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--color-white-1);
+
+    @media (max-width: $mobile) {
+        background-color: var(--color-white-0);
+        align-items: center;
+    }
+}
+
+.button.button[class] {
+    width: fit-content;
+}
+
+.title {
+    @mixin h6;
+
+    color: var(--color-green-4);
+
+    @media (max-width: $mobile) {
+        text-align: center;
+    }
+}
+
+.icon {
+    @mixin responsive width, 25, 25;
+    @mixin responsive height, 25, 25;
+}

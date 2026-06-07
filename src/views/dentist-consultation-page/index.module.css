@@ -3,13 +3,14 @@
 }
 
 .slider {
-    @mixin responsive margin-block-end, 0, 35;
+    @mixin responsive margin-block-end, 20, 35;
 }
 
+.quadro,
 .faqs,
 .ourWork,
 .lastSlider {
-    @mixin responsive margin-block-end, 0, 60;
+    @mixin responsive margin-block-end, 60, 60;
 }
 
 .parentNews {
