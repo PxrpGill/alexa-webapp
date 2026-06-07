@@ -47,8 +47,8 @@
 .telegram,
 .max,
 .anotherPhone {
-    @mixin responsive width, 31, 36;
-    @mixin responsive height, 31, 36;
+    @mixin responsive width, 30, 36;
+    @mixin responsive height, 30, 36;
     @mixin transition opacity;
 
     display: block;
@@ -60,4 +60,24 @@
     }
 
     position: relative;
+}
+
+.menuButton {
+    @mixin responsive width, 42;
+    @mixin responsive height, 42;
+
+    display: none;
+    position: relative;
+
+    @media (max-width: $mobile) {
+        display: block;
+    }
+}
+
+.menuIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

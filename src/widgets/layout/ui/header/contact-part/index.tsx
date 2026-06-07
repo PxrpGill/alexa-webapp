@@ -1,5 +1,6 @@
 import ButtonTeethSVG from "@/public/icons/button-teeth.svg";
 import MaxSVG from "@/public/icons/max.svg";
+import MenuSVG from "@/public/icons/menu.svg";
 import PhoneSVG from "@/public/icons/phone.svg";
 import TelegramSVG from "@/public/icons/telegram.svg";
 import {
@@ -40,6 +41,9 @@ export default function ContactPart() {
 			>
 				<PhoneSVG className={css.circleIcon} />
 			</a>
+			<button className={css.menuButton} type="button">
+				<MenuSVG className={css.menuIcon} />
+			</button>
 		</div>
 	);
 }
