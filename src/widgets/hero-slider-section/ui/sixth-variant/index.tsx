@@ -19,6 +19,9 @@ export default function SixthVariant({
 	return (
 		<div className={`${css.root} ${className}`}>
 			<div className={css.contentWrapper}>
+				<div className={css.mobileImage}>
+					{poster && <Picture poster={poster} />}
+				</div>
 				<div className={css.titleBlock}>
 					{subtitle && (
 						<p
@@ -62,7 +65,7 @@ export default function SixthVariant({
 					</div>
 				)}
 			</div>
-			{poster && <Picture poster={poster} />}
+			{poster && <Picture poster={poster} className={css.desktopPoster} />}
 		</div>
 	);
 }

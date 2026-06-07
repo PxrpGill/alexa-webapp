@@ -19,6 +19,9 @@ export default function ThirdVariant({
 	return (
 		<div className={`${css.root} ${className}`}>
 			<div className={css.contentWrapper}>
+				<div className={css.mobilePosterWrapper}>
+					{poster && <Picture poster={poster} />}
+				</div>
 				<div className={css.titleBlock}>
 					{subtitle && (
 						<p
@@ -62,7 +65,7 @@ export default function ThirdVariant({
 					</div>
 				)}
 			</div>
-			{poster && <Picture poster={poster} />}
+			{poster && <Picture poster={poster} className={css.desktopImage} />}
 		</div>
 	);
 }

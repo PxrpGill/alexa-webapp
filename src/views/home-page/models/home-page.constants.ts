@@ -54,6 +54,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			poster: {
 				original: {
 					src: "/mock/home/hero-slider/slider-3.jpg",
+					mobile: "/mock/home/hero-slider/slider-3-mobile.webp",
 				},
 			},
 			card: {

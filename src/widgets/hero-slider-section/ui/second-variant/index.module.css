@@ -40,6 +40,7 @@
 
 .titleBlock {
     @mixin responsive padding-block-end, 39;
+
     flex-shrink: 0;
     
     @media (max-width: $mobile) {
@@ -52,6 +53,10 @@
 .title {
     @mixin h1;
     @mixin responsive padding-block-end, 10, 74;
+
+    @media (max-width: $mobile) {
+        color: var(--color-green-1);
+    }
 }
 
 .legend {
