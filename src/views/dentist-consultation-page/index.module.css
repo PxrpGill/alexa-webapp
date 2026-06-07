@@ -1,0 +1,17 @@
+.root {
+    @mixin responsive padding-block-start, 70, 100;
+}
+
+.slider {
+    @mixin responsive margin-block-end, 0, 35;
+}
+
+.faqs,
+.ourWork,
+.lastSlider {
+    @mixin responsive margin-block-end, 0, 60;
+}
+
+.parentNews {
+    @mixin responsive margin-block-end, 0, 135;
+}
