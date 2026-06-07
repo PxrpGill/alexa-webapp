@@ -30,7 +30,7 @@ import {
 export default function HomePage() {
 	return (
 		<main className={css.root}>
-			{/* <HeroSliderSection className={css.hero} {...HERO_SLIDES} /> */}
+			<HeroSliderSection className={css.hero} {...HERO_SLIDES} />
 			<CtaSection {...CTA_MOCK} className={css.cta} />
 			<DescriptionSection
 				{...DESCRIPTION_SECTION}

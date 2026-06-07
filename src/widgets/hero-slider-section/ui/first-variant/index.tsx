@@ -17,6 +17,11 @@ export default function FirstVariant({
 	return (
 		<div className={`${css.root} ${className}`}>
 			<div className={css.contentPart}>
+				<div className={css.mobilePosterWrapper}>
+					<div className={css.imageWrap}>
+						{poster && <Picture poster={poster} />}
+					</div>
+				</div>
 				<div className={css.titleBlock}>
 					{subtitle && (
 						<p
@@ -28,6 +33,12 @@ export default function FirstVariant({
 						<h1
 							className={css.title}
 							dangerouslySetInnerHTML={{ __html: title }}
+						/>
+					)}
+					{legend && (
+						<p
+							className={css.mobileLegend}
+							dangerouslySetInnerHTML={{ __html: legend }}
 						/>
 					)}
 				</div>

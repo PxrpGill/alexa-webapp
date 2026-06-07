@@ -7,7 +7,7 @@
 }
 
 .wrapper {
-    @mixin responsive min-height, 0, 640;
+    @mixin responsive min-height, 823, 640;
     @mixin responsive border-radius, 0, 30;
 
     display: flex;
@@ -15,6 +15,11 @@
     position: relative;
 
     background-color: var(--color-white-0);
+
+    @media (max-width: $mobile) {
+        background-color: unset;
+        overflow: visible;
+    }
 }
 
 .slide {
@@ -28,6 +33,10 @@
 .active {
     opacity: 1;
     transition: opacity 0.5s ease;
+
+    @media (max-width: $mobile) {
+        position: static;
+    }
 }
 
 .inactive {
@@ -39,8 +48,8 @@
 .rightButton,
 .leftButton {
     @mixin transition background-color;
-    @mixin responsive width, 0, 30;
-    @mixin responsive height, 0, 30;
+    @mixin responsive width, 30, 30;
+    @mixin responsive height, 30, 30;
     @mixin responsive --shadow-1, 15, 15;
     @mixin responsive --shadow-2, 30, 30;
     @mixin responsive --shadow-3, -10, -10;
@@ -49,6 +58,7 @@
 
     position: absolute;
     top: 50%;
+    z-index: 11;
 
     border-radius: 100%;
 
@@ -62,6 +72,12 @@
                 stroke: var(--color-white-0) !important;
             }
         }
+    }
+
+    @media (max-width: $mobile) {
+        @mixin responsive margin-block-start, 405;
+
+        top: 0;
     }
 }
 
@@ -91,6 +107,10 @@
     bottom: 0;
     left: 50%;
     translate: -50% 0;
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }
 
 .bullet {

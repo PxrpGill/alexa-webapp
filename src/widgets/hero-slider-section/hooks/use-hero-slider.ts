@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import type { HeroSliderSectionProps } from "../types/hero-slider-section.types";
 
-const AUTOPLAY_INTERVAL = 5_000;
+const AUTOPLAY_INTERVAL = 5_000_000;
 
 export const useHeroSlider = (slides: HeroSliderSectionProps["slides"]) => {
 	const [current, setCurrent] = useState(0);

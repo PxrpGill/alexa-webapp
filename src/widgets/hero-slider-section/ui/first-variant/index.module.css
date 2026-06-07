@@ -7,10 +7,68 @@
     background-color: var(--color-gray-7);
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: $mobile) {
+        background-color: unset;
+    }
+}
+
+.imageWrap {
+    @mixin responsive width, 301;
+    @mixin responsive margin-block-start, 42;
+    @mixin responsive height, 222;
+
+    position: relative;
+}
+
+.mobilePosterWrapper {
+    @mixin responsive height, 302;
+    @mixin responsive border-radius, 30;
+    @mixin responsive margin-block-end, 38;
+
+    overflow: hidden;
+    display: none;
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    background-color: var(--color-gray-7);
+    
+    @media (max-width: $mobile) {
+        display: flex;
+    };
+}
+
+.contentPart {
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle,
+.title,
+.mobileLegend {
+    @media (max-width: $mobile) {
+        text-align: center;
+    }
+}
+
+.mobileLegend {
+    @mixin b2;
+
+    display: none;
+    font-weight: 400;
+
+    b {
+        font-weight: 600;
+    }
+
+    @media (max-width: $mobile) {
+        display: block;
+    }
 }
 
 .subtitle {
-    @mixin responsive padding-block-end, 0, 3;
+    @mixin responsive padding-block-end, 3, 3;
     @mixin b2;
 
     font-weight: 600;
@@ -19,24 +77,32 @@
 
 .title {
     @mixin h1;
+    @mixin responsive padding-block-end, 10;
 
     color: var(--color-green-1);
 }
 
 .titleBlock {
     @mixin responsive padding-block-start, 0, 30;
-    @mixin responsive max-width, 0, 306;
-    @mixin responsive padding-block-end, 0, 48;
+    @mixin responsive max-width, 260, 306;
+    @mixin responsive padding-block-end, 47, 48;
 
     display: flex;
     flex-direction: column;
+
+    @media (max-width: $mobile) {
+        align-items: center;
+        max-width: unset;
+    }
 }
 
 .card {
-    @mixin responsive border-radius, 0, 20;
+    @mixin responsive border-radius, 30, 20;
     @mixin responsive padding, 0, 35;
     @mixin responsive max-width, 0, 450;
-    @mixin responsive gap, 0, 22;
+    @mixin responsive gap, 23, 22;
+    @mixin responsive padding-inline, 31;
+    @mixin responsive padding-block, 45;
 
     display: flex;
     flex-direction: column;
@@ -44,12 +110,31 @@
     width: fit-content;
 
     background-color: var(--color-white-0);
+
+    @media (max-width: $mobile) {
+        max-width: unset;
+
+        align-items: center;
+    }
+}
+
+.cardTitle,
+.cardContent {
+    @media (max-width: $mobile) {
+        text-align: center;
+    }
 }
 
 .cardTitle {
     @mixin h6;
 
     color: var(--color-green-4);
+
+    @media (max-width: $mobile) {
+        @mixin h5;
+
+        font-weight: 600;
+    }
 }
 
 .cardContent {
@@ -57,6 +142,10 @@
     
     color: var(--color-green-4);
     line-height: 1;
+
+    @media (max-width) {
+        @mixin h5;
+    }
 }
 
 .button.button[class] {
@@ -64,8 +153,8 @@
 }
 
 .icon {
-    @mixin responsive width, 0, 25;
-    @mixin responsive height, 0, 25;
+    @mixin responsive width, 25, 25;
+    @mixin responsive height, 25, 25;
 }
 
 .leftPart {
@@ -74,6 +163,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }
 
 .posterWrapper {
