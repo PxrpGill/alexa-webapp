@@ -61,6 +61,10 @@
 
 .text {
     flex-shrink: 0;
+
+    @media (max-width: $mobile) {
+        flex-shrink: unset;
+    }
 }
 
 .tab.tab[class]:not(.active) {
