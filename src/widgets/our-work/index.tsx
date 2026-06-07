@@ -31,14 +31,19 @@ export default function OurWork({ title, className, posters }: OurWorkProps) {
 			<div className={css.grid}>
 				{columns.map((col, colIndex) => (
 					<div key={colIndex} className={css.column}>
-						{col.map((poster, index) => (
-							<div
-								key={index}
-								className={`${css.posterWrapper} ${css[poster.size]}`}
-							>
-								<Picture poster={poster.poster} className={`${css.poster}`} />
-							</div>
-						))}
+						{col.map((poster, index) => {
+							if (!poster) return <div key={`${index}-${colIndex}`} />;
+
+							return (
+								<AnimationWrapper
+									as="div"
+									key={`${index}-${colIndex}`}
+									className={`${css.posterWrapper} ${css[poster.size]}`}
+								>
+									<Picture poster={poster.poster} className={`${css.poster}`} />
+								</AnimationWrapper>
+							);
+						})}
 					</div>
 				))}
 			</div>

@@ -462,11 +462,117 @@ export const PARENT_NEWS_SECTION_MOCK: ParentNewsSectionProps = {
 };
 
 export const OUR_WORK: OurWorkProps = {
-	title: "",
+	title: "Наша работа в&nbsp;кадрах",
 	posters: [
 		{
 			size: "standart",
-			poster: {},
+			poster: {
+				webp: {
+					src: "/mock/our-work/1-desktop.webp",
+				},
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: {
+					src: "/mock/our-work/2-desktop.webp",
+				},
+			},
+		},
+		{
+			size: "big",
+			poster: {
+				webp: {
+					src: "/mock/our-work/3-desktop.webp",
+				},
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: {
+					src: "/mock/our-work/4-desktop.webp",
+				},
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/5-desktop.webp" },
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/6-desktop.webp" },
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/7-desktop.webp" },
+			},
+		},
+		{
+			size: "big",
+			poster: {
+				webp: { src: "/mock/our-work/8-desktop.webp" },
+			},
+		},
+		{
+			size: "big",
+			poster: {
+				webp: { src: "/mock/our-work/9-desktop.webp" },
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/10-desktop.webp" },
+			},
+		},
+		{
+			size: "big",
+			poster: {
+				webp: { src: "/mock/our-work/11-desktop.webp" },
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/12-desktop.webp" },
+			},
+		},
+		{
+			size: "big",
+			poster: {
+				webp: { src: "/mock/our-work/13-desktop.webp" },
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/14-desktop.webp" },
+			},
+		},
+		undefined,
+		{
+			size: "big",
+			poster: {
+				webp: {
+					src: "/mock/our-work/15-desktop.webp",
+				},
+			},
+		},
+		undefined,
+		{
+			size: "big",
+			poster: {
+				webp: {
+					src: "/mock/our-work/16-desktop.webp",
+				},
+			},
 		},
 	],
 };

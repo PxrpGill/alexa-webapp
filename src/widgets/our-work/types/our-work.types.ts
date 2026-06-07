@@ -5,5 +5,7 @@ export type WorkPictureSizeType = "big" | "standart";
 
 export type OurWorkProps = {
 	title?: string;
-	posters?: Array<{ poster: PictureFormatType; size: WorkPictureSizeType }>;
+	posters?: Array<
+		{ poster: PictureFormatType; size: WorkPictureSizeType } | undefined
+	>;
 } & PropsWithClassName;

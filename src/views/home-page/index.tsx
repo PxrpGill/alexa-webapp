@@ -15,6 +15,7 @@ import {
 	HEALTH_FOR_FAMILY,
 	HERO_SLIDES,
 	MOCK_FAQ_SECTION,
+	OUR_WORK,
 	PARENT_NEWS_SECTION_MOCK,
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	STILL_QUESTIONS,
@@ -44,7 +45,7 @@ export default function HomePage() {
 				className={css.slider}
 			/>
 			<HealthForFamily {...HEALTH_FOR_FAMILY} className={css.family} />
-			<OurWork className={css.ourWork} />
+			<OurWork className={css.ourWork} {...OUR_WORK} />
 			<FaqSection {...MOCK_FAQ_SECTION} className={css.faqs} />
 			<StillQuestions {...STILL_QUESTIONS} className={css.questions} />
 			<ParentNewsSection
