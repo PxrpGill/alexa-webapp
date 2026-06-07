@@ -4,22 +4,22 @@
 }
 
 .logo {
-    @mixin responsive width, 0, 120;
+    @mixin responsive width, 120, 120;
 }
 
 .baseLink{
-    @mixin responsive margin-block-end, 0, 34; 
+    @mixin responsive margin-block-end, 34, 34; 
 }
 
 .contacts {
     @mixin responsive gap, 8, 8;
-    @mixin responsive padding-block-end, 0, 28;
+    @mixin responsive padding-block-end, 25, 28;
 
     display: flex;
 }
 
 .icon {
-    @mixin responsive width, 0, 25;
+    @mixin responsive width, 25, 25;
 }
 
 .contactLink,

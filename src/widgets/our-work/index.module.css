@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive gap, 0, 64;
+	@mixin responsive gap, 54, 64;
 
 	display: flex;
 	flex-direction: column;
@@ -12,31 +12,46 @@
 	text-align: center;
 }
 
-.grid {
-	@mixin responsive gap, 0, 20;
+.gridDesktop {
+	@mixin responsive gap, 10, 20;
 
 	width: 100%;
-
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+
+	@media (max-width: $mobile) {
+		display: none;
+	}
+}
+
+.gridMobile {
+	@mixin responsive gap, 10, 20;
+
+	width: 100%;
+	display: none;
+
+	@media (max-width: $mobile) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 .column {
-	@mixin responsive gap, 0, 10;
+	@mixin responsive gap, 10, 10;
 
 	display: flex;
 	flex-direction: column;
 }
 
 .posterWrapper {
-	@mixin responsive height, 0, 214;
-	@mixin responsive border-radius, 0, 30;
+	@mixin responsive height, 108, 214;
+	@mixin responsive border-radius, 30, 30;
 
 	width: 100%;
 	overflow: hidden;
 	position: relative;
 
 	&.big {
-		@mixin responsive height, 0, 482;
+		@mixin responsive height, 244, 482;
 	}
 }

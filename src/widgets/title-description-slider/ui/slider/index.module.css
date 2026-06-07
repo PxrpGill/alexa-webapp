@@ -1,5 +1,5 @@
 .root {
-    @mixin responsive border-radius, 0, 30;
+    @mixin responsive border-radius, 30, 30;
 
     overflow: hidden;
 
@@ -8,8 +8,8 @@
 
 .buttonPrev,
 .buttonNext {
-    @mixin responsive width, 0, 30;
-    @mixin responsive height, 0, 30;
+    @mixin responsive width, 30, 30;
+    @mixin responsive height, 30, 30;
     @mixin transitionOptions;
 
     transition-property: opacity, background-color;
@@ -41,14 +41,16 @@
 }
 
 .buttonPrev {
-    @mixin responsive margin-inline-start, 0, 20;
+    @mixin responsive margin-inline-start, 20, 20;
 
     rotate: 180deg;
+    translate: 0 -50%;
     left: 0;
 }
 
 .buttonNext {
-    @mixin responsive margin-inline-end, 0, 20;
+    @mixin responsive margin-inline-end, 20, 20;
 
+    translate: 0 -50%;
     right: 0;
 }

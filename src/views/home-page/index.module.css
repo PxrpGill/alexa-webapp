@@ -1,5 +1,5 @@
 .root {
-    @mixin responsive padding-block-start, 0, 100;
+    @mixin responsive padding-block-start, 70, 100;
 }
 
 .ourWork,
@@ -8,17 +8,21 @@
 .faqs,
 .questions,
 .cta {
-    @mixin responsive margin-block-end, 0, 60;
+    @mixin responsive margin-block-end, 60, 60;
 }
 
 .description {
-    @mixin responsive margin-block-end, 0, 35;
+    @mixin responsive margin-block-end, 20, 35;
 }
 
 .slider {
-    @mixin responsive margin-block-end, 0, 35;
+    @mixin responsive margin-block-end, 20, 35;
+}
+
+.lastSlider {
+    @mixin responsive margin-block-end, 60, 35;
 }
 
 .parentNews {
-    @mixin responsive margin-block-end, 0, 135;
+    @mixin responsive margin-block-end, 90, 135;
 }

@@ -1,6 +1,6 @@
 .root {
-    @mixin responsive gap, 0, 28;
-    @mixin responsive border-radius, 0, 30;
+    @mixin responsive gap, 27, 28;
+    @mixin responsive border-radius, 30, 30;
 
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
 }
 
 .wrapper {
-    @mixin responsive height, 0, 276;
+    @mixin responsive height, 257, 276;
 
     position: relative;
     background-color: var(--color-white-0);
@@ -19,8 +19,8 @@
 }
 
 .info {
-    @mixin responsive padding-inline, 0, 30;
-    @mixin responsive padding-block-end, 0, 48;
+    @mixin responsive padding-inline, 30, 30;
+    @mixin responsive padding-block-end, 27, 48;
 
     display: flex;
     flex-direction: column;
@@ -29,11 +29,18 @@
 
 .title {
     @mixin h6;
-    @mixin responsive padding-block-end, 0, 8;
+    @mixin responsive padding-block-end, 11, 8;
+
+    @media (max-width: $mobile) {
+        @mixin h5;
+        
+        line-height: 1.55;
+        font-weight: 600;
+    }
 }
 
 .description {
-    @mixin responsive padding-block-end, 0, 15;
+    @mixin responsive padding-block-end, 15, 15;
 
 }
 
@@ -42,6 +49,10 @@
     @mixin b3;
 
     color: var(--color-black-580);
+
+    @media (max-width: $mobile) {
+        @mixin b4;
+    }
 }
 
 .description {

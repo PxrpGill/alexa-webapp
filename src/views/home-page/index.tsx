@@ -1,3 +1,7 @@
+import {
+	YANDEX_MAP_CONTENT,
+	YANDEX_MAP_TITLE,
+} from "@/shared/config/global-constants.constats";
 import CtaSection from "@/widgets/cta-section";
 import DescriptionSection from "@/widgets/description-section";
 import FaqSection from "@/widgets/faq-section";
@@ -26,7 +30,7 @@ import {
 export default function HomePage() {
 	return (
 		<main className={css.root}>
-			<HeroSliderSection className={css.hero} {...HERO_SLIDES} />
+			{/* <HeroSliderSection className={css.hero} {...HERO_SLIDES} /> */}
 			<CtaSection {...CTA_MOCK} className={css.cta} />
 			<DescriptionSection
 				{...DESCRIPTION_SECTION}
@@ -43,7 +47,7 @@ export default function HomePage() {
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className={css.lastSlider}
 			/>
 			<HealthForFamily {...HEALTH_FOR_FAMILY} className={css.family} />
 			<OurWork className={css.ourWork} {...OUR_WORK} />
@@ -53,7 +57,7 @@ export default function HomePage() {
 				{...PARENT_NEWS_SECTION_MOCK}
 				className={css.parentNews}
 			/>
-			<YandexMap />
+			<YandexMap title={YANDEX_MAP_TITLE} content={YANDEX_MAP_CONTENT} />
 		</main>
 	);
 }

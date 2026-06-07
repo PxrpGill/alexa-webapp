@@ -1,12 +1,12 @@
 .root {
-    @mixin responsive gap, 0, 17;
+    @mixin responsive gap, 17, 17;
 
     display: flex;
     flex-direction: column;
 }
 
 .list {
-    @mixin responsive gap, 0, 14;
+    @mixin responsive gap, 17, 14;
 
     display: flex;
     flex-direction: column;

@@ -1,3 +1,4 @@
+import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import {
 	ADULT_STOM_NAV,
 	CHILD_STOM_NAV,
@@ -9,11 +10,11 @@ import StartPart from "./start-part";
 
 export default function Footer() {
 	return (
-		<footer className={`${css.root} container`}>
+		<AnimationWrapper as="footer" className={`${css.root} container`}>
 			<StartPart />
 			<FooterNavList title="Детская стоматология" list={CHILD_STOM_NAV} />
 			<FooterNavList title="Взрослая стоматология" list={ADULT_STOM_NAV} />
 			<FooterNavList title="Информация" list={STOM_INFO} />
-		</footer>
+		</AnimationWrapper>
 	);
 }

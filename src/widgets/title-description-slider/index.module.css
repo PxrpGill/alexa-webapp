@@ -1,6 +1,6 @@
 .root {
     @mixin responsive --first-col, 0, 590;
-    @mixin responsive gap, 0, 19; 
+    @mixin responsive gap, 10, 19; 
     @mixin responsive min-height, 0, 500;
 
     display: grid;
@@ -11,7 +11,19 @@
 
         .text {
             order: 2;
+
+            @media (max-width: $mobile) {
+                order: 0;
+            }
         }
+    }
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
     }
 }
 
+.slider {
+    @mixin responsive min-height, 229;
+}

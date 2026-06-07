@@ -1,40 +1,48 @@
 .root {
     @mixin responsive --first-col, 0, 750;
     @mixin responsive min-height, 0, 500;
-    @mixin responsive gap, 0, 20;
+    @mixin responsive gap, 10, 20;
 
     display: grid;
     grid-template-columns: var(--first-col) auto;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
 .content,
 .imageWrapper {
-    @mixin responsive border-radius, 0, 30;
+    @mixin responsive border-radius, 30, 30;
 
     background-color: var(--color-white-0)
 }
 
 .imageWrapper {
+    @mixin responsive height, 208;
+
     position: relative;
     overflow: hidden;
 }
 
 .content {
-    @mixin responsive padding-inline, 0, 40;
-    @mixin responsive padding-block, 0, 74;
+    @mixin responsive padding-inline, 20, 40;
+    @mixin responsive padding-block, 25, 74;
 }
 
 .title {
-    @mixin responsive padding-block-end, 0, 63;
+    @mixin responsive padding-block-end, 11, 63;
     @mixin h1;
+    @mixin responsive font-size, 31;
 }
 
 .description {
-    @mixin responsive padding-block-end, 0, 28;
+    @mixin responsive padding-block-end, 18, 28;
     @mixin b2;
 }
 
 .icon {
-    @mixin responsive width, 0, 23;
-    @mixin responsive height, 0, 23;
+    @mixin responsive width, 23, 23;
+    @mixin responsive height, 23, 23;
 }

@@ -1,5 +1,5 @@
 .root {
-    @mixin responsive gap, 0, 60;
+    @mixin responsive gap, 45, 60;
 
     display: flex;
     flex-direction: column;
@@ -8,6 +8,7 @@
 
 .title {
     @mixin h3;
+    @mixin responsive font-size, 30;
 
     text-align: center;
 }
@@ -15,9 +16,15 @@
 .list {
     @mixin responsive column-gap, 0, 40;
     @mixin responsive row-gap, 0, 90;
+    @mixin responsive gap, 60;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .card[class] {
@@ -25,8 +32,8 @@
 }
 
 .button.button[class] {
-    @mixin responsive padding-inline, 0, 60;
-    @mixin responsive padding-block, 0, 18;
+    @mixin responsive padding-inline, 30, 60;
+    @mixin responsive padding-block, 18, 18;
 
     line-height: 1;
 }

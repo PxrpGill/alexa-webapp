@@ -17,6 +17,10 @@
             opacity: 0.6;
         }
     }
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }
 
 .circleIcon {
@@ -30,6 +34,10 @@
 .button.button[class] {
     @mixin b4;
     @mixin responsive padding, 5, 10;
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }
 
 .buttonIcon {
@@ -39,8 +47,8 @@
 .telegram,
 .max,
 .anotherPhone {
-    @mixin responsive width, 0, 36;
-    @mixin responsive height, 0, 36;
+    @mixin responsive width, 31, 36;
+    @mixin responsive height, 31, 36;
     @mixin transition opacity;
 
     display: block;

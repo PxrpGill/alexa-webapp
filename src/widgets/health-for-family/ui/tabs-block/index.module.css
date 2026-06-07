@@ -1,8 +1,8 @@
 .root {
-    @mixin responsive padding-block, 0, 64;
-    @mixin responsive padding-inline, 0, 300;
-    @mixin responsive gap, 0, 40;
-    @mixin responsive border-radius, 0, 30;
+    @mixin responsive padding-block, 21, 64;
+    @mixin responsive padding-inline, 38, 300;
+    @mixin responsive gap, 45, 40;
+    @mixin responsive border-radius, 30, 30;
 
     display: flex;
     flex-direction: column;
@@ -13,6 +13,8 @@
 
 .title {
     @mixin h2;
+    
+    text-align: center;
 }
 
 .tab.tab[class] {
@@ -20,11 +22,17 @@
 
     align-items: center;
     font-weight: 600;
+
+    @media (max-width: $mobile) {
+        width: 100%;
+
+        justify-content: space-between;
+    }
 }
 
 .imageWrapper {
-    @mixin responsive width, 0, 64;
-    @mixin responsive height, 0, 64;
+    @mixin responsive width, 41, 64;
+    @mixin responsive height, 41, 64;
 
     flex-shrink: 0;
 
@@ -41,10 +49,14 @@
 }
 
 .tabs {
-    @mixin responsive gap, 0, 29;
+    @mixin responsive gap, 10, 29;
 
     display: flex;
     align-items: center;
+
+    @media (max-width: $mobile) {
+        flex-direction: column;
+    }
 }
 
 .text {
