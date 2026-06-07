@@ -7,7 +7,7 @@ import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import css from "./index.module.css";
 
-const DEFAULT_CENTER: [number, number] = [47.250999, 39.763243];
+const DEFAULT_CENTER: [number, number] = [47.286559, 39.828901];
 
 interface YandexMapProps extends PropsWithClassName {
 	pin?: [number, number];
