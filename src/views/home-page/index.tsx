@@ -3,6 +3,7 @@ import DescriptionSection from "@/widgets/description-section";
 import FaqSection from "@/widgets/faq-section";
 import HealthForFamily from "@/widgets/health-for-family";
 import HeroSliderSection from "@/widgets/hero-slider-section";
+import OurWork from "@/widgets/our-work";
 import ParentNewsSection from "@/widgets/parent-news-section";
 import StillQuestions from "@/widgets/still-questions";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
@@ -43,6 +44,7 @@ export default function HomePage() {
 				className={css.slider}
 			/>
 			<HealthForFamily {...HEALTH_FOR_FAMILY} className={css.family} />
+			<OurWork className={css.ourWork} />
 			<FaqSection {...MOCK_FAQ_SECTION} className={css.faqs} />
 			<StillQuestions {...STILL_QUESTIONS} className={css.questions} />
 			<ParentNewsSection

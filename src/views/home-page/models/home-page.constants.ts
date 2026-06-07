@@ -3,6 +3,7 @@ import type { DescriptionSectionProps } from "@/widgets/description-section/type
 import type { FaqSectionProps } from "@/widgets/faq-section/types/faq-section.types";
 import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
 import type { HeroSliderSectionProps } from "@/widgets/hero-slider-section/types/hero-slider-section.types";
+import type { OurWorkProps } from "@/widgets/our-work/types/our-work.types";
 import type { ParentNewsSectionProps } from "@/widgets/parent-news-section/types/parent-news-section.types";
 import type { StillQuestionProps } from "@/widgets/still-questions/types/still-questions.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
@@ -43,6 +44,79 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			legend:
 				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
 			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+		},
+		{
+			type: "thirdVariant",
+			title: "алекса",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
+			poster: {
+				original: {
+					src: "/mock/home/hero-slider/slider-3.jpg",
+				},
+			},
+			card: {
+				title:
+					"Программа лояльности для детей из&nbsp;многодетных семей и&nbsp;детей с&nbsp;особенностями",
+				content:
+					"<ul><li>Скидка&nbsp;10% на&nbsp;терапевтическое лечение</li><li>Скидка&nbsp;5% на&nbsp;лечение во&nbsp;сне.</li></ul>",
+				buttonText: "Записаться на прием",
+			},
+		},
+		{
+			type: "fourthVariant",
+			title: "алекса",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
+			poster: {
+				original: {
+					src: "/mock/home/hero-slider/slider-4.jpg",
+				},
+			},
+			card: {
+				title: "Разные системы&nbsp;&mdash; один точный результат",
+				content:
+					"<p>Брекеты или элайнеры&nbsp;&mdash; выбираем путь, который будет эффективнее в&nbsp;вашем случае</p>",
+				buttonText: "Записаться на прием",
+			},
+		},
+		{
+			type: "fifthVariant",
+			title: "алекса",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/slider-5.webp",
+				},
+			},
+			card: {
+				title: "Лечение десен начинается с&nbsp;точной диагностики!",
+				content:
+					"<p>Бесплатное исследование на&nbsp;системе Florida Probe для тех, у&nbsp;кого кровоточат или воспалены десны. Выявим проблему на&nbsp;ранней стадии.</p>",
+				buttonText: "Записаться на прием",
+			},
+		},
+		{
+			type: "sixthVariant",
+			title: "алекса",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/slider-6.webp",
+				},
+			},
+			card: {
+				title: "Бонусная система. Ваше лечение возвращается теперь подарками!",
+				content:
+					"<p>Мы&nbsp;ценим ваше решение доверить нам здоровье вашей улыбки.</p><p>Поэтому теперь за&nbsp;каждый комплексный план лечения мы&nbsp;дарим подарки, которые сделают вашу заботу о&nbsp;себе еще приятнее.</p>",
+				buttonText: "Записаться на прием",
+			},
 		},
 	],
 };
@@ -383,6 +457,16 @@ export const PARENT_NEWS_SECTION_MOCK: ParentNewsSectionProps = {
 					src: "/mock/news/parent-news/3-news.webp",
 				},
 			},
+		},
+	],
+};
+
+export const OUR_WORK: OurWorkProps = {
+	title: "",
+	posters: [
+		{
+			size: "standart",
+			poster: {},
 		},
 	],
 };

@@ -33,7 +33,7 @@
 }
 
 .card {
-    @mixin responsive border-radius, 0, 30;
+    @mixin responsive border-radius, 0, 20;
     @mixin responsive padding, 0, 35;
     @mixin responsive max-width, 0, 450;
     @mixin responsive gap, 0, 22;
@@ -48,10 +48,15 @@
 
 .cardTitle {
     @mixin h6;
+
+    color: var(--color-green-4);
 }
 
 .cardContent {
     @mixin b1;
+    
+    color: var(--color-green-4);
+    line-height: 1;
 }
 
 .button.button[class] {

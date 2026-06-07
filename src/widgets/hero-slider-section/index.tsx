@@ -9,8 +9,12 @@ import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import { useHeroSlider } from "./hooks/use-hero-slider";
 import css from "./index.module.css";
 import type { HeroSliderSectionProps } from "./types/hero-slider-section.types";
+import FifthVarinat from "./ui/fifth-variant";
 import FirstVariant from "./ui/first-variant";
+import FourthVariant from "./ui/fourth-variant";
 import SecondVariant from "./ui/second-variant";
+import SixthVariant from "./ui/sixth-variant";
+import ThirdVariant from "./ui/third-variant";
 
 export default function HeroSliderSection({
 	className,
@@ -39,6 +43,42 @@ export default function HeroSliderSection({
 							case "secondVariant":
 								return (
 									<SecondVariant
+										key={index}
+										{...slide}
+										className={`${css.slide} ${index === current ? css.active : css.inactive}`}
+									/>
+								);
+
+							case "thirdVariant":
+								return (
+									<ThirdVariant
+										key={index}
+										{...slide}
+										className={`${css.slide} ${index === current ? css.active : css.inactive}`}
+									/>
+								);
+
+							case "fourthVariant":
+								return (
+									<FourthVariant
+										key={index}
+										{...slide}
+										className={`${css.slide} ${index === current ? css.active : css.inactive}`}
+									/>
+								);
+
+							case "fifthVariant":
+								return (
+									<FifthVarinat
+										key={index}
+										{...slide}
+										className={`${css.slide} ${index === current ? css.active : css.inactive}`}
+									/>
+								);
+
+							case "sixthVariant":
+								return (
+									<SixthVariant
 										key={index}
 										{...slide}
 										className={`${css.slide} ${index === current ? css.active : css.inactive}`}

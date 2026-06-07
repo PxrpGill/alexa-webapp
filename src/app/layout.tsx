@@ -1,6 +1,6 @@
 import "@/shared/styles/reset.css";
-import "@/shared/styles/global.css";
 import "@/shared/styles/colors.css";
+import "@/shared/styles/global.css";
 
 import type { Metadata } from "next";
 import type { ReactNode } from "react";

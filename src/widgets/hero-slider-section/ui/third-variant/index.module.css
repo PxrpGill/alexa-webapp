@@ -1,0 +1,73 @@
+.root {
+    @mixin responsive padding-inline, 0, 100;
+    @mixin responsive padding-block-start, 0, 61;
+}
+
+.contentWrapper {
+    position: relative;
+    z-index: 10;
+}
+
+.titleBlock {
+    @mixin responsive max-width, 0, 304;
+    @mixin responsive padding-block-end, 0, 47;
+}
+
+.subtitle {
+    @mixin b2;
+    @mixin responsive padding-block-end, 0, 18;
+
+    line-height: 1;
+    font-weight: 600;
+}
+
+.title {
+    @mixin h1;
+    @mixin responsive padding-block-end, 0, 74;
+}
+
+.legend {
+    @mixin b2;
+    
+    line-height: 1;
+
+    b {
+        font-weight: 600;
+    }
+}
+
+.card {
+    @mixin responsive max-width, 0, 470;
+    @mixin responsive border-radius, 0, 20;
+    @mixin responsive padding, 0, 40;
+
+    background-color: var(--color-white-0);
+    width: fit-content;
+}
+
+.icon {
+    @mixin responsive width, 0, 25;
+    @mixin responsive height, 0, 25;
+}
+
+.cardTitle {
+    @mixin h6;
+    @mixin responsive padding-block-end, 0, 26;
+
+    color: var(--color-green-4);
+    line-height: 1;
+}
+
+.cardContent {
+    @mixin b2;
+    @mixin responsive padding-block-end, 0, 26;
+    
+    line-height: 1;
+    color: var(--color-green-4);
+
+    ul {
+        @mixin responsive padding-inline, 0, 20;
+
+        list-style: disc;
+    }
+}
