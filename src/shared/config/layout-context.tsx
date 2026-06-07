@@ -5,8 +5,11 @@ import {
 	type PropsWithChildren,
 	useCallback,
 	useContext,
+	useEffect,
 	useState,
 } from "react";
+import { useMediaQuery } from "../hooks/use-media-query";
+import { MEDIA_QUERIES } from "./use-media-query.constants";
 
 type LayoutContextType = {
 	isMenuOpen: boolean;
@@ -19,6 +22,19 @@ export const LayoutContext = createContext<LayoutContextType | undefined>(
 
 export const LayoutProvider = ({ children }: PropsWithChildren) => {
 	const [isMenuOpen, toggleMenuOpen] = useState<boolean>(false);
+	const isMobile = useMediaQuery(MEDIA_QUERIES.mobile);
+
+	const toggleMenuClose = useCallback(() => {
+		if (!isMobile) toggleMenuOpen(false);
+	}, [isMobile]);
+
+	useEffect(() => {
+		window.addEventListener("resize", toggleMenuClose);
+
+		return () => {
+			window.removeEventListener("resize", toggleMenuClose);
+		};
+	}, [toggleMenuClose]);
 
 	const handleMenuOpen = useCallback((arg: boolean) => {
 		toggleMenuOpen(arg);
