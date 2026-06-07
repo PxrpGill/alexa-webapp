@@ -1,3 +1,4 @@
+import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
 
@@ -44,4 +45,42 @@ export const TITLE_STICKY_SECTION: TitleStickySectionProps = {
 		},
 		buttonText: "Записаться на прием",
 	},
+};
+
+export const BRICKWORK_SECTION: BrickworkSectionProps = {
+	sectionHeader: {
+		title: "Ваша улыбка в&nbsp;руках профессионалов!",
+		description: "Мы&nbsp;реализуем целостный осмотр для своих пациентов:",
+	},
+	cards: [
+		{
+			icon: "/icons/eye.svg",
+			title: "Визуальный и&nbsp;инструментальный осмотр:",
+			description: "Точная оценка состояния ваших зубов и&nbsp;полости рта.",
+		},
+		{
+			icon: "/icons/dms.svg",
+			title: "Сбор полного анамнеза:",
+			description:
+				"Мы&nbsp;узнаем о&nbsp;вашем здоровье, чтобы построить индивидуальный план лечения.",
+		},
+		{
+			icon: "/icons/graphic.svg",
+			title: "Рентген и&nbsp;компьютерная томография:",
+			description:
+				"Современные методы диагностики для уверенности в&nbsp;точности диагноза.",
+		},
+		{
+			icon: "/icons/child.svg",
+			title: "Индивидуальный план лечения:",
+			description:
+				"Мы&nbsp;вместе с&nbsp;вами выберем наиболее подходящий вариант лечения.",
+		},
+		{
+			icon: "/icons/doctor.svg",
+			title: "Консультация с&nbsp;узкими специалистами:",
+			description:
+				"Если необходимо, мы&nbsp;проведем консилиум с&nbsp;врачами других специальностей (хирурги, ортопеды, ортодонты) для оптимального решения ваших проблем.",
+		},
+	],
 };

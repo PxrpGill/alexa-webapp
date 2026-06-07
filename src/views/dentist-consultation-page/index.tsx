@@ -2,6 +2,7 @@ import {
 	YANDEX_MAP_CONTENT,
 	YANDEX_MAP_TITLE,
 } from "@/shared/config/global-constants.constats";
+import BrickworkSection from "@/widgets/brickwork-section";
 import FaqSection from "@/widgets/faq-section";
 import OurWork from "@/widgets/our-work";
 import ParentNewsSection from "@/widgets/parent-news-section";
@@ -18,7 +19,8 @@ import {
 } from "../home-page/models/home-page.constants";
 import css from "./index.module.css";
 import {
-	QUADRO_SECTION_MOCK,
+	BRICKWORK_SECTION,
+QUADRO_SECTION_MOCK,
 	TITLE_STICKY_SECTION,
 } from "./models/dentist-consultation.constants";
 
@@ -27,6 +29,7 @@ export default function DentistConsultationPage() {
 		<main className={css.root}>
 			<QuadroSection {...QUADRO_SECTION_MOCK} className={css.quadro} />
 			<TitleStickySection className={css.sticky} {...TITLE_STICKY_SECTION} />
+			<BrickworkSection {...BRICKWORK_SECTION} className={css.brick} />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className={css.slider}
