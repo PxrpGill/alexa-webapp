@@ -7,6 +7,8 @@
 html {
     font-size: 1vw;
 
+    scrollbar-gutter: stable;
+
 	@media (min-width: 1441px) {
 		font-size: 14.41px;
 	}

@@ -1,5 +1,6 @@
 "use client";
 
+import CrossSVG from "@/public/icons/x.svg";
 import { useLockBodyScroll } from "@/shared/hooks/use-lock-body-scroll";
 import type { ModalProps } from "@/shared/types/modal.types";
 import css from "./index.module.css";
@@ -25,11 +26,9 @@ export default function Modal({
 				aria-label="Закрыть модальное окно"
 			/>
 			<div className={`${css.modalContent} ${contentClassName}`.trim()}>
-				<button
-					className={css.closeButton}
-					type="button"
-					onClick={toggleClose}
-				></button>
+				<button className={css.closeButton} type="button" onClick={toggleClose}>
+					<CrossSVG className={css.icon} />
+				</button>
 				{children}
 			</div>
 		</dialog>

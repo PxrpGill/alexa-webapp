@@ -1,3 +1,5 @@
+"use client";
+
 import ButtonTeethSVG from "@/public/icons/button-teeth.svg";
 import MaxSVG from "@/public/icons/max.svg";
 import MenuSVG from "@/public/icons/menu.svg";
@@ -9,10 +11,13 @@ import {
 	MOBILE_PHONE_1,
 	TELEGRAM,
 } from "@/shared/config/global-constants.constats";
+import { useLayoutContext } from "@/shared/config/layout-context";
 import Button from "@/shared/ui/button";
 import css from "./index.module.css";
 
 export default function ContactPart() {
+	const { toggleMenuOpen } = useLayoutContext();
+
 	return (
 		<div className={`${css.root}`.trim()}>
 			<a href={`tel:${MOBILE_PHONE}`} className={css.phone}>
@@ -41,7 +46,11 @@ export default function ContactPart() {
 			>
 				<PhoneSVG className={css.circleIcon} />
 			</a>
-			<button className={css.menuButton} type="button">
+			<button
+				className={css.menuButton}
+				type="button"
+				onClick={() => toggleMenuOpen(true)}
+			>
 				<MenuSVG className={css.menuIcon} />
 			</button>
 		</div>

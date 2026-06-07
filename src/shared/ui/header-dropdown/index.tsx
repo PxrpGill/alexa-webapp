@@ -28,33 +28,41 @@ export default function HeaderDropdown({
 			onMouseEnter={() => toggleDropDownOpen(true)}
 			onMouseLeave={() => toggleDropDownOpen(false)}
 		>
-			<button className={css.button} type="button">
+			<button
+				className={css.button}
+				type="button"
+				onClick={() => toggleDropDownOpen(!isDropDownOpen)}
+			>
 				{children}
 			</button>
 			<ul className={`${css.list} ${isDropDownOpen && css.show}`.trim()}>
-				{dropDownItems.map(
-					({ IconSvg, title, description, href, target }, index) => (
-						<li className={css.paragraph} key={`${title}-${index}`}>
-							<Link href={href} className={css.link} target={target}>
-								<IconSvg className={css.logo} />
-								<div className={css.rightPart}>
-									{title && (
-										<p
-											dangerouslySetInnerHTML={{ __html: title }}
-											className={css.title}
-										/>
-									)}
-									{description && (
-										<p
-											className={css.description}
-											dangerouslySetInnerHTML={{ __html: description }}
-										/>
-									)}
-								</div>
-							</Link>
-						</li>
-					),
-				)}
+				<div className={css.wrapper}>
+					<div className={css.wrapperContent}>
+						{dropDownItems.map(
+							({ IconSvg, title, description, href, target }, index) => (
+								<li className={css.paragraph} key={`${title}-${index}`}>
+									<Link href={href} className={css.link} target={target}>
+										<IconSvg className={css.logo} />
+										<div className={css.rightPart}>
+											{title && (
+												<p
+													dangerouslySetInnerHTML={{ __html: title }}
+													className={css.title}
+												/>
+											)}
+											{description && (
+												<p
+													className={css.description}
+													dangerouslySetInnerHTML={{ __html: description }}
+												/>
+											)}
+										</div>
+									</Link>
+								</li>
+							),
+						)}
+					</div>
+				</div>
 			</ul>
 		</div>
 	);

@@ -13,14 +13,11 @@
 .list {
     @mixin transitionOptions;
     @mixin responsive --border-radius, 20, 30;
-    @mixin responsive column-gap, 10, 20;
-    @mixin responsive row-gap, 20, 40;
-    @mixin responsive padding, 20, 20;
     @mixin responsive margin-block-start, 10, 15;
     @mixin responsive --shadow-1, 15, 15;
     @mixin responsive --shadow-2, 30, 30;
     @mixin responsive --shadow-3, -10, -10;
-    @mixin responsive width, 0, 600;
+    @mixin responsive width, 330, 600;
 
     box-shadow: 0 var(--shadow-1) var(--shadow-2) var(--shadow-3) rgba(0, 11, 48, 0.2);
 
@@ -32,21 +29,73 @@
     position: absolute;
     visibility: hidden;
     opacity: 0;
+    z-index: 10;
 
     background-color: var(--color-white-0);
+
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+
+        @media (max-width: $mobile) {
+            grid-template-rows: 1fr;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        width: 100%;
+        position: static;
+
+        left: unset;
+        top: unset;
+        visibility: visible;
+        opacity: 1;
+        translate: unset;
+        padding: 0;
+        margin-block-start: 0;
+        box-shadow: none;
+
+        display: grid;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        transition-property: grid-template-rows;
+    }
+}
+
+.wrapper {
+    display: grid;
+
+    @media (max-width: $mobile) {
+
+        grid-template-columns: 1fr;
+        min-height: 0;
+        overflow: hidden;
+    }
+}
+
+.wrapperContent {
+    @mixin responsive column-gap, 10, 20;
+    @mixin responsive row-gap, 20, 40;
+    @mixin responsive padding, 20, 20;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
-    &.show {
-        opacity: 1;
-        visibility: visible
+    @media (max-width: $mobile) {
+        @mixin responsive padding, 20, 20;
+        
+        padding-inline: 0;
+
+        grid-template-columns: 1fr;
     }
 }
+
 
 .button {
     @mixin b4;
     @mixin transition color;
+    @mixin responsive font-size, 24;
 
     font-weight: 500;
 }

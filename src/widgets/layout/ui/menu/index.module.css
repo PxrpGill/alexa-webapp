@@ -1,0 +1,39 @@
+.root.root[class] {
+    @mixin transitionOptions;
+    @mixin responsive --left, 25;
+    @mixin responsive padding-inline, 25;
+    @mixin responsive padding-block-start, 42;
+    @mixin responsive padding-block-end, 25;
+
+    @mixin responsive gap, 15;
+
+    transition-property: translate, opacity;
+    opacity: 0;
+    width: calc(100% - var(--left));
+    height: 100%;
+    top: 50%;
+    right: 0;
+    left: unset;
+    translate: 150% -50%;
+
+    display: flex;
+    flex-direction: column;
+    
+    background-color: var(--color-white-0);
+
+    &.open {
+        translate: 0 -50%;
+        opacity: 1;
+    }
+}
+
+.blog {
+    @mixin responsive font-size, 24;
+
+    font-weight: 500;
+}
+
+.green button,
+.blog {
+    color: var(--color-green-1);
+}
