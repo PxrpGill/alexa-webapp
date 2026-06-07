@@ -1,0 +1,8 @@
+.root {
+    @mixin responsive height, 0, 600;
+
+    width: 100%;
+
+    overflow: hidden;
+    width: 100%;
+}
