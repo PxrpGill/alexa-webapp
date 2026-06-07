@@ -6,6 +6,7 @@ import FaqSection from "@/widgets/faq-section";
 import OurWork from "@/widgets/our-work";
 import ParentNewsSection from "@/widgets/parent-news-section";
 import QuadroSection from "@/widgets/quadro-section";
+import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import YandexMap from "@/widgets/yandex-map";
 import {
@@ -16,12 +17,16 @@ import {
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 } from "../home-page/models/home-page.constants";
 import css from "./index.module.css";
-import { QUADRO_SECTION_MOCK } from "./models/dentist-consultation.constants";
+import {
+	QUADRO_SECTION_MOCK,
+	TITLE_STICKY_SECTION,
+} from "./models/dentist-consultation.constants";
 
 export default function DentistConsultationPage() {
 	return (
 		<main className={css.root}>
 			<QuadroSection {...QUADRO_SECTION_MOCK} className={css.quadro} />
+			<TitleStickySection className={css.sticky} {...TITLE_STICKY_SECTION} />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className={css.slider}
