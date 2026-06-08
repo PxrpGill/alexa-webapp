@@ -4,6 +4,7 @@ import {
 } from "@/shared/config/global-constants.constats";
 import BrickworkSection from "@/widgets/brickwork-section";
 import FaqSection from "@/widgets/faq-section";
+import OurPeopleSection from "@/widgets/our-people-section";
 import OurWork from "@/widgets/our-work";
 import ParentNewsSection from "@/widgets/parent-news-section";
 import QuadroSection from "@/widgets/quadro-section";
@@ -20,7 +21,8 @@ import {
 import css from "./index.module.css";
 import {
 	BRICKWORK_SECTION,
-QUADRO_SECTION_MOCK,
+	EMPLOYEES_SECTION,
+	QUADRO_SECTION_MOCK,
 	TITLE_STICKY_SECTION,
 } from "./models/dentist-consultation.constants";
 
@@ -40,6 +42,7 @@ export default function DentistConsultationPage() {
 				textBlockPosition="right"
 			/>
 			<OurWork className={css.ourWork} {...OUR_WORK} />
+			<OurPeopleSection className={css.peoples} {...EMPLOYEES_SECTION} />
 			<FaqSection {...MOCK_FAQ_SECTION} className={css.faqs} />
 			<ParentNewsSection
 				{...PARENT_NEWS_SECTION_MOCK}

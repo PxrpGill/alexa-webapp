@@ -6,6 +6,7 @@
     @mixin responsive margin-block-end, 20, 35;
 }
 
+.peoples,
 .brick,
 .sticky,
 .quadro,
