@@ -1,0 +1,48 @@
+import BrickworkSection from "@/widgets/brickwork-section";
+import QuadroSection from "@/widgets/quadro-section";
+import TitleStickySection from "@/widgets/tilte-sticky-section";
+import TitleDescriptionSlider from "@/widgets/title-description-slider";
+import YandexMap from "@/widgets/yandex-map";
+import {
+	FIRST_TITLE_DESCRIPTION_SLIDER,
+	SECOND_TITLE_DESCRIPTION_SLIDER,
+	THIRD_TITLE_DESCRIPTION_SLIDER,
+} from "../home-page/models/home-page.constants";
+import css from "./index.module.css";
+import {
+	BRICKWORK_SECTION_MOCK,
+	MOCK_QUADRO_SECTION,
+	TITLE_STICKY_SECTION_MOCK,
+} from "./models/adult-therapy.constants";
+
+export default function AdultTherapyPage() {
+	return (
+		<main className={css.root}>
+			<QuadroSection className={css.quadro} {...MOCK_QUADRO_SECTION} />
+			<TitleStickySection
+				className={css.stickyTitle}
+				{...TITLE_STICKY_SECTION_MOCK}
+			/>
+			<BrickworkSection {...BRICKWORK_SECTION_MOCK} className={css.brick} />
+			<TitleDescriptionSlider
+				{...FIRST_TITLE_DESCRIPTION_SLIDER}
+				className={css.slider}
+			/>
+			<TitleDescriptionSlider
+				{...SECOND_TITLE_DESCRIPTION_SLIDER}
+				className={css.slider}
+				textBlockPosition="right"
+			/>
+			<TitleDescriptionSlider
+				{...THIRD_TITLE_DESCRIPTION_SLIDER}
+				className={css.slider}
+			/>
+			<TitleDescriptionSlider
+				{...THIRD_TITLE_DESCRIPTION_SLIDER}
+				className={css.lastSlider}
+				textBlockPosition="right"
+			/>
+			<YandexMap />
+		</main>
+	);
+}
