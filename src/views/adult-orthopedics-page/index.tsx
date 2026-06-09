@@ -3,15 +3,14 @@ import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import YandexMap from "@/widgets/yandex-map";
-import {
-	FIRST_TITLE_DESCRIPTION_SLIDER,
-	SECOND_TITLE_DESCRIPTION_SLIDER,
-	THIRD_TITLE_DESCRIPTION_SLIDER,
-} from "../home-page/models/home-page.constants";
+import { FIRST_TITLE_DESCRIPTION_SLIDER } from "../home-page/models/home-page.constants";
 import css from "./index.module.css";
 import {
 	BRICKWORK_SECTION_MOCK,
+	FOURTH_TITLE_DESCRIPTION_SLIDER,
 	QUADRO_MOCK,
+	SECOND_TITLE_DESCRIPTION_SLIDER,
+	THIRD_TITLE_DESCRIPTION_SLIDER,
 	TITLE_STICKY_SECTION_MOCK,
 } from "./models/adult-orthopedics.constants";
 
@@ -38,7 +37,7 @@ export default function AdultOrthopedicsPage() {
 				className={css.slider}
 			/>
 			<TitleDescriptionSlider
-				{...THIRD_TITLE_DESCRIPTION_SLIDER}
+				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
 				className={css.lastSlider}
 				textBlockPosition="right"
 			/>

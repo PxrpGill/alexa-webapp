@@ -35,6 +35,49 @@
     flex-direction: column;
 
     background-color: var(--color-white-0);
+
+    &.green {
+        @mixin responsive gap, 40, 40;
+
+        justify-content: center;
+        background-color: var(--color-green-1);
+
+        .title,
+        .description {
+            color: var(--color-white-0);
+
+            @media (max-width: $mobile) {
+                text-align: center;
+            }
+        }
+
+        .title {
+            @mixin responsive font-size, 24, 32;
+        }
+
+        .description {
+            @mixin b1;
+
+            @media (max-width: $mobile) {
+                @mixin h5;
+                
+                line-height: 1.55;
+            }
+        }
+
+        @media (max-width: $mobile) {
+            align-items: center;
+        }
+    }
+}
+
+.button.button[class] {
+    width: fit-content;
+}
+
+.buttonIcon {
+    @mixin responsive width, 25, 25;
+    @mixin responsive height, 25, 25;
 }
 
 .icon {

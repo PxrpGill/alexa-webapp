@@ -25,6 +25,18 @@
         }
     }
 
+    &.white {
+        background-color: var(--color-white-0);
+        color: var(--color-green-4);
+        border-color: var(--color-white-0);
+
+        @media (hover:hover) {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+
     &.transparent {
         border-color: var(--color-green-1);
         background-color: var(--color-white-0);

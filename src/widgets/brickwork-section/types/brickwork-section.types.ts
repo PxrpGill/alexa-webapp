@@ -9,6 +9,8 @@ export type BrickworkCardProps = {
 	title?: string;
 	description?: string;
 	icon?: string;
+	buttonText?: string;
+	cardTheme?: "white" | "green";
 };
 
 export type BrickworkCardsProps = {

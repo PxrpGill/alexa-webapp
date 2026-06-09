@@ -1,6 +1,7 @@
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
+import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 
 export const QUADRO_MOCK: QuadroSectionProps = {
 	sectionHeader: {
@@ -50,35 +51,115 @@ export const BRICKWORK_SECTION_MOCK: BrickworkSectionProps = {
 	},
 	cards: [
 		{
-			icon: "/mock/adult-therapy/1-icon.svg",
+			icon: "/mock/adult-orthopedics/1-icon.webp",
 			title: "Вкладки:",
 			description:
 				"Прочные и&nbsp;эстетичные вкладки из&nbsp;прессованной керамики заменят пломбу и&nbsp;восстановят форму и&nbsp;функцию зуба.",
 		},
 		{
-			icon: "/mock/adult-therapy/2-icon.svg",
+			icon: "/mock/adult-orthopedics/2-icon.png",
 			title: "Виниры:",
 			description:
 				"Тонкие керамические накладки на&nbsp;передние зубы, которые помогут устранить недостатки эмали и&nbsp;сделать улыбку более яркой и&nbsp;привлекательной.",
 		},
 		{
-			icon: "/mock/adult-therapy/3-icon.svg",
+			icon: "/mock/adult-orthopedics/3-icon.png",
 			title: "Коронки, коронки на&nbsp;имплантах:",
 			description:
 				"Прочные и&nbsp;эстетичные коронки из&nbsp;различных материалов (оксид циркония и&nbsp;E-max) восстановят форму и&nbsp;функцию поврежденного зуба.",
 		},
 		{
-			icon: "/mock/adult-therapy/4-icon.svg",
+			icon: "/mock/adult-orthopedics/4-icon.webp",
 			title: "Съемные протезы:",
 			description:
 				"Подходят при полной или частичной адентии, как вариант, временных протезов на&nbsp;этапе ортопедического лечения.",
 		},
 		{
-			icon: "/mock/adult-therapy/5-icon.svg",
+			icon: "/mock/adult-orthopedics/5-icon.webp",
 			title:
 				"Цифровое протезирование с&nbsp;использованием интраорального сканера Medit i500:",
 			description:
 				"Сканирование зубов проводится быстро и&nbsp;комфортно, без использования слепочных масс. Вы&nbsp;сможете увидеть 3D&nbsp;модель ваших будущих ортопедических конструкций. Нет погрешностей при сканировании в&nbsp;отличие от&nbsp;слепков.",
+		},
+		{
+			title: "Бонусная система",
+			description: "Ваше лечение возвращается подарками!",
+			cardTheme: "green",
+			buttonText: "Записаться на прием",
+		},
+	],
+};
+
+export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	textBlock: {
+		title: "Комфортная атмосфера:",
+		description:
+			"Мы&nbsp;делаем все возможное, чтобы ваше посещение было приятным и&nbsp;безопасным.",
+	},
+	posters: [
+		{
+			webp: {
+				src: "/mock/adult-orthopedics/second-slider/1-slide.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/adult-orthopedics/second-slider/2-slide.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/adult-orthopedics/second-slider/3-slide.webp",
+			},
+		},
+	],
+};
+
+export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	textBlock: {
+		title: "Профессионализм:",
+		description:
+			"Наши врачи обладают опытом и&nbsp;знаниями в&nbsp;области детской стоматологии.",
+	},
+	posters: [
+		{
+			webp: {
+				src: "/mock/home/third-slider/3-1.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/third-slider/3-2.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/third-slider/3-3.webp",
+			},
+		},
+	],
+};
+
+export const FOURTH_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	textBlock: {
+		title: "Индивидуальный подход к&nbsp;каждому пациенту:",
+		description: "Мы&nbsp;учитываем все ваши потребности и&nbsp;особенности.",
+	},
+	posters: [
+		{
+			webp: {
+				src: "/mock/adult-orthopedics/fourth-slider/1-slide.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/adult-orthopedics/fourth-slider/2-slide.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/adult-orthopedics/fourth-slider/3-slide.webp",
+			},
 		},
 	],
 };

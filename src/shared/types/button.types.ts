@@ -21,7 +21,7 @@ export type CustomButtonProps = {
 
 export type ButtonComponentVariantsType = "default" | "blank";
 
-export type ButtonComponentThemeType = "transparent" | "green";
+export type ButtonComponentThemeType = "transparent" | "green" | "white";
 
 export type ButtonComponentProps = {
 	theme?: ButtonComponentThemeType;

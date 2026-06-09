@@ -2,9 +2,10 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 /** biome-ignore-all lint/performance/noImgElement: <explanation> */
 
+import ButtonIconSVG from "@/public/icons/button-teeth.svg";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
+import Button from "@/shared/ui/button";
 import type { BrickworkCardsProps } from "../../types/brickwork-section.types";
-
 import css from "./index.module.css";
 
 function chunkArray<T>(arr: T[], size: number): T[][] {
@@ -30,7 +31,7 @@ export default function SectionCards({
 				>
 					{pair.map((card, cardIndex) => (
 						<AnimationWrapper
-							className={css.card}
+							className={`${css.card} ${css[card.cardTheme ?? "white"]}`}
 							key={`${cardIndex}-${pairIndex}`}
 						>
 							{card.icon && (
@@ -47,6 +48,15 @@ export default function SectionCards({
 									dangerouslySetInnerHTML={{ __html: card.description }}
 									className={css.description}
 								/>
+							)}
+							{card.buttonText && (
+								<Button
+									className={css.button}
+									theme={card.cardTheme === "white" ? "green" : "white"}
+									rightIcon={<ButtonIconSVG className={css.buttonIcon} />}
+								>
+									{card.buttonText}
+								</Button>
 							)}
 						</AnimationWrapper>
 					))}
