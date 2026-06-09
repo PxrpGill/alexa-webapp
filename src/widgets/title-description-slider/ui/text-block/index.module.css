@@ -19,3 +19,12 @@
 .description {
     @mixin b2;
 }
+
+.icon {
+    @mixin responsive width, 25, 25;
+    @mixin responsive height, 25, 25;
+}
+
+.button[class] {
+    width: fit-content;
+}

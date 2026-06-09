@@ -4,6 +4,7 @@ import type { TableImageSectionProps } from "@/widgets/table-image-section/types
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	title: "Чем мы&nbsp;отличаемся от&nbsp;других клиник",
 	textBlock: {
 		title: "Новые технологии",
 		description:
@@ -348,4 +349,71 @@ export const TABLE_IMAGE_SECTION: TableImageSectionProps = {
 			mobile: "/mock/adult-orthodontics/table-mobile.svg",
 		},
 	},
+};
+
+export const BEFORE_AFTER_SLIDER: TitleDescriptionSliderProps = {
+	title: "До&nbsp;и&nbsp;после: реальные примеры наших пациентов",
+	textBlock: {
+		title: "Ваш результат может быть следующим!",
+		description:
+			"Посмотрите, каких результатов мы&nbsp;достигаем&nbsp;&mdash; аккуратное выравнивание зубов, исправление прикуса и&nbsp;улыбки, которыми хочется делиться.<br /><br />Каждая работа&nbsp;&mdash; это индивидуальный подход, забота врача и&nbsp;внимание к&nbsp;деталям.",
+		withButton: true,
+	},
+	posters: [
+		{
+			webp: {
+				src: "/mock/before-after/1-before-after.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/before-after/2-before-after.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/before-after/3-before-after.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/before-after/4-before-after.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/before-after/5-before-after.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/before-after/6-before-after.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/before-after/7-before-after.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/before-after/8-before-after.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/before-after/9-before-after.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/before-after/10-before-after.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/before-after/11-before-after.webp",
+			},
+		},
+	],
 };

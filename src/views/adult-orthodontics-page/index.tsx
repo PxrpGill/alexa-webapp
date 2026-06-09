@@ -8,6 +8,7 @@ import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import YandexMap from "@/widgets/yandex-map";
 import css from "./index.module.css";
 import {
+	BEFORE_AFTER_SLIDER,
 	FIRST_TITLE_DESCRIPTION_SLIDER,
 	FOURTH_TITLE_DESCRIPTION_SLIDER,
 	HEALTH_FOR_FAMILY_MOCK,
@@ -40,6 +41,11 @@ export default function AdultOrthodonticsPage() {
 			<TitleDescriptionSlider
 				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
 				className={css.lastSlider}
+				textBlockPosition="right"
+			/>
+			<TitleDescriptionSlider
+				{...BEFORE_AFTER_SLIDER}
+				className={css.beforeAfter}
 				textBlockPosition="right"
 			/>
 			<YandexMap title={YANDEX_MAP_TITLE} content={YANDEX_MAP_CONTENT} />

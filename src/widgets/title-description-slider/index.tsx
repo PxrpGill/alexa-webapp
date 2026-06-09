@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 
 import css from "./index.module.css";
@@ -10,14 +11,20 @@ export default function TitleDescriptionSlider({
 	textBlock,
 	className,
 	posters,
+	title,
 }: TitleDescriptionSliderProps) {
 	return (
 		<AnimationWrapper
 			as="section"
 			className={`${css.root} container ${className} ${css[textBlockPosition]}`.trim()}
 		>
-			<TextBlock {...textBlock} className={css.text} />
-			<Slider posters={posters} className={css.slider} />
+			{title && (
+				<h2 className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
+			)}
+			<div className={`${css.wrapper} ${css[textBlockPosition]}`}>
+				<TextBlock {...textBlock} className={css.text} />
+				<Slider posters={posters} className={css.slider} />
+			</div>
 		</AnimationWrapper>
 	);
 }
