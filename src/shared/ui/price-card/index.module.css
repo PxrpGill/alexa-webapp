@@ -49,8 +49,34 @@
 .icon {
     @mixin responsive width, 25, 25;
     @mixin responsive height, 25, 25;
+
+    rect {
+        @mixin transition fill;
+
+        fill: var(--color-green-1);
+    }
+
+    path {
+        @mixin transition fill;
+
+        fill: var(--color-white-0);
+    }
 }
 
 .button[class] {
     width: fit-content;
+
+    @media (hover:hover) {
+        &:hover {
+            .icon {
+                path {
+                    fill: var(--color-green-1);
+                }
+
+                rect {
+                    fill: var(--color-white-0);
+                }
+            }
+        }
+    }
 }

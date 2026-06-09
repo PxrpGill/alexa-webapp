@@ -1,6 +1,12 @@
 .root {
     @mixin responsive gap, 27, 28;
     @mixin responsive border-radius, 30, 30;
+    @mixin transitionOptions;
+    @mixin responsive --shadow-1, 15, 15;
+    @mixin responsive --shadow-2, 30, 30;
+    @mixin responsive --shadow-3, -10, -10;
+
+    transition-property: translate, box-shadow;
 
     display: flex;
     flex-direction: column;
@@ -8,6 +14,13 @@
     background-color: var(--color-white-0);
 
     overflow: hidden;
+
+    @media (hover:hover) {
+        &:hover {
+            box-shadow: 0 var(--shadow-1) var(--shadow-2) var(--shadow-3) rgba(0, 11, 48, 0.2);
+            translate: 0 -3%;
+        }
+    }
 }
 
 .wrapper {
