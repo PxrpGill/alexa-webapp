@@ -10,6 +10,7 @@ import css from "./index.module.css";
 
 export type HeaderDropdownProps = {
 	dropDownItems: Array<HeaderMenuLinkType>;
+	onLinkClick?: () => void;
 } & PropsWithChildren &
 	PropsWithClassName;
 
@@ -17,6 +18,7 @@ export default function HeaderDropdown({
 	className,
 	dropDownItems,
 	children,
+	onLinkClick,
 }: HeaderDropdownProps) {
 	const [isDropDownOpen, toggleDropDownOpen] = useState<boolean>(false);
 
@@ -41,7 +43,15 @@ export default function HeaderDropdown({
 						{dropDownItems.map(
 							({ IconSvg, title, description, href, target }, index) => (
 								<li className={css.paragraph} key={`${title}-${index}`}>
-									<Link href={href} className={css.link} target={target}>
+									<Link
+											href={href}
+											className={css.link}
+											target={target}
+											onClick={() => {
+												toggleDropDownOpen(false);
+												onLinkClick?.();
+											}}
+										>
 										<IconSvg className={css.logo} />
 										<div className={css.rightPart}>
 											{title && (
