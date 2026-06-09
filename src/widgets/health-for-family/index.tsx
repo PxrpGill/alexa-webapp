@@ -3,8 +3,9 @@
 import { useState } from "react";
 import css from "./index.module.css";
 import type { HealthForFamilyProps } from "./types/health-for-family.types";
+import FactoidCards from "./ui/factoid-cards";
+import SliderAdvantages from "./ui/slider-advantages";
 import TabsBlock from "./ui/tabs-block";
-import TabsContent from "./ui/tabs-content";
 
 export default function HealthForFamily({
 	tabsContent,
@@ -23,7 +24,12 @@ export default function HealthForFamily({
 				activeKey={activeKey}
 				setActiveKey={setActiveKey}
 			/>
-			<TabsContent cards={tabsContent[activeKey ?? ""]} key={activeKey} />
+			{activeKey && tabsContent[activeKey]?.type === "factoid" && (
+				<FactoidCards cards={tabsContent[activeKey].cards} key={activeKey} />
+			)}
+			{activeKey && tabsContent[activeKey]?.type === "sliderAdvantages" && (
+				<SliderAdvantages {...tabsContent[activeKey]} key={activeKey} />
+			)}
 		</section>
 	);
 }

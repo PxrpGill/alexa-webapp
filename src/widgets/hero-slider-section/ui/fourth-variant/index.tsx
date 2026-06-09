@@ -14,7 +14,7 @@ export default function FourthVariant({
 	card,
 	poster,
 	className,
-}: FourthVariantProps) {
+}: Omit<FourthVariantProps, "type">) {
 	return (
 		<div className={`${css.root} ${className}`}>
 			<div className={css.contentWrapper}>

@@ -1,0 +1,7 @@
+.wrapper {
+    @mixin responsive min-height, 0, 640;
+    @mixin responsive border-radius, 0, 30;
+
+    overflow: hidden;
+    position: relative;
+}

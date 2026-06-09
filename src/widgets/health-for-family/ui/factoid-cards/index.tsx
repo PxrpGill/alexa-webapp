@@ -4,14 +4,14 @@ import { useMemo } from "react";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import FactoidCard from "@/shared/ui/factoid-card";
 import { HEALTH_FOR_FAMILY_FACTOID_BUTTON } from "../../models/health-for-family.constants";
-import type { ContentCardProps } from "../../types/health-for-family.types";
+import type { FactoidCardsProps } from "../../types/health-for-family.types";
 import css from "./index.module.css";
 
-export default function TabsContent({
+export default function FactoidCards({
 	cards,
 	className,
 }: {
-	cards?: ContentCardProps[];
+	cards?: FactoidCardsProps[];
 } & PropsWithClassName) {
 	const evenCards = useMemo(
 		() => cards?.filter((_, index) => index % 2 === 0),

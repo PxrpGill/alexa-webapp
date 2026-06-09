@@ -1,0 +1,13 @@
+.root {
+    @mixin responsive gap, 30, 64;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.stepper[class],
+.priceCards[class],
+.advantages[class],
+.slider[class] {
+    padding-inline: 0;
+}

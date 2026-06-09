@@ -12,6 +12,7 @@ export default function TabsBlock({
 	tabs,
 	title,
 	className,
+	description,
 	activeKey,
 	setActiveKey,
 }: TabsBlockProps) {
@@ -25,10 +26,24 @@ export default function TabsBlock({
 	);
 
 	return (
-		<AnimationWrapper as="nav" className={`${css.root} ${className}`}>
-			{title && (
-				<h2 className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
-			)}
+		<AnimationWrapper
+			as="nav"
+			className={`${css.root} ${className} ${description && css.withDescription}`}
+		>
+			<div className={css.titleBlock}>
+				{title && (
+					<h2
+						className={css.title}
+						dangerouslySetInnerHTML={{ __html: title }}
+					/>
+				)}
+				{description && (
+					<p
+						className={css.description}
+						dangerouslySetInnerHTML={{ __html: description }}
+					/>
+				)}
+			</div>
 			{tabs?.length && (
 				<div className={css.tabs}>
 					{tabs.map((tab, index) => (
@@ -38,15 +53,15 @@ export default function TabsBlock({
 							key={`${tab.slug}-${index}`}
 							onClick={() => handleButtonClick(tab.slug)}
 						>
-							<div className={css.imageWrapper}>
-								{tab.icon && (
+							{tab.icon && (
+								<div className={css.imageWrapper}>
 									<img
 										src={tab.icon}
 										alt="Иконка таба"
 										className={css.tabIcon}
 									/>
-								)}
-							</div>
+								</div>
+							)}
 							{tab.title && (
 								<span
 									dangerouslySetInnerHTML={{ __html: tab.title }}

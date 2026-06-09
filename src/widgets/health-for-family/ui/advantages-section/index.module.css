@@ -1,0 +1,56 @@
+.root {
+    @mixin responsive gap, 40, 40;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin h4;
+    @mixin responsive padding-inline, 0, 100;
+    @mixin responsive font-size, 32;
+
+    font-weight: 600;
+}
+
+.list {
+    @mixin responsive gap, 20, 20;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    @mixin responsive padding-block, 40, 40;
+    @mixin responsive padding-inline, 20, 36;
+    @mixin responsive border-radius, 20, 20;
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    align-items: center;
+    background-color: var(--color-white-0);
+}
+
+.cardText {
+    @mixin b1;
+    
+    font-weight: 600;
+
+    @media (max-width: $mobile) {
+        @mixin h5;
+        
+        font-weight: 600;
+        line-height: 1.55;
+    }
+}
+
+.icon {
+    @mixin responsive width, 20, 20;
+    @mixin responsive height, 20, 20;
+
+    flex-shrink: 0;
+}
