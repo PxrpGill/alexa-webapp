@@ -1,6 +1,6 @@
-import type { AdvantagesSectionProps } from "@/widgets/health-for-family/types/advantages-section.types";
 import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
 import type { FourthVariantProps } from "@/widgets/hero-slider-section/types/hero-slider-section.types";
+import type { TableImageSectionProps } from "@/widgets/table-image-section/types/table-image-section.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
@@ -334,6 +334,18 @@ export const HEALTH_FOR_FAMILY_MOCK: HealthForFamilyProps = {
 					},
 				],
 			},
+		},
+	},
+};
+
+export const TABLE_IMAGE_SECTION: TableImageSectionProps = {
+	title: "Какие элайнеры выбрать?<br /> Сравниваем для вас",
+	description:
+		"Все системы&nbsp;&mdash; надёжные. Но&nbsp;каждая подходит под разные задачи.<br /> Показали ключевые отличия, чтобы вам было проще принять решение вместе с&nbsp;врачом",
+	poster: {
+		original: {
+			src: "/mock/adult-orthodontics/table.svg",
+			mobile: "/mock/adult-orthodontics/table-mobile.svg",
 		},
 	},
 };

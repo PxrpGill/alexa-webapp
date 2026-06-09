@@ -1,3 +1,7 @@
+import {
+	YANDEX_MAP_CONTENT,
+	YANDEX_MAP_TITLE,
+} from "@/shared/config/global-constants.constats";
 import BrickworkSection from "@/widgets/brickwork-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
@@ -41,7 +45,7 @@ export default function AdultOrthopedicsPage() {
 				className={css.lastSlider}
 				textBlockPosition="right"
 			/>
-			<YandexMap />
+			<YandexMap title={YANDEX_MAP_TITLE} content={YANDEX_MAP_CONTENT} />
 		</main>
 	);
 }
