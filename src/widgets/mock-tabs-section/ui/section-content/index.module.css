@@ -1,0 +1,11 @@
+.root {
+    @mixin responsive --first-col, 0, 600;
+    @mixin responsive gap, 20;
+
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+}
+
+.posterWrapper {
+    position: relative;
+}

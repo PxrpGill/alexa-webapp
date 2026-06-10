@@ -6,6 +6,7 @@ export type TitleStickySectionProps = {
 	cards?: Array<{
 		title?: string;
 		description?: string;
+		theme?: 'white' | 'green'
 	}>;
 	lastCard?: {
 		poster?: PictureFormatType;

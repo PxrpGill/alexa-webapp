@@ -28,7 +28,11 @@ export default function TitleStickySection({
 				)}
 				<ul className={css.list}>
 					{cards.map((card, index) => (
-						<AnimationWrapper as="li" className={css.card} key={index}>
+						<AnimationWrapper
+							as="li"
+							className={`${css.card} ${css[card.theme ?? "white"]}`}
+							key={index}
+						>
 							{card.title && (
 								<div className={css.cardTitleWrapper}>
 									<MiniIconSVG className={css.miniIcon} />

@@ -1,0 +1,13 @@
+.root {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.paragraph {
+    @mixin responsive padding, 20, 20;
+    @mixin responsive border-radius, 30, 30;
+
+    background-color: var(--color-white-0);
+}

@@ -59,6 +59,19 @@
 
     background-color: var(--color-white-0);
 
+    &.green {
+        background-color: var(--color-green-1);
+
+        .miniIcon {
+            display: none;
+        }
+
+        .cardUnderDescription,
+        .cardDescription {
+            color: var(--color-white-0);
+        }
+    }
+
     @media (max-width: $mobile) {
         @mixin h5;
 
