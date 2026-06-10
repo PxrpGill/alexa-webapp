@@ -1,0 +1,31 @@
+.root {
+    @mixin responsive padding-block-start, 70, 100;
+}
+
+.beforeAfter,
+.lastSlider,
+.brickwork,
+.titleSticky,
+.quadro {
+    @mixin responsive margin-block-end, 60, 60;
+}
+
+.slider {
+    @mixin responsive margin-block-end, 20, 35;
+}
+
+
+.beforeAfter[class] {
+    & > div {
+        @mixin responsive --first-col, 0, 590;
+        @mixin responsive min-height, 0, 700;
+
+        @media (max-width: $mobile) {
+            flex-direction: column-reverse;
+        }
+
+        & > div {
+            @mixin responsive height, 390;
+        }
+    }
+}
