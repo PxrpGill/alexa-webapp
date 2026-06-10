@@ -1,0 +1,16 @@
+.root {
+    @mixin responsive --first-grid, 0, 680;
+    @mixin responsive gap, 20, 20;
+
+    display: grid;
+    grid-template-columns: var(--first-grid) auto;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+
+        .posterBlock {
+            @mixin responsive height, 200;
+        }
+    }
+}

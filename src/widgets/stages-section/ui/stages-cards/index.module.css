@@ -1,0 +1,15 @@
+.root {
+    @mixin responsive gap, 20, 20;
+
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.card {
+    height: 100%;
+}

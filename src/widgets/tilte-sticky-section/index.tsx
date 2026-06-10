@@ -29,11 +29,20 @@ export default function TitleStickySection({
 				<ul className={css.list}>
 					{cards.map((card, index) => (
 						<AnimationWrapper as="li" className={css.card} key={index}>
-							<MiniIconSVG className={css.miniIcon} />
-							{card && (
+							{card.title && (
+								<div className={css.cardTitleWrapper}>
+									<MiniIconSVG className={css.miniIcon} />
+
+									<p
+										dangerouslySetInnerHTML={{ __html: card.title }}
+										className={css.cardDescription}
+									/>
+								</div>
+							)}
+							{card.description && (
 								<p
-									dangerouslySetInnerHTML={{ __html: card }}
-									className={css.cardDescription}
+									dangerouslySetInnerHTML={{ __html: card.description }}
+									className={css.cardUnderDescription}
 								/>
 							)}
 						</AnimationWrapper>

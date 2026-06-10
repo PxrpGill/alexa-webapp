@@ -3,7 +3,10 @@ import type { PictureFormatType } from "@/shared/ui/picture";
 
 export type TitleStickySectionProps = {
 	title?: string;
-	cards?: string[];
+	cards?: Array<{
+		title?: string;
+		description?: string;
+	}>;
 	lastCard?: {
 		poster?: PictureFormatType;
 		buttonText?: string;

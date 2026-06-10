@@ -1,0 +1,6 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+
+    position: relative;
+    overflow: hidden;
+}

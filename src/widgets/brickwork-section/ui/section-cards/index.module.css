@@ -95,4 +95,8 @@
 
 .description {
     @mixin b2;
+
+    b {
+        font-weight: 500;
+    }
 }

@@ -44,7 +44,7 @@ export default function SectionCards({
 								/>
 							)}
 							{card.description && (
-								<p
+								<div
 									dangerouslySetInnerHTML={{ __html: card.description }}
 									className={css.description}
 								/>

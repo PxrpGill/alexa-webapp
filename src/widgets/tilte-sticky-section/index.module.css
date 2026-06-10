@@ -49,13 +49,13 @@
     @mixin responsive padding-inline-end, 28, 89;
     @mixin responsive padding-inline-start, 28, 40;
     @mixin responsive border-radius, 30, 30;
-    @mixin responsive gap, 10, 10;
+    @mixin responsive gap, 10, 14;
     @mixin b1;
 
     font-weight: 600;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
 
     background-color: var(--color-white-0);
 
@@ -66,6 +66,19 @@
 
         line-height: 1.55;
     }
+}
+
+.cardUnderDescription {
+    @mixin b2;
+
+    opacity: 0.8;
+}
+
+.cardTitleWrapper {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    align-items: center;
 }
 
 .lastCard {

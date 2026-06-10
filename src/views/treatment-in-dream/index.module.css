@@ -1,0 +1,15 @@
+.root {
+    @mixin responsive padding-block-start, 70, 100;
+}
+
+.stages,
+.brickWork,
+.stickyTitle,
+.installment,
+.quadro {
+    @mixin responsive margin-block-end, 60, 60;
+}
+
+.quadro.quadro[class] > div > div  {
+    @mixin responsive padding-inline-end, 20, 64;
+}
