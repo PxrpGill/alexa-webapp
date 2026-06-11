@@ -1,11 +1,12 @@
 .root {
-    @mixin responsive gap, 20, 20;
+    @mixin responsive gap, 10, 20;
 
     display: flex;
     flex-wrap: wrap;
 }
 
 .paragraph {
+    @mixin b3;
     @mixin responsive padding, 20, 20;
     @mixin responsive border-radius, 30, 30;
 

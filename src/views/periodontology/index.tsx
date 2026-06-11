@@ -8,6 +8,7 @@ import OurWork from "@/widgets/our-work";
 import ParentNewsSection from "@/widgets/parent-news-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
+import TreatmentDelayConsequences from "@/widgets/treatment-delay-consequences";
 import YandexMap from "@/widgets/yandex-map";
 import {
 	MOCK_FAQ_SECTION,
@@ -19,6 +20,7 @@ import {
 	MOCK_TABS_SECTION,
 	QUADRO_SECTION_MOCK,
 	TITLE_STICKY_SECTION,
+	TREATMENT_DELAY_CONSEQUENCES_MOCK,
 } from "./models/periodontology.constants";
 
 export default function PeriodontologyPage() {
@@ -30,6 +32,10 @@ export default function PeriodontologyPage() {
 				className={css.titleSticky}
 			/>
 			<MockTabsSection {...MOCK_TABS_SECTION} className={css.mockTabs} />
+			<TreatmentDelayConsequences
+				{...TREATMENT_DELAY_CONSEQUENCES_MOCK}
+				className={css.treatment}
+			/>
 			<OurWork {...OUR_WORK} className={css.ourWork} />
 			<FaqSection {...MOCK_FAQ_SECTION} className={css.faqs} />
 			<ParentNewsSection {...PARENT_NEWS_SECTION_MOCK} className={css.news} />

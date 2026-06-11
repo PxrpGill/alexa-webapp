@@ -1,6 +1,7 @@
 import type { MockTabsSectionProps } from "@/widgets/mock-tabs-section/types/mock-tabs-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
+import type { TreatmentDelayConsequencesProps } from "@/widgets/treatment-delay-consequences/types/treatment-delay-consequences.types";
 
 export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 	sectionHeader: {
@@ -73,3 +74,47 @@ export const MOCK_TABS_SECTION: MockTabsSectionProps = {
 		},
 	},
 };
+
+export const TREATMENT_DELAY_CONSEQUENCES_MOCK: TreatmentDelayConsequencesProps =
+	{
+		sectionHeader: {
+			title: "Почему важно не&nbsp;откладывать лечение",
+			description:
+				"Заболевания десен развиваются постепенно и&nbsp;часто без выраженной боли",
+		},
+		iconCards: {
+			cards: [
+				{
+					icon: "/mock/pariodontology/treatment-delay-consequences/1-icon.svg",
+					title: "Пародонтит",
+					description:
+						"Воспаление распространяется глубже, затрагивает связки и&nbsp;костную ткань.",
+				},
+				{
+					icon: "/mock/pariodontology/treatment-delay-consequences/2-icon.svg",
+					title: "Гингивит",
+					description:
+						"Воспаление и&nbsp;кровоточивость десны. На&nbsp;этом этапе изменения обратимы.",
+				},
+				{
+					icon: "/mock/pariodontology/treatment-delay-consequences/3-icon.svg",
+					title: "Потеря костной ткани",
+					description: "Зуб теряет опору. Появляется подвижность.",
+				},
+				{
+					icon: "/mock/pariodontology/treatment-delay-consequences/4-icon.svg",
+					title: "Потеря зуба",
+					description: "Финальный этап запущенного процесса.",
+				},
+			],
+		},
+		textCards: {
+			cards: [
+				{
+					title: "Особенность в&nbsp;том, что этот путь может занимать годы.",
+					description:
+						"Этот процесс может длиться годами и&nbsp;часто проходит без боли",
+				},
+			],
+		},
+	};

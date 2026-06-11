@@ -1,0 +1,12 @@
+.root {
+    display: flex;
+    flex-direction: column;
+}
+
+.titleBlock {
+    @mixin responsive margin-block-end, 20, 40;
+}
+
+.iconCards {
+    @mixin responsive margin-block-end, 20, 20;
+}
