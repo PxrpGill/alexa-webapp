@@ -9,12 +9,7 @@ import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import { useHeroSlider } from "./hooks/use-hero-slider";
 import css from "./index.module.css";
 import type { HeroSliderSectionProps } from "./types/hero-slider-section.types";
-import FifthVarinat from "./ui/fifth-variant";
-import FirstVariant from "./ui/first-variant";
-import FourthVariant from "./ui/fourth-variant";
-import SecondVariant from "./ui/second-variant";
-import SixthVariant from "./ui/sixth-variant";
-import ThirdVariant from "./ui/third-variant";
+import HeroSlide from "./ui/hero-slide";
 
 export default function HeroSliderSection({
 	className,
@@ -29,66 +24,13 @@ export default function HeroSliderSection({
 		>
 			<div className={css.sectionWrapper}>
 				<div className={css.wrapper}>
-					{slides?.map((slide, index) => {
-						switch (slide.type) {
-							case "firstVariant":
-								return (
-									<FirstVariant
-										key={index}
-										{...slide}
-										className={`${css.slide} ${index === current ? css.active : css.inactive}`}
-									/>
-								);
-
-							case "secondVariant":
-								return (
-									<SecondVariant
-										key={index}
-										{...slide}
-										className={`${css.slide} ${index === current ? css.active : css.inactive}`}
-									/>
-								);
-
-							case "thirdVariant":
-								return (
-									<ThirdVariant
-										key={index}
-										{...slide}
-										className={`${css.slide} ${index === current ? css.active : css.inactive}`}
-									/>
-								);
-
-							case "fourthVariant":
-								return (
-									<FourthVariant
-										key={index}
-										{...slide}
-										className={`${css.slide} ${index === current ? css.active : css.inactive}`}
-									/>
-								);
-
-							case "fifthVariant":
-								return (
-									<FifthVarinat
-										key={index}
-										{...slide}
-										className={`${css.slide} ${index === current ? css.active : css.inactive}`}
-									/>
-								);
-
-							case "sixthVariant":
-								return (
-									<SixthVariant
-										key={index}
-										{...slide}
-										className={`${css.slide} ${index === current ? css.active : css.inactive}`}
-									/>
-								);
-
-							default:
-								return <></>;
-						}
-					})}
+					{slides?.map((slide, index) => (
+						<HeroSlide
+							{...slide}
+							key={index}
+							className={`${css.slide} ${index === current ? css.active : css.inactive}`}
+						/>
+					))}
 				</div>
 				<button
 					className={css.leftButton}

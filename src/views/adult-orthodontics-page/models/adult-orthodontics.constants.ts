@@ -1,5 +1,5 @@
 import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
-import type { FourthVariantProps } from "@/widgets/hero-slider-section/types/hero-slider-section.types";
+import type { SlideVariantProps } from "@/widgets/hero-slider-section/types/hero-slider-section.types";
 import type { TableImageSectionProps } from "@/widgets/table-image-section/types/table-image-section.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 
@@ -114,14 +114,15 @@ export const FOURTH_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	],
 };
 
-export const HERO_SECTION: Omit<FourthVariantProps, "type"> = {
+export const HERO_SECTION: SlideVariantProps = {
 	title: "алекса",
 	subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
 	legend:
 		"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
 	poster: {
-		original: {
-			src: "/mock/home/hero-slider/slider-4.jpg",
+		webp: {
+			src: "/mock/home/hero-slider/5-desktop.webp",
+			mobile: "/mock/home/hero-slider/5-mobile.webp",
 		},
 	},
 	card: {

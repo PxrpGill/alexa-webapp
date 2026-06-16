@@ -11,7 +11,6 @@ import type { TitleDescriptionSliderProps } from "@/widgets/title-description-sl
 export const HERO_SLIDES: HeroSliderSectionProps = {
 	slides: [
 		{
-			type: "firstVariant",
 			title: "алекса",
 			card: {
 				title: "Никакого напряжения и&nbsp;тревоги",
@@ -20,7 +19,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			},
 			poster: {
 				webp: {
-					src: "/mock/home/hero-slider/slider-1.webp",
+					src: "/mock/home/hero-slider/1-desktop.webp",
 				},
 			},
 			legend:
@@ -28,17 +27,18 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
 		},
 		{
-			type: "secondVariant",
+			textTheme: "light",
 			title: "алекса",
 			card: {
 				title: "Лечение во&nbsp;сне. Без боли и&nbsp;страха",
 				content:
-					"<p>Для тревожных малышей и&nbsp;взрослых, которым нужен бережный подход.</p><br /><br /><p>до&nbsp;1&nbsp;часа&nbsp;&mdash; <b>15&nbsp;100&nbsp;₽</b></p><p>до&nbsp;2&nbsp;часов&nbsp;&mdash; <b>19&nbsp;400&nbsp;₽</b></p><br /><br /><p>Проснётесь с&nbsp;красивой улыбкой и&nbsp;без воспоминаний о&nbsp;лечении</p>",
+					"<p>Для тревожных малышей и&nbsp;взрослых, которым нужен бережный подход.</p><br /><p>до&nbsp;1&nbsp;часа&nbsp;&mdash; <b>15&nbsp;100&nbsp;₽</b></p><p>до&nbsp;2&nbsp;часов&nbsp;&mdash; <b>19&nbsp;400&nbsp;₽</b></p><br /><p>Проснётесь с&nbsp;красивой улыбкой и&nbsp;без воспоминаний о&nbsp;лечении</p>",
 				buttonText: "Записаться на прием",
 			},
 			poster: {
-				original: {
-					src: "/mock/home/hero-slider/slider-2.jpg",
+				webp: {
+					src: "/mock/home/hero-slider/3-desktop.webp",
+					mobile: "/mock/home/hero-slider/3-mobile.webp",
 				},
 			},
 			legend:
@@ -46,15 +46,14 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
 		},
 		{
-			type: "thirdVariant",
+			textTheme: "light",
 			title: "алекса",
 			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
 			legend:
 				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
 			poster: {
-				original: {
-					src: "/mock/home/hero-slider/slider-3.jpg",
-					mobile: "/mock/home/hero-slider/slider-3-mobile.webp",
+				webp: {
+					src: "/mock/home/hero-slider/2-desktop.webp",
 				},
 			},
 			card: {
@@ -66,14 +65,13 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			},
 		},
 		{
-			type: "fourthVariant",
 			title: "алекса",
 			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
 			legend:
 				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
 			poster: {
-				original: {
-					src: "/mock/home/hero-slider/slider-4.jpg",
+				webp: {
+					src: "/mock/home/hero-slider/4-desktop.webp",
 				},
 			},
 			card: {
@@ -84,14 +82,14 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			},
 		},
 		{
-			type: "fifthVariant",
 			title: "алекса",
 			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
 			legend:
 				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
 			poster: {
 				webp: {
-					src: "/mock/home/hero-slider/slider-5.webp",
+					src: "/mock/home/hero-slider/5-desktop.webp",
+					mobile: "/mock/home/hero-slider/5-mobile.webp",
 				},
 			},
 			card: {
@@ -102,14 +100,13 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			},
 		},
 		{
-			type: "sixthVariant",
 			title: "алекса",
 			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
 			legend:
 				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
 			poster: {
 				webp: {
-					src: "/mock/home/hero-slider/slider-6.webp",
+					src: "/mock/home/hero-slider/6-desktop.webp",
 				},
 			},
 			card: {

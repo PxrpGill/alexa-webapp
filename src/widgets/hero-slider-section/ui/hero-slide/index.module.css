@@ -1,0 +1,107 @@
+.root {
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.titleBlock {
+    @mixin responsive margin-block-start, 0, 127;
+    @mixin responsive margin-inline-start, 0, 64;
+    @mixin responsive max-width, 0, 296;
+    @mixin responsive gap, 10, 18;
+    @mixin responsive padding-block-end, 40;
+
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+
+    &.light {
+        .title,
+        .subtitle,
+        .legend {
+            color: var(--color-white-0);
+
+            @media (max-width: $mobile) {
+                color: var(--color-black-1);
+            }
+        }
+    }
+
+    @media (max-width: $mobile) {
+        position: relative;
+        max-width: unset;
+        align-items: center;
+    }
+}
+
+.title,
+.subtitle,
+.legend {
+    @media (max-width: $mobile) {
+        text-align: center;
+    }
+}
+
+.title {
+    @mixin h1;
+}
+
+.subtitle {
+    @mixin b2;
+    @mixin responsive max-width, 260;
+
+    font-weight: 500;
+
+
+    @media (max-width: $mobile) {
+        @mixin h5;
+
+        font-weight: 500;
+        line-height: 1.35;
+    }
+}
+
+.legend {
+    @mixin b2;
+    @mixin responsive max-width, 260;
+
+    b {
+        font-weight: 600;
+    }
+}
+
+.card {
+    @mixin responsive margin-inline-end, 0, 22;
+    @mixin responsive margin-block-end, 0, 30;
+
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    bottom: 0;
+
+    @media (max-width: $mobile) {
+        position: relative;
+    }
+}
+
+.desktopPoster[class] {
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.mobilePoster {
+    @mixin responsive height, 303;
+    @mixin responsive border-radius, 30;
+    @mixin responsive margin-block-end, 40;
+
+    position: relative;
+    overflow: hidden;
+    display: none;
+
+    @media (max-width: $mobile) {
+        display: block;
+    }
+}
