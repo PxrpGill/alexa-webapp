@@ -28,7 +28,7 @@ export const YANDEX_MAP_INFO_CARD: InfoCardProps = {
 			title: "ул. Волкова, д.&nbsp;22",
 			workSchedule:
 				"Пн - пт&nbsp;с&nbsp;9:00 до&nbsp;18:00, суббота с&nbsp;9:00 до&nbsp;18:00",
-			phone: "+7 (918) 555-02-96",
+			phone: "+7 (918) 550-12-24",
 			cords: [47.283248, 39.720142],
 		},
 	],

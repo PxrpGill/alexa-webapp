@@ -1,0 +1,92 @@
+.root {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.pair {
+    @mixin responsive gap, 20, 20;
+    @mixin responsive --first-col, 0, 750;
+
+    grid-template-columns: var(--first-col) auto;
+
+    display: grid;
+
+    &.odd {
+        @mixin responsive --first-col, 0, 590;
+        
+        grid-template-columns: var(--first-col) auto;
+    }
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.card {
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding-block, 40, 40;
+    @mixin responsive gap, 15, 10;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--color-white-0);
+}
+
+.button.button[class] {
+    width: fit-content;
+}
+
+.buttonIcon {
+    @mixin responsive width, 25, 25;
+    @mixin responsive height, 25, 25;
+}
+
+.icon {
+    @mixin responsive width, 65, 65;
+    @mixin responsive height, 65, 65;
+}
+
+.title {
+    @mixin h6;
+
+    text-transform: uppercase;
+
+    font-weight: 600;
+    line-height: 1.55;
+    color: var(--color-green-4);
+}
+
+.cardContent {
+    @mixin b2;
+    @mixin responsive gap, 30, 10;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $mobile) {
+        @mixin h5;
+
+        line-height: 1.35;
+    }
+
+    b {
+        font-weight: 500;
+    }
+
+    a {
+        @mixin transition color;
+
+        color: var(--color-green-1);
+
+        @media (hover:hover) {
+            &:hover {
+                color: var(--color-green-4);
+            }
+        }
+    }
+}

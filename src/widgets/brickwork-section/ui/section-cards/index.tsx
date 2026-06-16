@@ -3,16 +3,11 @@
 /** biome-ignore-all lint/performance/noImgElement: <explanation> */
 
 import ButtonIconSVG from "@/public/icons/button-teeth.svg";
+import { chunkArray } from "@/shared/helpers/chunk-array";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import Button from "@/shared/ui/button";
 import type { BrickworkCardsProps } from "../../types/brickwork-section.types";
 import css from "./index.module.css";
-
-function chunkArray<T>(arr: T[], size: number): T[][] {
-	return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
-		arr.slice(i * size, i * size + size),
-	);
-}
 
 export default function SectionCards({
 	cards,
