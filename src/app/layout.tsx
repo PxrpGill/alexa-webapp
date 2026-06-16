@@ -3,8 +3,9 @@ import "@/shared/styles/colors.css";
 import "@/shared/styles/global.css";
 
 import type { Metadata } from "next";
+import Head from "next/head";
 import type { ReactNode } from "react";
-
+import Favicon from "@/shared/config/favicon";
 import { GENERAL_META } from "@/shared/config/general-meta.constants";
 import InvolveFont from "@/shared/config/local-font";
 import Layout from "@/widgets/layout";
@@ -21,6 +22,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className={InvolveFont.className}>
+			<Favicon />
 			<body>
 				<Layout>{children}</Layout>
 			</body>

@@ -138,7 +138,7 @@ export const CTA_MOCK: CtaSectionProps = {
 };
 
 export const DESCRIPTION_SECTION: DescriptionSectionProps = {
-	title: "Улыбка. Забота. Комфорт.<br /> Все&nbsp;&mdash; в&nbsp;одном месте",
+	title: "Улыбка. Забота. Комфорт.<br /> Все в&nbsp;одном месте",
 	description: "Более 9000 человек стали нашими постоянными пациентами",
 };
 
