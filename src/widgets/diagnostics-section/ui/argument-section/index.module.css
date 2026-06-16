@@ -1,0 +1,77 @@
+.root {
+    @mixin responsive gap, 20, 40;
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-block, 30, 40;
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white-0);
+}
+
+.checkWrapper {
+    @mixin responsive width, 20, 20;
+    @mixin responsive height, 20, 20;
+
+    border-radius: 100%;
+    flex-shrink: 0;
+    position: relative;
+    background-color: var(--color-green-1);
+}
+
+.titleBlock {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin h6;
+
+    line-height: 1.35;
+}
+
+.description {
+    @mixin b2;
+}
+
+.list {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: $mobile) {
+        flex-direction: column;
+    }
+}
+
+.paragraph {
+    @mixin responsive gap, 10, 5;
+
+    display: flex;
+    align-items: center;
+}
+
+.checkIcon {
+    @mixin responsive width, 10, 10;
+    @mixin responsive height, 10, 10;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+
+    path {
+        fill: var(--color-white-0);
+    }
+}
+
+.item {
+    @mixin b2;
+}
+
+.legend {
+    @mixin b2;
+}

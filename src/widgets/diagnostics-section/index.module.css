@@ -1,0 +1,6 @@
+.root {
+    @mixin responsive gap, 30, 40;
+
+    display: flex;
+    flex-direction: column;
+}

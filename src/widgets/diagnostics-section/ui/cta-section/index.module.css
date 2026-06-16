@@ -1,0 +1,58 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-block, 30, 40;
+    @mixin responsive --first-col, 0, 809;
+    @mixin responsive gap, 20, 40;
+
+    background-color: var(--color-white-0);
+    display: grid;
+    align-items: center;
+    grid-template-columns: var(--first-col) auto;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+        justify-content: start;
+        align-items: start;
+        width: 100%;
+    }
+}
+
+.icon {
+    @mixin responsive width, 25, 25;
+    @mixin responsive height, 25, 25;
+}
+
+.titleBlock {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin b1;
+
+    font-weight: 600;
+
+    @media (max-width: $mobile) {
+        @mixin h5;
+        line-height: 1.35;
+
+        font-weight: 600;
+    }
+}
+
+.description {
+    @mixin b2;
+}

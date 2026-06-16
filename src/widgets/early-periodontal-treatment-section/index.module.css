@@ -1,0 +1,17 @@
+.wrapper {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding-block, 32, 64;
+    @mixin responsive padding-inline, 20, 100;
+    @mixin responsive --first-col, 0, 580;
+    @mixin responsive gap, 45, 56;
+
+    background-color: var(--color-green-1);
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -2,6 +2,8 @@
     @mixin responsive padding-block-start, 70, 100;
 }
 
+.diagnostics,
+.earlyPeriodontal,
 .treatment,
 .mockTabs,
 .faqs,

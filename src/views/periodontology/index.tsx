@@ -2,6 +2,8 @@ import {
 	YANDEX_MAP_CONTENT,
 	YANDEX_MAP_TITLE,
 } from "@/shared/config/global-constants.constats";
+import DiagnosticsSection from "@/widgets/diagnostics-section";
+import EarlyPeriodontalTreatmentSection from "@/widgets/early-periodontal-treatment-section";
 import FaqSection from "@/widgets/faq-section";
 import MockTabsSection from "@/widgets/mock-tabs-section";
 import OurWork from "@/widgets/our-work";
@@ -17,6 +19,8 @@ import {
 } from "../home-page/models/home-page.constants";
 import css from "./index.module.css";
 import {
+	DIAGNOSTICS_SECTION_MOCK,
+	EARLY_PERIODONTAL_TREATMENT_MOCK,
 	MOCK_TABS_SECTION,
 	QUADRO_SECTION_MOCK,
 	TITLE_STICKY_SECTION,
@@ -35,6 +39,14 @@ export default function PeriodontologyPage() {
 			<TreatmentDelayConsequences
 				{...TREATMENT_DELAY_CONSEQUENCES_MOCK}
 				className={css.treatment}
+			/>
+			<EarlyPeriodontalTreatmentSection
+				{...EARLY_PERIODONTAL_TREATMENT_MOCK}
+				className={css.earlyPeriodontal}
+			/>
+			<DiagnosticsSection
+				{...DIAGNOSTICS_SECTION_MOCK}
+				className={css.diagnostics}
 			/>
 			<OurWork {...OUR_WORK} className={css.ourWork} />
 			<FaqSection {...MOCK_FAQ_SECTION} className={css.faqs} />

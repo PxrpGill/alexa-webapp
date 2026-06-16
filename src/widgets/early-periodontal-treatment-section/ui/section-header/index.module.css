@@ -1,0 +1,30 @@
+.root {
+    display: flex;
+    flex-direction: column;
+}
+
+.title,
+.description,
+.legend {
+    color: var(--color-white-0);
+}
+
+.title {
+    @mixin responsive padding-block-end, 20, 20;
+    @mixin responsive font-size, 24, 32;
+
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.description {
+    @mixin b2;
+    @mixin responsive padding-block-end, 20, 40;
+}
+
+.legend {
+    @mixin responsive font-size, 16, 22;
+
+    font-weight: 600;
+    line-height: 1.35;
+}

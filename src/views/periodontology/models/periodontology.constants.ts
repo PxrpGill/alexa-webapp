@@ -1,3 +1,5 @@
+import type { DiagnosticsSectionProps } from "@/widgets/diagnostics-section/types/diagnostics-section.types";
+import type { EarlyPeriodontalTreatmentSectionProps } from "@/widgets/early-periodontal-treatment-section/types/early-periodontal-treatment-section.types";
 import type { MockTabsSectionProps } from "@/widgets/mock-tabs-section/types/mock-tabs-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
@@ -118,3 +120,51 @@ export const TREATMENT_DELAY_CONSEQUENCES_MOCK: TreatmentDelayConsequencesProps 
 			],
 		},
 	};
+
+export const EARLY_PERIODONTAL_TREATMENT_MOCK: EarlyPeriodontalTreatmentSectionProps =
+	{
+		sectionHeader: {
+			title: "Раннее лечение всегда проще и&nbsp;безопаснее",
+			description:
+				"Раннее лечение гингивита значительно проще и&nbsp;доступнее, чем восстановление утраченной кости или установка импланта.",
+			legend:
+				"Пародонтология&nbsp;&mdash; это не&nbsp;косметическая процедура, а&nbsp;способ сохранить собственные зубы и&nbsp;избежать сложного протезирования в&nbsp;будущем.",
+		},
+		card: {
+			description:
+				"Понять стадию процесса можно только при профессиональном осмотре и&nbsp;точной диагностике.",
+			underDescription:
+				"Своевременная оценка состояния десен позволяет остановить заболевание до&nbsp;серьёзных последствий.",
+			textButton: "Записаться на прием",
+		},
+	};
+
+export const DIAGNOSTICS_SECTION_MOCK: DiagnosticsSectionProps = {
+	heroSection: {
+		title: "Точная диагностика состояния десен с&nbsp;системой Florida Probe",
+		description:
+			"Florida Probe&nbsp;&mdash; это компьютерная система диагностики пародонта, которая позволяет определить глубину пародонтальных карманов и&nbsp;оценить состояние тканей вокруг каждого зуба.",
+		poster: {
+			original: {
+				src: "/mock/pariodontology/diagnostics-poster.jpg",
+			},
+		},
+	},
+	argumentSection: {
+		title: "Почему мы&nbsp;используем компьютерную диагностику Florida Probe",
+		description: "Она позволяет:",
+		list: [
+			"обнаружить заболевание десен на&nbsp;ранней стадии",
+			"объективно оценить без субъективных предположение",
+			"точно измерить глубину карманов",
+			"сравнить результаты до&nbsp;и&nbsp;после лечения",
+			"сохранить собственные зубы",
+		],
+		legend: "Обычный осмотр не&nbsp;дает такой точности",
+	},
+	ctaSection: {
+		title: "Получите точную оценку и&nbsp;персональный план лечения",
+		description: "Пройдите компьютерную диагностику состояния десен",
+		buttonText: "Записаться на прием",
+	},
+};
