@@ -47,7 +47,6 @@
     @media (hover:hover) {
         &:hover {
             box-shadow: 0 var(--shadow-1) var(--shadow-2) var(--shadow-3) rgba(0, 11, 48, 0.2);
-            translate: 0 -3%;
 
             .icon g {
                 stroke: var(--color-white-0);

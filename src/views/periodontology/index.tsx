@@ -1,5 +1,6 @@
 import {
 	YANDEX_MAP_CONTENT,
+	YANDEX_MAP_INFO_CARD,
 	YANDEX_MAP_TITLE,
 } from "@/shared/config/global-constants.constats";
 import DiagnosticsSection from "@/widgets/diagnostics-section";
@@ -51,7 +52,7 @@ export default function PeriodontologyPage() {
 			<OurWork {...OUR_WORK} className={css.ourWork} />
 			<FaqSection {...MOCK_FAQ_SECTION} className={css.faqs} />
 			<ParentNewsSection {...PARENT_NEWS_SECTION_MOCK} className={css.news} />
-			<YandexMap title={YANDEX_MAP_TITLE} content={YANDEX_MAP_CONTENT} />
+			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} />
 		</main>
 	);
 }

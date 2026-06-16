@@ -1,5 +1,6 @@
 import {
 	YANDEX_MAP_CONTENT,
+	YANDEX_MAP_INFO_CARD,
 	YANDEX_MAP_TITLE,
 } from "@/shared/config/global-constants.constats";
 import BrickworkSection from "@/widgets/brickwork-section";
@@ -45,7 +46,7 @@ export default function AdultHygieneAndPreventionPage() {
 				{...FOURTH_DESCRIPTION_SLIDER}
 				textBlockPosition="right"
 			/>
-			<YandexMap title={YANDEX_MAP_TITLE} content={YANDEX_MAP_CONTENT} />
+			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} />
 		</main>
 	);
 }

@@ -1,44 +1,32 @@
 .root {
-    width: 100%;
+  width: 100%;
+}
 
-    background-color: var(--color-white-0);
+.contentWrapper {
+  @mixin responsive --first-col, 0, 590;
+  @mixin responsive gap, 20, 20;
 
-    overflow: hidden;
-    width: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: var(--first-col) auto;
+
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .mapsWrapper {
-    @mixin responsive height, 449, 600;
+  @mixin responsive border-radius, 30, 30;
+  @mixin responsive height, 240;
 
-    position: relative;
-}
-
-.root [class*="ground-pane"] {
-    filter: grayscale(100%);
+  background-color: var(--color-white-0);
+  overflow: hidden;
+  position: relative;
 }
 
 .mapContainer {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.desktopCard.desktopCard[class] {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: 10% -50%;
-    z-index: 10;
-
-    @media (max-width: $mobile) {
-        display: none;
-    }
-}
-
-.mobileCard.mobileCard[class] {
-    display: none;
-
-    @media (max-width: $mobile) {
-        display: flex;
-    }
+  position: relative;
+  width: 100%;
+  height: 100%;
 }

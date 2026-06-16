@@ -1,3 +1,4 @@
+import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constats";
 import BrickworkSection from "@/widgets/brickwork-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
@@ -42,7 +43,7 @@ export default function AdultTherapyPage() {
 				className={css.lastSlider}
 				textBlockPosition="right"
 			/>
-			<YandexMap />
+			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} />
 		</main>
 	);
 }

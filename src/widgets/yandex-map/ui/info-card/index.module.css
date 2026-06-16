@@ -1,30 +1,108 @@
 .root {
-    @mixin responsive padding, 0, 60;
-    @mixin responsive border-radius, 0, 30;
-    @mixin responsive max-width, 0, 560;
-    @mixin responsive padding-inline, 20;
-    @mixin responsive padding-block, 45;
+  @mixin responsive padding, 0, 60;
+  @mixin responsive border-radius, 30, 30;
+  @mixin responsive padding-inline, 20;
+  @mixin responsive padding-block, 40;
 
-    background-color: var(--color-white-0);
-    display: flex;
-    flex-direction: column;
+  background-color: var(--color-white-0);
+  display: flex;
+  flex-direction: column;
 
-    @media (max-width: $mobile) {
-        max-width: unset;
-    }
+  @media (max-width: $mobile) {
+    max-width: unset;
+  }
 }
 
 .title {
-    @mixin responsive font-size, 24, 28;
-    @mixin responsive padding-block-end, 30, 30;
+  @mixin h2;
+  @mixin responsive padding-block-end, 30, 40;
 
-    font-weight: 600;
+  @media (max-width: $mobile) {
+    @mixin h3;
+  }
 }
 
-.content {
-    @mixin b1;
+.list {
+  @mixin responsive gap, 30, 30;
 
-    b {
-        font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+.hr {
+  color: var(--color-gray-3);
+  margin: 0;
+}
+
+.pointSVG {
+  @mixin responsive width, 14, 14;
+}
+
+.pointWrapper {
+  @mixin responsive padding-block-end, 20, 20;
+
+  display: flex;
+  align-items: center;
+}
+
+.locality {
+  @mixin b1;
+  @mixin responsive font-size, 18;
+
+  font-weight: 600;
+}
+
+.pointWrapper {
+  @mixin responsive gap, 10, 10;
+
+  display: flex;
+  align-items: center;
+}
+
+.branchTitle {
+  @mixin b1;
+  @mixin responsive padding-block-end, 10, 10;
+  @mixin responsive font-size, 18;
+
+  font-weight: 600;
+}
+
+.phone {
+  @mixin b2;
+  @mixin transitionOptions;
+
+  transition-property: color;
+
+  font-weight: 600;
+  color: var(--color-green-1);
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-green-4);
     }
+  }
+
+  @media (max-width: $mobile) {
+    @mixin h5;
+
+    font-weight: 600;
+    line-height: 1.35;
+  }
+}
+
+.paragraph[role="button"] {
+  cursor: pointer;
+}
+
+.workSchedule {
+  @mixin b2;
+  @mixin responsive padding-block-end, 10, 10;
+
+  color: var(--color-gray-3);
+
+  @media (max-width: $mobile) {
+    @mixin h5;
+
+    line-height: 1.35;
+  }
 }
