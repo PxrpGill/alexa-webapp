@@ -61,6 +61,7 @@
 
 .branchTitle {
   @mixin b1;
+  @mixin transition color;
   @mixin responsive padding-block-end, 10, 10;
   @mixin responsive font-size, 18;
 
@@ -92,6 +93,14 @@
 
 .paragraph[role="button"] {
   cursor: pointer;
+
+  @media (hover:hover) {
+    &:hover {
+      .branchTitle {
+        color: var(--color-green-1);
+      }
+    }
+  }
 }
 
 .workSchedule {

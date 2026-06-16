@@ -39,6 +39,7 @@ export default function InfoCard({
 			<ul className={css.list}>
 				{branches.map((branch, index) => {
 					const cords = branch.cords;
+
 					return (
 						<Fragment key={index}>
 							<li
