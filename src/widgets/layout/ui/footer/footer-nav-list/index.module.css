@@ -13,18 +13,23 @@
 }
 
 .title {
-    @mixin b2;
+    @mixin b1;
+    @mixin responsive font-size, 18;
 
     color: var(--color-gray-1);
 }
 
 .link {
     @mixin transition color;
-    @mixin b3;
+    @mixin b2;
 
     @media (hover:hover) {
         &:hover {
             color: var(--color-green-1);
         }
+    }
+
+    @media (max-width: $mobile) {
+        @mixin h5;
     }
 }

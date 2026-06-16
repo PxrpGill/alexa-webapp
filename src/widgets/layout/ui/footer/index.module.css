@@ -1,10 +1,11 @@
 .root {
     @mixin responsive padding-block-start, 75, 75;
     @mixin responsive padding-block-end, 90, 90;
-    @mixin responsive gap, 33, 40;
+    @mixin responsive gap, 33, 52;
+    @mixin responsive --first-col, 0, 273;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: var(--first-col) repeat(3, 1fr);
 
     @media (max-width: $mobile) {
         display: flex;

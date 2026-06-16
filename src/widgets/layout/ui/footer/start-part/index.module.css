@@ -4,11 +4,11 @@
 }
 
 .logo {
-    @mixin responsive width, 120, 120;
+    @mixin responsive width, 150, 160;
 }
 
 .baseLink{
-    @mixin responsive margin-block-end, 34, 34; 
+    @mixin responsive margin-block-end, 35, 35; 
 }
 
 .contacts {
@@ -19,7 +19,7 @@
 }
 
 .icon {
-    @mixin responsive width, 25, 25;
+    @mixin responsive width, 30, 30;
 }
 
 .contactLink,
@@ -34,22 +34,26 @@
 }
 
 .list {
-    @mixin responsive gap, 0, 6;
+    @mixin responsive gap, 18, 18;
 
     display: flex;
     flex-direction: column;
 }
 
 .link {
-    @mixin transition opacity;
-    @mixin b4;
+    @mixin transition color;
+    @mixin b2;
 
-    color: #ff8562;
     font-weight: 400;
+    color: var(--color-black-1);
 
     @media (hover:hover) {
         &:hover {
-            opacity: 0.6;
+            color: var(--color-green-1);
         }
+    }
+
+    @media (max-width: $mobile) {
+        @mixin h5;
     }
 }
