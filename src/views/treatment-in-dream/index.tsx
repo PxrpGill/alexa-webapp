@@ -1,8 +1,4 @@
-import {
-	YANDEX_MAP_CONTENT,
-	YANDEX_MAP_INFO_CARD,
-	YANDEX_MAP_TITLE,
-} from "@/shared/config/global-constants.constats";
+import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constats";
 import BrickworkSection from "@/widgets/brickwork-section";
 import InstallmentPlanSection from "@/widgets/installment-plan-section";
 import QuadroSection from "@/widgets/quadro-section";
@@ -35,7 +31,7 @@ export default function TreatmentInDreamPage() {
 				className={css.brickWork}
 			/>
 			<StagesSection {...STAGES_SECTION} className={css.stages} />
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} />
+			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

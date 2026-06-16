@@ -1,7 +1,8 @@
 .root {
-    @mixin responsive padding-block-start, 70, 100;
+    @mixin responsive padding-block-start, 88, 100;
 }
 
+.yandexMap,
 .beforeAfter,
 .lastSlider,
 .brickwork,

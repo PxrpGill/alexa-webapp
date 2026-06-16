@@ -1,8 +1,4 @@
-import {
-	YANDEX_MAP_CONTENT,
-	YANDEX_MAP_INFO_CARD,
-	YANDEX_MAP_TITLE,
-} from "@/shared/config/global-constants.constats";
+import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constats";
 import CtaSection from "@/widgets/cta-section";
 import DescriptionSection from "@/widgets/description-section";
 import FaqSection from "@/widgets/faq-section";
@@ -58,7 +54,7 @@ export default function HomePage() {
 				{...PARENT_NEWS_SECTION_MOCK}
 				className={css.parentNews}
 			/>
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} />
+			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

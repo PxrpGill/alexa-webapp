@@ -1,7 +1,9 @@
 .root {
-    @mixin responsive padding-block-start, 70, 100;
+    @mixin responsive padding-block-start, 88, 100;
 }
 
+.parentNews,
+.yandexMap,
 .ourWork,
 .hero,
 .family,
@@ -21,8 +23,4 @@
 
 .lastSlider {
     @mixin responsive margin-block-end, 60, 35;
-}
-
-.parentNews {
-    @mixin responsive margin-block-end, 90, 135;
 }

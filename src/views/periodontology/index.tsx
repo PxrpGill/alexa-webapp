@@ -1,8 +1,4 @@
-import {
-	YANDEX_MAP_CONTENT,
-	YANDEX_MAP_INFO_CARD,
-	YANDEX_MAP_TITLE,
-} from "@/shared/config/global-constants.constats";
+import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constats";
 import DiagnosticsSection from "@/widgets/diagnostics-section";
 import EarlyPeriodontalTreatmentSection from "@/widgets/early-periodontal-treatment-section";
 import FaqSection from "@/widgets/faq-section";
@@ -52,7 +48,7 @@ export default function PeriodontologyPage() {
 			<OurWork {...OUR_WORK} className={css.ourWork} />
 			<FaqSection {...MOCK_FAQ_SECTION} className={css.faqs} />
 			<ParentNewsSection {...PARENT_NEWS_SECTION_MOCK} className={css.news} />
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} />
+			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

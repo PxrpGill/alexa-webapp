@@ -8,7 +8,7 @@
 }
 
 .wrapper {
-    @mixin responsive margin-block-start, 0,12;
+    @mixin responsive margin-block-start, 12, 12;
     @mixin responsive padding-inline, 20, 100;
     @mixin responsive padding-block, 12, 12;
     @mixin responsive border-radius, 30, 30;

@@ -1,8 +1,4 @@
-import {
-	YANDEX_MAP_CONTENT,
-	YANDEX_MAP_INFO_CARD,
-	YANDEX_MAP_TITLE,
-} from "@/shared/config/global-constants.constats";
+import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constats";
 import HealthForFamily from "@/widgets/health-for-family";
 import TableImageSection from "@/widgets/table-image-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
@@ -49,7 +45,7 @@ export default function AdultOrthodonticsPage() {
 				className={css.beforeAfter}
 				textBlockPosition="right"
 			/>
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} />
+			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

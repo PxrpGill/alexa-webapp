@@ -1,7 +1,9 @@
 .root {
-    @mixin responsive padding-block-start, 70, 100;
+    @mixin responsive padding-block-start, 88, 100;
 }
 
+.news,
+.yandexMap,
 .diagnostics,
 .earlyPeriodontal,
 .treatment,
@@ -11,8 +13,4 @@
 .titleSticky,
 .quadro {
     @mixin responsive margin-block-end, 60, 60;
-}
-
-.news {
-    @mixin responsive margin-block-end, 60, 135;
 }

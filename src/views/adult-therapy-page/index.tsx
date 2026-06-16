@@ -43,7 +43,7 @@ export default function AdultTherapyPage() {
 				className={css.lastSlider}
 				textBlockPosition="right"
 			/>
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} />
+			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }
