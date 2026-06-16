@@ -20,9 +20,17 @@
 
         @media (hover:hover) {
             &:hover {
-                background-color: var(--color-white-0);
+                background-color: inherit;
                 border-color: var(--color-green-1);
                 color: var(--color-green-1);
+
+                svg rect {
+                    fill: var(--color-green-1);
+                }
+
+                svg path {
+                    fill: var(--color-white-0);
+                }
             }
         }
     }
@@ -49,6 +57,13 @@
                 background-color: var(--color-green-1);
                 color: var(--color-white-0);
             }
+        }
+    }
+
+    svg {
+        path,
+        rect {
+            @mixin transition fill;
         }
     }
 }
