@@ -1,0 +1,7 @@
+.root {
+    @mixin responsive padding-block-start, 88, 100;
+}
+
+.yandexMap {
+    @mixin responsive margin-block-end, 60, 60;
+}
