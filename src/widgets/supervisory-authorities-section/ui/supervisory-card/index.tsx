@@ -18,23 +18,27 @@ export default function SupervisoryCard({
 			{title && (
 				<h5 className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
 			)}
-			{websiteLink && (
-				<div className={css.group}>
-					<p className={css.label}>Сайт</p>
-					<Link href={websiteLink} target="_blank" className={css.link}>
-						{websiteLink}
-					</Link>
+			<div className={css.body}>
+				<div className={css.groups}>
+					{websiteLink && (
+						<div className={css.group}>
+							<p className={css.label}>Сайт</p>
+							<Link href={websiteLink} target="_blank" className={css.link}>
+								{websiteLink}
+							</Link>
+						</div>
+					)}
+					{phone && (
+						<div className={css.group}>
+							<p className={css.label}>Телефон</p>
+							<Link href={`tel:${phone}`} target="_blank" className={css.link}>
+								{phone}
+							</Link>
+						</div>
+					)}
 				</div>
-			)}
-			{phone && (
-				<div className={css.group}>
-					<p className={css.label}>Сайт</p>
-					<Link href={`tel:${phone}`} target="_blank" className={css.link}>
-						{phone}
-					</Link>
-				</div>
-			)}
-			{icon && <img src={icon} className={css.icon} alt="Иконка" />}
+				{icon && <img src={icon} className={css.icon} alt="Иконка" />}
+			</div>
 		</AnimationWrapper>
 	);
 }

@@ -1,0 +1,73 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding, 20, 30;
+    @mixin responsive padding-block, 40;
+
+    background-color: var(--color-white-0);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.icon {
+    @mixin responsive width, 100, 150;
+    @mixin responsive height, 100, 150;
+    @mixin responsive margin-inline-end, 20;
+    @mixin responsive margin-block-end, 40;
+
+    flex-shrink: 0;
+    object-fit: contain;
+
+    @media (max-width: $mobile) {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.title {
+    @mixin responsive font-size, 20, 26;
+    @mixin responsive padding-block-end, 20, 20;
+
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.groups {
+    @mixin responsive gap, 10, 20;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+}
+
+.label {
+    @mixin responsive font-size, 18, 22;
+
+    font-weight: 500;
+}
+
+.group {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.body {
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: auto;
+}
+
+.link {
+    @mixin transition color;
+    @mixin b2;
+
+    @media (hover:hover) {
+        &:hover {
+            color: var(--color-green-1);
+        }
+    }
+}

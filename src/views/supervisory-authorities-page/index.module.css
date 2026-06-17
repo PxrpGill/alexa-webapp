@@ -2,6 +2,7 @@
     @mixin responsive padding-block-start, 88, 100;
 }
 
+.supervisory,
 .yandexMap {
     @mixin responsive margin-block-end, 60, 60;
 }
