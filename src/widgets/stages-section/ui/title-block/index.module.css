@@ -1,6 +1,5 @@
 .root {
     @mixin responsive gap, 20, 20;
-    @mixin responsive padding-inline, 0, 100;
 
     display: flex;
     flex-direction: column;

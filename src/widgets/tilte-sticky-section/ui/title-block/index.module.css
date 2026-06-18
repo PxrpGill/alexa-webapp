@@ -1,0 +1,30 @@
+.root {
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-block, 30, 40;
+    @mixin responsive border-radius, 30, 30;
+
+    position: sticky;
+    top: 10%;
+    left: 0;
+
+    height: fit-content;
+    background-color: var(--color-white-0);
+
+    @media (max-width: $mobile) {
+        position: static;
+        top: unset;
+        left: unset;
+    }
+}
+
+.title {
+    @mixin h4;
+    @mixin responsive padding-block-end, 20, 20;
+    @mixin responsive font-size, 32;
+    
+    font-weight: 600;
+
+    @media (max-width: $mobile) {
+       @mixin h6;
+    }
+}

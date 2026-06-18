@@ -7,7 +7,7 @@ import HeaderDropdown from "@/shared/ui/header-dropdown";
 import {
 	HEADER_NAVIGATION_ADULT_DENTISTRY_LINKS,
 	HEADER_NAVIGATION_INFO,
-	HEADER_NAVIGATION_PEDIATRIC_DENTISTRY,
+	// HEADER_NAVIGATION_PEDIATRIC_DENTISTRY,
 } from "@/widgets/layout/models/header.constants";
 import css from "./index.module.css";
 
@@ -17,9 +17,9 @@ export default function DesktopNavigation({ className }: PropsWithClassName) {
 			<HeaderDropdown dropDownItems={HEADER_NAVIGATION_ADULT_DENTISTRY_LINKS}>
 				Взрослая стоматология
 			</HeaderDropdown>
-			<HeaderDropdown dropDownItems={HEADER_NAVIGATION_PEDIATRIC_DENTISTRY}>
+			{/* <HeaderDropdown dropDownItems={HEADER_NAVIGATION_PEDIATRIC_DENTISTRY}>
 				Детская стоматология
-			</HeaderDropdown>
+			</HeaderDropdown> */}
 			<HeaderDropdown dropDownItems={HEADER_NAVIGATION_INFO}>
 				Информация
 			</HeaderDropdown>

@@ -1,8 +1,8 @@
 .root {
-    @mixin responsive gap, 31, 33;
+    @mixin responsive gap, 30, 35;
     @mixin responsive padding-block, 40, 45;
     @mixin responsive padding-inline-start, 30, 40;
-    @mixin responsive padding-inline-end, 30, 79;
+    @mixin responsive padding-inline-end, 30, 40;
     @mixin responsive border-radius, 30, 30;
 
     display: flex;

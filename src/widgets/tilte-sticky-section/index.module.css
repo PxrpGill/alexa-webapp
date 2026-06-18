@@ -1,11 +1,12 @@
-.wrapper {
-    @mixin responsive padding-inline, 0, 100;
-    @mixin responsive gap, 40, 66;
+.root {
+    @mixin responsive gap, 20, 20;
+    @mixin responsive --first-col, 0, 590;
 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
 
     @media (max-width: $mobile) {
+        display: flex;
         flex-direction: column;
     }
 }
@@ -17,25 +18,7 @@
     flex-shrink: 0;
 }
 
-.title {
-    @mixin responsive width, 0, 554;
-    @mixin h2;
-    @mixin responsive padding-block-start, 0, 40;
-    @mixin responsive font-size, 32;
 
-    flex-shrink: 0;
-    position: sticky;
-    top: 10%;
-    height: fit-content;
-    left: 0;
-
-    @media (max-width: $mobile) {
-        top: unset;
-        left: unset;
-        position: static;
-        width: auto;
-    }
-}
 
 .list {
     @mixin responsive gap, 20, 20;
@@ -92,49 +75,4 @@
 
     display: flex;
     align-items: center;
-}
-
-.lastCard {
-    @mixin responsive min-height, 0, 320;
-    @mixin responsive border-radius, 0, 30;
-    @mixin responsive padding-inline, 0, 20;
-    @mixin responsive padding-block, 0, 30;
-
-    overflow: hidden;
-    position: relative;
-    background-color: var(--color-white-0);
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-
-    @media (max-width: $mobile) {
-        @mixin responsive gap, 20;
-        
-        align-items: center;
-        background-color: unset;
-    }
-}
-
-.pictureWrapper {
-    @media (max-width: $mobile) {
-        @mixin responsive border-radius, 30, 30;
-        @mixin responsive height, 217;
-
-        width: 100%;
-
-        overflow: hidden;
-
-        position: relative;
-    }
-}
-
-.button.button[class] {
-    position: relative;
-    z-index: 10;
-    width: fit-content;
-}
-
-.buttonIcon {
-    @mixin responsive width, 25, 25;
-    @mixin responsive height, 25, 25;
 }

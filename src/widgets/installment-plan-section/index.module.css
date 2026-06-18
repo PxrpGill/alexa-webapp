@@ -1,5 +1,5 @@
 .root {
-    @mixin responsive --first-grid, 0, 680;
+    @mixin responsive --first-grid, 0, 590;
     @mixin responsive gap, 20, 20;
 
     display: grid;

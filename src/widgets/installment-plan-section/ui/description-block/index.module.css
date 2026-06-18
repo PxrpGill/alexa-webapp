@@ -1,8 +1,6 @@
 .root {
-    @mixin responsive padding-block-start, 20, 64;
-    @mixin responsive padding-block-end, 20, 70;
-    @mixin responsive padding-inline-start, 20, 39;
-    @mixin responsive padding-inline-end, 20, 104;
+    @mixin responsive padding-block, 20, 64;
+    @mixin responsive padding-inline, 20, 30;
 
     @mixin responsive border-radius, 30, 30;
 
@@ -20,6 +18,8 @@
 .title {
     @mixin responsive padding-block-end, 20, 20;
     @mixin h3;
+
+    line-height: 1.35;
 }
 
 .content {
