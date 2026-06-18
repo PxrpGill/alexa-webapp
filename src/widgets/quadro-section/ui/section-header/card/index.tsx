@@ -19,7 +19,7 @@ export default function Card({
 				<h6 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
 			)}
 			{description && (
-				<p
+				<div
 					dangerouslySetInnerHTML={{ __html: description }}
 					className={css.description}
 				/>

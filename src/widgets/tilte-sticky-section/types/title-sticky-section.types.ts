@@ -17,6 +17,7 @@ export type TitleStickySectionProps = {
 		title?: string;
 		description?: string;
 		theme?: "white" | "green";
+		buttonText?: string;
 	}>;
 	lastCard?: ImageCardProps;
 } & PropsWithClassName;

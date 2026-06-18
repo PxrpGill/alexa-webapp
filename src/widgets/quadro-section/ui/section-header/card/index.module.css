@@ -23,6 +23,7 @@
 .title {
     @mixin h6;
 
+    line-height: 1.35;
     color: var(--color-green-4);
 
     @media (max-width: $mobile) {
@@ -39,6 +40,13 @@
     @mixin b1;
 
     color: var(--color-green-4);
+
+    ul {
+        @mixin responsive padding-inline-start, 20, 20;
+
+        text-align: start;
+        list-style: disc;
+    }
 
     @media (max-width: $mobile) {
         text-align: center;

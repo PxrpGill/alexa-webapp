@@ -1,8 +1,10 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */
 
+import ButtonIconSVG from "@/public/icons/button-teeth.svg";
 import MiniIconSVG from "@/public/icons/mini-logo.svg";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
+import Button from "@/shared/ui/button";
 import css from "./index.module.css";
 import type { TitleStickySectionProps } from "./types/title-sticky-section.types";
 import TitleBlock from "./ui/title-block";
@@ -36,10 +38,18 @@ export default function TitleStickySection({
 							</div>
 						)}
 						{card.description && (
-							<p
+							<div
 								dangerouslySetInnerHTML={{ __html: card.description }}
 								className={css.cardUnderDescription}
 							/>
+						)}
+						{card.buttonText && (
+							<Button
+								className={css.cardButton}
+								rightIcon={<ButtonIconSVG className={css.buttonIcon} />}
+							>
+								{card.buttonText}
+							</Button>
 						)}
 					</AnimationWrapper>
 				))}

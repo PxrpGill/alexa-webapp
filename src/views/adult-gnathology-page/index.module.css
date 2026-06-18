@@ -1,0 +1,12 @@
+.root {
+    @mixin responsive padding-block-start, 88, 100;
+}
+
+.news,
+.faq,
+.ourWork,
+.stickyTitle,
+.quadro,
+.yandexMap {
+    @mixin responsive margin-block-end, 60, 60;
+}
