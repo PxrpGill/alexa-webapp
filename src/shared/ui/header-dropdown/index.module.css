@@ -22,8 +22,8 @@
     box-shadow: 0 var(--shadow-1) var(--shadow-2) var(--shadow-3) rgba(0, 11, 48, 0.2);
 
     border-radius: 0 0 var(--border-radius) var(--border-radius);
-    translate: -50% 0;
-    transition-property: opacity, visibility;
+    translate: -50% 5%;
+    transition-property: opacity, visibility, translate;
 
     left: 50%;
     position: absolute;
@@ -37,6 +37,7 @@
     &.show {
         opacity: 1;
         visibility: visible;
+        translate: -50% 0;
 
         @media (max-width: $mobile) {
             grid-template-rows: 1fr;
