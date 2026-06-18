@@ -11,6 +11,7 @@ export default function SectionHeader({
 	card,
 	description,
 	poster,
+	underDescription,
 }: SectionHeaderProps) {
 	return (
 		<AnimationWrapper as="div" className={`${css.root}`}>
@@ -25,6 +26,12 @@ export default function SectionHeader({
 					<h1
 						dangerouslySetInnerHTML={{ __html: title }}
 						className={css.title}
+					/>
+				)}
+				{underDescription && (
+					<p
+						dangerouslySetInnerHTML={{ __html: underDescription }}
+						className={css.underDescription}
 					/>
 				)}
 				{card && <Card {...card} className={css.desktopCard} />}

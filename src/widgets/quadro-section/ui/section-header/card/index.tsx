@@ -10,12 +10,19 @@ import css from "./index.module.css";
 export default function Card({
 	title,
 	buttonText,
+	description,
 	className,
 }: SectionHeaderCardProps) {
 	return (
 		<article className={`${css.root} ${className}`}>
 			{title && (
 				<h6 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
+			)}
+			{description && (
+				<p
+					dangerouslySetInnerHTML={{ __html: description }}
+					className={css.description}
+				/>
 			)}
 			<Button
 				rightIcon={<ButtonIconSVG className={css.icon} />}

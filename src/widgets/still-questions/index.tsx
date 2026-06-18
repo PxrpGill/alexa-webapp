@@ -31,7 +31,7 @@ export default function StillQuestions({
 					/>
 				)}
 				{description && (
-					<p
+					<div
 						dangerouslySetInnerHTML={{ __html: description }}
 						className={css.description}
 					/>

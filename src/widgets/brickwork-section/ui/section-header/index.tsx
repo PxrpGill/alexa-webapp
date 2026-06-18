@@ -9,6 +9,8 @@ export default function SectionHeader({
 	description,
 	className,
 }: SectionHeaderProps) {
+	if (!(title || description)) return null;
+
 	return (
 		<div className={`${css.root} ${className}`}>
 			{title && (

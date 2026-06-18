@@ -53,6 +53,10 @@
         line-height: 1.35;
         text-transform: uppercase;
     }
+
+    &:has(+ .underDescription) {
+        @mixin responsive padding-block-end, 20, 30;
+    }
 }
 
 .imageBlock {
@@ -74,4 +78,9 @@
     @media (max-width: $mobile) {
         display: flex;
     }
+}
+
+.underDescription {
+    @mixin b2;
+    @mixin responsive padding-block-end, 0, 30;
 }

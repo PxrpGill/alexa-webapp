@@ -34,3 +34,13 @@
     @mixin responsive width, 25, 25;
     @mixin responsive height, 25, 25;
 }
+
+.description {
+    @mixin b1;
+
+    color: var(--color-green-4);
+
+    @media (max-width: $mobile) {
+        text-align: center;
+    }
+}

@@ -5,5 +5,5 @@ export type StillQuestionProps = {
 	poster?: PictureFormatType;
 	title?: string;
 	description?: string;
-	buttonText: string;
+	buttonText?: string;
 } & PropsWithClassName;

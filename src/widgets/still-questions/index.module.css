@@ -1,7 +1,7 @@
 .root {
     @mixin responsive --first-col, 0, 750;
     @mixin responsive min-height, 0, 500;
-    @mixin responsive gap, 10, 20;
+    @mixin responsive gap, 20, 20;
 
     display: grid;
     grid-template-columns: var(--first-col) auto;
@@ -27,19 +27,28 @@
 }
 
 .content {
-    @mixin responsive padding-inline, 20, 40;
-    @mixin responsive padding-block, 25, 74;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-block, 40, 60;
 }
 
 .title {
-    @mixin responsive padding-block-end, 11, 63;
+    @mixin responsive padding-block-end, 20, 40;
     @mixin h1;
     @mixin responsive font-size, 31;
 }
 
 .description {
-    @mixin responsive padding-block-end, 18, 28;
+    @mixin responsive padding-block-end, 18, 30;
     @mixin b2;
+
+    ul {
+        @mixin responsive padding-inline-start, 20, 20;
+        @mixin responsive gap, 10, 20;
+
+        display: flex;
+        flex-direction: column;
+        list-style: disc;
+    }
 }
 
 .icon {

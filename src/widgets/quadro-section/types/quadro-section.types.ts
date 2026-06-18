@@ -3,6 +3,7 @@ import type { PictureFormatType } from "@/shared/ui/picture";
 
 export type SectionHeaderCardProps = {
 	title?: string;
+	description?: string;
 	buttonText?: string;
 } & PropsWithClassName;
 
@@ -13,6 +14,7 @@ export type SectionContentProps = {
 export type SectionHeaderProps = {
 	title?: string;
 	description?: string;
+	underDescription?: string;
 	card?: SectionHeaderCardProps;
 	poster?: PictureFormatType;
 };

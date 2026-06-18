@@ -1,0 +1,21 @@
+.root {
+    @mixin responsive padding-block-start, 88, 100;
+}
+
+.stillQuestions,
+.brickwork,
+.yandexMap,
+.titleSticky,
+.hero {
+    @mixin responsive margin-block-end, 60, 60;
+}
+
+.stillQuestions[class] h2 {
+    @mixin h4;
+
+    @media (max-width: $mobile) {
+        @mixin h3;
+        
+        line-height: 1.35;
+    }
+}
