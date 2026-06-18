@@ -17,7 +17,7 @@
 }
 
 .beforeAfter[class] {
-    & > div {
+    & > div:last-child {
         @mixin responsive --first-col, 0, 590;
         @mixin responsive min-height, 0, 700;
 
