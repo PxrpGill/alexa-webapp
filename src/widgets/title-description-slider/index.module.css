@@ -7,7 +7,7 @@
 
 .wrapper {
     @mixin responsive --first-col, 0, 590;
-    @mixin responsive gap, 10, 19; 
+    @mixin responsive gap, 20, 20; 
     @mixin responsive min-height, 0, 500;
 
     display: grid;
@@ -36,7 +36,7 @@
 }
 
 .description {
-    @mixin responsive font-size, 26, 26;
+    @mixin responsive font-size, 20, 26;
 
     line-height: 1.55;
 }
@@ -46,7 +46,7 @@
 }
 
 .titleSection {
-    @mixin responsive gap, 20, 20;
+    @mixin responsive gap, 10, 20;
     
     display: flex;
     flex-direction: column;
