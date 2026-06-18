@@ -32,10 +32,22 @@
 }
 
 .title {
-    @mixin responsive padding-inline, 0, 100;
     @mixin h2;
+}
+
+.description {
+    @mixin responsive font-size, 26, 26;
+
+    line-height: 1.55;
 }
 
 .slider {
     @mixin responsive min-height, 229;
+}
+
+.titleSection {
+    @mixin responsive gap, 20, 20;
+    
+    display: flex;
+    flex-direction: column;
 }

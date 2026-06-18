@@ -12,4 +12,5 @@ export type TitleDescriptionSliderProps = {
 	posters?: Array<PictureFormatType>;
 	textBlockPosition?: "left" | "right";
 	title?: string;
+	description?: string;
 } & PropsWithClassName;

@@ -17,7 +17,7 @@ export default function TextBlock({
 				<h2 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
 			)}
 			{description && (
-				<p
+				<div
 					dangerouslySetInnerHTML={{ __html: description }}
 					className={css.description}
 				/>

@@ -12,14 +12,28 @@ export default function TitleDescriptionSlider({
 	className,
 	posters,
 	title,
+	description,
 }: TitleDescriptionSliderProps) {
 	return (
 		<AnimationWrapper
 			as="section"
 			className={`${css.root} container ${className} ${css[textBlockPosition]}`.trim()}
 		>
-			{title && (
-				<h2 className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
+			{(title || description) && (
+				<div className={css.titleSection}>
+					{title && (
+						<h2
+							className={css.title}
+							dangerouslySetInnerHTML={{ __html: title }}
+						/>
+					)}
+					{description && (
+						<p
+							dangerouslySetInnerHTML={{ __html: description }}
+							className={css.description}
+						/>
+					)}
+				</div>
 			)}
 			<div className={`${css.wrapper} ${css[textBlockPosition]}`}>
 				<TextBlock {...textBlock} className={css.text} />

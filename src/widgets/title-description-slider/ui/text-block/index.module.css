@@ -18,6 +18,12 @@
 
 .description {
     @mixin b2;
+
+    ul {
+        @mixin responsive padding-inline-start, 20, 20;
+        
+        list-style: disc;
+    }
 }
 
 .icon {

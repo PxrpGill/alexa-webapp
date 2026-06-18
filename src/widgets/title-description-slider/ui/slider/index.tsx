@@ -17,6 +17,8 @@ export default function Slider({
 
 	if (!posters?.length) return null;
 
+	const withoutButtons = posters.length <= 1;
+
 	const handlePrevButton = () => {
 		if (activeIndex === 0) {
 			toggleActiveIndex(posters.length - 1);
@@ -46,20 +48,24 @@ export default function Slider({
 					className={`${css.poster} ${index === activeIndex && css.active}`}
 				/>
 			))}
-			<button
-				className={css.buttonPrev}
-				type="button"
-				onClick={handlePrevButton}
-			>
-				<ArrowSVG className={css.arrow} />
-			</button>
-			<button
-				className={css.buttonNext}
-				type="button"
-				onClick={handleNextButton}
-			>
-				<ArrowSVG className={css.arrow} />
-			</button>
+			{!withoutButtons && (
+				<>
+					<button
+						className={css.buttonPrev}
+						type="button"
+						onClick={handlePrevButton}
+					>
+						<ArrowSVG className={css.arrow} />
+					</button>
+					<button
+						className={css.buttonNext}
+						type="button"
+						onClick={handleNextButton}
+					>
+						<ArrowSVG className={css.arrow} />
+					</button>
+				</>
+			)}
 		</div>
 	);
 }
