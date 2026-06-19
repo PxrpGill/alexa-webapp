@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: ../..
+      dockerfile: docker/dev/Dockerfile
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    volumes:
+      - ../../src:/app
+      - /app/node_modules
+      - /app/.next
+    env_file:
+      - ../../src/.env.local
+      - ../../src/.env.example
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_YANDEX_MAPS_API_KEY=${NEXT_PUBLIC_YANDEX_MAPS_API_KEY:-}
+    restart: unless-stopped
