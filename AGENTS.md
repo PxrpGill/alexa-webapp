@@ -126,6 +126,16 @@ Strict mode, `@/*` → `src/*`. No typecheck script but `tsc --noEmit` works.
 
 Open `instrument-shop.code-workspace` (uses `src/` as root). Required extension: `biomejs.biome`.
 
+## Git hook
+
+Pre-push hook in `.githooks/pre-push` — runs `pnpm build` before every `git push` and rejects if build fails.
+
+To enable (one-time per clone):
+
+```bash
+git config core.hooksPath .githooks
+```
+
 ## Commit agent
 
 ```bash
