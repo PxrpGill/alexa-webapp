@@ -1,10 +1,10 @@
-FROM node:22-alpine
+FROM node:24-alpine
 
 WORKDIR /app
 RUN corepack enable
 
 COPY src/package.json src/pnpm-lock.yaml ./
-RUN pnpm install
+RUN pnpm install --ignore-scripts && pnpm rebuild sharp
 
 EXPOSE 3000
 
