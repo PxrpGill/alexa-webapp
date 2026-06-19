@@ -22,7 +22,7 @@
     box-shadow: 0 var(--shadow-1) var(--shadow-2) var(--shadow-3) rgba(0, 11, 48, 0.2);
 
     border-radius: 0 0 var(--border-radius) var(--border-radius);
-    translate: -50% 5%;
+    translate: -50% 2%;
     transition-property: opacity, visibility, translate;
 
     left: 50%;
@@ -37,10 +37,11 @@
     &.show {
         opacity: 1;
         visibility: visible;
-        translate: -50% 0;
+        translate: -50% -4%;
 
         @media (max-width: $mobile) {
             grid-template-rows: 1fr;
+            translate: 0;
         }
     }
 
@@ -56,6 +57,7 @@
         padding: 0;
         margin-block-start: 0;
         box-shadow: none;
+        translate: 0;
 
         display: grid;
         grid-template-rows: 0fr;
@@ -99,6 +101,11 @@
     @mixin responsive font-size, 24;
 
     font-weight: 500;
+    height: 100%;
+
+    @media (max-width: $mobile) {
+        height: fit-content;
+    }
 }
 
 .link {
