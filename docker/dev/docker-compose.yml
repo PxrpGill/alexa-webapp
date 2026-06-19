@@ -1,5 +1,7 @@
+name: alexa-web-dev
 services:
   app:
+    container_name: alexa-web-dev
     build:
       context: ../..
       dockerfile: docker/dev/Dockerfile
