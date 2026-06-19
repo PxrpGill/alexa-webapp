@@ -1,7 +1,9 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 
-import ButtonIconSvg from "@/public/icons/button-teeth.svg";
+"use client";
 
+import ButtonIconSvg from "@/public/icons/button-teeth.svg";
+import { useLayoutContext } from "@/shared/config/layout-context";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import Button from "@/shared/ui/button";
 import Picture from "@/shared/ui/picture";
@@ -15,6 +17,8 @@ export default function StillQuestions({
 	buttonText,
 	className,
 }: StillQuestionProps) {
+	const { toggleConsultationModal } = useLayoutContext();
+
 	return (
 		<AnimationWrapper
 			as="section"
@@ -36,7 +40,10 @@ export default function StillQuestions({
 						className={css.description}
 					/>
 				)}
-				<Button rightIcon={<ButtonIconSvg className={css.icon} />}>
+				<Button
+					rightIcon={<ButtonIconSvg className={css.icon} />}
+					onClick={() => toggleConsultationModal(true)}
+				>
 					{buttonText ?? "Оставить заявку"}
 				</Button>
 			</div>

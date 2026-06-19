@@ -1,0 +1,19 @@
+.root {
+    @mixin responsive padding-inline, 20, 40;
+    @mixin responsive padding-block-end, 20, 40;
+    @mixin responsive gap, 12, 24;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs {
+    @mixin responsive gap, 18, 24;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    @mixin responsive padding-block, 18, 18;
+}

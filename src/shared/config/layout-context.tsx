@@ -2,7 +2,9 @@
 
 import {
 	createContext,
+	type Dispatch,
 	type PropsWithChildren,
+	type SetStateAction,
 	useCallback,
 	useContext,
 	useEffect,
@@ -14,6 +16,9 @@ import { MEDIA_QUERIES } from "./use-media-query.constants";
 type LayoutContextType = {
 	isMenuOpen: boolean;
 	toggleMenuOpen: (arg: boolean) => void;
+
+	isConsultationModalOpen: boolean;
+	toggleConsultationModal: Dispatch<SetStateAction<boolean>>;
 };
 
 export const LayoutContext = createContext<LayoutContextType | undefined>(
@@ -22,6 +27,8 @@ export const LayoutContext = createContext<LayoutContextType | undefined>(
 
 export const LayoutProvider = ({ children }: PropsWithChildren) => {
 	const [isMenuOpen, toggleMenuOpen] = useState<boolean>(false);
+	const [isConsultationModalOpen, toggleConsultationModal] =
+		useState<boolean>(false);
 	const isMobile = useMediaQuery(MEDIA_QUERIES.mobile);
 
 	const toggleMenuClose = useCallback(() => {
@@ -42,7 +49,12 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 
 	return (
 		<LayoutContext.Provider
-			value={{ isMenuOpen, toggleMenuOpen: handleMenuOpen }}
+			value={{
+				isMenuOpen,
+				toggleMenuOpen: handleMenuOpen,
+				isConsultationModalOpen,
+				toggleConsultationModal,
+			}}
 		>
 			{children}
 		</LayoutContext.Provider>

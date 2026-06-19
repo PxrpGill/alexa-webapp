@@ -1,0 +1,10 @@
+.root {
+    @mixin responsive width, 0, 560;
+}
+
+.posterWrapper {
+    @mixin responsive height, 190, 190;
+
+    position: relative;
+    width: 100%;
+}

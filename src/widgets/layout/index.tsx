@@ -1,4 +1,5 @@
 import type { PropsWithChildren } from "react";
+import ConsultationModal from "@/features/consultation-modal";
 import { LayoutProvider } from "@/shared/config/layout-context";
 import Footer from "./ui/footer";
 import Header from "./ui/header";
@@ -13,6 +14,7 @@ export default function Layout({ children }: LayoutProps) {
 			{children}
 			<Menu />
 			<Footer />
+			<ConsultationModal />
 		</LayoutProvider>
 	);
 }
