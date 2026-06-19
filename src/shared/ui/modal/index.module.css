@@ -70,7 +70,7 @@
 .closeButton {
     @mixin responsive width, 40, 40;
     @mixin responsive height, 40, 40;
-    @mixin responsive margin, 5, 20;
+    @mixin responsive margin, 15, 20;
     @mixin transitionOptions;
 
     transition-property: opacity;

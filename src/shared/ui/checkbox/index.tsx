@@ -3,12 +3,15 @@
 
 "use client";
 
-import { type ComponentPropsWithoutRef, useId } from "react";
+import { type ComponentPropsWithoutRef, type ReactNode, useId } from "react";
 
 import css from "./index.module.css";
 
-export type CheckboxProps = Omit<ComponentPropsWithoutRef<"input">, "type"> & {
-	label?: string;
+export type CheckboxProps = Omit<
+	ComponentPropsWithoutRef<"input">,
+	"type" | "children"
+> & {
+	label?: ReactNode;
 	hint?: string;
 	error?: string;
 	className?: string;
@@ -48,7 +51,7 @@ export default function Checkbox({
 						>
 							<path
 								d="M1 5L4.5 8.5L11 1"
-								stroke="currentColor"
+								stroke="var(--color-black-1)"
 								strokeWidth="1.8"
 								strokeLinecap="round"
 								strokeLinejoin="round"
@@ -57,7 +60,7 @@ export default function Checkbox({
 					</span>
 				</span>
 
-				{label && <span className={css.labelText} dangerouslySetInnerHTML={{__html: label}} />}
+				{label && <div className={css.labelText}>{label}</div>}
 			</label>
 
 			{(error || hint) && (

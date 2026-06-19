@@ -1,10 +1,18 @@
 .root {
     @mixin responsive width, 0, 560;
+
+    @media (max-width: $mobile) {
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+    }
 }
+
 
 .posterWrapper {
     @mixin responsive height, 190, 190;
 
+    flex-shrink: 0;
     position: relative;
     width: 100%;
 }

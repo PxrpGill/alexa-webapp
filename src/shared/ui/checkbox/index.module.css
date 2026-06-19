@@ -8,12 +8,15 @@
 /* ── Label (clickable row) ───────────────────────────── */
 
 .label {
+    @mixin responsive gap, 8, 10;
+    @mixin b2;
+
     display: flex;
     align-items: center;
     cursor: pointer;
     user-select: none;
 
-    @mixin responsive gap, 8, 10;
+    line-height: 1.2;
 }
 
 /* ── Checkbox wrapper (positions native input + box) ─── */
@@ -22,8 +25,8 @@
     position: relative;
     flex-shrink: 0;
 
-    @mixin responsive width, 18, 20;
-    @mixin responsive height, 18, 20;
+    @mixin responsive width, 25, 30;
+    @mixin responsive height, 25, 30;
 }
 
 /* ── Hidden native input (covers full hit-area) ─────── */
@@ -42,25 +45,26 @@
 
 .box {
     @mixin transitionOptions 0.2s;
+    @mixin responsive --border, 2, 2;
+    @mixin responsive border-radius, 4, 4;
 
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-bg-tertiary);
-    border: calc(1.5rem / 14.4) solid var(--color-border);
-    border-radius: calc(4rem / 14.4);
+    background-color: var(--color-white-0);
+    border: var(--border) solid var(--color-black-1);
     pointer-events: none;
-    color: var(--color-text-on-accent);
+    color: var(--color-black-1);
     transition-property: background-color, border-color;
 }
 
 /* ── Checkmark SVG (draws in when checked) ───────────── */
 
 .checkmark {
-    @mixin responsive width, 10, 12;
-    @mixin responsive height, 10, 12;
+    @mixin responsive width, 15, 18;
+    @mixin responsive height, 15, 18;
 
     stroke-dasharray: 16;
     stroke-dashoffset: 16;
@@ -73,8 +77,8 @@
 /* ── Checked state ───────────────────────────────────── */
 
 .input:checked ~ .box {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
+    background-color: var(--color-white-0);
+    border-color: var(--color-green-1);
 }
 
 .input:checked ~ .box .checkmark {
@@ -99,8 +103,6 @@
 /* ── Label text ──────────────────────────────────────── */
 
 .labelText {
-    @mixin body;
-
     color: var(--color-text-primary);
 
     a {
@@ -137,8 +139,6 @@
 /* ── Message (hint / error) ──────────────────────────── */
 
 .message {
-    @mixin small;
-
     color: var(--color-text-muted);
 
     @mixin responsive padding-left, 26, 30;

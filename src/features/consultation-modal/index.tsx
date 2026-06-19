@@ -19,6 +19,7 @@ export default function ConsultationModal() {
 			isOpen={isConsultationModalOpen}
 			toggleClose={() => toggleConsultationModal(false)}
 			contentClassName={css.root}
+			className={css.rootModal}
 		>
 			<div className={css.posterWrapper}>
 				<Picture poster={CONSULTATION_MODAL_PICTURE} />
