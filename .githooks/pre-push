@@ -1,0 +1,25 @@
+#!/bin/sh
+
+echo "🔨 Running build check before push..."
+
+BUILD_DIR="$(git rev-parse --show-toplevel)/src"
+
+if [ ! -f "$BUILD_DIR/package.json" ]; then
+  echo "❌ package.json not found in $BUILD_DIR"
+  exit 1
+fi
+
+cd "$BUILD_DIR" || exit 1
+
+pnpm build
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -ne 0 ]; then
+  echo ""
+  echo "❌ Build failed. Push rejected."
+  echo "   Fix the build errors before pushing."
+  exit 1
+fi
+
+echo "✅ Build passed. Push allowed."
+exit 0
