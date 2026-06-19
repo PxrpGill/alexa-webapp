@@ -1,17 +1,15 @@
 .root {
+    @mixin responsive gap, 5, 6;
+
     display: flex;
     flex-direction: column;
     width: 100%;
-
-    @mixin responsive gap, 5, 6;
 }
 
 /* ── Label ───────────────────────────────────────────── */
 
 .label {
-    @mixin small;
-
-    color: var(--color-text-secondary);
+    color: var(--color-black-1);
     user-select: none;
 }
 
@@ -44,20 +42,24 @@
 /* ── Input ───────────────────────────────────────────── */
 
 .input {
-    @mixin body;
     @mixin transitionOptions 0.2s;
-    @mixin responsive border-radius, 6, 6;
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive border-width, 2, 2;
+    @mixin b1;
+
+    font-weight: 400;
 
     width: 100%;
     background-color: var(--color-bg-tertiary);
     color: var(--color-text-primary);
-    border: calc(1.5rem / 14.4) solid var(--color-border);
+    border-style: solid;
+    border-color: var(--color-gray-8);
     outline: none;
     transition-property: border-color, background-color;
-    caret-color: var(--color-accent);
+    caret-color: var(--color-black-1);
 
     &::placeholder {
-        color: var(--color-text-muted);
+        color: var(--color-gray-8);
     }
 
     &:-webkit-autofill,
@@ -69,8 +71,7 @@
     }
 
     &:focus {
-        border-color: var(--color-gray-400);
-        background-color: var(--color-bg-elevated);
+        border-color: var(--color-green-1);
 
         & ~ .focusBar {
             width: calc(100% - calc(4rem / 14.4));
@@ -79,7 +80,7 @@
 
     @media (hover: hover) {
         &:not(:disabled):not(:focus):hover {
-            border-color: var(--color-gray-400);
+            border-color: var(--color-green-1);
         }
     }
 }
@@ -92,8 +93,8 @@
 }
 
 .m .input {
-    @mixin responsive padding-inline, 10, 12;
-    @mixin responsive padding-block, 7, 8;
+    @mixin responsive padding-inline, 10, 20;
+    @mixin responsive padding-block, 7, 20;
 }
 
 .l .input {
@@ -172,8 +173,6 @@
 /* ── Message (hint / error) ──────────────────────────── */
 
 .message {
-    @mixin small;
-
     color: var(--color-text-muted);
 }
 

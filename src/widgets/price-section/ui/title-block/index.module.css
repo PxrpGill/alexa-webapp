@@ -1,0 +1,15 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding, 30, 30;
+
+    background-color: var(--color-white-0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    @mixin h2;
+    @mixin responsive font-size, 30;
+}

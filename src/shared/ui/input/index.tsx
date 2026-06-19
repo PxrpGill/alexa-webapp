@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/suspicious/noControlCharactersInRegex: <explanation> */
+
 "use client";
 
 import {

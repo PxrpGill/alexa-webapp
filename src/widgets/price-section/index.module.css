@@ -1,0 +1,3 @@
+.sectionHeader {
+    @mixin responsive margin-block-end, 20, 20;
+}

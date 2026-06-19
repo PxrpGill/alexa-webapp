@@ -44,14 +44,14 @@ export default function HeaderDropdown({
 							({ IconSvg, title, description, href, target }, index) => (
 								<li className={css.paragraph} key={`${title}-${index}`}>
 									<Link
-											href={href}
-											className={css.link}
-											target={target}
-											onClick={() => {
-												toggleDropDownOpen(false);
-												onLinkClick?.();
-											}}
-										>
+										href={href}
+										className={css.link}
+										target={target}
+										onClick={() => {
+											toggleDropDownOpen(false);
+											onLinkClick?.();
+										}}
+									>
 										<IconSvg className={css.logo} />
 										<div className={css.rightPart}>
 											{title && (

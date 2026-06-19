@@ -1,0 +1,14 @@
+.root {
+    @mixin responsive gap, 20, 20;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filters {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-wrap: wrap;
+}

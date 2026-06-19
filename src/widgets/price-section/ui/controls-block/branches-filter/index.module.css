@@ -1,0 +1,50 @@
+.desktopWrapper {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icon {
+    @mixin responsive width, 25, 25;
+    @mixin responsive height, 25, 25;
+}
+
+.branchButton.branchButton[class] {
+    @mixin h6;
+
+    &.selected {
+        background-color: var(--color-green-1);
+        color: var(--color-white-0);
+
+        svg path {
+            fill: var(--color-green-1);
+        }
+
+        svg rect {
+            fill: var(--color-white-0);
+        }
+    }
+    
+    &:not(.selected) {
+        svg rect {
+            fill: var(--color-green-1);
+        }
+
+        svg path {
+            fill: var(--color-white-0);
+        }
+    }
+
+    @media (hover:hover) {
+        &:hover {
+            svg rect {
+                fill: var(--color-white-0);
+            }
+
+            svg path {
+                fill: var(--color-green-1);
+            }
+        }
+    }
+}
