@@ -1,0 +1,20 @@
+{
+  "skill_name": "widget-development",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to create a testimonials widget that displays customer reviews in a grid. Each review should show the client name, photo, and review text. It should be responsive (1 column on mobile, 2 on tablet, 3 on desktop). No state needed, just display the data passed in.",
+      "expected_output": "A complete widget structure with folder layout, types definition for testimonial props, component code with AnimationWrapper and responsive grid, CSS module with @mixin responsive, ready to integrate into a page"
+    },
+    {
+      "id": 2,
+      "prompt": "Create a benefits slider widget. It should display benefits one at a time with left/right arrow buttons to navigate. Should show current index and total count. Uses React state for tracking the active slide. Each benefit has an icon and description.",
+      "expected_output": "Widget with useState for managing active slide, button handlers for prev/next, conditional rendering of slides, 'use client' directive, CSS for styling arrows and pagination info, responsive layout"
+    },
+    {
+      "id": 3,
+      "prompt": "Build a services section with tabs. There are 3 service categories (dental, cosmetic, orthodontic). User picks a tab and sees services for that category listed below. Sub-components: TabButtons and ServicesList. Both need to communicate which tab is active. Tabs persist across re-renders.",
+      "expected_output": "Widget with Context for managing active tab state, SectionProvider wrapper, two sub-components in ui/ folders that use useContext hook, separate types file, proper 'use client' directives on components using hooks, folder structure showing clear separation of concerns"
+    }
+  ]
+}
