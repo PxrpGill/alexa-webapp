@@ -7,8 +7,7 @@
 }
 
 .title {
-    @mixin h3;
-    @mixin responsive font-size, 30;
+    @mixin text-4xl;
 
     text-align: center;
 }

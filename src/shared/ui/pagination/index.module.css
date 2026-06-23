@@ -55,7 +55,7 @@
 
 .arrow {
     @mixin responsive width, 40, 44;
-    @mixin responsive font-size, 14, 16;
+    @mixin text-base;
 
     color: var(--color-accent);
 }

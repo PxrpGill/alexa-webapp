@@ -45,8 +45,7 @@
 }
 
 .locality {
-  @mixin b1;
-  @mixin responsive font-size, 18;
+  @mixin text-md;
 
   font-weight: 600;
 }
@@ -59,10 +58,9 @@
 }
 
 .branchTitle {
-  @mixin b1;
+  @mixin text-md;
   @mixin transition color;
   @mixin responsive padding-block-end, 10, 10;
-  @mixin responsive font-size, 18;
 
   font-weight: 600;
 }

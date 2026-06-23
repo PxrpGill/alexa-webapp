@@ -13,8 +13,7 @@
 }
 
 .title {
-    @mixin b1;
-    @mixin responsive font-size, 18;
+    @mixin text-md;
 
     color: var(--color-gray-1);
 }

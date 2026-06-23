@@ -17,6 +17,5 @@
 }
 
 .title {
-    @mixin h2;
-    @mixin responsive font-size, 30;
+    @mixin text-4xl;
 }

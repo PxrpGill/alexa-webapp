@@ -33,8 +33,7 @@
 
 .title {
     @mixin responsive padding-block-end, 20, 40;
-    @mixin h1;
-    @mixin responsive font-size, 31;
+    @mixin text-4xl;
 }
 
 .description {

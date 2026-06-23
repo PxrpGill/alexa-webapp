@@ -98,12 +98,14 @@
 .button {
     @mixin b4;
     @mixin transition color;
-    @mixin responsive font-size, 24;
 
     font-weight: 500;
     height: 100%;
 
     @media (max-width: $mobile) {
+        @mixin text-3xl;
+
+        font-weight: 500;
         height: fit-content;
     }
 }

@@ -130,9 +130,8 @@
 }
 
 .title {
-    @mixin responsive font-size, 24, 32;
+    @mixin text-3xl;
 
-    font-weight: 600;
     line-height: 1.55;
 }
 

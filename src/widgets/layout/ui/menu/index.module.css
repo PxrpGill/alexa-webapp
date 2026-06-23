@@ -2,7 +2,7 @@
     @mixin transitionOptions;
     @mixin responsive --left, 25;
     @mixin responsive padding-inline, 25;
-    @mixin responsive padding-block-start, 42;
+    @mixin responsive padding-block-start, 62;
     @mixin responsive padding-block-end, 25;
 
     @mixin responsive gap, 15;
@@ -28,7 +28,7 @@
 }
 
 .blog {
-    @mixin responsive font-size, 24;
+    @mixin text-3xl;
 
     font-weight: 500;
 }

@@ -6,11 +6,8 @@
 }
 
 .title {
-    @mixin h4;
+    @mixin text-3xl;
     @mixin responsive padding-inline, 0, 100;
-    @mixin responsive font-size, 32;
-
-    font-weight: 600;
 }
 
 .list {

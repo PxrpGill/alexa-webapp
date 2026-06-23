@@ -22,10 +22,7 @@
 }
 
 .title {
-    @mixin h4;
-    @mixin responsive font-size, 32;
-    
-    font-weight: 600;
+    @mixin text-3xl;
 
     @media (max-width: $mobile) {
        @mixin h6;

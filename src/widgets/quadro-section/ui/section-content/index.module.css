@@ -31,7 +31,7 @@
 }
 
 .description {
-    @mixin responsive font-size, 16, 22;
+    @mixin text-lg;
 
     line-height: 1.35;
     font-weight: 600;

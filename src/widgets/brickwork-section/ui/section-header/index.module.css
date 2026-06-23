@@ -10,5 +10,5 @@
 }
 
 .description {
-    @mixin responsive font-size, 20, 26;
+    @mixin text-2xl;
 }

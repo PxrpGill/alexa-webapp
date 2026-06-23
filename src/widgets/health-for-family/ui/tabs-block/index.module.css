@@ -34,7 +34,7 @@
 }
 
 .description {
-    @mixin responsive font-size, 16, 26;
+    @mixin text-xl;
 
     text-align: center;
     line-height: 1.22;

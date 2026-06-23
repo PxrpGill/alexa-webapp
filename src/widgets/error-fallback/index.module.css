@@ -29,7 +29,7 @@
 
 .description {
     @mixin responsive padding-block-end, 20, 40;
-    @mixin responsive font-size, 16, 26;
+    @mixin text-xl;
 
     line-height: 1.35;
 }

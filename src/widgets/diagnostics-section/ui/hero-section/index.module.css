@@ -28,9 +28,7 @@
 }
 
 .title {
-    @mixin responsive font-size, 22, 36;
-
-    font-weight: 600;
+    @mixin text-4xl;
 }
 
 .description {
