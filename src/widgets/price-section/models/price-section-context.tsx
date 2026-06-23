@@ -8,6 +8,7 @@ import {
 	useContext,
 	useState,
 } from "react";
+import type { PriceCategory } from "@/shared/types/price-category.types";
 import type {
 	ControlsBlockProps,
 	TabProps,
@@ -21,6 +22,11 @@ export type PriceSectionContextType = {
 
 	selectedBranchFilter?: string | undefined;
 	selectBranchFilter: Dispatch<SetStateAction<string | undefined>>;
+
+	searchQuery: string;
+	setSearchQuery: (q: string) => void;
+
+	currentBranchCategories: PriceCategory[];
 };
 
 const PriceSectionContext = createContext<PriceSectionContextType | undefined>(
@@ -31,6 +37,7 @@ export const PriceSectionContextProvider = ({
 	children,
 	branchTabs,
 	filters,
+	categories,
 }: PropsWithChildren & ControlsBlockProps) => {
 	const [firstTab] = branchTabs ?? [];
 
@@ -40,6 +47,10 @@ export const PriceSectionContextProvider = ({
 	const [selectedBranchFilter, selectBranchFilter] = useState<
 		string | undefined
 	>("all");
+	const [searchQuery, setSearchQuery] = useState("");
+
+	const currentBranchCategories =
+		(categories?.[selectedBranch ?? ""]) ?? [];
 
 	return (
 		<PriceSectionContext.Provider
@@ -49,6 +60,9 @@ export const PriceSectionContextProvider = ({
 				branchFilterTabs: filters ? filters[selectedBranch ?? ""] : undefined,
 				selectBranchFilter,
 				selectedBranchFilter,
+				searchQuery,
+				setSearchQuery,
+				currentBranchCategories,
 			}}
 		>
 			{children}

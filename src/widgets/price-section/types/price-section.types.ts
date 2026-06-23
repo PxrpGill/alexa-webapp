@@ -1,3 +1,4 @@
+import type { PriceCategory } from "@/shared/types/price-category.types";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 
 export type TabProps = {
@@ -10,6 +11,9 @@ export type ControlsBlockProps = {
 	branchTabs?: TabProps[];
 	filters?: {
 		[branchSlug: string]: TabProps[];
+	};
+	categories?: {
+		[branchSlug: string]: PriceCategory[];
 	};
 } & PropsWithClassName;
 

@@ -13,13 +13,18 @@ export default function SearchFilter({
 	className,
 	filters,
 }: { filters?: TabProps[] } & PropsWithClassName) {
-	const { selectedBranchFilter } = usePriceSectionContext();
+	const { selectedBranchFilter, selectBranchFilter, searchQuery, setSearchQuery } =
+		usePriceSectionContext();
 
 	if (!filters?.length) return null;
 
 	return (
 		<div className={`${css.root} ${className}`}>
-			<Input placeholder="Поиск услуги..."/>
+			<Input
+				placeholder="Поиск услуги..."
+				value={searchQuery}
+				onChange={(e) => setSearchQuery(e.target.value)}
+			/>
 			<div className={css.filters}>
 				{filters.map((filter, index) => (
 					<Button
@@ -28,6 +33,7 @@ export default function SearchFilter({
 							selectedBranchFilter === filter.slug ? "green" : "transparent"
 						}
 						key={`${index}-${filter.slug}`}
+						onClick={() => selectBranchFilter(filter.slug)}
 					>
 						{filter.title}
 					</Button>

@@ -1,0 +1,75 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+
+    overflow: hidden;
+    border: 1px solid var(--color-green-1);
+}
+
+.header {
+    @mixin responsive padding-block, 16, 22;
+    @mixin responsive padding-inline, 20, 32;
+    @mixin responsive gap, 16, 20;
+    @mixin transition background-color;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-green-1);
+    cursor: pointer;
+    border: none;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color-green-4);
+        }
+    }
+}
+
+.title {
+    @mixin h5;
+
+    color: var(--color-white-0);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.icon {
+    @mixin transition rotate;
+    @mixin responsive font-size, 24, 30;
+
+    color: var(--color-white-0);
+    line-height: 1;
+    flex-shrink: 0;
+    display: inline-block;
+    font-weight: 300;
+    user-select: none;
+}
+
+.iconOpen {
+    rotate: 45deg;
+}
+
+.content {
+    @mixin transitionOptions;
+
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    visibility: hidden;
+    transition-property: grid-template-rows, opacity, visibility;
+    background-color: var(--color-white-0);
+}
+
+.contentOpen {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+}
+
+.contentInner {
+    @mixin responsive padding-inline, 20, 32;
+
+    overflow: hidden;
+}
