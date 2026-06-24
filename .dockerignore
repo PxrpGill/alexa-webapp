@@ -2,6 +2,7 @@
 .gitignore
 .dockerignore
 docker
+!docker/dev/entrypoint.sh
 *.md
 .DS_Store
 .next
