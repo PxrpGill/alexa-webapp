@@ -11,7 +11,7 @@ fi
 
 cd "$BUILD_DIR" || exit 1
 
-pnpm build
+CI=true pnpm build
 EXIT_CODE=$?
 
 if [ $EXIT_CODE -ne 0 ]; then
