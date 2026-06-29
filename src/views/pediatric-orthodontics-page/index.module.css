@@ -1,0 +1,27 @@
+.root {
+    @mixin responsive padding-block-start, 88, 100;
+}
+
+.lastSlider,
+.family,
+.hero,
+.yandexMap {
+    @mixin responsive margin-block-end, 60, 60;
+}
+
+.heroContent[class],
+.hero {
+    @mixin responsive min-height, 0, 640;
+
+    position: relative;
+}
+
+.heroContent[class] {
+    @mixin responsive border-radius, 0, 30;
+    
+    overflow: hidden;
+}
+
+.slider {
+    @mixin responsive margin-block-end, 20, 35;
+}

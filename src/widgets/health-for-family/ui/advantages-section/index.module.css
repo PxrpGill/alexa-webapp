@@ -7,7 +7,6 @@
 
 .title {
     @mixin text-3xl;
-    @mixin responsive padding-inline, 0, 100;
 }
 
 .list {
