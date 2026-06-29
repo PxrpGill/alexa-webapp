@@ -1,0 +1,21 @@
+.root {
+    @mixin responsive padding-block-start, 88, 100;
+}
+
+.brickwork,
+.description,
+.quadro,
+.yandexMap {
+    @mixin responsive margin-block-end, 60, 60;
+}
+
+.description.description[class] div {
+    @mixin responsive --first-col, 0, 623;
+    @mixin responsive gap, 0, 77;
+
+    grid-template-columns: var(--first-col) auto;
+
+    p {
+        @mixin text-md;
+    }
+}

@@ -7,8 +7,13 @@ export type SectionHeaderCardProps = {
 	buttonText?: string;
 } & PropsWithClassName;
 
+export type QuadroCardProps = {
+	title?: string;
+	description?: string;
+};
+
 export type SectionContentProps = {
-	cards?: string[];
+	cards?: Array<QuadroCardProps>;
 } & PropsWithClassName;
 
 export type SectionHeaderProps = {

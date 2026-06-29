@@ -37,7 +37,7 @@
     background-color: var(--color-white-0);
 
     &.green {
-        @mixin responsive gap, 40, 40;
+        @mixin responsive gap, 40, 20;
 
         justify-content: center;
         background-color: var(--color-green-1);
