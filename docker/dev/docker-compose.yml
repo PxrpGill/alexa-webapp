@@ -10,6 +10,7 @@ services:
     volumes:
       - ../../src:/app
       - /app/.next
+      - /app/node_modules
     env_file:
       - ../../src/.env.local
       - ../../src/.env.example
