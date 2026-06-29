@@ -1,0 +1,14 @@
+.root {
+    @mixin responsive padding-block-start, 88, 100;
+}
+
+.questions,
+.promo,
+.stickyTitle,
+.stages,
+.faq,
+.brickwork,
+.quadro,
+.yandexMap {
+    @mixin responsive margin-block-end, 60, 60;
+}

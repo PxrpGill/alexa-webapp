@@ -40,9 +40,13 @@
     @mixin responsive padding-block-end, 18, 30;
     @mixin b2;
 
+    b {
+        font-weight: 600;
+    }
+
     ul {
         @mixin responsive padding-inline-start, 20, 20;
-        @mixin responsive gap, 10, 20;
+        @mixin responsive gap, 10, 10;
 
         display: flex;
         flex-direction: column;

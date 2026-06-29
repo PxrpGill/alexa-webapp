@@ -1,0 +1,59 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding, 20, 30;
+    @mixin responsive padding-block, 40;
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-white-0);
+
+    &.green {
+        background-color: var(--color-green-1);
+    }
+}
+
+.root.green .title,
+.root.green .content {
+    color: var(--color-white-0);
+}
+
+.title {
+    @mixin text-lg;
+
+    font-weight: 600;
+}
+
+.content {
+    @mixin text-base;
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.button.button[class] {
+    width: fit-content;
+    color: var(--color-black-1);
+    background-color: var(--color-white-0);
+
+    @media (hover:hover) {
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+.icon {
+    @mixin responsive width, 25, 25;
+    @mixin responsive height, 25, 25;
+
+    rect {
+        fill: var(--color-green-1);
+    }
+
+    path {
+        fill: var(--color-white-0);
+    }
+}
