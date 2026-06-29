@@ -1,0 +1,14 @@
+.root {
+    @mixin responsive padding-block-start, 88, 100;
+}
+
+.lastSlider,
+.yandexMap,
+.brickwork,
+.quadro {
+    @mixin responsive margin-block-end, 60, 60;
+}
+
+.slider {
+    @mixin responsive margin-block-end, 20, 35;
+}

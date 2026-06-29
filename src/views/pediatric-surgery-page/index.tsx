@@ -1,46 +1,34 @@
 import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constats";
 import BrickworkSection from "@/widgets/brickwork-section";
-import DescriptionSection from "@/widgets/description-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import YandexMap from "@/widgets/yandex-map";
 import css from "./index.module.css";
 import {
 	BRICKWORK_SECTION_MOCK,
-	DESCRIPTION_SECTION,
 	FIRST_TITLE_DESCRIPTION_SLIDER,
-	FOURTH_TITLE_DESCRIPTION_SLIDER,
 	MOCK_QUADRO_SECTION,
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
-} from "./models/pediatric-dental-consultation.constants";
+} from "./models/pediatric-surgery.constants";
 
-export default function PediatricDentalConsultationPage() {
+export default function PediatricSurgeryPage() {
 	return (
 		<main className={css.root}>
 			<QuadroSection {...MOCK_QUADRO_SECTION} className={css.quadro} />
-			<DescriptionSection
-				{...DESCRIPTION_SECTION}
-				className={css.description}
-			/>
-			<BrickworkSection {...BRICKWORK_SECTION_MOCK} className={css.brickwork} />
+			<BrickworkSection className={css.brickwork} {...BRICKWORK_SECTION_MOCK} />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className={css.slider}
 			/>
 			<TitleDescriptionSlider
+				textBlockPosition="right"
+				className={css.slider}
 				{...SECOND_TITLE_DESCRIPTION_SLIDER}
-				textBlockPosition="right"
-				className={css.slider}
 			/>
 			<TitleDescriptionSlider
-				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
-			/>
-			<TitleDescriptionSlider
-				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
 				className={css.lastSlider}
-				textBlockPosition="right"
+				{...THIRD_TITLE_DESCRIPTION_SLIDER}
 			/>
 			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>

@@ -1,6 +1,7 @@
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { DescriptionSectionProps } from "@/widgets/description-section/types/description-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
+import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 
 export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
 	sectionHeader: {
@@ -88,6 +89,112 @@ export const BRICKWORK_SECTION_MOCK: BrickworkSectionProps = {
 				"Программа лояльности для детей из&nbsp;многодетных семей и&nbsp;детей с&nbsp;особенностями",
 			cardTheme: "green",
 			buttonText: "Записаться на прием",
+		},
+	],
+};
+
+export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	title: "Наши преимущества",
+	textBlock: {
+		title: "Современное оборудование",
+		description:
+			"Компьютерная томограмма и&nbsp;рентген, терапия, лечение зубов с&nbsp;микроскопом, гигиена, удаление зубов, имплантация и&nbsp;протезирование, исправление прикуса с&nbsp;применением самого современного оборудования, инновационных материалов и&nbsp;самых передовых протоколов лечения&nbsp;&mdash; залог здоровья наших пациентов!",
+	},
+	posters: [
+		{
+			webp: {
+				src: "/mock/home/first-slider/first-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/second-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/third-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/fourth-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/fifth-desktop.webp",
+			},
+		},
+	],
+};
+
+export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	textBlock: {
+		title: "Комфортная атмосфера:",
+		description:
+			"Мы&nbsp;делаем все возможное, чтобы ваше посещение было приятным и&nbsp;безопасным.",
+	},
+	posters: [
+		{
+			original: {
+				src: "/mock/pediatric-dental-consultation/2-1-slide.jpg",
+			},
+		},
+		{
+			original: {
+				src: "/mock/pediatric-dental-consultation/2-2-slide.jpg",
+			},
+		},
+		{
+			original: {
+				src: "/mock/pediatric-dental-consultation/2-3-slide.jpg",
+			},
+		},
+	],
+};
+
+export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	textBlock: {
+		title: "Лечение зубов &laquo;во&nbsp;сне&raquo;",
+		description:
+			"Позволяет вашим детям проходить стоматологические процедуры без страха и&nbsp;стресса. * Эта услуга особенно полезна для малышей со&nbsp;стоматофобией, обеспечивая комфорт и&nbsp;положительный опыт на&nbsp;каждом этапе лечения.",
+	},
+	posters: [
+		{
+			original: {
+				src: "/mock/pediatric-dental-consultation/3-1-slide.jpg",
+			},
+		},
+	],
+};
+
+export const FOURTH_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	textBlock: {
+		title: "Индивидуальный подход:",
+		description:
+			"Мы&nbsp;учитываем все особенности вашего ребенка и&nbsp;подбираем оптимальный план лечения.",
+	},
+	posters: [
+		{
+			original: {
+				src: "/mock/pediatric-dental-consultation/4-1-slide.jpg",
+			},
+		},
+		{
+			original: {
+				src: "/mock/pediatric-dental-consultation/4-2-slide.jpg",
+			},
+		},
+		{
+			original: {
+				src: "/mock/pediatric-dental-consultation/4-3-slide.jpg",
+			},
+		},
+		{
+			original: {
+				src: "/mock/pediatric-dental-consultation/4-4-slide.jpg",
+			},
 		},
 	],
 };
