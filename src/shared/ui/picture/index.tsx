@@ -7,6 +7,7 @@ export type PictureFormatDataType = {
 };
 
 export type PictureFormatType = {
+	[x: string]: any;
 	original?: PictureFormatDataType;
 	webp?: PictureFormatDataType;
 	avif?: PictureFormatDataType;

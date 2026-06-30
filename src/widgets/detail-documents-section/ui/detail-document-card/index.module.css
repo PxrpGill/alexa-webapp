@@ -1,0 +1,147 @@
+.card {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding, 20, 30;
+    @mixin responsive gap, 20, 20;
+
+    width: 100%;
+    background-color: var(--color-gray-9);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (hover:hover) {
+        &:hover {
+            .hoverWrapper {
+                scale: 1;
+            }
+        }
+    }
+}
+
+.poster.poster[class] img {
+    object-fit: contain;
+}
+
+.wrapper {
+    @mixin responsive width, 200, 300;
+    @mixin responsive height, 300, 400;
+
+    position: relative;
+}
+
+.title {
+    @mixin text-lg;
+}
+
+.content[class] {
+    @mixin responsive height, 900, 1100;
+    @mixin responsive width, 600, 1200;
+    @mixin responsive padding-bottom, 30, 40;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @mixin responsive gap, 20, 30;
+
+    @media (max-width: $mobile) {
+        width: 100vw;
+        height: 100dvh;
+        border-radius: 0;
+    }
+}
+
+.slider {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    @mixin transition opacity;
+}
+
+.slideActive {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.detailPoster.detailPoster[class] {
+    width: 100%;
+    height: 100%;
+}
+
+.detailPoster.detailPoster[class] img {
+    object-fit: contain;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @mixin responsive gap, 24, 40;
+    flex-shrink: 0;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @mixin responsive width, 44, 56;
+    @mixin responsive height, 44, 56;
+    border-radius: 50%;
+    background-color: var(--color-gray-7);
+    @mixin transition background-color;
+
+    &:hover {
+        background-color: var(--color-gray-6);
+    }
+}
+
+.arrowIcon {
+    @mixin responsive width, 16, 20;
+    @mixin responsive height, 16, 20;
+}
+
+.arrowPrev .arrowIcon {
+    transform: rotate(180deg);
+}
+
+.counter {
+    @mixin b2;
+    color: var(--color-gray-3);
+    min-width: 4ch;
+    text-align: center;
+}
+
+.hoverWrapper {
+    @mixin transition scale;
+    @mixin responsive width, 60, 70;
+    @mixin responsive height, 60, 70;
+
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    scale: 0;
+    translate: -50% -50%;
+    background-color: var(--color-green-1);
+}
+
+.icon {
+    @mixin responsive width, 30, 30;
+    @mixin responsive height, 30, 30;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    path {
+        fill: var(--color-white-0);
+    }
+}
