@@ -38,9 +38,6 @@ export const DOCUMENTS_MOCK: DocumentsListProps = {
 			title: "Согласие на&nbsp;обработку персональных данных",
 			href: SITE_NAVIGATION.userAgreement,
 		},
-		// {
-		// 	title: "Правила внутреннего распорядка",
-		// },
 		{
 			title: "Информированное согласие",
 			href: "/documents/Информированное добровольное согласие пациента на комплекс обследований.docx",
