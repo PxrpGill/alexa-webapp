@@ -3,6 +3,7 @@
 	"editor.formatOnSave": true,
 	"editor.formatOnPaste": true,
 	"editor.codeActionsOnSave": {
+		"source.addMissingImports": "explicit",
 		"source.organizeImports.biome": "explicit",
 		"source.fixAll.biome": "explicit"
 	},

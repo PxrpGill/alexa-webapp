@@ -41,6 +41,7 @@ export default function StillQuestions({
 					/>
 				)}
 				<Button
+					className={css.button}
 					rightIcon={<ButtonIconSvg className={css.icon} />}
 					onClick={() => toggleConsultationModal(true)}
 				>

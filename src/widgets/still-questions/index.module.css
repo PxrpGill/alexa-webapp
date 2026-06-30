@@ -29,6 +29,10 @@
 .content {
     @mixin responsive padding-inline, 20, 30;
     @mixin responsive padding-block, 40, 60;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .title {
@@ -57,4 +61,8 @@
 .icon {
     @mixin responsive width, 23, 23;
     @mixin responsive height, 23, 23;
+}
+
+.button.button[class] {
+    width: fit-content;
 }

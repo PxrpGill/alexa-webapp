@@ -1,0 +1,35 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-block, 40, 30;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-white-0);
+}
+
+.titleBlock {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    @mixin responsive width, 52, 65;
+    @mixin responsive height, 52, 65;
+
+    flex-shrink: 0;
+}
+
+.title {
+    @mixin text-4xl;
+
+    font-weight: 500;
+    color: var(--color-green-1);
+}
+
+.description {
+    @mixin text-base;
+
+    text-align: center;
+}

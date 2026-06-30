@@ -1,0 +1,5 @@
+.title {
+    @mixin text-6xl;
+
+    text-align: center;
+}
