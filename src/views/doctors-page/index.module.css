@@ -1,0 +1,28 @@
+.root {
+    @mixin responsive padding-block-start, 88, 100;
+}
+
+.titleBlock {
+    @mixin responsive margin-block-end, 30, 30;
+}
+
+.yandexMap,
+.peoples {
+    @mixin responsive margin-block-end, 60, 60;
+}
+
+.titleBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    @mixin responsive padding-block, 30, 30;
+    @mixin responsive border-radius, 30, 30;
+    @mixin text-4xl;
+
+    background-color: var(--color-white-0);
+    width: 100%;
+    text-align: center;
+}
