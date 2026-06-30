@@ -1,0 +1,50 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding, 20, 30;
+    @mixin responsive gap, 20, 200;
+    @mixin transition background-color;
+
+    background-color: var(--color-white-0);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    @media (hover:hover) {
+        &:hover {
+            background-color: var(--color-green-1);
+
+            .title {
+                color: var(--color-white-0);
+            }
+
+            .icon path {
+                fill: var(--color-white-0);
+            }
+        }
+    }
+}
+
+.icon {
+    @mixin responsive width, 20, 30;
+    @mixin responsive height, 20, 30;
+
+    flex-shrink: 0;
+
+    path {
+        @mixin transition fill;
+    }
+}
+
+.title {
+    @mixin transition color;
+    @mixin text-xl;
+}
+
+.link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}

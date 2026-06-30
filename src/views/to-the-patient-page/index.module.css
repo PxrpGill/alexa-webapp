@@ -2,6 +2,27 @@
     @mixin responsive padding-block-start, 88, 100;
 }
 
+.titleBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    @mixin responsive padding-block, 30, 30;
+    @mixin responsive border-radius, 30, 30;
+    @mixin text-4xl;
+
+    background-color: var(--color-white-0);
+    width: 100%;
+    text-align: center;
+}
+
+.titleBlock {
+    @mixin responsive margin-block-end, 20, 30;
+}
+
+.documents,
 .yandexMap {
-    @mixin responsive margin-block-end, 88, 100;
+    @mixin responsive margin-block-end, 60, 60;
 }
