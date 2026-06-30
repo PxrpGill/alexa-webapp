@@ -21,5 +21,19 @@ if [ $EXIT_CODE -ne 0 ]; then
   exit 1
 fi
 
-echo "✅ Build passed. Push allowed."
+echo "✅ Build passed."
+
+echo ""
+echo "🔍 Running security audit..."
+pnpm audit --audit-level=high
+AUDIT_EXIT=$?
+
+if [ $AUDIT_EXIT -ne 0 ]; then
+  echo ""
+  echo "❌ Security audit found high/critical vulnerabilities. Push rejected."
+  echo "   Run 'pnpm audit' for details, or 'pnpm audit --fix' to auto-fix."
+  exit 1
+fi
+
+echo "✅ Security audit passed. Push allowed."
 exit 0
