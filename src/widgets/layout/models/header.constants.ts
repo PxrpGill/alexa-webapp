@@ -176,7 +176,7 @@ export const HEADER_NAVIGATION_INFO: HeaderMenuLinksType = [
 	},
 	{
 		title: "Налоговый вычет",
-		href: SITE_NAVIGATION["lechenie-vo-sne"],
+		href: SITE_NAVIGATION["nalogovyjvychet"],
 		IconSvg: NalogSVG,
 	},
 ];
