@@ -11,7 +11,7 @@
 }
 
 .branchButton.branchButton[class] {
-    @mixin h6;
+    @mixin text-lg;
 
     &.selected {
         background-color: var(--color-green-1);
