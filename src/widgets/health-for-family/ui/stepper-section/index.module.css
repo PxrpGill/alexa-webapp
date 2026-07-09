@@ -8,7 +8,7 @@
 
     &.withCards {
         @mixin responsive gap, 0, 62;
-        @mixin responsive --first-col, 0, 530;
+        @mixin responsive --first-col, 0, 570;
 
         display: grid;
         grid-template-columns: var(--first-col) auto;
@@ -21,7 +21,7 @@
         }
 
         .title {
-            @mixin responsive max-width, 0, 432;
+            /* @mixin responsive max-width, 0, 452; */
 
             text-align: start;
         }

@@ -1,8 +1,8 @@
 .root {
-    @mixin responsive padding-block-start, 43, 67;
-    @mixin responsive padding-block-end, 38, 58;
-    @mixin responsive padding-inline-start, 20, 100;
-    @mixin responsive padding-inline-end, 20, 70;
+    @mixin responsive padding-block-start, 30, 30;
+    @mixin responsive padding-block-end, 30, 30;
+    @mixin responsive padding-inline-start, 20, 30;
+    @mixin responsive padding-inline-end, 20, 30;
     @mixin responsive border-radius, 30, 30;
 
     background-color: var(--color-white-0);
