@@ -1,0 +1,9 @@
+.root > div {
+    @media (max-width: $mobile) {
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
