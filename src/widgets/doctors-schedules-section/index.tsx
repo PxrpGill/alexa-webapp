@@ -5,7 +5,6 @@ import type { DoctorSchedulesSectionProps } from './types/doctor-schedules-secti
 import DoctorSchedulesTable from './ui/doctor-schedules-table';
 
 export default function DoctorSchedulesSection({
-  title,
   rows,
   className,
 }: DoctorSchedulesSectionProps) {
@@ -14,7 +13,6 @@ export default function DoctorSchedulesSection({
   return (
     <AnimationWrapper as="section" className={`${css.root} ${className}`}>
       <div className="container">
-        {title && <h2 className={css.title}>{title}</h2>}
         <DoctorSchedulesTable rows={rows} />
       </div>
     </AnimationWrapper>

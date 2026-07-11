@@ -23,6 +23,5 @@ export type DoctorSchedulesTableProps = {
 };
 
 export type DoctorSchedulesSectionProps = {
-  title?: string;
   rows: DoctorScheduleTableRow[];
 } & PropsWithClassName;

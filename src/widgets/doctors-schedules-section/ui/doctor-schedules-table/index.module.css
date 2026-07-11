@@ -1,5 +1,3 @@
-@import "shared/styles";
-
 .wrapper {
   @mixin responsive min-width, 760, 760;
 
