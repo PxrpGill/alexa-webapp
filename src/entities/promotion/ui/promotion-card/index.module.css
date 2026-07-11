@@ -1,0 +1,63 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+
+    background-color: var(--color-white-0);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.posterWrapper {
+    @mixin responsive height, 250, 500;
+
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.title {
+    @mixin responsive padding-block-end, 10, 10;
+    @mixin text-base;
+
+    font-weight: 600;
+}
+
+.content {
+    @mixin responsive padding, 20, 30;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    @mixin text-sm;
+    @mixin responsive padding-block-end, 20, 40;
+    
+    display: flex;
+    flex-direction: column;
+
+    color: var(--color-gray-10);
+
+    strong {
+        font-weight: 600;
+    }
+
+    ol,
+    ul {
+        @mixin responsive padding-inline-start, 20, 20;
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    ol {
+        list-style: decimal;
+    }
+}
+
+.button[class] {
+    margin-block-start: auto;
+    width: fit-content;
+}
