@@ -8,19 +8,22 @@ import css from "./index.module.css";
 export default function AlgorithmCTA({
 	title,
 	className,
-	buttonText,
+	button,
 }: AlgorithmCTAProps) {
 	return (
 		<div className={`${css.root} ${className}`}>
 			{title && (
 				<p dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
 			)}
-			<Button
-				className={css.button}
-				rightIcon={<ButtonIconSVG className={css.icon} />}
-			>
-				{buttonText}
-			</Button>
+			{button && (
+				<Button
+					className={css.button}
+					href={button.href}
+					rightIcon={<ButtonIconSVG className={css.icon} />}
+				>
+					{button?.title}
+				</Button>
+			)}
 		</div>
 	);
 }

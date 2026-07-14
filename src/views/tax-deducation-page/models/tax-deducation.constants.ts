@@ -33,6 +33,9 @@ export const ALGORITHM_OF_ACTIONS_MOCK: AlgorithmOfActionsProps = {
 	cta: {
 		title:
 			"Если у&nbsp;вас возникли вопросы&nbsp;&mdash; наши администраторы всегда на&nbsp;связи и&nbsp;с&nbsp;радостью помогут",
-		buttonText: "Заявление на выдачу справки",
+		button: {
+			title: "Заявление на выдачу справки",
+			href: "/documents/Zayavlenie_na_vydachu_spravki.docx",
+		},
 	},
 };

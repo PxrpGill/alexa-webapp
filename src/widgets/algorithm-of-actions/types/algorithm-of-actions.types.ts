@@ -1,3 +1,4 @@
+import type { SiteLinkProps } from "@/shared/types/button.types";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 
 export type AlgorithmStepProps = {
@@ -7,7 +8,7 @@ export type AlgorithmStepProps = {
 
 export type AlgorithmCTAProps = {
 	title?: string;
-	buttonText?: string;
+	button?: SiteLinkProps;
 } & PropsWithClassName;
 
 export type AlgorithmStepperProps = {
