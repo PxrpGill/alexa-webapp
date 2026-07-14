@@ -1,8 +1,8 @@
 .root {
+    @mixin responsive gap, 5, 6;
+
     display: flex;
     flex-direction: column;
-
-    @mixin responsive gap, 5, 6;
 }
 
 /* ── Label (clickable row) ───────────────────────────── */
@@ -15,18 +15,17 @@
     align-items: center;
     cursor: pointer;
     user-select: none;
-
     line-height: 1.2;
 }
 
 /* ── Checkbox wrapper (positions native input + box) ─── */
 
 .checkboxWrapper {
-    position: relative;
-    flex-shrink: 0;
-
     @mixin responsive width, 25, 30;
     @mixin responsive height, 25, 30;
+
+    position: relative;
+    flex-shrink: 0;
 }
 
 /* ── Hidden native input (covers full hit-area) ─────── */
@@ -65,12 +64,10 @@
 .checkmark {
     @mixin responsive width, 15, 18;
     @mixin responsive height, 15, 18;
+    @mixin transitionOptions 0.2s;
 
     stroke-dasharray: 16;
     stroke-dashoffset: 16;
-
-    @mixin transitionOptions 0.2s;
-
     transition-property: stroke-dashoffset;
 }
 
@@ -139,9 +136,9 @@
 /* ── Message (hint / error) ──────────────────────────── */
 
 .message {
-    color: var(--color-text-muted);
-
     @mixin responsive padding-left, 26, 30;
+
+    color: var(--color-text-muted);
 }
 
 .errorMessage {

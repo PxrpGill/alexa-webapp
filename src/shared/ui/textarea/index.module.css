@@ -1,9 +1,9 @@
 .root {
+    @mixin responsive gap, 5, 6;
+
     display: flex;
     flex-direction: column;
     width: 100%;
-
-    @mixin responsive gap, 5, 6;
 }
 
 /* ── Label ───────────────────────────────────────────── */
@@ -73,7 +73,7 @@
     }
 
     @media (hover: hover) {
-        &:not(:disabled):not(:focus):hover {
+        &:not(:disabled, :focus):hover {
             border-color: var(--color-gray-400);
         }
     }

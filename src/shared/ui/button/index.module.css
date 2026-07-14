@@ -7,7 +7,6 @@
     @mixin responsive border-width, 1, 1;
 
     transition-property: all;
-
     display: flex;
     justify-content: center;
     align-items: center;

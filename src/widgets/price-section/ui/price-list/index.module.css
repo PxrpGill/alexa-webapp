@@ -8,8 +8,8 @@
 
 .empty {
     @mixin b1;
+    @mixin responsive padding-block, 40, 60;
 
     color: var(--color-gray-2);
     text-align: center;
-    @mixin responsive padding-block, 40, 60;
 }

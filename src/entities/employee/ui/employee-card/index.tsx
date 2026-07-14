@@ -14,18 +14,20 @@ export default function EmployeeCard({
 		<article className={`${css.root} ${className}`}>
 			<div className={css.wrap}>{poster && <Picture poster={poster} />}</div>
 			<div className={css.titleBlock}>
-				{fullname && (
-					<h6
-						className={css.fullname}
-						dangerouslySetInnerHTML={{ __html: fullname }}
-					/>
-				)}
-				{position && (
-					<p
-						className={css.position}
-						dangerouslySetInnerHTML={{ __html: position }}
-					/>
-				)}
+				<div className={css.titleWrap}>
+					{fullname && (
+						<h6
+							className={css.fullname}
+							dangerouslySetInnerHTML={{ __html: fullname }}
+						/>
+					)}
+					{position && (
+						<p
+							className={css.position}
+							dangerouslySetInnerHTML={{ __html: position }}
+						/>
+					)}
+				</div>
 			</div>
 		</article>
 	);

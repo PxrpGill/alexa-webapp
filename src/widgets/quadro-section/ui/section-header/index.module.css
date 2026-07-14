@@ -43,7 +43,6 @@
     @mixin responsive padding-block-end, 0, 30;
 
     line-height: 1.35;
-
     font-weight: 600;
     color: var(--color-black-1);
 

@@ -1,12 +1,10 @@
 .root {
     @mixin responsive padding-block, 20, 64;
     @mixin responsive padding-inline, 20, 30;
-
     @mixin responsive border-radius, 30, 30;
 
     display: flex;
     flex-direction: column;
-
     background-color: var(--color-white-0);
 }
 

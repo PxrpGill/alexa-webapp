@@ -19,17 +19,6 @@ export const DOCTOR_SCHEDULES_SECTION: DoctorSchedulesSectionProps = {
 			},
 		},
 		{
-			fullname: "Никогосян Анна Микаеловна",
-			schedule: {
-				monday: null,
-				tuesday: WORK_HOURS,
-				wednesday: null,
-				thursday: WORK_HOURS,
-				friday: null,
-				saturday: WORK_HOURS,
-			},
-		},
-		{
 			fullname: "Каплин Ефим Валерьевич",
 			schedule: {
 				monday: WORK_HOURS,

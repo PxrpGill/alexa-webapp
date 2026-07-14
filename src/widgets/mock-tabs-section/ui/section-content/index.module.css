@@ -27,7 +27,6 @@
 .content {
     @mixin responsive padding-inline, 20, 40;
     @mixin responsive padding-block, 20, 64;
-
     @mixin responsive gap, 20, 40;
 
     display: flex;

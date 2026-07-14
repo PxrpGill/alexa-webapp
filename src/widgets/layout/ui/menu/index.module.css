@@ -4,7 +4,6 @@
     @mixin responsive padding-inline, 25;
     @mixin responsive padding-block-start, 62;
     @mixin responsive padding-block-end, 25;
-
     @mixin responsive gap, 15;
 
     transition-property: translate, opacity;
@@ -15,10 +14,8 @@
     right: 0;
     left: unset;
     translate: 150% -50%;
-
     display: flex;
     flex-direction: column;
-    
     background-color: var(--color-white-0);
 
     &.open {

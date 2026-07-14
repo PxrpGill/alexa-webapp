@@ -23,17 +23,11 @@
 	
 	cursor: pointer;
 	user-select: none;
-
-
 	position: relative;
-
 	display: flex;
 	align-items: center;
-
 	justify-content: space-between;
-
 	list-style: none;
-
 	-webkit-tap-highlight-color: transparent;
 
 	&:active {
@@ -58,12 +52,9 @@
 	overflow: hidden;
 	display: grid;
 	grid-template-rows: 0fr;
-
 	padding-block-start: unset !important;
-
 	visibility: hidden;
 	opacity: 0;
-
 	transition-delay: 0s, 0s, 0.3s;
 	transition-property: opacity, grid-template-rows, visibility;
 }

@@ -70,7 +70,6 @@
   @mixin transitionOptions;
 
   transition-property: color;
-
   font-weight: 600;
   color: var(--color-green-1);
 

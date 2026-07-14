@@ -38,11 +38,11 @@
     @mixin responsive height, 900, 1100;
     @mixin responsive width, 600, 1200;
     @mixin responsive padding-bottom, 30, 40;
+    @mixin responsive gap, 20, 30;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @mixin responsive gap, 20, 30;
 
     @media (max-width: $mobile) {
         width: 100vw;
@@ -58,11 +58,12 @@
 }
 
 .slide {
+    @mixin transition opacity;
+
     position: absolute;
     inset: 0;
     opacity: 0;
     pointer-events: none;
-    @mixin transition opacity;
 }
 
 .slideActive {
@@ -80,22 +81,24 @@
 }
 
 .controls {
+    @mixin responsive gap, 24, 40;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    @mixin responsive gap, 24, 40;
     flex-shrink: 0;
 }
 
 .arrow {
+    @mixin responsive width, 44, 56;
+    @mixin responsive height, 44, 56;
+    @mixin transition background-color;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    @mixin responsive width, 44, 56;
-    @mixin responsive height, 44, 56;
     border-radius: 50%;
     background-color: var(--color-gray-7);
-    @mixin transition background-color;
 
     &:hover {
         background-color: var(--color-gray-6);
@@ -113,6 +116,7 @@
 
 .counter {
     @mixin b2;
+
     color: var(--color-gray-3);
     min-width: 4ch;
     text-align: center;

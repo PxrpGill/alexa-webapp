@@ -6,10 +6,9 @@
 
 html {
     font-size: 1vw;
-
     scrollbar-gutter: stable;
 
-	@media (min-width: 1441px) {
+	@media (width >= 1441px) {
 		font-size: 14.41px;
 	}
 
@@ -33,7 +32,7 @@ main {
 		margin-inline: unset;
 	}
 
-	@media (min-width: 1441px) {
+	@media (width >= 1441px) {
 		padding-inline: calc(2em + (100vw - 1440px) / 2);
 	}
 }

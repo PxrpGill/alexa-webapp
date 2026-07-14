@@ -48,7 +48,6 @@
     @mixin b1;
 
     font-weight: 400;
-
     width: 100%;
     background-color: var(--color-bg-tertiary);
     color: var(--color-text-primary);
@@ -65,7 +64,7 @@
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
-        -webkit-box-shadow: 0 0 0 1000px var(--color-bg-tertiary) inset;
+        box-shadow: 0 0 0 1000px var(--color-bg-tertiary) inset;
         -webkit-text-fill-color: var(--color-text-primary);
         caret-color: var(--color-accent);
     }
@@ -79,7 +78,7 @@
     }
 
     @media (hover: hover) {
-        &:not(:disabled):not(:focus):hover {
+        &:not(:disabled, :focus):hover {
             border-color: var(--color-green-1);
         }
     }

@@ -3,7 +3,6 @@
     @mixin responsive padding, 30, 30;
 
     background-color: var(--color-white-0);
-
     display: flex;
     justify-content: center;
     align-items: center;

@@ -2,15 +2,12 @@
     @mixin responsive padding-inline, 20, 100;
     @mixin responsive padding-block, 40, 64;
     @mixin responsive border-radius, 30, 30;
-
     @mixin responsive --first-col, 0, 700;
     @mixin responsive gap, 30, 10;
 
     background-color: var(--color-white-0);
-
     display: grid;
     align-items: end;
-
     grid-template-columns: var(--first-col) auto;
 
     @media (max-width: $mobile) {

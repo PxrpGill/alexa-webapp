@@ -3,7 +3,6 @@
     @mixin responsive --border, 1.5, 1.5;
 
     width: fit-content;
-
     display: inline-flex;
     align-items: stretch;
     border: var(--border) solid var(--color-border);
@@ -35,7 +34,7 @@
     }
 
     @media (hover: hover) {
-        &:not(.active):not(.dots):not(.disabled):hover {
+        &:not(.active, .dots, .disabled):hover {
             background-color: var(--color-bg-elevated);
             color: var(--color-text-primary);
         }

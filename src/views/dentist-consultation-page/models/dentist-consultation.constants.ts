@@ -151,7 +151,7 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 				},
 			},
 			fullname: "Корамагомедов Рамазан Корамагомедович",
-			position: "Врач-стоматолог-терапевт, эндодонтист, стоматолог-ортопед",
+			position: "Врач-стоматолог-терапевт, эндодонтист, стоматолог&#8209;ортопед",
 		},
 		{
 			poster: {
@@ -188,15 +188,6 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 			},
 			fullname: "Кравченко Павел Сергеевич",
 			position: "Врач-стоматолог-ортодонт",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-10.webp",
-				},
-			},
-			fullname: "Никогосян Анна Микаеловна",
-			position: "Детский врач-стоматолог",
 		},
 		{
 			poster: {

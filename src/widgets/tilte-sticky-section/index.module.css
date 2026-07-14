@@ -34,10 +34,8 @@
     @mixin b1;
 
     font-weight: 600;
-
     display: flex;
     flex-direction: column;
-
     background-color: var(--color-white-0);
 
     &.green {
@@ -79,7 +77,6 @@
         @mixin h5;
 
         font-weight: 500;
-
         line-height: 1.55;
     }
 }

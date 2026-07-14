@@ -24,7 +24,6 @@
 
         height: 100%;
         width: 100%;
-
         overflow: hidden;
         position: absolute;
     }
@@ -32,6 +31,7 @@
 
 .button.button[class] {
     @mixin responsive margin, 20;
+
     position: relative;
     z-index: 10;
     width: fit-content;
