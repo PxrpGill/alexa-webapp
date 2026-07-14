@@ -1,3 +1,4 @@
+import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
@@ -105,8 +106,11 @@ export const BRICKWORK_SECTION: BrickworkSectionProps = {
 };
 
 export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
-	title:
-		"Мы&nbsp;собрали лучших специалистов-стоматологов в&nbsp;клинике &laquo;Алекса&raquo;",
+	title: "Врачи, оказывающие услугу",
+	button: {
+		title: "Смотреть всех специалистов",
+		href: SITE_NAVIGATION.vrachi,
+	},
 	employees: [
 		{
 			poster: {
@@ -151,7 +155,8 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 				},
 			},
 			fullname: "Корамагомедов Рамазан Корамагомедович",
-			position: "Врач-стоматолог-терапевт, эндодонтист, стоматолог&#8209;ортопед",
+			position:
+				"Врач-стоматолог-терапевт, эндодонтист, стоматолог&#8209;ортопед",
 		},
 		{
 			poster: {

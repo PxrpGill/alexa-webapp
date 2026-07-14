@@ -39,7 +39,7 @@ export default function DentistConsultationPage() {
 				textBlockPosition="right"
 			/>
 			<OurWork className={css.ourWork} {...OUR_WORK} />
-			<OurPeopleSection className={css.peoples} {...EMPLOYEES_SECTION} />
+			<OurPeopleSection className={css.peoples} {...EMPLOYEES_SECTION} isSlider />
 			<FaqSection {...MOCK_FAQ_SECTION} className={css.faqs} />
 			<ParentNewsSection
 				{...PARENT_NEWS_SECTION_MOCK}

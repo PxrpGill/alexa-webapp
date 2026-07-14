@@ -1,0 +1,41 @@
+.root {
+    display: flex;
+    width: 100%;
+
+    justify-content: center;
+
+    &.row {
+        justify-content: space-between;
+        align-items: center;
+
+        .title {
+            text-align: start;
+        }
+    }
+}
+
+.title {
+    @mixin text-6xl;
+    @mixin responsive max-width, 293, 700;
+
+    text-align: center;
+
+    @media (max-width: $mobile) {
+        font-weight: 600;
+    }
+}
+
+.button[class] {
+    flex-shrink: 0;
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.icon {
+    @mixin responsive width, 25, 25;
+    @mixin responsive height, 25, 25;
+
+    flex-shrink: 0;
+}
