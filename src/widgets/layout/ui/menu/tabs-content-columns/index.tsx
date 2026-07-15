@@ -1,7 +1,10 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */
 
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { title } from "process";
 import { useLayoutContext } from "@/shared/config/layout-context";
 import type { HeaderMenuLinksType } from "@/shared/types/header-menu-links.types";
@@ -22,6 +25,7 @@ export default function TabsContentColumns({
 	className,
 }: TabsContentColumnsProps) {
 	const { toggleMenuOpen } = useLayoutContext();
+	const pathname = usePathname();
 
 	if (!columns?.length) return null;
 
@@ -40,7 +44,7 @@ export default function TabsContentColumns({
 							<li className={css.paragraph} key={`${title}-${index}`}>
 								<Link
 									href={link.href}
-									className={css.link}
+									className={`${css.link} ${pathname === link.href && css.active}`}
 									target={link.target}
 									onClick={() => {
 										toggleMenuOpen(false);

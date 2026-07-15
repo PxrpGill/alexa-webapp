@@ -32,6 +32,10 @@
     display: flex;
     width: fit-content;
 
+    &.active .title {
+        color: var(--color-green-4);
+    }
+
     @media (hover:hover) {
         &:hover {
             .title {
