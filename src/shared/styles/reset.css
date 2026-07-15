@@ -155,3 +155,26 @@ dialog {
   margin: 0;
   padding: 0;
 }
+
+button, 
+a, 
+[role="button"] {
+  /* 1. Убирает синюю/серую подсветку при нажатии на iOS и Android (Chrome/Safari) */
+  -webkit-tap-highlight-color: transparent;
+
+  /* 2. Отключает стандартное контекстное меню при долгом нажатии (iOS/Android) */
+  -webkit-touch-callout: none;
+
+  /* 3. Отключает выделение текста при двойном тапе */
+  -webkit-user-select: none;
+  user-select: none;
+
+  /* 4. Убирает стандартные стили кнопок в iOS (Safari накладывает свои градиенты и скругления) */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* 5. Убираем пунктирную рамку фокуса в Firefox (если актуально) */
+button::-moz-focus-inner {
+  border: 0;
+}

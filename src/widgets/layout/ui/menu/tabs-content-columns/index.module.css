@@ -1,9 +1,21 @@
 .root {
-    @mixin responsive gap, 20, 60;
+    @mixin responsive gap, 30, 60;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.root .column:not(:last-child) {
+    @mixin responsive --border, 1;
+    @mixin responsive padding-block-end, 30;
+
+    border-bottom: var(--border) solid var(--color-gray-1);
 }
 
 .mainTitle {
@@ -50,12 +62,17 @@
 
     font-weight: 600;
     color: var(--color-green-1);
+
+    @media (max-width: $mobile) {
+        @mixin text-lg;
+
+        font-weight: 600;
+    }
 }
 
 .description {
     @mixin text-base;
 
-    line-height: 1;
     font-weight: 400;
     color: var(--color-gray-3);
 }

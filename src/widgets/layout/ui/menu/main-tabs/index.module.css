@@ -13,6 +13,12 @@
     display: flex;
     background-color: var(--color-gray-11);
     width: fit-content;
+
+    @media (max-width: $mobile) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .button[class] {

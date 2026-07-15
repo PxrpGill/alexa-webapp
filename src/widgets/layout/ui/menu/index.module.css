@@ -27,7 +27,6 @@
         top: 50%;
         right: 0;
         height: 100%;
-        width: calc(100% - var(--left));
 
         &.open {
             translate: 0 -50%;
