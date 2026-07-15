@@ -14,60 +14,33 @@
     @mixin transitionOptions;
     @mixin responsive --border-radius, 20, 30;
     @mixin responsive margin-block-start, 10, 15;
-    @mixin responsive --shadow-1, 15, 15;
-    @mixin responsive --shadow-2, 30, 30;
-    @mixin responsive --shadow-3, -10, -10;
-    @mixin responsive width, 330, 600;
 
-    box-shadow: 0 var(--shadow-1) var(--shadow-2) var(--shadow-3) rgb(0 11 48 / 20%);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
-    translate: -50% 2%;
-    transition-property: opacity, visibility, translate;
-    left: 50%;
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 10;
+    transition-property: grid-template-rows;
+    width: 100%;
+    position: static;
+    left: unset;
+    top: unset;
+    visibility: visible;
+    opacity: 1;
+    padding: 0;
+    box-shadow: none;
+    translate: 0;
     background-color: var(--color-white-0);
-
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
 
     &.show {
-        opacity: 1;
-        visibility: visible;
-        translate: -50% -4%;
-
-        @media (max-width: $mobile) {
-            grid-template-rows: 1fr;
-            translate: 0;
-        }
-    }
-
-    @media (max-width: $mobile) {
-        width: 100%;
-        position: static;
-        left: unset;
-        top: unset;
-        visibility: visible;
-        opacity: 1;
-        padding: 0;
-        margin-block-start: 0;
-        box-shadow: none;
-        translate: 0;
-        display: grid;
-        grid-template-rows: 0fr;
-        overflow: hidden;
-        transition-property: grid-template-rows;
+        grid-template-rows: 1fr;
     }
 }
 
 .wrapper {
     display: grid;
-
-    @media (max-width: $mobile) {
-        grid-template-columns: 1fr;
-        min-height: 0;
-        overflow: hidden;
-    }
+    grid-template-columns: 1fr;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .wrapperContent {
@@ -76,19 +49,13 @@
     @mixin responsive padding, 20, 20;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    @media (max-width: $mobile) {
-        @mixin responsive padding, 20, 20;
-        
-        padding-inline: 0;
-        grid-template-columns: 1fr;
-    }
+    grid-template-columns: 1fr;
+    padding-inline: 0;
 }
 
 
 .button {
-    @mixin b4;
+    @mixin text-3xl;
     @mixin transition color;
 
     font-weight: 500;

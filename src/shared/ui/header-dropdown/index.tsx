@@ -27,8 +27,6 @@ export default function HeaderDropdown({
 	return (
 		<div
 			className={`${css.root} ${className}`.trim()}
-			onMouseEnter={() => toggleDropDownOpen(true)}
-			onMouseLeave={() => toggleDropDownOpen(false)}
 		>
 			<button
 				className={css.button}

@@ -12,6 +12,8 @@ export default function Modal({
 	className,
 	children,
 	contentClassName,
+	closeButtonClassName,
+	backdropClassName,
 }: ModalProps) {
 	useLockBodyScroll(isOpen);
 	useKeyPress("Escape", toggleClose);
@@ -23,12 +25,16 @@ export default function Modal({
 		>
 			<button
 				type="button"
-				className={css.backdrop}
+				className={`${css.backdrop} ${backdropClassName}`}
 				onClick={toggleClose}
 				aria-label="Закрыть модальное окно"
 			/>
 			<div className={`${css.modalContent} ${contentClassName}`.trim()}>
-				<button className={css.closeButton} type="button" onClick={toggleClose}>
+				<button
+					className={`${css.closeButton} ${closeButtonClassName}`}
+					type="button"
+					onClick={toggleClose}
+				>
 					<CrossSVG className={css.icon} />
 				</button>
 				{children}

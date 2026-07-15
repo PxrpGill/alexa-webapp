@@ -1,5 +1,5 @@
 .root {
-    @mixin responsive gap, 10, 10;
+    @mixin responsive gap, 10, 20;
 
     display: flex;
     align-items: center;
@@ -7,14 +7,14 @@
 
 .phone {
     @mixin b2;
-    @mixin transition opacity;
+    @mixin transition color;
 
     font-weight: 600;
-    color: var(--color-green-1);
+    line-height: 1;
 
     @media (hover:hover) {
         &:hover {
-            opacity: 0.6;
+            color: var(--color-green-1);
         }
     }
 
@@ -71,10 +71,9 @@
 }
 
 .menuButton {
-    @mixin responsive width, 42;
-    @mixin responsive height, 42;
+    @mixin responsive width, 25, 28;
+    @mixin responsive height, 18, 21;
 
-    display: none;
     position: relative;
 
     @media (max-width: $mobile) {

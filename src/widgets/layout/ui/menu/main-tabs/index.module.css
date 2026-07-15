@@ -1,0 +1,30 @@
+.root {
+    @mixin responsive gap, 20, 40;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tabsWrapper {
+    @mixin responsive gap, 10, 10;
+    @mixin responsive padding, 10, 10;
+    @mixin responsive border-radius, 20, 20;
+
+    display: flex;
+    background-color: var(--color-gray-11);
+    width: fit-content;
+}
+
+.button[class] {
+    @mixin responsive padding-inline, 20, 40;
+    @mixin responsive padding-block, 10, 15;
+
+    border: unset;
+
+    &.active {
+        @media (hover:hover) {
+            background-color: var(--color-green-1);
+            color: var(--color-white-0);
+        }
+    }
+}

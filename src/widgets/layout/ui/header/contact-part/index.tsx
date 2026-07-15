@@ -1,8 +1,7 @@
 "use client";
 
-import ButtonTeethSVG from "@/public/icons/button-teeth.svg";
 import MaxSVG from "@/public/icons/max.svg";
-import MenuSVG from "@/public/icons/menu.svg";
+import MenuSVG from "@/public/icons/menu-icon.svg";
 import PhoneSVG from "@/public/icons/phone.svg";
 import TelegramSVG from "@/public/icons/telegram.svg";
 import {
@@ -12,7 +11,6 @@ import {
 	TELEGRAM,
 } from "@/shared/config/global-constants.constats";
 import { useLayoutContext } from "@/shared/config/layout-context";
-import Button from "@/shared/ui/button";
 import css from "./index.module.css";
 
 export default function ContactPart() {
@@ -23,12 +21,6 @@ export default function ContactPart() {
 			<a href={`tel:${MOBILE_PHONE}`} className={css.phone}>
 				{MOBILE_PHONE}
 			</a>
-			<Button
-				className={css.button}
-				rightIcon={<ButtonTeethSVG className={css.buttonIcon} />}
-			>
-				Записаться на прием
-			</Button>
 			<a
 				className={css.telegram}
 				href={TELEGRAM}

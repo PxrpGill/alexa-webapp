@@ -2,7 +2,6 @@ import Link from "next/link";
 import LogoSvg from "@/public/icons/logo.svg";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import ContactPart from "./contact-part";
-import DesktopNavigation from "./desktop-navigation";
 import css from "./index.module.css";
 
 export default function Header() {
@@ -12,7 +11,6 @@ export default function Header() {
 				<Link className={css.link} href={SITE_NAVIGATION.base}>
 					<LogoSvg className={css.logo} />
 				</Link>
-				<DesktopNavigation className={css.desktopNav} />
 				<ContactPart />
 			</div>
 		</header>

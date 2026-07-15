@@ -5,5 +5,7 @@ export type ModalProps = {
 	isOpen: boolean;
 	toggleClose?: () => void;
 	contentClassName?: string;
+	closeButtonClassName?: string;
+	backdropClassName?: string;
 } & PropsWithChildren &
 	PropsWithClassName;
