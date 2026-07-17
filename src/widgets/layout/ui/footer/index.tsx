@@ -10,7 +10,11 @@ import StartPart from "./start-part";
 
 export default function Footer() {
 	return (
-		<AnimationWrapper as="footer" className={`${css.root} container`}>
+		<AnimationWrapper
+			as="footer"
+			className={`${css.root} container`}
+			direction="fade"
+		>
 			<StartPart />
 			<FooterNavList title="Детская стоматология" list={CHILD_STOM_NAV} />
 			<FooterNavList title="Взрослая стоматология" list={ADULT_STOM_NAV} />

@@ -1,0 +1,14 @@
+.wrapper {
+    @mixin responsive padding, 30, 30;
+    @mixin responsive border-radius, 30, 30;
+
+    background-color: var(--color-green-1);
+}
+
+.title {
+    @mixin responsive font-size, 20, 30;
+
+    font-weight: 600;
+    line-height: 1.33;
+    color: var(--color-white-0);
+}

@@ -1,0 +1,74 @@
+.root {
+    min-height: 100svh;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.title {
+    @mixin text-6xl;
+    @mixin transitionOptions;
+
+    transition-property: opacity, translate;
+    transition-duration: 0.4s;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    opacity: 0;
+    visibility: hidden;
+    width: max-content;
+}
+
+.title.animate {
+    translate: -50% -50%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.downer,
+.upper {
+    @mixin transitionOptions;
+    @mixin responsive width, 400, 760;
+
+    transition-duration: 0.4s;
+    left: 50%;
+    top: 50%;
+    
+    transition-property: translate, rotate;
+    position: absolute;
+
+}
+
+.upper {
+    translate: 16% -71%;
+    rotate: 230deg;
+}
+
+.downer {
+    translate: -120% -43%;
+    rotate: 70deg;
+}
+
+.upper.animate { 
+    translate: 19% -75%;
+    rotate: 235deg;
+}
+
+.downer.animate {
+    translate: -125% -39%;
+    rotate: 75deg;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
