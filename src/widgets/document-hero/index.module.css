@@ -1,0 +1,38 @@
+.root {
+    @mixin responsive padding-block-start, 20, 18;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: $mobile) {
+        min-height: unset;
+    }
+}
+
+.subtitle,
+.title {
+    text-align: center;
+}
+
+.subtitle {
+    @mixin responsive padding-block-end, 30, 80;
+    @mixin text-xl;
+
+    text-transform: uppercase;
+}
+
+.title {
+    @mixin responsive padding-block-end, 30, 150;
+    @mixin text-6xl;
+
+    font-weight: 500;
+}
+
+.underTitle {
+    @mixin text-3xl;
+
+    font-weight: 400;
+    margin-inline-start: auto;
+    width: fit-content;
+}
