@@ -9,6 +9,9 @@
 /* ── Label ───────────────────────────────────────────── */
 
 .label {
+    @mixin text-base;
+
+    font-weight: 600;
     color: var(--color-black-1);
     user-select: none;
 }
@@ -58,6 +61,9 @@
     caret-color: var(--color-black-1);
 
     &::placeholder {
+        @mixin text-md;
+
+        font-weight: 500;
         color: var(--color-gray-8);
     }
 

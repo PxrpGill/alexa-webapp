@@ -1,0 +1,27 @@
+.wrapper {
+    @mixin responsive --first-col, 0, 540;
+    @mixin responsive gap, 0, 120;
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-block, 30, 30;
+
+    background-color: var(--color-white-0);
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+}
+
+.posterWrapper {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive min-height, 0, 539;
+
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.header {
+    @mixin responsive padding-block-end, 0, 30;
+}
