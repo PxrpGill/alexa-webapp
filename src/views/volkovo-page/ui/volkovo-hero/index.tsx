@@ -12,7 +12,6 @@ import css from "./index.module.css";
 export default function VolkovoHero({ className }: PropsWithClassName) {
 	const { ref, isIntersecting } = useIntersectionObserver();
 	const [isAnimate, toggleAnimate] = useState<boolean>(false);
-	
 
 	useEffect(() => {
 		if (!isIntersecting) return;
