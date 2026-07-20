@@ -1,5 +1,6 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
+import type { StomatologyProgramProps } from "@/widgets/stomatology-program/types/stomatology-program.types";
 import type { CtaGreenProps } from "../types/cta-green.types";
 
 export const GREEN_CTA: CtaGreenProps = {
@@ -29,6 +30,31 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 	poster: {
 		webp: {
 			src: "/system/form.webp",
+		},
+	},
+};
+
+export const STOMATOLOGY_PROGRAM: StomatologyProgramProps = {
+	sectionHeader: {
+		title: "Программа стоматологического здоровья",
+		description: "Ваш персональный маршрут профилактик",
+	},
+	ctaBlock: {
+		title:
+			"На&nbsp;основе диагностики формируется индивидуальный план сохранения здоровья зубов на&nbsp;год.",
+		button: {
+			title: "Записаться на приём",
+			href: "#form",
+		},
+	},
+	descriptionBlock: {
+		title: "После первичного осмотра врач оценивает:",
+		content:
+			"<ul><li>риск развития кариеса;</li><li>качество домашней гигиены;</li><li>состояние дёсен;</li><li>наличие факторов риска;</li><li>необходимую периодичность наблюдения.</li></ul>",
+	},
+	poster: {
+		original: {
+			src: "/mock/volkovo/instruments.png",
 		},
 	},
 };

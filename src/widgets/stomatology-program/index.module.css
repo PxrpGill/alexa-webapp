@@ -1,0 +1,50 @@
+.root {
+    @mixin responsive gap, 30, 30;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    @mixin responsive --first-col, 0, 590;
+    @mixin responsive gap, 0, 20;
+
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+}
+
+.posterBlock {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive min-height, 300, 300;
+
+    background-color: var(--color-white-0);
+    position: relative;
+    /* clip-path вместо overflow: hidden — обрезает только снизу, .picture свободно вылезает сверху и по бокам */
+    clip-path: inset(-9999px -9999px 0 -9999px);
+}
+
+.picture,
+.picture img {
+    @mixin responsive width, 325, 325;
+    @mixin transitionOptions 0.6s;
+
+    transition-property: translate;
+    top: unset;
+    height: auto;
+    bottom: 0;
+    left: 50%;
+
+    translate: -50% 40%;
+}
+
+.picture.animate,
+.picture.animate img {
+    translate: -50% 0%;
+}
+
+.rightPart {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+}
