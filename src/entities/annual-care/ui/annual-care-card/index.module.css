@@ -1,0 +1,141 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+
+    background-color: var(--color-white-0);
+    display: flex;
+    flex-direction: column;
+}
+
+.titleBlock {
+    @mixin responsive padding, 20, 20;
+    @mixin responsive min-height, 238, 238;
+    @mixin responsive border-radius, 30, 30;
+
+    z-index: 10;
+
+    background-color: var(--color-white-0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    /* clip-path вместо overflow: hidden — обрезает только снизу, .poster свободно вылезает сверху */
+    clip-path: inset(-9999px -9999px 0 -9999px);
+}
+
+.title {
+    @mixin text-3xl;
+
+    color: var(--color-green-1);
+}
+
+.poster[class],
+.poster[class] img {
+    @mixin responsive width, 153, 153;
+    @mixin responsive margin-inline-end, 22, 22;
+    @mixin transitionOptions 0.6s;
+
+    transition-property: translate;
+    height: auto;
+
+    right: 0;
+    bottom: 0;
+    top: unset;
+    left: unset;
+
+    translate: 0 40%;
+}
+
+.visible[class],
+.visible[class] img {
+    translate: 0 0%;
+}
+
+.contentBlock {
+    @mixin responsive padding, 20, 20;
+    @mixin responsive gap, 30, 30;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.icon {
+    @mixin responsive width, 20, 20;
+    @mixin responsive height, 20, 20;
+}
+
+.priceElement {
+    @mixin text-3xl;
+
+    color: var(--color-green-1);
+}
+
+.pricePeriod {
+    @mixin text-xl;
+
+    font-weight: 600;
+}
+
+.description {
+    @mixin text-base;
+
+    max-width: 85%;
+    font-weight: 600;
+}
+
+.titleWrapper {
+    position: relative;
+}
+
+.priceBlock {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.hr {
+    @mixin responsive height, 1, 1;
+
+    width: 100%;
+    background-color: var(--color-gray-12);
+}
+
+.shadow {
+    @mixin responsive height, 40, 40;
+
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    background: rgba(217, 217, 217, 0.94);
+    filter: blur(15px);
+}
+
+.list {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.paragraph {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    align-items: start;
+}
+
+.paragraphContent {
+    @mixin text-base;
+}
+
+.check {
+    @mixin responsive width, 15, 15;
+    @mixin responsive margin-block-start, 15, 3;
+}
+
+.button {
+    margin-block-start: auto;
+}

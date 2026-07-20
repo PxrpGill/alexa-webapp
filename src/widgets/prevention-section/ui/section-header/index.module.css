@@ -1,0 +1,7 @@
+.root {
+  max-width: 75%;
+}
+
+.title {
+  @mixin text-6xl;
+}

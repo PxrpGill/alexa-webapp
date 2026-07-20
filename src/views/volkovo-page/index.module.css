@@ -1,8 +1,12 @@
+.solutions,
+.prevention,
+.annualCare,
+.stomatology,
 .form,
 .peoples,
 .quadro,
 .yandexMap,
 .greenCta,
 .hero {
-    @mixin responsive margin-block-end, 60, 60;
+  @mixin responsive margin-block-end, 60, 60;
 }
