@@ -1,7 +1,7 @@
 .root {
     @mixin responsive border-radius, 30, 30;
-    @mixin responsive height, 0, 735;
-    @mixin responsive width, 0, 460;
+    @mixin responsive height, 505, 735;
+    @mixin responsive width, 337, 460;
 
     overflow: hidden;
     position: relative;
@@ -28,7 +28,7 @@
 }
 
 .description {
-    @mixin responsive font-size, 20, 20;
+    @mixin responsive font-size, 16, 20;
 }
 
 .arrow {
@@ -38,6 +38,10 @@
     bottom: 0;
     right: 0;
     position: absolute;
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }
 
 .link {

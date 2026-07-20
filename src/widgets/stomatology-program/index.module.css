@@ -7,15 +7,20 @@
 
 .content {
     @mixin responsive --first-col, 0, 590;
-    @mixin responsive gap, 0, 20;
+    @mixin responsive gap, 20, 20;
 
     display: grid;
     grid-template-columns: var(--first-col) auto;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .posterBlock {
     @mixin responsive border-radius, 30, 30;
-    @mixin responsive min-height, 300, 300;
+    @mixin responsive min-height, 200, 300;
 
     background-color: var(--color-white-0);
     position: relative;
@@ -25,7 +30,7 @@
 
 .picture,
 .picture img {
-    @mixin responsive width, 325, 325;
+    @mixin responsive width, 225, 325;
     @mixin transitionOptions 0.6s;
 
     transition-property: translate;

@@ -1,7 +1,8 @@
 .root {
     @mixin responsive border-radius, 30, 30;
     @mixin responsive padding, 30, 30;
-    @mixin responsive gap, 30, 30;
+    @mixin responsive padding-inline, 20;
+    @mixin responsive gap, 20, 30;
 
     background-color: var(--color-green-1);
     height: 100%;
@@ -38,5 +39,9 @@
 
     ul {
         list-style: disc;
+    }
+
+    @media (max-width: $mobile) {
+        @mixin text-xl; 
     }
 }

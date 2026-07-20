@@ -8,7 +8,7 @@
 
 .titleBlock {
     @mixin responsive padding, 20, 20;
-    @mixin responsive min-height, 238, 238;
+    @mixin responsive min-height, 200, 238;
     @mixin responsive border-radius, 30, 30;
 
     z-index: 10;
@@ -26,12 +26,19 @@
     @mixin text-3xl;
 
     color: var(--color-green-1);
+
+    @media (max-width: $mobile) {
+        @mixin text-xl;
+
+        font-weight: 600;
+        max-width: 80%;
+    }
 }
 
 .poster[class],
 .poster[class] img {
-    @mixin responsive width, 153, 153;
-    @mixin responsive margin-inline-end, 22, 22;
+    @mixin responsive width, 128, 153;
+    @mixin responsive margin-inline-end, 0, 22;
     @mixin transitionOptions 0.6s;
 
     transition-property: translate;
@@ -133,7 +140,9 @@
 
 .check {
     @mixin responsive width, 15, 15;
-    @mixin responsive margin-block-start, 15, 3;
+    @mixin responsive margin-block-start, 3, 3;
+
+    flex-shrink: 0;
 }
 
 .button {

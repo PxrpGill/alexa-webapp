@@ -6,12 +6,17 @@
     background-color: var(--color-white-0);
     display: flex;
     flex-direction: column;
+
 }
 
 .title {
     @mixin text-md;
 
     font-weight: 600;
+
+    @media (max-width: $mobile) {
+        @mixin text-lg;
+    }
 }
 
 .icon {
@@ -21,4 +26,8 @@
 
 .button[class] {
     width: fit-content;
+
+    @media (max-width: $mobile) {
+        margin-inline: auto;
+    }
 }

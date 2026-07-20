@@ -1,9 +1,13 @@
 .contentPart {
-  @mixin responsive gap, 150, 150;
+  @mixin responsive gap, 20, 150;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 
 .header {
@@ -11,8 +15,8 @@
 }
 
 .descriptionBlock {
-  @mixin responsive padding-block, 60, 60;
-  @mixin responsive padding-inline, 30, 30;
+  @mixin responsive padding-block, 30, 60;
+  @mixin responsive padding-inline, 20, 30;
   @mixin responsive border-radius, 30, 30;
   @mixin text-lg;
 
