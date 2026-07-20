@@ -1,0 +1,17 @@
+.root {
+    @mixin responsive gap, 30, 40;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    @mixin responsive gap, 30, 30;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card[class] {
+    height: 100%;
+}

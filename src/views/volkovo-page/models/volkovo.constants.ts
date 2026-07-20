@@ -1,4 +1,5 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import type { AnnualCareProgramsProps } from "@/widgets/annual-care-programs/types/annual-care-programs.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { StomatologyProgramProps } from "@/widgets/stomatology-program/types/stomatology-program.types";
 import type { CtaGreenProps } from "../types/cta-green.types";
@@ -57,4 +58,61 @@ export const STOMATOLOGY_PROGRAM: StomatologyProgramProps = {
 			src: "/mock/volkovo/instruments.png",
 		},
 	},
+};
+
+export const ANNUAL_CARE_SECTION_MOCK: AnnualCareProgramsProps = {
+	sectionHeader: {
+		title: "Сопровождение на&nbsp;протяжении года",
+		description:
+			"Поддерживайте здоровье зубов и&nbsp;дёсен под контролем с&nbsp;нашими программами регулярной профилактики.",
+	},
+	programs: [
+		{
+			title: "Программа<br /> &laquo;Базовая профилактика&raquo;",
+			description:
+				"Идеально для пациентов с&nbsp;низким риском развития кариеса.",
+			period: "year",
+			poster: {
+				webp: {
+					src: "/mock/volkovo/program-poster.webp",
+				},
+			},
+			list: [
+				"2&nbsp;профессиональные гигиены в&nbsp;год",
+				"2&nbsp;профилактических осмотра стоматолога-терапевта",
+				"Фотопротокол (наглядная динамика состояния зубов)",
+				"Подбор индивидуальных средств домашнего ухода",
+				"Заботливые напоминания о&nbsp;необходимости визита от&nbsp;вашего куратора",
+			],
+			button: {
+				href: "#form",
+				title: "Записаться на приём",
+			},
+			price: 150_000,
+		},
+		{
+			title: "Программа<br /> &laquo;Под контролем&raquo;",
+			description:
+				"Рекомендуется при склонности к&nbsp;кариесу, наличии коронок/имплантов или чувствительности десен",
+			period: "year",
+			poster: {
+				original: {
+					src: "/mock/volkovo/program-poster-1.png",
+				},
+			},
+			list: [
+				"3-4 профессиональные гигиены в&nbsp;год",
+				"регулярные профилактические осмотры",
+				"контроль состояния десен",
+				"реминерализующая терапия по&nbsp;показаниям",
+				"индивидуальный план профилактики",
+				"напоминания о&nbsp;визитах",
+			],
+			button: {
+				href: "#form",
+				title: "Записаться на приём",
+			},
+			price: 150_000,
+		},
+	],
 };

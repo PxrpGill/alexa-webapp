@@ -1,5 +1,6 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constats";
+import AnnualCarePrograms from "@/widgets/annual-care-programs";
 import OurPeopleSection from "@/widgets/our-people-section";
 import QuadroSection from "@/widgets/quadro-section";
 import StomatologyProgram from "@/widgets/stomatology-program";
@@ -7,6 +8,7 @@ import YandexMap from "@/widgets/yandex-map";
 import { EMPLOYEES_SECTION } from "../dentist-consultation-page/models/dentist-consultation.constants";
 import css from "./index.module.css";
 import {
+	ANNUAL_CARE_SECTION_MOCK,
 	FORM_DATA,
 	GREEN_CTA,
 	QAUDRO_MOCK,
@@ -24,6 +26,10 @@ export default function VolkovoPage() {
 			<StomatologyProgram
 				{...STOMATOLOGY_PROGRAM}
 				className={css.stomatology}
+			/>
+			<AnnualCarePrograms
+				className={css.annualCare}
+				{...ANNUAL_CARE_SECTION_MOCK}
 			/>
 			<OurPeopleSection
 				className={css.peoples}
