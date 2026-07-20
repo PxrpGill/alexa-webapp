@@ -204,7 +204,6 @@ export function useZupCanvas(ref: RefObject<HTMLCanvasElement | null>) {
       const hovered =
         interactive && pointer.active ? hitTest(pointer.x, pointer.y) : -1;
       const anyHover = hovered !== -1;
-      canvas.style.cursor = anyHover ? 'pointer' : 'default';
 
       const maxPush = cssW * MAX_PUSH_FACTOR;
       const soft = cssW * SOFTNESS_FACTOR;
