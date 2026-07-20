@@ -1,0 +1,50 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive height, 0, 735;
+    @mixin responsive width, 0, 460;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.content {
+    @mixin responsive padding, 26, 26;
+    @mixin responsive gap, 10, 10;
+    @mixin responsive min-height, 0, 167;
+
+    display: flex;
+    flex-direction: column;
+
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 10;
+    color: var(--color-white-0);
+    max-width: 90%;
+}
+
+.title {
+    @mixin text-2xl;
+}
+
+.description {
+    @mixin responsive font-size, 20, 20;
+}
+
+.arrow {
+    @mixin responsive width, 20, 30;
+    @mixin responsive margin, 40, 43;
+
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.link {
+    z-index: 11;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
