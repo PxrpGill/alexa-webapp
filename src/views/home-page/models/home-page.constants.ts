@@ -140,6 +140,7 @@ export const DESCRIPTION_SECTION: DescriptionSectionProps = {
 };
 
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	title: "Наши преимущества",
 	textBlock: {
 		title: "Современное оборудование",
 		description:

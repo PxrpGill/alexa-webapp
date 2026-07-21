@@ -6,6 +6,9 @@
     @mixin responsive margin-block-end, 20, 35;
 }
 
+.diagnostics,
+.form,
+.whatServiceIncludes,
 .yandexMap,
 .parentNews,
 .peoples,
