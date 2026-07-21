@@ -20,7 +20,12 @@ export default function DiagnosticProcessSection({
 
 			<ul className={`${css.cards} container`}>
 				{cards.map((card, index) => (
-					<AnimationWrapper as="li" key={index} className={css.paragraph}>
+					<AnimationWrapper
+						as="li"
+						key={index}
+						className={css.paragraph}
+						direction="fade"
+					>
 						<DiagnosticCard {...card} />
 					</AnimationWrapper>
 				))}

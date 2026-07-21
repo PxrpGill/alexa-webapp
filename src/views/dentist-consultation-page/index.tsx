@@ -1,5 +1,6 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constats";
+import CostOfServices from "@/widgets/cost-of-services";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
 import OurPeopleSection from "@/widgets/our-people-section";
 import QuadroSection from "@/widgets/quadro-section";
@@ -13,6 +14,7 @@ import {
 } from "../home-page/models/home-page.constants";
 import css from "./index.module.css";
 import {
+	COST_OF_SERVICES,
 	DIAGNOSTICS_SECTION_MOCK,
 	EMPLOYEES_SECTION,
 	FORM_DATA,
@@ -48,6 +50,7 @@ export default function DentistConsultationPage() {
 				{...EMPLOYEES_SECTION}
 				isSlider
 			/>
+			<CostOfServices className={css.costOfServices} {...COST_OF_SERVICES} />
 			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
 			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
