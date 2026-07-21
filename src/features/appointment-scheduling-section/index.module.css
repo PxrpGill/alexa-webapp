@@ -8,6 +8,11 @@
     background-color: var(--color-white-0);
     display: grid;
     grid-template-columns: var(--first-col) auto;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .posterWrapper {
@@ -23,5 +28,5 @@
 }
 
 .header {
-    @mixin responsive padding-block-end, 0, 30;
+    @mixin responsive padding-block-end, 30, 30;
 }

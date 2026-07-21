@@ -24,4 +24,8 @@
 .logo {
     @mixin responsive width, 64, 64;
     @mixin responsive height, 64, 64;
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }

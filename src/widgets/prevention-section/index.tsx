@@ -12,7 +12,10 @@ export default function PreventionSection({
 	content,
 }: PreventionSectionProps) {
 	return (
-		<AnimationWrapper className={`${css.root} ${className} container`}>
+		<AnimationWrapper
+			as="section"
+			className={`${css.root} ${className} container`}
+		>
 			<SectionHeader {...sectionHeader} className={css.header} />
 			<div className={css.contentPart}>
 				<ZupBlock />

@@ -7,6 +7,10 @@
     align-items: center;
     overflow: hidden;
     position: relative;
+
+    @media (max-width: $mobile) {
+        min-height: 667px;
+    }
 }
 
 .title {
@@ -23,6 +27,11 @@
     opacity: 0;
     visibility: hidden;
     width: max-content;
+
+    @media (max-width: $mobile) {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .title.animate {

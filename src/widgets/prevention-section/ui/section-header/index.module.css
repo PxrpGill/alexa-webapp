@@ -1,5 +1,10 @@
 .root {
   max-width: 75%;
+
+  @media (max-width: $mobile) {
+    max-width: unset;
+    width: 100%;
+  }
 }
 
 .title {

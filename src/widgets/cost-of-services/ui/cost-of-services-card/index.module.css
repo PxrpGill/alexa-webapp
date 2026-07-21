@@ -1,0 +1,73 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding, 30, 30;
+    @mixin responsive padding-inline, 20;
+
+    background-color: var(--color-white-0);
+}
+
+.icon {
+    @mixin responsive width, 20, 20;
+    @mixin responsive height, 20, 20;
+}
+
+.contentPart {
+    @mixin responsive --first-col, 0, 781;
+    @mixin responsive padding-block-end, 10, 20;
+    @mixin responsive gap, 20;
+
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.titleBlock {
+    @mixin responsive gap, 10, 20;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin text-4xl;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 20;
+    }
+}
+
+.price {
+    @mixin text-4xl;
+
+    color: var(--color-green-1);
+    
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 30;
+    }
+}
+
+.description {
+    @mixin text-base;
+
+    ul,
+    ol {
+        @mixin responsive padding-inline, 20, 20;
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    ol {
+        list-style: decimal;
+    }
+
+    @media (max-width: $mobile) {
+        @mixin text-xl;
+    }
+}

@@ -14,6 +14,12 @@
     font-weight: 600;
     color: var(--color-black-1);
     user-select: none;
+
+    @media (max-width: $mobile) {
+        @mixin text-lg;
+
+        font-weight: 600;
+    }
 }
 
 /* ── Wrapper ─────────────────────────────────────────── */
@@ -65,6 +71,10 @@
 
         font-weight: 500;
         color: var(--color-gray-8);
+
+        @media (max-width: $mobile) {
+            @mixin responsive font-size, 18;
+        }
     }
 
     &:-webkit-autofill,
@@ -88,6 +98,10 @@
             border-color: var(--color-green-1);
         }
     }
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 18;
+    }
 }
 
 /* ── Size variants ───────────────────────────────────── */
@@ -98,8 +112,8 @@
 }
 
 .m .input {
-    @mixin responsive padding-inline, 10, 20;
-    @mixin responsive padding-block, 7, 20;
+    @mixin responsive padding-inline, 20, 20;
+    @mixin responsive padding-block, 20, 20;
 }
 
 .l .input {

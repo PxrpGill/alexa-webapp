@@ -1,8 +1,12 @@
+import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
+import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
+import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
+import type { WhatServiceIncludesProps } from "@/widgets/what-service-includes/types/what-service-includes.types";
 
 export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 	sectionHeader: {
@@ -18,12 +22,6 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 			},
 		},
 	},
-	cards: [
-		{ title: "Получить точные сведения о&nbsp;состоянии ваших зубов" },
-		{ title: "Выбрать наиболее эффективный и&nbsp;безопасный метод лечения" },
-		{ title: "Сэкономить время и&nbsp;деньги в&nbsp;будущем" },
-		{ title: "Избежать осложнений и&nbsp;ненужных процедур" },
-	],
 };
 
 export const TITLE_STICKY_SECTION: TitleStickySectionProps = {
@@ -124,33 +122,6 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		{
 			poster: {
 				webp: {
-					src: "/mock/employees/employee-2.webp",
-				},
-			},
-			fullname: "Каплин Ефим Валерьевич",
-			position: "Врач-стоматолог-хирург, ортопед, имплантолог",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-3.webp",
-				},
-			},
-			fullname: "Никитин Андрей Максимович",
-			position: "Детский врач-стоматолог",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-4.webp",
-				},
-			},
-			fullname: "Золотовская Анастасия Витальевна",
-			position: "Врач-стоматолог-терапевт",
-		},
-		{
-			poster: {
-				webp: {
 					src: "/mock/employees/employee-5.webp",
 				},
 			},
@@ -161,119 +132,103 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		{
 			poster: {
 				webp: {
-					src: "/mock/employees/employee-6.webp",
-				},
-			},
-			fullname: "Топоров Артур Игоревич",
-			position: "Врач-анестезиолог-реаниматолог",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-7.webp",
-				},
-			},
-			fullname: "Магомедгаджиева Ашрафиль Руслановна",
-			position: "Врач-стоматолог-гигиенист",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-8.webp",
-				},
-			},
-			fullname: "Шахназарян Эрик Каренович",
-			position: "Врач-стоматолог-хирург",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-9.webp",
-				},
-			},
-			fullname: "Кравченко Павел Сергеевич",
-			position: "Врач-стоматолог-ортодонт",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-11.webp",
-				},
-			},
-			fullname: "Забалуев Александр Валерьевич",
-			position: "Врач-анестезиолог-реаниматолог",
-		},
-		{
-			poster: {
-				webp: {
 					src: "/mock/employees/employee-12.webp",
 				},
 			},
 			fullname: "Маркарян Кнарик Робертовна",
 			position: "Врач-стоматолог-терапевт",
 		},
+	],
+};
+
+export const WHAT_SERVICE_INCLUDES: WhatServiceIncludesProps = {
+	title: "Что включает услуга",
+	cards: [
 		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-13.webp",
-				},
-			},
-			fullname: "Корнилов Герман Валерьевич",
-			position: "Врач-стоматолог-пародонтолог",
+			title: "Осмотр и&nbsp;оценка состояния зубов",
 		},
 		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-14.webp",
-				},
-			},
-			fullname: "Паламарчук Татьяна Васильевна",
-			position: "Ассистент",
+			title: "Сбор жалоб и&nbsp;обсуждение вашей ситуации",
 		},
 		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-15.webp",
-				},
-			},
-			fullname: "Ермакова Полина Максимовна",
-			position: "Ассистент",
+			title: "Диагностика и&nbsp;определение возможных проблем",
 		},
 		{
+			title: "Составление плана дальнейшего лечения",
+		},
+	],
+};
+
+export const FORM_DATA: AppointmentSchedulingProps = {
+	title: "Запись на&nbsp;приём",
+	description:
+		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
+	poster: {
+		webp: {
+			src: "/system/form.webp",
+		},
+	},
+};
+
+export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
+	sectionHeader: {
+		title: "Ваша улыбка в&nbsp;руках профессионалов!",
+		description: "Мы&nbsp;реализуем целостный осмотр для своих пациентов:",
+	},
+	cards: [
+		{
+			title: "Визуальный и&nbsp;инструментальный осмотр:",
+			description: "Точная оценка состояния ваших зубов и&nbsp;полости рта.",
 			poster: {
 				webp: {
-					src: "/mock/employees/employee-16.webp",
+					src: "/mock/diagnostics/1-desktop.webp",
 				},
 			},
-			fullname: "Власенко Марина Ильинична",
-			position: "Ассистент",
 		},
 		{
+			title: "Сбор полного анамнеза:",
+			description:
+				"Мы&nbsp;узнаем о&nbsp;вашем здоровье, чтобы построить индивидуальный план лечения.",
 			poster: {
 				webp: {
-					src: "/mock/employees/employee-17.webp",
+					src: "/mock/diagnostics/2-desktop.webp",
 				},
 			},
-			fullname: "Харитонова Елена Петровна",
-			position: "Ассистент",
 		},
 		{
+			title: "Рентген и&nbsp;компьютерная томография:",
+			description:
+				"Современные методы диагностики для уверенности в&nbsp;точности диагноза.",
 			poster: {
 				webp: {
-					src: "/mock/employees/employee-18.webp",
+					src: "/mock/diagnostics/3-desktop.webp",
 				},
 			},
-			fullname: "Курганская Елена Павловна",
-			position: "Управляющая",
 		},
 		{
+			title: "Визуальный и&nbsp;инструментальный осмотр:",
+			description: "Точная оценка состояния ваших зубов и&nbsp;полости рта.",
 			poster: {
 				webp: {
-					src: "/mock/employees/employee-19.webp",
+					src: "/mock/diagnostics/4-desktop.webp",
 				},
 			},
-			fullname: "Осадчая Юлия Александровна",
-			position: "Администратор",
+		},
+	],
+};
+
+export const COST_OF_SERVICES: CostOfServicesProps = {
+	title: "Стоимость услуг:",
+	cards: [
+		{
+			title: "Консультация",
+			description:
+				"Профессиональная консультация стоматолога с&nbsp;осмотром, диагностикой и&nbsp;составлением индивидуального плана лечения.",
+			button: {
+				title: "Получить консультацию",
+				href: "",
+			},
+			price: 1500,
 		},
 	],
 };

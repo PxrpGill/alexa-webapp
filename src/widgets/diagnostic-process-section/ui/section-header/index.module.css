@@ -7,7 +7,6 @@
 
 .title {
     @mixin text-6xl;
-
 }
 
 .description {
@@ -15,7 +14,5 @@
 
     @media (max-width: $mobile) {
         @mixin text-lg;
-
-        font-weight: 400;
     }
 }
