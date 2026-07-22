@@ -1,84 +1,84 @@
 .root {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .details[open] + .accordionContent {
-	grid-template-rows: 1fr;
-	visibility: visible;
-	opacity: 1;
-	transition-delay: 0s;
+    grid-template-rows: 1fr;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
 }
 
 .details[open] .icon {
-	rotate: 180deg;
+    rotate: 180deg;
 }
 
 .accordionContentBody {
-	overflow: hidden;
-	min-height: 0;
+    overflow: hidden;
+    min-height: 0;
 }
 
 .summary {
-	@mixin responsive gap, 10, 10;
-	
-	cursor: pointer;
-	user-select: none;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	list-style: none;
-	-webkit-tap-highlight-color: transparent;
+    @mixin responsive gap, 10, 10;
 
-	&:active {
-		transform: none;
-		background: none;
-		outline: none;
-		box-shadow: none;
-	}
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
 
-	&::-webkit-details-marker {
-		display: none;
-	}
+    &:active {
+        transform: none;
+        background: none;
+        outline: none;
+        box-shadow: none;
+    }
 
-	&::-moz-list-bullet {
-		list-style-type: none;
-	}
+    &::-webkit-details-marker {
+        display: none;
+    }
+
+    &::-moz-list-bullet {
+        list-style-type: none;
+    }
 }
 
 .accordionContent {
-	@mixin transitionOptions;
+    @mixin transitionOptions;
 
-	overflow: hidden;
-	display: grid;
-	grid-template-rows: 0fr;
-	padding-block-start: unset !important;
-	visibility: hidden;
-	opacity: 0;
-	transition-delay: 0s, 0s, 0.3s;
-	transition-property: opacity, grid-template-rows, visibility;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 0fr;
+    padding-block-start: unset;
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: 0s, 0s, 0.3s;
+    transition-property: opacity, grid-template-rows, visibility;
 }
 
 .accordionInnerContent {
-	@mixin b1;
+    @mixin b1;
 }
 
 .title {
-	@mixin h5;
+    @mixin h5;
 
-	font-weight: 600;
+    font-weight: 600;
 
-	@media (max-width: $mobile) {
-		@mixin h3;
+    @media (max-width: $mobile) {
+        @mixin h3;
 
-		line-height: 1.35;
-	}
+        line-height: 1.35;
+    }
 }
 
 .icon {
-	@mixin transition rotate;
-	@mixin responsive width, 16, 28;
-	@mixin responsive height, 16, 28;
+    @mixin transition rotate;
+    @mixin responsive width, 16, 28;
+    @mixin responsive height, 16, 28;
 
-	flex-shrink: 0;
+    flex-shrink: 0;
 }

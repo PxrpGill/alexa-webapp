@@ -19,7 +19,7 @@
 
     transition-property: opacity, translate;
     transition-duration: 0.4s;
-    
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -48,10 +48,9 @@
     transition-duration: 0.4s;
     left: 50%;
     top: 50%;
-    
+
     transition-property: translate, rotate;
     position: absolute;
-
 }
 
 .upper {
@@ -64,7 +63,7 @@
     rotate: 70deg;
 }
 
-.upper.animate { 
+.upper.animate {
     translate: 19% -75%;
     rotate: 235deg;
 }

@@ -21,7 +21,7 @@
 
 .list {
     @mixin responsive gap, 20, 20;
-    
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 

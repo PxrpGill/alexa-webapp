@@ -1,13 +1,13 @@
 {
-  "extends": ["stylelint-config-standard"],
-  "plugins": ["stylelint-order"],
-  "ignoreFiles": ["shared/styles/mixins/**", ".next/**"],
-  "rules": {
-    "at-rule-no-unknown": [true, { "ignoreAtRules": ["mixin"] }],
-    "order/order": [
-      [{ "type": "at-rule", "name": "mixin" }, "declarations", "rules"]
-    ],
-    "media-query-no-invalid": null,
-    "selector-class-pattern": null
-  }
+    "extends": ["stylelint-config-standard"],
+    "plugins": ["stylelint-order"],
+    "ignoreFiles": ["shared/styles/mixins/**", ".next/**"],
+    "rules": {
+        "at-rule-no-unknown": [true, { "ignoreAtRules": ["mixin"] }],
+        "order/order": [
+            [{ "type": "at-rule", "name": "mixin" }, "declarations", "rules"]
+        ],
+        "media-query-no-invalid": null,
+        "selector-class-pattern": null
+    }
 }

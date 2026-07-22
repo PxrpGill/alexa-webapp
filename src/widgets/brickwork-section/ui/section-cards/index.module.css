@@ -58,7 +58,7 @@
 
             @media (max-width: $mobile) {
                 @mixin h5;
-                
+
                 line-height: 1.55;
             }
         }

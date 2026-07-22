@@ -31,7 +31,7 @@
     ul {
         @mixin responsive gap, 20, 20;
         @mixin responsive padding-inline-start, 20, 20;
-        
+
         list-style: disc;
         display: flex;
         flex-direction: column;
@@ -62,7 +62,7 @@
 .button[class] {
     width: fit-content;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
         &:hover {
             .icon {
                 path {

@@ -33,12 +33,12 @@
 
 .cardText {
     @mixin b1;
-    
+
     font-weight: 600;
 
     @media (max-width: $mobile) {
         @mixin h5;
-        
+
         font-weight: 600;
         line-height: 1.55;
     }

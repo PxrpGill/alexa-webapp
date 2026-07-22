@@ -23,7 +23,6 @@
     @mixin text-2xl;
 }
 
-
 .imageWrapper {
     @mixin responsive border-radius, 30, 30;
     @mixin responsive height, 650, 400;

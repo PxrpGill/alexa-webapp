@@ -1,7 +1,7 @@
 .root {
     position: relative;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
         &:hover {
             .button {
                 color: var(--color-green-1);
@@ -53,7 +53,6 @@
     padding-inline: 0;
 }
 
-
 .button {
     @mixin text-3xl;
     @mixin transition color;
@@ -74,7 +73,7 @@
 
     display: flex;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
         &:hover {
             .title {
                 color: var(--color-green-4);

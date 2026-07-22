@@ -57,7 +57,7 @@
 
 .posterWrapper {
     @mixin responsive height, 280;
-    
+
     position: relative;
 }
 

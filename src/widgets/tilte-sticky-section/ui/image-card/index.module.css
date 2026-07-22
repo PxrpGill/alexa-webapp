@@ -13,7 +13,7 @@
 
     @media (max-width: $mobile) {
         @mixin responsive gap, 20;
-        
+
         background-color: unset;
     }
 }

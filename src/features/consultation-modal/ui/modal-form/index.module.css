@@ -33,7 +33,7 @@
 .label a {
     @mixin transition color;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
         &:hover {
             color: var(--color-green-1);
         }

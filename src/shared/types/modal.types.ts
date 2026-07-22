@@ -1,11 +1,12 @@
-import type { PropsWithChildren } from "react";
-import type { PropsWithClassName } from "./props-with-classname";
+import type { PropsWithChildren } from 'react';
+
+import type { PropsWithClassName } from './props-with-classname';
 
 export type ModalProps = {
-	isOpen: boolean;
-	toggleClose?: () => void;
-	contentClassName?: string;
-	closeButtonClassName?: string;
-	backdropClassName?: string;
+    isOpen: boolean;
+    toggleClose?: () => void;
+    contentClassName?: string;
+    closeButtonClassName?: string;
+    backdropClassName?: string;
 } & PropsWithChildren &
-	PropsWithClassName;
+    PropsWithClassName;

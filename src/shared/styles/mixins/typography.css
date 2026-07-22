@@ -86,17 +86,37 @@
 
 /* ─── h1–h6 / b1–b4 aliases (backward-compatible) ───────────────────────── */
 
-@define-mixin h1 { @mixin text-7xl; }
-@define-mixin h2 { @mixin text-6xl; }
-@define-mixin h3 { @mixin text-5xl; }
-@define-mixin h4 { @mixin text-4xl; }
-@define-mixin h5 { @mixin text-xl;  }
-@define-mixin h6 { @mixin text-2xl; }
+@define-mixin h1 {
+    @mixin text-7xl;
+}
+@define-mixin h2 {
+    @mixin text-6xl;
+}
+@define-mixin h3 {
+    @mixin text-5xl;
+}
+@define-mixin h4 {
+    @mixin text-4xl;
+}
+@define-mixin h5 {
+    @mixin text-xl;
+}
+@define-mixin h6 {
+    @mixin text-2xl;
+}
 
-@define-mixin b1 { @mixin text-md;   }
-@define-mixin b2 { @mixin text-base; }
-@define-mixin b3 { @mixin text-sm;   }
-@define-mixin b4 { @mixin text-xs;   }
+@define-mixin b1 {
+    @mixin text-md;
+}
+@define-mixin b2 {
+    @mixin text-base;
+}
+@define-mixin b3 {
+    @mixin text-sm;
+}
+@define-mixin b4 {
+    @mixin text-xs;
+}
 
 /* ─── button (no text-* equivalent — 15px constant) ─────────────────────── */
 

@@ -45,7 +45,7 @@
     @mixin text-4xl;
 
     color: var(--color-green-1);
-    
+
     @media (max-width: $mobile) {
         @mixin responsive font-size, 30;
     }

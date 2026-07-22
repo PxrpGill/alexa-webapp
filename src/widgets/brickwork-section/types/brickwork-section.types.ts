@@ -1,23 +1,23 @@
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
+import type { PropsWithClassName } from '@/shared/types/props-with-classname';
 
 export type SectionHeaderProps = {
-	title?: string;
-	description?: string;
+    title?: string;
+    description?: string;
 } & PropsWithClassName;
 
 export type BrickworkCardProps = {
-	title?: string;
-	description?: string;
-	icon?: string;
-	buttonText?: string;
-	cardTheme?: "white" | "green";
+    title?: string;
+    description?: string;
+    icon?: string;
+    buttonText?: string;
+    cardTheme?: 'white' | 'green';
 };
 
 export type BrickworkCardsProps = {
-	cards?: BrickworkCardProps[];
+    cards?: BrickworkCardProps[];
 } & PropsWithClassName;
 
 export type BrickworkSectionProps = {
-	sectionHeader?: SectionHeaderProps;
+    sectionHeader?: SectionHeaderProps;
 } & PropsWithClassName &
-	BrickworkCardsProps;
+    BrickworkCardsProps;

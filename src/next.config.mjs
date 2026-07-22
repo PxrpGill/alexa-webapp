@@ -1,22 +1,22 @@
 const nextConfig = {
-	output: "standalone",
+    output: 'standalone',
 
-	expireTime: 3600,
+    expireTime: 3600,
 
-	reactCompiler: true,
+    reactCompiler: true,
 
-	experimental: {
-		inlineCss: true,
-	},
+    experimental: {
+        inlineCss: true,
+    },
 
-	turbopack: {
-		rules: {
-			"*.svg": {
-				loaders: ["@svgr/webpack"],
-				as: "*.jsx",
-			},
-		},
-	},
+    turbopack: {
+        rules: {
+            '*.svg': {
+                loaders: ['@svgr/webpack'],
+                as: '*.jsx',
+            },
+        },
+    },
 };
 
 export default nextConfig;

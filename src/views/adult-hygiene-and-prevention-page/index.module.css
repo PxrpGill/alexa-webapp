@@ -21,7 +21,6 @@
     @mixin responsive margin-block-end, 20, 35;
 }
 
-
 .beforeAfter[class] {
     & > div:last-child {
         @mixin responsive --first-col, 0, 590;

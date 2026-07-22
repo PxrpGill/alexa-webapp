@@ -1,26 +1,29 @@
-/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
-import type { SectionHeaderProps } from "../../types/mock-tabs-section.types";
+/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: intentional suppression */
+import type { SectionHeaderProps } from '../../types/mock-tabs-section.types';
 
-import css from "./index.module.css";
+import css from './index.module.css';
 
 export default function SectionHeader({
-	title,
-	description,
-	className,
+    title,
+    description,
+    className,
 }: SectionHeaderProps) {
-	if (!(title || description)) return null;
+    if (!(title || description)) return null;
 
-	return (
-		<div className={`${css.root} ${className}`}>
-			{title && (
-				<h2 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
-			)}
-			{description && (
-				<p
-					dangerouslySetInnerHTML={{ __html: description }}
-					className={css.description}
-				/>
-			)}
-		</div>
-	);
+    return (
+        <div className={`${css.root} ${className}`}>
+            {title && (
+                <h2
+                    dangerouslySetInnerHTML={{ __html: title }}
+                    className={css.title}
+                />
+            )}
+            {description && (
+                <p
+                    dangerouslySetInnerHTML={{ __html: description }}
+                    className={css.description}
+                />
+            )}
+        </div>
+    );
 }

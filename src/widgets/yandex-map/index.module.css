@@ -1,32 +1,32 @@
 .root {
-  width: 100%;
+    width: 100%;
 }
 
 .contentWrapper {
-  @mixin responsive --first-col, 0, 590;
-  @mixin responsive gap, 20, 20;
+    @mixin responsive --first-col, 0, 590;
+    @mixin responsive gap, 20, 20;
 
-  width: 100%;
-  display: grid;
-  grid-template-columns: var(--first-col) auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
 
-  @media (max-width: $mobile) {
-    display: flex;
-    flex-direction: column;
-  }
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .mapsWrapper {
-  @mixin responsive border-radius, 30, 30;
-  @mixin responsive height, 240;
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive height, 240;
 
-  background-color: var(--color-white-0);
-  overflow: hidden;
-  position: relative;
+    background-color: var(--color-white-0);
+    overflow: hidden;
+    position: relative;
 }
 
 .mapContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }

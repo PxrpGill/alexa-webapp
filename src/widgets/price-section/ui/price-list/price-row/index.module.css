@@ -3,7 +3,6 @@
     @mixin responsive gap, 16, 24;
     @mixin transition background-color;
 
-
     display: flex;
     align-items: flex-start;
     justify-content: space-between;

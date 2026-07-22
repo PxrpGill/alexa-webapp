@@ -1,6 +1,6 @@
 .root {
     @mixin responsive width, 338, 338;
-    @mixin responsive height, 506, 506; 
+    @mixin responsive height, 506, 506;
     @mixin responsive border-radius, 30, 30;
 
     position: relative;
@@ -32,13 +32,13 @@
     backdrop-filter: blur(10px);
 
     &::before {
-        content: '';
+        content: "";
 
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        opacity: 0.5;;
+        opacity: 0.5;
         height: 100%;
         background: var(--color-white-0);
     }
@@ -47,7 +47,7 @@
 .title,
 .description {
     position: relative;
-    z-index: 10;;
+    z-index: 10;
 }
 
 .title {

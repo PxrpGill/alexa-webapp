@@ -25,7 +25,7 @@
             fill: var(--color-white-0);
         }
     }
-    
+
     &:not(.selected) {
         svg rect {
             fill: var(--color-green-1);
@@ -36,7 +36,7 @@
         }
     }
 
-    @media (hover:hover) {
+    @media (hover: hover) {
         &:hover {
             svg rect {
                 fill: var(--color-white-0);

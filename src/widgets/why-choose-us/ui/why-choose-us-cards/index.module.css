@@ -27,7 +27,7 @@
 
 .title {
     @mixin text-md;
-    
+
     font-weight: 600;
 
     @media (max-width: $mobile) {

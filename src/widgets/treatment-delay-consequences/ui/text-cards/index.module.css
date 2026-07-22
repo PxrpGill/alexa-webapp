@@ -30,14 +30,14 @@
 
     @media (max-width: $mobile) {
         @mixin h5;
-        
+
         font-weight: 600;
     }
 }
 
 .description {
     @mixin b1;
-    
+
     font-weight: 400;
 
     @media (max-width: $mobile) {
