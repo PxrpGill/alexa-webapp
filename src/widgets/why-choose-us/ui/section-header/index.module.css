@@ -1,0 +1,19 @@
+.root {
+    @mixin responsive gap, 10, 20;
+    @mixin responsive max-width, 0, 876;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $mobile) {
+        max-width: unset;
+    }
+}
+
+.title {
+    @mixin text-6xl;
+}
+
+.description {
+    @mixin text-md;
+}

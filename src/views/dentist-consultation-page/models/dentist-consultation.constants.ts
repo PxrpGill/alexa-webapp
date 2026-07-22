@@ -7,6 +7,7 @@ import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/o
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
 import type { WhatServiceIncludesProps } from "@/widgets/what-service-includes/types/what-service-includes.types";
+import type { WhyChooseUsProps } from "@/widgets/why-choose-us/types/why-choose-us.types";
 
 export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 	sectionHeader: {
@@ -231,4 +232,50 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			price: 1500,
 		},
 	],
+};
+
+export const WHY_CHOOSE_US: WhyChooseUsProps = {
+	sectionHeader: {
+		title: "Почему первую консультацию проходят именно у&nbsp;нас",
+		description:
+			"Первый прием&nbsp;&mdash; это возможность получить полную картину состояния полости рта, понять причины проблемы и&nbsp;получить понятный план лечения без навязанных процедур.",
+	},
+	cards: [
+		{
+			icon: "/mock/why-choose-us/1-icon.svg",
+			title: "Полная диагностика",
+			description:
+				"Проводим осмотр, анализируем снимки и&nbsp;оцениваем состояние зубов, десен и&nbsp;прикуса.",
+		},
+		{
+			icon: "/mock/why-choose-us/2-icon.svg",
+			title: "Персональный план лечения",
+			description:
+				"Объясняем все этапы лечения простым языком и&nbsp;предлагаем оптимальные варианты.",
+		},
+		{
+			icon: "/mock/why-choose-us/3-icon.svg",
+			title: "Честный подход",
+			description:
+				"Назначаем необходимые процедуры и&nbsp;отвечаем на&nbsp;все вопросы пациента.",
+		},
+	],
+	mainSection: {
+		title: "Причины выбрать именно нас",
+		list: [
+			"Комплексная диагностика за&nbsp;один прием",
+			"Понятный поэтапный план лечения",
+			"Возможность консультации узких специалистов",
+			"Современное диагностическое оборудование",
+		],
+		poster: {
+			webp: {
+				src: "/mock/why-choose-us/main.webp",
+			},
+		},
+		button: {
+			title: "Записаться на приём",
+			href: "",
+		},
+	},
 };
