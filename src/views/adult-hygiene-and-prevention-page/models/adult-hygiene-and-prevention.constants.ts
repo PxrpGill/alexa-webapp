@@ -1,7 +1,13 @@
+import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
+import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
+import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
+import type { WhatServiceIncludesProps } from "@/widgets/what-service-includes/types/what-service-includes.types";
+import type { WhyChooseUsProps } from "@/widgets/why-choose-us/types/why-choose-us.types";
 
 export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
 	sectionHeader: {
@@ -13,26 +19,27 @@ export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
 			buttonText: "Записаться на прием",
 		},
 		poster: {
-			original: {
-				src: "/mock/hygiene/hygiene.jpg",
+			webp: {
+				src: "/mock/hygiene/quadro-desktop.webp",
 			},
 		},
 	},
+};
+
+export const WHAT_SERVICE_INCLUDES: WhatServiceIncludesProps = {
+	title: "Что включает услуга",
 	cards: [
-		{ title: "️Сделать вашу улыбку более сияющей и&nbsp;привлекательной." },
+		{ title: "Обеспечение правильного ухода за&nbsp;имплантатами." },
 		{
 			title:
-				"Удалить налет и&nbsp;зубной камень, которые могут вызвать кариес и&nbsp;другие заболевания.",
-		},
-		{ title: "Обеспечить правильный уход за&nbsp;имплантатами." },
-		{ title: "Получить рекомендации по&nbsp;правильной гигиене полости рта." },
-		{
-			title:
-				"Улучшить состояние десен и&nbsp;предотвратить развитие гингивита и&nbsp;пародонтита.",
+				"Улучшение состояния дёсен и&nbsp;предотвращение развития гингивита и&nbsp;пародонтита.",
 		},
 		{
 			title:
-				"Улучшить внешний вид зубов перед отбеливанием или другими эстетическими процедурами.",
+				"Удаление налёта и&nbsp;зубного камня, снижающее риск кариеса и&nbsp;воспалительных заболеваний полости рта.",
+		},
+		{
+			title: "Рекомендации по&nbsp;правильной гигиене полости рта.",
 		},
 	],
 };
@@ -242,4 +249,105 @@ export const FOURTH_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 			},
 		},
 	],
+};
+
+export const FORM_DATA: AppointmentSchedulingProps = {
+	title: "Запись на&nbsp;приём",
+	description:
+		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
+	poster: {
+		webp: {
+			src: "/system/form.webp",
+		},
+	},
+};
+
+export const COST_OF_SERVICES: CostOfServicesProps = {
+	title: "Стоимость услуг:",
+	cards: [
+		{
+			title: "Консультация",
+			description:
+				"Профессиональная консультация стоматолога с&nbsp;осмотром, диагностикой и&nbsp;составлением индивидуального плана лечения.",
+			button: {
+				title: "Получить консультацию",
+				href: "",
+			},
+			price: 1500,
+		},
+	],
+};
+
+export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
+	title: "Врачи, оказывающие услугу",
+	button: {
+		title: "Смотреть всех специалистов",
+		href: SITE_NAVIGATION.vrachi,
+	},
+	employees: [
+		{
+			poster: {
+				webp: {
+					src: "/mock/employees/employee-7.webp",
+				},
+			},
+			fullname: "Магомедгаджиева Ашрафиль Руслановна",
+			position: "Врач-стоматолог-гигиенист",
+		},
+		{
+			poster: {
+				webp: {
+					src: "/mock/employees/employee-13.webp",
+				},
+			},
+			fullname: "Корнилов Герман Валерьевич",
+			position: "Врач-стоматолог-пародонтолог",
+		},
+	],
+};
+
+export const WHY_CHOOSE_US: WhyChooseUsProps = {
+	sectionHeader: {
+		title: "Почему профессиональную гигиену проходят именно у&nbsp;нас",
+		description:
+			"Профессиональная гигиена&nbsp;&mdash; это не&nbsp;только удаление налета и&nbsp;зубного камня. Мы&nbsp;учим правильно ухаживать за&nbsp;зубами дома, подбираем средства именно под вашу ситуацию и&nbsp;сопровождаем пациента, чтобы здоровье полости рта сохранялось на&nbsp;долгие годы.",
+	},
+	cards: [
+		{
+			icon: "/mock/why-choose-us/1-icon.svg",
+			title: "Обучаем правильной технике чистки",
+			description:
+				"На&nbsp;приеме врач поставит правильную технику чистки, покажет движения щетки и&nbsp;научит эффективно ухаживать за&nbsp;зубами и&nbsp;деснами в&nbsp;домашних условиях.",
+		},
+		{
+			icon: "/mock/why-choose-us/2-icon.svg",
+			title: "Подбираем индивидуальный домашний уход",
+			description:
+				"Подберем щетку, пасту, ершики, ирригатор и&nbsp;другие средства именно для ваших зубов. Все необходимые средства можно приобрести сразу в&nbsp;клинике.",
+		},
+		{
+			icon: "/mock/why-choose-us/3-icon.svg",
+			title: "Контролируем результат",
+			description:
+				"На&nbsp;каждом профилактическом приеме врач оценивает качество домашней гигиены, показывает плохо очищаемые участки и&nbsp;&laquo;слепые зоны&raquo;, помогает скорректировать уход и&nbsp;отслеживает ваш прогресс.",
+		},
+	],
+	mainSection: {
+		title: "Причины выбрать именно нас",
+		list: [
+			"Не&nbsp;просто чистим зубы&nbsp;&mdash; обучаем правильному домашнему уходу",
+			"Подбираем индивидуальный набор средств гигиены под ваши особенности",
+			"Все рекомендованные средства можно приобрести сразу после приема",
+			"Отслеживаем результат, показываем проблемные зоны и&nbsp;помогаем сохранить здоровье зубов и&nbsp;десен",
+		],
+		poster: {
+			webp: {
+				src: "/mock/why-choose-us/main.webp",
+			},
+		},
+		button: {
+			title: "Записаться на приём",
+			href: "",
+		},
+	},
 };

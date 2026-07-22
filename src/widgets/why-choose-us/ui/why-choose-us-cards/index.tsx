@@ -4,7 +4,6 @@
 
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import type { WhyChooseUsCardsProps } from "../../types/why-choose-us.types";
-
 import css from "./index.module.css";
 
 export default function WhyChooseUsCards({
