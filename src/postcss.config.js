@@ -1,30 +1,30 @@
-const path = require("path");
+const path = require('node:path');
 
 module.exports = {
-	plugins: {
-		"postcss-import": {
-			path: [path.resolve(__dirname, "shared/styles")],
-		},
-		"postcss-mixins": {
-			mixinsDir: path.resolve(__dirname, "shared/styles/mixins"),
-		},
-		"postcss-simple-vars": {
-			variables: {
-				"mobile-min": "375px",
-				mobile: "767px",
+    plugins: {
+        'postcss-import': {
+            path: [path.resolve(__dirname, 'shared/styles')],
+        },
+        'postcss-mixins': {
+            mixinsDir: path.resolve(__dirname, 'shared/styles/mixins'),
+        },
+        'postcss-simple-vars': {
+            variables: {
+                'mobile-min': '375px',
+                mobile: '767px',
 
-				"small-desktop-min": "768px",
-				"small-desktop": "1441px",
+                'small-desktop-min': '768px',
+                'small-desktop': '1441px',
 
-				"desktop-min": "1442px",
-				desktop: "1920px",
+                'desktop-min': '1442px',
+                desktop: '1920px',
 
-				"mobile-scale-factor": "3.75",
-				"standard-desktop-scale-factor": "14.4",
-				"big-desktop-scale-factor": "14.41",
-			},
-		},
-		"postcss-nested": {},
-		autoprefixer: {},
-	},
+                'mobile-scale-factor': '3.75',
+                'standard-desktop-scale-factor': '14.4',
+                'big-desktop-scale-factor': '14.41',
+            },
+        },
+        'postcss-nested': {},
+        autoprefixer: {},
+    },
 };

@@ -1,14 +1,14 @@
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
-import type { PictureFormatType } from "@/shared/ui/picture";
+import type { PropsWithClassName } from '@/shared/types/props-with-classname';
+import type { PictureFormatType } from '@/shared/ui/picture';
 
 export type CtaDescriptionProps = {
-	text?: string;
-	icon?: string;
+    text?: string;
+    icon?: string;
 };
 
 export type CtaSectionProps = {
-	poster?: PictureFormatType;
-	title?: string;
-	content?: string;
-	description?: CtaDescriptionProps;
+    poster?: PictureFormatType;
+    title?: string;
+    content?: string;
+    description?: CtaDescriptionProps;
 } & PropsWithClassName;

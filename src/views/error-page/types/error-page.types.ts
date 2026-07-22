@@ -1,3 +1,3 @@
 export type ErrorPageProps = {
-	status: 404 | 500;
+    status: 404 | 500;
 };

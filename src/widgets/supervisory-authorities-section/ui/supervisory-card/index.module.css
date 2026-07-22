@@ -64,7 +64,7 @@
     @mixin transition color;
     @mixin b2;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
         &:hover {
             color: var(--color-green-1);
         }

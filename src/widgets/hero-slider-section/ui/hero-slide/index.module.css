@@ -54,7 +54,6 @@
 
     font-weight: 500;
 
-
     @media (max-width: $mobile) {
         @mixin h5;
 

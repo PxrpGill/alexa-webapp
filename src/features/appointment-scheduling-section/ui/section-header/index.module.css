@@ -7,7 +7,6 @@
 
 .title {
     @mixin text-6xl;
-
 }
 
 .description {

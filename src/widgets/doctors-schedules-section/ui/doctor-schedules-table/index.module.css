@@ -1,50 +1,54 @@
 .wrapper {
-  @mixin responsive min-width, 760, 760;
+    @mixin responsive min-width, 760, 760;
 
-  overflow-x: auto;
+    overflow-x: auto;
 }
 
 .row {
-  grid-template-columns: 1.8fr repeat(6, 1fr);
-  display: grid;
+    grid-template-columns: 1.8fr repeat(6, 1fr);
+    display: grid;
 }
 
 .headerRow {
-  @mixin responsive margin-block-end, 12, 16;
+    @mixin responsive margin-block-end, 12, 16;
 }
 
 .root {
-  @mixin responsive border-radius, 30, 30;
+    @mixin responsive border-radius, 30, 30;
 
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .cell {
-  @mixin responsive padding-block, 16, 20;
-  @mixin responsive padding-inline, 12, 20;
-  @mixin b2;
+    @mixin responsive padding-block, 16, 20;
+    @mixin responsive padding-inline, 12, 20;
+    @mixin b2;
 
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .headerCell {
-  @mixin b4;
+    @mixin b4;
 
-  color: var(--color-gray-2);
-  text-transform: uppercase;
+    color: var(--color-gray-2);
+    text-transform: uppercase;
 }
 
 .fullname {
-  @mixin h6;
+    @mixin h6;
 }
 
 .rowDark {
-  background-color: var(--color-green-1);
-  color: var(--color-white-0);
+    background-color: var(--color-green-1);
+    color: var(--color-white-0);
 }
 
 .rowLight {
-  background-color: color-mix(in srgb, var(--color-green-1) 12%, var(--color-white-0));
-  color: var(--color-black-1);
+    background-color: color-mix(
+        in srgb,
+        var(--color-green-1) 12%,
+        var(--color-white-0)
+    );
+    color: var(--color-black-1);
 }

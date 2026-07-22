@@ -42,6 +42,6 @@
     }
 
     @media (max-width: $mobile) {
-        @mixin text-xl; 
+        @mixin text-xl;
     }
 }

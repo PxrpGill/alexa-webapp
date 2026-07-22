@@ -5,7 +5,6 @@
 
     background-color: var(--color-green-1);
 
-
     &.withCards {
         @mixin responsive gap, 0, 62;
         @mixin responsive --first-col, 0, 570;
@@ -94,7 +93,6 @@
 
 .label {
     @mixin b4;
-
 
     position: absolute;
     top: 50%;

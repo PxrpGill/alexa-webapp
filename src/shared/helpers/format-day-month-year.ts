@@ -1,13 +1,13 @@
-/** biome-ignore-all lint/suspicious/noGlobalIsNan: <explanation> */
+/** biome-ignore-all lint/suspicious/noGlobalIsNan: intentional suppression */
 
 export const formatDayMonthYear = (date: string): string | undefined => {
-	const d = new Date(date);
+    const d = new Date(date);
 
-	if (isNaN(d.getTime())) return;
+    if (isNaN(d.getTime())) return;
 
-	const day = d.getUTCDate();
-	const month = String(d.getUTCMonth() + 1).padStart(2, "0");
-	const year = d.getUTCFullYear();
+    const day = d.getUTCDate();
+    const month = String(d.getUTCMonth() + 1).padStart(2, '0');
+    const year = d.getUTCFullYear();
 
-	return `${day}.${month}.${year}`;
+    return `${day}.${month}.${year}`;
 };

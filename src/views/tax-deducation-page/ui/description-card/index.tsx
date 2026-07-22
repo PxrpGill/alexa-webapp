@@ -1,23 +1,28 @@
-/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
+/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: intentional suppression */
 
-import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
-import type { DescriptionCardProps } from "../../types/tax-deducation.types";
-import css from "./index.module.css";
+import { AnimationWrapper } from '@/shared/ui/animation-wrapper';
+
+import type { DescriptionCardProps } from '../../types/tax-deducation.types';
+
+import css from './index.module.css';
 
 export default function DescriptionCard({
-	title,
-	className,
+    title,
+    className,
 }: DescriptionCardProps) {
-	if (!title) return null;
+    if (!title) return null;
 
-	return (
-		<AnimationWrapper
-			as="article"
-			className={`${css.root} container ${className}`}
-		>
-			<div className={css.wrapper}>
-				<h2 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
-			</div>
-		</AnimationWrapper>
-	);
+    return (
+        <AnimationWrapper
+            as="article"
+            className={`${css.root} container ${className}`}
+        >
+            <div className={css.wrapper}>
+                <h2
+                    dangerouslySetInnerHTML={{ __html: title }}
+                    className={css.title}
+                />
+            </div>
+        </AnimationWrapper>
+    );
 }

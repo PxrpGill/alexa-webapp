@@ -12,7 +12,7 @@
     font-weight: 600;
     line-height: 1;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
         &:hover {
             color: var(--color-green-1);
         }
@@ -53,7 +53,7 @@
 
     display: block;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
         &:hover {
             opacity: 0.6;
         }

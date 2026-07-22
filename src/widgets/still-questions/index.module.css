@@ -16,7 +16,7 @@
 .imageWrapper {
     @mixin responsive border-radius, 30, 30;
 
-    background-color: var(--color-white-0)
+    background-color: var(--color-white-0);
 }
 
 .imageWrapper {

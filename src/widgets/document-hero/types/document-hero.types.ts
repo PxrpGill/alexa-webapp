@@ -1,7 +1,7 @@
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
+import type { PropsWithClassName } from '@/shared/types/props-with-classname';
 
 export type DocumentHeroProps = {
-	subtitle?: string;
-	title?: string;
-	underTitle?: string;
+    subtitle?: string;
+    title?: string;
+    underTitle?: string;
 } & PropsWithClassName;

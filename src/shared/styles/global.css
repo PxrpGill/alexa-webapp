@@ -8,9 +8,9 @@ html {
     font-size: 1vw;
     scrollbar-gutter: stable;
 
-	@media (width >= 1441px) {
-		font-size: 14.41px;
-	}
+    @media (width >= 1441px) {
+        font-size: 14.41px;
+    }
 
     background-color: var(--color-white-1);
     color: var(--color-black-1);
@@ -28,11 +28,11 @@ main {
     @mixin responsive padding-inline, 20, 40;
 
     @media (max-width: $mobile) {
-		width: 100%;
-		margin-inline: unset;
-	}
+        width: 100%;
+        margin-inline: unset;
+    }
 
-	@media (width >= 1441px) {
-		padding-inline: calc(2em + (100vw - 1440px) / 2);
-	}
+    @media (width >= 1441px) {
+        padding-inline: calc(2em + (100vw - 1440px) / 2);
+    }
 }

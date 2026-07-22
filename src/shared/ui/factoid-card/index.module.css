@@ -43,7 +43,7 @@
         fill: var(--color-white-0);
     }
 
-    @media (hover:hover) {
+    @media (hover: hover) {
         &:hover {
             svg rect {
                 fill: var(--color-white-0);

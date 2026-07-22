@@ -1,7 +1,7 @@
-import TaxDeducationPage from "@/views/tax-deducation-page";
+import TaxDeducationPage from '@/views/tax-deducation-page';
 
 export const revalidate = 60;
 
 export default function TaxDeducation() {
-	return <TaxDeducationPage />;
+    return <TaxDeducationPage />;
 }

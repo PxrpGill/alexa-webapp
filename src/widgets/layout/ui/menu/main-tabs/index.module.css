@@ -28,7 +28,7 @@
     border: unset;
 
     &.active {
-        @media (hover:hover) {
+        @media (hover: hover) {
             background-color: var(--color-green-1);
             color: var(--color-white-0);
         }

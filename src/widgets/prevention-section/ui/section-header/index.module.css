@@ -1,12 +1,12 @@
 .root {
-  max-width: 75%;
+    max-width: 75%;
 
-  @media (max-width: $mobile) {
-    max-width: unset;
-    width: 100%;
-  }
+    @media (max-width: $mobile) {
+        max-width: unset;
+        width: 100%;
+    }
 }
 
 .title {
-  @mixin text-6xl;
+    @mixin text-6xl;
 }

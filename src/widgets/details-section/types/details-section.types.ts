@@ -1,11 +1,11 @@
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
+import type { PropsWithClassName } from '@/shared/types/props-with-classname';
 
 export type DetailsCard = {
-	title?: string;
-	content?: string;
+    title?: string;
+    content?: string;
 } & PropsWithClassName;
 
 export type DetailsSectionProps = {
-	title?: string;
-	cards?: Array<DetailsCard>;
+    title?: string;
+    cards?: Array<DetailsCard>;
 } & PropsWithClassName;

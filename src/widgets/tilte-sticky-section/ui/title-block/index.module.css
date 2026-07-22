@@ -23,6 +23,6 @@
     @mixin text-3xl;
 
     @media (max-width: $mobile) {
-       @mixin h6;
+        @mixin h6;
     }
 }

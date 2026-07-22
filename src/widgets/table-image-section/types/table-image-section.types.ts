@@ -1,8 +1,8 @@
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
-import type { PictureFormatType } from "@/shared/ui/picture";
+import type { PropsWithClassName } from '@/shared/types/props-with-classname';
+import type { PictureFormatType } from '@/shared/ui/picture';
 
 export type TableImageSectionProps = {
-	title?: string;
-	description?: string;
-	poster?: PictureFormatType;
+    title?: string;
+    description?: string;
+    poster?: PictureFormatType;
 } & PropsWithClassName;

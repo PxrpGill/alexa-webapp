@@ -2,7 +2,6 @@
     @mixin responsive padding-block-start, 88, 100;
 }
 
-
 .priceSection,
 .yandexMap {
     @mixin responsive margin-block-end, 60, 60;

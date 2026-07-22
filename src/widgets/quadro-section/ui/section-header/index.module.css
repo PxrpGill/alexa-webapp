@@ -60,7 +60,7 @@
 
 .imageBlock {
     @mixin responsive height, 281;
-    
+
     position: relative;
 }
 
@@ -68,7 +68,6 @@
     @media (max-width: $mobile) {
         display: none;
     }
-
 }
 
 .mobileCard[class] {

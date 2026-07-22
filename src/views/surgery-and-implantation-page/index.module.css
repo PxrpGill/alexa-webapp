@@ -2,6 +2,13 @@
     @mixin responsive padding-block-start, 88, 100;
 }
 
+.implantTable,
+.whyChooseUs,
+.diagnostics,
+.form,
+.costOfServices,
+.peoples,
+.whatIncludes,
 .lastSlider,
 .stillQuestions,
 .brickwork,
@@ -16,7 +23,7 @@
 
     @media (max-width: $mobile) {
         @mixin h3;
-        
+
         line-height: 1.35;
     }
 }

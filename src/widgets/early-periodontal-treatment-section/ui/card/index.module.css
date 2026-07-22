@@ -15,7 +15,7 @@
 
 .underDescription {
     @mixin b1;
-    
+
     font-weight: 600;
 
     @media (max-width: $mobile) {

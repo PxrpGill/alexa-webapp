@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
         &:hover {
             .hoverWrapper {
                 scale: 1;

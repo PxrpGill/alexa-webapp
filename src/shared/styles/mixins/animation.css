@@ -10,7 +10,7 @@
  * @mixin transition opacity, 0.5s;
  */
 @define-mixin transition $property, $duration: 0.3s {
-	transition: $property $duration var(--move-in-screen);
+    transition: $property $duration var(--move-in-screen);
 }
 
 /**
@@ -24,6 +24,6 @@
  * transition-property: width, height, opacity;
  */
 @define-mixin transitionOptions $duration: 0.3s {
-	transition-timing-function: var(--move-in-screen);
-	transition-duration: $duration;
+    transition-timing-function: var(--move-in-screen);
+    transition-duration: $duration;
 }

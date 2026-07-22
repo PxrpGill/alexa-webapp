@@ -38,7 +38,7 @@
 
 .descriptionBlock {
     @mixin responsive gap, 5, 5;
-    
+
     display: flex;
 }
 
@@ -55,7 +55,6 @@
     @mixin responsive gap, 20, 20;
     @mixin b1;
 
-
     display: flex;
     flex-direction: column;
 }
@@ -67,7 +66,7 @@
 
     @media (max-width: $mobile) {
         @mixin b2;
-        
+
         font-weight: 600;
     }
 }

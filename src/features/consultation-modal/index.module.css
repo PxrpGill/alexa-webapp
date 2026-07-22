@@ -8,7 +8,6 @@
     }
 }
 
-
 .posterWrapper {
     @mixin responsive height, 190, 190;
 

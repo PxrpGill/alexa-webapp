@@ -50,7 +50,7 @@
 
 .title {
     @mixin text-lg;
-    
+
     font-weight: 600;
 }
 
@@ -63,16 +63,16 @@
 
     ul {
         @mixin responsive padding-inline-start, 20, 20;
-        
+
         list-style: disc;
     }
 
     a {
         @mixin transition color;
-        
+
         color: var(--color-green-1);
 
-        @media (hover:hover) {
+        @media (hover: hover) {
             &:hover {
                 color: var(--color-green-4);
             }
