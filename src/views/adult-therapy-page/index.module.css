@@ -2,6 +2,12 @@
     @mixin responsive padding-block-start, 88, 100;
 }
 
+.form,
+.costOfServices,
+.peoples,
+.whyChooseUs,
+.diagnostics,
+.whatIncludes,
 .yandexMap,
 .lastSlider,
 .brick,

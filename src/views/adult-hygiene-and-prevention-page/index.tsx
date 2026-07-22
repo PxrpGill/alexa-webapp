@@ -1,29 +1,46 @@
+import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constats";
-import BrickworkSection from "@/widgets/brickwork-section";
+import CostOfServices from "@/widgets/cost-of-services";
+import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
+import OurPeopleSection from "@/widgets/our-people-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
+import WhatServiceIncludes from "@/widgets/what-service-includes";
+import WhyChooseUs from "@/widgets/why-choose-us";
 import YandexMap from "@/widgets/yandex-map";
+import { DIAGNOSTICS_SECTION_MOCK } from "../dentist-consultation-page/models/dentist-consultation.constants";
 import css from "./index.module.css";
 import {
-	BRICKWORK_SECTION_MOCK,
+	COST_OF_SERVICES,
+	EMPLOYEES_SECTION,
 	FIRST_TITLE_DESCRIPTION_SLIDER,
-	FOURTH_DESCRIPTION_SLIDER,
+	FORM_DATA,
 	MOCK_QUADRO_SECTION,
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 	TITLE_STICKY_SECTION,
+	WHAT_SERVICE_INCLUDES,
+	WHY_CHOOSE_US,
 } from "./models/adult-hygiene-and-prevention.constants";
 
 export default function AdultHygieneAndPreventionPage() {
 	return (
 		<main className={css.root}>
 			<QuadroSection {...MOCK_QUADRO_SECTION} className={css.quadro} />
+			<WhatServiceIncludes
+				className={css.whatServiceIncludes}
+				{...WHAT_SERVICE_INCLUDES}
+			/>
 			<TitleStickySection
 				{...TITLE_STICKY_SECTION}
 				className={css.titleSticky}
 			/>
-			<BrickworkSection className={css.brickwork} {...BRICKWORK_SECTION_MOCK} />
+			<DiagnosticProcessSection
+				className={css.diagnostics}
+				{...DIAGNOSTICS_SECTION_MOCK}
+			/>
+			<WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className={css.slider}
@@ -37,11 +54,9 @@ export default function AdultHygieneAndPreventionPage() {
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
 				className={css.lastSlider}
 			/>
-			<TitleDescriptionSlider
-				className={css.beforeAfter}
-				{...FOURTH_DESCRIPTION_SLIDER}
-				textBlockPosition="right"
-			/>
+			<OurPeopleSection className={css.ourPeople} {...EMPLOYEES_SECTION} />
+			<CostOfServices className={css.costOfServices} {...COST_OF_SERVICES} />
+			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
 			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);

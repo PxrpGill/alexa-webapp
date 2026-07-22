@@ -2,6 +2,7 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */
 
 import ButtonIconSVG from "@/public/icons/button-teeth.svg";
+import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import Button from "@/shared/ui/button";
 import Picture from "@/shared/ui/picture";
 import type { WhyChooseUsMainSectionProps } from "../../types/why-choose-us.types";
@@ -15,7 +16,7 @@ export default function WhyChooseUsMainSection({
 	className,
 }: WhyChooseUsMainSectionProps) {
 	return (
-		<div className={`${css.root} ${className}`}>
+		<AnimationWrapper className={`${css.root} ${className}`}>
 			<div className={css.contentPart}>
 				{title && (
 					<h3
@@ -60,6 +61,6 @@ export default function WhyChooseUsMainSection({
 			<div className={css.posterWrapper}>
 				{poster && <Picture poster={poster} />}
 			</div>
-		</div>
+		</AnimationWrapper>
 	);
 }
