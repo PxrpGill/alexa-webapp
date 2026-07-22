@@ -1,0 +1,7 @@
+.header {
+    @mixin responsive padding-block-end, 20, 30;
+}
+
+.cards {
+    @mixin responsive padding-block-end, 20, 20;
+}

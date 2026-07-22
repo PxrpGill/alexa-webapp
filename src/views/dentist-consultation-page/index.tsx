@@ -7,6 +7,7 @@ import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
+import WhyChooseUs from "@/widgets/why-choose-us";
 import YandexMap from "@/widgets/yandex-map";
 import {
 	FIRST_TITLE_DESCRIPTION_SLIDER,
@@ -21,6 +22,7 @@ import {
 	QUADRO_SECTION_MOCK,
 	TITLE_STICKY_SECTION,
 	WHAT_SERVICE_INCLUDES,
+	WHY_CHOOSE_US,
 } from "./models/dentist-consultation.constants";
 
 export default function DentistConsultationPage() {
@@ -36,6 +38,7 @@ export default function DentistConsultationPage() {
 				className={css.diagnostics}
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
+			<WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className={css.slider}
