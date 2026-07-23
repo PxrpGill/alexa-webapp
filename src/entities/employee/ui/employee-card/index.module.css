@@ -38,7 +38,7 @@
 .titleWrap {
     @mixin responsive padding, 20, 16;
     @mixin responsive border-radius, 20, 20;
-    @mixin responsive min-height, 100, 120;
+    /* @mixin responsive min-height, 100, 120; */
 
     position: relative;
     overflow: hidden;

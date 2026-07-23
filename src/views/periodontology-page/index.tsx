@@ -1,58 +1,70 @@
+import AppointmentSchedulingSection from '@/features/appointment-scheduling-section';
 import { YANDEX_MAP_INFO_CARD } from '@/shared/config/global-constants.constats';
-import DiagnosticsSection from '@/widgets/diagnostics-section';
-import EarlyPeriodontalTreatmentSection from '@/widgets/early-periodontal-treatment-section';
-import FaqSection from '@/widgets/faq-section';
-import MockTabsSection from '@/widgets/mock-tabs-section';
-import OurWork from '@/widgets/our-work';
-import ParentNewsSection from '@/widgets/parent-news-section';
+import CostOfServices from '@/widgets/cost-of-services';
+import DiagnosticProcessSection from '@/widgets/diagnostic-process-section';
+import OurPeopleSection from '@/widgets/our-people-section';
 import QuadroSection from '@/widgets/quadro-section';
 import TitleStickySection from '@/widgets/tilte-sticky-section';
-import TreatmentDelayConsequences from '@/widgets/treatment-delay-consequences';
+import TitleDescriptionSlider from '@/widgets/title-description-slider';
+import WhatServiceIncludes from '@/widgets/what-service-includes';
+import WhyChooseUs from '@/widgets/why-choose-us';
 import YandexMap from '@/widgets/yandex-map';
-
-import {
-    MOCK_FAQ_SECTION,
-    OUR_WORK,
-    PARENT_NEWS_SECTION_MOCK,
-} from '../home-page/models/home-page.constants';
 
 import css from './index.module.css';
 import {
+    COST_OF_SERVICES,
     DIAGNOSTICS_SECTION_MOCK,
-    EARLY_PERIODONTAL_TREATMENT_MOCK,
-    MOCK_TABS_SECTION,
+    EMPLOYEES_SECTION,
+    FIRST_TITLE_DESCRIPTION_SLIDER,
+    FORM_DATA,
     QUADRO_SECTION_MOCK,
+    SECOND_TITLE_DESCRIPTION_SLIDER,
+    THIRD_TITLE_DESCRIPTION_SLIDER,
     TITLE_STICKY_SECTION,
-    TREATMENT_DELAY_CONSEQUENCES_MOCK,
+    WHAT_SERVICE_INCLUDES,
+    WHY_CHOOSE_US,
 } from './models/periodontology.constants';
 
 export default function PeriodontologyPage() {
     return (
         <main className={css.root}>
             <QuadroSection {...QUADRO_SECTION_MOCK} className={css.quadro} />
+            <WhatServiceIncludes
+                className={css.whatServiceIncludes}
+                {...WHAT_SERVICE_INCLUDES}
+            />
             <TitleStickySection
                 {...TITLE_STICKY_SECTION}
                 className={css.titleSticky}
             />
-            <MockTabsSection {...MOCK_TABS_SECTION} className={css.mockTabs} />
-            <TreatmentDelayConsequences
-                {...TREATMENT_DELAY_CONSEQUENCES_MOCK}
-                className={css.treatment}
-            />
-            <EarlyPeriodontalTreatmentSection
-                {...EARLY_PERIODONTAL_TREATMENT_MOCK}
-                className={css.earlyPeriodontal}
-            />
-            <DiagnosticsSection
-                {...DIAGNOSTICS_SECTION_MOCK}
+            <DiagnosticProcessSection
                 className={css.diagnostics}
+                {...DIAGNOSTICS_SECTION_MOCK}
             />
-            <OurWork {...OUR_WORK} className={css.ourWork} />
-            <FaqSection {...MOCK_FAQ_SECTION} className={css.faqs} />
-            <ParentNewsSection
-                {...PARENT_NEWS_SECTION_MOCK}
-                className={css.news}
+            <WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} />
+            <TitleDescriptionSlider
+                {...FIRST_TITLE_DESCRIPTION_SLIDER}
+                className={css.slider}
             />
+            <TitleDescriptionSlider
+                {...SECOND_TITLE_DESCRIPTION_SLIDER}
+                className={css.slider}
+                textBlockPosition="right"
+            />
+            <TitleDescriptionSlider
+                {...THIRD_TITLE_DESCRIPTION_SLIDER}
+                className={css.lastSlider}
+            />
+            <OurPeopleSection
+                className={css.peoples}
+                {...EMPLOYEES_SECTION}
+                isSlider
+            />
+            <CostOfServices
+                className={css.costOfServices}
+                {...COST_OF_SERVICES}
+            />
+            <AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
             <YandexMap
                 infoCard={YANDEX_MAP_INFO_CARD}
                 className={css.yandexMap}

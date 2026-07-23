@@ -1,9 +1,16 @@
-import type { DiagnosticsSectionProps } from '@/widgets/diagnostics-section/types/diagnostics-section.types';
+import type { AppointmentSchedulingProps } from '@/features/appointment-scheduling-section/types/appointment-scheduling.types';
+import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
+import type { CostOfServicesProps } from '@/widgets/cost-of-services/types/cost-of-services.types';
+import type { DiagnosticProcessSectionProps } from '@/widgets/diagnostic-process-section/types/diagnostic-process-section.types';
 import type { EarlyPeriodontalTreatmentSectionProps } from '@/widgets/early-periodontal-treatment-section/types/early-periodontal-treatment-section.types';
 import type { MockTabsSectionProps } from '@/widgets/mock-tabs-section/types/mock-tabs-section.types';
+import type { OurPeopleSectionProps } from '@/widgets/our-people-section/types/our-people-section.types';
 import type { QuadroSectionProps } from '@/widgets/quadro-section/types/quadro-section.types';
 import type { TitleStickySectionProps } from '@/widgets/tilte-sticky-section/types/title-sticky-section.types';
+import type { TitleDescriptionSliderProps } from '@/widgets/title-description-slider/types/title-description-slider.types';
 import type { TreatmentDelayConsequencesProps } from '@/widgets/treatment-delay-consequences/types/treatment-delay-consequences.types';
+import type { WhatServiceIncludesProps } from '@/widgets/what-service-includes/types/what-service-includes.types';
+import type { WhyChooseUsProps } from '@/widgets/why-choose-us/types/why-choose-us.types';
 
 export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
     sectionHeader: {
@@ -14,8 +21,8 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
             buttonText: 'Записаться на прием',
         },
         poster: {
-            original: {
-                src: '/mock/pariodontology/1-desktop.jpg',
+            webp: {
+                src: '/mock/pariodontology/quadro.webp',
             },
         },
     },
@@ -41,6 +48,14 @@ export const TITLE_STICKY_SECTION: TitleStickySectionProps = {
             theme: 'green',
         },
     ],
+    lastCard: {
+        poster: {
+            original: {
+                src: '/mock/sticky-title/title-sticky.jpg',
+            },
+        },
+        buttonText: 'Записаться на прием',
+    },
 };
 
 export const MOCK_TABS_SECTION: MockTabsSectionProps = {
@@ -134,32 +149,259 @@ export const EARLY_PERIODONTAL_TREATMENT_MOCK: EarlyPeriodontalTreatmentSectionP
         },
     };
 
-export const DIAGNOSTICS_SECTION_MOCK: DiagnosticsSectionProps = {
-    heroSection: {
-        title: 'Точная диагностика состояния десен с&nbsp;системой Florida Probe',
+export const WHAT_SERVICE_INCLUDES: WhatServiceIncludesProps = {
+    title: 'Что включает услуга',
+    cards: [
+        {
+            title: 'Избавление от&nbsp;боли и&nbsp;дискомфорта.',
+        },
+        {
+            title: 'Сохранение зубов на&nbsp;долгие годы.',
+        },
+    ],
+};
+
+export const WHY_CHOOSE_US: WhyChooseUsProps = {
+    sectionHeader: {
+        title: 'Почему выбирают лечение десен именно в&nbsp;нашей клинике',
         description:
-            'Florida Probe&nbsp;&mdash; это компьютерная система диагностики пародонта, которая позволяет определить глубину пародонтальных карманов и&nbsp;оценить состояние тканей вокруг каждого зуба.',
+            'Останавливаем пародонтит на&nbsp;любой стадии и&nbsp;сохраняем ваши зубы &mdash; с&nbsp;точной диагностикой, бережными протоколами и&nbsp;врачами с&nbsp;многолетним опытом.',
+    },
+    cards: [
+        {
+            icon: '/mock/why-choose-us/1-icon.svg',
+            title: 'Безболезненное лечение',
+            description:
+                'Современная анестезия и&nbsp;щадящие протоколы&nbsp;&mdash; комфортно даже для чувствительных дёсен.',
+        },
+        {
+            icon: '/mock/why-choose-us/2-icon.svg',
+            title: 'Диагностика Florida Probe',
+            description:
+                'Точная компьютерная оценка состояния дёсен и&nbsp;карманов&nbsp;&mdash; бесплатно на&nbsp;первом приёме.',
+        },
+        {
+            icon: '/mock/why-choose-us/3-icon.svg',
+            title: 'Сохранение зубов',
+            description:
+                'Останавливаем воспаление и&nbsp;подвижность&nbsp;&mdash; сохраняем зубы на&nbsp;долгие годы без удаления.',
+        },
+    ],
+    mainSection: {
+        title: 'Причины выбрать именно нас',
+        list: [
+            'Бесплатная диагностика дёсен на&nbsp;первом приёме',
+            'Индивидуальный план лечения под ваш случай',
+            'Гарантия и&nbsp;наблюдение после курса лечения',
+        ],
         poster: {
-            original: {
-                src: '/mock/pariodontology/diagnostics-poster.jpg',
+            webp: {
+                src: '/mock/why-choose-us/main.webp',
             },
         },
+        button: {
+            title: 'Записаться на приём',
+            href: '',
+        },
     },
-    argumentSection: {
-        title: 'Почему мы&nbsp;используем компьютерную диагностику Florida Probe',
-        description: 'Она позволяет:',
-        list: [
-            'обнаружить заболевание десен на&nbsp;ранней стадии',
-            'объективно оценить без субъективных предположение',
-            'точно измерить глубину карманов',
-            'сравнить результаты до&nbsp;и&nbsp;после лечения',
-            'сохранить собственные зубы',
-        ],
-        legend: 'Обычный осмотр не&nbsp;дает такой точности',
+};
+
+export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
+    sectionHeader: {
+        title: 'Ваша улыбка в&nbsp;руках профессионалов!',
+        description: 'Мы&nbsp;реализуем целостный осмотр для своих пациентов:',
     },
-    ctaSection: {
-        title: 'Получите точную оценку и&nbsp;персональный план лечения',
-        description: 'Пройдите компьютерную диагностику состояния десен',
-        buttonText: 'Записаться на прием',
+    cards: [
+        {
+            title: 'Визуальный и&nbsp;инструментальный осмотр:',
+            description:
+                'Точная оценка состояния ваших зубов и&nbsp;полости рта.',
+            poster: {
+                webp: {
+                    src: '/mock/diagnostics/1-desktop.webp',
+                },
+            },
+        },
+        {
+            title: 'Сбор полного анамнеза:',
+            description:
+                'Мы&nbsp;узнаем о&nbsp;вашем здоровье, чтобы построить индивидуальный план лечения.',
+            poster: {
+                webp: {
+                    src: '/mock/diagnostics/2-desktop.webp',
+                },
+            },
+        },
+        {
+            title: 'Рентген и&nbsp;компьютерная томография:',
+            description:
+                'Современные методы диагностики для уверенности в&nbsp;точности диагноза.',
+            poster: {
+                webp: {
+                    src: '/mock/diagnostics/3-desktop.webp',
+                },
+            },
+        },
+        {
+            title: 'Визуальный и&nbsp;инструментальный осмотр:',
+            description:
+                'Точная оценка состояния ваших зубов и&nbsp;полости рта.',
+            poster: {
+                webp: {
+                    src: '/mock/diagnostics/4-desktop.webp',
+                },
+            },
+        },
+    ],
+};
+
+export const FORM_DATA: AppointmentSchedulingProps = {
+    title: 'Запись на&nbsp;приём',
+    description:
+        'Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время',
+    poster: {
+        webp: {
+            src: '/system/form.webp',
+        },
     },
+};
+
+export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
+    title: 'Врачи, оказывающие услугу',
+    button: {
+        title: 'Смотреть всех специалистов',
+        href: SITE_NAVIGATION.vrachi,
+    },
+    employees: [
+        {
+            poster: {
+                webp: {
+                    src: '/mock/employees/employee-13.webp',
+                },
+            },
+            fullname: 'Корнилов Герман Валерьевич',
+            position: 'Врач-стоматолог-пародонтолог',
+        },
+        {
+            poster: {
+                webp: {
+                    src: '/mock/employees/employee-8.webp',
+                },
+            },
+            fullname: 'Шахназарян Эрик Каренович',
+            position: 'Врач-стоматолог-хирург',
+        },
+    ],
+};
+
+export const COST_OF_SERVICES: CostOfServicesProps = {
+    title: 'Стоимость услуг:',
+    cards: [
+        {
+            title: 'Консультация',
+            description:
+                'Профессиональная консультация стоматолога с&nbsp;осмотром, диагностикой и&nbsp;составлением индивидуального плана лечения.',
+            button: {
+                title: 'Получить консультацию',
+                href: '',
+            },
+            price: 1500,
+        },
+    ],
+};
+
+export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+    title: 'Наши преимущества',
+    textBlock: {
+        title: 'Современное оборудование',
+        description:
+            'Компьютерная томограмма и&nbsp;рентген, терапия, лечение зубов с&nbsp;микроскопом, гигиена, удаление зубов, имплантация и&nbsp;протезирование, исправление прикуса с&nbsp;применением самого современного оборудования, инновационных материалов и&nbsp;самых передовых протоколов лечения&nbsp;&mdash; залог здоровья наших пациентов!',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/home/first-slider/first-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/second-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/third-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/fourth-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/fifth-desktop.webp',
+            },
+        },
+    ],
+};
+
+export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+    textBlock: {
+        title: 'Для самых<br /> маленьких',
+        description:
+            'Красивые кабинеты, оборудованные по&nbsp;самым современным медицинским стандартам, игровая зона с&nbsp;игрушками, книгами и&nbsp;раскрасками, сундучок с&nbsp;чудесными подарками&nbsp;&mdash; мы&nbsp;приложили все усилия, чтобы нашим маленьким пациентам и&nbsp;их&nbsp;родителям было уютно, комфортно и&nbsp;спокойно.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-1.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-2.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-3.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-4.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-5.webp',
+            },
+        },
+    ],
+};
+
+export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+    textBlock: {
+        title: 'Команда профессионалов:',
+        description:
+            '12&nbsp;докторов с&nbsp;многолетним опытом нашей клиники в&nbsp;ответе за&nbsp;здоровье ваших зубов.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/home/third-slider/3-1.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/third-slider/3-2.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/third-slider/3-3.webp',
+            },
+        },
+    ],
 };
