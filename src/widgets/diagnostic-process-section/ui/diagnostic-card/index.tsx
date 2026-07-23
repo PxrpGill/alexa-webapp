@@ -11,11 +11,18 @@ export default function DiagnosticCard({
     title,
     description,
     className,
+    contentRef,
+    cardRef,
+    contentStyle,
 }: DiagnosticCardProps) {
     return (
-        <article className={`${css.root} ${className}`}>
+        <article className={`${css.root} ${className}`} ref={cardRef}>
             <div className={css.wrapper}>
-                <div className={css.content}>
+                <div
+                    className={css.content}
+                    ref={contentRef}
+                    style={contentStyle}
+                >
                     {title && (
                         <h4
                             dangerouslySetInnerHTML={{ __html: title }}
