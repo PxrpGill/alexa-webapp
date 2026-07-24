@@ -35,6 +35,10 @@
     position: relative;
     z-index: 10;
     width: fit-content;
+
+    @media (max-width: $mobile) {
+        margin-inline: auto;
+    }
 }
 
 .buttonIcon {
