@@ -1,0 +1,150 @@
+.root {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionHeader {
+    @mixin responsive gap, 20, 20;
+
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $mobile) {
+        max-width: unset;
+    }
+}
+
+.title {
+    @mixin text-6xl;
+}
+
+.description {
+    @mixin text-md;
+
+    @media (max-width: $mobile) {
+        @mixin text-xl;
+    }
+}
+
+
+.tableWrapper {
+    overflow-x: auto;
+
+    @media (max-width: $mobile) {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.row {
+    @mixin responsive --border, 1, 1;
+
+    border-bottom: var(--border) solid var(--color-white-0);
+}
+
+.tbody .row:last-child {
+    border-bottom: unset;
+}
+
+.table {
+    @mixin responsive border-radius, 30, 30;
+
+    overflow: hidden;
+    border-collapse: collapse;
+    width: 100%;
+
+    @media (max-width: $mobile) {
+        @mixin responsive min-width, 924;
+    }
+}
+
+.corner,
+.headerCell {
+    text-align: start;
+}
+
+.headerCell,
+.valueCell,
+.labelCell {
+    vertical-align: middle;
+}
+
+.corner,
+.headerCell,
+.labelCell,
+.valueCell {
+    @mixin responsive --border, 1, 1;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-block, 20, 30;
+
+    border-left: var(--border) solid var(--color-white-0);
+    border-right: var(--border) solid var(--color-white-0);
+}
+
+.tbody .row .valueCell:last-child,
+.thead .row .headerCell:last-child {
+    border-right: unset;
+}
+
+.labelCell
+.corner {
+    border-left: unset;
+}
+
+.labelCell,
+.headerCell {
+    @mixin text-md;
+
+    font-weight: 600;
+
+    @media (max-width: $mobile) {
+        @mixin text-xl;
+
+        font-weight: 600;
+    }
+}
+
+.valueCell:nth-child(2),
+.headerCell:nth-child(2) {
+    background-color: var(--color-green-3);
+}
+
+.valueCell:nth-child(3),
+.headerCell:nth-child(3) {
+    background-color: var(--color-green-5);
+}
+
+.valueCell:nth-child(4),
+.headerCell:nth-child(4) {
+    background-color: var(--color-green-6);
+}
+
+.valueCell {
+    @mixin text-base;
+
+    ul,
+    ol {
+        @mixin responsive padding-inline-start, 20, 20;
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    ol {
+        list-style: decimal;
+    }
+
+    @media (max-width: $mobile) {
+        @mixin text-xl;
+    }
+}
+
+.corner,
+.labelCell {
+    background-color: var(--color-green-2);
+}

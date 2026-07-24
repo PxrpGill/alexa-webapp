@@ -71,3 +71,7 @@
         @mixin text-xl;
     }
 }
+
+.button[class] {
+    width: fit-content;
+}
