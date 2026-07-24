@@ -106,7 +106,7 @@ export const TITLE_STICKY_SECTION_MOCK: TitleStickySectionProps = {
 	lastCard: {
 		poster: {
 			webp: {
-				src: "/mock/adult-orthopedics/sticky.webp",
+				src: "/mock/adult-orthopedics/sticky-1.webp",
 			},
 		},
 		buttonText: "Записаться на прием",
