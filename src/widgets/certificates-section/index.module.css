@@ -12,5 +12,5 @@
 }
 
 .certificates[class] {
-    @mixin responsive height, 240;
+    @mixin responsive height, 340;
 }

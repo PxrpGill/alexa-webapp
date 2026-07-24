@@ -23,6 +23,25 @@
             }
         }
     }
+
+    @media (max-width: $mobile) {
+        &.visible {
+            .certificate-0[class] {
+                rotate: -20deg;
+                translate: -50% -140%;
+            }
+
+            .certificate-1[class] {
+                rotate: -20deg;
+                translate: -50% -50%;
+            }
+
+            .certificate-2[class] {
+                rotate: -20deg;
+                translate: -50% 40%;
+            }
+        }
+    }
 }
 
 .certificate[class] {
