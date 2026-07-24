@@ -1,41 +1,57 @@
-import { YANDEX_MAP_INFO_CARD } from '@/shared/config/global-constants.constats';
-import FaqSection from '@/widgets/faq-section';
-import OurWork from '@/widgets/our-work';
-import ParentNewsSection from '@/widgets/parent-news-section';
-import QuadroSection from '@/widgets/quadro-section';
-import TitleStickySection from '@/widgets/tilte-sticky-section';
-import YandexMap from '@/widgets/yandex-map';
-
+import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
+import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constats";
+import CostOfServices from "@/widgets/cost-of-services";
+import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
+import OurPeopleSection from "@/widgets/our-people-section";
+import QuadroSection from "@/widgets/quadro-section";
+import TitleStickySection from "@/widgets/tilte-sticky-section";
+import TitleDescriptionSlider from "@/widgets/title-description-slider";
+import WhatServiceIncludes from "@/widgets/what-service-includes";
+import YandexMap from "@/widgets/yandex-map";
+import css from "./index.module.css";
 import {
-    MOCK_FAQ_SECTION,
-    OUR_WORK,
-    PARENT_NEWS_SECTION_MOCK,
-} from '../home-page/models/home-page.constants';
-
-import css from './index.module.css';
-import {
-    QUADRO_SECTION_MOCK,
-    TITLE_STICKY_SECTION_MOCK,
-} from './models/gnathology.constants';
+	COST_OF_SERVICES,
+	DIAGNOSTICS_SECTION_MOCK,
+	EMPLOYEES_SECTION,
+	FIRST_TITLE_DESCRIPTION_SLIDER,
+	FORM_DATA,
+	QUADRO_SECTION_MOCK,
+	SECOND_TITLE_DESCRIPTION_SLIDER,
+	THIRD_TITLE_DESCRIPTION_SLIDER,
+	TITLE_STICKY_SECTION_MOCK,
+	WHAT_INCLUDES,
+} from "./models/gnathology.constants";
 
 export default function AdultGnathologyPage() {
-    return (
-        <main className={css.root}>
-            <QuadroSection className={css.quadro} {...QUADRO_SECTION_MOCK} />
-            <TitleStickySection
-                className={css.stickyTitle}
-                {...TITLE_STICKY_SECTION_MOCK}
-            />
-            <OurWork {...OUR_WORK} className={css.ourWork} />
-            <FaqSection {...MOCK_FAQ_SECTION} className={css.faq} />
-            <ParentNewsSection
-                {...PARENT_NEWS_SECTION_MOCK}
-                className={css.news}
-            />
-            <YandexMap
-                infoCard={YANDEX_MAP_INFO_CARD}
-                className={css.yandexMap}
-            />
-        </main>
-    );
+	return (
+		<main className={css.root}>
+			<QuadroSection className={css.quadro} {...QUADRO_SECTION_MOCK} />
+			<WhatServiceIncludes className={css.whatIncludes} {...WHAT_INCLUDES} />
+			<TitleStickySection
+				className={css.stickyTitle}
+				{...TITLE_STICKY_SECTION_MOCK}
+			/>
+			<DiagnosticProcessSection
+				className={css.diagnostics}
+				{...DIAGNOSTICS_SECTION_MOCK}
+			/>
+			<TitleDescriptionSlider
+				{...FIRST_TITLE_DESCRIPTION_SLIDER}
+				className={css.slider}
+			/>
+			<TitleDescriptionSlider
+				{...SECOND_TITLE_DESCRIPTION_SLIDER}
+				className={css.slider}
+				textBlockPosition="right"
+			/>
+			<TitleDescriptionSlider
+				{...THIRD_TITLE_DESCRIPTION_SLIDER}
+				className={css.lastSlider}
+			/>
+			<OurPeopleSection className={css.ourPeoples} {...EMPLOYEES_SECTION} />
+			<CostOfServices className={css.costs} {...COST_OF_SERVICES} />
+			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
+			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
+		</main>
+	);
 }

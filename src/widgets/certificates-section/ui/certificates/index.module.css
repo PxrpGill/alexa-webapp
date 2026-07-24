@@ -1,0 +1,72 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-white-0);
+
+    @media (hover: hover) {
+        &:hover {
+            .certificate-0[class] {
+                rotate: -20deg;
+                translate: -120% -50%;
+            }
+
+            .certificate-1[class] {
+                rotate: -20deg;
+            }
+
+            .certificate-2[class] {
+                rotate: -20deg;
+                translate: 20% -50%;
+            }
+        }
+    }
+}
+
+.certificate[class] {
+    @mixin responsive border-radius, 10, 10;
+    @mixin transitionOptions;
+
+    transition-property: translate, rotate;
+    transition-duration: 0.5s;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+}
+
+.certificate[class],
+.certificate[class] img {
+    @mixin responsive width, 170, 290;
+    @mixin responsive height, 122, 205;
+
+    z-index: 10;
+}
+
+.certificate-0[class] {
+    rotate: 0.81deg;
+    translate: -50% -100%;
+}
+
+.certificate-1[class] {
+    rotate: -17.44deg;
+    translate: -60% -50%;
+}
+
+.certificate-2[class] {
+    rotate: 6.5deg;
+    translate: -40% 0%;
+}
+
+.shadow {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    background: rgba(217, 217, 217, 0.74);
+    filter: blur(25px);
+}

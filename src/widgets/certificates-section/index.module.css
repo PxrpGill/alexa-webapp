@@ -1,0 +1,16 @@
+.root {
+    @mixin responsive --first-col, 0, 590;
+    @mixin responsive gap, 20, 20;
+
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.certificates[class] {
+    @mixin responsive height, 240;
+}

@@ -2,6 +2,12 @@
     @mixin responsive padding-block-start, 88, 100;
 }
 
+.form,
+.costs,
+.ourPeoples,
+.lastSlider,
+.diagnostics,
+.whatIncludes,
 .news,
 .faq,
 .ourWork,
@@ -9,4 +15,8 @@
 .quadro,
 .yandexMap {
     @mixin responsive margin-block-end, 60, 60;
+}
+
+.slider {
+    @mixin responsive margin-block-end, 20, 35;
 }
