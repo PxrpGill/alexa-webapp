@@ -4,4 +4,13 @@
 
     display: grid;
     grid-template-columns: var(--first-col) auto;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.certificates[class] {
+    @mixin responsive height, 240;
 }

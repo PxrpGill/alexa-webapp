@@ -16,7 +16,10 @@ export default function CertificatesSection({
 			className={`${css.root} ${className} container`}
 		>
 			<SectionHeader {...sectionHeader} />
-			<Certificates certificates={certificateCards} />
+			<Certificates
+				certificates={certificateCards}
+				className={css.certificates}
+			/>
 		</AnimationWrapper>
 	);
 }

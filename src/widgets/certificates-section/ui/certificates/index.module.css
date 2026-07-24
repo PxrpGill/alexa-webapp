@@ -38,8 +38,8 @@
 
 .certificate[class],
 .certificate[class] img {
-    @mixin responsive width, 270, 290;
-    @mixin responsive height, 190, 205;
+    @mixin responsive width, 170, 290;
+    @mixin responsive height, 122, 205;
 
     z-index: 10;
 }

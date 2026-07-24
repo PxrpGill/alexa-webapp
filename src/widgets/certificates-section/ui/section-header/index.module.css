@@ -23,18 +23,28 @@
 }
 
 .card {
-    @mixin responsive gap, 35, 35;
-    @mixin responsive padding-inline, 40, 40;
-    @mixin responsive padding-block, 45, 45;
+    @mixin responsive gap, 20, 35;
+    @mixin responsive padding-inline, 0, 40;
+    @mixin responsive padding-block, 0, 45;
     @mixin responsive border-radius, 30, 30;
 
     background-color: var(--color-white-1);
     display: flex;
     flex-direction: column;
+
+    @media (max-width: $mobile) {
+        background-color: unset;
+    }
 }
 
 .cardTitle {
     @mixin text-md;
 
     font-weight: 600;
+
+    @media (max-width: $mobile) {
+        @mixin text-2xl;
+
+        font-weight: 400;
+    }
 }
