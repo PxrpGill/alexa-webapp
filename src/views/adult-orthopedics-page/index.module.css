@@ -2,6 +2,7 @@
     @mixin responsive padding-block-start, 88, 100;
 }
 
+.certificates,
 .costsOfServices,
 .form,
 .ourPeople,

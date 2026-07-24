@@ -1,7 +1,8 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
-import { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
+import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
+import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
@@ -342,6 +343,32 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 				href: "",
 			},
 			price: 1500,
+		},
+	],
+};
+
+export const CERTIFICATES_SECTION: CertificatesSectionProps = {
+	sectionHeader: {
+		title: "Бонусная система",
+		card: {
+			title: "Ваше лечение возвращается подарками!",
+			button: {
+				title: "Ознакомиться с акциями",
+				href: SITE_NAVIGATION.akcii,
+			},
+		},
+	},
+	certificateCards: [
+		{ webp: { src: "/system/certificates/1-green.webp" } },
+		{
+			webp: {
+				src: "/system/certificates/2-white.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/system/certificates/3-green.webp",
+			},
 		},
 	],
 };
