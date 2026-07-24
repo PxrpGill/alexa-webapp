@@ -2,7 +2,6 @@
 
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
 import { useOneHeightOfCards } from "@/shared/hooks/use-one-height-of-cards";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import css from "./index.module.css";
