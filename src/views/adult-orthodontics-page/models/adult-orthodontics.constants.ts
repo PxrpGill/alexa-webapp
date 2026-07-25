@@ -500,20 +500,34 @@ export const INFO_TABS: InfoTabsProps = {
 				title: "Стоимость услуг:",
 				cards: [
 					{
-						title: "Металлические брекеты",
-						description:
-							"<ul><li>Надёжное и&nbsp;эффективное решение для коррекции прикуса.​</li><li>Прочные и&nbsp;долговечные, подходят для различных клинических случаев.​</li></ul>",
-						price: 150_000,
+						title:
+							"Ортодонтическая коррекция с&nbsp;применением брекет-системы.&nbsp;2&nbsp;челюсти",
+						price: 126_000,
 						button: {
 							title: "Получить консультацию",
 							href: "#",
 						},
 					},
 					{
-						title: "Керамические брекеты",
-						description:
-							"<ul><li>Обеспечивают комфорт и&nbsp;незаметность при ношении.​</li><li>Эстетичный вариант с&nbsp;прозрачными или зубовидными брекетами.​​</li></ul>",
-						price: 150_000,
+						title: "Ортодонтическая коррекция с применением брекет-систем",
+						price: 168_000,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title:
+							"Снятие ортодонтического аппарата брекет-системы (1&nbsp;зубной ряд)",
+						price: 6_300,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title: "Несъемный  ретейнер индивидуального	исполнения",
+						price: 18_900,
 						button: {
 							title: "Получить консультацию",
 							href: "#",
@@ -582,20 +596,96 @@ export const INFO_TABS: InfoTabsProps = {
 				title: "Стоимость услуг:",
 				cards: [
 					{
-						title: "Элайнеры EUROKAPPA",
-						description:
-							"<ul><li>Индивидуально изготовленные каппы для комфортного и&nbsp;эффективного выравнивания зубов.​</li><li>Подходят для взрослых и&nbsp;подростков.​</li></ul>",
-						price: 170_000,
+						title: "Элайнеры EUROKAPPA light (12&nbsp;пар)",
+						price: 194_000,
 						button: {
 							title: "Получить консультацию",
 							href: "#",
 						},
 					},
 					{
-						title: "Элайнеры Spark",
-						description:
-							"<ul><li>Индивидуально изготовленные каппы для комфортного и&nbsp;эффективного выравнивания зубов.</li><li>Подходят для взрослых и&nbsp;подростков.​​​</li></ul>",
-						price: 175_000,
+						title: "Элайнеры EUROKAPPA Complete (22&nbsp;пары)",
+						price: 275_000,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title: "Элайнеры EUROKAPPA Complete (22&nbsp;пары)",
+						price: 275_000,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title: "Элайнеры EUROKAPPA Profi",
+						price: 369_000,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title: "Элайнеры Spark&nbsp;10",
+						price: 225_000,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title: "Элайнеры Spark&nbsp;20",
+						price: 315_000,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title: "Элайнеры Spark Advanced",
+						price: 315_000,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title: "Элайнеры Angel Aligner Select&nbsp;10",
+						price: 210_000,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title: "Элайнеры Angel Aligner Select&nbsp;20",
+						price: 285_000,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title: "Элайнеры Angel Aligner Select&nbsp;30",
+						price: 285_000,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title: "Элайнеры Angel Aligner Select Unlimited",
+						price: 350_000,
+						button: {
+							title: "Получить консультацию",
+							href: "#",
+						},
+					},
+					{
+						title: "Элайнеры Angel Aligner Pro Unlimited",
+						price: 395_000,
 						button: {
 							title: "Получить консультацию",
 							href: "#",
@@ -626,6 +716,15 @@ export const INFO_TABS: InfoTabsProps = {
 						wearingComfort: "Стандартный комфорт",
 						specialCases:
 							"Есть возможность лечить детей в&nbsp;сменном прикусе",
+					},
+					{
+						name: "Angel Aliner",
+						country: "Китай",
+						deliveryTime: "~1 неделя с&nbsp;момента оплаты",
+						stepsTime: "Быстрое моделирование лечения",
+						wearingComfort: "Высокий комфорт благодаря многослойному материалу",
+						specialCases:
+							"Подходит для сложных клинических случаев, включая эстракционные",
 					},
 				],
 			},
