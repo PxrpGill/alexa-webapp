@@ -335,14 +335,51 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 	title: "Стоимость услуг:",
 	cards: [
 		{
-			title: "Консультация",
-			description:
-				"Профессиональная консультация стоматолога с&nbsp;осмотром, диагностикой и&nbsp;составлением индивидуального плана лечения.",
+			title: "Коронка цельнокерамическая 3D&nbsp;Medit 500 стандарт",
 			button: {
 				title: "Получить консультацию",
 				href: "",
 			},
-			price: 1500,
+			price: 27_850,
+			priceType: "from",
+		},
+		{
+			title: "Временная коронка",
+			button: {
+				title: "Получить консультацию",
+				href: "",
+			},
+			price: 2_650,
+			priceType: "from",
+		},
+		{
+			title: "Винир E-Max Стандарт цельнокерамический",
+			button: {
+				title: "Получить консультацию",
+				href: "",
+			},
+			price: 33_100,
+			priceType: "from",
+		},
+		{
+			title:
+				"Цельнокерамическая коронка на&nbsp;импланте на&nbsp;титановом абатменте стандартное исполнение",
+			button: {
+				title: "Получить консультацию",
+				href: "",
+			},
+			price: 38_850,
+			priceType: "from",
+		},
+		{
+			title:
+				"Реставрация цельнокерамическая (вкладка/накладка) 3D&nbsp;Medit 500",
+			button: {
+				title: "Получить консультацию",
+				href: "",
+			},
+			price: 30_450,
+			priceType: "from",
 		},
 	],
 };

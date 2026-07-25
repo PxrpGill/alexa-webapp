@@ -9,10 +9,10 @@ import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
 import YandexMap from "@/widgets/yandex-map";
-import { COST_OF_SERVICES } from "../adult-hygiene-and-prevention-page/models/adult-hygiene-and-prevention.constants";
 import css from "./index.module.css";
 import {
 	CERTIFICATES_SECTION,
+	COST_OF_SERVICES,
 	DIAGNOSTICS_SECTION_MOCK,
 	FIRST_TITLE_DESCRIPTION_SLIDER,
 	FORM_DATA,
