@@ -788,20 +788,20 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 };
 
 export const OUR_PEOPLE: OurPeopleSectionProps = {
-    title: 'Врачи, оказывающие услугу',
-    button: {
-        title: 'Смотреть всех специалистов',
-        href: SITE_NAVIGATION.vrachi,
-    },
-    employees: [
-        {
-            poster: {
-                webp: {
-                    src: '/mock/employees/employee-9.webp',
-                },
-            },
-            fullname: 'Кравченко Павел Сергеевич',
-            position: 'Врач-стоматолог-ортодонт',
-        },
-    ],
+	title: "Врачи, оказывающие услугу",
+	button: {
+		title: "Смотреть всех специалистов",
+		href: SITE_NAVIGATION.vrachi,
+	},
+	employees: [
+		{
+			poster: {
+				webp: {
+					src: "/mock/employees/employee-9.webp",
+				},
+			},
+			fullname: "Кравченко Павел Сергеевич",
+			position: "Врач-ортодонт, гнатолог",
+		},
+	],
 };

@@ -45,13 +45,13 @@ export default function CtaSection({
                                 }}
                             />
                         )}
-                        {description.icon && (
+                        {/* {description.icon && (
                             <img
                                 className={css.icon}
                                 src={description.icon}
                                 alt="Иконка описания "
                             />
-                        )}
+                        )} */}
                     </div>
                 )}
             </article>

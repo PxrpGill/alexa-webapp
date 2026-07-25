@@ -43,7 +43,7 @@ export const TITLE_STICKY_SECTION_MOCK: TitleStickySectionProps = {
         {
             title: 'Минимальное влияние на&nbsp;организм:',
             description:
-                '&laquo;Севоран&raquo; имеет минимальное влияние на&nbsp;сердечно-сосудистую систему и&nbsp;не&nbsp;вступает в&nbsp;химические реакции с&nbsp;организмом.s',
+                '&laquo;Севоран&raquo; имеет минимальное влияние на&nbsp;сердечно-сосудистую систему и&nbsp;не&nbsp;вступает в&nbsp;химические реакции с&nbsp;организмом.',
         },
         {
             title: 'Отсутствие последствий:',
