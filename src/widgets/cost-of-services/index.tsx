@@ -1,7 +1,11 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: intentional suppression */
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: intentional suppression */
+'use client';
+
+import { useState } from 'react';
 
 import { AnimationWrapper } from '@/shared/ui/animation-wrapper';
+import Button from '@/shared/ui/button';
 
 import css from './index.module.css';
 import type { CostOfServicesProps } from './types/cost-of-services.types';
@@ -12,7 +16,16 @@ export default function CostOfServices({
     cards,
     className,
 }: CostOfServicesProps) {
+    const [visibleCount, setVisibleCount] = useState(4);
+
     if (!cards?.length) return null;
+
+    const visibleCards = cards.slice(0, visibleCount);
+    const hasMore = visibleCount < cards.length;
+
+    const handleShowMore = () => {
+        setVisibleCount((prev) => prev + 4);
+    };
 
     return (
         <AnimationWrapper
@@ -27,7 +40,7 @@ export default function CostOfServices({
             )}
 
             <ul className={css.list}>
-                {cards.map((card, index) => (
+                {visibleCards.map((card, index) => (
                     <AnimationWrapper
                         as="li"
                         key={index}
@@ -37,6 +50,11 @@ export default function CostOfServices({
                     </AnimationWrapper>
                 ))}
             </ul>
+            {hasMore && (
+                <Button className={css.getMoreButton} onClick={handleShowMore}>
+                    Показать еще
+                </Button>
+            )}
         </AnimationWrapper>
     );
 }
