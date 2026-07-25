@@ -2,6 +2,7 @@
     @mixin responsive padding-block-start, 88, 100;
 }
 
+.description,
 .parentNews,
 .yandexMap,
 .ourWork,
@@ -13,9 +14,9 @@
     @mixin responsive margin-block-end, 60, 60;
 }
 
-.description {
+/* .description {
     @mixin responsive margin-block-end, 20, 35;
-}
+} */
 
 .slider {
     @mixin responsive margin-block-end, 20, 35;
