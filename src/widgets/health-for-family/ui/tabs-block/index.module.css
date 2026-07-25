@@ -106,3 +106,19 @@
         }
     }
 }
+
+.tab[class].withoutIcon[class] {
+    @mixin responsive padding-inline, 20, 60;
+}
+
+.tab.tab[class].active {
+    @media (hover: hover) {
+        &:hover {
+            color: var(--color-white-0);
+            background-color: var(--color-green-1);
+            border-color: var(--color-green-1);
+            opacity: 1;
+        }
+    }
+}
+
