@@ -132,7 +132,7 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
                 },
             },
             fullname: 'Кравченко Павел Сергеевич',
-            position: 'Врач-стоматолог-ортодонт',
+            position: 'Врач-ортодонт, гнатолог',
         },
     ],
 };
