@@ -309,3 +309,20 @@ export const WHY_CHOOSE_US: WhyChooseUsProps = {
 		},
 	},
 };
+
+export const SECOND_QUADRO: QuadroSectionProps = {
+	sectionHeader: {
+		title:
+			"Рассрочка на&nbsp;лечение во&nbsp;сне&nbsp;&mdash; удобные условия для вашего комфорта!",
+		card: {
+			description:
+				"<p>В&nbsp;нашей стоматологии теперь доступна рассрочка на&nbsp;лечение во&nbsp;сне:</p><br /><p>Первоначальный взнос: <b>всего 50%</b></p><p>Срок рассрочки: <b>6&nbsp;месяцев</b></p><p>Дальнейшая оплата: равными частями без переплат.</p>",
+			buttonText: "Ознакомиться с акциями ",
+		},
+		poster: {
+			webp: {
+				src: "/mock/sleepbased-treatment/quadro-second.webp",
+			},
+		},
+	},
+};

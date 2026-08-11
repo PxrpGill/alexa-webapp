@@ -13,6 +13,7 @@ import {
 	INFO_TABS_MOCK,
 	OUR_PEOPLE_SECTION,
 	QUADRO_SECTION_MOCK,
+	SECOND_QUADRO,
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 	WHY_CHOOSE_US,
@@ -23,6 +24,7 @@ export default function TreatmentInDreamPage() {
 		<main className={css.root}>
 			<QuadroSection {...QUADRO_SECTION_MOCK} className={css.quadro} />
 			<InfoTabs className={css.infoTabs} {...INFO_TABS_MOCK} />
+			<QuadroSection className={css.quadro} {...SECOND_QUADRO} />
 			<WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}

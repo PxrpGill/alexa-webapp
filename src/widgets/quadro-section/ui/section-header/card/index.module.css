@@ -47,6 +47,10 @@
         list-style: disc;
     }
 
+    b {
+        font-weight: 600;
+    }
+
     @media (max-width: $mobile) {
         text-align: center;
     }
