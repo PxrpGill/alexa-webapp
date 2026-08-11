@@ -53,6 +53,7 @@
 .table {
     @mixin responsive border-radius, 30, 30;
 
+    table-layout: fixed;
     overflow: hidden;
     border-collapse: collapse;
     width: 100%;

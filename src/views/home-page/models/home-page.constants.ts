@@ -9,113 +9,114 @@ import type { StillQuestionProps } from '@/widgets/still-questions/types/still-q
 import type { TitleDescriptionSliderProps } from '@/widgets/title-description-slider/types/title-description-slider.types';
 
 export const HERO_SLIDES: HeroSliderSectionProps = {
-    slides: [
-        {
-            title: 'алекса',
-            card: {
-                title: 'Никакого напряжения и&nbsp;тревоги',
-                content: '<p>Имплантация во&nbsp;сне под контролем врачей</p>',
-                buttonText: 'Записаться на прием',
-            },
-            poster: {
-                webp: {
-                    src: '/mock/home/hero-slider/1-desktop.webp',
-                },
-            },
-            legend: '<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.',
-            subtitle:
-                'Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону',
-        },
-        {
-            textTheme: 'light',
-            title: 'алекса',
-            card: {
-                title: 'Лечение во&nbsp;сне. Без боли и&nbsp;страха',
-                content:
-                    '<p>Для тревожных малышей и&nbsp;взрослых, которым нужен бережный подход.</p><br /><p>до&nbsp;1&nbsp;часа&nbsp;&mdash; <b>15&nbsp;100&nbsp;₽</b></p><p>до&nbsp;2&nbsp;часов&nbsp;&mdash; <b>19&nbsp;400&nbsp;₽</b></p><br /><p>Проснётесь с&nbsp;красивой улыбкой и&nbsp;без воспоминаний о&nbsp;лечении</p>',
-                buttonText: 'Записаться на прием',
-            },
-            poster: {
-                webp: {
-                    src: '/mock/home/hero-slider/3-desktop.webp',
-                    mobile: '/mock/home/hero-slider/3-mobile.webp',
-                },
-            },
-            legend: '<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.',
-            subtitle:
-                'Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону',
-        },
-        {
-            textTheme: 'light',
-            title: 'алекса',
-            subtitle:
-                'Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону',
-            legend: '<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.',
-            poster: {
-                webp: {
-                    src: '/mock/home/hero-slider/2-desktop.webp',
-                },
-            },
-            card: {
-                title: 'Программа лояльности для детей из&nbsp;многодетных семей и&nbsp;детей с&nbsp;особенностями',
-                content:
-                    '<p>Скидка&nbsp;10% на&nbsp;терапевтическое лечение</p><p>Скидка&nbsp;5% на&nbsp;лечение во&nbsp;сне.</p>',
-                buttonText: 'Записаться на прием',
-            },
-        },
-        {
-            title: 'алекса',
-            subtitle:
-                'Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону',
-            legend: '<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.',
-            poster: {
-                webp: {
-                    src: '/mock/home/hero-slider/4-desktop.webp',
-                },
-            },
-            card: {
-                title: 'Разные системы&nbsp;&mdash; один точный результат',
-                content:
-                    '<p>Брекеты или элайнеры&nbsp;&mdash; выбираем путь, который будет эффективнее в&nbsp;вашем случае</p>',
-                buttonText: 'Записаться на прием',
-            },
-        },
-        {
-            title: 'алекса',
-            subtitle:
-                'Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону',
-            legend: '<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.',
-            poster: {
-                webp: {
-                    src: '/mock/home/hero-slider/5-desktop.webp',
-                    mobile: '/mock/home/hero-slider/5-mobile.webp',
-                },
-            },
-            card: {
-                title: 'Лечение десен начинается с&nbsp;точной диагностики!',
-                content:
-                    '<p>Бесплатное исследование на&nbsp;системе Florida Probe для тех, у&nbsp;кого кровоточат или воспалены десны. Выявим проблему на&nbsp;ранней стадии.</p>',
-                buttonText: 'Записаться на прием',
-            },
-        },
-        {
-            title: 'алекса',
-            subtitle:
-                'Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону',
-            legend: '<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.',
-            poster: {
-                webp: {
-                    src: '/mock/home/hero-slider/6-desktop.webp',
-                },
-            },
-            card: {
-                title: 'Бонусная система. Ваше лечение возвращается теперь подарками!',
-                content:
-                    '<p>Мы&nbsp;ценим ваше решение доверить нам здоровье вашей улыбки.</p><p>Поэтому теперь за&nbsp;каждый комплексный план лечения мы&nbsp;дарим подарки, которые сделают вашу заботу о&nbsp;себе еще приятнее.</p>',
-                buttonText: 'Записаться на прием',
-            },
-        },
-    ],
+	slides: [
+		{
+			title: "алекса",
+			card: {
+				title: "Никакого напряжения и&nbsp;тревоги",
+				content: "<p>Имплантация во&nbsp;сне под контролем врачей</p>",
+				buttonText: "Записаться на прием",
+			},
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/1-desktop.webp",
+				},
+			},
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+		},
+		{
+			textTheme: "light",
+			title: "алекса",
+			card: {
+				title: "Лечение во&nbsp;сне. Без боли и&nbsp;страха",
+				content:
+					"<p>Для тревожных малышей и&nbsp;взрослых, которым нужен бережный подход.</p><br /><p>до&nbsp;1&nbsp;часа&nbsp;&mdash; <b>15&nbsp;100&nbsp;₽</b></p><p>до&nbsp;2&nbsp;часов&nbsp;&mdash; <b>19&nbsp;400&nbsp;₽</b></p><br /><p>Проснётесь с&nbsp;красивой улыбкой и&nbsp;без воспоминаний о&nbsp;лечении</p>",
+				buttonText: "Записаться на прием",
+			},
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/3-desktop.webp",
+					mobile: "/mock/home/hero-slider/3-mobile.webp",
+				},
+			},
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+		},
+		{
+			textTheme: "light",
+			title: "алекса",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/2-desktop.webp",
+				},
+			},
+			card: {
+				title:
+					"Программа лояльности для детей из&nbsp;многодетных семей и&nbsp;детей с&nbsp;особенностями",
+				content:
+					"<ul><li>Скидка&nbsp;10% на&nbsp;терапевтическое лечение</li><li>Скидка&nbsp;5% на&nbsp;лечение во&nbsp;сне</li></ul>",
+				buttonText: "Записаться на прием",
+			},
+		},
+		{
+			title: "алекса",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/4-desktop.webp",
+				},
+			},
+			card: {
+				title: "Разные системы&nbsp;&mdash; один точный результат",
+				content:
+					"<p>Брекеты или элайнеры&nbsp;&mdash; выбираем путь, который будет эффективнее в&nbsp;вашем случае</p>",
+				buttonText: "Записаться на прием",
+			},
+		},
+		{
+			title: "алекса",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/5-desktop.webp",
+					mobile: "/mock/home/hero-slider/5-mobile.webp",
+				},
+			},
+			card: {
+				title: "Лечение десен начинается с&nbsp;точной диагностики!",
+				content:
+					"<p>Бесплатное исследование на&nbsp;системе Florida Probe для тех, у&nbsp;кого кровоточат или воспалены десны. Выявим проблему на&nbsp;ранней стадии</p>",
+				buttonText: "Записаться на прием",
+			},
+		},
+		{
+			title: "алекса",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/6-desktop.webp",
+				},
+			},
+			card: {
+				title: "Бонусная система. Ваше лечение возвращается теперь подарками!",
+				content:
+					"<p>Мы&nbsp;ценим ваше решение доверить нам здоровье вашей улыбки.</p><p>Поэтому теперь за&nbsp;каждый комплексный план лечения мы&nbsp;дарим подарки, которые сделают вашу заботу о&nbsp;себе еще приятнее</p>",
+				buttonText: "Записаться на прием",
+			},
+		},
+	],
 };
 
 export const CTA_MOCK: CtaSectionProps = {
@@ -456,117 +457,117 @@ export const PARENT_NEWS_SECTION_MOCK: ParentNewsSectionProps = {
 };
 
 export const OUR_WORK: OurWorkProps = {
-    title: 'Наша работа в&nbsp;кадрах',
-    posters: [
-        {
-            size: 'standart',
-            poster: {
-                webp: {
-                    src: '/mock/our-work/1-desktop.webp',
-                },
-            },
-        },
-        {
-            size: 'standart',
-            poster: {
-                webp: {
-                    src: '/mock/our-work/2-desktop.webp',
-                },
-            },
-        },
-        {
-            size: 'big',
-            poster: {
-                webp: {
-                    src: '/mock/our-work/3-desktop.webp',
-                },
-            },
-        },
-        {
-            size: 'standart',
-            poster: {
-                webp: {
-                    src: '/mock/our-work/4-desktop.webp',
-                },
-            },
-        },
-        {
-            size: 'standart',
-            poster: {
-                webp: { src: '/mock/our-work/5-desktop.webp' },
-            },
-        },
-        {
-            size: 'standart',
-            poster: {
-                webp: { src: '/mock/our-work/6-desktop.webp' },
-            },
-        },
-        {
-            size: 'standart',
-            poster: {
-                webp: { src: '/mock/our-work/7-desktop.webp' },
-            },
-        },
-        {
-            size: 'big',
-            poster: {
-                webp: { src: '/mock/our-work/8-desktop.webp' },
-            },
-        },
-        {
-            size: 'big',
-            poster: {
-                webp: { src: '/mock/our-work/9-desktop.webp' },
-            },
-        },
-        {
-            size: 'standart',
-            poster: {
-                webp: { src: '/mock/our-work/10-desktop.webp' },
-            },
-        },
-        {
-            size: 'big',
-            poster: {
-                webp: { src: '/mock/our-work/11-desktop.webp' },
-            },
-        },
-        {
-            size: 'standart',
-            poster: {
-                webp: { src: '/mock/our-work/12-desktop.webp' },
-            },
-        },
-        {
-            size: 'big',
-            poster: {
-                webp: { src: '/mock/our-work/13-desktop.webp' },
-            },
-        },
-        {
-            size: 'standart',
-            poster: {
-                webp: { src: '/mock/our-work/14-desktop.webp' },
-            },
-        },
-        undefined,
-        {
-            size: 'big',
-            poster: {
-                webp: {
-                    src: '/mock/our-work/15-desktop.webp',
-                },
-            },
-        },
-        undefined,
-        {
-            size: 'big',
-            poster: {
-                webp: {
-                    src: '/mock/our-work/16-desktop.webp',
-                },
-            },
-        },
-    ],
+	title: "Наша работа в&nbsp;кадрах",
+	posters: [
+		{
+			size: "standart",
+			poster: {
+				webp: {
+					src: "/mock/our-work/1-desktop.webp",
+				},
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: {
+					src: "/mock/our-work/2-desktop.webp",
+				},
+			},
+		},
+		{
+			size: "big",
+			poster: {
+				webp: {
+					src: "/mock/our-work/our-work-3.webp",
+				},
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: {
+					src: "/mock/our-work/our-work-4.webp",
+				},
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/our-work-5.webp" },
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/our-work-6.webp" },
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/7-desktop.webp" },
+			},
+		},
+		{
+			size: "big",
+			poster: {
+				webp: { src: "/mock/our-work/our-work-8.webp" },
+			},
+		},
+		{
+			size: "big",
+			poster: {
+				webp: { src: "/mock/our-work/our-work-9.webp" },
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/our-work-10.webp" },
+			},
+		},
+		{
+			size: "big",
+			poster: {
+				webp: { src: "/mock/our-work/our-work-11.webp" },
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/our-work-12.webp" },
+			},
+		},
+		{
+			size: "big",
+			poster: {
+				webp: { src: "/mock/our-work/our-work-13.webp" },
+			},
+		},
+		{
+			size: "standart",
+			poster: {
+				webp: { src: "/mock/our-work/our-work-14.webp" },
+			},
+		},
+		undefined,
+		{
+			size: "big",
+			poster: {
+				webp: {
+					src: "/mock/our-work/our-work-16.webp",
+				},
+			},
+		},
+		undefined,
+		{
+			size: "big",
+			poster: {
+				webp: {
+					src: "/mock/our-work/our-work-15.webp",
+				},
+			},
+		},
+	],
 };

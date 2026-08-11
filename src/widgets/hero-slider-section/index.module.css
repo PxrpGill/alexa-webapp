@@ -87,6 +87,8 @@
 .icon {
     path {
         @mixin transition stroke;
+
+        stroke: var(--color-green-1);
     }
 }
 

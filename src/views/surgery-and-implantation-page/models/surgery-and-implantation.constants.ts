@@ -25,7 +25,7 @@ export const HERO_MOCK: QuadroSectionProps = {
 		card: {
 			title: "Позаботимся о&nbsp;вашей улыбке!",
 			description:
-				"Имплантация Straumann Group MEDENTIKA у&nbsp;хирурга Шахназаряна Э.&nbsp;К. &mdash;&nbsp;34&nbsp;000&nbsp;₽",
+				"Имплантация проверенными системами Straumann Group MEDENTIKA",
 			buttonText: "Записаться на прием",
 		},
 	},

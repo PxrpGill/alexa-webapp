@@ -1,0 +1,9 @@
+.root {
+    @mixin responsive gap, 10, 10;
+    
+    display: flex;
+}
+
+.tab {
+    flex-shrink: 0;
+}
