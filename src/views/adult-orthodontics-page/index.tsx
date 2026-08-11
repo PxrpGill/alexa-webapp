@@ -8,6 +8,7 @@ import YandexMap from '@/widgets/yandex-map';
 import css from './index.module.css';
 import {
     DIAGNOSTICS_SECTION_MOCK,
+    FIFTH_TITLE_DESCRIPTION_SLIDER,
     FIRST_TITLE_DESCRIPTION_SLIDER,
     FORM_DATA,
     FOURTH_TITLE_DESCRIPTION_SLIDER,
@@ -44,8 +45,12 @@ export default function AdultOrthodonticsPage() {
             />
             <TitleDescriptionSlider
                 {...FOURTH_TITLE_DESCRIPTION_SLIDER}
-                className={css.lastSlider}
+                className={css.slider}
                 textBlockPosition="right"
+            />
+            <TitleDescriptionSlider
+                {...FIFTH_TITLE_DESCRIPTION_SLIDER}
+                className={css.lastSlider}
             />
             <OurPeopleSection className={css.ourPeople} {...OUR_PEOPLE} />
             <AppointmentSchedulingSection {...FORM_DATA} className={css.form} />

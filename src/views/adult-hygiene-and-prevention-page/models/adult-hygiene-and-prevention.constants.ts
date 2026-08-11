@@ -15,7 +15,7 @@ export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
             'Откройте для себя преимущества профессиональной гигиены в&nbsp;клинике &laquo;Алекса&raquo;',
         title: 'Здоровые зубы&nbsp;&mdash; залог уверенности',
         card: {
-            title: '-1.500&nbsp;₽ на&nbsp;гигиену всех видов',
+            title: 'Профессиональная гигиена всех видов',
             buttonText: 'Записаться на прием',
         },
         poster: {
