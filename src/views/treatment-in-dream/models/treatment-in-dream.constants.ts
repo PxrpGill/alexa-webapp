@@ -170,6 +170,7 @@ export const OUR_PEOPLE_SECTION: OurPeopleSectionProps = {
 };
 
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	title: "Наши преимущества",
 	textBlock: {
 		title: "Современное оборудование",
 		description:
@@ -316,7 +317,7 @@ export const SECOND_QUADRO: QuadroSectionProps = {
 			"Рассрочка на&nbsp;лечение во&nbsp;сне&nbsp;&mdash; удобные условия для вашего комфорта!",
 		card: {
 			description:
-				"<p>В&nbsp;нашей стоматологии теперь доступна рассрочка на&nbsp;лечение во&nbsp;сне:</p><br /><p>Первоначальный взнос: <b>всего 50%</b></p><p>Срок рассрочки: <b>6&nbsp;месяцев</b></p><p>Дальнейшая оплата: равными частями без переплат.</p>",
+				"<p>В&nbsp;нашей стоматологии теперь доступна рассрочка на&nbsp;лечение во&nbsp;сне:</p><br /><ul><li>Первоначальный взнос: <b>всего 50%</b></li><li>Срок рассрочки: <b>6&nbsp;месяцев</b></li><li>Дальнейшая оплата: равными частями без переплат</li></ul>",
 			buttonText: "Ознакомиться с акциями ",
 		},
 		poster: {
