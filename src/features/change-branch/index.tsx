@@ -1,6 +1,7 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import ArrowSVG from "@/public/icons/arrow-without-stick.svg";
 import { useOnClickOutside } from "@/shared/hooks/use-on-click-outside";
@@ -10,21 +11,25 @@ import type { ChangeBranchProps } from "./types/change-branch.types";
 type BranchType = {
 	name: string;
 	title: string;
+	destination: string;
 };
 
 const BRANCHES: BranchType[] = [
 	{
-		name: "landysch-104",
+		name: "landyshevaya",
 		title: "Ландышевая&nbsp;104",
+		destination: "/",
 	},
 	{
-		name: "volkova-22",
+		name: "volkova",
 		title: "Волкова&nbsp;22",
+		destination: "/volkova",
 	},
 ];
 
 export default function ChangeBranch({ className }: ChangeBranchProps) {
 	const rootRef = useRef<HTMLDivElement | null>(null);
+	const router = useRouter();
 	const [selectedBranch, selectBranch] = useState<BranchType>(BRANCHES[0]);
 	const [isListOpen, toggleListOpen] = useState<boolean>(false);
 
@@ -33,6 +38,8 @@ export default function ChangeBranch({ className }: ChangeBranchProps) {
 	const handleBranchClick = (branch: BranchType) => {
 		selectBranch(branch);
 		toggleListOpen(false);
+
+		router.push(branch.destination);
 	};
 
 	return (

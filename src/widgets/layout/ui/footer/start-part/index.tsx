@@ -20,7 +20,7 @@ import css from './index.module.css';
 export default function StartPart() {
     return (
         <div className={css.root}>
-            <Link href={SITE_NAVIGATION.base} className={css.baseLink}>
+            <Link href={SITE_NAVIGATION.landyshevayaBase} className={css.baseLink}>
                 <LogoSvg className={css.logo} />
             </Link>
             <div className={css.contacts}>
