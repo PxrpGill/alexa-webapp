@@ -10,10 +10,10 @@
 	},
 	"biome.enabled": true,
 	"biome.lspEnabled": true,
-	"biome.requireConfig": false,
-	"biome.bin": "./src/node_modules/.bin/biome",
-	"biome.configPath": "./src/biome.json",
-	"biome.lspBin": "./src/node_modules/@biomejs/biome/bin/biome",
+	"biome.lsp.bin": {
+		"win32-x64": "./src/node_modules/.pnpm/@biomejs+cli-win32-x64@2.4.15/node_modules/@biomejs/cli-win32-x64/biome.exe",
+		"linux-x64": "./src/node_modules/.bin/biome"
+	},
 	"stylelint.validate": ["css"],
 	"stylelint.configFile": "./src/.stylelintrc.json",
 	"css.validate": false,
