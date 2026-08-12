@@ -1,10 +1,10 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
 import type { AnnualCareProgramsProps } from "@/widgets/annual-care-programs/types/annual-care-programs.types";
 import type { PreventionSectionProps } from "@/widgets/prevention-section/types/prevention-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { SolutionsSectionProps } from "@/widgets/solutions-section/types/solutions-section.types";
 import type { StomatologyProgramProps } from "@/widgets/stomatology-program/types/stomatology-program.types";
-
 import type { CtaGreenProps } from "../types/cta-green.types";
 
 export const GREEN_CTA: CtaGreenProps = {
@@ -48,7 +48,7 @@ export const STOMATOLOGY_PROGRAM: StomatologyProgramProps = {
 			"На&nbsp;основе диагностики формируется индивидуальный план сохранения здоровья зубов на&nbsp;год.",
 		button: {
 			title: "Записаться на приём",
-			href: "#form",
+			href: APPOINTMENT_ID.id,
 		},
 	},
 	descriptionBlock: {
@@ -88,7 +88,7 @@ export const ANNUAL_CARE_SECTION_MOCK: AnnualCareProgramsProps = {
 				"Заботливые напоминания о&nbsp;необходимости визита от&nbsp;вашего куратора",
 			],
 			button: {
-				href: "#form",
+				href: APPOINTMENT_ID.id,
 				title: "Записаться на приём",
 			},
 			price: 150_000,
@@ -112,7 +112,7 @@ export const ANNUAL_CARE_SECTION_MOCK: AnnualCareProgramsProps = {
 				"напоминания о&nbsp;визитах",
 			],
 			button: {
-				href: "#form",
+				href: APPOINTMENT_ID.id,
 				title: "Записаться на приём",
 			},
 			price: 150_000,
@@ -139,7 +139,7 @@ export const SOLUTIONS_SECTION_MOCK: SolutionsSectionProps = {
 		{
 			title: "Пародонтология",
 			description: "Лечение воспаления дёсен и&nbsp;кровоточивости",
-			href: "#form",
+			href: APPOINTMENT_ID.id,
 			poster: {
 				webp: {
 					src: "/mock/volkovo/services/1.webp",
@@ -150,7 +150,7 @@ export const SOLUTIONS_SECTION_MOCK: SolutionsSectionProps = {
 			title: "Профессиональная гигиена",
 			description:
 				"Глубокая чистка и&nbsp;полировка для здоровых и&nbsp;чистых зубов",
-			href: "#form",
+			href: APPOINTMENT_ID.id,
 			poster: {
 				webp: {
 					src: "/mock/volkovo/services/2.webp",
@@ -160,7 +160,7 @@ export const SOLUTIONS_SECTION_MOCK: SolutionsSectionProps = {
 		{
 			title: "Лечение начального кариеса",
 			description: "Лечение воспаления дёсен и&nbsp;кровоточивости",
-			href: "#form",
+			href: APPOINTMENT_ID.id,
 			poster: {
 				webp: {
 					src: "/mock/volkovo/services/3.webp",
@@ -171,7 +171,7 @@ export const SOLUTIONS_SECTION_MOCK: SolutionsSectionProps = {
 			title: "Отбеливание",
 			description:
 				"Глубокая чистка и&nbsp;полировка для здоровых и&nbsp;чистых зубов",
-			href: "#form",
+			href: APPOINTMENT_ID.id,
 			poster: {
 				webp: {
 					src: "/mock/volkovo/services/4.webp",
