@@ -1,4 +1,5 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
@@ -26,7 +27,7 @@ export const HERO_MOCK: QuadroSectionProps = {
 			title: "Позаботимся о&nbsp;вашей улыбке!",
 			description:
 				"Имплантация проверенными системами Straumann Group MEDENTIKA",
-			buttonText: "Записаться на прием",
+			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 		},
 	},
 };

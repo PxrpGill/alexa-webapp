@@ -8,6 +8,7 @@
     background-color: var(--color-white-0);
     display: grid;
     grid-template-columns: var(--first-col) auto;
+    scroll-margin-top: 10svh;
 
     @media (max-width: $mobile) {
         display: flex;

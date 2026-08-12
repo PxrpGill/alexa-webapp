@@ -1,4 +1,5 @@
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import type { SiteButtonProps } from "@/shared/types/button.types";
 import type { CtaSectionProps } from "@/widgets/cta-section/types/cta-section.types";
 import type { DescriptionSectionProps } from "@/widgets/description-section/types/description-section.types";
 import type { FaqSectionProps } from "@/widgets/faq-section/types/faq-section.types";
@@ -9,6 +10,11 @@ import type { ParentNewsSectionProps } from "@/widgets/parent-news-section/types
 import type { StillQuestionProps } from "@/widgets/still-questions/types/still-questions.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 
+export const MAKE_APPOINTMENT_BUTTON: SiteButtonProps = {
+	title: "Записаться на прием",
+	isOpenFeedbackModal: true,
+};
+
 export const HERO_SLIDES: HeroSliderSectionProps = {
 	slides: [
 		{
@@ -16,7 +22,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			card: {
 				title: "Никакого напряжения и&nbsp;тревоги",
 				content: "<p>Имплантация во&nbsp;сне под контролем врачей</p>",
-				buttonText: "Записаться на прием",
+				button: MAKE_APPOINTMENT_BUTTON,
 			},
 			poster: {
 				webp: {
@@ -34,7 +40,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 				title: "Лечение во&nbsp;сне. Без боли и&nbsp;страха",
 				content:
 					"<p>Для тревожных малышей и&nbsp;взрослых, которым нужен бережный подход.</p><br /><p>до&nbsp;1&nbsp;часа&nbsp;&mdash; <b>15&nbsp;100&nbsp;₽</b></p><p>до&nbsp;2&nbsp;часов&nbsp;&mdash; <b>19&nbsp;400&nbsp;₽</b></p><br /><p>Проснётесь с&nbsp;красивой улыбкой и&nbsp;без воспоминаний о&nbsp;лечении</p>",
-				buttonText: "Записаться на прием",
+				button: MAKE_APPOINTMENT_BUTTON,
 			},
 			poster: {
 				webp: {
@@ -62,7 +68,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 					"Программа лояльности для детей из&nbsp;многодетных семей и&nbsp;детей с&nbsp;особенностями",
 				content:
 					"<ul><li>Скидка&nbsp;10% на&nbsp;терапевтическое лечение</li><li>Скидка&nbsp;5% на&nbsp;лечение во&nbsp;сне</li></ul>",
-				buttonText: "Записаться на прием",
+				button: MAKE_APPOINTMENT_BUTTON,
 			},
 		},
 		{
@@ -79,7 +85,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 				title: "Разные системы&nbsp;&mdash; один точный результат",
 				content:
 					"<p>Брекеты или элайнеры&nbsp;&mdash; выбираем путь, который будет эффективнее в&nbsp;вашем случае</p>",
-				buttonText: "Записаться на прием",
+				button: MAKE_APPOINTMENT_BUTTON,
 			},
 		},
 		{
@@ -97,7 +103,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 				title: "Лечение десен начинается с&nbsp;точной диагностики!",
 				content:
 					"<p>Бесплатное исследование на&nbsp;системе Florida Probe для тех, у&nbsp;кого кровоточат или воспалены десны. Выявим проблему на&nbsp;ранней стадии</p>",
-				buttonText: "Записаться на прием",
+				button: MAKE_APPOINTMENT_BUTTON,
 			},
 		},
 		{
@@ -114,7 +120,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 				title: "Бонусная система. Ваше лечение возвращается теперь подарками!",
 				content:
 					"<p>Мы&nbsp;ценим ваше решение доверить нам здоровье вашей улыбки.</p><p>Поэтому теперь за&nbsp;каждый комплексный план лечения мы&nbsp;дарим подарки, которые сделают вашу заботу о&nbsp;себе еще приятнее</p>",
-				buttonText: "Записаться на прием",
+				button: MAKE_APPOINTMENT_BUTTON,
 			},
 		},
 	],
