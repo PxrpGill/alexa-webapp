@@ -1,0 +1,65 @@
+.root {
+    @mixin transitionOptions;
+    @mixin responsive margin-block-end, 20, 20;
+
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+
+    transition-property: translate, opacity, visibility;
+    z-index: 100000;
+
+    translate: 0 50%;
+    opacity: 0;
+    visibility: hidden;
+
+    &.visible {
+        translate: 0 0;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.wrapper {
+    @mixin responsive gap, 20, 40;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-block, 20, 20;
+    @mixin responsive border-radius, 20, 20;
+    @mixin responsive --shadow-1, 15, 15;
+    @mixin responsive --shadow-2, 30, 30;
+    @mixin responsive --shadow-3, -10, -10;
+
+    background-color: var(--color-white-0);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 var(--shadow-1) var(--shadow-2) var(--shadow-3)
+                rgb(0 11 48 / 20%);
+
+    @media (max-width: $mobile) {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+.button[class] {
+    flex-shrink: 0;
+}
+
+.text {
+    @mixin b2;
+
+    a {
+        @mixin transition color;
+
+        text-decoration: underline;
+
+        @media (hover:hover) {
+            &:hover {
+                color: var(--color-green-1);
+            }
+        }
+    }
+}
