@@ -2,6 +2,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 import {
+	INFORMATION_NAVIGATION,
 	LANDYSHEVAYA_NAVIGATION,
 	VOLKOVA_NAVIGATION,
 } from "../config/site-navigation";
@@ -31,6 +32,14 @@ const getBranchByPathname = (pathname: string): BranchType | undefined =>
 		),
 	);
 
+const isInformationPage = (pathname: string): boolean =>
+	Object.values(INFORMATION_NAVIGATION).some(
+		(path) => pathname === path || pathname.startsWith(`${path}/`),
+	);
+
+const isBranchType = (value?: string): value is BranchType =>
+	!!value && value in BRANCH_COOKIES_VALUES;
+
 export const useSetBranchInCookies = () => {
 	const pathname = usePathname();
 	const branch = getBranchByPathname(pathname);
@@ -40,6 +49,12 @@ export const useSetBranchInCookies = () => {
 
 		setCookie(BRANCH_COOKIES_KEY, branch);
 	}, [branch]);
+
+	if (isInformationPage(pathname)) {
+		const cookieBranch = getCookie(BRANCH_COOKIES_KEY);
+
+		return isBranchType(cookieBranch) ? cookieBranch : undefined;
+	}
 
 	return branch;
 };
