@@ -2,7 +2,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import ArrowSVG from "@/public/icons/arrow-without-stick.svg";
 import { useLayoutContext } from "@/shared/config/layout-context";
 import { BRANCH_COOKIES_VALUES } from "@/shared/hooks/set-branch-in-cookies";
@@ -43,6 +43,10 @@ export default function ChangeBranch({ className }: ChangeBranchProps) {
 		findedBranch ?? BRANCHES[0],
 	);
 	const [isListOpen, toggleListOpen] = useState<boolean>(false);
+
+	useEffect(() => {
+		if (findedBranch) selectBranch(findedBranch);
+	}, [findedBranch]);
 
 	useOnClickOutside(rootRef, () => toggleListOpen(false));
 
