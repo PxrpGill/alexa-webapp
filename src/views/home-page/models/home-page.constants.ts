@@ -292,26 +292,41 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					title: "Лечение &laquo;во&nbsp;сне&raquo;",
 					description:
 						"Обеспечивает максимальный комфорт и&nbsp;безопасность для всех пациентов. Пациенты могут избавиться от&nbsp;страха и&nbsp;переживаний, обеспечивая эффективное и&nbsp;качественное лечение без стресса.",
+					button: {
+						href: SITE_NAVIGATION["lechenie-vo-sne-vz"],
+					},
 				},
 				{
 					title: "Терапия",
 					description:
 						"Если в&nbsp;ходе первого приема у&nbsp;Вас были диагностированы заболевания зубов, начинается этап терапии.",
+					button: {
+						href: SITE_NAVIGATION["terapiya-vz"],
+					},
 				},
 				{
 					title: "Ортопедия",
 					description:
 						"Обнаружение и&nbsp;устранение нарушений целостности зубного ряда, восстановление функций зубочелюстного аппарата&nbsp;&mdash; это задачи врачей-ортопедов нашей клиники.",
+					button: {
+						href: SITE_NAVIGATION["ortopediya-vz"],
+					},
 				},
 				{
 					title: "Пародонтология",
 					description:
 						"Своевременная оценка состояния десен позволяет остановить заболевание до&nbsp;серьёзных последствий.",
+					button: {
+						href: SITE_NAVIGATION["parodontologiya"],
+					},
 				},
 				{
 					title: "Гнатология",
 					description:
 						"Диагностика и&nbsp;лечение нарушений височно-нижнечелюстного сустава.",
+					button: {
+						href: SITE_NAVIGATION["gnatologiya"],
+					},
 				},
 			],
 		},
@@ -322,31 +337,49 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					title: "Консультация детского стоматолога",
 					description:
 						"Правильная диагностика&nbsp;&mdash; успех любого лечения!",
+					button: {
+						href: SITE_NAVIGATION["konsultaciya-detskogo-stomatologa"],
+					},
 				},
 				{
 					title: "Гигиена и&nbsp;профилактика",
 					description:
 						"Родители часто нас спрашивают: &laquo;Нужна&nbsp;ли гигиена полости рта ребенку? Ведь зубы у&nbsp;него молочные и&nbsp;через какое-то время сменятся постоянными&raquo;.",
+					button: {
+						href: SITE_NAVIGATION["gigiena-i-profilaktika"],
+					},
 				},
 				{
 					title: "Терапия",
 					description:
 						"Всех родителей волнует вопрос: &laquo;Нужно&nbsp;ли лечить кариес молочных зубов? Ведь они все равно выпадут?&raquo;.",
+					button: {
+						href: SITE_NAVIGATION["detskaya-terapiya"],
+					},
 				},
 				{
 					title: "Хирургия",
 					description:
 						"Удаление зубов, коррекция уздечки губ и&nbsp;языка, вестибулопластика.",
+					button: {
+						href: SITE_NAVIGATION["detskaya-hirurgiya"],
+					},
 				},
 				{
 					title: "Лечение &laquo;во&nbsp;сне&raquo;",
 					description:
 						"Обеспечивает максимальный комфорт и&nbsp;безопасность для всех пациентов. Пациенты могут избавиться от&nbsp;страха и&nbsp;переживаний, обеспечивая эффективное и&nbsp;качественное лечение без стресса.",
+					button: {
+						href: SITE_NAVIGATION["lechenie-vo-sne"],
+					},
 				},
 				{
 					title: "Ортодонтия",
 					description:
 						"Если Вашему ребенку требуется коррекция и&nbsp;устранения аномалий зубочелюстной системы, его беспокоит неправильное расположение зубов или расстояние между ними; неприятные ощущения при жевании пищи; излишняя стираемость зубов нужно посетить врача-ортодонта.",
+					button: {
+						href: SITE_NAVIGATION.ortodontiya,
+					},
 				},
 			],
 		},
