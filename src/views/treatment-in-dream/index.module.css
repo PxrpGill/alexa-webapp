@@ -2,6 +2,11 @@
     @mixin responsive padding-block-start, 88, 100;
 }
 
+.infoTabs,
+.whyChooseUs,
+.lastSlider,
+.ourPeople,
+.form,
 .yandexMap,
 .stages,
 .brickWork,
@@ -13,4 +18,9 @@
 
 .quadro.quadro[class] > div > div {
     @mixin responsive padding-inline-end, 20, 64;
+}
+
+
+.slider {
+    @mixin responsive margin-block-end, 30, 35;
 }
