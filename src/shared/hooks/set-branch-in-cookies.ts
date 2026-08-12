@@ -1,5 +1,5 @@
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 
 import {
 	INFORMATION_NAVIGATION,
@@ -40,21 +40,30 @@ const isInformationPage = (pathname: string): boolean =>
 const isBranchType = (value?: string): value is BranchType =>
 	!!value && value in BRANCH_COOKIES_VALUES;
 
+const emptySubscribe = (): (() => void) => () => {};
+
+const readCookieBranch = (): BranchType | undefined => {
+	if (typeof document === "undefined") return undefined;
+
+	const savedBranch = getCookie(BRANCH_COOKIES_KEY);
+
+	return isBranchType(savedBranch) ? savedBranch : undefined;
+};
+
 export const useSetBranchInCookies = () => {
 	const pathname = usePathname();
 	const branch = getBranchByPathname(pathname);
-	const [cookieBranch, setCookieBranch] = useState<BranchType | undefined>();
+	const cookieBranch = useSyncExternalStore(
+		emptySubscribe,
+		readCookieBranch,
+		() => undefined,
+	);
 
 	useEffect(() => {
 		if (typeof document === "undefined") return;
-
-		const savedBranch = getCookie(BRANCH_COOKIES_KEY);
-		setCookieBranch(isBranchType(savedBranch) ? savedBranch : undefined);
-
-		if (!branch || savedBranch === branch) return;
+		if (!branch || getCookie(BRANCH_COOKIES_KEY) === branch) return;
 
 		setCookie(BRANCH_COOKIES_KEY, branch);
-		setCookieBranch(branch);
 	}, [branch]);
 
 	if (isInformationPage(pathname)) return cookieBranch;
