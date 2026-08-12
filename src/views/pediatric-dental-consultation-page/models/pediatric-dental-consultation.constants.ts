@@ -1,3 +1,4 @@
+import { APPOINTMENT_ID } from '@/shared/config/global-constants.constats';
 import type { BrickworkSectionProps } from '@/widgets/brickwork-section/types/brickwork-section.types';
 import type { DescriptionSectionProps } from '@/widgets/description-section/types/description-section.types';
 import type { QuadroSectionProps } from '@/widgets/quadro-section/types/quadro-section.types';
@@ -9,7 +10,7 @@ export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
         description: 'Первый шаг к&nbsp;здоровым зубам вашего ребенка',
         card: {
             title: 'Запишитесь сейчас и&nbsp;обеспечьте своему ребёнку здоровье и&nbsp;комфорт!',
-            buttonText: 'Записаться на прием',
+            button: {title: 'Записаться на прием', href: APPOINTMENT_ID.id},
         },
         poster: {
             webp: {

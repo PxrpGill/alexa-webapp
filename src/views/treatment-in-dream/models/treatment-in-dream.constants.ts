@@ -1,4 +1,5 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { InfoTabsProps } from "@/views/adult-orthodontics-page/types/info-tabs.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
@@ -13,7 +14,7 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 			"Лечение &laquo;во&nbsp;сне&raquo; просыпайтесь с&nbsp;идеальной улыбкой",
 		card: {
 			title: "Ваша здоровая улыбка начинается здесь!",
-			buttonText: "Записаться на прием",
+			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 		},
 		poster: {
 			original: {
@@ -318,7 +319,10 @@ export const SECOND_QUADRO: QuadroSectionProps = {
 		card: {
 			description:
 				"<p>В&nbsp;нашей стоматологии теперь доступна рассрочка на&nbsp;лечение во&nbsp;сне:</p><br /><ul><li>Первоначальный взнос: <b>всего 50%</b></li><li>Срок рассрочки: <b>6&nbsp;месяцев</b></li><li>Дальнейшая оплата: равными частями без переплат</li></ul>",
-			buttonText: "Ознакомиться с акциями ",
+			button: {
+				title: "Ознакомиться с акциями",
+				href: SITE_NAVIGATION.akcii,
+			},
 		},
 		poster: {
 			webp: {
