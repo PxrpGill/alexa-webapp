@@ -1,7 +1,10 @@
 import type { InfoCardProps } from "@/widgets/yandex-map/ui/info-card";
 import type { SiteButtonProps } from "../types/button.types";
 
-export const MOBILE_PHONE = "+7 (918) 555-02-96";
+export const MOBILE_PHONE = {
+	landyshevaya: "+7 (918) 555-02-96",
+	volkova: "+7 (918) 550-12-24",
+};
 export const TELEGRAM = "https://t.me/+79185550296";
 export const MAX =
 	"https://max.ru/u/f9LHodD0cOLgm-ygOXWQoU7Vatg0-k1ddevFlBwsdap619uY44BZTwSbXfI";
@@ -21,7 +24,7 @@ export const YANDEX_MAP_INFO_CARD: InfoCardProps = {
 			title: "ул. Ландышевая, д.&nbsp;104",
 			workSchedule:
 				"Пн - пт&nbsp;с&nbsp;9:00 до&nbsp;18:00, суббота с&nbsp;9:00 до&nbsp;18:00",
-			phone: "+7 (918) 555-02-96",
+			phone: MOBILE_PHONE.landyshevaya,
 			cords: [47.286561, 39.828901],
 		},
 		{
@@ -29,7 +32,7 @@ export const YANDEX_MAP_INFO_CARD: InfoCardProps = {
 			title: "ул. Волкова, д.&nbsp;22",
 			workSchedule:
 				"Пн - пт&nbsp;с&nbsp;9:00 до&nbsp;18:00, суббота с&nbsp;9:00 до&nbsp;18:00",
-			phone: "+7 (918) 550-12-24",
+			phone: MOBILE_PHONE.volkova,
 			cords: [47.283248, 39.720142],
 		},
 	],
