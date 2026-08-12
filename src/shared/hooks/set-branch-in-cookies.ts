@@ -1,5 +1,5 @@
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import {
 	INFORMATION_NAVIGATION,
@@ -43,18 +43,21 @@ const isBranchType = (value?: string): value is BranchType =>
 export const useSetBranchInCookies = () => {
 	const pathname = usePathname();
 	const branch = getBranchByPathname(pathname);
+	const [cookieBranch, setCookieBranch] = useState<BranchType | undefined>();
 
 	useEffect(() => {
-		if (!branch || getCookie(BRANCH_COOKIES_KEY) === branch) return;
+		if (typeof document === "undefined") return;
+
+		const savedBranch = getCookie(BRANCH_COOKIES_KEY);
+		setCookieBranch(isBranchType(savedBranch) ? savedBranch : undefined);
+
+		if (!branch || savedBranch === branch) return;
 
 		setCookie(BRANCH_COOKIES_KEY, branch);
+		setCookieBranch(branch);
 	}, [branch]);
 
-	if (isInformationPage(pathname)) {
-		const cookieBranch = getCookie(BRANCH_COOKIES_KEY);
-
-		return isBranchType(cookieBranch) ? cookieBranch : undefined;
-	}
+	if (isInformationPage(pathname)) return cookieBranch;
 
 	return branch;
 };
