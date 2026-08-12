@@ -267,7 +267,9 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Правильная диагностика&nbsp;&mdash; успех любого лечения!",
 					button: {
-						href: SITE_NAVIGATION["konsultaciya-stomatologa"],
+						href: SITE_NAVIGATION.landyshevayaServices[
+							"konsultaciya-stomatologa"
+						],
 					},
 				},
 				{
@@ -275,7 +277,9 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Для качественного лечения и&nbsp;долгосрочного результата практически перед всеми стоматологическими манипуляциями Вам может быть необходимо провести профессиональную гигиену полости рта.",
 					button: {
-						href: SITE_NAVIGATION["gigiena-i-profilaktika-vz"],
+						href: SITE_NAVIGATION.landyshevayaServices[
+							"gigiena-i-profilaktika-vz"
+						],
 					},
 				},
 				{
@@ -283,7 +287,9 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Хирургическая стоматология в&nbsp;нашей клинике&nbsp;&mdash; это разнообразные оперативные вмешательствах на&nbsp;мягких и&nbsp;твердых тканях ротовой полости.",
 					button: {
-						href: SITE_NAVIGATION["hirurgiya-i-implantaciya"],
+						href: SITE_NAVIGATION.landyshevayaServices[
+							"hirurgiya-i-implantaciya"
+						],
 					},
 				},
 				{
@@ -291,7 +297,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Если Вам требуется коррекция и&nbsp;устранения аномалий зубочелюстной системы, Вас беспокоит неправильное расположение зубов или расстояние между ними, неприятные ощущения при жевании пищи, излишняя стираемость зубов, и&nbsp;если&nbsp;Вы готовитесь к&nbsp;имплантации и&nbsp;протезированию, в&nbsp;том числе к&nbsp;установке виниров Вам нужно посетить врача-ортодонта.",
 					button: {
-						href: SITE_NAVIGATION["ortodontiya"],
+						href: SITE_NAVIGATION.landyshevayaServices["ortodontiya"],
 					},
 				},
 				{
@@ -299,7 +305,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Обеспечивает максимальный комфорт и&nbsp;безопасность для всех пациентов. Пациенты могут избавиться от&nbsp;страха и&nbsp;переживаний, обеспечивая эффективное и&nbsp;качественное лечение без стресса.",
 					button: {
-						href: SITE_NAVIGATION["lechenie-vo-sne-vz"],
+						href: SITE_NAVIGATION.landyshevayaServices["lechenie-vo-sne-vz"],
 					},
 				},
 				{
@@ -307,7 +313,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Если в&nbsp;ходе первого приема у&nbsp;Вас были диагностированы заболевания зубов, начинается этап терапии.",
 					button: {
-						href: SITE_NAVIGATION["terapiya-vz"],
+						href: SITE_NAVIGATION.landyshevayaServices["terapiya-vz"],
 					},
 				},
 				{
@@ -315,7 +321,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Обнаружение и&nbsp;устранение нарушений целостности зубного ряда, восстановление функций зубочелюстного аппарата&nbsp;&mdash; это задачи врачей-ортопедов нашей клиники.",
 					button: {
-						href: SITE_NAVIGATION["ortopediya-vz"],
+						href: SITE_NAVIGATION.landyshevayaServices["ortopediya-vz"],
 					},
 				},
 				{
@@ -323,7 +329,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Своевременная оценка состояния десен позволяет остановить заболевание до&nbsp;серьёзных последствий.",
 					button: {
-						href: SITE_NAVIGATION["parodontologiya"],
+						href: SITE_NAVIGATION.landyshevayaServices["parodontologiya"],
 					},
 				},
 				{
@@ -331,7 +337,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Диагностика и&nbsp;лечение нарушений височно-нижнечелюстного сустава.",
 					button: {
-						href: SITE_NAVIGATION["gnatologiya"],
+						href: SITE_NAVIGATION.landyshevayaServices["gnatologiya"],
 					},
 				},
 			],
@@ -344,7 +350,9 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Правильная диагностика&nbsp;&mdash; успех любого лечения!",
 					button: {
-						href: SITE_NAVIGATION["konsultaciya-detskogo-stomatologa"],
+						href: SITE_NAVIGATION.landyshevayaServices[
+							"konsultaciya-detskogo-stomatologa"
+						],
 					},
 				},
 				{
@@ -352,7 +360,9 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Родители часто нас спрашивают: &laquo;Нужна&nbsp;ли гигиена полости рта ребенку? Ведь зубы у&nbsp;него молочные и&nbsp;через какое-то время сменятся постоянными&raquo;.",
 					button: {
-						href: SITE_NAVIGATION["gigiena-i-profilaktika"],
+						href: SITE_NAVIGATION.landyshevayaServices[
+							"gigiena-i-profilaktika"
+						],
 					},
 				},
 				{
@@ -360,7 +370,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Всех родителей волнует вопрос: &laquo;Нужно&nbsp;ли лечить кариес молочных зубов? Ведь они все равно выпадут?&raquo;.",
 					button: {
-						href: SITE_NAVIGATION["detskaya-terapiya"],
+						href: SITE_NAVIGATION.landyshevayaServices["detskaya-terapiya"],
 					},
 				},
 				{
@@ -368,7 +378,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Удаление зубов, коррекция уздечки губ и&nbsp;языка, вестибулопластика.",
 					button: {
-						href: SITE_NAVIGATION["detskaya-hirurgiya"],
+						href: SITE_NAVIGATION.landyshevayaServices["detskaya-hirurgiya"],
 					},
 				},
 				{
@@ -376,7 +386,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Обеспечивает максимальный комфорт и&nbsp;безопасность для всех пациентов. Пациенты могут избавиться от&nbsp;страха и&nbsp;переживаний, обеспечивая эффективное и&nbsp;качественное лечение без стресса.",
 					button: {
-						href: SITE_NAVIGATION["lechenie-vo-sne"],
+						href: SITE_NAVIGATION.landyshevayaServices["lechenie-vo-sne"],
 					},
 				},
 				{
@@ -384,7 +394,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 					description:
 						"Если Вашему ребенку требуется коррекция и&nbsp;устранения аномалий зубочелюстной системы, его беспокоит неправильное расположение зубов или расстояние между ними; неприятные ощущения при жевании пищи; излишняя стираемость зубов нужно посетить врача-ортодонта.",
 					button: {
-						href: SITE_NAVIGATION.ortodontiya,
+						href: SITE_NAVIGATION.landyshevayaServices.ortodontiya,
 					},
 				},
 			],

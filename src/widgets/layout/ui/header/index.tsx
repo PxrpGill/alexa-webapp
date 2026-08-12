@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <header className={`${css.root} container`}>
             <div className={css.wrapper}>
-                <Link className={css.link} href={SITE_NAVIGATION.base}>
+                <Link className={css.link} href={SITE_NAVIGATION.landyshevayaBase}>
                     <LogoSvg className={css.logo} />
                 </Link>
                 <ContactPart />

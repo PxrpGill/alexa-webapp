@@ -1,21 +1,30 @@
+const LANDYSHEVAYA_NAVIGATION = {
+	landyshevayaBase: "/",
+	landyshevayaServices: {
+		"konsultaciya-stomatologa": "/landyshevaya/konsultaciya-stomatologa",
+		"ortodontiya-vz": "/landyshevaya/ortodontiya-vz",
+		"gigiena-i-profilaktika-vz": "/landyshevaya/gigiena-i-profilaktika-vz",
+		"lechenie-vo-sne-vz": "/landyshevaya/lechenie-vo-sne-vz",
+		"terapiya-vz": "/landyshevaya/terapiya-vz",
+		parodontologiya: "/landyshevaya/parodontologiya",
+		"hirurgiya-i-implantaciya": "/landyshevaya/hirurgiya-i-implantaciya",
+		gnatologiya: "/landyshevaya/gnatologiya",
+		"ortopediya-vz": "/landyshevaya/ortopediya-vz",
+		"konsultaciya-detskogo-stomatologa":
+			"/landyshevaya/konsultaciya-detskogo-stomatologa",
+		"detskaya-hirurgiya": "/landyshevaya/detskaya-hirurgiya",
+		"gigiena-i-profilaktika": "/landyshevaya/gigiena-i-profilaktika",
+		ortodontiya: "/landyshevaya/ortodontiya",
+		"detskaya-terapiya": "/landyshevaya/detskaya-terapiya",
+		"lechenie-vo-sne": "/landyshevaya/lechenie-vo-sne",
+	},
+};
+
+const VOLKOVA_NAVIGATION = {
+	volkovaBase: "/volkova",
+};
+
 export const SITE_NAVIGATION = {
-	base: "/",
-	"konsultaciya-stomatologa": "/landyshevaya/konsultaciya-stomatologa",
-	"ortodontiya-vz": "/landyshevaya/ortodontiya-vz",
-	"gigiena-i-profilaktika-vz": "/landyshevaya/gigiena-i-profilaktika-vz",
-	"lechenie-vo-sne-vz": "/landyshevaya/lechenie-vo-sne-vz",
-	"terapiya-vz": "/landyshevaya/terapiya-vz",
-	parodontologiya: "/landyshevaya/parodontologiya",
-	"hirurgiya-i-implantaciya": "/landyshevaya/hirurgiya-i-implantaciya",
-	gnatologiya: "/landyshevaya/gnatologiya",
-	"ortopediya-vz": "/landyshevaya/ortopediya-vz",
-	"konsultaciya-detskogo-stomatologa":
-		"/landyshevaya/konsultaciya-detskogo-stomatologa",
-	"detskaya-hirurgiya": "/landyshevaya/detskaya-hirurgiya",
-	"gigiena-i-profilaktika": "/landyshevaya/gigiena-i-profilaktika",
-	ortodontiya: "/landyshevaya/ortodontiya",
-	"detskaya-terapiya": "/landyshevaya/detskaya-terapiya",
-	"lechenie-vo-sne": "/landyshevaya/lechenie-vo-sne",
 	price: "/price",
 	"nadzornye-organy": "/nadzornye-organy",
 	"o-klinike": "/o-klinike",
@@ -35,4 +44,6 @@ export const SITE_NAVIGATION = {
 	pravilaokazaniyamedicinskihuslug: "/pravilaokazaniyamedicinskihuslug",
 	pravilavneseniyaoplatyzamedicinskieuslugi:
 		"/pravilavneseniyaoplatyzamedicinskieuslugi",
+	...LANDYSHEVAYA_NAVIGATION,
+	...VOLKOVA_NAVIGATION,
 } as const;
