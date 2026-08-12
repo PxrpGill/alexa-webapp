@@ -5,6 +5,12 @@
     align-items: center;
 }
 
+.changeBranch[class] {
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
 .phone {
     @mixin b2;
     @mixin transition color;
