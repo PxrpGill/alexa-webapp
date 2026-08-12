@@ -93,4 +93,14 @@
     left: 0;
     width: 100%;
     height: 100%;
+
+    path {
+        @mixin transition stroke;
+    }
+
+    @media (hover:hover) {
+        &:hover path {
+            stroke: var(--color-green-1);
+        }
+    }
 }

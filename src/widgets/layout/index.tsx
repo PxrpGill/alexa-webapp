@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from "react";
 import AppointmentModal from "@/features/appointment-modal";
 import ConsultationModal from "@/features/consultation-modal";
+import CookiesPanel from "@/features/cookies-panel";
 import { LayoutProvider } from "@/shared/config/layout-context";
 import Footer from "./ui/footer";
 import Header from "./ui/header";
@@ -15,6 +16,7 @@ export default function Layout({ children }: LayoutProps) {
 			{children}
 			<Menu />
 			<Footer />
+			<CookiesPanel />
 			<ConsultationModal />
 			<AppointmentModal />
 		</LayoutProvider>
