@@ -63,7 +63,7 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 							src: "/mock/sleepbased-treatment/title-sticky.webp",
 						},
 					},
-					buttonText: "Записаться на приём",
+					button: { title: "Записаться на приём", href: APPOINTMENT_ID.id },
 				},
 				cards: [
 					{

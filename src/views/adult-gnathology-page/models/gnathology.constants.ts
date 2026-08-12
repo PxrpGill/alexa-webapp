@@ -1,5 +1,8 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+} from "@/shared/config/global-constants.constats";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
@@ -53,7 +56,7 @@ export const TITLE_STICKY_SECTION_MOCK: TitleStickySectionProps = {
 			description:
 				"<p>Но&nbsp;проблема при этом никуда не&nbsp;уходит&nbsp;&mdash; она постепенно усугубляется.</p><br /><p>Чем раньше разобраться, что происходит с&nbsp;суставом, тем проще и&nbsp;спокойнее это исправить.</p>",
 			theme: "green",
-			buttonText: "Записаться на прием",
+			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 		},
 	],
 	lastCard: {
@@ -62,7 +65,7 @@ export const TITLE_STICKY_SECTION_MOCK: TitleStickySectionProps = {
 				src: "/mock/sticky-title/title-sticky.jpg",
 			},
 		},
-		buttonText: "Записаться на прием",
+		button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 	},
 };
 
@@ -147,10 +150,7 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			title: "Консультация",
 			description:
 				"Профессиональная консультация стоматолога с&nbsp;осмотром, диагностикой и&nbsp;составлением индивидуального плана лечения.",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 1500,
 		},
 	],

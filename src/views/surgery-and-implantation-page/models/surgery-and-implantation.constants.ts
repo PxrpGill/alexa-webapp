@@ -1,5 +1,8 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+} from "@/shared/config/global-constants.constats";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
@@ -107,7 +110,7 @@ export const STILL_QUESTION_MOCK: StillQuestionProps = {
 	title: "Запишитесь на&nbsp;консультацию и&nbsp;получите:",
 	description:
 		"<ul><li>Персональный план восстановления зубов</li><li>Подбор оптимальной системы имплантов под ваш случай и&nbsp;бюджет</li><li>Снимок (при необходимости) и&nbsp;осмотр специалиста</li><li>Ответы на&nbsp;все вопросы про этапы, сроки и&nbsp;стоимость лечения</li></ul>",
-	buttonText: "Получить консультацию",
+	button: { title: "Получить консультацию", isOpenConsultationModal: true },
 	poster: {
 		webp: {
 			src: "/mock/surgery-and-implantation/still-question-deskto.webp",
@@ -340,30 +343,21 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			title: "AnyOne (Dentium)",
 			description:
 				"<ul><li>Надёжный бюджетный выбор</li><li>Южная Корея</li><li>Подходит для стандартных клинических случаев</li><li>Отличная приживаемость</li></ul>",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 1500,
 		},
 		{
 			title: "Straumann Group Medentika",
 			description:
 				"<ul><li>Оптимальный баланс цены и&nbsp;качества</li><li>Германия</li><li>Универсальное решение для большинства пациентов</li><li>Высокая точность и&nbsp;долговечность</li></ul>",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 1500,
 		},
 		{
 			title: "Straumann (SLActive)",
 			description:
 				"<ul><li>Премиальный имплант&nbsp;&mdash; максимум комфорта и&nbsp;надёжности</li><li>Швейцария</li><li>Ультрабыстрая приживаемость даже при сложных условиях</li><li>Пожизненная гарантия на&nbsp;имплантат</li><li>Подходит для сложных случаев и&nbsp;повышенных эстетических требований</li></ul>",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 1500,
 		},
 	],

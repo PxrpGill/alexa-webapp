@@ -1,5 +1,8 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+} from "@/shared/config/global-constants.constats";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
@@ -110,54 +113,8 @@ export const TITLE_STICKY_SECTION_MOCK: TitleStickySectionProps = {
 				src: "/mock/adult-orthopedics/sticky-1.webp",
 			},
 		},
-		buttonText: "Записаться на прием",
+		button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 	},
-};
-
-export const BRICKWORK_SECTION_MOCK: BrickworkSectionProps = {
-	sectionHeader: {
-		title: "Ваша улыбка в&nbsp;руках профессионалов!",
-		description: "Мы&nbsp;предлагаем:",
-	},
-	cards: [
-		{
-			icon: "/mock/adult-orthopedics/1-icon.webp",
-			title: "Вкладки:",
-			description:
-				"Прочные и&nbsp;эстетичные вкладки из&nbsp;прессованной керамики заменят пломбу и&nbsp;восстановят форму и&nbsp;функцию зуба.",
-		},
-		{
-			icon: "/mock/adult-orthopedics/2-icon.png",
-			title: "Виниры:",
-			description:
-				"Тонкие керамические накладки на&nbsp;передние зубы, которые помогут устранить недостатки эмали и&nbsp;сделать улыбку более яркой и&nbsp;привлекательной.",
-		},
-		{
-			icon: "/mock/adult-orthopedics/3-icon.png",
-			title: "Коронки, коронки на&nbsp;имплантах:",
-			description:
-				"Прочные и&nbsp;эстетичные коронки из&nbsp;различных материалов (оксид циркония и&nbsp;E-max) восстановят форму и&nbsp;функцию поврежденного зуба.",
-		},
-		{
-			icon: "/mock/adult-orthopedics/4-icon.webp",
-			title: "Съемные протезы:",
-			description:
-				"Подходят при полной или частичной адентии, как вариант, временных протезов на&nbsp;этапе ортопедического лечения.",
-		},
-		{
-			icon: "/mock/adult-orthopedics/5-icon.webp",
-			title:
-				"Цифровое протезирование с&nbsp;использованием интраорального сканера Medit i500:",
-			description:
-				"Сканирование зубов проводится быстро и&nbsp;комфортно, без использования слепочных масс. Вы&nbsp;сможете увидеть 3D&nbsp;модель ваших будущих ортопедических конструкций. Нет погрешностей при сканировании в&nbsp;отличие от&nbsp;слепков.",
-		},
-		{
-			title: "Бонусная система",
-			description: "Ваше лечение возвращается подарками!",
-			cardTheme: "green",
-			buttonText: "Записаться на прием",
-		},
-	],
 };
 
 export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
@@ -363,48 +320,33 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 	cards: [
 		{
 			title: "Коронка цельнокерамическая 3D&nbsp;Medit 500 стандарт",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 27_850,
 			priceType: "from",
 		},
 		{
 			title: "Временная коронка",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 2_650,
 			priceType: "from",
 		},
 		{
 			title: "Винир E-Max Стандарт цельнокерамический",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 33_100,
 			priceType: "from",
 		},
 		{
 			title:
 				"Цельнокерамическая коронка на&nbsp;импланте на&nbsp;титановом абатменте стандартное исполнение",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 38_850,
 			priceType: "from",
 		},
 		{
 			title:
 				"Реставрация цельнокерамическая (вкладка/накладка) 3D&nbsp;Medit 500",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 30_450,
 			priceType: "from",
 		},

@@ -1,5 +1,8 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+} from "@/shared/config/global-constants.constats";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
@@ -68,7 +71,7 @@ export const TITLE_STICKY_SECTION: TitleStickySectionProps = {
 				src: "/mock/sticky-title/title-sticky.jpg",
 			},
 		},
-		buttonText: "Записаться на прием",
+		button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 	},
 };
 
@@ -231,10 +234,7 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			title: "Консультация",
 			description:
 				"Профессиональная консультация стоматолога с&nbsp;осмотром, диагностикой и&nbsp;составлением индивидуального плана лечения.",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 1500,
 		},
 	],

@@ -1,4 +1,5 @@
 import type { InfoCardProps } from "@/widgets/yandex-map/ui/info-card";
+import type { SiteButtonProps } from "../types/button.types";
 
 export const MOBILE_PHONE = "+7 (918) 555-02-96";
 export const TELEGRAM = "https://t.me/+79185550296";
@@ -35,3 +36,8 @@ export const YANDEX_MAP_INFO_CARD: InfoCardProps = {
 };
 
 export const APPOINTMENT_ID = { source: "appointment", id: "#appointment" };
+
+export const COSTS_OF_SERVICES_BUTTON: SiteButtonProps = {
+	title: "Получить консультацию",
+	isOpenConsultationModal: true,
+};

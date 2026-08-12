@@ -1,7 +1,12 @@
-import PromotionsPage from '@/views/promotions-page';
+import { PromotionPageProvider } from "@/entities/promotion/models/promotion-page-context";
+import PromotionsPage from "@/views/promotions-page";
 
 export const revalidate = 60;
 
 export default function Promotions() {
-    return <PromotionsPage />;
+	return (
+		<PromotionPageProvider>
+			<PromotionsPage />
+		</PromotionPageProvider>
+	);
 }

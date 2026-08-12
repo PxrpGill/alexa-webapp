@@ -437,7 +437,7 @@ export const STILL_QUESTIONS: StillQuestionProps = {
 			src: "/mock/home/still-questions/still-questions.webp",
 		},
 	},
-	buttonText: "Оставить заявку",
+	button: { title: "Оставить заявку", isOpenConsultationModal: true },
 };
 
 export const PARENT_NEWS_SECTION_MOCK: ParentNewsSectionProps = {

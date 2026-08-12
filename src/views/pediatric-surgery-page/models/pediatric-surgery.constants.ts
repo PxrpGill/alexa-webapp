@@ -1,4 +1,3 @@
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
@@ -11,7 +10,7 @@ export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
 		card: {
 			title:
 				"Запишитесь на&nbsp;прием и&nbsp;подарите своему ребенку здоровую и&nbsp;счастливую улыбку!",
-			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
+			button: { title: "Записаться на прием", isOpenFeedbackModal: true },
 		},
 		poster: {
 			original: {
@@ -58,7 +57,7 @@ export const BRICKWORK_SECTION_MOCK: BrickworkSectionProps = {
 			title: "Скидка&nbsp;10%",
 			description:
 				"Программа лояльности для детей из&nbsp;многодетных семей и&nbsp;детей с&nbsp;особенностями",
-			buttonText: "Записаться на прием",
+			button: { title: "Записаться на прием", isOpenFeedbackModal: true },
 			cardTheme: "green",
 		},
 	],

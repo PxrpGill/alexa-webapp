@@ -17,7 +17,6 @@ export default function CostOfServices({
 	title,
 	cards,
 	tabs,
-	tabsContent,
 	className,
 }: CostOfServicesProps) {
 	const [visibleCount, setVisibleCount] = useState(4);
