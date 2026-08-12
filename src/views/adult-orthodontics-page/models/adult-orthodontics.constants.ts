@@ -1,5 +1,8 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+} from "@/shared/config/global-constants.constats";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
@@ -230,13 +233,13 @@ export const HEALTH_FOR_FAMILY_MOCK: HealthForFamilyProps = {
 						title: "Керамические брекеты Damon&nbsp;Q",
 						content:
 							"<ul><li>Надежное и&nbsp;эффективное решение для коррекции прикуса.​</li><li>Прочные и&nbsp;долговечные, подходят для различных клинических случаев.​</li></ul><p><b>Цена</b>: от&nbsp;150&nbsp;000 ₽</p>",
-						buttonText: "Консультация",
+						button: { title: "Консультация", isOpenConsultationModal: true },
 					},
 					{
 						title: "Металлические брекеты Damon&nbsp;Q",
 						content:
 							"<ul><li>Обеспечивают комфорт и&nbsp;незаметность при ношении.​​​</li><li>Эстетичный вариант с&nbsp;прозрачными или зубовидными брекетами.​​</li></ul><p><b>Цена</b>: от&nbsp;180&nbsp;000 ₽</p>",
-						buttonText: "Консультация",
+						button: { title: "Консультация", isOpenConsultationModal: true },
 					},
 				],
 			},
@@ -307,7 +310,7 @@ export const HEALTH_FOR_FAMILY_MOCK: HealthForFamilyProps = {
 						title: "Элайнеры EUROKAPPA",
 						content:
 							"<ul><li>Индивидуально изготовленные каппы для комфортного и&nbsp;эффективного выравнивания зубов.​</li><li>Подходят для взрослых и&nbsp;подростков.​</li></ul><p><b>Цена:</b>от&nbsp;170&nbsp;000 ₽</p>",
-						buttonText: "Консультация",
+						button: { title: "Консультация", isOpenConsultationModal: true },
 					},
 				],
 			},
@@ -365,7 +368,7 @@ export const HEALTH_FOR_FAMILY_MOCK: HealthForFamilyProps = {
 						title: "Элайнеры Spark",
 						content:
 							"<ul><li>Индивидуально изготовленные каппы для комфортного и&nbsp;эффективного выравнивания зубов.​​</li><li>Подходят для взрослых и&nbsp;подростков.​</li></ul><p><b>Цена:</b>от&nbsp;175&nbsp;000 ₽</p>",
-						buttonText: "Консультация",
+						button: { title: "Консультация", isOpenConsultationModal: true },
 					},
 				],
 			},
@@ -532,35 +535,23 @@ export const INFO_TABS: InfoTabsProps = {
 						title:
 							"Ортодонтическая коррекция с&nbsp;применением брекет-системы.&nbsp;2&nbsp;челюсти",
 						price: 126_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Ортодонтическая коррекция с применением брекет-систем",
 						price: 168_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title:
 							"Снятие ортодонтического аппарата брекет-системы (1&nbsp;зубной ряд)",
 						price: 6_300,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Несъемный  ретейнер индивидуального	исполнения",
 						price: 18_900,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 				],
 			},
@@ -627,98 +618,62 @@ export const INFO_TABS: InfoTabsProps = {
 					{
 						title: "Элайнеры EUROKAPPA light (12&nbsp;пар)",
 						price: 194_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры EUROKAPPA Complete (22&nbsp;пары)",
 						price: 275_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры EUROKAPPA Complete (22&nbsp;пары)",
 						price: 275_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры EUROKAPPA Profi",
 						price: 369_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Spark&nbsp;10",
 						price: 225_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Spark&nbsp;20",
 						price: 315_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Spark Advanced",
 						price: 315_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Angel Aligner Select&nbsp;10",
 						price: 210_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Angel Aligner Select&nbsp;20",
 						price: 285_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Angel Aligner Select&nbsp;30",
 						price: 285_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Angel Aligner Select Unlimited",
 						price: 350_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Angel Aligner Pro Unlimited",
 						price: 395_000,
-						button: {
-							title: "Получить консультацию",
-							href: "#",
-						},
+						button: COSTS_OF_SERVICES_BUTTON,
 					},
 				],
 			},

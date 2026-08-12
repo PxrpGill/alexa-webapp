@@ -1,7 +1,7 @@
 .wrapper {
     @mixin responsive border-radius, 30, 30;
-    @mixin responsive padding-block, 20, 64;
-    @mixin responsive padding-inline, 20, 100;
+    @mixin responsive padding-block, 20, 40;
+    @mixin responsive padding-inline, 20, 30;
 
     background-color: var(--color-green-1);
 

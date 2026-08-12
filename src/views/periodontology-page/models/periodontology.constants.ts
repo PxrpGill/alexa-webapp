@@ -1,5 +1,8 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+} from "@/shared/config/global-constants.constats";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
@@ -58,38 +61,7 @@ export const TITLE_STICKY_SECTION: TitleStickySectionProps = {
 				src: "/mock/sticky-title/title-sticky.jpg",
 			},
 		},
-		buttonText: "Записаться на прием",
-	},
-};
-
-export const MOCK_TABS_SECTION: MockTabsSectionProps = {
-	sectionHeader: {
-		title: "Кто находится в&nbsp;группе повышенного риска",
-		description: "Вероятность развития воспаления выше, если есть:",
-	},
-	mockTabs: {
-		tabs: [
-			"Курение",
-			"Сахарный диабет",
-			"Нарушения прикуса",
-			"Нерегулярная или недостаточная гигиена",
-			"Иммунодефицитные состояния",
-			"Наследственная предрасположенность",
-			"Ишемическая болезнь сердца",
-			"Заболевания щитовидной железы",
-		],
-	},
-	sectionContent: {
-		title:
-			"Запишитесь на&nbsp;консультацию пародонтолога, чтобы получить профессиональную оценку состояния десен и&nbsp;рекомендации по&nbsp;дальнейшим действиям.",
-		description:
-			"Если вы&nbsp;узнали хотя&nbsp;бы один из&nbsp;перечисленных признаков, стоит оценить состояние тканей, удерживающих зуб. На&nbsp;ранних этапах изменения легче остановить и&nbsp;стабилизировать.",
-		buttonText: "Записаться на прием",
-		poster: {
-			original: {
-				src: "/mock/pariodontology/mock-tabs.jpeg",
-			},
-		},
+		button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 	},
 };
 
@@ -303,102 +275,66 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 	cards: [
 		{
 			title: "Консультация стоматолога-пародонтолога",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 1_350,
 		},
 		{
 			title: "Шинирование стекловолоконной лентой в&nbsp;области 1&nbsp;зуба",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 3_800,
 		},
 		{
 			title:
 				"Тотальная неинвазивная пародонтальная терапия пародонтологическим центром &laquo;Vector Paro Pro&raquo;&nbsp;&mdash; 1&nbsp;челюсть",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 8_100,
 		},
 		{
 			title:
 				"Тотальная неинвазивная пародонтальная терапия пародонтологическим центром &laquo;Vector Paro Pro&raquo;&nbsp;&mdash; 2&nbsp;челюсти",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 15_300,
 		},
 		{
 			title:
 				"Неинвазивная пародонтальная терапия пародонтологическим центром &laquo;Vector Paro Pro&raquo;&nbsp;&mdash; 1&nbsp;сегмент",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 4_500,
 		},
 		{
 			title: "Шинирование стекловолоконной лентой в&nbsp;области 4-6 зубов",
 			price: 14_850,
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
 			title: "Наложение пленки Диплен-дента",
 			price: 1_600,
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
 			title: "Введение лекарственного препарата в&nbsp;1&nbsp;челюсть",
 			price: 350,
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
 			title: "Пародонтолигическая санация&nbsp;&mdash; первичная процедура",
 			price: 7_200,
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
 			title: "Пародонтологическая санация&nbsp;&mdash; вторичная процедура",
 			price: 5_400,
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
 			title: "Пародонтологическая санация&nbsp;&mdash; 1-3 зуба",
 			price: 5_400,
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
 			title: "Пародонтологическая диагностика Florida Probe",
 			price: 1_900,
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 		},
 	],
 };

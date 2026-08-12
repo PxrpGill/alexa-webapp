@@ -1,4 +1,3 @@
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { FaqSectionProps } from "@/widgets/faq-section/types/faq-section.types";
 import type { PromoSectionProps } from "@/widgets/promo-section/types/promo-section.types";
@@ -14,7 +13,10 @@ export const QUADRO_MOCK: QuadroSectionProps = {
 		card: {
 			title:
 				"Подарите себе и&nbsp;ребенку спокойствие&nbsp;&mdash; запишитесь на&nbsp;консультацию и&nbsp;узнайте, подходит&nbsp;ли лечение во&nbsp;сне именно вам.",
-			button: { title: "Записаться на консультацию", href: APPOINTMENT_ID.id },
+			button: {
+				title: "Записаться на консультацию",
+				isOpenConsultationModal: true,
+			},
 		},
 		poster: {
 			original: {
@@ -62,7 +64,10 @@ export const BRICKWORK_MOCK_SECTION: BrickworkSectionProps = {
 			title: "Метод, который одобряют педиатры и&nbsp;легко принимают дети",
 			description:
 				"<p>Подарите ребенку спокойное лечение без слез и&nbsp;страха.</p><br /><p>Запишитесь на&nbsp;консультацию&nbsp;&mdash; мы&nbsp;расскажем, подойдёт&nbsp;ли метод именно вам и&nbsp;ответим на&nbsp;все вопросы.</p>",
-			buttonText: "Записаться на консультацию",
+			button: {
+				title: "Записаться на консультацию",
+				isOpenConsultationModal: true,
+			},
 			cardTheme: "green",
 		},
 	],
@@ -176,7 +181,7 @@ export const STICKY_TITLE_MOCK: TitleStickySectionProps = {
 				src: "/mock/sleepbased-treatment/title-sticky.jpg",
 			},
 		},
-		buttonText: "Записаться на прием",
+		button: { title: "Записаться на прием", isOpenFeedbackModal: true },
 	},
 };
 
@@ -201,7 +206,10 @@ export const PROMO_SECTION_MOCK: PromoSectionProps = {
 				"Подойдет&nbsp;ли вашему ребёнку седация&nbsp;&mdash; определит врач",
 			content:
 				"<p>На&nbsp;очной консультации специалист оценит общее состояние, противопоказания и&nbsp;выберет безопасный способ обезболивания.</p><p>Мы&nbsp;не&nbsp;назначаем седацию без показаний&nbsp;&mdash; только после индивидуального осмотра и&nbsp;рекомендаций врача.</p>",
-			buttonText: "Записаться на консультацию",
+			button: {
+				title: "Записаться на консультацию",
+				isOpenConsultationModal: true,
+			},
 			theme: "green",
 		},
 	],
@@ -217,7 +225,7 @@ export const STILL_QUESTIONS_MOCK: StillQuestionProps = {
 			src: "/mock/sleepbased-treatment/still-questions.jpg",
 		},
 	},
-	buttonText: "Оставить заявку",
+	button: { title: "Оставить заявку", isOpenConsultationModal: true },
 };
 
 export const STILL_QUESTIONS_LAST_MOCK: StillQuestionProps = {
@@ -230,5 +238,5 @@ export const STILL_QUESTIONS_LAST_MOCK: StillQuestionProps = {
 			src: "/mock/home/still-questions/still-questions.webp",
 		},
 	},
-	buttonText: "Оставить заявку",
+	button: { title: "Оставить заявку", isOpenConsultationModal: true },
 };

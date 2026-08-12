@@ -1,4 +1,4 @@
-import type { SiteLinkProps } from "@/shared/types/button.types";
+import type { SiteButtonProps } from "@/shared/types/button.types";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 
 export type PriceType = "from" | "exact";
@@ -8,7 +8,7 @@ export type CostOfServicesCardProps = {
 	description?: string;
 	price?: number;
 	priceType?: PriceType;
-	button?: SiteLinkProps;
+	button?: SiteButtonProps;
 } & PropsWithClassName;
 
 export type TabProps = {

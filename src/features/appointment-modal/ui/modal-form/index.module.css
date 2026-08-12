@@ -1,0 +1,41 @@
+.root {
+    @mixin responsive padding-inline, 20, 40;
+    @mixin responsive padding-block-end, 20, 40;
+    @mixin responsive gap, 12, 24;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs {
+    @mixin responsive gap, 18, 24;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    @mixin responsive padding-block, 18, 18;
+}
+
+.input.input[class] input {
+    @mixin responsive padding-block, 18, 18;
+    @mixin responsive padding-inline, 18, 18;
+}
+
+.documents {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.label a {
+    @mixin transition color;
+
+    @media (hover: hover) {
+        &:hover {
+            color: var(--color-green-1);
+        }
+    }
+}

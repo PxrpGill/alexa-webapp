@@ -1,5 +1,8 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+} from "@/shared/config/global-constants.constats";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
@@ -49,7 +52,7 @@ export const TITLE_STICKY_SECTION_MOCK: TitleStickySectionProps = {
 				src: "/mock/sticky-title/title-sticky.jpg",
 			},
 		},
-		buttonText: "Записаться на прием",
+		button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 	},
 };
 
@@ -266,30 +269,21 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			title: "Лечение кариеса 1&nbsp;поверхность",
 			description:
 				"Анестезия коффердам, светоотверждаемый пломбировочный материал, шлифовка и&nbsp;полировка пломбы.",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 8_300,
 		},
 		{
 			title: "Лечение кариеса 2&nbsp;поверхности и&nbsp;более",
 			description:
 				"Анестезия, коффердам, светоотверждаемый пломбировочный материал, шлифовка и&nbsp;полировка пломбы.",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 10_500,
 		},
 		{
 			title: "Художественная реставрация зуба",
 			description:
 				"Анестезия,коффердам, светоотверждаемый пломбировочный материал, шлифовка и&nbsp;полировка пломбы.",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 16_400,
 		},
 		{
@@ -298,20 +292,14 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			description:
 				"Анестезия, коффердам, механическая и&nbsp;медикаментозная обработка и&nbsp;пломбировка корневых каналов, пломба.",
 			price: 9_700,
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
 			title: "Эндодонтическое лечение корневых каналов (3&nbsp;канала)",
 			description:
 				"Анестезия, коффердам, механическая и&nbsp;медикаментозная обработка и&nbsp;пломбировка корневых каналов, пломба.",
 			price: 14_800,
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 		},
 	],
 };

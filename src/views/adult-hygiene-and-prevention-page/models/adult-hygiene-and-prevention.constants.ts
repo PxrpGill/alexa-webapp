@@ -1,5 +1,8 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+} from "@/shared/config/global-constants.constats";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
@@ -89,7 +92,7 @@ export const TITLE_STICKY_SECTION: TitleStickySectionProps = {
 				src: "/mock/sticky-title/title-sticky.jpg",
 			},
 		},
-		buttonText: "Записаться на прием",
+		button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 	},
 };
 
@@ -270,76 +273,57 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			title: "Профессиональная гигиена полости рта",
 			description:
 				"Профессиональная гигиена полости рта и&nbsp;зубов 1&nbsp;степени сложности медобработка, очищение зубов пастой, ультразвук, Airflow, финишная полировка, реминерализующая терапия, анестезия по&nbsp;необходимости, пакет стерильный, урок гигиены).",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 7_000,
 		},
 		{
 			title: "Профессиональная гигиена полости рта",
 			description:
 				"Профессиональная гигиена полости рта и&nbsp;зубов 2&nbsp;степени сложности медобработка, очищение зубов пастой, ультразвук, Airflow, финишная полировка, реминерализующая терапия, анестезия по&nbsp;необходимости, пакет стерильный, урок гигиены).",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 4_800,
 		},
 		{
 			title: "Профессиональная гигиена полости рта и&nbsp;зубов ORTHO",
 			description:
 				"Профессиональная гигиена полости рта и&nbsp;зубов ORTHO (медобработка, очищение зубов пастой, ультразвук, Airflow, финишная полировка, реминерализующая терапия, анестезия по&nbsp;необходимости, пакет стерильный, урок гигиены).",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 4_300,
 		},
 		{
 			title:
 				"Реминерализирующая терапия зубов для пациентов старше 10&nbsp;лет",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 2_850,
 		},
 		{
 			title:
 				"Реминерализирующая терапия зубов для пациентов старше 10&nbsp;лет (в&nbsp;рамках курса)",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 2_550,
 		},
 		{
 			title: "Бесплатная консультация стоматолога-гигиениста",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 0,
 		},
 		{
 			title:
 				"Профессиональное отбеливание зубов (профессиональная система ZOOM)",
-			button: {
-				title: "Получить консультацию",
-				href: "",
-			},
+			button: COSTS_OF_SERVICES_BUTTON,
 			price: 30_250,
 		},
 		{
 			title:
 				"Профессиональное отбеливание зубов (профессиональная система Opalescence Boost&nbsp;PF)",
 			price: 16_200,
+			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
 			title:
 				"Профессиональное отбеливание зубов (домашняя система Opalescence)",
 			price: 13_000,
+			button: COSTS_OF_SERVICES_BUTTON,
 		},
 	],
 };
