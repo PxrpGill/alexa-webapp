@@ -11,6 +11,10 @@ import {
 	useState,
 } from "react";
 
+import {
+	type BranchType,
+	useSetBranchInCookies,
+} from "../hooks/set-branch-in-cookies";
 import { useMediaQuery } from "../hooks/use-media-query";
 
 import { MEDIA_QUERIES } from "./use-media-query.constants";
@@ -24,6 +28,8 @@ type LayoutContextType = {
 
 	isAppointmentModalOpen: boolean;
 	toggleAppointmentModal: Dispatch<SetStateAction<boolean>>;
+
+	currentBranch?: BranchType;
 };
 
 export const LayoutContext = createContext<LayoutContextType | undefined>(
@@ -37,6 +43,7 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 	const [isAppointmentModalOpen, toggleAppointmentModal] =
 		useState<boolean>(false);
 	const isMobile = useMediaQuery(MEDIA_QUERIES.mobile);
+	const currentBranch = useSetBranchInCookies();
 
 	const toggleMenuClose = useCallback(() => {
 		if (!isMobile) toggleMenuOpen(false);
@@ -63,6 +70,7 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 				toggleConsultationModal,
 				isAppointmentModalOpen,
 				toggleAppointmentModal,
+				currentBranch,
 			}}
 		>
 			{children}

@@ -1,4 +1,4 @@
-const LANDYSHEVAYA_NAVIGATION = {
+export const LANDYSHEVAYA_NAVIGATION = {
 	landyshevayaBase: "/",
 	landyshevayaServices: {
 		"konsultaciya-stomatologa": "/landyshevaya/konsultaciya-stomatologa",
@@ -20,11 +20,11 @@ const LANDYSHEVAYA_NAVIGATION = {
 	},
 };
 
-const VOLKOVA_NAVIGATION = {
+export const VOLKOVA_NAVIGATION = {
 	volkovaBase: "/volkova",
 };
 
-export const SITE_NAVIGATION = {
+export const INFORMATION_NAVIGATION = {
 	price: "/price",
 	"nadzornye-organy": "/nadzornye-organy",
 	"o-klinike": "/o-klinike",
@@ -44,6 +44,10 @@ export const SITE_NAVIGATION = {
 	pravilaokazaniyamedicinskihuslug: "/pravilaokazaniyamedicinskihuslug",
 	pravilavneseniyaoplatyzamedicinskieuslugi:
 		"/pravilavneseniyaoplatyzamedicinskieuslugi",
+};
+
+export const SITE_NAVIGATION = {
 	...LANDYSHEVAYA_NAVIGATION,
 	...VOLKOVA_NAVIGATION,
+	...INFORMATION_NAVIGATION,
 } as const;

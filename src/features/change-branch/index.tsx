@@ -2,8 +2,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import ArrowSVG from "@/public/icons/arrow-without-stick.svg";
+import { useLayoutContext } from "@/shared/config/layout-context";
+import { BRANCH_COOKIES_VALUES } from "@/shared/hooks/set-branch-in-cookies";
 import { useOnClickOutside } from "@/shared/hooks/use-on-click-outside";
 import css from "./index.module.css";
 import type { ChangeBranchProps } from "./types/change-branch.types";
@@ -16,21 +18,30 @@ type BranchType = {
 
 const BRANCHES: BranchType[] = [
 	{
-		name: "landyshevaya",
+		name: BRANCH_COOKIES_VALUES.landyshevaya,
 		title: "Ландышевая&nbsp;104",
 		destination: "/",
 	},
 	{
-		name: "volkova",
+		name: BRANCH_COOKIES_VALUES.volkova,
 		title: "Волкова&nbsp;22",
 		destination: "/volkova",
 	},
 ];
 
 export default function ChangeBranch({ className }: ChangeBranchProps) {
+	const { currentBranch } = useLayoutContext();
 	const rootRef = useRef<HTMLDivElement | null>(null);
 	const router = useRouter();
-	const [selectedBranch, selectBranch] = useState<BranchType>(BRANCHES[0]);
+
+	const findedBranch = useMemo(
+		() => BRANCHES.find((branch) => branch.name === currentBranch),
+		[currentBranch],
+	);
+
+	const [selectedBranch, selectBranch] = useState<BranchType>(
+		findedBranch ?? BRANCHES[0],
+	);
 	const [isListOpen, toggleListOpen] = useState<boolean>(false);
 
 	useOnClickOutside(rootRef, () => toggleListOpen(false));

@@ -15,13 +15,16 @@ import { useLayoutContext } from "@/shared/config/layout-context";
 import css from "./index.module.css";
 
 export default function ContactPart() {
-	const { toggleMenuOpen } = useLayoutContext();
+	const { toggleMenuOpen, currentBranch } = useLayoutContext();
 
 	return (
 		<div className={`${css.root}`.trim()}>
 			<ChangeBranch className={css.changeBranch} />
-			<a href={`tel:${MOBILE_PHONE}`} className={css.phone}>
-				{MOBILE_PHONE}
+			<a
+				href={`tel:${MOBILE_PHONE[currentBranch ?? "landyshevaya"]}`}
+				className={css.phone}
+			>
+				{MOBILE_PHONE[currentBranch ?? "landyshevaya"]}
 			</a>
 			<a
 				className={css.telegram}
@@ -34,7 +37,7 @@ export default function ContactPart() {
 				<MaxSVG className={css.circleIcon} />
 			</a>
 			<a
-				href={`tel:${MOBILE_PHONE_1}`}
+				href={`tel:${MOBILE_PHONE[currentBranch ?? "landyshevaya"]}`}
 				className={css.anotherPhone}
 				aria-label="Позвонить по номеру телефона"
 			>

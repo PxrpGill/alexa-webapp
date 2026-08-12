@@ -3,6 +3,10 @@
 
     display: flex;
     flex-direction: column;
+
+    &.singleTab .tabContent {
+        @mixin responsive padding-block-start, 0, 112;
+    }
 }
 
 .tabsWrapper {

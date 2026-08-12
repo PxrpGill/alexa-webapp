@@ -1,20 +1,31 @@
-import Link from 'next/link';
+"use client";
 
-import LogoSvg from '@/public/icons/logo.svg';
-import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
+import Link from "next/link";
 
-import ContactPart from './contact-part';
-import css from './index.module.css';
+import LogoSvg from "@/public/icons/logo.svg";
+import { useLayoutContext } from "@/shared/config/layout-context";
+import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import ContactPart from "./contact-part";
+import css from "./index.module.css";
 
 export default function Header() {
-    return (
-        <header className={`${css.root} container`}>
-            <div className={css.wrapper}>
-                <Link className={css.link} href={SITE_NAVIGATION.landyshevayaBase}>
-                    <LogoSvg className={css.logo} />
-                </Link>
-                <ContactPart />
-            </div>
-        </header>
-    );
+	const { currentBranch } = useLayoutContext();
+
+	return (
+		<header className={`${css.root} container`}>
+			<div className={css.wrapper}>
+				<Link
+					className={css.link}
+					href={
+						currentBranch === "volkova"
+							? SITE_NAVIGATION.volkovaBase
+							: SITE_NAVIGATION.landyshevayaBase
+					}
+				>
+					<LogoSvg className={css.logo} />
+				</Link>
+				<ContactPart />
+			</div>
+		</header>
+	);
 }
