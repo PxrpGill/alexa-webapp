@@ -13,9 +13,12 @@ import Button from "@/shared/ui/button";
 import Checkbox from "@/shared/ui/checkbox";
 import Input from "@/shared/ui/input";
 import { usePostAppointmentScheduling } from "../../hooks/use-post-appointment-scheduling";
+import type { AppointmentFormProps } from "../../types/appointment-scheduling.types";
 import css from "./index.module.css";
 
-export default function AppointmentForm() {
+export default function AppointmentForm({
+	toggleSucces,
+}: AppointmentFormProps) {
 	const pathname = usePathname();
 	const { currentBranch } = useLayoutContext();
 
@@ -27,7 +30,7 @@ export default function AppointmentForm() {
 		mode: "onChange",
 		defaultValues: { page_url: pathname, branch_slug: currentBranch },
 	});
-	const { mutate, isPending } = usePostAppointmentScheduling();
+	const { mutate, isPending } = usePostAppointmentScheduling({ toggleSucces });
 
 	return (
 		<form
