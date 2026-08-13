@@ -80,9 +80,9 @@
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
-        box-shadow: 0 0 0 1000px var(--color-bg-tertiary) inset;
-        -webkit-text-fill-color: var(--color-text-primary);
-        caret-color: var(--color-accent);
+        box-shadow: 0 0 0 1000px #fff inset;
+        -webkit-text-fill-color: var(--color-black-1);
+        caret-color: var(--color-black-1);
     }
 
     &:focus {
@@ -196,5 +196,5 @@
 }
 
 .errorMessage {
-    color: var(--color-error);
+    color: rgb(218, 28, 28);
 }

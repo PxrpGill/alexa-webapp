@@ -7,6 +7,7 @@ import type { ReactNode } from "react";
 import Favicon from "@/shared/config/favicon";
 import { GENERAL_META } from "@/shared/config/general-meta.constants";
 import InvolveFont from "@/shared/config/local-font";
+import { ReactQueryCustomProvider } from "@/shared/config/react-query-custom-provider";
 import Layout from "@/widgets/layout";
 
 export const metadata: Metadata = {
@@ -23,7 +24,9 @@ export default async function RootLayout({
 		<html lang="en" className={InvolveFont.className}>
 			<Favicon />
 			<body>
-				<Layout>{children}</Layout>
+				<ReactQueryCustomProvider>
+					<Layout>{children}</Layout>
+				</ReactQueryCustomProvider>
 			</body>
 		</html>
 	);
