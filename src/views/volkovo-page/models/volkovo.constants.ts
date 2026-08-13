@@ -1,6 +1,11 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constants";
+import {
+	APPOINTMENT_ID,
+	GLOBAL_EMPLOYEES,
+} from "@/shared/config/global-constants.constants";
+import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { AnnualCareProgramsProps } from "@/widgets/annual-care-programs/types/annual-care-programs.types";
+import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { PreventionSectionProps } from "@/widgets/prevention-section/types/prevention-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { SolutionsSectionProps } from "@/widgets/solutions-section/types/solutions-section.types";
@@ -179,4 +184,13 @@ export const SOLUTIONS_SECTION_MOCK: SolutionsSectionProps = {
 			},
 		},
 	],
+};
+
+export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
+	title: "Врачи, оказывающие услугу",
+	button: {
+		title: "Смотреть всех специалистов",
+		href: SITE_NAVIGATION.vrachi,
+	},
+	employees: [GLOBAL_EMPLOYEES.kornilov, GLOBAL_EMPLOYEES.zolotovskaya],
 };

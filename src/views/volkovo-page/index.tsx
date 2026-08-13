@@ -8,11 +8,10 @@ import SolutionsSection from "@/widgets/solutions-section";
 import StomatologyProgram from "@/widgets/stomatology-program";
 import YandexMap from "@/widgets/yandex-map";
 
-import { EMPLOYEES_SECTION } from "../dentist-consultation-page/models/dentist-consultation.constants";
-
 import css from "./index.module.css";
 import {
 	ANNUAL_CARE_SECTION_MOCK,
+	EMPLOYEES_SECTION,
 	FORM_DATA,
 	GREEN_CTA,
 	PREVENTION_SECTION,
