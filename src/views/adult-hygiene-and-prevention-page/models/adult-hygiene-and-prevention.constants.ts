@@ -2,7 +2,8 @@ import type { AppointmentSchedulingProps } from "@/features/appointment-scheduli
 import {
 	APPOINTMENT_ID,
 	COSTS_OF_SERVICES_BUTTON,
-} from "@/shared/config/global-constants.constats";
+	GLOBAL_EMPLOYEES,
+} from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
@@ -334,26 +335,7 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		title: "Смотреть всех специалистов",
 		href: SITE_NAVIGATION.vrachi,
 	},
-	employees: [
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-7.webp",
-				},
-			},
-			fullname: "Магомедгаджиева Ашрафиль Руслановна",
-			position: "Врач-стоматолог-гигиенист",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-13.webp",
-				},
-			},
-			fullname: "Корнилов Герман Валерьевич",
-			position: "Врач-стоматолог-пародонтолог",
-		},
-	],
+	employees: [GLOBAL_EMPLOYEES.magomadgadgyeva, GLOBAL_EMPLOYEES.kornilov],
 };
 
 export const WHY_CHOOSE_US: WhyChooseUsProps = {

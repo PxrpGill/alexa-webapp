@@ -2,7 +2,7 @@ import type { AppointmentSchedulingProps } from "@/features/appointment-scheduli
 import {
 	APPOINTMENT_ID,
 	COSTS_OF_SERVICES_BUTTON,
-} from "@/shared/config/global-constants.constats";
+} from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";

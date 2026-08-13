@@ -1,5 +1,5 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
+import { APPOINTMENT_ID } from "@/shared/config/global-constants.constants";
 import type { AnnualCareProgramsProps } from "@/widgets/annual-care-programs/types/annual-care-programs.types";
 import type { PreventionSectionProps } from "@/widgets/prevention-section/types/prevention-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";

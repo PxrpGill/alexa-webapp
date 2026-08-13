@@ -2,7 +2,7 @@ import type { AppointmentSchedulingProps } from "@/features/appointment-scheduli
 import {
 	APPOINTMENT_ID,
 	COSTS_OF_SERVICES_BUTTON,
-} from "@/shared/config/global-constants.constats";
+} from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";

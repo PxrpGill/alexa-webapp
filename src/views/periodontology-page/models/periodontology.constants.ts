@@ -2,7 +2,8 @@ import type { AppointmentSchedulingProps } from "@/features/appointment-scheduli
 import {
 	APPOINTMENT_ID,
 	COSTS_OF_SERVICES_BUTTON,
-} from "@/shared/config/global-constants.constats";
+	GLOBAL_EMPLOYEES,
+} from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
@@ -248,24 +249,8 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		href: SITE_NAVIGATION.vrachi,
 	},
 	employees: [
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-13.webp",
-				},
-			},
-			fullname: "Корнилов Герман Валерьевич",
-			position: "Врач-стоматолог-пародонтолог",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-8.webp",
-				},
-			},
-			fullname: "Шахназарян Эрик Каренович",
-			position: "Врач-стоматолог-хирург",
-		},
+		GLOBAL_EMPLOYEES.kornilov,
+		GLOBAL_EMPLOYEES.shahnazaryan,
 	],
 };
 

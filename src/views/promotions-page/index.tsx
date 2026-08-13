@@ -1,5 +1,5 @@
 import PromotionModal from "@/features/promotion-modal";
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constats";
+import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import PromotionsSection from "@/widgets/promotions-section";
 import YandexMap from "@/widgets/yandex-map";
