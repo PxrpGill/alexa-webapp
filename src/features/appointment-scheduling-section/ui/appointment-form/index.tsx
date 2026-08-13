@@ -27,7 +27,7 @@ export default function AppointmentForm() {
 		mode: "onChange",
 		defaultValues: { page_url: pathname, branch_slug: currentBranch },
 	});
-	const { mutate } = usePostAppointmentScheduling();
+	const { mutate, isPending } = usePostAppointmentScheduling();
 
 	return (
 		<form
@@ -74,6 +74,7 @@ export default function AppointmentForm() {
 				className={css.button}
 				type="submit"
 				disabled={!isValid}
+				isLoading={isPending}
 				rightIcon={<ButtonIconSVG className={css.icon} />}
 			>
 				Записаться на прием

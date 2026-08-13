@@ -11,11 +11,26 @@
     justify-content: center;
     align-items: center;
     border-style: solid;
+    position: relative;
+
+    &.loading {
+        .text {
+            opacity: 0;
+        }
+
+        .loader {
+            display: block;
+        }
+    }
 
     &.green {
         background-color: var(--color-green-1);
         color: var(--color-white-0);
         border-color: var(--color-green-1);
+
+        .loader path {
+            fill: var(--color-white-0)
+        }
 
         @media (hover: hover) {
             &:not(:disabled):hover {
@@ -30,6 +45,10 @@
                 svg path {
                     fill: var(--color-white-0);
                 }
+
+                .loader path {
+                    fill: var(--color-green-1);
+                }
             }
         }
     }
@@ -43,6 +62,10 @@
         background-color: var(--color-white-0);
         color: var(--color-green-4);
         border-color: var(--color-white-0);
+
+        .loader path {
+            fill: var(--color-green-1)
+        }
 
         @media (hover: hover) {
             &:not(:disabled):hover {
@@ -69,5 +92,19 @@
         rect {
             @mixin transition fill;
         }
+    }
+}
+
+.loader {
+    @mixin responsive width, 30, 30;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+    translate: -50% -50%;
+
+    path {
+        @mixin transition fill;
     }
 }

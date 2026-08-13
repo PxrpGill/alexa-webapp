@@ -18,6 +18,7 @@ export type CustomButtonProps = {
 	onClick?: (event: MouseEvent<HTMLElement>) => void;
 	type?: "button" | "submit" | "reset";
 	disabled?: boolean;
+	isLoading?: boolean;
 } & PropsWithChildren &
 	PropsWithClassName;
 

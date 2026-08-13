@@ -15,6 +15,10 @@
 
 .button[class] {
     width: fit-content;
+
+    @media (max-width: $mobile) {
+        margin-inline: auto;
+    }
 }
 
 .icon {
