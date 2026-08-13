@@ -4,4 +4,5 @@ export const API_URLS = {
 	postConsultation: API_V1_PREFIX + "/consultation",
 	postDMS: API_V1_PREFIX + "/dms",
 	postAppointments: API_V1_PREFIX + "/appointments",
+	getAllBranches: API_V1_PREFIX + "/branches",
 };
