@@ -2,7 +2,8 @@ import type { AppointmentSchedulingProps } from "@/features/appointment-scheduli
 import {
 	APPOINTMENT_ID,
 	COSTS_OF_SERVICES_BUTTON,
-} from "@/shared/config/global-constants.constats";
+	GLOBAL_EMPLOYEES,
+} from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
@@ -120,34 +121,9 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		href: SITE_NAVIGATION.vrachi,
 	},
 	employees: [
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-1.webp",
-				},
-			},
-			fullname: "Давыдова Александра Викторовна",
-			position: "Главный врач, врач-стоматолог-терапевт, эндодонтист",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-5.webp",
-				},
-			},
-			fullname: "Корамагомедов Рамазан Корамагомедович",
-			position:
-				"Врач-стоматолог-терапевт, эндодонтист, стоматолог&#8209;ортопед",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-12.webp",
-				},
-			},
-			fullname: "Маркарян Кнарик Робертовна",
-			position: "Врач-стоматолог-терапевт",
-		},
+		GLOBAL_EMPLOYEES.davidova,
+		GLOBAL_EMPLOYEES.koramagomedov,
+		GLOBAL_EMPLOYEES.markaryan,
 	],
 };
 

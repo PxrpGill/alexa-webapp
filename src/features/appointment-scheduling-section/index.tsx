@@ -1,4 +1,4 @@
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
+import { APPOINTMENT_ID } from "@/shared/config/global-constants.constants";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import Picture from "@/shared/ui/picture";
 import css from "./index.module.css";

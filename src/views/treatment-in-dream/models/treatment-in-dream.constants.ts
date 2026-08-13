@@ -1,5 +1,5 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constats";
+import { APPOINTMENT_ID } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { InfoTabsProps } from "@/views/adult-orthodontics-page/types/info-tabs.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";

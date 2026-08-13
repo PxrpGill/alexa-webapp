@@ -10,7 +10,7 @@ import {
 	MOBILE_PHONE,
 	MOBILE_PHONE_1,
 	TELEGRAM,
-} from "@/shared/config/global-constants.constats";
+} from "@/shared/config/global-constants.constants";
 import { useLayoutContext } from "@/shared/config/layout-context";
 import css from "./index.module.css";
 

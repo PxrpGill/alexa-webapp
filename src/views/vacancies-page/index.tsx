@@ -1,25 +1,22 @@
-import { YANDEX_MAP_INFO_CARD } from '@/shared/config/global-constants.constats';
-import { AnimationWrapper } from '@/shared/ui/animation-wrapper';
-import YandexMap from '@/widgets/yandex-map';
+import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
+import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
+import YandexMap from "@/widgets/yandex-map";
 
-import css from './index.module.css';
-import { NOT_AVAILABLE_VACANCIES } from './models/vacancies.constants';
-import NotAvailableVacancies from './ui/not-available-vacancies';
+import css from "./index.module.css";
+import { NOT_AVAILABLE_VACANCIES } from "./models/vacancies.constants";
+import NotAvailableVacancies from "./ui/not-available-vacancies";
 
 export default function VacanciesPage() {
-    return (
-        <main className={css.root}>
-            <AnimationWrapper className={`${css.titleBlock} container`}>
-                <h1 className={css.title}>Вакансии</h1>
-            </AnimationWrapper>
-            <NotAvailableVacancies
-                {...NOT_AVAILABLE_VACANCIES}
-                className={css.notAvailable}
-            />
-            <YandexMap
-                infoCard={YANDEX_MAP_INFO_CARD}
-                className={css.yandexMap}
-            />
-        </main>
-    );
+	return (
+		<main className={css.root}>
+			<AnimationWrapper className={`${css.titleBlock} container`}>
+				<h1 className={css.title}>Вакансии</h1>
+			</AnimationWrapper>
+			<NotAvailableVacancies
+				{...NOT_AVAILABLE_VACANCIES}
+				className={css.notAvailable}
+			/>
+			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
+		</main>
+	);
 }
