@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useForm } from "react-hook-form";
 import ButtonIconSVG from "@/public/icons/button-teeth.svg";
 import { useLayoutContext } from "@/shared/config/layout-context";
+import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import {
 	FULL_NAME_VALIDATION,
 	PHONE_VALIDATION,
@@ -56,8 +58,10 @@ export default function AppointmentForm({
 				<Checkbox
 					label={
 						<p>
-							Согласие на&nbsp;получение рассылки
-							<br /> рекламно-информационных материалов
+							<Link href={SITE_NAVIGATION.letter} target="_blank">
+								Согласие на&nbsp;получение рассылки
+								<br /> рекламно-информационных материалов
+							</Link>
 						</p>
 					}
 					{...register("is_ad_agreement")}
@@ -65,9 +69,15 @@ export default function AppointmentForm({
 				<Checkbox
 					label={
 						<p>
-							Я&nbsp;согласен с&nbsp;политикой конфиденциальности
+							Я&nbsp;согласен с&nbsp;
+							<Link href={SITE_NAVIGATION.privacyPolicy} target="_blank">
+								политикой конфиденциальности
+							</Link>
 							<br />
-							и&nbsp;обработкой персональных данных
+							и&nbsp;
+							<Link href={SITE_NAVIGATION.userAgreement} target="_blank">
+								обработкой персональных данных
+							</Link>
 						</p>
 					}
 					{...register("is_privacy_agreement", { required: true })}
