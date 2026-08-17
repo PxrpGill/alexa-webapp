@@ -8,7 +8,6 @@ import TelegramSVG from "@/public/icons/telegram.svg";
 import {
 	MAX,
 	MOBILE_PHONE,
-	MOBILE_PHONE_1,
 	TELEGRAM,
 } from "@/shared/config/global-constants.constants";
 import { useLayoutContext } from "@/shared/config/layout-context";

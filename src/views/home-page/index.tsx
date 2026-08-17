@@ -9,7 +9,6 @@ import ParentNewsSection from "@/widgets/parent-news-section";
 import StillQuestions from "@/widgets/still-questions";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import YandexMap from "@/widgets/yandex-map";
-
 import css from "./index.module.css";
 import {
 	CTA_MOCK,

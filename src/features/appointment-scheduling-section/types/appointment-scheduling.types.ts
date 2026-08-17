@@ -1,12 +1,21 @@
-import type { PropsWithClassName } from '@/shared/types/props-with-classname';
-import type { PictureFormatType } from '@/shared/ui/picture';
+import type { PropsWithClassName } from "@/shared/types/props-with-classname";
+import type { PictureFormatType } from "@/shared/ui/picture";
 
 export type SectionHeaderProps = {
-    title?: string;
-    description?: string;
+	title?: string;
+	description?: string;
 } & PropsWithClassName;
 
 export type AppointmentSchedulingProps = {
-    poster?: PictureFormatType;
+	poster?: PictureFormatType;
 } & PropsWithClassName &
-    SectionHeaderProps;
+	SectionHeaderProps;
+
+export type AppointmentFormProps = {
+	toggleSucces: () => void;
+}
+
+export type SuccessFormProps = {
+	isOpen?: boolean;
+	toggleClose: () => void;
+} & PropsWithClassName;

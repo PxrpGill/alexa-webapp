@@ -1,10 +1,16 @@
 .root {
     @mixin responsive border-radius, 30, 30;
-    @mixin responsive height, 505, 735;
-    @mixin responsive width, 337, 460;
+    @mixin responsive height, 405, 635;
+    @mixin responsive width, 317, 460;
 
     overflow: hidden;
     position: relative;
+
+    @media (hover:hover) {
+        &:hover .arrow path{
+            fill: var(--color-green-1);
+        }
+    }
 }
 
 .content {
@@ -38,6 +44,10 @@
     bottom: 0;
     right: 0;
     position: absolute;
+
+    path {
+        @mixin transition fill;
+    }
 
     @media (max-width: $mobile) {
         display: none;
