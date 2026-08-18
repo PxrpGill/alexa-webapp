@@ -6,6 +6,7 @@ import NewsCard from "@/entities/news/ui/news-card";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import Button from "@/shared/ui/button";
 
+import { useGetAllNews } from "./hooks/use-get-all-news";
 import css from "./index.module.css";
 import type { ParentNewsSectionProps } from "./types/parent-news-section.types";
 
@@ -14,7 +15,10 @@ export default function ParentNewsSection({
 	className,
 	news,
 }: ParentNewsSectionProps) {
-	if (!(news?.items && news.pagination)) return;
+	const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+		useGetAllNews({ initialData: news });
+
+	const newsItems = data?.pages.flatMap((page) => page?.items ?? []) ?? [];
 
 	return (
 		<AnimationWrapper
@@ -25,14 +29,20 @@ export default function ParentNewsSection({
 				<h2 className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
 			)}
 			<ul className={css.list}>
-				{news?.items?.map((newsCard, index) => (
+				{newsItems.map((newsCard, index) => (
 					<AnimationWrapper as="li" key={index}>
 						<NewsCard {...newsCard} className={css.card} />
 					</AnimationWrapper>
 				))}
 			</ul>
-			{news?.pagination.page < news?.pagination.totalPages && (
-				<Button className={css.button}>Загрузить еще</Button>
+			{hasNextPage && (
+				<Button
+					className={css.button}
+					onClick={() => fetchNextPage()}
+					isLoading={isFetchingNextPage}
+				>
+					Загрузить еще
+				</Button>
 			)}
 		</AnimationWrapper>
 	);

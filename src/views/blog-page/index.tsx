@@ -4,18 +4,15 @@ import ParentNewsSection from "@/widgets/parent-news-section";
 import YandexMap from "@/widgets/yandex-map";
 
 import css from "./index.module.css";
-import { PARENT_NEWS_SECTION_MOCK } from "./models/blog.constants";
+import type { BlogPageProps } from "./types/blog-page.types";
 
-export default function BlogPage() {
+export default function BlogPage({ initialNewsData }: BlogPageProps) {
 	return (
 		<main className={css.root}>
 			<AnimationWrapper className={`${css.titleBlock} container`}>
 				<h1 className={css.title}>Блог</h1>
 			</AnimationWrapper>
-			<ParentNewsSection
-				{...PARENT_NEWS_SECTION_MOCK}
-				className={css.parentNews}
-			/>
+			<ParentNewsSection className={css.parentNews} news={initialNewsData} />
 			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
