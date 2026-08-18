@@ -40,7 +40,7 @@ export const STEPPER_SECTION_MOCK: StepperSectionProps = {
 			title: "Узнайте, какие услуги входят именно в&nbsp;ваш полис!",
 			content:
 				"<p>Просто оставьте заявку или позвоните нам&nbsp;&mdash; мы&nbsp;всё уточним напрямую со&nbsp;страховой.</p>",
-			button: { title: "Оставить заявку", isOpenFeedbackModal: true },
+			button: { title: "Оставить заявку", isOpenDMSModal: true },
 		},
 	],
 };
