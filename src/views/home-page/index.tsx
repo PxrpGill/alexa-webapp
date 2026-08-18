@@ -23,8 +23,9 @@ import {
 	STILL_QUESTIONS,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 } from "./models/home-page.constants";
+import type { HomePageProps } from "./types/home-page.types";
 
-export default function HomePage() {
+export default function HomePage({ initialNewsData }: HomePageProps) {
 	return (
 		<main className={css.root}>
 			<HeroSliderSection className={css.hero} {...HERO_SLIDES} />
@@ -51,7 +52,7 @@ export default function HomePage() {
 			<FaqSection {...MOCK_FAQ_SECTION} className={css.faqs} />
 			<StillQuestions {...STILL_QUESTIONS} className={css.questions} />
 			<ParentNewsSection
-				{...PARENT_NEWS_SECTION_MOCK}
+				{...{ ...PARENT_NEWS_SECTION_MOCK, news: initialNewsData }}
 				className={css.parentNews}
 			/>
 			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />

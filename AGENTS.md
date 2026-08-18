@@ -100,7 +100,8 @@ Mixins dir: `shared/styles/mixins/`. Import path: `shared/styles/`.
 | Variable | Default | Defined in |
 |----------|---------|------------|
 | `NEXT_PUBLIC_YANDEX_MAPS_API_KEY` | — | `.env.example` |
-| `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | `shared/config/api-instance.ts` (NOT in `.env.example`) |
+| `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | `.env.example` (client-side) |
+| `API_URL` | `http://localhost:8000` | `.env.example` (server-side, e.g. `http://host.docker.internal:8000` in Docker dev) |
 
 `.env.local` is gitignored.
 
