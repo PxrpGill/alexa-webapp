@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useLayoutContext } from "@/shared/config/layout-context";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
@@ -23,11 +24,16 @@ export default function ModalForm({ toggleSuccess }: ConsultationFormProps) {
 		register,
 		formState: { isValid, errors },
 		handleSubmit,
+		setValue,
 	} = useForm<PostRequestType>({
 		mode: "onChange",
 		defaultValues: { page_url: pathname, branch_slug: currentBranch },
 	});
 	const { mutate, isPending } = usePostConsultaiton({ toggleSuccess });
+
+	useEffect(() => {
+		setValue("branch_slug", currentBranch ?? "");
+	}, [currentBranch, setValue]);
 
 	return (
 		<form className={css.root} onSubmit={handleSubmit((data) => mutate(data))}>

@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { postAppointmentForm } from "@/shared/api/post-apponitment-form";
+import { postConsultationForm } from "@/shared/api/post-consultation-form";
 import type { PostRequestType } from "@/shared/types/post-requests.types";
 import type { ConsultationFormProps } from "../types/consultation-modal.props";
 
@@ -7,7 +7,7 @@ export const usePostConsultaiton = ({
 	toggleSuccess,
 }: ConsultationFormProps) => {
 	const mutation = useMutation({
-		mutationFn: (data: PostRequestType) => postAppointmentForm(data),
+		mutationFn: (data: PostRequestType) => postConsultationForm(data),
 		onSuccess: () => {
 			toggleSuccess();
 		},

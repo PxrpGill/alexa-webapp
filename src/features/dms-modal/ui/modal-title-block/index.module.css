@@ -1,0 +1,25 @@
+.root {
+    @mixin responsive padding-inline, 20, 45;
+    @mixin responsive padding-block-start, 40, 40;
+    @mixin responsive padding-block-end, 20, 24;
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title,
+.description {
+    text-align: center;
+}
+
+.title {
+    @mixin h4;
+
+    font-weight: 600;
+}
+
+.description {
+    @mixin b2;
+}

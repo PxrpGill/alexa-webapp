@@ -40,4 +40,5 @@ export type ButtonComponentProps = {
 export type SiteButtonProps = Partial<SiteLinkProps> & {
 	isOpenFeedbackModal?: boolean;
 	isOpenConsultationModal?: boolean;
+	isOpenDMSModal?: boolean;
 };

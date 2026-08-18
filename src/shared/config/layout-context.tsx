@@ -30,6 +30,9 @@ type LayoutContextType = {
 	toggleAppointmentModal: Dispatch<SetStateAction<boolean>>;
 
 	currentBranch?: BranchType;
+
+	isDMSModalOpen: boolean;
+	toggleDMSModal: Dispatch<SetStateAction<boolean>>;
 };
 
 export const LayoutContext = createContext<LayoutContextType | undefined>(
@@ -42,6 +45,7 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 		useState<boolean>(false);
 	const [isAppointmentModalOpen, toggleAppointmentModal] =
 		useState<boolean>(false);
+	const [isDMSModalOpen, toggleDMSModal] = useState<boolean>(false);
 	const isMobile = useMediaQuery(MEDIA_QUERIES.mobile);
 	const currentBranch = useSetBranchInCookies();
 
@@ -71,6 +75,8 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 				isAppointmentModalOpen,
 				toggleAppointmentModal,
 				currentBranch,
+				isDMSModalOpen,
+				toggleDMSModal,
 			}}
 		>
 			{children}

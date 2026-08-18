@@ -14,11 +14,11 @@ import type { PostRequestType } from "@/shared/types/post-requests.types";
 import Button from "@/shared/ui/button";
 import Checkbox from "@/shared/ui/checkbox";
 import Input from "@/shared/ui/input";
-import { usePostAppointmentModal } from "../../hooks/use-post-appointment-modal";
-import type { AppointmentFormProps } from "../../types/appointment-modal.types";
+import { usePostDMSModal } from "../../hooks/use-post-dms-modal";
+import type { DMSFormProps } from "../../types/dms-modal.types";
 import css from "./index.module.css";
 
-export default function ModalForm({ toggleSuccess }: AppointmentFormProps) {
+export default function ModalForm({ toggleSuccess }: DMSFormProps) {
 	const { currentBranch } = useLayoutContext();
 	const pathname = usePathname();
 
@@ -31,7 +31,7 @@ export default function ModalForm({ toggleSuccess }: AppointmentFormProps) {
 		mode: "onChange",
 		defaultValues: { page_url: pathname },
 	});
-	const { mutate, isPending } = usePostAppointmentModal({ toggleSuccess });
+	const { mutate, isPending } = usePostDMSModal({ toggleSuccess });
 
 	useEffect(() => {
 		setValue("branch_slug", currentBranch ?? "");
