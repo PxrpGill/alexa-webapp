@@ -18,6 +18,20 @@ const nextConfig = {
 		},
 	},
 
+	async rewrites() {
+		const apiUrl =
+			process.env.API_URL ??
+			process.env.NEXT_PUBLIC_API_URL ??
+			"http://localhost:8000";
+
+		return [
+			{
+				source: "/media/:path*",
+				destination: `${apiUrl}/media/:path*`,
+			},
+		];
+	},
+
 	async redirects() {
 		return [
 			{

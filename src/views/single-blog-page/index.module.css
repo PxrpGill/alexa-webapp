@@ -1,0 +1,63 @@
+.root {
+    @mixin responsive padding-block-start, 88, 100;
+}
+
+.posterWrapper {
+    @mixin responsive height, 300, 700;
+    @mixin responsive margin-block-end, 60, 60;
+
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    @mixin responsive padding-inline, 0, 120;
+
+    h2 {
+        @mixin h3;
+    }
+
+    p,
+    li {
+        @mixin text-md;
+
+        color: var(--color-gray-14);
+        opacity: 0.7;
+        font-weight: 500;
+    }
+
+    ol,
+    ul {
+        @mixin responsive padding-inline-start, 15, 20;
+    }
+
+    i {
+        font-style: italic;
+    }
+
+    ol {
+        list-style: decimal;
+    }
+
+    ul {
+
+        list-style: disc;
+    }
+
+    p:has(+ h2) {
+        @mixin responsive padding-block-end, 60, 60;
+    }
+
+    h2:has(+ p),
+    h2:has(+ ul),
+    h2:has(+ ol) {
+        @mixin responsive padding-block-end, 40, 40;
+    }
+
+    ul:has(+ p),
+    ol:has(+ p),
+    p:has(+ p) {
+        @mixin responsive padding-block-end, 35, 35;
+    }
+}
