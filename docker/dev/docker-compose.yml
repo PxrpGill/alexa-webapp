@@ -12,8 +12,8 @@ services:
       - /app/.next
       - /app/node_modules
     env_file:
-      - ../../src/.env.local
       - ../../src/.env.example
+      - ../../src/.env.local
     environment:
       - NODE_ENV=development
       - NEXT_PUBLIC_YANDEX_MAPS_API_KEY=${NEXT_PUBLIC_YANDEX_MAPS_API_KEY:-}
