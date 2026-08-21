@@ -1,0 +1,81 @@
+.root {
+    @mixin responsive gap, 20, 30;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin h4;
+
+    text-align: center;
+}
+
+.list {
+    @mixin responsive gap, 20, 30;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.card {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding, 20, 30;
+    @mixin responsive gap, 20, 20;
+
+    height: 100%;
+    background-color: var(--color-white-0);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    @mixin text-lg;
+
+    line-height: 1.3;
+}
+
+.cardDescription {
+    @mixin text-md;
+
+    strong {
+        display: block;
+        font-weight: 600;
+    }
+
+    a {
+        @mixin transition color;
+        
+        font-weight: 600;
+        color: var(--color-green-1);
+
+        @media (hover:hover) {
+            &:hover {
+                color: var(--color-green-4);
+            }
+        }
+    }
+
+    ol,
+    ul {
+        @mixin responsive padding-inline-start, 20, 20;
+    }
+
+    ol {
+        list-style: decimal;
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    @media (max-width: $mobile) {
+        @mixin text-lg;
+    }
+}
