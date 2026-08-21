@@ -1,0 +1,11 @@
+.content {
+    @mixin responsive gap, 80, 160;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.content,
+.yandexMap {
+    @mixin responsive margin-block-end, 60, 60;
+}
