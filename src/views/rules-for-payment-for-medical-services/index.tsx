@@ -8,9 +8,9 @@ import css from "./index.module.css";
 import {
 	DOCUMENT_BLOCKS,
 	DOCUMENT_HERO_MOCK,
-} from "./models/privacy-policy-page.constants";
+} from "./models/rules-for-payment-for-medical-services.constants";
 
-export default function PrivacyPolicyPage() {
+export default function RulesforPaymentforMedicalServicesPage() {
 	return (
 		<main className={css.root}>
 			<DocumentHero {...DOCUMENT_HERO_MOCK} />

@@ -8,9 +8,9 @@ import css from "./index.module.css";
 import {
 	DOCUMENT_BLOCKS,
 	DOCUMENT_HERO_MOCK,
-} from "./models/privacy-policy-page.constants";
+} from "./models/user-agreement.constants";
 
-export default function PrivacyPolicyPage() {
+export default function UserAgreementPage() {
 	return (
 		<main className={css.root}>
 			<DocumentHero {...DOCUMENT_HERO_MOCK} />
