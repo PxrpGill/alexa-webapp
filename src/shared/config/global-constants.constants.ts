@@ -26,6 +26,28 @@ export const YANDEX_MAP_INFO_CARD: InfoCardProps = {
 				"Пн - пт&nbsp;с&nbsp;9:00 до&nbsp;18:00, суббота с&nbsp;9:00 до&nbsp;18:00",
 			phone: MOBILE_PHONE.landyshevaya,
 			cords: [47.286561, 39.828901],
+			gallery: [
+				{
+					webp: {
+						src: "/mock/yandex-map/land-1.webp",
+					},
+				},
+				{
+					webp: {
+						src: "/mock/yandex-map/land-2.webp",
+					},
+				},
+				{
+					webp: {
+						src: "/mock/yandex-map/land-3.webp",
+					},
+				},
+				{
+					webp: {
+						src: "/mock/yandex-map/land-4.webp",
+					},
+				},
+			],
 		},
 		{
 			locality: "Ростов-на-Дону",
@@ -34,6 +56,13 @@ export const YANDEX_MAP_INFO_CARD: InfoCardProps = {
 				"Пн - пт&nbsp;с&nbsp;9:00 до&nbsp;18:00, суббота с&nbsp;9:00 до&nbsp;18:00",
 			phone: MOBILE_PHONE.volkova,
 			cords: [47.283248, 39.720142],
+			gallery: [
+				{
+					webp: {
+						src: "/mock/yandex-map/volkova-1.webp",
+					},
+				},
+			],
 		},
 	],
 };

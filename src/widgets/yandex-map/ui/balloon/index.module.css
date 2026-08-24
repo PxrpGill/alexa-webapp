@@ -1,0 +1,81 @@
+.root {
+    @mixin transitionOptions;
+    @mixin responsive border-radius, 20, 20;
+    @mixin responsive width, 300, 450;
+    @mixin responsive padding-block, 20, 20;
+
+    transition-property: opacity, visibility;
+    position: absolute;
+    transform: translateX(-50%);
+    
+    background-color: var(--color-white-0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+
+    opacity: 0;
+    visibility: hidden;
+
+    overflow: hidden;
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.wrap {
+    @mixin responsive padding-inline, 20, 20;
+    @mixin responsive padding-block-end, 20, 10;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.swiper {
+    @mixin responsive padding-inline, 20, 20;
+
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
+
+    :global(.swiper-scrollbar)[class] {
+        @mixin responsive margin-block-start, 10, 10;
+        position: static;
+    }
+
+    :global(.swiper-button-prev)[class],
+    :global(.swiper-button-next)[class] {
+        @mixin responsive width, 30, 30;
+        @mixin responsive height, 30, 30;
+        @mixin responsive padding, 10, 5;
+        @mixin responsive margin-inline, 20, 20;
+
+        border-radius: 100%;
+        background-color: var(--color-white-0);
+
+    }
+}
+
+.slide {
+    @mixin responsive min-height, 120, 180;
+    @mixin responsive border-radius, 20, 20;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.locality {
+    @mixin text-md;
+    @mixin responsive padding-block-end, 10, 10;
+
+    font-weight: 600;
+    line-height: 1;
+}
+
+.schedule,
+.address {
+    @mixin text-base;
+}

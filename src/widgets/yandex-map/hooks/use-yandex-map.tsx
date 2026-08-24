@@ -4,6 +4,7 @@ import type { InfoCardProps } from '../ui/info-card';
 
 const DEFAULT_ZOOM = 1;
 const BRANCH_ZOOM = 18;
+const CENTER_LAT_OFFSET = -0.0004;
 
 export const useYandexMap = (
     infoCard: InfoCardProps,
@@ -28,10 +29,10 @@ export const useYandexMap = (
     const [center, setCenter] = useState<[number, number]>(initialCenter);
     const [zoom, setZoom] = useState(placemarks.length > 1 ? 10 : DEFAULT_ZOOM);
 
-    const handleBranchSelect = (cords: [number, number]) => {
-        setCenter(cords);
-        setZoom(BRANCH_ZOOM);
-    };
+	const handleBranchSelect = (cords: [number, number]) => {
+		setCenter([cords[0] + CENTER_LAT_OFFSET, cords[1]]);
+		setZoom(BRANCH_ZOOM);
+	};
 
     return {
         center,
