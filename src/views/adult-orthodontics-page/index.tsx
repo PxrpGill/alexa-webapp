@@ -1,12 +1,13 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
+import CertificatesSection from "@/widgets/certificates-section";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
 import OurPeopleSection from "@/widgets/our-people-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import YandexMap from "@/widgets/yandex-map";
-
 import css from "./index.module.css";
 import {
+	CERTIFICATES_SECTION,
 	DIAGNOSTICS_SECTION_MOCK,
 	FIFTH_TITLE_DESCRIPTION_SLIDER,
 	FIRST_TITLE_DESCRIPTION_SLIDER,
@@ -29,6 +30,10 @@ export default function AdultOrthodonticsPage() {
 			<DiagnosticProcessSection
 				className={css.diagnostics}
 				{...DIAGNOSTICS_SECTION_MOCK}
+			/>
+			<CertificatesSection
+				className={css.certificates}
+				{...CERTIFICATES_SECTION}
 			/>
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}

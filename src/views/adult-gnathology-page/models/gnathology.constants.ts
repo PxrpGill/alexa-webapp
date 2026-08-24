@@ -85,8 +85,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 	},
 	cards: [
 		{
-			title: "Визуальный и&nbsp;инструментальный осмотр:",
-			description: "Точная оценка состояния ваших зубов и&nbsp;полости рта.",
+			title: "01. Первичная консультация",
+			description:
+				"Врач выслушивает ваши жалобы, собирает анамнез и&nbsp;определяет, какие исследования необходимы именно в&nbsp;вашем случае.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/1-desktop.webp",
@@ -94,9 +95,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Сбор полного анамнеза:",
+			title: "02. Осмотр зубочелюстной системы",
 			description:
-				"Мы&nbsp;узнаем о&nbsp;вашем здоровье, чтобы построить индивидуальный план лечения.",
+				"Оцениваются прикус, работа височно-нижнечелюстного сустава, движения челюсти, состояние зубов и&nbsp;жевательных мышц.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/2-desktop.webp",
@@ -104,9 +105,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Рентген и&nbsp;компьютерная томография:",
+			title: "03. Комплексная диагностика",
 			description:
-				"Современные методы диагностики для уверенности в&nbsp;точности диагноза.",
+				"Проводятся необходимые исследования: КЛКТ, МРТ ВНЧС (при показаниях), цифровое сканирование зубов и&nbsp;ортодонтическая диагностика для точной оценки состояния сустава.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/3-desktop.webp",
@@ -114,8 +115,19 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Визуальный и&nbsp;инструментальный осмотр:",
-			description: "Точная оценка состояния ваших зубов и&nbsp;полости рта.",
+			title: "04. Анализ работы сустава",
+			description:
+				"Выполняется функциональная диагностика с&nbsp;использованием аксиографии и&nbsp;артикулятора, чтобы определить причину нарушения работы сустава.",
+			poster: {
+				webp: {
+					src: "/mock/diagnostics/4-desktop.webp",
+				},
+			},
+		},
+		{
+			title: "05. План лечения",
+			description:
+				"Врач подробно объясняет результаты диагностики, определяет причину проблемы и&nbsp;составляет индивидуальный план лечения с&nbsp;учетом всех особенностей клинического случая.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/4-desktop.webp",

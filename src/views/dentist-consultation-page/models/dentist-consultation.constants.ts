@@ -6,6 +6,7 @@ import {
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
+import { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
@@ -163,8 +164,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 	},
 	cards: [
 		{
-			title: "Визуальный и&nbsp;инструментальный осмотр:",
-			description: "Точная оценка состояния ваших зубов и&nbsp;полости рта.",
+			title: "01. Осмотр и&nbsp;консультация",
+			description:
+				"Врач выслушивает ваши жалобы, проводит осмотр полости рта и&nbsp;отвечает на&nbsp;все интересующие вопросы.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/1-desktop.webp",
@@ -172,9 +174,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Сбор полного анамнеза:",
+			title: "02. Комплексная диагностика",
 			description:
-				"Мы&nbsp;узнаем о&nbsp;вашем здоровье, чтобы построить индивидуальный план лечения.",
+				"При необходимости выполняются фотопротокол, прицельные и&nbsp;панорамные снимки или&nbsp;КТ для полной диагностики и&nbsp;точного планирования лечения.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/2-desktop.webp",
@@ -182,9 +184,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Рентген и&nbsp;компьютерная томография:",
+			title: "03. Составление плана лечения",
 			description:
-				"Современные методы диагностики для уверенности в&nbsp;точности диагноза.",
+				"По&nbsp;результатам диагностики врач подробно объясняет ситуацию, предлагает оптимальные варианты лечения, озвучивает сроки и&nbsp;стоимость каждого этапа.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/3-desktop.webp",
@@ -192,8 +194,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Визуальный и&nbsp;инструментальный осмотр:",
-			description: "Точная оценка состояния ваших зубов и&nbsp;полости рта.",
+			title: "04. Начало лечения",
+			description:
+				"При отсутствии противопоказаний лечение можно начать сразу после консультации или выбрать удобную дату для следующего визита.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/4-desktop.webp",
@@ -260,4 +263,30 @@ export const WHY_CHOOSE_US: WhyChooseUsProps = {
 			href: "",
 		},
 	},
+};
+
+export const CERTIFICATES_SECTION: CertificatesSectionProps = {
+	sectionHeader: {
+		title: "Бонусная система",
+		card: {
+			title: "Ваше лечение возвращается подарками!",
+			button: {
+				title: "Ознакомиться с акциями",
+				href: SITE_NAVIGATION.akcii,
+			},
+		},
+	},
+	certificateCards: [
+		{ webp: { src: "/system/certificates/1-green.webp" } },
+		{
+			webp: {
+				src: "/system/certificates/2-white.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/system/certificates/3-green.webp",
+			},
+		},
+	],
 };

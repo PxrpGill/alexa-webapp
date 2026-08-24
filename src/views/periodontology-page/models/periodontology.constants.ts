@@ -191,8 +191,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 	},
 	cards: [
 		{
-			title: "Визуальный и&nbsp;инструментальный осмотр:",
-			description: "Точная оценка состояния ваших зубов и&nbsp;полости рта.",
+			title: "1. Диагностика и&nbsp;профессиональная гигиена",
+			description:
+				"Консультация пародонтолога, КЛКТ, диагностика дёсен с&nbsp;помощью Florida Probe и&nbsp;профессиональная гигиена полости рта.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/1-desktop.webp",
@@ -200,9 +201,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Сбор полного анамнеза:",
+			title: "2. Глубокая очистка верхней челюсти",
 			description:
-				"Мы&nbsp;узнаем о&nbsp;вашем здоровье, чтобы построить индивидуальный план лечения.",
+				"Удаление поддесневых зубных отложений в&nbsp;области верхней челюсти с&nbsp;использованием стоматологического микроскопа.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/2-desktop.webp",
@@ -210,9 +211,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Рентген и&nbsp;компьютерная томография:",
+			title: "3. Глубокая очистка нижней челюсти",
 			description:
-				"Современные методы диагностики для уверенности в&nbsp;точности диагноза.",
+				"Аналогичная процедура для нижней челюсти, позволяющая тщательно очистить пародонтальные карманы.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/3-desktop.webp",
@@ -220,8 +221,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Визуальный и&nbsp;инструментальный осмотр:",
-			description: "Точная оценка состояния ваших зубов и&nbsp;полости рта.",
+			title: "4. Контроль результатов",
+			description:
+				"Через 3&nbsp;месяца проводится повторный осмотр и&nbsp;повторная диагностика с&nbsp;помощью Florida Probe для оценки эффективности лечения и&nbsp;состояния тканей пародонта.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/4-desktop.webp",

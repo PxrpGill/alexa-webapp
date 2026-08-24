@@ -1,5 +1,6 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
+import CertificatesSection from "@/widgets/certificates-section";
 import CostOfServices from "@/widgets/cost-of-services";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
 import ImplantTable from "@/widgets/implant-table";
@@ -10,9 +11,9 @@ import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
 import WhyChooseUs from "@/widgets/why-choose-us";
 import YandexMap from "@/widgets/yandex-map";
-
 import css from "./index.module.css";
 import {
+	CERTIFICATES_SECTION,
 	COST_OF_SERVICES,
 	DIAGNOSTICS_SECTION_MOCK,
 	EMPLOYEES_SECTION,
@@ -43,6 +44,10 @@ export default function SurgeryAndImplantationPage() {
 			<DiagnosticProcessSection
 				className={css.diagnostics}
 				{...DIAGNOSTICS_SECTION_MOCK}
+			/>
+			<CertificatesSection
+				className={css.certificates}
+				{...CERTIFICATES_SECTION}
 			/>
 			<WhyChooseUs {...WHY_CHOOSE_US} className={css.whyChooseUs} />
 			<TitleDescriptionSlider

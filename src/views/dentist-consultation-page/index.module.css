@@ -6,6 +6,7 @@
     @mixin responsive margin-block-end, 20, 35;
 }
 
+.certificates,
 .whyChooseUs,
 .costOfServices,
 .diagnostics,

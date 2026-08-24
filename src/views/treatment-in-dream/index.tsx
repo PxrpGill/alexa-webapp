@@ -1,5 +1,6 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
+import CertificatesSection from "@/widgets/certificates-section";
 import OurPeopleSection from "@/widgets/our-people-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
@@ -8,6 +9,7 @@ import YandexMap from "@/widgets/yandex-map";
 import InfoTabs from "../adult-orthodontics-page/ui/info-tabs";
 import css from "./index.module.css";
 import {
+	CERTIFICATES_SECTION,
 	FIRST_TITLE_DESCRIPTION_SLIDER,
 	FORM_DATA,
 	INFO_TABS_MOCK,
@@ -25,6 +27,10 @@ export default function TreatmentInDreamPage() {
 			<QuadroSection {...QUADRO_SECTION_MOCK} className={css.quadro} />
 			<InfoTabs className={css.infoTabs} {...INFO_TABS_MOCK} />
 			<QuadroSection className={css.quadro} {...SECOND_QUADRO} />
+			<CertificatesSection
+				className={css.certificates}
+				{...CERTIFICATES_SECTION}
+			/>
 			<WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}

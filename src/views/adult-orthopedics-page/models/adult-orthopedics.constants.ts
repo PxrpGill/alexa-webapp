@@ -224,9 +224,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 	},
 	cards: [
 		{
-			title: "Вкладки:",
+			title: "1. Консультация и&nbsp;диагностика",
 			description:
-				"Прочные и&nbsp;эстетичные вкладки из&nbsp;прессованной керамики заменят пломбу и&nbsp;восстановят форму и&nbsp;функцию зуба.",
+				"Врач проводит осмотр, выполняет фотопротокол, при необходимости назначает КЛКТ и&nbsp;3D-сканирование зубов, после чего составляет индивидуальный план лечения.",
 			poster: {
 				webp: {
 					src: "/mock/adult-orthopedics/diagnostics/4-desktop.webp",
@@ -234,9 +234,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Виниры:",
+			title: "2. Подготовка к&nbsp;протезированию",
 			description:
-				"Тонкие керамические накладки на&nbsp;передние зубы, которые помогут устранить недостатки эмали и&nbsp;сделать улыбку более яркой и&nbsp;привлекательной.",
+				"При необходимости проводится лечение зубов и&nbsp;дёсен, профессиональная гигиена, удаление зубов или установка имплантатов, если они предусмотрены планом лечения.",
 			poster: {
 				webp: {
 					src: "/mock/adult-orthopedics/diagnostics/5-desktop.webp",
@@ -244,9 +244,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Коронки, коронки на&nbsp;имплантах:",
+			title: "3. Подготовка и&nbsp;изготовление конструкции",
 			description:
-				"Прочные коронки из&nbsp;различных материалов (оксид циркония и&nbsp;E-max) восстановят форму и&nbsp;функцию поврежденного зуба.",
+				"Врач подготавливает зубы и&nbsp;выполняет цифровое сканирование. По&nbsp;полученным данным изготавливаются коронки, виниры, мосты и&nbsp;другие ортопедические конструкции.",
 			poster: {
 				webp: {
 					src: "/mock/adult-orthopedics/diagnostics/1-desktop.webp",
@@ -254,25 +254,25 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Съемные протезы:",
+			title: "4. Фиксация и&nbsp;контроль результата",
 			description:
-				"Подходят при полной или частичной адентии, как вариант, временных протезов на&nbsp;этапе ортопедического лечения.",
+				"Готовая конструкция примеряется, корректируется и&nbsp;фиксируется. Врач проверяет прикус и&nbsp;комфорт, а&nbsp;также даёт рекомендации по&nbsp;уходу.",
 			poster: {
 				webp: {
 					src: "/mock/adult-orthopedics/diagnostics/2-desktop.webp",
 				},
 			},
 		},
-		{
-			title: "Цифровое протезирование сканером Medit i500:",
-			description:
-				"Быстрое и&nbsp;точное 3D-сканирование зубов без дискомфортных слепков.",
-			poster: {
-				webp: {
-					src: "/mock/adult-orthopedics/diagnostics/3-desktop.webp",
-				},
-			},
-		},
+		// {
+		// 	title: "Цифровое протезирование сканером Medit i500:",
+		// 	description:
+		// 		"Быстрое и&nbsp;точное 3D-сканирование зубов без дискомфортных слепков.",
+		// 	poster: {
+		// 		webp: {
+		// 			src: "/mock/adult-orthopedics/diagnostics/3-desktop.webp",
+		// 		},
+		// 	},
+		// },
 	],
 };
 

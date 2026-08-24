@@ -7,6 +7,7 @@ import {
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
+import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
@@ -379,7 +380,46 @@ export const WHY_CHOOSE_US: WhyChooseUsProps = {
 		},
 		button: {
 			title: "Записаться на приём",
-			href: "",
+			href: APPOINTMENT_ID.id,
 		},
 	},
+};
+
+export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
+	sectionHeader: {
+		title: "Ваша улыбка в&nbsp;руках профессионалов!",
+		description: "Мы&nbsp;реализуем целостный осмотр для своих пациентов:",
+	},
+	cards: [
+		{
+			title: "01. Осмотр и&nbsp;диагностика",
+			description:
+				"Врач оценивает состояние зубов и&nbsp;дёсен, проводит индикацию зубного налёта и&nbsp;определяет участки, которым требуется особое внимание.",
+			poster: {
+				webp: {
+					src: "/mock/diagnostics/1-desktop.webp",
+				},
+			},
+		},
+		{
+			title: "02. Подбор домашнего ухода и&nbsp;урок гигиены",
+			description:
+				"Подбираем средства ухода и&nbsp;показываем, как правильно пользоваться щёткой, ёршиками и&nbsp;нитью для здоровья зубов и&nbsp;дёсен.",
+			poster: {
+				webp: {
+					src: "/mock/diagnostics/2-desktop.webp",
+				},
+			},
+		},
+		{
+			title: "03. Профессиональная гигиена",
+			description:
+				"Проводим комплексную чистку зубов: удаляем налёт ультразвуком и&nbsp;AirFlow, очищаем и&nbsp;полируем зубы, затем укрепляем эмаль реминерализирующей терапией.",
+			poster: {
+				webp: {
+					src: "/mock/diagnostics/3-desktop.webp",
+				},
+			},
+		},
+	],
 };

@@ -6,6 +6,7 @@ import {
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
+import { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { ImplantTableProps } from "@/widgets/implant-table/types/implant-table.types";
@@ -476,6 +477,32 @@ export const IMPLANT_TABLE: ImplantTableProps = {
 				"Эта система &#8470;&nbsp;1&nbsp;в мире для полной реабилитации даже в&nbsp;сложных случаях",
 			uniqueFeatures:
 				"<ul><li>Приживаются в&nbsp;2&ndash;3 раза быстрее</li><li>Очень прочные&nbsp;&mdash; подходят даже при узкой челюсти</li><li>Особая поверхность помогает импланту &laquo;врастать&raquo; в&nbsp;кость даже у&nbsp;курильщиков, диабетиков и&nbsp;пожилых людей</li><li>Подходят для немедленной нагрузки&nbsp;&mdash; можно вставить имплант и&nbsp;коронку почти сразу</li></ul>",
+		},
+	],
+};
+
+export const CERTIFICATES_SECTION: CertificatesSectionProps = {
+	sectionHeader: {
+		title: "Бонусная система",
+		card: {
+			title: "Ваше лечение возвращается подарками!",
+			button: {
+				title: "Ознакомиться с акциями",
+				href: SITE_NAVIGATION.akcii,
+			},
+		},
+	},
+	certificateCards: [
+		{ webp: { src: "/system/certificates/1-green.webp" } },
+		{
+			webp: {
+				src: "/system/certificates/2-white.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/system/certificates/3-green.webp",
+			},
 		},
 	],
 };

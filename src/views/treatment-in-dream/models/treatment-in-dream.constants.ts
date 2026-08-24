@@ -2,6 +2,7 @@ import type { AppointmentSchedulingProps } from "@/features/appointment-scheduli
 import { APPOINTMENT_ID } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { InfoTabsProps } from "@/views/adult-orthodontics-page/types/info-tabs.types";
+import { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
@@ -330,4 +331,30 @@ export const SECOND_QUADRO: QuadroSectionProps = {
 			},
 		},
 	},
+};
+
+export const CERTIFICATES_SECTION: CertificatesSectionProps = {
+	sectionHeader: {
+		title: "Бонусная система",
+		card: {
+			title: "Ваше лечение возвращается подарками!",
+			button: {
+				title: "Ознакомиться с акциями",
+				href: SITE_NAVIGATION.akcii,
+			},
+		},
+	},
+	certificateCards: [
+		{ webp: { src: "/system/certificates/1-green.webp" } },
+		{
+			webp: {
+				src: "/system/certificates/2-white.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/system/certificates/3-green.webp",
+			},
+		},
+	],
 };

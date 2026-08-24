@@ -4,6 +4,7 @@ import {
 	COSTS_OF_SERVICES_BUTTON,
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
 import type { SlideVariantProps } from "@/widgets/hero-slider-section/types/hero-slider-section.types";
@@ -789,6 +790,32 @@ export const OUR_PEOPLE: OurPeopleSectionProps = {
 			},
 			fullname: "Кравченко Павел Сергеевич",
 			position: "Врач-ортодонт, гнатолог",
+		},
+	],
+};
+
+export const CERTIFICATES_SECTION: CertificatesSectionProps = {
+	sectionHeader: {
+		title: "Бонусная система",
+		card: {
+			title: "Ваше лечение возвращается подарками!",
+			button: {
+				title: "Ознакомиться с акциями",
+				href: SITE_NAVIGATION.akcii,
+			},
+		},
+	},
+	certificateCards: [
+		{ webp: { src: "/system/certificates/1-green.webp" } },
+		{
+			webp: {
+				src: "/system/certificates/2-white.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/system/certificates/3-green.webp",
+			},
 		},
 	],
 };

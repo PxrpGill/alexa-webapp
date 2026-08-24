@@ -1,5 +1,6 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
+import CertificatesSection from "@/widgets/certificates-section";
 import CostOfServices from "@/widgets/cost-of-services";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
 import OurPeopleSection from "@/widgets/our-people-section";
@@ -9,14 +10,13 @@ import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
 import WhyChooseUs from "@/widgets/why-choose-us";
 import YandexMap from "@/widgets/yandex-map";
-
 import {
 	FIRST_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 } from "../home-page/models/home-page.constants";
-
 import css from "./index.module.css";
 import {
+	CERTIFICATES_SECTION,
 	COST_OF_SERVICES,
 	DIAGNOSTICS_SECTION_MOCK,
 	EMPLOYEES_SECTION,
@@ -39,6 +39,10 @@ export default function DentistConsultationPage() {
 			<DiagnosticProcessSection
 				className={css.diagnostics}
 				{...DIAGNOSTICS_SECTION_MOCK}
+			/>
+			<CertificatesSection
+				className={css.certificates}
+				{...CERTIFICATES_SECTION}
 			/>
 			<WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} />
 			<TitleDescriptionSlider

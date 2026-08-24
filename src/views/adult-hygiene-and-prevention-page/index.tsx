@@ -1,5 +1,6 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
+import CertificatesSection from "@/widgets/certificates-section";
 import CostOfServices from "@/widgets/cost-of-services";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
 import OurPeopleSection from "@/widgets/our-people-section";
@@ -9,12 +10,10 @@ import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
 import WhyChooseUs from "@/widgets/why-choose-us";
 import YandexMap from "@/widgets/yandex-map";
-
-import { DIAGNOSTICS_SECTION_MOCK } from "../dentist-consultation-page/models/dentist-consultation.constants";
-
 import css from "./index.module.css";
 import {
 	COST_OF_SERVICES,
+	DIAGNOSTICS_SECTION_MOCK,
 	EMPLOYEES_SECTION,
 	FIRST_TITLE_DESCRIPTION_SLIDER,
 	FORM_DATA,
