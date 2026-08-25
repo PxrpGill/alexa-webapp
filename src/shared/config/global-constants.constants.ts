@@ -129,15 +129,6 @@ export const GLOBAL_EMPLOYEES = {
 		fullname: "Топоров Артур Игоревич",
 		position: "Врач-анестезиолог-реаниматолог",
 	},
-	magomadgadgyeva: {
-		poster: {
-			webp: {
-				src: "/mock/employees/employee-7.webp",
-			},
-		},
-		fullname: "Магомедгаджиева Ашрафиль Руслановна",
-		position: "Врач-стоматолог-гигиенист",
-	},
 	shahnazaryan: {
 		poster: {
 			webp: {
@@ -182,6 +173,15 @@ export const GLOBAL_EMPLOYEES = {
 		},
 		fullname: "Корнилов Герман Валерьевич",
 		position: "Врач-стоматолог-пародонтолог",
+	},
+	tarasova: {
+		poster: {
+			webp: {
+				src: "/mock/employees/tarasova.webp",
+			},
+		},
+		fullname: "Тарасова Ярослава Игоревна",
+		position: "Детский стоматолог",
 	},
 	palamarchuk: {
 		poster: {
@@ -228,13 +228,31 @@ export const GLOBAL_EMPLOYEES = {
 		fullname: "Курганская Елена Павловна",
 		position: "Управляющая",
 	},
+	karelova: {
+		poster: {
+			webp: {
+				src: "/mock/employees/karelova.webp",
+			},
+		},
+		fullname: "Карелова Анна Петровна",
+		position: "Старший администратор, куратор",
+	},
 	osadchaya: {
 		poster: {
 			webp: {
-				src: "/mock/employees/employee-19.webp",
+				src: "/mock/employees/osadchaya.webp",
 			},
 		},
 		fullname: "Осадчая Юлия Александровна",
+		position: "Администратор",
+	},
+	tregubova: {
+		poster: {
+			webp: {
+				src: "/mock/employees/tregubova.webp",
+			},
+		},
+		fullname: "Трегубова Наталья Николаевна",
 		position: "Администратор",
 	},
 };
