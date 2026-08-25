@@ -1,13 +1,13 @@
 /** biome-ignore-all lint/performance/noImgElement: <explanation> */
 
-import type { AppointmentSuccessFormProps } from "../../types/promotions-modal.types";
+import type { PromotionsSuccessFormProps } from "../../types/promotions-modal.types";
 
 import css from "./index.module.css";
 
 export default function SuccessForm({
 	isOpen,
 	className,
-}: AppointmentSuccessFormProps) {
+}: PromotionsSuccessFormProps) {
 	return (
 		<div className={`${css.root} ${isOpen && css.open} ${className}`}>
 			<img src="/system/alexik.png" alt="Алексик" className={css.logo} />
