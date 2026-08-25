@@ -2,19 +2,22 @@
 
 "use client";
 
-import { useCallback, useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 import { usePromotionPageContext } from "@/entities/promotion/models/promotion-page-context";
 import Modal from "@/shared/ui/modal";
 import Picture from "@/shared/ui/picture";
 import css from "./index.module.css";
-import { PROMOTION_MODAL_PICTURE } from "./models/appointment-modal.constants";
+import { PROMOTION_MODAL_PICTURE } from "./models/promotions-modal.constants";
 import ModalForm from "./ui/modal-form";
 import ModalTitleBlock from "./ui/modal-title-block";
+import SuccessForm from "./ui/success-form";
 
 export default function PromotionModal() {
 	const timoutRef = useRef<number>(0);
 	const { isPromotionModalOpen, togglePromotionModal, selectPromotion } =
 		usePromotionPageContext();
+
+	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 
 	const handleModalClose = useCallback(() => {
 		if (timoutRef.current) {
@@ -30,6 +33,10 @@ export default function PromotionModal() {
 		);
 	}, [selectPromotion, togglePromotionModal]);
 
+	const toggleSuccessFormOpen = useCallback(() => {
+		toggleSuccess(true);
+	}, []);
+
 	return (
 		<Modal
 			isOpen={isPromotionModalOpen}
@@ -41,7 +48,8 @@ export default function PromotionModal() {
 				<Picture poster={PROMOTION_MODAL_PICTURE} />
 			</div>
 			<ModalTitleBlock />
-			<ModalForm />
+			<ModalForm toggleSuccess={toggleSuccessFormOpen} />
+			<SuccessForm isOpen={isSuccess} />
 		</Modal>
 	);
 }

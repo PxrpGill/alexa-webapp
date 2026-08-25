@@ -6,8 +6,10 @@ import {
 	useContext,
 	useState,
 } from "react";
-import type { PromotionCardProps } from "../types/promotion-card.types";
-import type { PromotionPageContextProps } from "../types/promotion-page-context.types";
+import type {
+	PromotionPageContextProps,
+	SelectedPromotionType,
+} from "../types/promotion-page-context.types";
 
 const PromotionPageContext = createContext<
 	PromotionPageContextProps | undefined
@@ -15,7 +17,7 @@ const PromotionPageContext = createContext<
 
 export const PromotionPageProvider = ({ children }: PropsWithChildren) => {
 	const [selectedPromotion, selectPromotion] = useState<
-		PromotionCardProps | undefined
+		SelectedPromotionType | undefined
 	>(undefined);
 	const [isPromotionModalOpen, togglePromotionModal] = useState<boolean>(false);
 

@@ -57,7 +57,7 @@ export default function ModalForm({ toggleSuccess }: AppointmentFormProps) {
 			</div>
 			<div className={css.documents}>
 				<Checkbox
-					{...register("is_ad_agreement")}
+					{...register("is_privacy_agreement", { required: true })}
 					label={
 						<p className={css.label}>
 							Я&nbsp;согласен с&nbsp;
@@ -72,7 +72,7 @@ export default function ModalForm({ toggleSuccess }: AppointmentFormProps) {
 					}
 				/>
 				<Checkbox
-					{...register("is_privacy_agreement", { required: true })}
+					{...register("is_ad_agreement")}
 					label={
 						<p className={css.label}>
 							<Link href={SITE_NAVIGATION.letter} target="_blank">
