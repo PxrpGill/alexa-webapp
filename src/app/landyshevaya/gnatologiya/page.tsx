@@ -1,7 +1,15 @@
-import AdultGnathologyPage from '@/views/adult-gnathology-page';
+import AdultGnathologyPage from "@/views/adult-gnathology-page";
 
 export const revalidate = 60;
 
+export const generateMetadata = () => {
+	return {
+		title: "Стоматология Алекса | Гнатология",
+		description:
+			"Удаление налета и зубного камня. Улучшение состояние десен и предотвращение развития кариеса и пародонтита. Заботьтесь о здоровье зубов с нашими услугами!",
+	};
+};
+
 export default function Gnathology() {
-    return <AdultGnathologyPage />;
+	return <AdultGnathologyPage />;
 }
