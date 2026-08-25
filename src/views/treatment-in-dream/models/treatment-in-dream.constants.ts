@@ -3,7 +3,7 @@ import { APPOINTMENT_ID } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { InfoTabsProps } from "@/views/adult-orthodontics-page/types/info-tabs.types";
 import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
-import { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
+import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
@@ -45,7 +45,7 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 	content: {
 		narkoz: {
 			whatIncludes: {
-				title: "Что включает услуга",
+				title: "Что включает наркоз",
 				cards: [
 					{
 						title:
@@ -100,8 +100,139 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 					},
 				],
 			},
+			diagnostics: {
+				sectionHeader: {
+					title: "Ваша улыбка в&nbsp;руках профессионалов!",
+				},
+				cards: [
+					{
+						title: "01. Подготовка:",
+						description:
+							"В&nbsp;спокойной атмосфере врач и&nbsp;сестра&nbsp;&mdash; анестезист говорят о&nbsp;всех важных моментах и&nbsp;подготавливают вас к&nbsp;процедуре.",
+						poster: {
+							webp: {
+								src: "/mock/diagnostics/1-desktop.webp",
+							},
+						},
+					},
+					{
+						title: "02. Начальная стадия:",
+						description:
+							"Вы&nbsp;вдыхает наркозный газ &laquo;Севоран&raquo;, который постепенно притупляет сознание и&nbsp;обеспечивает комфортное состояние.",
+						poster: {
+							webp: {
+								src: "/mock/diagnostics/2-desktop.webp",
+							},
+						},
+					},
+					{
+						title: "03. Глубокий наркоз:",
+						description:
+							"Пациент находится в&nbsp;спокойном и&nbsp;безопасном состоянии глубокого наркоза, пока врач проводит лечение.",
+						poster: {
+							webp: {
+								src: "/mock/diagnostics/3-desktop.webp",
+							},
+						},
+					},
+					{
+						title: "04. Пробуждение:",
+						description:
+							"После завершения лечения подача газа прекращается, и&nbsp;вы&nbsp;быстро приходит в&nbsp;сознание.",
+						poster: {
+							webp: {
+								src: "/mock/diagnostics/4-desktop.webp",
+							},
+						},
+					},
+					{
+						title: "05. Восстановление:",
+						description:
+							"Пробуждение происходит постепенно, и&nbsp;вы&nbsp;возвращаетесь к&nbsp;своему обычному состоянию.",
+						poster: {
+							webp: {
+								src: "/mock/diagnostics/5-desktop.webp",
+							},
+						},
+					},
+				],
+			},
 		},
-		sedaciya: {},
+		sedaciya: {
+			whatIncludes: {
+				title: "Что включает седация",
+				cards: [
+					{
+						title:
+							"Седация&nbsp;&mdash; комфортное знакомство со&nbsp;стоматологом",
+						description:
+							"Идеальный вариант для первых посещений и&nbsp;детей, которые испытывают тревогу перед лечением.",
+					},
+					{
+						title: "Расслабление",
+						description:
+							"Ребенок остается в&nbsp;сознании, но&nbsp;становится спокойнее и&nbsp;расслабленнее, без выраженного страха и&nbsp;напряжения.",
+					},
+					{
+						title: "Маска с&nbsp;приятным запахом",
+						description:
+							"Седация проводится через специальную маску с&nbsp;закисью азота&nbsp;&mdash; без уколов и&nbsp;сложных манипуляций на&nbsp;этапе начала процедуры.",
+					},
+					{
+						title: "Комфортное лечение",
+						description:
+							"Ребенок может общаться с&nbsp;врачом и&nbsp;выполнять его просьбы, пока стоматолог проводит необходимые процедуры.",
+					},
+					{
+						title: "Быстрое восстановление",
+						description:
+							"После завершения подачи газа его действие быстро прекращается, и&nbsp;ребенок возвращается к&nbsp;обычному состоянию.",
+					},
+					{
+						title: "Индивидуальный подход",
+						description:
+							"Необходимость и&nbsp;возможность седации определяет врач после осмотра ребенка и&nbsp;оценки его состояния.",
+					},
+				],
+			},
+			diagnostics: {
+				sectionHeader: {
+					title: "Ваша улыбка в&nbsp;руках профессионалов!",
+				},
+				cards: [
+					{
+						title: "01. Подготовка и&nbsp;знакомство",
+						description:
+							"Ребенок знакомится с&nbsp;врачом, осваивается в&nbsp;кресле, смотрит мультфильмы и&nbsp;спокойно привыкает к&nbsp;обстановке. Врач помогает расслабиться и&nbsp;подготовиться к&nbsp;процедуре.",
+						poster: {
+							webp: {
+								src: "/mock/diagnostics/1-desktop.webp",
+							},
+						},
+					},
+					{
+						title: "02. Седация",
+						description:
+							"Через специальную маску ребенок вдыхает смесь кислорода и&nbsp;закиси азота. Состояние расслабления наступает постепенно, при этом ребенок остается в&nbsp;сознании.",
+						poster: {
+							webp: {
+								src: "/mock/diagnostics/2-desktop.webp",
+							},
+						},
+					},
+					{
+						title: "03. Лечение",
+						description:
+							"Ребенок общается с&nbsp;врачом и&nbsp;выполняет его инструкции. После расслабления проводится обезболивание и&nbsp;начинается лечение.",
+						poster: {
+							webp: {
+								src: "/mock/diagnostics/3-desktop.webp",
+							},
+						},
+					},
+				],
+			},
+		},
 	},
 };
 
@@ -175,9 +306,9 @@ export const OUR_PEOPLE_SECTION: OurPeopleSectionProps = {
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	title: "Наши преимущества",
 	textBlock: {
-		title: "Современное оборудование",
+		title: "Без страха и&nbsp;боли",
 		description:
-			"Компьютерная томограмма и&nbsp;рентген, терапия, лечение зубов с&nbsp;микроскопом, гигиена, удаление зубов, имплантация и&nbsp;протезирование, исправление прикуса с&nbsp;применением самого современного оборудования, инновационных материалов и&nbsp;самых передовых протоколов лечения&nbsp;&mdash; залог здоровья наших пациентов!",
+			"Ребенок находится в&nbsp;состоянии медикаментозного сна и&nbsp;не&nbsp;испытывает тревоги во&nbsp;время лечения.",
 	},
 	posters: [
 		{
@@ -210,9 +341,9 @@ export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 
 export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
-		title: "Для самых<br /> маленьких",
+		title: "Большой объем лечения за&nbsp;один визит",
 		description:
-			"Красивые кабинеты, оборудованные по&nbsp;самым современным медицинским стандартам, игровая зона с&nbsp;игрушками, книгами и&nbsp;раскрасками, сундучок с&nbsp;чудесными подарками&nbsp;&mdash; мы&nbsp;приложили все усилия, чтобы нашим маленьким пациентам и&nbsp;их&nbsp;родителям было уютно, комфортно и&nbsp;спокойно.",
+			"Можно провести несколько необходимых процедур за&nbsp;один сеанс, не&nbsp;растягивая лечение на&nbsp;множество посещений.",
 	},
 	posters: [
 		{
@@ -245,9 +376,9 @@ export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 
 export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
-		title: "Команда профессионалов:",
+		title: "Контроль со&nbsp;стороны анестезиолога",
 		description:
-			"12&nbsp;докторов с&nbsp;многолетним опытом нашей клиники в&nbsp;ответе за&nbsp;здоровье ваших зубов.",
+			"На&nbsp;протяжении всей процедуры состояние ребенка постоянно контролирует врач-анестезиолог.",
 	},
 	posters: [
 		{
