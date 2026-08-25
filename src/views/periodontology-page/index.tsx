@@ -7,7 +7,7 @@ import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
-import WhyChooseUs from "@/widgets/why-choose-us";
+// import WhyChooseUs from "@/widgets/why-choose-us";
 import YandexMap from "@/widgets/yandex-map";
 
 import css from "./index.module.css";
@@ -22,7 +22,7 @@ import {
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 	TITLE_STICKY_SECTION,
 	WHAT_SERVICE_INCLUDES,
-	WHY_CHOOSE_US,
+	// WHY_CHOOSE_US,
 } from "./models/periodontology.constants";
 
 export default function PeriodontologyPage() {
@@ -41,7 +41,7 @@ export default function PeriodontologyPage() {
 				className={css.diagnostics}
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
-			<WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} />
+			{/* <WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} /> */}
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className={css.slider}

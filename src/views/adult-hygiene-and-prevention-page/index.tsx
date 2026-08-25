@@ -1,6 +1,5 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
-import CertificatesSection from "@/widgets/certificates-section";
 import CostOfServices from "@/widgets/cost-of-services";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
 import OurPeopleSection from "@/widgets/our-people-section";
@@ -8,7 +7,7 @@ import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
-import WhyChooseUs from "@/widgets/why-choose-us";
+// import WhyChooseUs from "@/widgets/why-choose-us";
 import YandexMap from "@/widgets/yandex-map";
 import css from "./index.module.css";
 import {
@@ -22,7 +21,7 @@ import {
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 	TITLE_STICKY_SECTION,
 	WHAT_SERVICE_INCLUDES,
-	WHY_CHOOSE_US,
+	// WHY_CHOOSE_US,
 } from "./models/adult-hygiene-and-prevention.constants";
 
 export default function AdultHygieneAndPreventionPage() {
@@ -41,7 +40,7 @@ export default function AdultHygieneAndPreventionPage() {
 				className={css.diagnostics}
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
-			<WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} />
+			{/* <WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} /> */}
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className={css.slider}
