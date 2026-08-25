@@ -133,9 +133,9 @@ export const BRICKWORK_SECTION_MOCK: BrickworkSectionProps = {
 
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
-		title: "Современное оборудование",
+		title: "Обучаем правильной технике чистки",
 		description:
-			"Компьютерная томограмма и&nbsp;рентген, терапия, лечение зубов с&nbsp;микроскопом, гигиена, удаление зубов, имплантация и&nbsp;протезирование, исправление прикуса с&nbsp;применением самого современного оборудования, инновационных материалов и&nbsp;самых передовых протоколов лечения&nbsp;&mdash; залог здоровья наших пациентов!",
+			"На&nbsp;приеме врач поставит правильную технику чистки, покажет движения щетки и&nbsp;научит эффективно ухаживать за&nbsp;зубами и&nbsp;деснами в&nbsp;домашних условиях.",
 	},
 	posters: [
 		{
@@ -168,9 +168,9 @@ export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 
 export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
-		title: "Комфортная атмосфера:",
+		title: "Подбираем индивидуальный домашний уход",
 		description:
-			"Мы&nbsp;делаем все возможное, чтобы ваше посещение было приятным и&nbsp;безопасным.",
+			"Подберем щетку, пасту, ершики, ирригатор и&nbsp;другие средства именно для ваших зубов. Все необходимые средства можно приобрести сразу в&nbsp;клинике.",
 	},
 	posters: [
 		{
@@ -193,9 +193,9 @@ export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 
 export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
-		title: "Профессионализм:",
+		title: "Контролируем результат",
 		description:
-			"Наши врачи обладают опытом и знаниями в области детской стоматологии.",
+			"На&nbsp;каждом профилактическом приеме врач оценивает качество домашней гигиены, показывает плохо очищаемые участки и&nbsp;&laquo;слепые зоны&raquo;, помогает скорректировать уход и&nbsp;отслеживает ваш прогресс.",
 	},
 	posters: [
 		{
@@ -336,7 +336,7 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		title: "Смотреть всех специалистов",
 		href: SITE_NAVIGATION.vrachi,
 	},
-	employees: [GLOBAL_EMPLOYEES.magomadgadgyeva, GLOBAL_EMPLOYEES.kornilov],
+	employees: [GLOBAL_EMPLOYEES.kornilov],
 };
 
 export const WHY_CHOOSE_US: WhyChooseUsProps = {

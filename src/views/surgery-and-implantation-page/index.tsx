@@ -9,7 +9,7 @@ import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
-import WhyChooseUs from "@/widgets/why-choose-us";
+// import WhyChooseUs from "@/widgets/why-choose-us";
 import YandexMap from "@/widgets/yandex-map";
 import css from "./index.module.css";
 import {
@@ -26,7 +26,7 @@ import {
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 	TITLE_STICKY_SECTION_MOCK,
 	WHAT_SERVICE_INCLUDES,
-	WHY_CHOOSE_US,
+	// WHY_CHOOSE_US,
 } from "./models/surgery-and-implantation.constants";
 
 export default function SurgeryAndImplantationPage() {
@@ -49,7 +49,7 @@ export default function SurgeryAndImplantationPage() {
 				className={css.certificates}
 				{...CERTIFICATES_SECTION}
 			/>
-			<WhyChooseUs {...WHY_CHOOSE_US} className={css.whyChooseUs} />
+			{/* <WhyChooseUs {...WHY_CHOOSE_US} className={css.whyChooseUs} /> */}
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className={css.slider}
@@ -61,11 +61,6 @@ export default function SurgeryAndImplantationPage() {
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
-			/>
-			<TitleDescriptionSlider
-				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
-				textBlockPosition="right"
 				className={css.lastSlider}
 			/>
 			<OurPeopleSection

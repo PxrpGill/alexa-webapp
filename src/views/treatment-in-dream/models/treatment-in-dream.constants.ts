@@ -2,7 +2,8 @@ import type { AppointmentSchedulingProps } from "@/features/appointment-scheduli
 import { APPOINTMENT_ID } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { InfoTabsProps } from "@/views/adult-orthodontics-page/types/info-tabs.types";
-import { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
+import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
+import { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
@@ -354,6 +355,55 @@ export const CERTIFICATES_SECTION: CertificatesSectionProps = {
 		{
 			webp: {
 				src: "/system/certificates/3-green.webp",
+			},
+		},
+	],
+};
+
+export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
+	sectionHeader: {
+		title: "Ваша улыбка в&nbsp;руках профессионалов!",
+		description: "Мы&nbsp;реализуем целостный осмотр для своих пациентов:",
+	},
+	cards: [
+		{
+			title: "01. Осмотр и&nbsp;консультация",
+			description:
+				"Врач выслушивает ваши жалобы, проводит осмотр полости рта и&nbsp;отвечает на&nbsp;все интересующие вопросы.",
+			poster: {
+				webp: {
+					src: "/mock/diagnostics/1-desktop.webp",
+				},
+			},
+		},
+		{
+			title: "02. Комплексная диагностика",
+			description:
+				"При необходимости выполняются фотопротокол, прицельные и&nbsp;панорамные снимки или&nbsp;КТ для полной диагностики и&nbsp;точного планирования лечения.",
+			poster: {
+				webp: {
+					src: "/mock/diagnostics/2-desktop.webp",
+				},
+			},
+		},
+		{
+			title: "03. Составление плана лечения",
+			description:
+				"По&nbsp;результатам диагностики врач подробно объясняет ситуацию, предлагает оптимальные варианты лечения, озвучивает сроки и&nbsp;стоимость каждого этапа.",
+			poster: {
+				webp: {
+					src: "/mock/diagnostics/3-desktop.webp",
+				},
+			},
+		},
+		{
+			title: "04. Начало лечения",
+			description:
+				"При отсутствии противопоказаний лечение можно начать сразу после консультации или выбрать удобную дату для следующего визита.",
+			poster: {
+				webp: {
+					src: "/mock/diagnostics/4-desktop.webp",
+				},
 			},
 		},
 	],

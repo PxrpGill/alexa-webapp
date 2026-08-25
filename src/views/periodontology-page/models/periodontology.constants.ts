@@ -328,9 +328,9 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	title: "Наши преимущества",
 	textBlock: {
-		title: "Современное оборудование",
+		title: "Безболезненное лечение",
 		description:
-			"Компьютерная томограмма и&nbsp;рентген, терапия, лечение зубов с&nbsp;микроскопом, гигиена, удаление зубов, имплантация и&nbsp;протезирование, исправление прикуса с&nbsp;применением самого современного оборудования, инновационных материалов и&nbsp;самых передовых протоколов лечения&nbsp;&mdash; залог здоровья наших пациентов!",
+			"Современная анестезия и&nbsp;щадящие протоколы&nbsp;&mdash; комфортно даже для чувствительных дёсен.",
 	},
 	posters: [
 		{
@@ -363,9 +363,9 @@ export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 
 export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
-		title: "Для самых<br /> маленьких",
+		title: "Диагностика Florida Probe",
 		description:
-			"Красивые кабинеты, оборудованные по&nbsp;самым современным медицинским стандартам, игровая зона с&nbsp;игрушками, книгами и&nbsp;раскрасками, сундучок с&nbsp;чудесными подарками&nbsp;&mdash; мы&nbsp;приложили все усилия, чтобы нашим маленьким пациентам и&nbsp;их&nbsp;родителям было уютно, комфортно и&nbsp;спокойно.",
+			"Точная компьютерная оценка состояния дёсен и&nbsp;карманов&nbsp;&mdash; бесплатно на&nbsp;первом приёме.",
 	},
 	posters: [
 		{
@@ -398,9 +398,9 @@ export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 
 export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
-		title: "Команда профессионалов:",
+		title: "Сохранение зубов",
 		description:
-			"12&nbsp;докторов с&nbsp;многолетним опытом нашей клиники в&nbsp;ответе за&nbsp;здоровье ваших зубов.",
+			"Останавливаем воспаление и&nbsp;подвижность&nbsp;&mdash; сохраняем зубы на&nbsp;долгие годы без удаления.",
 	},
 	posters: [
 		{

@@ -1,15 +1,17 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import CertificatesSection from "@/widgets/certificates-section";
+// import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
 import OurPeopleSection from "@/widgets/our-people-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import WhyChooseUs from "@/widgets/why-choose-us";
+// import WhyChooseUs from "@/widgets/why-choose-us";
 import YandexMap from "@/widgets/yandex-map";
 import InfoTabs from "../adult-orthodontics-page/ui/info-tabs";
 import css from "./index.module.css";
 import {
 	CERTIFICATES_SECTION,
+	// DIAGNOSTICS_SECTION_MOCK,
 	FIRST_TITLE_DESCRIPTION_SLIDER,
 	FORM_DATA,
 	INFO_TABS_MOCK,
@@ -18,7 +20,7 @@ import {
 	// SECOND_QUADRO,
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
-	WHY_CHOOSE_US,
+	// WHY_CHOOSE_US,
 } from "./models/treatment-in-dream.constants";
 
 export default function TreatmentInDreamPage() {
@@ -26,12 +28,16 @@ export default function TreatmentInDreamPage() {
 		<main className={css.root}>
 			<QuadroSection {...QUADRO_SECTION_MOCK} className={css.quadro} />
 			<InfoTabs className={css.infoTabs} {...INFO_TABS_MOCK} />
+			{/* <DiagnosticProcessSection
+				className={css.diagnostics}
+				{...DIAGNOSTICS_SECTION_MOCK}
+			/> */}
 			{/* <QuadroSection className={css.quadro} {...SECOND_QUADRO} /> */}
 			<CertificatesSection
 				className={css.certificates}
 				{...CERTIFICATES_SECTION}
 			/>
-			<WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} />
+			{/* <WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} /> */}
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className={css.slider}

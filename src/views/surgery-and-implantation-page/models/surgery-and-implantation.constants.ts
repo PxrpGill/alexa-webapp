@@ -6,7 +6,7 @@ import {
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
-import { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
+import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { ImplantTableProps } from "@/widgets/implant-table/types/implant-table.types";
@@ -123,9 +123,9 @@ export const STILL_QUESTION_MOCK: StillQuestionProps = {
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	title: "Наши преимущества",
 	textBlock: {
-		title: "Современное оборудование",
+		title: "Цифровое планирование",
 		description:
-			"Компьютерная томограмма и&nbsp;рентген, терапия, лечение зубов с&nbsp;микроскопом, гигиена, удаление зубов, имплантация и&nbsp;протезирование, исправление прикуса с&nbsp;применением самого современного оборудования, инновационных материалов и&nbsp;самых передовых протоколов лечения&nbsp;&mdash; залог здоровья наших пациентов!",
+			"Перед лечением тщательно рассчитываем положение будущего имплантата для максимальной точности.",
 	},
 	posters: [
 		{
@@ -158,9 +158,9 @@ export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 
 export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
-		title: "Комфортная атмосфера:",
+		title: "Современные имплантационные системы",
 		description:
-			"Мы&nbsp;делаем все возможное, чтобы ваше посещение было приятным и&nbsp;безопасным.",
+			"Используем проверенные решения с&nbsp;высокой прогнозируемостью приживления.",
 	},
 	posters: [
 		{
@@ -183,9 +183,9 @@ export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 
 export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
-		title: "Профессионализм:",
+		title: "Комплексное лечение",
 		description:
-			"Наши врачи обладают опытом и&nbsp;знаниями в&nbsp;области детской стоматологии.",
+			"От&nbsp;диагностики и&nbsp;установки импланта до&nbsp;постоянной коронки&nbsp;&mdash; все этапы проходят в&nbsp;одной клинике.",
 	},
 	posters: [
 		{

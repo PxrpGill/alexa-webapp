@@ -11,6 +11,7 @@ import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
+import { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 import type { WhatServiceIncludesProps } from "@/widgets/what-service-includes/types/what-service-includes.types";
 import type { WhyChooseUsProps } from "@/widgets/why-choose-us/types/why-choose-us.types";
 
@@ -140,8 +141,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 	},
 	cards: [
 		{
-			title: "Визуальный и&nbsp;инструментальный осмотр:",
-			description: "Точная оценка состояния ваших зубов и&nbsp;полости рта.",
+			title: "01. Осмотр и&nbsp;консультация",
+			description:
+				"Врач выслушивает ваши жалобы, проводит осмотр полости рта и&nbsp;отвечает на&nbsp;все интересующие вопросы.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/1-desktop.webp",
@@ -149,9 +151,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Сбор полного анамнеза:",
+			title: "02. Комплексная диагностика",
 			description:
-				"Мы&nbsp;узнаем о&nbsp;вашем здоровье, чтобы построить индивидуальный план лечения.",
+				"При необходимости выполняются фотопротокол, прицельные и&nbsp;панорамные снимки или&nbsp;КТ для полной диагностики и&nbsp;точного планирования лечения.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/2-desktop.webp",
@@ -159,9 +161,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Рентген и&nbsp;компьютерная томография:",
+			title: "03. Составление плана лечения",
 			description:
-				"Современные методы диагностики для уверенности в&nbsp;точности диагноза.",
+				"По&nbsp;результатам диагностики врач подробно объясняет ситуацию, предлагает оптимальные варианты лечения, озвучивает сроки и&nbsp;стоимость каждого этапа.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/3-desktop.webp",
@@ -169,8 +171,9 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Визуальный и&nbsp;инструментальный осмотр:",
-			description: "Точная оценка состояния ваших зубов и&nbsp;полости рта.",
+			title: "04. Начало лечения",
+			description:
+				"При отсутствии противопоказаний лечение можно начать сразу после консультации или выбрать удобную дату для следующего визита.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/4-desktop.webp",
@@ -290,4 +293,100 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 			src: "/system/form.webp",
 		},
 	},
+};
+
+export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	title: "Наши преимущества",
+	textBlock: {
+		title: "Лечение под микроскопом",
+		description:
+			"Высокая точность позволяет сохранить больше здоровых тканей зуба и&nbsp;качественно обработать даже самые сложные корневые каналы.",
+	},
+	posters: [
+		{
+			webp: {
+				src: "/mock/home/first-slider/first-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/second-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/third-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/fourth-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/fifth-desktop.webp",
+			},
+		},
+	],
+};
+
+export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	textBlock: {
+		title: "Безболезненное лечение",
+		description:
+			"Современная анестезия и&nbsp;деликатный подход делают лечение комфортным даже для пациентов с&nbsp;повышенной чувствительностью.",
+	},
+	posters: [
+		{
+			webp: {
+				src: "/mock/home/second-slider/2-1.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/second-slider/2-2.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/second-slider/2-3.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/second-slider/2-4.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/second-slider/2-5.webp",
+			},
+		},
+	],
+};
+
+export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	textBlock: {
+		title: "Максимальное сохранение зубов",
+		description:
+			"Наша задача&nbsp;&mdash; сохранить ваш собственный зуб, если это возможно, и&nbsp;избежать удаления.",
+	},
+	posters: [
+		{
+			webp: {
+				src: "/mock/home/third-slider/3-1.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/third-slider/3-2.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/third-slider/3-3.webp",
+			},
+		},
+	],
 };
