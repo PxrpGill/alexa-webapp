@@ -13,21 +13,21 @@ export default function PromotionCard({
 	title,
 	description,
 	className,
-	poster,
-	button,
+	banner,
+	slug,
 }: PromotionCardProps) {
 	const { togglePromotionModal, selectPromotion } = usePromotionPageContext();
 
 	const handlePromotionSelect = useCallback(() => {
-		selectPromotion({ title, description });
+		if (slug) selectPromotion({ slug, title });
 		togglePromotionModal(true);
-	}, [description, selectPromotion, title, togglePromotionModal]);
+	}, [selectPromotion, togglePromotionModal, slug, title]);
 
 	return (
 		<article className={`${css.root} ${className}`}>
-			{poster && (
+			{banner && (
 				<div className={css.posterWrapper}>
-					<Picture poster={poster} />
+					<Picture poster={banner} />
 				</div>
 			)}
 			<div className={css.content}>
@@ -43,11 +43,9 @@ export default function PromotionCard({
 						className={css.description}
 					/>
 				)}
-				{button && (
-					<Button className={css.button} onClick={handlePromotionSelect}>
-						{button.title}
-					</Button>
-				)}
+				<Button className={css.button} onClick={handlePromotionSelect}>
+					Оставить заявку
+				</Button>
 			</div>
 		</article>
 	);

@@ -1,10 +1,12 @@
-import type { SiteButtonProps } from "@/shared/types/button.types";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import type { PictureFormatType } from "@/shared/ui/picture";
 
 export type PromotionCardProps = {
 	title?: string;
+	slug?: string;
 	description?: string;
-	poster?: PictureFormatType;
-	button?: SiteButtonProps;
+	banner?: PictureFormatType;
+	starts_at?: string;
+	ends_at?: string;
+	is_active?: boolean;
 } & PropsWithClassName;

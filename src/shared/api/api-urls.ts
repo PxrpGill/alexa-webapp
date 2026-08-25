@@ -7,4 +7,6 @@ export const API_URLS = {
 	getAllBranches: API_V1_PREFIX + "/branches",
 	getAllBlogs: API_V1_PREFIX + "/blog",
 	getSingleBlog: (slug: string) => API_V1_PREFIX + "/blog/" + slug,
+	getAllPromotions: API_V1_PREFIX + "/promotions",
+	requestToPromotion: API_V1_PREFIX + "/promotions/request",
 };

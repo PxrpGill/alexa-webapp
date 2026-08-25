@@ -1,9 +1,13 @@
 import type { Dispatch, SetStateAction } from "react";
-import type { PromotionCardProps } from "./promotion-card.types";
+
+export type SelectedPromotionType = {
+	title?: string;
+	slug?: string
+}
 
 export type PromotionPageContextProps = {
-	selectedPromotion?: PromotionCardProps;
-	selectPromotion: Dispatch<SetStateAction<PromotionCardProps | undefined>>;
+	selectedPromotion?: SelectedPromotionType;
+	selectPromotion: Dispatch<SetStateAction<SelectedPromotionType | undefined>>;
 
 	isPromotionModalOpen: boolean;
 	togglePromotionModal: Dispatch<SetStateAction<boolean>>;
