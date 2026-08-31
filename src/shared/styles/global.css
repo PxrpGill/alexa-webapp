@@ -37,3 +37,7 @@ main {
         padding-inline: calc(2em + (100vw - 1440px) / 2);
     }
 }
+
+body.child-theme {
+    background-color: var(--color-blue-1);
+}
