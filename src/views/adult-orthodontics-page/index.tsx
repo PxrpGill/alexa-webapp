@@ -1,10 +1,8 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import CertificatesSection from "@/widgets/certificates-section";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
 import OurPeopleSection from "@/widgets/our-people-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import YandexMap from "@/widgets/yandex-map";
 import css from "./index.module.css";
 import {
 	CERTIFICATES_SECTION,
@@ -59,7 +57,6 @@ export default function AdultOrthodonticsPage() {
 			/>
 			<OurPeopleSection className={css.ourPeople} {...OUR_PEOPLE} />
 			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

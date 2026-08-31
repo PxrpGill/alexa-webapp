@@ -1,5 +1,4 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import CertificatesSection from "@/widgets/certificates-section";
 import CostOfServices from "@/widgets/cost-of-services";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
@@ -8,7 +7,6 @@ import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
-import YandexMap from "@/widgets/yandex-map";
 
 import css from "./index.module.css";
 import {
@@ -72,7 +70,6 @@ export default function AdultOrthopedicsPage() {
 			<OurPeopleSection className={css.ourPeople} {...OUR_PEOPLE} />
 			<CostOfServices className={css.costsOfServices} {...COST_OF_SERVICES} />
 			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

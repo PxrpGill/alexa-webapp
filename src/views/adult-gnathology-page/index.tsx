@@ -1,5 +1,4 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import CostOfServices from "@/widgets/cost-of-services";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
 import OurPeopleSection from "@/widgets/our-people-section";
@@ -7,7 +6,6 @@ import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
-import YandexMap from "@/widgets/yandex-map";
 
 import css from "./index.module.css";
 import {
@@ -52,7 +50,6 @@ export default function AdultGnathologyPage() {
 			<OurPeopleSection className={css.ourPeoples} {...EMPLOYEES_SECTION} />
 			<CostOfServices className={css.costs} {...COST_OF_SERVICES} />
 			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

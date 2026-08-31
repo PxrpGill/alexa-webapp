@@ -1,9 +1,7 @@
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import HealthForFamily from "@/widgets/health-for-family";
 import HeroSlide from "@/widgets/hero-slider-section/ui/hero-slide";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import YandexMap from "@/widgets/yandex-map";
 
 import css from "./index.module.css";
 import {
@@ -40,7 +38,6 @@ export default function PediatricOrthodonticsPage() {
 				className={css.lastSlider}
 				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
 			/>
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

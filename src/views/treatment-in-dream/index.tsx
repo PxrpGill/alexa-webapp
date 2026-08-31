@@ -1,10 +1,8 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import CertificatesSection from "@/widgets/certificates-section";
 import OurPeopleSection from "@/widgets/our-people-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import YandexMap from "@/widgets/yandex-map";
 import InfoTabs from "../adult-orthodontics-page/ui/info-tabs";
 import css from "./index.module.css";
 import {
@@ -42,7 +40,6 @@ export default function TreatmentInDreamPage() {
 			/>
 			<OurPeopleSection className={css.ourPeople} {...OUR_PEOPLE_SECTION} />
 			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

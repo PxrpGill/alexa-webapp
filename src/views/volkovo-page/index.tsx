@@ -1,12 +1,10 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import AnnualCarePrograms from "@/widgets/annual-care-programs";
 import OurPeopleSection from "@/widgets/our-people-section";
 import PreventionSection from "@/widgets/prevention-section";
 import QuadroSection from "@/widgets/quadro-section";
 import SolutionsSection from "@/widgets/solutions-section";
 import StomatologyProgram from "@/widgets/stomatology-program";
-import YandexMap from "@/widgets/yandex-map";
 
 import css from "./index.module.css";
 import {
@@ -44,7 +42,6 @@ export default function VolkovoPage() {
 				isSlider
 			/>
 			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

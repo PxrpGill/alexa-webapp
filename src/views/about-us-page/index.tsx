@@ -1,11 +1,9 @@
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import CompanyStatsSection from "@/widgets/company-stats-section";
 import DescriptionSection from "@/widgets/description-section";
 import OurWork from "@/widgets/our-work";
 import StillQuestions from "@/widgets/still-questions";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import YandexMap from "@/widgets/yandex-map";
 
 import { OUR_WORK } from "../home-page/models/home-page.constants";
 
@@ -51,7 +49,6 @@ export default function AboutUsPage() {
 				{...STILL_QUESTIONS_MOCK}
 				className={css.stillQuestions}
 			/>
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

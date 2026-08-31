@@ -1,9 +1,7 @@
 import DMSModal from "@/features/dms-modal";
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import FaqSection from "@/widgets/faq-section";
 import StepperSection from "@/widgets/health-for-family/ui/stepper-section";
-import YandexMap from "@/widgets/yandex-map";
 import css from "./index.module.css";
 import {
 	DMS_INFO_BLOCK_MOCK,
@@ -21,7 +19,6 @@ export default function DMSPage() {
 			<DMSInfoBlock className={css.dmsInfo} {...DMS_INFO_BLOCK_MOCK} />
 			<StepperSection className={css.stepper} {...STEPPER_SECTION_MOCK} />
 			<FaqSection className={css.faq} {...FAQ_MOCK_SECTION_MOCK} />
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 			<DMSModal />
 		</main>
 	);

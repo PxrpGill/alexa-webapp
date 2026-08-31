@@ -1,5 +1,4 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import CertificatesSection from "@/widgets/certificates-section";
 import CostOfServices from "@/widgets/cost-of-services";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
@@ -9,7 +8,6 @@ import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
 import WhyChooseUs from "@/widgets/why-choose-us";
-import YandexMap from "@/widgets/yandex-map";
 import {
 	FIRST_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
@@ -61,7 +59,6 @@ export default function DentistConsultationPage() {
 			/>
 			<CostOfServices className={css.costOfServices} {...COST_OF_SERVICES} />
 			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

@@ -1,6 +1,4 @@
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
-import YandexMap from "@/widgets/yandex-map";
 
 import css from "./index.module.css";
 import { NOT_AVAILABLE_VACANCIES } from "./models/vacancies.constants";
@@ -16,7 +14,6 @@ export default function VacanciesPage() {
 				{...NOT_AVAILABLE_VACANCIES}
 				className={css.notAvailable}
 			/>
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }
