@@ -1,4 +1,3 @@
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import CtaSection from "@/widgets/cta-section";
 import DescriptionSection from "@/widgets/description-section";
 import FaqSection from "@/widgets/faq-section";
@@ -8,7 +7,6 @@ import OurWork from "@/widgets/our-work";
 import ParentNewsSection from "@/widgets/parent-news-section";
 import StillQuestions from "@/widgets/still-questions";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import YandexMap from "@/widgets/yandex-map";
 import css from "./index.module.css";
 import {
 	CTA_MOCK,
@@ -55,7 +53,6 @@ export default function HomePage({ initialNewsData }: HomePageProps) {
 				{...{ ...PARENT_NEWS_SECTION_MOCK, news: initialNewsData }}
 				className={css.parentNews}
 			/>
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

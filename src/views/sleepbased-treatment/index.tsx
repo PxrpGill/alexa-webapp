@@ -1,4 +1,3 @@
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import BrickworkSection from "@/widgets/brickwork-section";
 import FaqSection from "@/widgets/faq-section";
 import PromoSection from "@/widgets/promo-section";
@@ -6,7 +5,6 @@ import QuadroSection from "@/widgets/quadro-section";
 import StagesSection from "@/widgets/stages-section";
 import StillQuestions from "@/widgets/still-questions";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
-import YandexMap from "@/widgets/yandex-map";
 
 import css from "./index.module.css";
 import {
@@ -34,7 +32,6 @@ export default function SleepbasedTreatmentPage() {
 				{...STILL_QUESTIONS_LAST_MOCK}
 				className={css.questions}
 			/>
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }

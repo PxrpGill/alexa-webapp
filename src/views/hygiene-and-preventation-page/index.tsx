@@ -1,8 +1,6 @@
-import { YANDEX_MAP_INFO_CARD } from "@/shared/config/global-constants.constants";
 import BrickworkSection from "@/widgets/brickwork-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import YandexMap from "@/widgets/yandex-map";
 
 import css from "./index.module.css";
 import {
@@ -37,7 +35,6 @@ export default function HygieneAndPreventionPage() {
 				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
 				className={css.lastSlider}
 			/>
-			<YandexMap infoCard={YANDEX_MAP_INFO_CARD} className={css.yandexMap} />
 		</main>
 	);
 }
