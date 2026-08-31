@@ -8,6 +8,7 @@ import Button from "@/shared/ui/button";
 
 import { useGetAllNews } from "./hooks/use-get-all-news";
 import css from "./index.module.css";
+import { EMPTY_TITLE } from "./models/parent-news.constants";
 import type { ParentNewsSectionProps } from "./types/parent-news-section.types";
 
 export default function ParentNewsSection({
@@ -28,13 +29,22 @@ export default function ParentNewsSection({
 			{title && (
 				<h2 className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
 			)}
-			<ul className={css.list}>
-				{newsItems.map((newsCard, index) => (
-					<AnimationWrapper as="li" key={index}>
-						<NewsCard {...newsCard} className={css.card} />
-					</AnimationWrapper>
-				))}
-			</ul>
+			{newsItems.length > 0 ? (
+				<ul className={css.list}>
+					{newsItems.map((newsCard, index) => (
+						<AnimationWrapper as="li" key={index}>
+							<NewsCard {...newsCard} className={css.card} />
+						</AnimationWrapper>
+					))}
+				</ul>
+			) : (
+				<div className={css.empty}>
+					<h4
+						className={css.emptyTitle}
+						dangerouslySetInnerHTML={{ __html: EMPTY_TITLE }}
+					/>
+				</div>
+			)}
 			{hasNextPage && (
 				<Button
 					className={css.button}
