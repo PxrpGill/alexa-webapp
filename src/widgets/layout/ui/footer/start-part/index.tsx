@@ -20,7 +20,11 @@ import css from "./index.module.css";
 export default function StartPart() {
 	return (
 		<div className={css.root}>
-			<Link href={SITE_NAVIGATION.landyshevayaBase} className={css.baseLink}>
+			<Link
+				href={SITE_NAVIGATION.landyshevayaBase}
+				className={css.baseLink}
+				aria-label="Перейти на главную"
+			>
 				<LogoSvg className={css.logo} />
 			</Link>
 			<div className={css.contacts}>
@@ -28,6 +32,7 @@ export default function StartPart() {
 					href={TELEGRAM}
 					target="_blank"
 					rel="noopener"
+					aria-label="Перейти в телеграм"
 					className={css.contactLink}
 				>
 					<TelegramSVG className={css.icon} />
@@ -36,6 +41,7 @@ export default function StartPart() {
 					href={WHATSAPP}
 					target="_blank"
 					rel="noopener"
+					aria-label="Перейти в Whatsapp"
 					className={css.contactLink}
 				>
 					<WhatsappSVG className={css.icon} />
@@ -44,6 +50,7 @@ export default function StartPart() {
 					href={MAX}
 					target="_blank"
 					rel="noopener"
+					aria-label="Перейти в MAX"
 					className={css.contactLink}
 				>
 					<MaxSVG className={css.icon} />

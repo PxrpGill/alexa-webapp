@@ -42,9 +42,10 @@ export default function InfoCard({
 					const cords = branch.cords;
 
 					return (
-						<Fragment key={index}>
-							<li
-								className={css.paragraph}
+						<li className={css.paragraph} key={index}>
+							<button
+								type="button"
+								className={css.button}
 								onClick={cords ? () => onBranchSelect?.(cords) : undefined}
 								onKeyDown={
 									cords
@@ -56,8 +57,6 @@ export default function InfoCard({
 											}
 										: undefined
 								}
-								role={cords ? "button" : undefined}
-								tabIndex={cords ? 0 : undefined}
 							>
 								{branch.locality && (
 									<div className={css.pointWrapper}>
@@ -91,9 +90,8 @@ export default function InfoCard({
 										{branch.phone}
 									</Link>
 								)}
-							</li>
-							{index < branches.length - 1 && <hr className={css.hr} />}
-						</Fragment>
+							</button>
+						</li>
 					);
 				})}
 			</ul>

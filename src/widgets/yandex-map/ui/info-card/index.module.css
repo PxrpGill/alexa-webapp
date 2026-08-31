@@ -87,9 +87,7 @@
     }
 }
 
-.paragraph[role="button"] {
-    cursor: pointer;
-
+.paragraph {
     @media (hover: hover) {
         &:hover {
             .branchTitle {
@@ -97,6 +95,12 @@
             }
         }
     }
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 .workSchedule {
@@ -107,6 +111,8 @@
 
     @media (max-width: $mobile) {
         @mixin h5;
+
+        text-align: start;;
 
         line-height: 1.35;
     }

@@ -46,6 +46,7 @@ export default function ContactPart() {
 				className={css.menuButton}
 				type="button"
 				onClick={() => toggleMenuOpen(true)}
+				aria-label="Открыть меню"
 			>
 				<MenuSVG className={css.menuIcon} />
 			</button>

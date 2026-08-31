@@ -16,6 +16,7 @@ export default function Header() {
 			<div className={css.wrapper}>
 				<Link
 					className={css.link}
+					aria-label="Перейти на главную"
 					href={
 						currentBranch === "volkova"
 							? SITE_NAVIGATION.volkovaBase
