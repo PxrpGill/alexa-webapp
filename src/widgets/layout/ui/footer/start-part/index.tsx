@@ -8,69 +8,76 @@ import MaxSVG from "@/public/icons/max.svg";
 import TelegramSVG from "@/public/icons/telegram.svg";
 import WhatsappSVG from "@/public/icons/whatsapp.svg";
 import {
-	MAX,
-	TELEGRAM,
-	WHATSAPP,
+  MAX,
+  TELEGRAM,
+  WHATSAPP,
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import { FOOTER_DOCUMENTS_NAVIGATION } from "@/widgets/layout/models/footer.constants";
 
 import css from "./index.module.css";
+import { useLayoutContext } from "@/shared/config/layout-context";
 
 export default function StartPart() {
-	return (
-		<div className={css.root}>
-			<Link
-				href={SITE_NAVIGATION.landyshevayaBase}
-				className={css.baseLink}
-				aria-label="Перейти на главную"
-			>
-				<LogoSvg className={css.logo} />
-			</Link>
-			<div className={css.contacts}>
-				<a
-					href={TELEGRAM}
-					target="_blank"
-					rel="noopener"
-					aria-label="Перейти в телеграм"
-					className={css.contactLink}
-				>
-					<TelegramSVG className={css.icon} />
-				</a>
-				<a
-					href={WHATSAPP}
-					target="_blank"
-					rel="noopener"
-					aria-label="Перейти в Whatsapp"
-					className={css.contactLink}
-				>
-					<WhatsappSVG className={css.icon} />
-				</a>
-				<a
-					href={MAX}
-					target="_blank"
-					rel="noopener"
-					aria-label="Перейти в MAX"
-					className={css.contactLink}
-				>
-					<MaxSVG className={css.icon} />
-				</a>
-			</div>
-			<nav className={css.links}>
-				<ul className={css.list}>
-					{FOOTER_DOCUMENTS_NAVIGATION.map((document, index) => (
-						<li key={index} className={css.paragraph}>
-							<Link
-								className={css.link}
-								href={document.href}
-								dangerouslySetInnerHTML={{
-									__html: document.title ?? "",
-								}}
-							/>
-						</li>
-					))}
-				</ul>
-			</nav>
-		</div>
-	);
+  const { currentBranch } = useLayoutContext();
+
+  return (
+    <div className={css.root}>
+      <Link
+        href={
+          currentBranch === "landyshevaya"
+            ? SITE_NAVIGATION.landyshevayaBase
+            : SITE_NAVIGATION.volkovaBase
+        }
+        className={css.baseLink}
+        aria-label="Перейти на главную"
+      >
+        <LogoSvg className={css.logo} />
+      </Link>
+      <div className={css.contacts}>
+        <a
+          href={TELEGRAM}
+          target="_blank"
+          rel="noopener"
+          aria-label="Перейти в телеграм"
+          className={css.contactLink}
+        >
+          <TelegramSVG className={css.icon} />
+        </a>
+        <a
+          href={WHATSAPP}
+          target="_blank"
+          rel="noopener"
+          aria-label="Перейти в Whatsapp"
+          className={css.contactLink}
+        >
+          <WhatsappSVG className={css.icon} />
+        </a>
+        <a
+          href={MAX}
+          target="_blank"
+          rel="noopener"
+          aria-label="Перейти в MAX"
+          className={css.contactLink}
+        >
+          <MaxSVG className={css.icon} />
+        </a>
+      </div>
+      <nav className={css.links}>
+        <ul className={css.list}>
+          {FOOTER_DOCUMENTS_NAVIGATION.map((document, index) => (
+            <li key={index} className={css.paragraph}>
+              <Link
+                className={css.link}
+                href={document.href}
+                dangerouslySetInnerHTML={{
+                  __html: document.title ?? "",
+                }}
+              />
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  );
 }
