@@ -96,7 +96,7 @@ export const ANNUAL_CARE_SECTION_MOCK: AnnualCareProgramsProps = {
 				href: APPOINTMENT_ID.id,
 				title: "Записаться на приём",
 			},
-			price: 150_000,
+			price: 8_360,
 		},
 		{
 			title: "Программа<br /> &laquo;Под контролем&raquo;",
@@ -120,7 +120,7 @@ export const ANNUAL_CARE_SECTION_MOCK: AnnualCareProgramsProps = {
 				href: APPOINTMENT_ID.id,
 				title: "Записаться на приём",
 			},
-			price: 150_000,
+			price: 21_280,
 		},
 	],
 };
