@@ -1,0 +1,15 @@
+.root {
+    @mixin b2;
+    
+    font-weight: 600;
+}
+
+.link {
+    @mixin transition color;
+
+    @media (hover:hover) {
+        &:hover {
+            color: var(--color-green-1);
+        }
+    }
+}

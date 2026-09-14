@@ -5,6 +5,7 @@ import Link from "next/link";
 import LogoSvg from "@/public/icons/logo.svg";
 import { useLayoutContext } from "@/shared/config/layout-context";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import BreadCrumbs from "./bread-crumbs";
 import ContactPart from "./contact-part";
 import css from "./index.module.css";
 
@@ -14,16 +15,21 @@ export default function Header() {
 	return (
 		<header className={`${css.root} container`}>
 			<div className={css.wrapper}>
-				<Link
-					className={css.link}
-					href={
-						currentBranch === "volkova"
-							? SITE_NAVIGATION.volkovaBase
-							: SITE_NAVIGATION.landyshevayaBase
-					}
-				>
-					<LogoSvg className={css.logo} />
-				</Link>
+				<div className={css.leftPart}>
+					<Link
+						className={css.link}
+						aria-label="Перейти на главную"
+						href={
+							currentBranch === "volkova"
+								? SITE_NAVIGATION.volkovaBase
+								: SITE_NAVIGATION.landyshevayaBase
+						}
+					>
+						<LogoSvg className={css.logo} />
+					</Link>
+					<div className={css.divider} />
+					<BreadCrumbs className={css.breadcrumbs} />
+				</div>
 				<ContactPart />
 			</div>
 		</header>

@@ -1,0 +1,31 @@
+{
+    "lsp": {
+        "biome": {
+            "binary": {
+                "path": "/Users/this_is_gilya/projects/alexa-webapp/src/node_modules/.bin/biome"
+            }
+        }
+    },
+    "languages": {
+        "JavaScript": {
+            "format_on_save": "on",
+            "formatter": "language_server"
+        },
+        "TypeScript": {
+            "format_on_save": "on",
+            "formatter": "language_server"
+        },
+        "JSX": {
+            "format_on_save": "on",
+            "formatter": "language_server"
+        },
+        "TSX": {
+            "format_on_save": "on",
+            "formatter": "language_server"
+        },
+        "JSON": {
+            "format_on_save": "on",
+            "formatter": "language_server"
+        }
+    }
+}
