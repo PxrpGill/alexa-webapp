@@ -10,8 +10,10 @@
 | `pnpm lint` | `biome check .` |
 | `pnpm lint:fix` | `biome check --write .` |
 | `pnpm format` | `biome format --write .` |
+| `pnpm lint:css` | `stylelint "**/*.css"` |
+| `pnpm lint:css:fix` | `stylelint "**/*.css" --fix` |
 
-No test framework installed — no test command exists.
+No test framework installed — no test command exists. Type check via `tsc --noEmit` (no script alias).
 
 ## Package manager
 
@@ -19,14 +21,14 @@ Always use **pnpm**. Lockfile is `pnpm-lock.yaml`. Never npm or yarn.
 
 ## Architecture
 
-Feature-Sliced Design (FSD). Source is in `src/`. Directory roles:
+Feature-Sliced Design (FSD). Source is in `src/`. Dependency direction (top may import below, never reverse): `app → views → widgets → features → entities → shared`.
 
 | Directory | Purpose |
 |-----------|---------|
-| `app/` | Next.js App Router pages and layouts |
+| `app/` | Thin Next.js App Router wrappers — only import and render a view |
 | `views/` | Page-level compositions (one per route group) |
 | `widgets/` | Reusable section components |
-| `features/` | User interaction modules (currently empty) |
+| `features/` | User interaction modules (`consultation-modal`, `appointment-modal`, `dms-modal`, `promotion-modal`, `change-branch`, `cookies-panel`, `appointment-scheduling-section`) |
 | `entities/` | Business entities (`employee/`, `news/`) |
 | `shared/` | Reusable UI, helpers, hooks, types, styles, config |
 
@@ -57,6 +59,10 @@ export default function Home() { return <HomePage />; }
 ### Redux
 
 Redux Toolkit is a dependency but **not yet wired up** — no store, slices, or Provider. The app uses React Context (`LayoutProvider`, `PriceSectionContext`).
+
+### Data fetching
+
+TanStack React Query is wired via `shared/config/react-query-custom-provider.tsx` (mounted in `app/layout.tsx`). Axios instance lives in `shared/config/api-instance.ts` — base URL falls back to `NEXT_PUBLIC_API_URL`. Form-submit hooks live per-feature as `use-post-*.ts` (e.g. `features/consultation-modal/hooks/use-post-consultation.ts`). `/media/*` requests are rewritten to the API in `next.config.mjs`.
 
 ## Coding patterns
 
@@ -95,6 +101,8 @@ Breakpoint CSS variables:
 
 Mixins dir: `shared/styles/mixins/`. Import path: `shared/styles/`.
 
+Responsive sizing is done via `@mixin responsive <prop|--var>, <mobile-px>, <desktop-px>` (emits rem calc per breakpoint) — never hardcode a px size. Typography mixins `h1`–`h6`, `b1`–`b4`, `button` set responsive font-size. CSS is linted by stylelint (`.stylelintrc`), separate from Biome.
+
 ## Env variables
 
 | Variable | Default | Defined in |
@@ -129,13 +137,17 @@ Open `instrument-shop.code-workspace` (uses `src/` as root). Required extension:
 
 ## Git hook
 
-Pre-push hook in `.githooks/pre-push` — runs `pnpm build` before every `git push` and rejects if build fails.
+Pre-push hook in `.githooks/pre-push` — runs `CI=true pnpm build` then `pnpm audit --audit-level=high`; rejects the push if either fails.
 
 To enable (one-time per clone):
 
 ```bash
 git config core.hooksPath .githooks
 ```
+
+## CI/CD
+
+`.github/workflows/ci.yml` runs lint → typecheck (`tsc --noEmit`) → build on push/PR to `main` (paths `src/**`). `deploy.yml` auto-deploys to prod on merge to `main`: SSH into the host, `git pull`, rebuild + `docker compose up -d` in `docker/prod`. A green CI gate blocks anything that would fail locally, so run `pnpm lint` + `tsc --noEmit` + `pnpm build` before pushing.
 
 ## Commit agent
 
