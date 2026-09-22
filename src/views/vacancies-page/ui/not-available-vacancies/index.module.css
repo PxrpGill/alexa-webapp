@@ -1,10 +1,11 @@
 .wrapper {
     @mixin responsive border-radius, 30, 30;
-    @mixin responsive padding-inline, 20, 30;
-    @mixin responsive padding-block, 30, 30;
+    @mixin responsive padding-inline, 20, 130;
+    @mixin responsive padding-block, 60, 120;
 
     background-color: var(--color-white-0);
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -13,9 +14,37 @@
     @mixin responsive height, 20, 30;
 }
 
+.title,
+.description {
+    text-align: center;
+}
+
 .title {
-    @mixin text-lg;
+    @mixin text-6xl;
+    @mixin responsive padding-block-end, 15, 15;
 
     font-weight: 600;
-    text-align: center;
+
+    @media (max-width: $mobile) {
+        @mixin text-3xl;
+
+        line-height: 1.33;
+    }
+}
+
+.description {
+    @mixin text-xl;
+    @mixin responsive padding-block-end, 30, 30;
+
+    line-height: 1.58;
+}
+
+.button.button[class] {
+    @mixin text-md;
+
+    font-weight: 600;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 15;
+    }
 }

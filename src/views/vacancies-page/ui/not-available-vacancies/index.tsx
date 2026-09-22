@@ -1,27 +1,32 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: intentional suppression */
 
-import { AnimationWrapper } from '@/shared/ui/animation-wrapper';
-
-import css from './index.module.css';
-import type { NotAvailableVacanicesProps } from './types/not-available-vacancies.types';
+import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
+import Button from "@/shared/ui/button";
+import type { NotAvailableVacanicesProps } from "../../types/not-available-vacancies.types";
+import css from "./index.module.css";
 
 export default function NotAvailableVacancies({
-    title,
-    className,
+	title,
+	description,
+	className,
 }: NotAvailableVacanicesProps) {
-    if (!title) return null;
+	if (!title) return null;
 
-    return (
-        <AnimationWrapper
-            as="section"
-            className={`${css.root} ${className} container`}
-        >
-            <div className={css.wrapper}>
-                <h2
-                    dangerouslySetInnerHTML={{ __html: title }}
-                    className={css.title}
-                />
-            </div>
-        </AnimationWrapper>
-    );
+	return (
+		<AnimationWrapper
+			as="section"
+			className={`${css.root} ${className} container`}
+		>
+			<div className={css.wrapper} id="vacancies">
+				<h2 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
+				{description && (
+					<p
+						dangerouslySetInnerHTML={{ __html: description }}
+						className={css.description}
+					/>
+				)}
+				<Button className={css.button}>Оставить заявку</Button>
+			</div>
+		</AnimationWrapper>
+	);
 }

@@ -76,7 +76,7 @@
 
     &.transparent {
         border-color: var(--color-green-1);
-        background-color: var(--color-white-0);
+        background-color: unset;
         color: var(--color-green-1);
 
         @media (hover: hover) {

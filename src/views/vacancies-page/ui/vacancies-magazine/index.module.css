@@ -1,0 +1,19 @@
+.root {
+    scroll-margin-top: 5vh;
+}
+
+.wrapper {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding-block, 30, 40;
+    @mixin responsive padding-inline, 20, 30;
+
+    background-color: var(--color-white-0);
+}
+
+.header {
+    @mixin responsive padding-block-end, 40, 40;
+}
+
+.categories {
+    @mixin responsive margin-block-end, 20, 20;
+}

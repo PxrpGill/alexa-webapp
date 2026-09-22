@@ -1,0 +1,51 @@
+.root {
+    @mixin responsive gap, 30;
+
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $mobile) {
+        flex-direction: column;
+    }
+}
+
+.content {
+    @mixin responsive max-width, 0, 569;
+
+    @media (max-width: $mobile) {
+        max-width: unset;
+    }
+}
+
+.title {
+    @mixin text-6xl;
+    @mixin responsive padding-block-end, 10, 10;
+}
+
+.description {
+    @mixin text-md;
+}
+
+.countWrapper {
+    @mixin text-3xl;
+    @mixin responsive gap, 15, 20;
+
+    font-weight: 400;
+
+    display: flex;
+    align-items: center;
+}
+
+.count {
+    @mixin text-7xl;
+
+    background: linear-gradient(315.86deg, #6ED79D 14.09%, #87DDDC 103.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 48;
+    }
+}

@@ -1,0 +1,109 @@
+.wrapper {
+    @mixin responsive --first-col, 0, 770;
+    @mixin responsive border-radius, 30, 30;
+
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.posterWrapper {
+    @mixin responsive height, 185;
+
+    position: relative;
+    background-color: var(--color-white-0);
+}
+
+.information {
+    @mixin responsive padding-block, 30, 52;
+    @mixin responsive padding-inline, 20, 30;
+
+    background-color: var(--color-white-0);
+}
+
+.title {
+    @mixin text-3xl;
+    @mixin responsive padding-block-end, 10, 15;
+
+    line-height: 1.31;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 18;
+
+        line-height: 1.55;
+    }
+}
+
+.description {
+    @mixin text-md;
+    @mixin responsive padding-block-end, 0, 30;
+
+    line-height: 1.55;
+
+    @media (max-width: $mobile) {
+        @mixin text-xl;
+        
+        line-height: 1.75;
+    }
+}
+
+.card {
+    @mixin responsive height, 262, 262;
+    @mixin responsive border-radius, 30, 30;
+
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(270.95deg, #87DDDC 0.81%, #6ED79D 69.4%);
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.icon {
+    @mixin responsive width, 20, 20;
+    @mixin responsive height, 20, 20;
+}
+
+.button.button[class] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: max-content;
+
+    @media (hover:hover) {
+        &:hover {
+            border-color: var(--color-white-0);
+            background-color: var(--color-white-1);
+        }
+    }
+}
+
+.leftAlexik,
+.rightAlexik {
+    position: absolute;
+    bottom: 0;
+}
+
+.leftAlexik {
+    @mixin responsive width, 0, 180;
+
+    left: 0;
+    rotate: 24deg;
+    translate: -9% 25%;
+}
+
+.rightAlexik {
+    @mixin responsive width, 0, 220;
+
+    right: 0;
+    rotate: -24deg;
+    translate: 15% 25%;
+}

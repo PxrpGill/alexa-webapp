@@ -9,6 +9,5 @@ export const handleSectionScroll = (e: MouseEvent<HTMLElement>) => {
     document.getElementById(id)?.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
-        
     });
 };
