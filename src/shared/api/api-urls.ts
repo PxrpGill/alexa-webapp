@@ -9,4 +9,5 @@ export const API_URLS = {
 	getSingleBlog: (slug: string) => API_V1_PREFIX + "/blog/" + slug,
 	getAllPromotions: API_V1_PREFIX + "/promotions",
 	requestToPromotion: API_V1_PREFIX + "/promotions/request",
+	getAvailableVacancies: API_V1_PREFIX + "/vacancies",
 };

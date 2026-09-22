@@ -1,0 +1,20 @@
+.root {
+    @mixin responsive padding, 30, 30;
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: var(--color-white-1);
+}
+
+
+.tab.tab[class] {
+    @media (hover:hover) {
+        &:hover {
+            background-color: var(--color-green-1);
+            color: var(--color-white-1);
+        }
+    }
+}

@@ -74,7 +74,7 @@ export const BREAD_CRUMBS_SEGMENTS = new Map<string, string>([
 	],
 	[SITE_NAVIGATION.rekvizity.slice(1), "Реквизиты"],
 	[SITE_NAVIGATION.vrachi.slice(1), "Врачи"],
-	[SITE_NAVIGATION.vakansii.slice(1), "Врачи"],
+	[SITE_NAVIGATION.vakansii.slice(1), "Вакансии"],
 	[SITE_NAVIGATION.raspisanievrachej.slice(1), "Расписание врачей"],
 	[SITE_NAVIGATION.pacientu.slice(1), "Пациенту"],
 ]);
