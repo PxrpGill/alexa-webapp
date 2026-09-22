@@ -12,5 +12,5 @@ export type VacancyCategoryType = {
 export type GetAvailableVacanciesResponseType = {
 	categories?: Array<VacancyCategoryType>;
 	results?: Array<VacancyCardProps>;
-	total: number;
+	total?: number;
 };
