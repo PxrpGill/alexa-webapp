@@ -1,0 +1,89 @@
+.wrapper {
+    @mixin responsive padding-block, 30, 58;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive border-radius, 30, 30;
+
+    background: linear-gradient(180deg, #87DDDC 0%, #6ED79D 55.67%);
+    color: var(--color-white-0);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentWrapper {
+    @mixin responsive max-width, 0, 686;
+    
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $mobile) {
+        max-width: unset;
+    }
+}
+
+.title {
+    @mixin text-6xl;
+    @mixin responsive padding-block-end, 10, 10;
+
+    line-height: 1.33;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 28;
+        
+        line-height: 1.28;
+    }
+}
+
+.description {
+    @mixin text-xl;
+}
+
+.badges {
+    @mixin responsive gap, 10, 10;
+    @mixin responsive padding-block-start, 30, 50;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.badge {
+    @mixin responsive padding-block, 10, 10;
+    @mixin responsive padding-inline, 10, 20;
+    @mixin responsive border-radius, 30, 30;
+    @mixin text-base;
+
+    font-weight: 600;
+
+    background-color: var(--color-white-0);
+    color: var(--color-black-1);
+}
+
+.alexik {
+    @mixin responsive width, 203, 519;
+    @mixin responsive height, 265;
+    @mixin transition translate;
+
+    rotate: -30deg;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition-delay: 0.1s;
+    translate: 30% 80%;
+
+    &.show {
+        translate: -7% 18%;
+    }
+
+    @media (max-width: $mobile) {
+        rotate: 0deg;
+        position: static;
+        margin-inline: auto;
+
+        translate: 0 50%;
+
+        &.show {
+            translate: 0 30%;
+        }
+    }
+}

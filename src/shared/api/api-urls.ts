@@ -11,4 +11,6 @@ export const API_URLS = {
 	requestToPromotion: API_V1_PREFIX + "/promotions/request",
 	getAvailableVacancies: API_V1_PREFIX + "/vacancies",
 	requestToSaitable: API_V1_PREFIX + "/vacancies/apply",
+	getDetailVacancy: (vacancySlug: string) =>
+		API_V1_PREFIX + "/vacancies/" + vacancySlug,
 };
