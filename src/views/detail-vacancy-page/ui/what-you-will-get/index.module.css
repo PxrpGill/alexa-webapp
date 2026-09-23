@@ -1,0 +1,65 @@
+.wrapper {
+    @mixin responsive padding-block, 30, 30;
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive gap, 30, 30;
+
+    display: flex;
+    flex-direction: column;
+
+    background: linear-gradient(0deg, #F8F6F7 8.57%, #6ED79D 100%);
+}
+
+.images,
+.title,
+.cardList {
+    @mixin responsive padding-inline, 20, 30;
+}
+
+.title {
+    @mixin text-6xl;
+
+    color: var(--color-white-0);
+}
+
+.images {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+}
+
+.imageWrapper {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive width, 185, 420;
+    @mixin responsive height, 232, 525;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.cardList {
+    @mixin responsive gap, 20, 20;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-block, 30, 30;
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white-0);
+}
+
+.cardTitle {
+    @mixin text-xl;
+
+    font-weight: 600;
+}
+
+.cardDescription {
+    @mixin text-md;
+}

@@ -6,7 +6,8 @@ export type WhatYouWillGetCardType = {
 };
 
 export type WhatYouWillGetType = {
-	images: Array<PictureFormatType>;
+	title?: string;
+	images: Array<{ image: PictureFormatType }>;
 	cards: Array<WhatYouWillGetCardType>;
 };
 
