@@ -1,5 +1,7 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: intentional suppression */
 
+"use client";
+
 import { handleSectionScroll } from "@/shared/helpers/handle-section-scroll";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import Button from "@/shared/ui/button";

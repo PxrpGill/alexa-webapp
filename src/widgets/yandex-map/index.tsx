@@ -5,7 +5,7 @@
 "use client";
 
 import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useMemo, useRef } from "react";
 
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
