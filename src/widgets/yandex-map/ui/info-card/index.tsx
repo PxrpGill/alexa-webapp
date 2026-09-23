@@ -2,7 +2,6 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: static list, order won't change */
 
 import Link from "next/link";
-import { Fragment } from "react";
 
 import PointSVG from "@/public/icons/point.svg";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";

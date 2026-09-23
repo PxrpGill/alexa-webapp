@@ -15,7 +15,11 @@ export default function RequirementBlock({
 	if (!cards?.length) return null;
 
 	return (
-		<AnimationWrapper as="article" className={`${css.root} ${className}`}>
+		<AnimationWrapper
+			as="article"
+			direction="fade"
+			className={`${css.root} ${className}`}
+		>
 			{title && (
 				<h4 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
 			)}
@@ -25,12 +29,25 @@ export default function RequirementBlock({
 						as="li"
 						key={index}
 						direction="fade"
-						delay={`${index * 0.1}s`}
 						className={css.card}
 					>
 						{card.icon && (
 							<img src={card.icon} alt="Иконка" className={css.icon} />
 						)}
+						<div className={css.cardContentWrapper}>
+							{card.title && (
+								<strong
+									dangerouslySetInnerHTML={{ __html: card.title }}
+									className={css.cardTitle}
+								/>
+							)}
+							{card.description && (
+								<p
+									dangerouslySetInnerHTML={{ __html: card.description }}
+									className={css.cardDescription}
+								/>
+							)}
+						</div>
 					</AnimationWrapper>
 				))}
 			</ul>

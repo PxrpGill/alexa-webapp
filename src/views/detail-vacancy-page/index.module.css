@@ -2,6 +2,7 @@
     @mixin responsive padding-block-start, 88, 100;
 }
 
+.responsibilities,
 .requirements,
 .titleBlock,
 .whatYouWillGet,
@@ -12,6 +13,13 @@
 .title {
     @mixin text-6xl;
 
+    text-align: center;
     margin-inline: auto;
     width: fit-content;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 28;
+
+        line-height: 1.5;
+    }
 }

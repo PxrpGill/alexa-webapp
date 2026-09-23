@@ -3,6 +3,7 @@ import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import css from "./index.module.css";
 import VacancyBanner from "./ui/vacancy-banner";
 import VacancyRequirements from "./ui/vacancy-requirements";
+import VacancyResponsibilities from "./ui/vacancy-responsibilites";
 import WhatYouWillGetSection from "./ui/what-you-will-get";
 
 export default function DetailVacancyPage({
@@ -30,6 +31,12 @@ export default function DetailVacancyPage({
 					</AnimationWrapper>
 					<VacancyRequirements {...requirements} className={css.requirements} />
 				</>
+			)}
+			{responsibilities && (
+				<VacancyResponsibilities
+					{...responsibilities}
+					className={css.responsibilities}
+				/>
 			)}
 		</main>
 	);

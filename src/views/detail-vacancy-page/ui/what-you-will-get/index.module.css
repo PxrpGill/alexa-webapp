@@ -25,15 +25,23 @@
     @mixin responsive gap, 20, 20;
 
     display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    max-width: 100%;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .imageWrapper {
-    @mixin responsive border-radius, 30, 30;
+    @mixin responsive border-radius, 20, 30;
     @mixin responsive width, 185, 420;
     @mixin responsive height, 232, 525;
 
     overflow: hidden;
     position: relative;
+    flex-shrink: 0;
 }
 
 .cardList {
@@ -41,6 +49,11 @@
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .card {
@@ -58,8 +71,18 @@
     @mixin text-xl;
 
     font-weight: 600;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 18;
+
+        line-height: 1.5;
+    }
 }
 
 .cardDescription {
     @mixin text-md;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 16;
+    }
 }

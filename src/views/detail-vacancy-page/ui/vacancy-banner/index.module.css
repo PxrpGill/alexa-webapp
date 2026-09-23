@@ -41,7 +41,7 @@
 
 .badges {
     @mixin responsive gap, 10, 10;
-    @mixin responsive padding-block-start, 30, 50;
+    @mixin responsive padding-block-start, 20, 50;
 
     display: flex;
     flex-wrap: wrap;

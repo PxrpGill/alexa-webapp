@@ -42,7 +42,12 @@ export default function WhatYouWillGetSection({
 				{Array.isArray(cards) && cards.length > 0 && (
 					<ul className={css.cardList}>
 						{cards.map((card, index) => (
-							<li key={index} className={css.card}>
+							<AnimationWrapper
+								as="li"
+								direction="fade"
+								key={index}
+								className={css.card}
+							>
 								<strong
 									className={css.cardTitle}
 									dangerouslySetInnerHTML={{ __html: card.title }}
@@ -51,7 +56,7 @@ export default function WhatYouWillGetSection({
 									className={css.cardDescription}
 									dangerouslySetInnerHTML={{ __html: card.description }}
 								/>
-							</li>
+							</AnimationWrapper>
 						))}
 					</ul>
 				)}

@@ -1,3 +1,77 @@
-.wrapper {
+.root {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-block, 30, 30;
+    @mixin responsive --first-col, 0, 394;
+    @mixin responsive gap, 30, 120;
+
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+    background-color: var(--color-white-0);
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.card {
+    @mixin responsive gap, 15, 15;
     
+    display: flex;
+}
+
+.title {
+    @mixin text-3xl;
+
+    line-height: 1.5;
+}
+
+.icon {
+    @mixin responsive width, 50, 50;
+    @mixin responsive height, 50, 50;
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.cardContentWrapper {
+    @mixin responsive gap, 5, 5;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    @mixin responsive font-size, 20, 20;
+
+    font-weight: 600;
+    line-height: 1.4;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 18;
+    }
+}
+
+.cardDescription {
+    @mixin text-md;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 16;
+    }
+}
+
+.list {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.list > .card:not(:last-child) {
+    @mixin responsive padding-block-end, 20, 20;
+    @mixin responsive --border, 1, 1;
+
+    border-bottom: var(--border) solid var(--color-gray-1);
 }

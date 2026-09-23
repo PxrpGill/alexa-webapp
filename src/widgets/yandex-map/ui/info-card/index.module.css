@@ -17,7 +17,7 @@
     @mixin responsive padding-block-end, 30, 40;
 
     @media (max-width: $mobile) {
-        @mixin h3;
+        @mixin responsive font-size, 24;
     }
 }
 
@@ -48,6 +48,10 @@
     @mixin text-md;
 
     font-weight: 600;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 18;
+    }
 }
 
 .pointWrapper {
@@ -63,6 +67,10 @@
     @mixin responsive padding-block-end, 10, 10;
 
     font-weight: 600;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 16;
+    }
 }
 
 .phone {
@@ -116,4 +124,12 @@
 
         line-height: 1.35;
     }
+}
+
+
+.list > .paragraph:not(:last-child) {
+    @mixin responsive padding-block-end, 30, 30;
+    @mixin responsive --border, 1, 1;
+
+    border-bottom: var(--border) solid var(--color-gray-6);
 }
