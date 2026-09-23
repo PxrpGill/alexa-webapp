@@ -1,5 +1,6 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: intentional suppression */
 
+import { handleSectionScroll } from "@/shared/helpers/handle-section-scroll";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import Button from "@/shared/ui/button";
 import type { NotAvailableVacanicesProps } from "../../types/not-available-vacancies.types";
@@ -25,7 +26,13 @@ export default function NotAvailableVacancies({
 						className={css.description}
 					/>
 				)}
-				<Button className={css.button}>Оставить заявку</Button>
+				<Button
+					className={css.button}
+					onClick={handleSectionScroll}
+					href="#saitable"
+				>
+					Оставить заявку
+				</Button>
 			</div>
 		</AnimationWrapper>
 	);

@@ -10,4 +10,5 @@ export const API_URLS = {
 	getAllPromotions: API_V1_PREFIX + "/promotions",
 	requestToPromotion: API_V1_PREFIX + "/promotions/request",
 	getAvailableVacancies: API_V1_PREFIX + "/vacancies",
+	requestToSaitable: API_V1_PREFIX + "/vacancies/apply",
 };

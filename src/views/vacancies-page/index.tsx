@@ -1,7 +1,10 @@
+import SaitableVacancySection from "@/features/saitable-vacancy-section";
 import css from "./index.module.css";
 import {
 	NOT_AVAILABLE_VACANCIES,
+	SAITABLE_VACANCY,
 	VACANCIES_HERO,
+	VACANCIES_MAGAZINE_HEADER,
 } from "./models/vacancies.constants";
 import type { VacanciesPageProps } from "./types/vacancies-page.types";
 import NotAvailableVacancies from "./ui/not-available-vacancies";
@@ -20,11 +23,12 @@ export default function VacanciesPage({ initialPageData }: VacanciesPageProps) {
 			) : (
 				<VacanciesMagazine
 					className={css.vacanciesMagazine}
-					title="Открытые вакансии"
-					description="Присоединяйтесь к&nbsp;команде, которая заботится о&nbsp;пациентах каждый день&nbsp;&mdash; от&nbsp;первого приёма до&nbsp;последнего визита."
+					title={VACANCIES_MAGAZINE_HEADER.title}
+					description={VACANCIES_MAGAZINE_HEADER.description}
 					{...initialPageData}
 				/>
 			)}
+			<SaitableVacancySection className={css.form} {...SAITABLE_VACANCY} />
 		</main>
 	);
 }

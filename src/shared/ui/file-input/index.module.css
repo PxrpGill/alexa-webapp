@@ -1,0 +1,231 @@
+.root {
+    @mixin responsive gap, 5, 6;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* ── Label ───────────────────────────────────────────── */
+
+.label {
+    @mixin text-base;
+
+    font-weight: 600;
+    color: var(--color-black-1);
+    user-select: none;
+
+    @media (max-width: $mobile) {
+        @mixin text-lg;
+
+        font-weight: 600;
+    }
+}
+
+/* ── Native input (visually hidden) ──────────────────── */
+
+.nativeInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ── Dropzone (styled like Input) ────────────────────── */
+
+.focusBar {
+    @mixin transitionOptions 0.25s;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: calc(2rem / 14.4);
+    background-color: var(--color-accent);
+    transform: translateX(-50%);
+    border-radius: 999px;
+    pointer-events: none;
+    transition-property: width;
+}
+
+.dropzone {
+    @mixin transitionOptions 0.2s;
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive border-width, 2, 2;
+    @mixin b1;
+    @mixin responsive gap, 10, 10;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 400;
+    width: 100%;
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    border-style: solid;
+    border-color: var(--color-gray-8);
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition-property: border-color, background-color;
+    caret-color: var(--color-black-1);
+
+    &:focus,
+    &.dragging {
+        border-color: var(--color-green-1);
+
+        & .focusBar {
+            width: calc(100% - calc(4rem / 14.4));
+        }
+    }
+
+    @media (hover: hover) {
+        &:not(:disabled, :focus, .dragging):hover {
+            border-color: var(--color-green-1);
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+/* ── Icon + text ────────────────────────────────────── */
+
+.icon {
+    @mixin responsive width, 16, 16;
+    @mixin responsive height, 16, 16;
+
+    flex-shrink: 0;
+}
+
+.icon path {
+    fill: var(--color-gray-8);
+}
+
+.placeholder {
+     @mixin text-md;
+
+    font-weight: 500;
+    color: var(--color-gray-8);
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 18;
+    }
+}
+
+/* ── Size variants ──────────────────────────────────── */
+
+.s .dropzone {
+    @mixin responsive padding-inline, 8, 10;
+    @mixin responsive padding-block, 5, 6;
+}
+
+.m .dropzone {
+    @mixin responsive padding-inline, 20, 20;
+    @mixin responsive padding-block, 20, 20;
+}
+
+.l .dropzone {
+    @mixin responsive padding-inline, 12, 14;
+    @mixin responsive padding-block, 10, 12;
+}
+
+/* ── File list ──────────────────────────────────────── */
+
+.fileList {
+    @mixin responsive gap, 8, 12;
+
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.fileItem {
+    @mixin responsive border-radius, 16, 16;
+    @mixin responsive padding-inline, 16, 20;
+    @mixin responsive padding-block, 8, 10;
+    @mixin responsive gap, 8, 12;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-bg-tertiary);
+}
+
+.fileName {
+    @mixin b2;
+
+    overflow: hidden;
+    color: var(--color-text-primary);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.removeButton {
+    @mixin transition color;
+    @mixin responsive width, 24, 24;
+    @mixin responsive height, 24, 24;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+
+    svg {
+        @mixin responsive width, 14, 14;
+        @mixin responsive height, 14, 14;
+    }
+
+    svg path {
+        fill: currentcolor;
+    }
+
+    &:hover {
+        color: var(--color-green-1);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+/* ── Error state ────────────────────────────────────── */
+
+.hasError .dropzone {
+    border-color: var(--color-error);
+
+    &:focus .focusBar {
+        background-color: var(--color-error);
+    }
+}
+
+/* ── Disabled state ─────────────────────────────────── */
+
+.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+
+    & .dropzone {
+        cursor: not-allowed;
+    }
+}
+
+/* ── Message (hint / error) ─────────────────────────── */
+
+.message {
+    color: var(--color-text-muted);
+}
+
+.errorMessage {
+    color: rgb(218 28 28);
+}
