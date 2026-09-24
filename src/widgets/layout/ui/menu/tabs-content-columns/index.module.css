@@ -80,3 +80,13 @@
     font-weight: 400;
     color: var(--color-gray-3);
 }
+
+.titleHref {
+    @mixin transition color;
+
+    @media (hover:hover) {
+        &:hover {
+            color: var(--color-green-1);
+        }
+    }
+}
