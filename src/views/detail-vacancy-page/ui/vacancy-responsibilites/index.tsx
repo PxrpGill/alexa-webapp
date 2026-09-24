@@ -39,13 +39,13 @@ export default function VacancyResponsibilities({
 								{card.title && (
 									<strong
 										dangerouslySetInnerHTML={{ __html: card.title }}
-										className={css.cardContent}
+										className={css.cardTitle}
 									/>
 								)}
 								{card.description && (
 									<p
 										dangerouslySetInnerHTML={{ __html: card.description }}
-										className={css.description}
+										className={css.cardDescription}
 									/>
 								)}
 							</div>

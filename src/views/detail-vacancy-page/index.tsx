@@ -1,6 +1,8 @@
 import type { DetailVacancyType } from "@/entities/vacancies/types/detail-vacancy.types";
+import SaitableVacancySection from "@/features/saitable-vacancy-section";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import css from "./index.module.css";
+import { SAITABLE_VACANCY } from "./models/details-vacancy-page.constants";
 import VacancyBanner from "./ui/vacancy-banner";
 import VacancyRequirements from "./ui/vacancy-requirements";
 import VacancyResponsibilities from "./ui/vacancy-responsibilites";
@@ -38,6 +40,13 @@ export default function DetailVacancyPage({
 					className={css.responsibilities}
 				/>
 			)}
+			<AnimationWrapper className={`${css.titleBlock} container`}>
+				<h2 className={css.title}>
+					Здесь важны не&nbsp;только пациенты,
+					<br /> но&nbsp;и&nbsp;команда
+				</h2>
+			</AnimationWrapper>
+			<SaitableVacancySection className={css.form} {...SAITABLE_VACANCY} />
 		</main>
 	);
 }
