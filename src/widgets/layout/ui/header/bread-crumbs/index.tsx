@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useLayoutContext } from "@/shared/config/layout-context";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import { BRANCH_COOKIES_VALUES } from "@/shared/hooks/set-branch-in-cookies";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import { BREAD_CRUMBS_SEGMENTS } from "@/widgets/layout/models/bread-crumbs.constants";
 import css from "./index.module.css";
@@ -40,7 +41,7 @@ export default function BreadCrumbs({ className }: BreadCrumbsProps) {
 			<Link
 				className={css.link}
 				href={
-					currentBranch === "landyshevaya"
+					currentBranch === BRANCH_COOKIES_VALUES.landyshevaya
 						? SITE_NAVIGATION.landyshevayaBase
 						: SITE_NAVIGATION.volkovaBase
 				}

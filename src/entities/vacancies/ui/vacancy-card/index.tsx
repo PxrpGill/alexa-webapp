@@ -1,10 +1,13 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 
+"use client";
+
 import Link from "next/link";
 import CircleArrowSVG from "@/public/icons/circle-arrow.svg";
 import BranchIcon from "@/public/icons/point.svg";
 import ArrowSVG from "@/public/icons/white-arrow.svg";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import { BRANCH_COOKIES_VALUES } from "@/shared/hooks/set-branch-in-cookies";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import Button from "@/shared/ui/button";
 import type { VacancyCardProps } from "../../types/vacancy-card.types";
@@ -44,7 +47,9 @@ export default function VacancyCard({
 					<div className={css.branchWrapper}>
 						<BranchIcon className={css.point} />
 						<p>
-							{branch === "volkova" ? "Ростов-на-Дону" : "Посёлок Янтарный"}
+							{branch === BRANCH_COOKIES_VALUES.volkova
+								? "Ростов-на-Дону"
+								: "Посёлок Янтарный"}
 						</p>
 					</div>
 				)}

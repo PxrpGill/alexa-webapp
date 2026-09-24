@@ -2,7 +2,10 @@ import { useMemo } from "react";
 import { useGetAllNews } from "@/entities/news/hooks/use-get-all-news";
 import DashboardSVG from "@/public/icons/dashboard.svg";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
-import type { BranchType } from "@/shared/hooks/set-branch-in-cookies";
+import {
+	BRANCH_COOKIES_VALUES,
+	type BranchType,
+} from "@/shared/hooks/set-branch-in-cookies";
 import {
 	HEADER_NAVIGATION_ADULT_DENTISTRY_LINKS,
 	HEADER_NAVIGATION_INFO,
@@ -95,7 +98,7 @@ export const useDefineMenuContent = (
 		[informationContent],
 	);
 
-	return currentBranch === "volkova"
+	return currentBranch === BRANCH_COOKIES_VALUES.volkova
 		? volkovaMenuTabsData
 		: LANDYSHEVAYA_MENU_TABS_DATA;
 };
