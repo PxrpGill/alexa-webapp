@@ -2,30 +2,51 @@
     "lsp": {
         "biome": {
             "binary": {
-                "path": "/Users/this_is_gilya/projects/alexa-webapp/src/node_modules/.bin/biome"
+                "path": "/Users/this_is_gilya/projects/alexa-webapp/src/node_modules/.bin/biome",
+                "arguments": ["lsp-proxy"]
             }
         }
     },
     "languages": {
         "JavaScript": {
             "format_on_save": "on",
-            "formatter": "language_server"
+            "formatter": {
+                "language_server": {
+                    "name": "biome"
+                }
+            }
         },
         "TypeScript": {
             "format_on_save": "on",
-            "formatter": "language_server"
+            "formatter": {
+                "language_server": {
+                    "name": "biome"
+                }
+            }
         },
         "JSX": {
             "format_on_save": "on",
-            "formatter": "language_server"
+            "formatter": {
+                "language_server": {
+                    "name": "biome"
+                }
+            }
         },
         "TSX": {
             "format_on_save": "on",
-            "formatter": "language_server"
+            "formatter": {
+                "language_server": {
+                    "name": "biome"
+                }
+            }
         },
         "JSON": {
             "format_on_save": "on",
-            "formatter": "language_server"
+            "formatter": {
+                "language_server": {
+                    "name": "biome"
+                }
+            }
         }
     }
 }
