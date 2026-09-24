@@ -17,7 +17,7 @@ export const useGetAllNews = ({
 	const initialPage = initialData?.pagination?.page ?? 1;
 
 	return useInfiniteQuery({
-		queryKey: ["news", "all"],
+		queryKey: ["news", "all", perPage.toString()],
 		queryFn: ({ pageParam }) => getAllNews({ page: pageParam, perPage }),
 		initialPageParam: initialPage,
 		getNextPageParam: (lastPage) => {
