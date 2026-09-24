@@ -8,9 +8,11 @@ const DEFAULT_PER_PAGE = 6;
 export const useGetAllNews = ({
 	initialData,
 	perPage = DEFAULT_PER_PAGE,
+	enabled = true,
 }: {
 	initialData?: GetAllNewsResponseType;
 	perPage?: number;
+	enabled?: boolean;
 }) => {
 	const initialPage = initialData?.pagination?.page ?? 1;
 
@@ -29,5 +31,6 @@ export const useGetAllNews = ({
 					pageParams: [initialPage],
 				}
 			: undefined,
+		enabled: enabled,
 	});
 };

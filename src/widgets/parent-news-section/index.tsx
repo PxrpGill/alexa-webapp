@@ -2,11 +2,10 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: intentional suppression */
 "use client";
 
+import { useGetAllNews } from "@/entities/news/hooks/use-get-all-news";
 import NewsCard from "@/entities/news/ui/news-card";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import Button from "@/shared/ui/button";
-
-import { useGetAllNews } from "./hooks/use-get-all-news";
 import css from "./index.module.css";
 import { EMPTY_TITLE } from "./models/parent-news.constants";
 import type { ParentNewsSectionProps } from "./types/parent-news-section.types";
