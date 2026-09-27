@@ -1,15 +1,15 @@
-import AdultOrthopedicsPage from "@/views/adult-orthopedics-page";
+import type { Metadata } from 'next';
+
+import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
+import { buildMetadata } from '@/shared/helpers/build-metadata';
+import AdultOrthopedicsPage from '@/views/adult-orthopedics-page';
 
 export const revalidate = 60;
 
-export const generateMetadata = () => {
-	return {
-		title: "Стоматология Алекса | Ортопедия: восстановление и коррекция зубов",
-		description:
-			"Восстановление целостности и функции зубного ряда. Мы предлагаем: виниры, коронки, импланты, керамические вкладки, съемные протезы. Высокая точность! ",
-	};
-};
+export const metadata: Metadata = buildMetadata(
+    SITE_NAVIGATION.landyshevayaServices['ortopediya-vz']
+);
 
 export default function AdultOrthopedics() {
-	return <AdultOrthopedicsPage />;
+    return <AdultOrthopedicsPage />;
 }

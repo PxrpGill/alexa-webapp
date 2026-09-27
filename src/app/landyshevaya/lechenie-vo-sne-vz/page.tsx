@@ -1,16 +1,15 @@
-import TreatmentInDreamPage from "@/views/treatment-in-dream";
+import type { Metadata } from 'next';
+
+import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
+import { buildMetadata } from '@/shared/helpers/build-metadata';
+import TreatmentInDreamPage from '@/views/treatment-in-dream';
 
 export const revalidate = 60;
 
-export const generateMetadata = () => {
-	return {
-		title:
-			"Стоматология Алекса | Лечение зубов под седацией или наркозом. Без боли и страха",
-		description:
-			"Боитесь стоматолога и боли? Аллергия на анестезию? Лечение зубов под седацией или наркозом - безопасное решение. Вы не почувствуете, как проходит процедура!",
-	};
-};
+export const metadata: Metadata = buildMetadata(
+    SITE_NAVIGATION.landyshevayaServices['lechenie-vo-sne-vz']
+);
 
 export default function TreatmentInDream() {
-	return <TreatmentInDreamPage />;
+    return <TreatmentInDreamPage />;
 }
