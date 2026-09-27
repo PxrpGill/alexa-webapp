@@ -110,6 +110,7 @@ Responsive sizing is done via `@mixin responsive <prop|--var>, <mobile-px>, <des
 | `NEXT_PUBLIC_YANDEX_MAPS_API_KEY` | — | `.env.example` |
 | `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | `.env.example` (client-side) |
 | `API_URL` | `http://localhost:8000` | `.env.example` (server-side, e.g. `http://host.docker.internal:8000` in Docker dev) |
+| `NEXT_PUBLIC_SITE_URL` | `https://aleksa-dent.ru` | `.env.example`; canonical / `og:url` / sitemap origin, **baked in at build time** (passed as a build `ARG` in `docker/prod`) |
 
 `.env.local` is gitignored.
 

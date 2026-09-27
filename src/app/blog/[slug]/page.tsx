@@ -4,11 +4,14 @@ import { notFound } from 'next/navigation';
 import { getAllNews } from '@/entities/news/api/get-all-news';
 import { getSingleNews } from '@/entities/news/api/get-single-news';
 import { buildArticleJsonLd } from '@/shared/config/seo/organization';
-import { PAGE_META } from '@/shared/config/seo/page-meta.constants';
-import { OG_LOCALE, SITE_NAME } from '@/shared/config/seo/seo.constants';
+import {
+    META_DESCRIPTION_MAX_LENGTH,
+    META_TITLE_MAX_LENGTH,
+} from '@/shared/config/seo/seo.constants';
 import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
 import { buildMetadata } from '@/shared/helpers/build-metadata';
 import { normalizeMetaText } from '@/shared/helpers/normalize-meta-text';
+import { toJsonLd } from '@/shared/helpers/to-json-ld';
 import SingleBlogPage from '@/views/single-blog-page';
 
 type SingleBlogPageParams = {
@@ -31,24 +34,24 @@ export const generateMetadata = async ({
     const { slug } = await params;
     const news = await getSingleNews(slug);
 
-    const title = normalizeMetaText(news?.title, 60);
-    const description = normalizeMetaText(news?.description, 160);
+    const title = normalizeMetaText(news?.title, META_TITLE_MAX_LENGTH);
+    const description = normalizeMetaText(
+        news?.description,
+        META_DESCRIPTION_MAX_LENGTH
+    );
     const url = `${SITE_NAVIGATION.blog}/${slug}`;
+    const base = buildMetadata(SITE_NAVIGATION.blog, {
+        ...(title ? { title } : {}),
+        ...(description ? { description } : {}),
+    });
 
     return {
-        ...buildMetadata(SITE_NAVIGATION.blog, {
-            ...(title ? { title } : {}),
-            ...(description ? { description } : {}),
-        }),
+        ...base,
         alternates: { canonical: url },
         openGraph: {
+            ...base.openGraph,
             type: 'article',
-            locale: OG_LOCALE,
-            siteName: SITE_NAME,
             url,
-            title: title ?? PAGE_META[SITE_NAVIGATION.blog].title,
-            description:
-                description ?? PAGE_META[SITE_NAVIGATION.blog].description,
         },
     };
 };
@@ -71,7 +74,7 @@ export default async function SingleBlog({ params }: SingleBlogPageParams) {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(articleJsonLd),
+                    __html: toJsonLd(articleJsonLd),
                 }}
             />
             <SingleBlogPage {...initialSingleNewsPage} />

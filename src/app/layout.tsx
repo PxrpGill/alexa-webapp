@@ -17,6 +17,7 @@ import {
     SITE_URL,
     TITLE_TEMPLATE,
 } from '@/shared/config/seo/seo.constants';
+import { toJsonLd } from '@/shared/helpers/to-json-ld';
 import Layout from '@/widgets/layout';
 
 export const metadata: Metadata = {
@@ -26,7 +27,6 @@ export const metadata: Metadata = {
         template: TITLE_TEMPLATE,
     },
     description: DEFAULT_DESCRIPTION,
-    alternates: { canonical: '/' },
     openGraph: {
         type: 'website',
         locale: OG_LOCALE,
@@ -51,7 +51,7 @@ export default async function RootLayout({
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(ORGANIZATION_JSON_LD),
+                        __html: toJsonLd(ORGANIZATION_JSON_LD),
                     }}
                 />
                 <ReactQueryCustomProvider>

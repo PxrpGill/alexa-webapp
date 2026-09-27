@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { getDetailVacancy } from '@/shared/api/get-detail-vacancy';
+import { getDetailVacancyBySlug } from '@/shared/api/get-detail-vacancy';
 import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
 import { buildMetadata } from '@/shared/helpers/build-metadata';
 import { normalizeMetaText } from '@/shared/helpers/normalize-meta-text';
@@ -15,7 +15,7 @@ export const generateMetadata = async ({
     params,
 }: DetailVacancyParams): Promise<Metadata> => {
     const { slug } = await params;
-    const vacancy = await getDetailVacancy({ vacancySlug: slug });
+    const vacancy = await getDetailVacancyBySlug(slug);
 
     const title = normalizeMetaText(vacancy?.hero?.vacancy_name, 60);
     const description = normalizeMetaText(vacancy?.hero?.description, 160);
@@ -31,9 +31,7 @@ export const generateMetadata = async ({
 
 export default async function DetailVacancy({ params }: DetailVacancyParams) {
     const { slug } = await params;
-    const initialDetailVacancyPageData = await getDetailVacancy({
-        vacancySlug: slug,
-    });
+    const initialDetailVacancyPageData = await getDetailVacancyBySlug(slug);
 
     if (!initialDetailVacancyPageData) {
         return notFound();

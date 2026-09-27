@@ -10,6 +10,10 @@ RUN corepack enable
 COPY src/ ./
 COPY --from=deps /app/node_modules ./node_modules
 ENV NEXT_TELEMETRY_DISABLED=1
+# canonical, og:url и sitemap запекаются в предрендеренный HTML на этапе
+# сборки, поэтому домен обязан быть известен здесь, а не только в рантайме.
+ARG NEXT_PUBLIC_SITE_URL=https://aleksa-dent.ru
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 RUN pnpm build
 
 FROM node:24-alpine AS runner
