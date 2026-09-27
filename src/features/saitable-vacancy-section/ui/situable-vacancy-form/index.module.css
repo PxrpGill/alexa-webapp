@@ -25,3 +25,9 @@
     @mixin responsive width, 20, 20;
     @mixin responsive height, 20, 20;
 }
+
+.generalError {
+    @mixin b3;
+
+    color: var(--color-error);
+}

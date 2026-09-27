@@ -9,6 +9,7 @@ import VacancyResponsibilities from "./ui/vacancy-responsibilites";
 import WhatYouWillGetSection from "./ui/what-you-will-get";
 
 export default function DetailVacancyPage({
+	slug,
 	hero,
 	what_you_will_get,
 	requirements,
@@ -46,7 +47,11 @@ export default function DetailVacancyPage({
 					<br /> но&nbsp;и&nbsp;команда
 				</h2>
 			</AnimationWrapper>
-			<SaitableVacancySection className={css.form} {...SAITABLE_VACANCY} />
+			<SaitableVacancySection
+				className={css.form}
+				{...SAITABLE_VACANCY}
+				vacancySlug={slug}
+			/>
 		</main>
 	);
 }

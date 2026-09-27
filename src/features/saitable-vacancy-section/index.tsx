@@ -14,6 +14,7 @@ export default function SaitableVacancySection({
 	description,
 	className,
 	poster,
+	vacancySlug,
 }: SaitableVacanciesSectionProps) {
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 
@@ -38,7 +39,10 @@ export default function SaitableVacancySection({
 						description={description}
 						className={css.header}
 					/>
-					<SaitableVacancyForm toggleSuccess={toggleSuccessFromOpen} />
+					<SaitableVacancyForm
+						toggleSuccess={toggleSuccessFromOpen}
+						vacancySlug={vacancySlug}
+					/>
 				</div>
 				{poster && (
 					<div className={css.posterWrapper}>
