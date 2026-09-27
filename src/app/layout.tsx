@@ -8,6 +8,7 @@ import type { ReactNode } from 'react';
 import Favicon from '@/shared/config/favicon';
 import InvolveFont from '@/shared/config/local-font';
 import { ReactQueryCustomProvider } from '@/shared/config/react-query-custom-provider';
+import { ORGANIZATION_JSON_LD } from '@/shared/config/seo/organization';
 import {
     DEFAULT_DESCRIPTION,
     DEFAULT_TITLE,
@@ -47,6 +48,12 @@ export default async function RootLayout({
         <html lang="ru" className={InvolveFont.className}>
             <Favicon />
             <body>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(ORGANIZATION_JSON_LD),
+                    }}
+                />
                 <ReactQueryCustomProvider>
                     <Layout>{children}</Layout>
                 </ReactQueryCustomProvider>
