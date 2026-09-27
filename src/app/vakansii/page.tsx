@@ -1,24 +1,23 @@
-import VacanciesPage from "@/views/vacancies-page";
-import { getAvailableVacancies } from "@/views/vacancies-page/api/get-available-vacancies";
+import type { Metadata } from 'next';
+
+import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
+import { buildMetadata } from '@/shared/helpers/build-metadata';
+import VacanciesPage from '@/views/vacancies-page';
+import { getAvailableVacancies } from '@/views/vacancies-page/api/get-available-vacancies';
 
 export const revalidate = 60;
 
-export const generateMetadata = () => {
-	return {
-		title: "Вакансии",
-		description: "Работа в современной стоматологии",
-	};
-};
+export const metadata: Metadata = buildMetadata(SITE_NAVIGATION.vakansii);
 
 type VacanciesParamsType = {
-	searchParams: Promise<{
-		category?: string;
-	}>;
+    searchParams: Promise<{
+        category?: string;
+    }>;
 };
 
 export default async function Vacancies({ searchParams }: VacanciesParamsType) {
-	const { category } = await searchParams;
-	const initialPageData = await getAvailableVacancies({ category });
+    const { category } = await searchParams;
+    const initialPageData = await getAvailableVacancies({ category });
 
-	return <VacanciesPage initialPageData={initialPageData} />;
+    return <VacanciesPage initialPageData={initialPageData} />;
 }
