@@ -1,24 +1,15 @@
 import type { Metadata } from 'next';
 
 import { PAGE_META } from '@/shared/config/seo/page-meta.constants';
-import {
-    DEFAULT_DESCRIPTION,
-    DEFAULT_TITLE,
-    OG_LOCALE,
-    SITE_NAME,
-} from '@/shared/config/seo/seo.constants';
+import { OG_LOCALE, SITE_NAME } from '@/shared/config/seo/seo.constants';
 import type { PageMeta, SiteRoute } from '@/shared/config/seo/types';
 
 export const buildMetadata = (
     route: SiteRoute,
     overrides?: Partial<PageMeta>
 ): Metadata => {
-    const registryMeta = PAGE_META[route];
-
     const meta: PageMeta = {
-        title: DEFAULT_TITLE,
-        description: DEFAULT_DESCRIPTION,
-        ...registryMeta,
+        ...PAGE_META[route],
         ...overrides,
     };
 
