@@ -2,10 +2,11 @@
 
 "use client";
 
-import { useCallback } from "react";
+import CircleArrowSVG from "@/public/icons/circle-arrow.svg";
+import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import { getTimeLeft } from "@/shared/helpers/get-time-left";
 import Button from "@/shared/ui/button";
 import Picture from "@/shared/ui/picture";
-import { usePromotionPageContext } from "../../models/promotion-page-context";
 import type { PromotionCardProps } from "../../types/promotion-card.types";
 import css from "./index.module.css";
 
@@ -15,36 +16,43 @@ export default function PromotionCard({
 	className,
 	banner,
 	slug,
+	ends_at,
+	starts_at,
 }: PromotionCardProps) {
-	const { togglePromotionModal, selectPromotion } = usePromotionPageContext();
-
-	const handlePromotionSelect = useCallback(() => {
-		if (slug) selectPromotion({ slug, title });
-		togglePromotionModal(true);
-	}, [selectPromotion, togglePromotionModal, slug, title]);
-
 	return (
 		<article className={`${css.root} ${className}`}>
-			{banner && (
-				<div className={css.posterWrapper}>
-					<Picture poster={banner} />
-				</div>
-			)}
+			<div className={css.posterWrapper}>
+				{banner && <Picture poster={banner} />}
+			</div>
 			<div className={css.content}>
-				{title && (
-					<h5
-						dangerouslySetInnerHTML={{ __html: title }}
-						className={css.title}
-					/>
-				)}
-				{description && (
-					<div
-						dangerouslySetInnerHTML={{ __html: description }}
-						className={css.description}
-					/>
-				)}
-				<Button className={css.button} onClick={handlePromotionSelect}>
-					Оставить заявку
+				<div className={css.textContent}>
+					{title && (
+						<h5
+							dangerouslySetInnerHTML={{ __html: title }}
+							className={css.title}
+						/>
+					)}
+					{description && (
+						<div
+							dangerouslySetInnerHTML={{ __html: description }}
+							className={css.description}
+						/>
+					)}
+					{ends_at && starts_at && (
+						<div className={css.timeLeft}>
+							<p className={css.label}>До конца акции:</p>
+							<p className={css.date}>
+								{getTimeLeft(ends_at, new Date(starts_at))}
+							</p>
+						</div>
+					)}
+				</div>
+				<Button
+					className={css.button}
+					href={`${SITE_NAVIGATION.akcii}/${slug}`}
+					rightIcon={<CircleArrowSVG className={css.circleArrow} />}
+				>
+					Узнать подробнее
 				</Button>
 			</div>
 		</article>

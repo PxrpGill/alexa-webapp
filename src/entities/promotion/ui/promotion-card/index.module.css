@@ -1,5 +1,8 @@
 .root {
-    @mixin responsive border-radius, 30, 30;
+    @mixin responsive border-radius, 30, 50;
+    @mixin responsive padding-block, 20, 30;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive gap, 20, 20;
 
     background-color: var(--color-white-0);
     overflow: hidden;
@@ -8,22 +11,29 @@
 }
 
 .posterWrapper {
-    @mixin responsive height, 250, 500;
+    @mixin responsive height, 250, 343;
+    @mixin responsive border-radius, 20, 20;
 
     position: relative;
+    overflow: hidden;
     width: 100%;
     flex-shrink: 0;
+    background-color: var(--color-white-1);
 }
 
 .title {
     @mixin responsive padding-block-end, 10, 10;
-    @mixin text-base;
+    @mixin text-xl;
 
     font-weight: 600;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 20;
+    }
 }
 
 .content {
-    @mixin responsive padding, 20, 30;
+    @mixin responsive gap, 30, 30;
 
     height: 100%;
     display: flex;
@@ -36,7 +46,6 @@
 
     display: flex;
     flex-direction: column;
-    color: var(--color-gray-10);
 
     strong {
         font-weight: 600;
@@ -54,9 +63,55 @@
     ol {
         list-style: decimal;
     }
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 16;
+    }
 }
 
 .button[class] {
     margin-block-start: auto;
     width: fit-content;
+}
+
+.timeLeft {
+    @mixin text-md;
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 16;
+    }
+}
+
+.date {
+    @mixin text-xl;
+
+    font-weight: 600;
+
+    background: linear-gradient(315.86deg, #6ED79D 14.09%, #87DDDC 103.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 20;
+    }
+}
+
+.label {
+    font-weight: 600;
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.circleArrow {
+    @mixin responsive width, 20, 20;
+    @mixin responsive height, 20, 20;
 }
