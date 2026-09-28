@@ -143,6 +143,7 @@ Defined in `src/.env.example`; real values go in `src/.env.local` (gitignored).
 | `NEXT_PUBLIC_YANDEX_MAPS_API_KEY` | — | Yandex Maps widget |
 | `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | client-side base URL |
 | `API_URL` | `http://localhost:8000` | server-side; takes precedence. `http://host.docker.internal:8000` in Docker dev |
+| `NEXT_PUBLIC_SITE_URL` | `https://aleksa-dent.ru` | canonical / `og:url` / sitemap origin. **Baked in at build time** — `docker/prod` passes it as a build `ARG`, not just `env_file`, because the 35 static pages are prerendered with it. |
 
 ## Docker
 

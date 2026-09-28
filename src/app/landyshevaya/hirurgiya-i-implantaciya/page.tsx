@@ -1,16 +1,15 @@
-import SurgeryAndImplantationPage from "@/views/surgery-and-implantation-page";
+import type { Metadata } from 'next';
+
+import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
+import { buildMetadata } from '@/shared/helpers/build-metadata';
+import SurgeryAndImplantationPage from '@/views/surgery-and-implantation-page';
 
 export const revalidate = 60;
 
-export const generateMetadata = () => {
-	return {
-		title:
-			"Стоматология Алекса | Хирургия и имплантация: восстановление здоровья улыбки",
-		description:
-			"Удаление зубов ультразвуковой системой. Имплантация all-on-4, all-on-6. Операции по пластике уздечки и десны, микрохирургии, подсадке и закрытию рецессии десны.",
-	};
-};
+export const metadata: Metadata = buildMetadata(
+    SITE_NAVIGATION.landyshevayaServices['hirurgiya-i-implantaciya']
+);
 
 export default function SurgeryAndImplantation() {
-	return <SurgeryAndImplantationPage />;
+    return <SurgeryAndImplantationPage />;
 }

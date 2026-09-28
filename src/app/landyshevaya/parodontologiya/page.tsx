@@ -1,16 +1,15 @@
-import PeriodontologyPage from "@/views/periodontology-page";
+import type { Metadata } from 'next';
+
+import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
+import { buildMetadata } from '@/shared/helpers/build-metadata';
+import PeriodontologyPage from '@/views/periodontology-page';
 
 export const revalidate = 60;
 
-export const generateMetadata = () => {
-	return {
-		title:
-			"Стоматология Алекса | Пародонтология",
-		description:
-			"Удаление налета и зубного камня. Улучшение состояние десен и предотвращение развития кариеса и пародонтита. Заботьтесь о здоровье зубов с нашими услугами!",
-	};
-};
+export const metadata: Metadata = buildMetadata(
+    SITE_NAVIGATION.landyshevayaServices.parodontologiya
+);
 
 export default function Periodontology() {
-	return <PeriodontologyPage />;
+    return <PeriodontologyPage />;
 }
