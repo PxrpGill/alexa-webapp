@@ -1,0 +1,25 @@
+.root {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* По макету секции заголовок в одну строку (36/43), мобильный — как был */
+.title {
+    @mixin text-4xl;
+
+    @media (max-width: $mobile) {
+        @mixin text-6xl;
+    }
+}
+
+.description {
+    @mixin text-md;
+
+    @media (max-width: $mobile) {
+        @mixin text-lg;
+
+        font-weight: 400;
+    }
+}

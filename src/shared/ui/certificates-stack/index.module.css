@@ -1,0 +1,278 @@
+/**
+ * Раскладка перенесена из макета (Frame 211, 770 × 439 — ровно ширина правой
+ * колонки страницы акций при контейнере 1360 и левой части 590). Карточка
+ * в макете 423 × 300 и повёрнута на 30°, поэтому translate задаёт центр
+ * карточки в системе координат до поворота: X в % от 422 (ширина), Y в % от
+ * 297 (высота при пропорции картинки 1080 × 760). Порядок в разметке =
+ * порядок слоёв в Figma снизу вверх.
+ *
+ * Стартовое положение у всех одно — за левым нижним углом блока, поэтому по
+ * .visible карточки уезжают по прямой из одной точки в свои места (translate
+ * интерполируется линейно) и разлетаются веером. --index даёт задержку, так
+ * что стопка собирается снизу вверх, в порядке слоёв.
+ *
+ * Ширина карточки вынесена в --certificate-width: проценты translate
+ * считаются от неё, так что веер целиком масштабируется, если вызывающая
+ * сторона переопределит переменную под более узкую колонку.
+ */
+.root {
+    @mixin responsive --certificate-width, 200, 422;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate {
+    @mixin transitionOptions 0.7s;
+    @mixin responsive border-radius, 10, 10;
+    @mixin responsive --shadow-y, 4, 4;
+    @mixin responsive --shadow-blur, 10, 10;
+    @mixin responsive --shadow-spread, 0, 0;
+
+    width: var(--certificate-width);
+    box-shadow: 0 var(--shadow-y) var(--shadow-blur) var(--shadow-spread) rgb(0 0 0 / 25%);
+    transition-property: translate;
+    transition-delay: calc(var(--index) * 70ms);
+    translate: -110% 160%;
+    position: absolute;
+    rotate: 30deg;
+    left: 0;
+    top: 0;
+
+    &.first {
+        --index: 0;
+
+        box-shadow: none;
+        z-index: 1;
+
+        .visible & {
+            translate: 102.41% 83.24%;
+        }
+    }
+
+    &.second {
+        @mixin responsive --shadow-spread, 10, 10;
+
+        --index: 1;
+
+        z-index: 2;
+
+        .visible & {
+            translate: 33.33% 60.38%;
+        }
+    }
+
+    &.third {
+        --index: 2;
+
+        box-shadow: none;
+
+        .visible & {
+            translate: 64.97% -39%;
+        }
+    }
+
+    &.fourth {
+        @mixin responsive --shadow-blur, 4, 4;
+
+        --index: 3;
+
+        .visible & {
+            translate: -10.51% -22.12%;
+        }
+    }
+
+    &.fifth {
+        --index: 4;
+
+        box-shadow: 0 var(--shadow-y) var(--shadow-blur) var(--shadow-spread) rgb(0 0 0 / 40%);
+        z-index: 5;
+
+        .visible & {
+            translate: 44.11% 12.18%;
+        }
+    }
+
+    &.sixth {
+        --index: 5;
+
+        box-shadow: none;
+
+        .visible & {
+            translate: -38.59% 90.98%;
+        }
+    }
+
+    &.seventh {
+        @mixin responsive --shadow-spread, 5, 5;
+
+        --index: 6;
+
+        z-index: 7;
+
+        .visible & {
+            translate: -17.02% 40.1%;
+        }
+    }
+
+    &.eighth {
+        @mixin responsive --shadow-spread, 5, 5;
+
+        --index: 7;
+
+        z-index: 10;
+
+        .visible & {
+            translate: 120.06% -3.94%;
+        }
+    }
+
+    &.ninth {
+        --index: 8;
+
+        .visible & {
+            translate: -5% -10%;
+        }
+    }
+
+    /* Вне «hero»-десктопа: позиции — в медиазапросе и в .dense ниже */
+    &.tenth,
+    &.eleventh {
+        box-shadow: none;
+        display: none;
+    }
+}
+
+/**
+ * Плотная раскладка (Frame 120 → Frame 2132266829, 701 × 565). Колонка под
+ * стек здесь уже, чем на странице акций, поэтому веер тот же, но блок должен
+ * быть закрыт карточками целиком: две дополнительные (.tenth и .eleventh)
+ * заполняют низ, где в «hero» оставался фон. Проценты — от 422 по X и 297
+ * по Y, как и для остальных карточек.
+ *
+ * Мобильный макет у обеих раскладок общий, поэтому блок живёт целиком
+ * в min-width и ничего не переопределяет ниже $mobile.
+ */
+@media (min-width: $small-desktop-min) {
+    .dense {
+        .certificate {
+            &.tenth {
+                --index: 0;
+
+                display: block;
+                z-index: 1;
+            }
+
+            &.eleventh {
+                --index: 1;
+
+                display: block;
+                z-index: 1;
+            }
+        }
+
+        &.visible .certificate {
+            &.tenth {
+                translate: 91.74% 142.14%;
+            }
+
+            &.eleventh {
+                translate: 13.54% 108.81%;
+            }
+        }
+    }
+}
+
+/**
+ * Мобильная раскладка — из макета (Frame 211, 335 × 280 = 375 минус боковые
+ * отступы контейнера). Карточка там 200 × 141 и повёрнута на те же 30°, так
+ * что логика та же, только проценты считаются от 200 по X и от 141 по Y.
+ *
+ * Набор карточек здесь другой: в мобильном макете три белых и две «15.000»,
+ * на десктопе наоборот. Поэтому две лишние «15.000» прячутся, а белая .tenth
+ * живёт только тут. Порядок слоёв в макете тоже другой, и раскладывается он
+ * z-index-ами, а не порядком в разметке: он один на оба брейкпоинта.
+ */
+@media (max-width: $mobile) {
+    .certificate {
+        &.first {
+            z-index: 2;
+
+            .visible & {
+                translate: -21.96% -2.09%;
+            }
+        }
+
+        &.second {
+            z-index: 4;
+
+            .visible & {
+                translate: -3.08% 46.64%;
+            }
+        }
+
+        &.third {
+            z-index: 3;
+
+            .visible & {
+                translate: 104.04% -21.98%;
+            }
+        }
+
+        &.fourth {
+            z-index: 5;
+
+            .visible & {
+                translate: 83.42% 18.93%;
+            }
+        }
+
+        &.fifth {
+            z-index: 1;
+
+            .visible & {
+                translate: 30.53% -31.93%;
+            }
+        }
+
+        &.sixth {
+            z-index: 6;
+
+            .visible & {
+                translate: -11.96% 125.8%;
+            }
+        }
+
+        &.seventh {
+            z-index: 8;
+
+            .visible & {
+                translate: 64.54% 136.27%;
+            }
+        }
+
+        /* Лишние на мобильном: там «15.000» две, а не четыре */
+        &.eighth,
+        &.ninth {
+            display: none;
+        }
+
+        &.tenth {
+            --index: 7;
+
+            display: block;
+            z-index: 7;
+
+            .visible & {
+                translate: 94.54% 86.01%;
+            }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .certificate {
+        transition-duration: 0.01ms;
+        transition-delay: 0ms;
+    }
+}
