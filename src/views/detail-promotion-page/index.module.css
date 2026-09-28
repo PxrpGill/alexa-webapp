@@ -4,6 +4,7 @@
 
 .detail,
 .conditionBlock,
-.hero {
+.hero,
+.request {
     @mixin responsive padding-block-end, 40, 60;
 }
