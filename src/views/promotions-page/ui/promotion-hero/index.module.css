@@ -1,0 +1,118 @@
+.wrapper {
+    @mixin responsive --first-col, 0, 590;
+
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+}
+
+.contentPart,
+.promotionsWrapper {
+    @mixin responsive --border-radius, 30, 30;
+}
+
+.contentPart {
+    @mixin responsive padding-block, 30, 120;
+    @mixin responsive padding-inline, 30, 30;
+    @mixin responsive gap, 15, 15;
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white-0);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.title {
+    @mixin text-6xl;
+
+    line-height: 1.33;
+}
+
+.description {
+    @mixin text-md;
+
+    line-height: 1.55;
+}
+
+.promotionsWrapper {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    background: linear-gradient(180deg, #87DDDC 0%, #6ED79D 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+/**
+ * Раскладка перенесена из макета (Frame 211, 770 × 439 — ровно ширина этой
+ * колонки при контейнере 1360 и левой части 590). Карточка в макете 423 × 300
+ * и повёрнута на 30°, поэтому translate задаёт центр карточки в системе
+ * координат до поворота: X в % от 422 (ширина), Y в % от 297 (высота при
+ * пропорции картинки 1080 × 760). Порядок в разметке = порядок слоёв в Figma
+ * снизу вверх, поэтому z-index не нужен.
+ */
+.certificate {
+    @mixin transitionOptions;
+    @mixin responsive width, 0, 422;
+    @mixin responsive border-radius, 10, 10;
+    @mixin responsive --shadow-y, 4, 4;
+    @mixin responsive --shadow-blur, 10, 10;
+    @mixin responsive --shadow-spread, 0, 0;
+
+    box-shadow: 0 var(--shadow-y) var(--shadow-blur) var(--shadow-spread) rgb(0 0 0 / 25%);
+    transition-property: translate;
+    position: absolute;
+    rotate: 30deg;
+    left: 0;
+    top: 0;
+
+    &.first {
+        translate: 102.41% 83.24%;
+        box-shadow: none;
+        z-index: 1;
+    }
+
+    &.second {
+        @mixin responsive --shadow-spread, 10, 10;
+
+        translate: 33.33% 60.38%;
+        z-index: 2;
+    }
+
+    &.third {
+        translate: 64.97% -39%;
+        box-shadow: none;
+    }
+
+    &.fourth {
+        @mixin responsive --shadow-blur, 4, 4;
+
+        translate: -10.51% -22.12%;
+    }
+
+    &.fifth {
+        translate: 44.11% 12.18%;
+        box-shadow: 0 var(--shadow-y) var(--shadow-blur) var(--shadow-spread) rgb(0 0 0 / 40%);
+        z-index: 5;
+    }
+
+    &.sixth {
+        translate: -38.59% 90.98%;
+        box-shadow: none;
+    }
+
+    &.seventh {
+        @mixin responsive --shadow-spread, 5, 5;
+
+        translate: -17.02% 40.1%;
+        z-index: 7;
+    }
+
+    &.eighth {
+        @mixin responsive --shadow-spread, 5, 5;
+
+        translate: 120.06% -3.94%;
+        z-index: 10;
+    }
+
+    &.ninth {
+        translate: -5% -10%;
+    }
+}
