@@ -15,6 +15,8 @@ export type SlideVariantProps = {
 	legend?: string;
 	poster?: PictureFormatType;
 	textTheme?: "light" | "dark";
+	/** Первый слайд виден сразу — его постер грузим в высоком приоритете */
+	isPriority?: boolean;
 } & PropsWithClassName;
 
 export type HeroSliderSectionProps = {

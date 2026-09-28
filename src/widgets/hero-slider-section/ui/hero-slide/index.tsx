@@ -15,12 +15,17 @@ export default function HeroSlide({
     poster,
     className,
     textTheme = 'dark',
+    isPriority = false,
 }: SlideVariantProps) {
     return (
         <div className={`${css.root} ${className}`}>
             {poster && (
                 <div className={css.mobilePoster}>
-                    <Picture poster={poster} />
+                    <Picture
+                        poster={poster}
+                        loading={isPriority ? 'eager' : 'lazy'}
+                        fetchPriority={isPriority ? 'high' : 'auto'}
+                    />
                 </div>
             )}
             <div className={`${css.titleBlock} ${css[textTheme]}`}>
@@ -45,7 +50,12 @@ export default function HeroSlide({
             </div>
             {card && <SlideCard {...card} className={css.card} />}
             {poster && (
-                <Picture poster={poster} className={css.desktopPoster} />
+                <Picture
+                    poster={poster}
+                    className={css.desktopPoster}
+                    loading={isPriority ? 'eager' : 'lazy'}
+                    fetchPriority={isPriority ? 'high' : 'auto'}
+                />
             )}
         </div>
     );
