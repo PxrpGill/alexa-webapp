@@ -28,6 +28,7 @@ export default function HeroSliderSection({
                         <HeroSlide
                             {...slide}
                             key={index}
+                            isPriority={index === 0}
                             className={`${css.slide} ${index === current ? css.active : css.inactive}`}
                         />
                     ))}
