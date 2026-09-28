@@ -53,6 +53,7 @@ export default function AnnualCareCard({
 				<div className={css.priceBlock}>
 					{price && (
 						<p className={css.price}>
+							<span className={css.pricePeriod}>От </span>
 							<span className={css.priceElement}>{formatPrice(price)} ₽</span>{" "}
 							{period && (
 								<span className={css.pricePeriod}>
