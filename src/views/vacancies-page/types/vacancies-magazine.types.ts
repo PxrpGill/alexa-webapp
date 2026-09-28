@@ -1,8 +1,8 @@
+import type { VacanciesByCategoryType } from "@/entities/vacancies/types/vacancies-list.types";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
-import type { GetAvailableVacanciesResponseType } from "./get-vacancies-request.types";
 
 export type VacanciesMagazineProps = PropsWithClassName &
-	GetAvailableVacanciesResponseType & {
+	VacanciesByCategoryType & {
 		title?: string;
 		description?: string;
 	};

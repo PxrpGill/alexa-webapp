@@ -1,5 +1,5 @@
-import type { GetAvailableVacanciesResponseType } from "./get-vacancies-request.types";
+import type { VacanciesByCategoryType } from "@/entities/vacancies/types/vacancies-list.types";
 
 export type VacanciesPageProps = {
-	initialPageData: GetAvailableVacanciesResponseType;
+	initialPageData: VacanciesByCategoryType;
 };

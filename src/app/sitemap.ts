@@ -1,10 +1,10 @@
 import type { MetadataRoute } from 'next';
 
 import { getAllNews } from '@/entities/news/api/get-all-news';
+import { getAllVacancyCards } from '@/entities/vacancies/api/get-all-vacancies';
 import { PAGE_META } from '@/shared/config/seo/page-meta.constants';
 import { SITE_URL } from '@/shared/config/seo/seo.constants';
 import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
-import { getAvailableVacancies } from '@/views/vacancies-page/api/get-available-vacancies';
 
 export const revalidate = 3600;
 
@@ -23,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const [news, vacancies] = await Promise.all([
         getAllNews(),
-        getAvailableVacancies(),
+        getAllVacancyCards(),
     ]);
 
     const newsEntries = (news?.items ?? [])
@@ -34,7 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.5,
         }));
 
-    const vacancyEntries = (vacancies?.results ?? []).map((item) => ({
+    const vacancyEntries = vacancies.map((item) => ({
         url: `${SITE_URL}${SITE_NAVIGATION.vakansii}/${item.slug}`,
         lastModified,
         priority: 0.5,

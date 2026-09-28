@@ -2,12 +2,12 @@ import type { NextRequest } from 'next/server';
 import { cache } from 'react';
 
 import { getAllNews } from '@/entities/news/api/get-all-news';
+import { getAllVacancyCards } from '@/entities/vacancies/api/get-all-vacancies';
 import { renderOgImage } from '@/shared/config/seo/og-image';
 import { PAGE_META } from '@/shared/config/seo/page-meta.constants';
 import { resolveOgTitle } from '@/shared/config/seo/resolve-og-title';
 import { META_TITLE_MAX_LENGTH } from '@/shared/config/seo/seo.constants';
 import { normalizeMetaText } from '@/shared/helpers/normalize-meta-text';
-import { getAvailableVacancies } from '@/views/vacancies-page/api/get-available-vacancies';
 
 export const revalidate = 3600;
 
@@ -18,7 +18,7 @@ const collectAllowedTitles = cache(async (): Promise<ReadonlySet<string>> => {
 
     const [news, vacancies] = await Promise.all([
         getAllNews(),
-        getAvailableVacancies(),
+        getAllVacancyCards(),
     ]);
 
     for (const item of news?.items ?? []) {
@@ -27,7 +27,7 @@ const collectAllowedTitles = cache(async (): Promise<ReadonlySet<string>> => {
         if (title) titles.add(title);
     }
 
-    for (const item of vacancies?.results ?? []) {
+    for (const item of vacancies) {
         const title = normalizeMetaText(
             item.vacancy_name,
             META_TITLE_MAX_LENGTH

@@ -15,7 +15,7 @@ export default function VacanciesPage({ initialPageData }: VacanciesPageProps) {
 	return (
 		<main className={css.root}>
 			<VacanciesHero className={css.hero} {...VACANCIES_HERO} />
-			{!initialPageData.total && initialPageData?.total === 0 ? (
+			{initialPageData.total === 0 ? (
 				<NotAvailableVacancies
 					{...NOT_AVAILABLE_VACANCIES}
 					className={css.notAvailable}

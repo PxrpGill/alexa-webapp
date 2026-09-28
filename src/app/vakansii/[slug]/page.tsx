@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { getAllVacancyCards } from '@/entities/vacancies/api/get-all-vacancies';
 import { getDetailVacancyBySlug } from '@/shared/api/get-detail-vacancy';
 import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
 import { buildMetadata } from '@/shared/helpers/build-metadata';
@@ -9,6 +10,14 @@ import DetailVacancyPage from '@/views/detail-vacancy-page';
 
 type DetailVacancyParams = {
     params: Promise<{ slug: string }>;
+};
+
+export const revalidate = 60;
+
+export const generateStaticParams = async () => {
+    const vacancies = await getAllVacancyCards();
+
+    return vacancies.map((vacancy) => ({ slug: vacancy.slug }));
 };
 
 export const generateMetadata = async ({
