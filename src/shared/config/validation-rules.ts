@@ -42,3 +42,31 @@ export const EMAIL_VALIDATION = <
 			message: "Введите корректный адрес электронной почты",
 		},
 	}) satisfies RegisterOptions<TFieldValues, TName>;
+
+export const RESUME_MAX_SIZE_MB = 5;
+export const RESUME_MAX_SIZE_BYTES = RESUME_MAX_SIZE_MB * 1024 * 1024;
+export const RESUME_ACCEPTED_EXTENSIONS = [".pdf", ".doc", ".docx"];
+export const RESUME_ACCEPT = RESUME_ACCEPTED_EXTENSIONS.join(",");
+
+export const RESUME_VALIDATION = <
+	TFieldValues extends FieldValues,
+	TName extends Path<TFieldValues>,
+>() =>
+	({
+		required: "Загрузите файл резюме",
+		validate: (value: File | undefined) => {
+			if (!value) return "Загрузите файл резюме";
+
+			const fileName = value.name.toLowerCase();
+			const isAcceptedExtension = RESUME_ACCEPTED_EXTENSIONS.some(
+				(extension) => fileName.endsWith(extension),
+			);
+
+			if (!isAcceptedExtension)
+				return "Допустимые форматы файла: PDF, DOC, DOCX";
+			if (value.size > RESUME_MAX_SIZE_BYTES)
+				return `Файл слишком большой. Максимальный размер — ${RESUME_MAX_SIZE_MB} МБ`;
+
+			return true;
+		},
+	}) satisfies RegisterOptions<TFieldValues, TName>;

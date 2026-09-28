@@ -2,131 +2,167 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+Russian-language marketing site for the «Алекса» dental clinic (two branches: Ландышевая / Волкова). Next.js 16 App Router + React 19, Feature-Sliced Design.
+
 ## Commands
 
-All commands run from `src/`:
+The npm project root is `src/`, **not** the repo root. Every command below runs from `src/`.
 
 ```bash
-pnpm dev          # dev server
-pnpm build        # production build
-pnpm start        # production server
-pnpm lint         # biome check .
-pnpm lint:fix     # biome check --write .
-pnpm format       # biome format --write .
-tsc --noEmit      # type check (no script alias)
+pnpm dev            # dev server (Turbopack)
+pnpm build          # production build
+pnpm start          # production server
+pnpm lint           # biome check .
+pnpm lint:fix       # biome check --write .
+pnpm format         # biome format --write .
+pnpm lint:css       # stylelint "**/*.css"
+pnpm lint:css:fix   # stylelint "**/*.css" --fix
+tsc --noEmit        # type check (no script alias)
 ```
 
-No test framework — no test command exists.
+No test framework is installed — there is no test command. Always **pnpm**, never npm/yarn.
 
-Always use **pnpm**. Never npm or yarn.
+Before pushing, run what CI runs: `pnpm lint` + `tsc --noEmit` + `pnpm build`.
+
+## Repo layout
+
+```
+src/            # the Next.js app (package.json lives here)
+docker/dev|prod # compose stacks, each with a Makefile
+docs/           # deploy.md, docker.md, postcss-mixins.md, superpowers/{plans,specs}
+.githooks/      # pre-push
+```
+
+`src/AGENTS.md` is **auto-generated and re-added by `next dev`** (see `node_modules/next/dist/server/lib/generate-agent-files.js`); `src/CLAUDE.md` is just `@AGENTS.md`. Don't hand-edit them — commit the regenerated block with your work instead of fighting the diff. The root `AGENTS.md` is hand-written and mirrors this file for other agents (opencode/zed); when you change project conventions, update both or they drift.
 
 ## Architecture
 
-Feature-Sliced Design. Source root is `src/`. Dependency direction: `app → views → widgets → features → entities → shared`.
+Dependency direction — a layer may import from below, never above:
+
+`app → views → widgets → features → entities → shared`
 
 | Layer | Role |
 |-------|------|
-| `app/` | Thin Next.js App Router wrappers — only import and render a view |
-| `views/` | Compose a page from widgets; data from `models/` constants |
-| `widgets/` | Self-contained sections (slider, FAQ, form, etc.) |
-| `features/` | User interaction modules (`consultation-modal`) |
-| `entities/` | Business models (`employee/`, `news/`) |
-| `shared/` | Stateless building blocks — UI, helpers, hooks, types, styles, config |
+| `app/` | Thin App Router wrappers: fetch server data, set metadata, render one view |
+| `views/` | One folder per route; composes widgets, feeds them constants from `models/` |
+| `widgets/` | Presentational sections (47 of them: sliders, FAQ, tables, price, map) |
+| `features/` | Interactive modules with their own mutation hooks (modals, apply forms) |
+| `entities/` | Business objects with `api/`, `ui/<x>-card/`, `types/` (`news`, `promotion`, `vacancies`, `employee`, `branch`, `annual-care`) |
+| `shared/` | `api/`, `config/`, `helpers/`, `hooks/`, `styles/`, `types/`, `ui/` |
 
-### Data flow
+Entry: `app/layout.tsx` → `ReactQueryCustomProvider` → `Layout` widget (header/menu/footer/breadcrumbs) → page view.
 
-Constants are defined in `views/<page>/models/<page>.constants.ts`, typed against `widgets/<name>/types/<name>.types.ts`, and passed as props. No API calls exist yet — all data is mock.
-
-### Widget folder convention
+### Folder convention (widgets, views, features, entities)
 
 ```
-widgets/<name>/
-├── index.tsx              # default export, the only public surface
+<name>/
+├── index.tsx           # default export — the only public surface
 ├── index.module.css
-├── types/                 # prop type definitions (not in the component file)
-├── ui/                    # sub-components
-├── models/                # constants, contexts, logic
+├── types/              # prop types live HERE, not in index.tsx
+├── ui/                 # sub-components (each with its own index.module.css)
+├── models/             # constants, contexts, pure logic
 └── hooks/
 ```
 
-Views follow the same layout.
+`shared/ui/*` is the exception: several export named (`AnimationWrapper`, `Accordion`) rather than default.
 
-## Coding patterns
+### Data flow
 
-- **`"use client"`** — required on any component using hooks, state, context, or browser APIs.
-- **CSS modules** — always `import css from "./index.module.css"`, apply as `className={css.root}`. The global `.container` class handles max-width centering.
-- **`PropsWithClassName`** — from `shared/types/props-with-classname.ts`; most widgets accept an optional `className?: string` for spacing from the parent.
-- **SVG icons** — imported as React components: `import ArrowSVG from "@/public/icons/arrow.svg"`. Works via `@svgr/webpack` Turbopack rule — no wrapping needed.
-- **`AnimationWrapper`** — from `shared/ui/animation-wrapper`; wraps sections for scroll-triggered reveal animations.
-- **Redux** — `@reduxjs/toolkit` is installed but not wired up. No store, no slices, no Provider. The app uses React Context (`LayoutProvider`, `PriceSectionContext`).
-- **Path alias** — `@/*` maps to `src/*`.
+Two coexisting sources — do not assume "all data is mock":
+
+1. **Static content** — typed constants in `views/<page>/models/<page>.constants.ts` (and `widgets/<w>/models/`), typed against `types/`, spread into widgets: `<FaqSection {...MOCK_FAQ_SECTION} />`. Copy is Russian HTML strings with `&nbsp;`/`&#8209;`, rendered via `dangerouslySetInnerHTML` (the Biome rule is deliberately `off`).
+2. **Real backend** — `/api/v1/*` on a separate service. Paths are centralized in `shared/api/api-urls.ts` (never inline a URL). Axios singleton: `shared/config/api-instance.ts`, 30s timeout, base URL `API_URL ?? NEXT_PUBLIC_API_URL ?? http://localhost:8000`.
+   - **Reads**: server-side fetchers wrapped in React `cache()` (`entities/news/api/get-all-news.ts`, `shared/api/get-all-branches.ts`). Called from `app/*/page.tsx` with `export const revalidate = 60`, result passed into the view as `initial*Data`. They swallow errors and return `undefined`/the error — callers must guard.
+   - **Writes**: `shared/api/post-*.ts` + a per-feature `use-post-*.ts` TanStack mutation hook (`features/consultation-modal/hooks/use-post-consultation.ts`).
+   - React Query is wired in `shared/config/react-query-custom-provider.tsx` (`staleTime` 60s, streamed hydration). **Redux Toolkit is a dependency but not wired up** — no store, no slices, no Provider. Shared state is React Context.
+
+### Global state & cross-cutting patterns
+
+- **`LayoutProvider`** (`shared/config/layout-context.tsx`) owns menu open state, the three global modals (consultation / appointment / DMS) and `currentBranch` (persisted to a cookie via `shared/hooks/set-branch-in-cookies.ts`). `useLayoutContext()` throws if used outside it.
+- **Declarative buttons** — content constants carry `SiteButtonProps` (`{ href?, title?, isOpenConsultationModal?, isOpenDMSModal?, isOpenFeedbackModal? }`); `shared/helpers/define-site-button-props.ts` turns that into real props (opens the right modal, or smooth-scrolls for `#anchor` hrefs). Add a CTA by extending the constant, not by wiring a handler in the widget.
+- **`Picture`** (`shared/ui/picture`) is the image primitive — data shape is `poster: { avif?/webp?/original?: { src, mobile? } }`, emitting `<source>` per format with a 767px mobile swap. Content constants use this shape; there is no `next/image` usage.
+- **`AnimationWrapper`** (`shared/ui/animation-wrapper`) wraps sections for scroll reveal; `as` picks the tag. All instances share one IntersectionObserver + rAF scheduler in `lib/coordinator.ts` — keep new animation work going through the wrapper rather than adding observers.
+- **Forms** — react-hook-form + shared generic rule factories in `shared/config/validation-rules.ts` (`FULL_NAME_VALIDATION<T>()`, `PHONE_VALIDATION<T>()`, …). Reuse them; messages are user-facing Russian.
+- **Shared constants** — phones, messengers, map/branch data and the doctor roster live in `shared/config/global-constants.constants.ts`; route paths in `shared/config/site-navigation.ts`.
+- `app/error.tsx`, `app/global-error.tsx`, `app/not-found.tsx` all render `views/error-page` with a `status` prop.
+
+### Routing notes
+
+Service pages live under `/landyshevaya/<service>`. `next.config.mjs` holds a long list of permanent redirects from legacy flat URLs (`/ortodontiya` → `/landyshevaya/ortodontiya`) plus `/landyshevaya` → `/` — add a redirect there when a service URL moves. `/media/*` is rewritten to the backend so uploaded images are same-origin.
 
 ## Styling
 
-PostCSS with CSS modules. Plugins: import, mixins, simple-vars, nested, autoprefixer.
-
-Import global styles: `@import "shared/styles";` — this makes all mixins available automatically.
-
-### Responsive mixin
+PostCSS + CSS modules; `postcss.config.js` defines breakpoints/scale factors as `postcss-simple-vars`, so they are **build-time `$vars`, not CSS custom properties**. Mixins auto-load from `shared/styles/mixins/`.
 
 ```css
-@mixin responsive <property | --var>, <mobile-px>, <desktop-px>;
-/* e.g. */
+@import "shared/styles"; /* once per file — makes every mixin available */
+```
+
+`html { font-size: 1vw }` (clamped to 14.41px above 1441px) is what makes rem-based sizing fluid — so never write raw px. Use:
+
+```css
+@mixin responsive <property | --custom-prop>, <mobile-px>, <desktop-px>;
 @mixin responsive font-size, 16, 24;
 @mixin responsive --gap, 10, 20;
 ```
 
-The mixin emits `calc(…rem)` at each breakpoint divided by scale factors (3.75 mobile, 14.4 small-desktop, 14.41 desktop).
+Breakpoints: `$mobile: 767px`, `$small-desktop: 1441px`, `$desktop: 1920px` (plus `-min` variants). Scale factors 3.75 / 14.4 / 14.41.
 
-### Breakpoint variables
+Typography: the real scale is `text-xs … text-7xl`; `h1`–`h6` / `b1`–`b4` are backward-compatible aliases over it (`h1 = text-7xl`, `b2 = text-base`). `@mixin button` is a constant 15px. Also `@mixin transition <prop>[, dur]` / `@mixin transitionOptions`.
 
-```css
-$mobile: 767px          /* ≤ 767px */
-$small-desktop: 1441px  /* 768px – 1441px */
-$desktop: 1920px        /* ≥ 1442px */
-```
+Global `.container` handles max-width centering and responsive side padding; `body.child-theme` switches the palette on children's pages. Colors are CSS custom properties in `shared/styles/colors.css` (`var(--color-white-1)`).
 
-Usage: `@media (max-width: $mobile) { … }`
-
-Typography mixins: `h1`–`h6`, `b1`–`b4`, `button` — set font-size responsively + line-height/weight.
-
-Full mixin docs: `docs/postcss-mixins.md`.
-
-## Next.js config quirks
-
-- `output: "standalone"` — required for Docker; do not remove.
-- `reactCompiler: true` — babel-plugin-react-compiler is active.
-- `experimental.inlineCss: true`
-- SVG import rule in `next.config.mjs` handles `@/public/icons/*.svg` via Turbopack.
+Always `import css from "./index.module.css"` and `className={css.root}`. Full mixin reference: `docs/postcss-mixins.md`. Skills `postcss-responsive` and `widget-development` cover this in depth.
 
 ## Linting
 
-Biome is the sole linter + formatter. Single quotes, trailing commas `"es5"`, semicolons always.
-`useImportType` is an error; `noArrayIndexKey` is a warning (suppress with `/** biome-ignore-all lint/suspicious/noArrayIndexKey: reason */`).
+Biome is the linter/formatter for JS/TS and **explicitly ignores CSS** (`!!**/*.css`) — CSS is stylelint's job (`.stylelintrc.json`, `stylelint-config-standard` + `stylelint-order`, which enforces `@mixin` calls first, then declarations, then nested rules).
 
-## Git hooks
+Biome: 4-space indent, 80 cols, single quotes (double in JSX), `trailingCommas: "es5"`, semicolons always. `useImportType` and `noUnusedImports` are errors; `noArrayIndexKey` and `noNonNullAssertion` are warnings; `noDangerouslySetInnerHtml` is off. Import order is enforced by the assist action (node → packages → `@/` alias → `../` → `./`, blank line between groups).
 
-A pre-push hook runs `pnpm build` before every `git push` and rejects on failure.
+Suppress with a file-level comment when justified:
+`/** biome-ignore-all lint/suspicious/noArrayIndexKey: reason */`
 
-Enable once per clone:
+The repo is not uniformly formatted — **never run `pnpm lint:fix` or `pnpm format` repo-wide**; scope formatting to the files you touched.
+
+## Next.js / TS config quirks
+
+- `output: "standalone"` — required for Docker; do not remove.
+- `reactCompiler: true`, `experimental.inlineCss: true`, `expireTime: 60`.
+- SVGs are React components via an `@svgr/webpack` Turbopack rule: `import ArrowSVG from "@/public/icons/slider-arrow.svg"` (types in `src/svgr.d.ts`).
+- `"use client"` is required in anything using hooks/state/context/browser APIs — most widgets are client components.
+- Path alias `@/*` → `src/*`. TS strict.
+- `pnpm-workspace.yaml` pins security `overrides` (postcss, js-yaml, sharp, svgo…) — they exist to keep `pnpm audit` green; don't drop them when bumping deps.
+
+## Env variables
+
+Defined in `src/.env.example`; real values go in `src/.env.local` (gitignored).
+
+| Variable | Default | Notes |
+|----------|---------|-------|
+| `NEXT_PUBLIC_YANDEX_MAPS_API_KEY` | — | Yandex Maps widget |
+| `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | client-side base URL |
+| `API_URL` | `http://localhost:8000` | server-side; takes precedence. `http://host.docker.internal:8000` in Docker dev |
+
+## Docker
+
+```bash
+cd docker/dev  && make up    # hot-reload dev (src/ mounted)
+cd docker/prod && make up    # multi-stage standalone build + nginx on :80
+```
+
+Build context is the repo root; env comes from `src/.env.local` + `src/.env.example`. Makefiles also expose `up-d`, `down`, `build`, `rebuild`, `logs`, `shell`, `ps`. Details in `docs/docker.md` / `docs/deploy.md`.
+
+## Git & CI
+
+Pre-push hook (`.githooks/pre-push`) runs `CI=true pnpm build` **and** `pnpm audit --audit-level=high`, rejecting the push if either fails. Enable once per clone:
+
 ```bash
 git config core.hooksPath .githooks
 ```
 
-## Docker
+`.github/workflows/ci.yml` runs lint → typecheck → build on push/PR to `main` (paths `src/**`). `deploy.yml` reuses CI, then SSHes into the host, `git pull`, rebuilds `docker/prod`.
 
-```
-docker/dev/   — cd docker/dev && make up    # hot-reload dev
-docker/prod/  — cd docker/prod && make up   # nginx on :80, standalone output
-```
+**Caveat:** both workflows are keyed to a `main` branch that does not exist — the default branch is `master`, and feature work lands via `feat/*` PRs into it. So CI and auto-deploy currently never fire; treat the local pre-push hook as the only gate, and run lint/typecheck/build yourself.
 
-CI (`.github/workflows/ci.yml`) runs lint → typecheck → build on every push/PR.
-
-## Env variables
-
-| Variable | Default | Notes |
-|----------|---------|-------|
-| `NEXT_PUBLIC_YANDEX_MAPS_API_KEY` | — | `.env.example` |
-| `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | hardcoded in `shared/config/api-instance.ts` |
-
-`.env.local` in `src/` is gitignored.
+Commit messages are Conventional-Commit-style in Russian: `feat:`, `fix:`, `refactor:`, `docs:`, `style:`, `perf:`, `chore:`, `infra:`, `test:`.

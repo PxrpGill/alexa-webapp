@@ -5,6 +5,7 @@ import Link from "next/link";
 import LogoSvg from "@/public/icons/logo.svg";
 import { useLayoutContext } from "@/shared/config/layout-context";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import { BRANCH_COOKIES_VALUES } from "@/shared/hooks/set-branch-in-cookies";
 import BreadCrumbs from "./bread-crumbs";
 import ContactPart from "./contact-part";
 import css from "./index.module.css";
@@ -20,7 +21,7 @@ export default function Header() {
 						className={css.link}
 						aria-label="Перейти на главную"
 						href={
-							currentBranch === "volkova"
+							currentBranch === BRANCH_COOKIES_VALUES.volkova
 								? SITE_NAVIGATION.volkovaBase
 								: SITE_NAVIGATION.landyshevayaBase
 						}

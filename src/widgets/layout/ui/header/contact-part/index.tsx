@@ -11,6 +11,7 @@ import {
 	TELEGRAM,
 } from "@/shared/config/global-constants.constants";
 import { useLayoutContext } from "@/shared/config/layout-context";
+import { BRANCH_COOKIES_VALUES } from "@/shared/hooks/set-branch-in-cookies";
 import css from "./index.module.css";
 
 export default function ContactPart() {
@@ -20,10 +21,10 @@ export default function ContactPart() {
 		<div className={`${css.root}`.trim()}>
 			<ChangeBranch className={css.changeBranch} />
 			<a
-				href={`tel:${MOBILE_PHONE[currentBranch ?? "landyshevaya"]}`}
+				href={`tel:${MOBILE_PHONE[currentBranch ?? BRANCH_COOKIES_VALUES.landyshevaya]}`}
 				className={css.phone}
 			>
-				{MOBILE_PHONE[currentBranch ?? "landyshevaya"]}
+				{MOBILE_PHONE[currentBranch ?? BRANCH_COOKIES_VALUES.landyshevaya]}
 			</a>
 			<a
 				className={css.telegram}
@@ -36,7 +37,7 @@ export default function ContactPart() {
 				<MaxSVG className={css.circleIcon} />
 			</a>
 			<a
-				href={`tel:${MOBILE_PHONE[currentBranch ?? "landyshevaya"]}`}
+				href={`tel:${MOBILE_PHONE[currentBranch ?? BRANCH_COOKIES_VALUES.landyshevaya]}`}
 				className={css.anotherPhone}
 				aria-label="Позвонить по номеру телефона"
 			>
