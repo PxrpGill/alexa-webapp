@@ -1,0 +1,9 @@
+.root {
+    @mixin responsive padding-block-start, 88, 100;
+}
+
+.detail,
+.conditionBlock,
+.hero {
+    @mixin responsive padding-block-end, 40, 60;
+}
