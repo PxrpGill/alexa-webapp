@@ -4,7 +4,7 @@
 
 "use client";
 
-import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
+import dynamic from "next/dynamic";
 import { useCallback, useMemo, useRef } from "react";
 
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
@@ -15,6 +15,10 @@ import { useYandexMap } from "./hooks/use-yandex-map";
 import css from "./index.module.css";
 import Balloon from "./ui/balloon";
 import InfoCard, { type InfoCardProps } from "./ui/info-card";
+
+const MapView = dynamic(() => import("./ui/map-view"), {
+	ssr: false,
+});
 
 const DEFAULT_CENTER: [number, number] = [47.286561, 39.828901];
 
@@ -74,6 +78,18 @@ export default function YandexMap({
 		calcPosition,
 	});
 
+	const handleMapInstance = useCallback(
+		(map: YandexMapInstance) => {
+			if (map && !mapRef.current) {
+				map.events.add("actiontick", closeBalloon);
+				map.events.add("zoomchange", closeBalloon);
+				map.events.add("sizechange", closeBalloon);
+			}
+			mapRef.current = map;
+		},
+		[closeBalloon],
+	);
+
 	const activePlacemark = useMemo(
 		() => infoCard?.branches?.[activeIndex ?? 0],
 		[activeIndex, infoCard],
@@ -84,46 +100,24 @@ export default function YandexMap({
 			<div className={css.contentWrapper}>
 				<InfoCard {...infoCard} onBranchSelect={handleInfoCardSelect} />
 				<div className={css.mapsWrapper}>
-					<YMaps
-						query={{
-							apikey: process.env.NEXT_PUBLIC_YANDEX_MAPS_API_KEY ?? "",
-						}}
-					>
-						<div className={css.mapContainer}>
-							<Map
-								instanceRef={(map: YandexMapInstance) => {
-									if (map && !mapRef.current) {
-										map.events.add("actiontick", closeBalloon);
-										map.events.add("zoomchange", closeBalloon);
-										map.events.add("sizechange", closeBalloon);
-									}
-									mapRef.current = map;
-								}}
-								style={{ width: "100%", height: "100%" }}
-								state={{
-									center,
-									zoom,
-								}}
-							>
-								{placemarks.map((branch, index) => (
-									<Placemark
-										key={index}
-										geometry={branch.cords}
-										onClick={() => handlePlacemarkClick(index)}
-									/>
-								))}
-							</Map>
-							<Balloon
-								isOpen={Boolean(activeIndex !== null && balloonPos)}
-								onTransitionEnd={handleTransitionEnd}
-								style={{
-									left: balloonPos?.x,
-									top: balloonPos ? balloonPos.y + 20 : undefined,
-								}}
-								activePlacemark={activePlacemark}
-							/>
-						</div>
-					</YMaps>
+					<div className={css.mapContainer}>
+						<MapView
+							center={center}
+							zoom={zoom}
+							placemarks={placemarks}
+							onMapInstance={handleMapInstance}
+							onPlacemarkClick={handlePlacemarkClick}
+						/>
+						<Balloon
+							isOpen={Boolean(activeIndex !== null && balloonPos)}
+							onTransitionEnd={handleTransitionEnd}
+							style={{
+								left: balloonPos?.x,
+								top: balloonPos ? balloonPos.y + 20 : undefined,
+							}}
+							activePlacemark={activePlacemark}
+						/>
+					</div>
 				</div>
 			</div>
 		</AnimationWrapper>
