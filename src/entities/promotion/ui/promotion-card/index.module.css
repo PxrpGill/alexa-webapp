@@ -41,7 +41,7 @@
 }
 
 .description {
-    @mixin text-sm;
+    @mixin text-base;
     @mixin responsive padding-block-end, 20, 40;
 
     display: flex;
