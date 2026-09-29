@@ -28,6 +28,7 @@
 .contentPart {
     @mixin responsive padding-block, 30, 80;
     @mixin responsive padding-inline, 20, 30;
+    @mixin responsive min-height, 0, 362;
 }
 
 .title {
