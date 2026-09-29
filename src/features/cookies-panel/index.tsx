@@ -13,7 +13,11 @@ import {
 } from "./models/cookies-panel.constants";
 
 export default function CookiesPanel() {
-	const [isVisible, toggleVisible] = useState<boolean>(false);
+	// Видима сразу в серверной разметке — так она попадает в первую отрисовку
+	// и не превращается в поздний LCP-элемент. Тем, кто уже согласился,
+	// панель скрывает инлайн-скрипт в app/layout.tsx ещё до отрисовки,
+	// а этот эффект убирает её из разметки окончательно.
+	const [isVisible, toggleVisible] = useState<boolean>(true);
 	const timeoutRef = useRef<number>(0);
 
 	const handleAppendCookies = () => {
@@ -26,13 +30,7 @@ export default function CookiesPanel() {
 
 		const cookies = getCookie(COOKIES_PANEL_KEY);
 
-		if (!cookies) {
-			timeoutRef.current = Number(
-				setTimeout(() => {
-					toggleVisible(true);
-				}, 500),
-			);
-		}
+		if (cookies) toggleVisible(false);
 	}, []);
 
 	return (
