@@ -6,7 +6,7 @@ import {
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
-import { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
+import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
@@ -266,7 +266,7 @@ export const WHY_CHOOSE_US: WhyChooseUsProps = {
 		},
 		button: {
 			title: "Записаться на приём",
-			href: "",
+			href: APPOINTMENT_ID.id,
 		},
 	},
 };
