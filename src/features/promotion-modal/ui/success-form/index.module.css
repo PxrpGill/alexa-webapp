@@ -48,6 +48,7 @@
     @mixin responsive margin-block-end, 20, 20;
 
     transition-delay: 376ms;
+    height: auto !important;
 }
 
 .title,

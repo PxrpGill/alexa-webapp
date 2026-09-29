@@ -14,8 +14,8 @@ export default function SuccessForm({
 				src="/system/alexik.png"
 				alt="Алексик — талисман клиники"
 				className={css.logo}
-				width={2339}
-				height={3048}
+				width={345}
+				height={450}
 				loading="lazy"
 				decoding="async"
 			/>
