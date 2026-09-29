@@ -15,4 +15,23 @@
 
 .content {
     @mixin text-md;
+
+    ul,
+    ol {
+        @mixin responsive padding-inline, 20, 20;
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    ol {
+        list-style: decimal;
+    }
+
+    a {
+        color: var(--color-green-1);
+        font-weight: 600;
+        text-decoration: underline;
+    }
 }
