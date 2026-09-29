@@ -16,7 +16,13 @@
 //             Пережимаем на месте, имя и формат сохраняем.
 
 import { execFileSync } from "node:child_process";
-import { copyFileSync, readdirSync, statSync, unlinkSync } from "node:fs";
+import {
+	copyFileSync,
+	existsSync,
+	readdirSync,
+	statSync,
+	unlinkSync,
+} from "node:fs";
 import path from "node:path";
 
 const repoRoot = path.join(import.meta.dirname, "..");
@@ -29,11 +35,6 @@ const isDryRun = process.argv.includes("--dry-run");
  * отрисовки, чтобы хватило на экраны с удвоенной плотностью.
  */
 const RESIZE = [
-	// Иконки надзорных органов: 2000×2000 при отрисовке 150 px (desktop).
-	{ file: "mock/supervisory/1-icon.png", maxSide: 320 },
-	{ file: "mock/supervisory/2-icon.png", maxSide: 320 },
-	{ file: "mock/supervisory/3-icon.png", maxSide: 320 },
-	{ file: "mock/supervisory/4-icon.png", maxSide: 320 },
 	// Талисман в формах успеха: 2339×3048 при отрисовке 350 px по ширине.
 	{ file: "system/alexik.png", maxSide: 900 },
 	// 3185×2800 в блоке, где картинка никогда не шире половины экрана.
@@ -170,6 +171,14 @@ let totalAfter = 0;
 
 for (const { file, maxSide } of RESIZE) {
 	const full = path.join(publicDir, file);
+
+	// Файл могли переименовать или перевести в другой формат — это не повод
+	// ронять весь прогон.
+	if (!existsSync(full)) {
+		console.log(`ПРОПУСК  ${file} — нет такого файла`);
+		continue;
+	}
+
 	const before = statSync(full).size;
 
 	if (!isDryRun) resizeInPlace(full, maxSide);
