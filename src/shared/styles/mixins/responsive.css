@@ -8,8 +8,4 @@
 	@media (max-width: $mobile) {
 		$(property): calc($(mobile-size)rem / $mobile-scale-factor);
 	}
-
-	@media (min-width: $small-desktop) {
-		$(property): calc($(desktop-size)rem / $big-desktop-scale-factor);
-	}
 }
