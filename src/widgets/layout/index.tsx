@@ -1,6 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
 import { type PropsWithChildren, useLayoutEffect } from 'react';
 
@@ -10,15 +9,12 @@ import CookiesPanel from '@/features/cookies-panel';
 import { YANDEX_MAP_INFO_CARD } from '@/shared/config/global-constants.constants';
 import { LayoutProvider } from '@/shared/config/layout-context';
 import { LANDYSHEVAYA_CHILD_NAVIGATION } from '@/shared/config/site-navigation';
+import YandexMap from '@/widgets/yandex-map';
 
 import css from './index.module.css';
 import Footer from './ui/footer';
 import Header from './ui/header';
 import Menu from './ui/menu';
-
-const YandexMap = dynamic(() => import('@/widgets/yandex-map'), {
-    ssr: false,
-});
 
 const CHILD_ROUTES: ReadonlyArray<string> = Object.values(
     LANDYSHEVAYA_CHILD_NAVIGATION
