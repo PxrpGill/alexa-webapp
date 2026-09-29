@@ -12,6 +12,9 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 			button: { title: "Записаться на прием", isOpenFeedbackModal: true },
 		},
 		poster: {
+			webp: {
+				src: "/mock/hygiene-and-preventation/1-desktop.webp",
+			},
 			original: {
 				src: "/mock/hygiene-and-preventation/1-desktop.jpg",
 			},
@@ -111,16 +114,25 @@ export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	},
 	posters: [
 		{
+			webp: {
+				src: "/mock/pediatric-dental-consultation/2-1-slide.webp",
+			},
 			original: {
 				src: "/mock/pediatric-dental-consultation/2-1-slide.jpg",
 			},
 		},
 		{
+			webp: {
+				src: "/mock/pediatric-dental-consultation/2-2-slide.webp",
+			},
 			original: {
 				src: "/mock/pediatric-dental-consultation/2-2-slide.jpg",
 			},
 		},
 		{
+			webp: {
+				src: "/mock/pediatric-dental-consultation/2-3-slide.webp",
+			},
 			original: {
 				src: "/mock/pediatric-dental-consultation/2-3-slide.jpg",
 			},
@@ -161,21 +173,33 @@ export const FOURTH_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	},
 	posters: [
 		{
+			webp: {
+				src: "/mock/pediatric-dental-consultation/4-1-slide.webp",
+			},
 			original: {
 				src: "/mock/pediatric-dental-consultation/4-1-slide.jpg",
 			},
 		},
 		{
+			webp: {
+				src: "/mock/pediatric-dental-consultation/4-2-slide.webp",
+			},
 			original: {
 				src: "/mock/pediatric-dental-consultation/4-2-slide.jpg",
 			},
 		},
 		{
+			webp: {
+				src: "/mock/pediatric-dental-consultation/4-3-slide.webp",
+			},
 			original: {
 				src: "/mock/pediatric-dental-consultation/4-3-slide.jpg",
 			},
 		},
 		{
+			webp: {
+				src: "/mock/pediatric-dental-consultation/4-4-slide.webp",
+			},
 			original: {
 				src: "/mock/pediatric-dental-consultation/4-4-slide.jpg",
 			},

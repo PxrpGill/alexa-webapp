@@ -19,6 +19,9 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 		},
 		poster: {
+			webp: {
+				src: "/mock/treatment-in-dream/treatment-in-dream-hero.webp",
+			},
 			original: {
 				src: "/mock/treatment-in-dream/treatment-in-dream-hero.jpg",
 			},

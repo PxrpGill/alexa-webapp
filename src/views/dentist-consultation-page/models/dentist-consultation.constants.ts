@@ -27,6 +27,9 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 			},
 		},
 		poster: {
+			webp: {
+				src: "/mock/quadro/quadro-desktop.webp",
+			},
 			original: {
 				src: "/mock/quadro/quadro-desktop.jpg",
 			},
@@ -69,6 +72,9 @@ export const TITLE_STICKY_SECTION: TitleStickySectionProps = {
 	],
 	lastCard: {
 		poster: {
+			webp: {
+				src: "/mock/sticky-title/title-sticky.webp",
+			},
 			original: {
 				src: "/mock/sticky-title/title-sticky.jpg",
 			},

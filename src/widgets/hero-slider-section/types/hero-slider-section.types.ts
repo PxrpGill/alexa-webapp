@@ -17,6 +17,8 @@ export type SlideVariantProps = {
 	textTheme?: "light" | "dark";
 	/** Первый слайд виден сразу — его постер грузим в высоком приоритете */
 	isPriority?: boolean;
+	/** Постер рендерится только у показанных слайдов, см. hero-slider-section */
+	hasPoster?: boolean;
 } & PropsWithClassName;
 
 export type HeroSliderSectionProps = {

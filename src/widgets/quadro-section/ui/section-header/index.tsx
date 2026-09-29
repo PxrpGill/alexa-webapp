@@ -41,7 +41,15 @@ export default function SectionHeader({
 				{card && <Card {...card} className={css.desktopCard} />}
 			</div>
 			<div className={css.imageBlock}>
-				{poster && <Picture poster={poster} />}
+				{/* Первая секция сервисных страниц: её постер и есть
+				    LCP-элемент, поэтому грузим его сразу и в приоритете. */}
+				{poster && (
+					<Picture
+						poster={poster}
+						loading="eager"
+						fetchPriority="high"
+					/>
+				)}
 			</div>
 			{card && <Card {...card} className={css.mobileCard} />}
 		</AnimationWrapper>

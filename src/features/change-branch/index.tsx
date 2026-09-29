@@ -65,12 +65,17 @@ export default function ChangeBranch({ className }: ChangeBranchProps) {
 			<button
 				className={css.button}
 				type="button"
+				aria-expanded={isListOpen}
+				aria-haspopup="listbox"
 				onClick={() => toggleListOpen(!isListOpen)}
 			>
 				<span dangerouslySetInnerHTML={{ __html: selectedBranch.title }} />
 				<ArrowSVG className={`${css.arrow} ${isListOpen && css.open}`} />
 			</button>
-			<ul className={`${css.list} ${isListOpen && css.open}`}>
+			<ul
+				className={`${css.list} ${isListOpen && css.open}`}
+				inert={!isListOpen}
+			>
 				{BRANCHES.map((branch) => (
 					<li key={branch.name}>
 						<button

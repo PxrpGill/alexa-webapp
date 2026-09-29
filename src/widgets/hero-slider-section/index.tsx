@@ -3,6 +3,8 @@
 
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import ArrowSVG from '@/public/icons/slider-arrow.svg';
 import { AnimationWrapper } from '@/shared/ui/animation-wrapper';
 
@@ -17,6 +19,34 @@ export default function HeroSliderSection({
 }: HeroSliderSectionProps) {
     const { current, next, prev, setCurrent } = useHeroSlider(slides);
 
+    const total = slides?.length ?? 0;
+
+    // Слайды лежат друг на друге и все попадают во вьюпорт, поэтому
+    // loading="lazy" их не сдерживает: браузер тянул постеры всех шести
+    // слайдов сразу — на главной это больше 600 КБ. Держим в разметке
+    // только показанные и следующий за текущим, остальные подгружаются
+    // по мере перелистывания.
+    const [shownSlides, setShownSlides] = useState<ReadonlySet<number>>(
+        () => new Set([0, 1])
+    );
+
+    useEffect(() => {
+        setShownSlides((previous) => {
+            const nextIndex = total ? (current + 1) % total : 0;
+
+            if (previous.has(current) && previous.has(nextIndex)) {
+                return previous;
+            }
+
+            const updated = new Set(previous);
+
+            updated.add(current);
+            updated.add(nextIndex);
+
+            return updated;
+        });
+    }, [current, total]);
+
     return (
         <AnimationWrapper
             as="section"
@@ -29,6 +59,7 @@ export default function HeroSliderSection({
                             {...slide}
                             key={index}
                             isPriority={index === 0}
+                            hasPoster={shownSlides.has(index)}
                             className={`${css.slide} ${index === current ? css.active : css.inactive}`}
                         />
                     ))}

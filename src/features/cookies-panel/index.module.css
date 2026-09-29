@@ -19,6 +19,12 @@
         opacity: 1;
         visibility: visible;
     }
+
+    /* Атрибут ставит инлайн-скрипт из app/layout.tsx до первой отрисовки,
+       если посетитель уже согласился с cookie. */
+    :global(html[data-cookies-accepted]) & {
+        display: none;
+    }
 }
 
 .wrapper {

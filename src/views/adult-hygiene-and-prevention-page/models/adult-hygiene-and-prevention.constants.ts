@@ -90,6 +90,9 @@ export const TITLE_STICKY_SECTION: TitleStickySectionProps = {
 	],
 	lastCard: {
 		poster: {
+			webp: {
+				src: "/mock/sticky-title/title-sticky.webp",
+			},
 			original: {
 				src: "/mock/sticky-title/title-sticky.jpg",
 			},

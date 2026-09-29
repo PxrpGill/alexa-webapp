@@ -27,6 +27,7 @@ export const QAUDRO_MOCK: QuadroSectionProps = {
 		poster: {
 			webp: {
 				src: "/mock/volkovo/volkovo-hero.webp",
+				mobile: "/mock/volkovo/volkovo-hero-mobile.webp",
 			},
 		},
 	},
@@ -62,8 +63,8 @@ export const STOMATOLOGY_PROGRAM: StomatologyProgramProps = {
 			"<ul><li>риск развития кариеса;</li><li>качество домашней гигиены;</li><li>состояние дёсен;</li><li>наличие факторов риска;</li><li>необходимую периодичность наблюдения.</li></ul>",
 	},
 	poster: {
-		original: {
-			src: "/mock/volkovo/instruments.png",
+		webp: {
+			src: "/mock/volkovo/instruments.webp",
 		},
 	},
 };

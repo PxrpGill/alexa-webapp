@@ -17,8 +17,15 @@ import {
     SITE_URL,
     TITLE_TEMPLATE,
 } from '@/shared/config/seo/seo.constants';
+import { COOKIES_PANEL_KEY } from '@/features/cookies-panel/models/cookies-panel.constants';
 import { toJsonLd } from '@/shared/helpers/to-json-ld';
 import Layout from '@/widgets/layout';
+
+// Панель cookie приходит в разметке видимой, иначе она проявляется уже после
+// гидрации и становится LCP-элементом на всех страницах без крупного героя.
+// Этот скрипт выполняется до первой отрисовки и прячет её тем, кто уже
+// согласился, — мигания не будет.
+const HIDE_ACCEPTED_COOKIES_PANEL = `if(document.cookie.indexOf('${COOKIES_PANEL_KEY}=')>-1)document.documentElement.dataset.cookiesAccepted='';`;
 
 export const metadata: Metadata = {
     metadataBase: new URL(SITE_URL),
@@ -48,6 +55,12 @@ export default async function RootLayout({
         <html lang="ru" className={InvolveFont.className}>
             <Favicon />
             <body>
+                <script
+                    // biome-ignore lint/security/noDangerouslySetInnerHtml: инлайн-скрипт обязан выполниться до первой отрисовки
+                    dangerouslySetInnerHTML={{
+                        __html: HIDE_ACCEPTED_COOKIES_PANEL,
+                    }}
+                />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{

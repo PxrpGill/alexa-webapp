@@ -7,16 +7,22 @@
 import dynamic from "next/dynamic";
 import { useCallback, useMemo, useRef } from "react";
 
+import { useIntersectionObserver } from "@/shared/hooks/use-intersection-observer";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 
 import { useMapBalloon } from "./hooks/use-map-balloon";
 import { useYandexMap } from "./hooks/use-yandex-map";
 import css from "./index.module.css";
-import Balloon from "./ui/balloon";
 import InfoCard, { type InfoCardProps } from "./ui/info-card";
 
 const MapView = dynamic(() => import("./ui/map-view"), {
+	ssr: false,
+});
+
+// Balloon тянет за собой Swiper (~74 КБ) — грузим его отдельно и только
+// вместе с картой, чтобы он не попадал в стартовый чанк каждой страницы.
+const Balloon = dynamic(() => import("./ui/balloon"), {
 	ssr: false,
 });
 
@@ -52,6 +58,16 @@ export default function YandexMap({
 	pin = DEFAULT_CENTER,
 }: YandexMapProps) {
 	const mapRef = useRef<YandexMapInstance>(null);
+
+	// Карта живёт в общем layout и раньше монтировалась на каждом маршруте,
+	// подтягивая api-maps.yandex.ru ещё до первой отрисовки. Теперь она
+	// поднимается, только когда контейнер подходит к вьюпорту. Контейнер
+	// имеет фиксированную высоту, поэтому сдвига макета не возникает.
+	const { ref: mapGateRef, isIntersecting: isMapVisible } =
+		useIntersectionObserver({
+			rootMargin: "200px",
+			freezeOnceVisible: true,
+		});
 
 	const { center, zoom, placemarks, handleBranchSelect } = useYandexMap(
 		infoCard,
@@ -100,23 +116,31 @@ export default function YandexMap({
 			<div className={css.contentWrapper}>
 				<InfoCard {...infoCard} onBranchSelect={handleInfoCardSelect} />
 				<div className={css.mapsWrapper}>
-					<div className={css.mapContainer}>
-						<MapView
-							center={center}
-							zoom={zoom}
-							placemarks={placemarks}
-							onMapInstance={handleMapInstance}
-							onPlacemarkClick={handlePlacemarkClick}
-						/>
-						<Balloon
-							isOpen={Boolean(activeIndex !== null && balloonPos)}
-							onTransitionEnd={handleTransitionEnd}
-							style={{
-								left: balloonPos?.x,
-								top: balloonPos ? balloonPos.y + 20 : undefined,
-							}}
-							activePlacemark={activePlacemark}
-						/>
+					<div className={css.mapContainer} ref={mapGateRef}>
+						{isMapVisible && (
+							<>
+								<MapView
+									center={center}
+									zoom={zoom}
+									placemarks={placemarks}
+									onMapInstance={handleMapInstance}
+									onPlacemarkClick={handlePlacemarkClick}
+								/>
+								<Balloon
+									isOpen={Boolean(
+										activeIndex !== null && balloonPos,
+									)}
+									onTransitionEnd={handleTransitionEnd}
+									style={{
+										left: balloonPos?.x,
+										top: balloonPos
+											? balloonPos.y + 20
+											: undefined,
+									}}
+									activePlacemark={activePlacemark}
+								/>
+							</>
+						)}
 					</div>
 				</div>
 			</div>

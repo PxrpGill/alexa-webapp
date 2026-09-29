@@ -16,13 +16,16 @@ export default function HeroSlide({
     className,
     textTheme = 'dark',
     isPriority = false,
+    hasPoster = true,
 }: SlideVariantProps) {
+    const visiblePoster = hasPoster ? poster : undefined;
+
     return (
         <div className={`${css.root} ${className}`}>
-            {poster && (
+            {visiblePoster && (
                 <div className={css.mobilePoster}>
                     <Picture
-                        poster={poster}
+                        poster={visiblePoster}
                         loading={isPriority ? 'eager' : 'lazy'}
                         fetchPriority={isPriority ? 'high' : 'auto'}
                     />
@@ -35,12 +38,21 @@ export default function HeroSlide({
                         className={css.subtitle}
                     />
                 )}
-                {title && (
-                    <h1
-                        dangerouslySetInnerHTML={{ __html: title }}
-                        className={css.title}
-                    />
-                )}
+                {title &&
+                    // h1 должен быть один на страницу: слайдов несколько,
+                    // поэтому заголовком первого слайда и ограничиваемся,
+                    // остальные — обычные абзацы с теми же стилями.
+                    (isPriority ? (
+                        <h1
+                            dangerouslySetInnerHTML={{ __html: title }}
+                            className={css.title}
+                        />
+                    ) : (
+                        <p
+                            dangerouslySetInnerHTML={{ __html: title }}
+                            className={css.title}
+                        />
+                    ))}
                 {legend && (
                     <p
                         dangerouslySetInnerHTML={{ __html: legend }}
@@ -49,9 +61,9 @@ export default function HeroSlide({
                 )}
             </div>
             {card && <SlideCard {...card} className={css.card} />}
-            {poster && (
+            {visiblePoster && (
                 <Picture
-                    poster={poster}
+                    poster={visiblePoster}
                     className={css.desktopPoster}
                     loading={isPriority ? 'eager' : 'lazy'}
                     fetchPriority={isPriority ? 'high' : 'auto'}

@@ -24,7 +24,14 @@ export default function VacanciesHero({
 		>
 			<div className={css.wrapper}>
 				<div className={css.posterWrapper}>
-					{poster && <Picture poster={poster} />}
+					{/* Постер первого экрана — LCP-элемент страницы. */}
+					{poster && (
+						<Picture
+							poster={poster}
+							loading="eager"
+							fetchPriority="high"
+						/>
+					)}
 				</div>
 				<article className={css.information}>
 					{title && (
