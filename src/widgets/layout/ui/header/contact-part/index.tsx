@@ -15,7 +15,7 @@ import { BRANCH_COOKIES_VALUES } from "@/shared/hooks/set-branch-in-cookies";
 import css from "./index.module.css";
 
 export default function ContactPart() {
-	const { toggleMenuOpen, currentBranch } = useLayoutContext();
+	const { isMenuOpen, toggleMenuOpen, currentBranch } = useLayoutContext();
 
 	return (
 		<div className={`${css.root}`.trim()}>
@@ -48,6 +48,7 @@ export default function ContactPart() {
 				type="button"
 				onClick={() => toggleMenuOpen(true)}
 				aria-label="Открыть меню"
+				aria-expanded={isMenuOpen}
 			>
 				<MenuSVG className={css.menuIcon} />
 			</button>

@@ -22,6 +22,10 @@ export type PictureProps = {
 	loading?: "eager" | "lazy";
 	alt?: string;
 	fetchPriority?: "high" | "low" | "auto";
+	decoding?: "async" | "sync" | "auto";
+	/** Собственные размеры файла — резервируют место и убирают сдвиг макета */
+	width?: number;
+	height?: number;
 } & PropsWithClassName &
 	PosterImageType;
 
@@ -31,6 +35,9 @@ export default function Picture({
 	poster,
 	alt,
 	fetchPriority,
+	decoding,
+	width,
+	height,
 }: PictureProps) {
 	return (
 		<picture className={`${css.root} ${className}`}>
@@ -82,9 +89,15 @@ export default function Picture({
 					poster?.original?.mobile ||
 					undefined
 				}
-				alt={alt ?? "Background image"}
+				// Ни одна точка вызова не передавала alt, и все 65 картинок
+				// на главной получали одинаковую английскую подпись. Для
+				// оформительских изображений правильный alt — пустой.
+				alt={alt ?? ""}
 				fetchPriority={fetchPriority}
 				loading={loading ?? "lazy"}
+				decoding={decoding ?? "async"}
+				width={width}
+				height={height}
 			/>
 		</picture>
 	);

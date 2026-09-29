@@ -51,7 +51,17 @@ export default function SupervisoryCard({
                         </div>
                     )}
                 </div>
-                {icon && <img src={icon} className={css.icon} alt="Иконка" />}
+                {icon && (
+                    <img
+                        src={icon}
+                        className={css.icon}
+                        alt=""
+                        width={320}
+                        height={320}
+                        loading="lazy"
+                        decoding="async"
+                    />
+                )}
             </div>
         </AnimationWrapper>
     );
