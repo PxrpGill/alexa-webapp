@@ -39,6 +39,23 @@
 .descriptionContent {
     @mixin text-md;
     @mixin responsive padding-block-end, 20, 30;
+
+    strong {
+        font-weight: 600;
+    }
+
+    ol,
+    ul {
+        @mixin responsive padding-inline-start, 20, 20;
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    ol {
+        list-style: decimal;
+    }
 }
 
 .timeLeft {
