@@ -10,8 +10,8 @@ export default function SuccessForm({ className, isOpen }: SuccessFormProps) {
 				src="/system/alexik.png"
 				alt="Алексик — талисман клиники"
 				className={css.logo}
-				width={2339}
-				height={3048}
+				width={296}
+				height={386}
 				loading="lazy"
 				decoding="async"
 			/>
