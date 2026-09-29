@@ -68,6 +68,28 @@ export function useAnimatedEntering({
         if (!el) return;
         if (once && revealed) return;
 
+        // Секция, уже попавшая в первый экран, не должна ничего «въезжать»:
+        // раньше она приходила из SSR с opacity 0 и проявлялась только после
+        // гидрации плюс 376 мс перехода, из-за чего LCP уезжал на секунды.
+        // Показываем её сразу, а анимацию оставляем тому, что ниже сгиба.
+        const rect = el.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight * 0.9) {
+            el.style.transition = 'none';
+            el.style.opacity = '1';
+
+            if (!opacityOnly) el.style.transform = 'none';
+
+            setRevealed(true);
+
+            return;
+        }
+
+        el.style.transition = 'none';
+        el.style.opacity = '0';
+
+        if (!opacityOnly) el.style.transform = getTransform(direction, distance);
+
         const onProgress = (progress: number) => {
             el.style.transition = 'none';
             el.style.opacity = '0';
@@ -125,11 +147,11 @@ export function useAnimatedEntering({
                 ...(customStyle ?? {}),
             };
         }
+        // До гидрации содержимое остаётся видимым: скрывать его в серверной
+        // разметке значит держать всю страницу пустой до загрузки JS.
+        // Ниже сгиба элемент прячется уже на клиенте, до того как пользователь
+        // до него доскроллит.
         return {
-            opacity: 0,
-            ...(!opacityOnly && direction !== 'fade'
-                ? { transform: getTransform(direction, distance) }
-                : {}),
             willChange: opacityOnly ? 'opacity' : 'opacity, transform',
             ...(customStyle ?? {}),
         };
