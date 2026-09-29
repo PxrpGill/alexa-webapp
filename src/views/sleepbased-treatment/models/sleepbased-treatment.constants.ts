@@ -19,6 +19,9 @@ export const QUADRO_MOCK: QuadroSectionProps = {
 			},
 		},
 		poster: {
+			webp: {
+				src: "/mock/sleepbased-treatment/1-desktop.webp",
+			},
 			original: {
 				src: "/mock/sleepbased-treatment/1-desktop.jpg",
 			},
@@ -117,6 +120,9 @@ export const STAGES_SECTION_MOCK: StagesSectionProps = {
 		cards: [
 			{
 				poster: {
+					webp: {
+						src: "/mock/treatment-in-dream/stage-1.webp",
+					},
 					original: {
 						src: "/mock/treatment-in-dream/stage-1.jpg",
 					},
@@ -177,6 +183,9 @@ export const STICKY_TITLE_MOCK: TitleStickySectionProps = {
 	],
 	lastCard: {
 		poster: {
+			webp: {
+				src: "/mock/sleepbased-treatment/title-sticky.webp",
+			},
 			original: {
 				src: "/mock/sleepbased-treatment/title-sticky.jpg",
 			},
@@ -221,6 +230,9 @@ export const STILL_QUESTIONS_MOCK: StillQuestionProps = {
 	description:
 		"<p>В&nbsp;нашей стоматологии теперь доступна рассрочка на&nbsp;лечение во&nbsp;сне:</p><br /><p><b>Первоначальный взнос:</b> всего&nbsp;50%</p><p><b>Срок рассрочки:</b> 6&nbsp;месяцев.</p><p><b>Дальнейшая оплата:</b> равными частями без переплат.</p>",
 	poster: {
+		webp: {
+			src: "/mock/sleepbased-treatment/still-questions.webp",
+		},
 		original: {
 			src: "/mock/sleepbased-treatment/still-questions.jpg",
 		},

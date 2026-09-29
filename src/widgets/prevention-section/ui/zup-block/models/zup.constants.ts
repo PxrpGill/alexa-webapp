@@ -18,7 +18,7 @@ export const WORDS: ZupWord[] = [
 
 /** Tooth PNG placement, as fractions of the canvas. */
 export const TOOTH = {
-    src: '/mock/volkovo/zup.png',
+    src: '/mock/volkovo/zup.webp',
     leftFrac: 0.02,
     centerY: 0.5,
     widthFrac: 0.52,

@@ -24,6 +24,9 @@ export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
 			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 		},
 		poster: {
+			webp: {
+				src: "/mock/adult-therapy/quadro.webp",
+			},
 			original: {
 				src: "/mock/adult-therapy/quadro.jpg",
 			},
@@ -50,6 +53,9 @@ export const TITLE_STICKY_SECTION_MOCK: TitleStickySectionProps = {
 	],
 	lastCard: {
 		poster: {
+			webp: {
+				src: "/mock/sticky-title/title-sticky.webp",
+			},
 			original: {
 				src: "/mock/sticky-title/title-sticky.jpg",
 			},

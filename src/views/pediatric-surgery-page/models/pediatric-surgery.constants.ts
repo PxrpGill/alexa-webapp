@@ -13,6 +13,9 @@ export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
 			button: { title: "Записаться на прием", isOpenFeedbackModal: true },
 		},
 		poster: {
+			webp: {
+				src: "/mock/pediatric-surgery/1-desktop.webp",
+			},
 			original: {
 				src: "/mock/pediatric-surgery/1-desktop.jpg",
 			},
@@ -107,16 +110,25 @@ export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	},
 	posters: [
 		{
+			webp: {
+				src: "/mock/pediatric-dental-consultation/2-1-slide.webp",
+			},
 			original: {
 				src: "/mock/pediatric-dental-consultation/2-1-slide.jpg",
 			},
 		},
 		{
+			webp: {
+				src: "/mock/pediatric-dental-consultation/2-2-slide.webp",
+			},
 			original: {
 				src: "/mock/pediatric-dental-consultation/2-2-slide.jpg",
 			},
 		},
 		{
+			webp: {
+				src: "/mock/pediatric-dental-consultation/2-3-slide.webp",
+			},
 			original: {
 				src: "/mock/pediatric-dental-consultation/2-3-slide.jpg",
 			},
@@ -132,11 +144,17 @@ export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	},
 	posters: [
 		{
+			webp: {
+				src: "/mock/pediatric-surgery/3-1-slider.webp",
+			},
 			original: {
 				src: "/mock/pediatric-surgery/3-1-slider.jpg",
 			},
 		},
 		{
+			webp: {
+				src: "/mock/pediatric-surgery/3-2-slider.webp",
+			},
 			original: {
 				src: "/mock/pediatric-surgery/3-2-slider.jpg",
 			},

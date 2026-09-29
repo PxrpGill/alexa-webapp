@@ -27,6 +27,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			poster: {
 				webp: {
 					src: "/mock/home/hero-slider/1-desktop.webp",
+					mobile: "/mock/home/hero-slider/1-mobile.webp",
 				},
 			},
 			legend:
@@ -61,6 +62,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			poster: {
 				webp: {
 					src: "/mock/home/hero-slider/2-desktop.webp",
+					mobile: "/mock/home/hero-slider/2-mobile.webp",
 				},
 			},
 			card: {
@@ -79,6 +81,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			poster: {
 				webp: {
 					src: "/mock/home/hero-slider/4-desktop.webp",
+					mobile: "/mock/home/hero-slider/4-mobile.webp",
 				},
 			},
 			card: {
@@ -114,6 +117,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			poster: {
 				webp: {
 					src: "/mock/home/hero-slider/6-desktop.webp",
+					mobile: "/mock/home/hero-slider/6-mobile.webp",
 				},
 			},
 			card: {

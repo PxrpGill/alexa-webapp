@@ -7,6 +7,9 @@ export type ErrorFallbackType = {
 };
 
 const FALLBACK_IMAGE: PictureFormatType = {
+	webp: {
+		src: "/system/error-image.webp",
+	},
 	original: {
 		src: "/system/error-image.jpg",
 	},
