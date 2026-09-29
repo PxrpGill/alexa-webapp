@@ -1,23 +1,8 @@
 // Обходит все маршруты запущенного приложения и проверяет их метаданные.
 // Запуск: pnpm start (из src/), затем node scripts/check-metadata.mjs
-const BASE = process.env.BASE_URL ?? 'http://localhost:3000';
+import { ROUTES } from './routes.mjs';
 
-const ROUTES = [
-    '/', '/volkova', '/price', '/vrachi', '/raspisanievrachej', '/o-klinike',
-    '/akcii', '/blog', '/vakansii', '/dms', '/pacientu', '/nalogovyjvychet',
-    '/rekvizity', '/nadzornye-organy', '/dokumenty-i-licenzii', '/privacy',
-    '/personal-data', '/letter', '/pravilaokazaniyamedicinskihuslug',
-    '/pravilavneseniyaoplatyzamedicinskieuslugi',
-    '/landyshevaya/konsultaciya-stomatologa', '/landyshevaya/terapiya-vz',
-    '/landyshevaya/ortodontiya-vz', '/landyshevaya/ortopediya-vz',
-    '/landyshevaya/hirurgiya-i-implantaciya', '/landyshevaya/parodontologiya',
-    '/landyshevaya/gnatologiya', '/landyshevaya/gigiena-i-profilaktika-vz',
-    '/landyshevaya/lechenie-vo-sne-vz',
-    '/landyshevaya/konsultaciya-detskogo-stomatologa',
-    '/landyshevaya/detskaya-terapiya', '/landyshevaya/detskaya-hirurgiya',
-    '/landyshevaya/ortodontiya', '/landyshevaya/gigiena-i-profilaktika',
-    '/landyshevaya/lechenie-vo-sne',
-];
+const BASE = process.env.BASE_URL ?? 'http://localhost:3000';
 
 const decode = (value) =>
     value
