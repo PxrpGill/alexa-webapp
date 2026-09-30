@@ -1,5 +1,6 @@
 "use client";
 
+import ChangeBranch from "@/features/change-branch";
 import { useLayoutContext } from "@/shared/config/layout-context";
 import Modal from "@/shared/ui/modal";
 import { useDefineMenuContent } from "../../hooks/use-define-menu-content";
@@ -19,6 +20,7 @@ export default function Menu() {
 			closeButtonClassName={css.closeButton}
 			contentClassName={`${css.root} ${isMenuOpen && css.open} container`}
 		>
+			<ChangeBranch className={css.changeBranch} />
 			<div className={css.wrap}>
 				<MainTabs key={currentBranch} {...menuContent} />
 			</div>

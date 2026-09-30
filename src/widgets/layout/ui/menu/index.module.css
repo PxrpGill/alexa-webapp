@@ -53,3 +53,19 @@
     background-color: var(--color-gray-11);
     position: fixed;
 }
+
+.changeBranch[class] {
+    display: none;
+    z-index: 100;
+
+    @media (max-width: $mobile) {
+        @mixin responsive margin-inline-start, 20;
+        @mixin responsive margin-block-start, 23;
+
+        display: block;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
