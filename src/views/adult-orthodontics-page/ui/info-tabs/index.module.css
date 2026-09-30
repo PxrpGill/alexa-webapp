@@ -1,7 +1,6 @@
 .contentWrapper,
 .root {
-    @mixin responsive gap, 60, 60;
-
+    gap: var(--section-gap);
     display: flex;
     flex-direction: column;
 }

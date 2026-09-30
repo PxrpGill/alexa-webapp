@@ -455,7 +455,7 @@ export const STILL_QUESTIONS: StillQuestionProps = {
 };
 
 export const PARENT_NEWS_SECTION_MOCK: ParentNewsSectionProps = {
-	title: "Кратко о&nbsp;важном в&nbsp;нашем блоге",
+	title: "Кратко о&nbsp;важном в&nbsp;нашем&nbsp;блоге",
 };
 
 export const OUR_WORK: OurWorkProps = {

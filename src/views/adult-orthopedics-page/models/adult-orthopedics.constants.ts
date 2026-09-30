@@ -4,7 +4,6 @@ import {
 	COSTS_OF_SERVICES_BUTTON,
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
-import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
@@ -320,18 +319,24 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 	cards: [
 		{
 			title: "Коронка цельнокерамическая 3D&nbsp;Medit 500 стандарт",
+			description:
+				"Восстановление разрушенного зуба безметалловой коронкой: цифровое сканирование Medit&nbsp;500, изготовление и&nbsp;фиксация с&nbsp;подбором оттенка под соседние зубы.",
 			button: COSTS_OF_SERVICES_BUTTON,
 			price: 27_850,
 			priceType: "from",
 		},
 		{
 			title: "Временная коронка",
+			description:
+				"Защищает обточенный зуб и&nbsp;сохраняет эстетику улыбки на&nbsp;период изготовления постоянной конструкции.",
 			button: COSTS_OF_SERVICES_BUTTON,
 			price: 2_650,
 			priceType: "from",
 		},
 		{
 			title: "Винир E-Max Стандарт цельнокерамический",
+			description:
+				"Тонкая керамическая накладка на&nbsp;переднюю поверхность зуба: исправляет форму, цвет и&nbsp;небольшие промежутки между зубами.",
 			button: COSTS_OF_SERVICES_BUTTON,
 			price: 33_100,
 			priceType: "from",
@@ -339,6 +344,8 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 		{
 			title:
 				"Цельнокерамическая коронка на&nbsp;импланте на&nbsp;титановом абатменте стандартное исполнение",
+			description:
+				"Постоянная коронка на&nbsp;установленный имплант: включает титановый абатмент, изготовление керамической части и&nbsp;фиксацию.",
 			button: COSTS_OF_SERVICES_BUTTON,
 			price: 38_850,
 			priceType: "from",
@@ -346,6 +353,8 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 		{
 			title:
 				"Реставрация цельнокерамическая (вкладка/накладка) 3D&nbsp;Medit 500",
+			description:
+				"Керамическая вкладка вместо большой пломбы: точно повторяет анатомию зуба и&nbsp;сохраняет больше собственных тканей, чем коронка.",
 			button: COSTS_OF_SERVICES_BUTTON,
 			price: 30_450,
 			priceType: "from",

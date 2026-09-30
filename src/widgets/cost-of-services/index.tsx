@@ -62,13 +62,13 @@ export default function CostOfServices({
 				))}
 			</ul>
 
-			<div className="container">
-				{hasMore && (
+			{hasMore && (
+				<div className="container">
 					<Button className={css.getMoreButton} onClick={handleShowMore}>
 						Показать еще
 					</Button>
-				)}
-			</div>
+				</div>
+			)}
 		</AnimationWrapper>
 	);
 }

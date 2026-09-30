@@ -4,10 +4,10 @@
  */
 
 :root {
-    @mixin responsive --section-gap, 60, 60;
+    @mixin responsive --section-gap, 80, 120;
     @mixin responsive --section-gap-sm, 20, 35;
     @mixin responsive --section-gap-md, 30, 30;
-    @mixin responsive --section-gap-pad, 40, 60;
+    @mixin responsive --section-gap-pad, 80, 120;
     @mixin responsive --header-offset, 88, 100;
 }
 

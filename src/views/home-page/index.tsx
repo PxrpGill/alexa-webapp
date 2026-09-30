@@ -28,10 +28,7 @@ export default function HomePage({ initialNewsData }: HomePageProps) {
 		<main className="page-offset">
 			<HeroSliderSection className="section" {...HERO_SLIDES} />
 			<CtaSection {...CTA_MOCK} className="section" />
-			<DescriptionSection
-				{...DESCRIPTION_SECTION}
-				className="section"
-			/>
+			<DescriptionSection {...DESCRIPTION_SECTION} className="section" />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className="section-sm"
@@ -43,7 +40,7 @@ export default function HomePage({ initialNewsData }: HomePageProps) {
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.lastSlider}
+				className="section"
 			/>
 			<HealthForFamily {...HEALTH_FOR_FAMILY} className="section" />
 			<OurWork className="section" {...OUR_WORK} />
