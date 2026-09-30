@@ -1,0 +1,54 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-block, 30, 77;
+
+    position: relative;
+    background-color: var(--color-white-0);
+
+    @media (max-width: $mobile) {
+        @mixin responsive padding-block-start, 120;
+
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.title {
+    @mixin text-6xl;
+}
+
+.description {
+    @mixin text-md;
+}
+
+.titleBlock {
+    @mixin responsive gap, 10, 10;
+    @mixin responsive max-width, 0, 870;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $mobile) {
+        max-width: unset;
+    }
+}
+
+.mockup {
+    @mixin responsive width, 200, 300;
+    @mixin responsive margin-inline-end, 0, 76;
+    @mixin responsive height, 0, 390;
+
+    bottom: 0;
+    right: 0;
+    position: absolute;
+
+    @media (max-width: $mobile) {
+        height: auto;
+        bottom: unset;
+        top: 0;
+        right: unset;
+        left: 0;
+        translate: 0 -45%;
+    }
+}

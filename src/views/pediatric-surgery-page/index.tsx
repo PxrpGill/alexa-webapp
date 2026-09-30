@@ -1,33 +1,33 @@
-import BrickworkSection from "@/widgets/brickwork-section";
-import QuadroSection from "@/widgets/quadro-section";
-import TitleDescriptionSlider from "@/widgets/title-description-slider";
-
+import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
+import ChildWhatIncludesServices from "@/widgets/child-what-includes-services";
+import CostOfServices from "@/widgets/cost-of-services";
+import Hero from "@/widgets/hero";
+import OurPeopleSection from "@/widgets/our-people-section";
+import RecommendsForChildren from "@/widgets/recommends-for-children";
 import {
-	BRICKWORK_SECTION_MOCK,
-	FIRST_TITLE_DESCRIPTION_SLIDER,
-	MOCK_QUADRO_SECTION,
-	SECOND_TITLE_DESCRIPTION_SLIDER,
-	THIRD_TITLE_DESCRIPTION_SLIDER,
+	CHILD_WHAT_INCLUDES_SERVICES,
+	COST_OF_SERVICES,
+	EMPLOYEES_SECTION,
+	FORM_DATA,
+	HERO_DATA,
+	RECOMMENDS_FOR_CHILDREN_DATA,
 } from "./models/pediatric-surgery.constants";
 
 export default function PediatricSurgeryPage() {
 	return (
 		<main className="page-offset">
-			<QuadroSection {...MOCK_QUADRO_SECTION} className="section" />
-			<BrickworkSection className="section" {...BRICKWORK_SECTION_MOCK} />
-			<TitleDescriptionSlider
-				{...FIRST_TITLE_DESCRIPTION_SLIDER}
-				className="section-sm"
-			/>
-			<TitleDescriptionSlider
-				textBlockPosition="right"
-				className="section-sm"
-				{...SECOND_TITLE_DESCRIPTION_SLIDER}
-			/>
-			<TitleDescriptionSlider
+			<Hero {...HERO_DATA} className="section" />
+			<ChildWhatIncludesServices
 				className="section"
-				{...THIRD_TITLE_DESCRIPTION_SLIDER}
+				{...CHILD_WHAT_INCLUDES_SERVICES}
 			/>
+			<RecommendsForChildren
+				className="section"
+				{...RECOMMENDS_FOR_CHILDREN_DATA}
+			/>
+			<CostOfServices className="section" {...COST_OF_SERVICES} />
+			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
+			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
 }
