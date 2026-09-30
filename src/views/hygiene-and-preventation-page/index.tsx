@@ -1,39 +1,34 @@
-import BrickworkSection from "@/widgets/brickwork-section";
-import QuadroSection from "@/widgets/quadro-section";
-import TitleDescriptionSlider from "@/widgets/title-description-slider";
-
+import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
+import ChildWhatIncludesServices from "@/widgets/child-what-includes-services";
+import CostOfServices from "@/widgets/cost-of-services";
+import Hero from "@/widgets/hero";
+import OurPeopleSection from "@/widgets/our-people-section";
+import RecommendsForChildren from "@/widgets/recommends-for-children";
+import css from "./index.module.css";
 import {
-	BRICKWORK_SECTION_MOCK,
-	FIRST_TITLE_DESCRIPTION_SLIDER,
-	FOURTH_TITLE_DESCRIPTION_SLIDER,
-	QUADRO_SECTION_MOCK,
-	SECOND_TITLE_DESCRIPTION_SLIDER,
-	THIRD_TITLE_DESCRIPTION_SLIDER,
+	CHILD_WHAT_INCLUDES_SERVICES,
+	COST_OF_SERVICES,
+	EMPLOYEES_SECTION,
+	FORM_DATA,
+	HERO_DATA,
+	RECOMMENDS_FOR_CHILDREN_DATA,
 } from "./models/hygiene-and-preventation.constants";
 
 export default function HygieneAndPreventionPage() {
 	return (
 		<main className="page-offset">
-			<QuadroSection {...QUADRO_SECTION_MOCK} className="section" />
-			<BrickworkSection className="section" {...BRICKWORK_SECTION_MOCK} />
-			<TitleDescriptionSlider
-				{...FIRST_TITLE_DESCRIPTION_SLIDER}
-				className="section-sm"
+			<Hero {...HERO_DATA} className="section" />
+			<ChildWhatIncludesServices
+				className={`${css.services} section`}
+				{...CHILD_WHAT_INCLUDES_SERVICES}
 			/>
-			<TitleDescriptionSlider
-				textBlockPosition="right"
-				{...SECOND_TITLE_DESCRIPTION_SLIDER}
-				className="section-sm"
-			/>
-			<TitleDescriptionSlider
-				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className="section-sm"
-			/>
-			<TitleDescriptionSlider
-				textBlockPosition="right"
-				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
+			<RecommendsForChildren
 				className="section"
+				{...RECOMMENDS_FOR_CHILDREN_DATA}
 			/>
+			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
+			<CostOfServices className="section" {...COST_OF_SERVICES} />
+			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
 }

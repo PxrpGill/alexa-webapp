@@ -1,208 +1,220 @@
-import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
-import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
-import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
+import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+	GLOBAL_EMPLOYEES,
+} from "@/shared/config/global-constants.constants";
+import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
+import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
+import type { HeroProps } from "@/widgets/hero/types/hero.types";
+import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
+import type { RecommendsForChildrenProps } from "@/widgets/recommends-for-children/types/recommends-for-children.types";
 
-export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
+export const HERO_DATA: HeroProps = {
+	title:
+		"Помогаем сохранить здоровые зубы и&nbsp;привить ребёнку правильные привычки",
+	description:
+		"Профессионально очищаем зубы, оцениваем состояние полости рта и&nbsp;рассказываем ребёнку и&nbsp;родителям, как правильно ухаживать за&nbsp;улыбкой дома.",
+	button: {
+		title: "Записать ребёнка на приём",
+		href: APPOINTMENT_ID.id,
+	},
+	poster: {
+		webp: {
+			src: "/mock/hygiene-and-preventation/1-desktop.webp",
+		},
+	},
+};
+
+export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
 	sectionHeader: {
-		title: "Гигиена полости рта для детей",
-		description: "Бережный уход за&nbsp;молочными и&nbsp;постоянными зубами",
-		card: {
-			title:
-				"Запишитесь на&nbsp;прием и&nbsp;подарите своему ребенку здоровую и&nbsp;счастливую улыбку!",
-			button: { title: "Записаться на прием", isOpenFeedbackModal: true },
-		},
-		poster: {
-			webp: {
-				src: "/mock/hygiene-and-preventation/1-desktop.webp",
-			},
-			original: {
-				src: "/mock/hygiene-and-preventation/1-desktop.jpg",
-			},
-		},
+		title: "Что входит в&nbsp;детскую гигиену",
+		description:
+			"Профессиональная гигиена&nbsp;&mdash; это не&nbsp;только очищение зубов. Врач помогает понять, где скапливается налёт, и&nbsp;показывает, как правильно ухаживать за&nbsp;зубами каждый день.",
 	},
 	cards: [
 		{
-			title: "Удаление налета снижает риск воспаления дёсен",
+			title: "Осмотр",
+			description:
+				"Оцениваем состояние зубов, дёсен и&nbsp;качество домашней гигиены.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/first.webp",
+				},
+			},
 		},
 		{
-			title: "Обеспечить правильное формирование постоянного прикуса",
+			title: "Очищение",
+			description:
+				"Удаляем мягкий налёт и&nbsp;отложения с&nbsp;поверхности зубов.",
+			cardType: "vertical-alexik",
+			poster: {
+				original: {
+					src: "/mock/pediatric-surgery/what-includes-services/happy-alexik.png",
+				},
+			},
 		},
 		{
-			title: "Снизить риск развитие кариеса",
+			title: "Полировка",
+			description:
+				"Делаем поверхность зубов более гладкой, чтобы налёту было сложнее на&nbsp;ней задерживаться.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/third.webp",
+				},
+			},
 		},
 		{
-			title: "Сохранить здоровье молочных зубов",
+			title: "Обучение уходу",
+			description:
+				"Показываем ребёнку правильную технику чистки зубов и&nbsp;помогаем подобрать средства для ухода.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/fourth.webp",
+				},
+			},
+		},
+		{
+			title: "Рекомендации",
+			description:
+				"Рассказываем родителям, на&nbsp;что обратить внимание дома и&nbsp;как поддерживать результат.",
+			cardType: "horizontal-alexik",
+			poster: {
+				original: {
+					src: "/mock/pediatric-surgery/what-includes-services/alexik-with-heart.png",
+				},
+			},
 		},
 	],
 };
 
-export const BRICKWORK_SECTION_MOCK: BrickworkSectionProps = {
+export const RECOMMENDS_FOR_CHILDREN_DATA: RecommendsForChildrenProps = {
 	sectionHeader: {
-		title:
-			"Здоровая улыбка малышей начинается с&nbsp;заботливой профилактики и&nbsp;гигиены!",
-		description: "Мы&nbsp;предлагаем:",
+		title: "Когда ребёнку нужна профессиональная гигиена?",
+		description:
+			"Профессиональная гигиена помогает поддерживать здоровье зубов и&nbsp;дёсен и&nbsp;особенно полезна в&nbsp;периоды, когда ребёнку сложно самостоятельно хорошо очищать зубы.",
+		mockup: "/mock/pediatric-surgery/recommend-for-children/alexik-doctor.png",
 	},
 	cards: [
 		{
-			icon: "/mock/hygiene-and-preventation/1-icon.svg",
-			title: "Здоровые зубы:",
+			title: "Появился налёт",
 			description:
-				"Удаление налета и&nbsp;камня защищает от&nbsp;кариеса и&nbsp;снижает риск воспаления десен.",
+				"На&nbsp;зубах заметен мягкий или пигментированный налёт, который не&nbsp;удаётся убрать обычной щёткой.",
 		},
 		{
-			icon: "/mock/hygiene-and-preventation/2-icon.svg",
-			title: "Профилактика проблем:",
+			title: "Кровоточат дёсны",
 			description:
-				"Профессиональная гигиена&nbsp;&mdash; это важная профилактика кариеса и&nbsp;других заболеваний полости рта.",
+				"Во&nbsp;время чистки ребёнок замечает кровь или дёсны часто выглядят покрасневшими.",
 		},
 		{
-			icon: "/mock/hygiene-and-preventation/3-icon.svg",
-			title: "Уверенная улыбка:",
+			title: "Неприятный запах",
 			description:
-				"Чистые и&nbsp;светлые зубы делают улыбку красивее и&nbsp;улучшают самооценку ребенка.",
+				"Даже после чистки зубов сохраняется неприятный запах изо рта.",
 		},
 		{
-			icon: "/mock/hygiene-and-preventation/4-icon.svg",
-			title: "Правильный прикус:",
+			title: "Ребёнок плохо чистит зубы",
 			description:
-				"Здоровые молочные зубы&nbsp;&mdash; это залог здоровых постоянных зубов.",
+				"Ребёнку сложно самостоятельно тщательно очистить все поверхности зубов.",
+		},
+		{
+			title: "Появились брекеты",
+			description:
+				"Ортодонтические конструкции требуют особенно внимательного ухода и&nbsp;регулярной профессиональной гигиены.",
+		},
+		{
+			title: "Для профилактики",
+			description:
+				"Даже при отсутствии жалоб регулярная гигиена помогает поддерживать здоровье зубов и&nbsp;вовремя замечать изменения.",
 		},
 	],
 };
 
-export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	title: "Наши преимущества",
-	textBlock: {
-		title: "Современное оборудование",
-		description:
-			"Компьютерная томограмма и&nbsp;рентген, терапия, лечение зубов с&nbsp;микроскопом, гигиена, удаление зубов, имплантация и&nbsp;протезирование, исправление прикуса с&nbsp;применением самого современного оборудования, инновационных материалов и&nbsp;самых передовых протоколов лечения&nbsp;&mdash; залог здоровья наших пациентов!",
-	},
-	posters: [
+export const COST_OF_SERVICES: CostOfServicesProps = {
+	title: "Стоимость услуг:",
+	cards: [
 		{
-			webp: {
-				src: "/mock/home/first-slider/first-desktop.webp",
-			},
+			title: "Консультация стоматолога-гигиениста",
+			description:
+				"<p>Осмотр полости рта, оценка качества домашнего ухода и&nbsp;подбор индивидуальных средств гигиены для ребёнка&nbsp;&mdash; без оплаты.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 0,
 		},
 		{
-			webp: {
-				src: "/mock/home/first-slider/second-desktop.webp",
-			},
+			title: "Первичный приём педиатра с&nbsp;адаптационным визитом",
+			description:
+				"<p>Знакомство с&nbsp;клиникой и&nbsp;врачом в&nbsp;спокойном темпе, осмотр полости рта и&nbsp;составление плана профилактики.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_500,
 		},
 		{
-			webp: {
-				src: "/mock/home/first-slider/third-desktop.webp",
-			},
+			title: "Повторный приём педиатра",
+			description:
+				"<p>Контрольный осмотр: оцениваем состояние зубов и&nbsp;дёсен, качество домашней гигиены и&nbsp;результат профилактики.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_500,
 		},
 		{
-			webp: {
-				src: "/mock/home/first-slider/fourth-desktop.webp",
-			},
+			title: "Профессиональная гигиена, 1&nbsp;уровень сложности",
+			description:
+				"<p>Медобработка, очищение зубов пастой, ультразвук, Airflow, финишная полировка, реминерализующая терапия, стерильный пакет и&nbsp;урок гигиены.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 4_900,
 		},
 		{
-			webp: {
-				src: "/mock/home/first-slider/fifth-desktop.webp",
-			},
-		},
-	],
-};
-
-export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Комфортная атмосфера:",
-		description:
-			"Мы&nbsp;делаем все возможное, чтобы ваше посещение было приятным и&nbsp;безопасным.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-1-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-1-slide.jpg",
-			},
+			title: "Профессиональная гигиена, 2&nbsp;уровень сложности",
+			description:
+				"<p>Тот&nbsp;же объём процедуры при меньшем количестве налёта и&nbsp;зубных отложений&nbsp;&mdash; для детей с&nbsp;регулярным домашним уходом.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 4_100,
 		},
 		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-2-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-2-slide.jpg",
-			},
+			title: "Профессиональная гигиена ORTHO",
+			description:
+				"<p>Чистка для детей с&nbsp;брекетами и&nbsp;другими ортодонтическими конструкциями: аккуратное очищение вокруг элементов системы и&nbsp;укрепление эмали.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 4_300,
 		},
 		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-3-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-3-slide.jpg",
-			},
-		},
-	],
-};
-
-export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Профессионализм:",
-		description:
-			"Наши врачи обладают опытом и&nbsp;знаниями в&nbsp;области детской стоматологии.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/third-slider/3-1.webp",
-			},
+			title: "Герметизация фиссур",
+			description:
+				"<p>Закрытие природных углублений на&nbsp;жевательных зубах защитным материалом&nbsp;&mdash; там, где кариес появляется чаще всего.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 4_600,
 		},
 		{
-			webp: {
-				src: "/mock/home/third-slider/3-2.webp",
-			},
+			title: "Реминерализирующая терапия",
+			description:
+				"<p>Насыщение эмали кальцием и&nbsp;фтором после профессиональной чистки: снижает чувствительность зубов и&nbsp;укрепляет защиту от&nbsp;кариеса.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 3_000,
 		},
 		{
-			webp: {
-				src: "/mock/home/third-slider/3-3.webp",
-			},
+			title: "Глубокое фторирование эмали (1&nbsp;челюсть)",
+			description:
+				"<p>Дополнительная обработка эмали фторсодержащим составом для профилактики кариеса&nbsp;&mdash; по&nbsp;показаниям врача.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_300,
 		},
 	],
 };
 
-export const FOURTH_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Индивидуальный подход:",
-		description:
-			"Мы&nbsp;учитываем все особенности вашего ребенка и&nbsp;подбираем оптимальный план лечения.",
+export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
+	title: "Врачи, оказывающие услугу",
+	button: {
+		title: "Смотреть всех специалистов",
+		href: SITE_NAVIGATION.vrachi,
 	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/4-1-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/4-1-slide.jpg",
-			},
+	employees: [GLOBAL_EMPLOYEES.nikitin],
+};
+
+export const FORM_DATA: AppointmentSchedulingProps = {
+	title: "Запись на&nbsp;приём",
+	description:
+		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
+	poster: {
+		webp: {
+			src: "/system/form.webp",
 		},
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/4-2-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/4-2-slide.jpg",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/4-3-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/4-3-slide.jpg",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/4-4-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/4-4-slide.jpg",
-			},
-		},
-	],
+	},
 };

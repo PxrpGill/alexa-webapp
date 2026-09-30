@@ -1,0 +1,7 @@
+.services[class] > div > p {
+    @mixin responsive max-width, 0, 898; 
+
+    @media (max-width: $mobile) {
+        max-width: unset;
+    }
+}
