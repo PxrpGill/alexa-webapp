@@ -26,8 +26,10 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			},
 			poster: {
 				webp: {
-					src: "/mock/home/hero-slider/1-desktop.webp",
-					mobile: "/mock/home/hero-slider/1-mobile.webp",
+					src: "/mock/home/hero-slider/first.webp",
+				},
+				avif: {
+					src: "/mock/home/hero-slider/first.avif",
 				},
 			},
 			legend:
