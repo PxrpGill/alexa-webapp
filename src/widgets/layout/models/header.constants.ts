@@ -122,61 +122,73 @@ export const HEADER_NAVIGATION_PEDIATRIC_DENTISTRY: HeaderMenuLinksType = [
 export const HEADER_NAVIGATION_INFO: HeaderMenuLinksType = [
 	{
 		title: "Прейскурант",
+		description: "Актуальные цены на&nbsp;все услуги клиники",
 		href: SITE_NAVIGATION.price,
 		IconSvg: PriceSVG,
 	},
 	{
 		title: "Надзорные органы",
+		description: "Контакты Минздрава и&nbsp;Росздравнадзора",
 		href: SITE_NAVIGATION["nadzornye-organy"],
 		IconSvg: NadzorniyOrgani,
 	},
 	{
 		title: "О&nbsp;клинике",
+		description: "Оборудование, подход и&nbsp;принципы нашей работы",
 		href: SITE_NAVIGATION["o-klinike"],
 		IconSvg: KlinikaSVG,
 	},
 	{
 		title: "Реквизиты",
+		description: "Юридические и&nbsp;платёжные данные клиники",
 		href: SITE_NAVIGATION.rekvizity,
 		IconSvg: QrSVG,
 	},
 	{
 		title: "Врачи",
+		description: "Наша команда и&nbsp;опыт каждого специалиста",
 		href: SITE_NAVIGATION.vrachi,
 		IconSvg: DoctorSVG,
 	},
 	{
 		title: "Вакансии",
+		description: "Открытые позиции и&nbsp;отклик онлайн",
 		href: SITE_NAVIGATION.vakansii,
 		IconSvg: ManSVG,
 	},
 	{
 		title: "Расписание врачей",
+		description: "Когда ведёт приём нужный специалист",
 		href: SITE_NAVIGATION.raspisanievrachej,
 		IconSvg: DashBoardSVG,
 	},
 	{
 		title: "Акции",
+		description: "Все действующие предложения в&nbsp;одном месте",
 		href: SITE_NAVIGATION.akcii,
 		IconSvg: PromoSVG,
 	},
 	{
 		title: "Документы и&nbsp;лицензии",
+		description: "Лицензии и&nbsp;выписка из&nbsp;реестра",
 		href: SITE_NAVIGATION["dokumenty-i-licenzii"],
 		IconSvg: CatalogSVG,
 	},
 	{
 		title: "ДМС",
+		description: "Узнайте, какие услуги входят в&nbsp;ваш полис",
 		href: SITE_NAVIGATION.dms,
 		IconSvg: DmsSVG,
 	},
 	{
 		title: "Пациенту",
+		description: "Права пациента и&nbsp;порядок оказания помощи",
 		href: SITE_NAVIGATION.pacientu,
 		IconSvg: PacientSVG,
 	},
 	{
 		title: "Налоговый вычет",
+		description: "Как вернуть часть стоимости лечения",
 		href: SITE_NAVIGATION.nalogovyjvychet,
 		IconSvg: NalogSVG,
 	},
