@@ -12,7 +12,6 @@ import {
 	FIRST_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 } from "../home-page/models/home-page.constants";
-import css from "./index.module.css";
 import {
 	CERTIFICATES_SECTION,
 	COST_OF_SERVICES,
@@ -27,38 +26,38 @@ import {
 
 export default function DentistConsultationPage() {
 	return (
-		<main className={css.root}>
-			<QuadroSection {...QUADRO_SECTION_MOCK} className={css.quadro} />
+		<main className="page-offset">
+			<QuadroSection {...QUADRO_SECTION_MOCK} className="section" />
 			<WhatServiceIncludes
-				className={css.whatServiceIncludes}
+				className="section"
 				{...WHAT_SERVICE_INCLUDES}
 			/>
-			<TitleStickySection className={css.sticky} {...TITLE_STICKY_SECTION} />
+			<TitleStickySection className="section" {...TITLE_STICKY_SECTION} />
 			<DiagnosticProcessSection
-				className={css.diagnostics}
+				className="section"
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
 			<CertificatesSection
-				className={css.certificates}
+				className="section"
 				{...CERTIFICATES_SECTION}
 			/>
-			<WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} />
+			<WhyChooseUs className="section" {...WHY_CHOOSE_US} />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.lastSlider}
+				className="section"
 				textBlockPosition="right"
 			/>
 			<OurPeopleSection
-				className={css.peoples}
+				className="section"
 				{...EMPLOYEES_SECTION}
 				isSlider
 			/>
-			<CostOfServices className={css.costOfServices} {...COST_OF_SERVICES} />
-			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
+			<CostOfServices className="section" {...COST_OF_SERVICES} />
+			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
 }

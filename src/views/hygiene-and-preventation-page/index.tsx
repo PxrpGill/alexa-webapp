@@ -2,7 +2,6 @@ import BrickworkSection from "@/widgets/brickwork-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 
-import css from "./index.module.css";
 import {
 	BRICKWORK_SECTION_MOCK,
 	FIRST_TITLE_DESCRIPTION_SLIDER,
@@ -14,26 +13,26 @@ import {
 
 export default function HygieneAndPreventionPage() {
 	return (
-		<main className={css.root}>
-			<QuadroSection {...QUADRO_SECTION_MOCK} className={css.quadro} />
-			<BrickworkSection className={css.brickwork} {...BRICKWORK_SECTION_MOCK} />
+		<main className="page-offset">
+			<QuadroSection {...QUADRO_SECTION_MOCK} className="section" />
+			<BrickworkSection className="section" {...BRICKWORK_SECTION_MOCK} />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				textBlockPosition="right"
 				{...SECOND_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				textBlockPosition="right"
 				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
-				className={css.lastSlider}
+				className="section"
 			/>
 		</main>
 	);

@@ -1,0 +1,37 @@
+/*
+ * Ритм страницы: вертикальные отступы между секциями.
+ * Значения живут только здесь — правка токена меняет отступы на всех страницах.
+ */
+
+:root {
+    @mixin responsive --section-gap, 60, 60;
+    @mixin responsive --section-gap-sm, 20, 35;
+    @mixin responsive --section-gap-md, 30, 30;
+    @mixin responsive --section-gap-pad, 40, 60;
+    @mixin responsive --header-offset, 88, 100;
+}
+
+/* Компенсация фиксированного хедера — на <main> страницы. */
+.page-offset {
+    padding-block-start: var(--header-offset);
+}
+
+.section {
+    margin-block-end: var(--section-gap);
+}
+
+.section-sm {
+    margin-block-end: var(--section-gap-sm);
+}
+
+.section-md {
+    margin-block-end: var(--section-gap-md);
+}
+
+/*
+ * Тот же ритм, но внутренним отступом — для секций с собственным фоном,
+ * который должен доходить до границы отступа.
+ */
+.section-pad {
+    padding-block-end: var(--section-gap-pad);
+}

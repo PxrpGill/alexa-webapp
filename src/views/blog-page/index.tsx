@@ -6,11 +6,11 @@ import type { BlogPageProps } from "./types/blog-page.types";
 
 export default function BlogPage({ initialNewsData }: BlogPageProps) {
 	return (
-		<main className={css.root}>
-			<AnimationWrapper className={`${css.titleBlock} container`}>
+		<main className="page-offset">
+			<AnimationWrapper className={`${css.titleBlock} section-md container`}>
 				<h1 className={css.title}>Блог</h1>
 			</AnimationWrapper>
-			<ParentNewsSection className={css.parentNews} news={initialNewsData} />
+			<ParentNewsSection className="section" news={initialNewsData} />
 		</main>
 	);
 }

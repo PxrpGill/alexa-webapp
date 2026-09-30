@@ -18,11 +18,11 @@ import {
 
 export default function TreatmentInDreamPage() {
 	return (
-		<main className={css.root}>
-			<QuadroSection {...QUADRO_SECTION_MOCK} className={css.quadro} />
-			<InfoTabs className={css.infoTabs} {...INFO_TABS_MOCK} />
+		<main className="page-offset">
+			<QuadroSection {...QUADRO_SECTION_MOCK} className={`${css.quadro} section section`} />
+			<InfoTabs className="section" {...INFO_TABS_MOCK} />
 			<CertificatesSection
-				className={css.certificates}
+				className="section"
 				{...CERTIFICATES_SECTION}
 			/>
 			<TitleDescriptionSlider
@@ -36,10 +36,10 @@ export default function TreatmentInDreamPage() {
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.lastSlider}
+				className="section"
 			/>
-			<OurPeopleSection className={css.ourPeople} {...OUR_PEOPLE_SECTION} />
-			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
+			<OurPeopleSection className="section" {...OUR_PEOPLE_SECTION} />
+			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
 }

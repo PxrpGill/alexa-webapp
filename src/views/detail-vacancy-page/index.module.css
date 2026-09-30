@@ -1,16 +1,3 @@
-.root {
-    @mixin responsive padding-block-start, 88, 100;
-}
-
-.form,
-.responsibilities,
-.requirements,
-.titleBlock,
-.whatYouWillGet,
-.banner {
-    @mixin responsive padding-block-end, 40, 60;
-}
-
 .title {
     @mixin text-6xl;
 

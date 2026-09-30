@@ -6,11 +6,11 @@ import { EMPLOYEES_SECTION } from "./models/doctors.constants";
 
 export default function DoctorsPage() {
 	return (
-		<main className={css.root}>
-			<AnimationWrapper className={`${css.titleBlock} container`}>
+		<main className="page-offset">
+			<AnimationWrapper className={`${css.titleBlock} section-md container`}>
 				<h1 className={css.title}>Врачи</h1>
 			</AnimationWrapper>
-			<OurPeopleSection className={css.peoples} {...EMPLOYEES_SECTION} />
+			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
 		</main>
 	);
 }

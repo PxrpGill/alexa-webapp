@@ -1,5 +1,4 @@
 import SaitableVacancySection from "@/features/saitable-vacancy-section";
-import css from "./index.module.css";
 import {
 	NOT_AVAILABLE_VACANCIES,
 	SAITABLE_VACANCY,
@@ -13,22 +12,22 @@ import VacanciesMagazine from "./ui/vacancies-magazine";
 
 export default function VacanciesPage({ initialPageData }: VacanciesPageProps) {
 	return (
-		<main className={css.root}>
-			<VacanciesHero className={css.hero} {...VACANCIES_HERO} />
+		<main className="page-offset">
+			<VacanciesHero className="section-pad" {...VACANCIES_HERO} />
 			{initialPageData.total === 0 ? (
 				<NotAvailableVacancies
 					{...NOT_AVAILABLE_VACANCIES}
-					className={css.notAvailable}
+					className="section-pad"
 				/>
 			) : (
 				<VacanciesMagazine
-					className={css.vacanciesMagazine}
+					className="section-pad"
 					title={VACANCIES_MAGAZINE_HEADER.title}
 					description={VACANCIES_MAGAZINE_HEADER.description}
 					{...initialPageData}
 				/>
 			)}
-			<SaitableVacancySection className={css.form} {...SAITABLE_VACANCY} />
+			<SaitableVacancySection className="section-pad" {...SAITABLE_VACANCY} />
 		</main>
 	);
 }

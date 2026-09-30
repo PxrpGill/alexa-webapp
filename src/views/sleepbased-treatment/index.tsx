@@ -6,7 +6,6 @@ import StagesSection from "@/widgets/stages-section";
 import StillQuestions from "@/widgets/still-questions";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 
-import css from "./index.module.css";
 import {
 	BRICKWORK_MOCK_SECTION,
 	FAQ_SECTION_MOCK,
@@ -20,17 +19,17 @@ import {
 
 export default function SleepbasedTreatmentPage() {
 	return (
-		<main className={css.root}>
-			<QuadroSection {...QUADRO_MOCK} className={css.quadro} />
-			<BrickworkSection className={css.brickwork} {...BRICKWORK_MOCK_SECTION} />
-			<TitleStickySection className={css.stickyTitle} {...STICKY_TITLE_MOCK} />
-			<StillQuestions {...STILL_QUESTIONS_MOCK} className={css.questions} />
-			<PromoSection className={css.promo} {...PROMO_SECTION_MOCK} />
-			<StagesSection className={css.stages} {...STAGES_SECTION_MOCK} />
-			<FaqSection className={css.faq} {...FAQ_SECTION_MOCK} />
+		<main className="page-offset">
+			<QuadroSection {...QUADRO_MOCK} className="section" />
+			<BrickworkSection className="section" {...BRICKWORK_MOCK_SECTION} />
+			<TitleStickySection className="section" {...STICKY_TITLE_MOCK} />
+			<StillQuestions {...STILL_QUESTIONS_MOCK} className="section" />
+			<PromoSection className="section" {...PROMO_SECTION_MOCK} />
+			<StagesSection className="section" {...STAGES_SECTION_MOCK} />
+			<FaqSection className="section" {...FAQ_SECTION_MOCK} />
 			<StillQuestions
 				{...STILL_QUESTIONS_LAST_MOCK}
-				className={css.questions}
+				className="section"
 			/>
 		</main>
 	);

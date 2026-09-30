@@ -15,27 +15,27 @@ import {
 
 export default function PediatricOrthodonticsPage() {
 	return (
-		<main className={css.root}>
-			<AnimationWrapper as="section" className={`${css.hero} container`}>
+		<main className="page-offset">
+			<AnimationWrapper as="section" className={`${css.hero} section container`}>
 				<HeroSlide {...HERO_MOCK} className={css.heroContent} />
 			</AnimationWrapper>
-			<HealthForFamily {...HEALTH_FOR_FAMILY_MOCK} className={css.family} />
+			<HealthForFamily {...HEALTH_FOR_FAMILY_MOCK} className="section" />
 			<TitleDescriptionSlider
-				className={css.slider}
+				className="section-sm"
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 			/>
 			<TitleDescriptionSlider
 				textBlockPosition="right"
-				className={css.slider}
+				className="section-sm"
 				{...SECOND_TITLE_DESCRIPTION_SLIDER}
 			/>
 			<TitleDescriptionSlider
-				className={css.slider}
+				className="section-sm"
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
 			/>
 			<TitleDescriptionSlider
 				textBlockPosition="right"
-				className={css.lastSlider}
+				className="section"
 				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
 			/>
 		</main>

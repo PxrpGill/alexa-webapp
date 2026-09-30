@@ -6,12 +6,12 @@ import { DOCUMENTS_AND_LICENSES } from "./models/documents-and-licenses.constant
 
 export default function DocumentsAndLicensesPage() {
 	return (
-		<main className={css.root}>
-			<AnimationWrapper className={`${css.titleBlock} container`}>
+		<main className="page-offset">
+			<AnimationWrapper className={`${css.titleBlock} section-md container`}>
 				<h1 className={css.title}>Документы и&nbsp;лицензии</h1>
 			</AnimationWrapper>
 			<DetailDocumentsSection
-				className={css.documents}
+				className="section"
 				{...DOCUMENTS_AND_LICENSES}
 			/>
 		</main>

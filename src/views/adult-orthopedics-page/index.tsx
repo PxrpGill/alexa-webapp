@@ -8,7 +8,6 @@ import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
 
-import css from "./index.module.css";
 import {
 	CERTIFICATES_SECTION,
 	COST_OF_SERVICES,
@@ -27,49 +26,49 @@ import {
 
 export default function AdultOrthopedicsPage() {
 	return (
-		<main className={css.root}>
-			<QuadroSection className={css.quadro} {...QUADRO_MOCK} />
+		<main className="page-offset">
+			<QuadroSection className="section" {...QUADRO_MOCK} />
 			<WhatServiceIncludes
-				className={css.whatServiceIncludes}
+				className="section"
 				{...WHAT_INCLUDES_SECTION}
 			/>
 			<TitleStickySection
-				className={css.titleSticky}
+				className="section"
 				{...TITLE_STICKY_SECTION_MOCK}
 			/>
 			<DiagnosticProcessSection
-				className={css.diagnostics}
+				className="section"
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
 			<CertificatesSection
-				className={css.certificates}
+				className="section"
 				{...CERTIFICATES_SECTION}
 			/>
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...SECOND_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 				textBlockPosition="right"
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 				textBlockPosition="right"
 			/>
 			<TitleDescriptionSlider
 				{...FIFTH_TITLE_DESCRIPTION_SLIDER}
-				className={css.lastSlider}
+				className="section"
 			/>
-			<OurPeopleSection className={css.ourPeople} {...OUR_PEOPLE} />
-			<CostOfServices className={css.costsOfServices} {...COST_OF_SERVICES} />
-			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
+			<OurPeopleSection className="section" {...OUR_PEOPLE} />
+			<CostOfServices className="section" {...COST_OF_SERVICES} />
+			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
 }

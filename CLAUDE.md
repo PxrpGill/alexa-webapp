@@ -112,6 +112,20 @@ Typography: the real scale is `text-xs … text-7xl`; `h1`–`h6` / `b1`–`b4` 
 
 Global `.container` handles max-width centering and responsive side padding; `body.child-theme` switches the palette on children's pages. Colors are CSS custom properties in `shared/styles/colors.css` (`var(--color-white-1)`).
 
+### Ритм секций
+
+Вертикальные отступы между секциями страницы **не задаются локально** — они живут в `shared/styles/sections.css` (подключён в `app/layout.tsx`) как токены на `:root` плюс глобальные утилитарные классы:
+
+| класс | токен | значение |
+|-------|-------|----------|
+| `section` | `--section-gap` | `60, 60` — базовый отступ между секциями |
+| `section-sm` | `--section-gap-sm` | `20, 35` — подряд идущие слайдеры |
+| `section-md` | `--section-gap-md` | `30, 30` — заголовочный блок страницы |
+| `section-pad` | `--section-gap-pad` | `40, 60` — тот же ритм внутренним отступом, для секций с собственным фоном |
+| `page-offset` | `--header-offset` | `88, 100` — компенсация фиксированного хедера, на `<main>` |
+
+View передаёт их строкой: `<FaqSection {...MOCK} className="section" />`, а `<main className="page-offset">`. Правка одного токена меняет ритм на всех 39 страницах. Локальный класс завести можно, но только под действительно уникальное значение — и тогда рядом с глобальным: ``className={`${css.titleBlock} section-md container`}``.
+
 Always `import css from "./index.module.css"` and `className={css.root}`. Full mixin reference: `docs/postcss-mixins.md`. Skills `postcss-responsive` and `widget-development` cover this in depth.
 
 ## Linting

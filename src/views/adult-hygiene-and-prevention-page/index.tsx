@@ -7,7 +7,6 @@ import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
 // import WhyChooseUs from "@/widgets/why-choose-us";
-import css from "./index.module.css";
 import {
 	COST_OF_SERVICES,
 	DIAGNOSTICS_SECTION_MOCK,
@@ -24,37 +23,37 @@ import {
 
 export default function AdultHygieneAndPreventionPage() {
 	return (
-		<main className={css.root}>
-			<QuadroSection {...MOCK_QUADRO_SECTION} className={css.quadro} />
+		<main className="page-offset">
+			<QuadroSection {...MOCK_QUADRO_SECTION} className="section" />
 			<WhatServiceIncludes
-				className={css.whatServiceIncludes}
+				className="section"
 				{...WHAT_SERVICE_INCLUDES}
 			/>
 			<TitleStickySection
 				{...TITLE_STICKY_SECTION}
-				className={css.titleSticky}
+				className="section"
 			/>
 			<DiagnosticProcessSection
-				className={css.diagnostics}
+				className="section"
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
-			{/* <WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} /> */}
+			{/* <WhyChooseUs className="section" {...WHY_CHOOSE_US} /> */}
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...SECOND_TITLE_DESCRIPTION_SLIDER}
 				textBlockPosition="right"
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.lastSlider}
+				className="section"
 			/>
-			<OurPeopleSection className={css.ourPeople} {...EMPLOYEES_SECTION} />
-			<CostOfServices className={css.costOfServices} {...COST_OF_SERVICES} />
-			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
+			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
+			<CostOfServices className="section" {...COST_OF_SERVICES} />
+			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
 }

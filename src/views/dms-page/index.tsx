@@ -12,13 +12,13 @@ import DMSInfoBlock from "./ui/dms-info-block";
 
 export default function DMSPage() {
 	return (
-		<main className={css.root}>
-			<AnimationWrapper className={`${css.titleBlock} container`}>
+		<main className="page-offset">
+			<AnimationWrapper className={`${css.titleBlock} section-md container`}>
 				<h1 className={css.title}>Лечение зубов по&nbsp;полису ДМС</h1>
 			</AnimationWrapper>
-			<DMSInfoBlock className={css.dmsInfo} {...DMS_INFO_BLOCK_MOCK} />
-			<StepperSection className={css.stepper} {...STEPPER_SECTION_MOCK} />
-			<FaqSection className={css.faq} {...FAQ_MOCK_SECTION_MOCK} />
+			<DMSInfoBlock className="section" {...DMS_INFO_BLOCK_MOCK} />
+			<StepperSection className="section" {...STEPPER_SECTION_MOCK} />
+			<FaqSection className="section" {...FAQ_MOCK_SECTION_MOCK} />
 			<DMSModal />
 		</main>
 	);

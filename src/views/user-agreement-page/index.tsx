@@ -10,9 +10,9 @@ import {
 
 export default function UserAgreementPage() {
 	return (
-		<main className={css.root}>
+		<main>
 			<DocumentHero {...DOCUMENT_HERO_MOCK} />
-			<div className={`${css.content} container`}>
+			<div className={`${css.content} section container`}>
 				{DOCUMENT_BLOCKS.map((documentBlock, index) => (
 					<DocumentBlock {...documentBlock} key={index} />
 				))}

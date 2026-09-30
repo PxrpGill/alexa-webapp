@@ -8,7 +8,6 @@ import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
 // import WhyChooseUs from "@/widgets/why-choose-us";
 
-import css from "./index.module.css";
 import {
 	COST_OF_SERVICES,
 	DIAGNOSTICS_SECTION_MOCK,
@@ -25,38 +24,38 @@ import {
 
 export default function AdultTherapyPage() {
 	return (
-		<main className={css.root}>
-			<QuadroSection className={css.quadro} {...MOCK_QUADRO_SECTION} />
-			<WhatServiceIncludes className={css.whatIncludes} {...WHAT_INCLUDES} />
+		<main className="page-offset">
+			<QuadroSection className="section" {...MOCK_QUADRO_SECTION} />
+			<WhatServiceIncludes className="section" {...WHAT_INCLUDES} />
 			<TitleStickySection
-				className={css.stickyTitle}
+				className="section"
 				{...TITLE_STICKY_SECTION_MOCK}
 			/>
 			<DiagnosticProcessSection
-				className={css.diagnostics}
+				className="section"
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
-			{/* <WhyChooseUs className={css.whyChooseUs} {...WHY_CHOOSE_US} /> */}
+			{/* <WhyChooseUs className="section" {...WHY_CHOOSE_US} /> */}
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...SECOND_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 				textBlockPosition="right"
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.lastSlider}
+				className="section"
 			/>
 			<OurPeopleSection
-				className={css.peoples}
+				className="section"
 				{...EMPLOYEES_SECTION}
 				isSlider
 			/>
-			<CostOfServices className={css.costOfServices} {...COST_OF_SERVICES} />
-			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
+			<CostOfServices className="section" {...COST_OF_SERVICES} />
+			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
 }

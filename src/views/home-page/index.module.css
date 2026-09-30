@@ -1,27 +1,3 @@
-.root {
-    @mixin responsive padding-block-start, 88, 100;
-}
-
-.description,
-.parentNews,
-.yandexMap,
-.ourWork,
-.hero,
-.family,
-.faqs,
-.questions,
-.cta {
-    @mixin responsive margin-block-end, 60, 60;
-}
-
-/* .description {
-    @mixin responsive margin-block-end, 20, 35;
-} */
-
-.slider {
-    @mixin responsive margin-block-end, 20, 35;
-}
-
 .lastSlider {
     @mixin responsive margin-block-end, 60, 35;
 }
