@@ -26,7 +26,7 @@ export default function PediatricSurgeryPage() {
 				{...RECOMMENDS_FOR_CHILDREN_DATA}
 			/>
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
-			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
+			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} isSlider />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
