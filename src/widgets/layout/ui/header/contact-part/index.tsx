@@ -29,11 +29,19 @@ export default function ContactPart() {
 			<a
 				className={css.telegram}
 				href={TELEGRAM}
+				target="_blank"
 				aria-label="Перейти в Телеграм"
+				rel="noopener"
 			>
 				<TelegramSVG className={css.circleIcon} />
 			</a>
-			<a href={MAX} className={css.max} aria-label="Перейти в Max">
+			<a
+				href={MAX}
+				className={css.max}
+				aria-label="Перейти в Max"
+				target="_blank"
+				rel="noopener"
+			>
 				<MaxSVG className={css.circleIcon} />
 			</a>
 			<a

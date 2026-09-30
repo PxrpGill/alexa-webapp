@@ -6,6 +6,10 @@
             translate: -50% 0%;
             opacity: 1;
             visibility: visible;
+
+            @media (max-width: $mobile) {
+                translate: 0;
+            }
         }
 
         .arrow {
@@ -55,6 +59,12 @@
     top: 100%;
     left: 50%;
     translate: -50% 50%;
+
+    @media (max-width: $mobile) {
+        translate: 0 50%;
+        left: 0%;
+        top: 100%;
+    }
 }
 
 .branch {
