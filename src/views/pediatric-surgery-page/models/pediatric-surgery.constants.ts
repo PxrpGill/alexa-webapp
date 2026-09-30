@@ -1,163 +1,227 @@
-import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
-import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
-import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
+import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+	GLOBAL_EMPLOYEES,
+} from "@/shared/config/global-constants.constants";
+import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
+import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
+import type { HeroProps } from "@/widgets/hero/types/hero.types";
+import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
+import type { RecommendsForChildrenProps } from "@/widgets/recommends-for-children/types/recommends-for-children.types";
 
-export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
+export const HERO_DATA: HeroProps = {
+	title:
+		"Бережно решаем хирургические проблемы&nbsp;&mdash; для&nbsp;здорового роста и&nbsp;улыбки",
+	description:
+		"Проводим хирургическое лечение у&nbsp;детей с&nbsp;учётом возраста, особенностей развития и&nbsp;индивидуальной ситуации.",
+	button: {
+		title: "Записать ребёнка на приём",
+		href: APPOINTMENT_ID.id,
+	},
+	poster: {
+		webp: {
+			src: "/mock/pediatric-surgery/hero.webp",
+		},
+	},
+};
+
+export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
 	sectionHeader: {
+		title: "Что включает детская хирургия",
 		description:
-			"Безопасные и&nbsp;комфортные хирургические процедуры для детей",
-		title: "Детская хирургия полости рта",
-		card: {
-			title:
-				"Запишитесь на&nbsp;прием и&nbsp;подарите своему ребенку здоровую и&nbsp;счастливую улыбку!",
-			button: { title: "Записаться на прием", isOpenFeedbackModal: true },
-		},
-		poster: {
-			webp: {
-				src: "/mock/pediatric-surgery/1-desktop.webp",
-			},
-			original: {
-				src: "/mock/pediatric-surgery/1-desktop.jpg",
-			},
-		},
+			"Перед процедурой врач оценивает состояние ребёнка и&nbsp;определяет, действительно&nbsp;ли необходимо хирургическое вмешательство.",
 	},
 	cards: [
 		{
-			title: "Удалить проблемные молочные зубы, неподдающиеся лечению",
+			title: "Осмотр",
+			description:
+				"Врач оценивает состояние зубов, дёсен, слизистой и&nbsp;тканей полости рта.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/first.webp",
+				},
+			},
 		},
 		{
-			title:
-				"️Пластика уздечки языка и&nbsp;губ для исправления дефектов речи, трудностей с&nbsp;питанием и&nbsp;улучшения внешнего вида",
+			title: "Диагностика",
+			description:
+				"При необходимости назначаем дополнительное исследование, чтобы уточнить особенности ситуации.",
+			cardType: "vertical-alexik",
+			poster: {
+				original: {
+					src: "/mock/pediatric-surgery/what-includes-services/happy-alexik.png",
+				},
+			},
+		},
+		{
+			title: "Планирование",
+			description:
+				"Определяем оптимальный способ лечения с&nbsp;учётом возраста и&nbsp;состояния ребёнка.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/third.webp",
+				},
+			},
+		},
+		{
+			title: "Хирургическое лечение",
+			description:
+				"Проводим необходимую процедуру бережно и&nbsp;под местной анестезией.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/fourth.webp",
+				},
+			},
+		},
+		{
+			title: "Рекомендации",
+			description:
+				"После процедуры врач объясняет родителям, как ухаживать за&nbsp;областью вмешательства и&nbsp;на&nbsp;что обратить внимание.",
+			cardType: "horizontal-alexik",
+			poster: {
+				original: {
+					src: "/mock/pediatric-surgery/what-includes-services/alexik-with-heart.png",
+				},
+			},
 		},
 	],
 };
 
-export const BRICKWORK_SECTION_MOCK: BrickworkSectionProps = {
+export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
+	title: "Врачи, оказывающие услугу",
+	button: {
+		title: "Смотреть всех специалистов",
+		href: SITE_NAVIGATION.vrachi,
+	},
+	employees: [GLOBAL_EMPLOYEES.nikitin, GLOBAL_EMPLOYEES.shahnazaryan],
+};
+
+export const COST_OF_SERVICES: CostOfServicesProps = {
+	title: "Стоимость услуг:",
+	cards: [
+		{
+			title: "Консультация хирурга (первичная)",
+			description:
+				"<p>Осмотр полости рта, оценка ситуации и&nbsp;необходимости хирургического вмешательства, разбор снимков и&nbsp;составление плана лечения.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_500,
+		},
+		{
+			title: "Снятие острой боли",
+			description:
+				"<p>Приём вне&nbsp;очереди при боли, отёке или травме: обезболивание, осмотр, неотложная помощь и&nbsp;рекомендации по&nbsp;дальнейшему лечению.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 3_500,
+		},
+		{
+			title: "Удаление молочного зуба (физиологическая смена)",
+			description:
+				"<p>Обезболивание, удаление подвижного молочного зуба, остановка кровотечения и&nbsp;рекомендации по&nbsp;уходу после процедуры.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 2_400,
+		},
+		{
+			title: "Удаление молочного зуба при периодонтите",
+			description:
+				"<p>Обезболивание, удаление разрушенного зуба с&nbsp;воспалением у&nbsp;корня, очищение лунки, остановка кровотечения и&nbsp;рекомендации по&nbsp;уходу.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 4_600,
+		},
+		{
+			title: "Лечение перикоронарита",
+			description:
+				"<p>Помощь при воспалении тканей вокруг прорезывающегося зуба: обезболивание, обработка области, снятие отёка и&nbsp;назначение лечения.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 3_000,
+		},
+		{
+			title: "Пластика уздечки языка (лазер)",
+			description:
+				"<p>Коррекция короткой уздечки языка лазером&nbsp;&mdash; без разрезов и&nbsp;швов, с&nbsp;минимальным кровотечением и&nbsp;быстрым заживлением.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 6_000,
+		},
+		{
+			title: "Пластика уздечки верхней губы (лазер)",
+			description:
+				"<p>Коррекция уздечки верхней губы лазером, когда она влияет на&nbsp;положение зубов, прикус или гигиену.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 6_000,
+		},
+		{
+			title: "Пластика уздечки нижней губы (лазер)",
+			description:
+				"<p>Коррекция уздечки нижней губы лазером для снятия натяжения тканей и&nbsp;защиты десны от&nbsp;рецессии.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 6_000,
+		},
+		{
+			title: "Обнажение ретинированного зуба (лазер)",
+			description:
+				"<p>Освобождение постоянного зуба, которому мешают прорезаться мягкие ткани&nbsp;&mdash; в&nbsp;том числе для последующего ортодонтического лечения.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 8_500,
+		},
+		{
+			title: "Вскрытие и&nbsp;дренирование абсцесса (лазер)",
+			description:
+				"<p>Обезболивание, вскрытие гнойного очага лазером, дренирование, антисептическая обработка и&nbsp;назначение лечения.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 2_500,
+		},
+	],
+};
+
+export const RECOMMENDS_FOR_CHILDREN_DATA: RecommendsForChildrenProps = {
 	sectionHeader: {
-		title: "Улыбка ваших детей в&nbsp;руках профессионалов!",
-		description: "Мы&nbsp;предлагаем:",
+		title: "Когда ребёнку может понадобиться помощь хирурга?",
+		description:
+			"Хирургическое лечение требуется не&nbsp;только при острой боли. Иногда небольшое вмешательство помогает предотвратить более серьёзные проблемы в&nbsp;дальнейшем.",
+		mockup: "/mock/pediatric-surgery/recommend-for-children/alexik-doctor.png",
 	},
 	cards: [
 		{
-			icon: "/mock/pediatric-surgery/1-icon.svg",
-			title: "Удаление зубов:",
+			title: "Разрушенный молочный зуб",
 			description:
-				"<p>Мы&nbsp;деликатно удаляем разрушенные молочные зубы и&nbsp;&laquo;лишние&raquo; зубы, чтобы освободить место для здоровых постоянных.</p><br /><p>&laquo;Внекомплектные&raquo; и&nbsp;&laquo;сверхкомплектные&raquo; зубы: Мы&nbsp;удаляем &laquo;лишние&raquo; зубы, которые мешают правильному росту и&nbsp;развитию зубного ряда.</p><br /><p>В&nbsp;случае необходимости мы&nbsp;проводят удаление постоянных зубов с&nbsp;минимальным дискомфортом для ребенка.</p>",
+				"Зуб невозможно восстановить консервативным лечением, и&nbsp;врач рекомендует удаление.",
 		},
 		{
-			icon: "/mock/pediatric-surgery/2-icon.svg",
-			title: "Пластика уздечки языка и&nbsp;губ:",
+			title: "Задержка прорезывания",
 			description:
-				"<p>Мы&nbsp;поможем исправить дефекты речи и&nbsp;трудности с&nbsp;питанием у&nbsp;детей с&nbsp;помощью пластики уздечки языка и&nbsp;губ.</p><br /><p>Мы&nbsp;проводим пластику уздечки языка уже детям грудного возраста, чтобы не&nbsp;допустить проблем с&nbsp;сосанием.</p><br /><p>Пластика уздечки губ помогает исправить дефекты речи и&nbsp;улучшить внешний вид улыбки.</p>",
+				"Постоянный зуб не&nbsp;может нормально прорезаться или его появлению мешают другие ткани или зубы.",
 		},
 		{
-			icon: "/mock/pediatric-surgery/3-icon.svg",
-			title: "Вестибулопластика:",
+			title: "Сверхкомплектные зубы",
 			description:
-				"<p>Мы&nbsp;проводим вестибулопластику для углубления преддверия полости рта, что помогает решать логопедические проблемы, подготовиться к&nbsp;ортодонтическому лечению, предотвратить воспаление десен и&nbsp;исправить косметические дефекты.</p>",
+				"Обнаружены дополнительные зубы, которые могут мешать формированию правильного зубного ряда.",
 		},
 		{
-			title: "Скидка&nbsp;10%",
+			title: "Проблемы с&nbsp;уздечками",
 			description:
-				"Программа лояльности для детей из&nbsp;многодетных семей и&nbsp;детей с&nbsp;особенностями",
-			button: { title: "Записаться на прием", isOpenFeedbackModal: true },
-			cardTheme: "green",
+				"Особенности уздечки губы или языка могут влиять на&nbsp;речь, прикус, движение языка или положение зубов.",
+		},
+		{
+			title: "Воспаление и&nbsp;отёк",
+			description:
+				"Появились выраженная боль, отёк, припухлость или другие признаки воспаления.",
+		},
+		{
+			title: "Травма зуба или мягких тканей",
+			description:
+				"Ребёнок получил травму зубов, губ, языка или других тканей полости рта.",
 		},
 	],
 };
 
-export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	title: "Наши преимущества",
-	textBlock: {
-		title: "Современное оборудование",
-		description:
-			"Компьютерная томограмма и&nbsp;рентген, терапия, лечение зубов с&nbsp;микроскопом, гигиена, удаление зубов, имплантация и&nbsp;протезирование, исправление прикуса с&nbsp;применением самого современного оборудования, инновационных материалов и&nbsp;самых передовых протоколов лечения&nbsp;&mdash; залог здоровья наших пациентов!",
+export const FORM_DATA: AppointmentSchedulingProps = {
+	title: "Запись на&nbsp;приём",
+	description:
+		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
+	poster: {
+		webp: {
+			src: "/system/form.webp",
+		},
 	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/first-slider/first-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/second-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/third-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/fourth-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/fifth-desktop.webp",
-			},
-		},
-	],
-};
-
-export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Комфортная атмосфера:",
-		description:
-			"Мы&nbsp;делаем все возможное, чтобы ваше посещение было приятным и&nbsp;безопасным.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-1-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-1-slide.jpg",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-2-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-2-slide.jpg",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-3-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-3-slide.jpg",
-			},
-		},
-	],
-};
-
-export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Мы&nbsp;используем современные методы анестезии и&nbsp;седации",
-		description:
-			"(общий наркоз с&nbsp;газом &laquo;Севоран&raquo;, внутривенная седация с&nbsp;эмульсией &laquo;Пропофол&raquo; или седацией закисью азота) под контролем опытных врачей для комфортного и&nbsp;безопасного лечения.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/pediatric-surgery/3-1-slider.webp",
-			},
-			original: {
-				src: "/mock/pediatric-surgery/3-1-slider.jpg",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/pediatric-surgery/3-2-slider.webp",
-			},
-			original: {
-				src: "/mock/pediatric-surgery/3-2-slider.jpg",
-			},
-		},
-	],
 };
