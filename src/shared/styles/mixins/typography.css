@@ -15,14 +15,14 @@
 }
 
 @define-mixin text-base {
-    @mixin responsive font-size, 14, 16;
+    @mixin responsive font-size, 16, 16;
 
     line-height: 1.56;
     font-weight: 400;
 }
 
 @define-mixin text-md {
-    @mixin responsive font-size, 13, 18;
+    @mixin responsive font-size, 16, 18;
 
     line-height: 1.55;
     font-weight: 400;
@@ -73,7 +73,7 @@
 @define-mixin text-6xl {
     @mixin responsive font-size, 26, 48;
 
-    line-height: 1;
+    line-height: 1.33;
     font-weight: 600;
 }
 

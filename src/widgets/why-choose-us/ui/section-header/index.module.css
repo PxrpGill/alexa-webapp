@@ -12,6 +12,8 @@
 
 .title {
     @mixin text-6xl;
+
+    line-height: 1.2;
 }
 
 .description {

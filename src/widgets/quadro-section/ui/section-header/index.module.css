@@ -39,7 +39,7 @@
 }
 
 .title {
-    @mixin h2;
+    @mixin text-3xl;
     @mixin responsive padding-block-end, 0, 30;
 
     line-height: 1.35;

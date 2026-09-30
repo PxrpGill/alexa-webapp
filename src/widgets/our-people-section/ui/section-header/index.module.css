@@ -19,6 +19,7 @@
     @mixin responsive max-width, 293, 700;
 
     text-align: center;
+    line-height: 1.33;
 
     @media (max-width: $mobile) {
         font-weight: 600;

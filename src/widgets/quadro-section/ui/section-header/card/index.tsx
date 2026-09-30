@@ -14,15 +14,20 @@ export default function Card({
 }: SectionHeaderCardProps) {
 	return (
 		<article className={`${css.root} ${className}`}>
-			{title && (
-				<h6 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
-			)}
-			{description && (
-				<div
-					dangerouslySetInnerHTML={{ __html: description }}
-					className={css.description}
-				/>
-			)}
+			<div className={css.textContent}>
+				{title && (
+					<h6
+						dangerouslySetInnerHTML={{ __html: title }}
+						className={css.title}
+					/>
+				)}
+				{description && (
+					<div
+						dangerouslySetInnerHTML={{ __html: description }}
+						className={css.description}
+					/>
+				)}
+			</div>
 			{button && (
 				<Button
 					rightIcon={<ButtonIconSVG className={css.icon} />}
