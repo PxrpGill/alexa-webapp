@@ -70,6 +70,7 @@ TanStack React Query is wired via `shared/config/react-query-custom-provider.tsx
 - **`"use client"`**: required in any widget using hooks, state, context, or browser APIs.
 - **CSS modules**: always `import css from "./index.module.css"`, apply as `className={css.root}`. The `container` class is a shared global utility.
 - **`PropsWithClassName`**: from `shared/types/props-with-classname.ts` — most widgets accept an optional `className?: string` for layout spacing from parent.
+- **Section spacing**: vertical rhythm between page sections comes from global utility classes in `shared/styles/sections.css` — `section` (60/60), `section-sm` (20/35), `section-md` (30/30), `section-pad` (40/60, padding instead of margin), and `page-offset` on `<main>`. Views pass them as plain strings (`className="section"`); never re-declare these values in a view's `index.module.css`.
 - **Type locations**: component prop types live in `widgets/<name>/types/`, not in the component file.
 - **Models as constants**: view/widget mock data is typed constants in `models/` dirs, imported and spread into widgets.
 - **Biome suppression**: use file-level comments when needed — `/** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */`.

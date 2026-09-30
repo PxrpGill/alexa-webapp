@@ -4,7 +4,7 @@ import {
 	COSTS_OF_SERVICES_BUTTON,
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
-import { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
+import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
 import type { SlideVariantProps } from "@/widgets/hero-slider-section/types/hero-slider-section.types";
@@ -535,22 +535,30 @@ export const INFO_TABS: InfoTabsProps = {
 					{
 						title:
 							"Ортодонтическая коррекция с&nbsp;применением брекет-системы.&nbsp;2&nbsp;челюсти",
+						description:
+							"Фиксация самолигирующей брекет-системы на&nbsp;оба зубных ряда, плановые активации и&nbsp;замена дуг на&nbsp;протяжении всего курса лечения.",
 						price: 126_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Ортодонтическая коррекция с применением брекет-систем",
+						description:
+							"Комплексное лечение на&nbsp;брекет-системе премиум-класса: фиксация, контрольные осмотры и&nbsp;сопровождение врача до&nbsp;завершения коррекции.",
 						price: 168_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title:
 							"Снятие ортодонтического аппарата брекет-системы (1&nbsp;зубной ряд)",
+						description:
+							"Снятие брекетов с&nbsp;одного зубного ряда, удаление остатков фиксирующего материала, шлифовка и&nbsp;полировка эмали.",
 						price: 6_300,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Несъемный  ретейнер индивидуального	исполнения",
+						description:
+							"Изготовление и&nbsp;фиксация индивидуальной проволочной конструкции, которая удерживает зубы в&nbsp;новом положении после лечения.",
 						price: 18_900,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
@@ -618,61 +626,85 @@ export const INFO_TABS: InfoTabsProps = {
 				cards: [
 					{
 						title: "Элайнеры EUROKAPPA light (12&nbsp;пар)",
+						description:
+							"Российская система для коррекции лёгких нарушений прикуса: цифровое 3D-планирование, изготовление 12&nbsp;пар элайнеров и&nbsp;контроль лечения.",
 						price: 194_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры EUROKAPPA Complete (22&nbsp;пары)",
+						description:
+							"Курс из&nbsp;22&nbsp;пар элайнеров для случаев средней сложности: моделирование результата, изготовление и&nbsp;сопровождение врача на&nbsp;всех этапах.",
 						price: 275_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры EUROKAPPA Complete (22&nbsp;пары)",
+						description:
+							"Курс из&nbsp;22&nbsp;пар элайнеров для случаев средней сложности: моделирование результата, изготовление и&nbsp;сопровождение врача на&nbsp;всех этапах.",
 						price: 275_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры EUROKAPPA Profi",
+						description:
+							"Расширенная комплектация для сложных клинических случаев: полный цифровой протокол лечения и&nbsp;сопровождение до&nbsp;достижения результата.",
 						price: 369_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Spark&nbsp;10",
+						description:
+							"Американские элайнеры из&nbsp;материала TruGEN: курс до&nbsp;10&nbsp;пар для незначительных нарушений положения зубов.",
 						price: 225_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Spark&nbsp;20",
+						description:
+							"Курс до&nbsp;20&nbsp;пар элайнеров Spark для коррекции средней сложности с&nbsp;быстрым цифровым моделированием лечения.",
 						price: 315_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Spark Advanced",
+						description:
+							"Расширенный курс Spark без ограничения числа пар&nbsp;&mdash; для комплексной коррекции прикуса у&nbsp;взрослых пациентов.",
 						price: 315_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Angel Aligner Select&nbsp;10",
+						description:
+							"Многослойный материал повышенного комфорта: курс до&nbsp;10&nbsp;пар для лёгких нарушений положения зубов.",
 						price: 210_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Angel Aligner Select&nbsp;20",
+						description:
+							"Курс до&nbsp;20&nbsp;пар элайнеров Angel Aligner для коррекции средней сложности, изготовление&nbsp;&mdash; около недели.",
 						price: 285_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Angel Aligner Select&nbsp;30",
+						description:
+							"Курс до&nbsp;30&nbsp;пар для более выраженных нарушений прикуса: цифровое планирование и&nbsp;контроль на&nbsp;каждом этапе.",
 						price: 285_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Angel Aligner Select Unlimited",
+						description:
+							"Неограниченное количество пар элайнеров в&nbsp;рамках плана лечения&nbsp;&mdash; для сложных случаев с&nbsp;длительной коррекцией.",
 						price: 350_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
 						title: "Элайнеры Angel Aligner Pro Unlimited",
+						description:
+							"Премиальная линейка Angel Aligner: неограниченное число пар, повышенный комфорт ношения и&nbsp;точный контроль перемещения зубов.",
 						price: 395_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},

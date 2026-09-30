@@ -25,33 +25,30 @@ import type { HomePageProps } from "./types/home-page.types";
 
 export default function HomePage({ initialNewsData }: HomePageProps) {
 	return (
-		<main className={css.root}>
-			<HeroSliderSection className={css.hero} {...HERO_SLIDES} />
-			<CtaSection {...CTA_MOCK} className={css.cta} />
-			<DescriptionSection
-				{...DESCRIPTION_SECTION}
-				className={css.description}
-			/>
+		<main className="page-offset">
+			<HeroSliderSection className="section" {...HERO_SLIDES} />
+			<CtaSection {...CTA_MOCK} className="section" />
+			<DescriptionSection {...DESCRIPTION_SECTION} className="section" />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...SECOND_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 				textBlockPosition="right"
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.lastSlider}
+				className="section"
 			/>
-			<HealthForFamily {...HEALTH_FOR_FAMILY} className={css.family} />
-			<OurWork className={css.ourWork} {...OUR_WORK} />
-			<FaqSection {...MOCK_FAQ_SECTION} className={css.faqs} />
-			<StillQuestions {...STILL_QUESTIONS} className={css.questions} />
+			<HealthForFamily {...HEALTH_FOR_FAMILY} className="section" />
+			<OurWork className="section" {...OUR_WORK} />
+			<FaqSection {...MOCK_FAQ_SECTION} className="section" />
+			<StillQuestions {...STILL_QUESTIONS} className="section" />
 			<ParentNewsSection
 				{...{ ...PARENT_NEWS_SECTION_MOCK, news: initialNewsData }}
-				className={css.parentNews}
+				className="section"
 			/>
 		</main>
 	);

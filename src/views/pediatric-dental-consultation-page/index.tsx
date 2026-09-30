@@ -16,29 +16,29 @@ import {
 
 export default function PediatricDentalConsultationPage() {
 	return (
-		<main className={css.root}>
-			<QuadroSection {...MOCK_QUADRO_SECTION} className={css.quadro} />
+		<main className="page-offset">
+			<QuadroSection {...MOCK_QUADRO_SECTION} className="section" />
 			<DescriptionSection
 				{...DESCRIPTION_SECTION}
-				className={css.description}
+				className={`${css.description} section section`}
 			/>
-			<BrickworkSection {...BRICKWORK_SECTION_MOCK} className={css.brickwork} />
+			<BrickworkSection {...BRICKWORK_SECTION_MOCK} className="section" />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...SECOND_TITLE_DESCRIPTION_SLIDER}
 				textBlockPosition="right"
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
-				className={css.lastSlider}
+				className="section"
 				textBlockPosition="right"
 			/>
 		</main>

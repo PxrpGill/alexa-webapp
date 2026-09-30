@@ -6,11 +6,11 @@ import { DOCUMENTS_MOCK } from "./models/to-the-patient.constants";
 
 export default function ToThePatientPage() {
 	return (
-		<main className={css.root}>
+		<main className="page-offset">
 			<AnimationWrapper className={`${css.titleBlock} container`}>
 				<h1 className={css.title}>Пациенту</h1>
 			</AnimationWrapper>
-			<DocumentsList {...DOCUMENTS_MOCK} className={css.documents} />
+			<DocumentsList {...DOCUMENTS_MOCK} className="section" />
 		</main>
 	);
 }

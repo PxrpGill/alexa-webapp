@@ -6,7 +6,6 @@ import QuadroSection from "@/widgets/quadro-section";
 import SolutionsSection from "@/widgets/solutions-section";
 import StomatologyProgram from "@/widgets/stomatology-program";
 
-import css from "./index.module.css";
 import {
 	ANNUAL_CARE_SECTION_MOCK,
 	EMPLOYEES_SECTION,
@@ -23,25 +22,25 @@ import VolkovoHero from "./ui/volkovo-hero";
 export default function VolkovoPage() {
 	return (
 		<main>
-			<VolkovoHero className={css.hero} />
-			<CtaGreen {...GREEN_CTA} className={css.greenCta} />
-			<QuadroSection className={css.quadro} {...QAUDRO_MOCK} />
-			<PreventionSection {...PREVENTION_SECTION} className={css.prevention} />
+			<VolkovoHero className="section" />
+			<CtaGreen {...GREEN_CTA} className="section" />
+			<QuadroSection className="section" {...QAUDRO_MOCK} />
+			<PreventionSection {...PREVENTION_SECTION} className="section" />
 			<StomatologyProgram
 				{...STOMATOLOGY_PROGRAM}
-				className={css.stomatology}
+				className="section"
 			/>
 			<AnnualCarePrograms
-				className={css.annualCare}
+				className="section"
 				{...ANNUAL_CARE_SECTION_MOCK}
 			/>
-			<SolutionsSection className={css.solutions} {...SOLUTIONS_SECTION_MOCK} />
+			<SolutionsSection className="section" {...SOLUTIONS_SECTION_MOCK} />
 			<OurPeopleSection
-				className={css.peoples}
+				className="section"
 				{...EMPLOYEES_SECTION}
 				isSlider
 			/>
-			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
+			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
 }

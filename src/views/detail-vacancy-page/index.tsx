@@ -16,39 +16,39 @@ export default function DetailVacancyPage({
 	responsibilities,
 }: DetailVacancyType) {
 	return (
-		<main className={css.root}>
-			{hero && <VacancyBanner {...hero} className={css.banner} />}
+		<main className="page-offset">
+			{hero && <VacancyBanner {...hero} className="section-pad" />}
 			{what_you_will_get && (
 				<WhatYouWillGetSection
 					{...what_you_will_get}
 					title="Что вы получите, работая у нас"
-					className={css.whatYouWillGet}
+					className="section-pad"
 				/>
 			)}
 			{requirements && (
 				<>
-					<AnimationWrapper className={`${css.titleBlock} container`}>
+					<AnimationWrapper className="section-pad container">
 						<h2 className={css.title}>
 							Что мы&nbsp;ждём от&nbsp;будущего коллеги
 						</h2>
 					</AnimationWrapper>
-					<VacancyRequirements {...requirements} className={css.requirements} />
+					<VacancyRequirements {...requirements} className="section-pad" />
 				</>
 			)}
 			{responsibilities && (
 				<VacancyResponsibilities
 					{...responsibilities}
-					className={css.responsibilities}
+					className="section-pad"
 				/>
 			)}
-			<AnimationWrapper className={`${css.titleBlock} container`}>
+			<AnimationWrapper className="section-pad container">
 				<h2 className={css.title}>
 					Здесь важны не&nbsp;только пациенты,
 					<br /> но&nbsp;и&nbsp;команда
 				</h2>
 			</AnimationWrapper>
 			<SaitableVacancySection
-				className={css.form}
+				className="section-pad"
 				{...SAITABLE_VACANCY}
 				vacancySlug={slug}
 			/>

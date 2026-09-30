@@ -10,16 +10,16 @@ import DescriptionCard from "./ui/description-card";
 
 export default function TaxDeducationPage() {
 	return (
-		<main className={css.root}>
-			<AnimationWrapper className={`${css.titleBlock} container`}>
+		<main className="page-offset">
+			<AnimationWrapper className={`${css.titleBlock} section-md container`}>
 				<h1 className={css.title}>Налоговый вычет</h1>
 			</AnimationWrapper>
 			<DescriptionCard
 				{...DESCRIPTION_SECTION_MOCK}
-				className={css.description}
+				className="section"
 			/>
 			<AlgorithmOfActions
-				className={css.algorithm}
+				className="section"
 				{...ALGORITHM_OF_ACTIONS_MOCK}
 			/>
 		</main>

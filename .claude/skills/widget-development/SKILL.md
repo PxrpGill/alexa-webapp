@@ -95,6 +95,7 @@ export default function <WidgetName>({
 - Wrap with `AnimationWrapper` (scroll-triggered reveal)
 - Use `.container` inside for max-width centering + responsive padding
 - Combine class names: `${css.root} ${className}`.trim()` (avoids double spaces)
+- **Never set the widget's own outer `margin`.** The vertical gap to the next section belongs to the page: the view passes a global utility class from `shared/styles/sections.css` — `section` (the 60/60 default), `section-sm`, `section-md`, or `section-pad` — straight into `className`. Adding `margin-block-end` to `.root` double-counts it.
 
 ## Step 3: Style with Responsive Mixin
 

@@ -5,13 +5,13 @@ import RulesForTheProvision from "./ui/rules-for-the-provision";
 
 export default function RulesForTheProvisionOfMedicalServicesPage() {
 	return (
-		<main className={css.root}>
-			<AnimationWrapper className={`${css.titleBlock} container`}>
+		<main className="page-offset">
+			<AnimationWrapper className={`${css.titleBlock} section-md container`}>
 				<h1 className={css.title}>Правила оказания медицинских услуг</h1>
 			</AnimationWrapper>
 			<RulesForTheProvision
 				{...RULES_FOR_THE_PROVISION}
-				className={css.rules}
+				className="section"
 			/>
 		</main>
 	);

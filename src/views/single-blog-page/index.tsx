@@ -6,9 +6,9 @@ import css from "./index.module.css";
 
 export default function SingleBlogPage({ content, poster }: SingleNewsProps) {
 	return (
-		<main className={css.root}>
+		<main className="page-offset">
 			{poster && (
-				<div className={css.posterWrapper}>
+				<div className={`${css.posterWrapper} section section`}>
 					<Picture poster={poster} />
 				</div>
 			)}

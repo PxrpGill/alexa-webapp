@@ -3,7 +3,6 @@ import CertificatesSection from "@/widgets/certificates-section";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
 import OurPeopleSection from "@/widgets/our-people-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import css from "./index.module.css";
 import {
 	CERTIFICATES_SECTION,
 	DIAGNOSTICS_SECTION_MOCK,
@@ -22,41 +21,41 @@ import InfoTabs from "./ui/info-tabs";
 
 export default function AdultOrthodonticsPage() {
 	return (
-		<main className={css.root}>
-			<HeroSection {...HERO_SECTION} className={css.hero} />
-			<InfoTabs className={css.infoTabs} {...INFO_TABS} />
+		<main className="page-offset">
+			<HeroSection {...HERO_SECTION} className="section" />
+			<InfoTabs className="section" {...INFO_TABS} />
 			<DiagnosticProcessSection
-				className={css.diagnostics}
+				className="section"
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
 			<CertificatesSection
-				className={css.certificates}
+				className="section"
 				{...CERTIFICATES_SECTION}
 			/>
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...SECOND_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 				textBlockPosition="right"
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 			/>
 			<TitleDescriptionSlider
 				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
-				className={css.slider}
+				className="section-sm"
 				textBlockPosition="right"
 			/>
 			<TitleDescriptionSlider
 				{...FIFTH_TITLE_DESCRIPTION_SLIDER}
-				className={css.lastSlider}
+				className="section"
 			/>
-			<OurPeopleSection className={css.ourPeople} {...OUR_PEOPLE} />
-			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
+			<OurPeopleSection className="section" {...OUR_PEOPLE} />
+			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
 }

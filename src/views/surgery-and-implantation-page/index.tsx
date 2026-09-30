@@ -28,25 +28,25 @@ import {
 
 export default function SurgeryAndImplantationPage() {
 	return (
-		<main className={css.root}>
-			<QuadroSection {...HERO_MOCK} className={css.hero} />
+		<main className="page-offset">
+			<QuadroSection {...HERO_MOCK} className="section" />
 			<WhatServiceIncludes
-				className={css.whatIncludes}
+				className="section"
 				{...WHAT_SERVICE_INCLUDES}
 			/>
 			<TitleStickySection
 				{...TITLE_STICKY_SECTION_MOCK}
-				className={css.titleSticky}
+				className="section"
 			/>
 			<DiagnosticProcessSection
-				className={css.diagnostics}
+				className="section"
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
 			<CertificatesSection
-				className={css.certificates}
+				className="section"
 				{...CERTIFICATES_SECTION}
 			/>
-			{/* <WhyChooseUs {...WHY_CHOOSE_US} className={css.whyChooseUs} /> */}
+			{/* <WhyChooseUs {...WHY_CHOOSE_US} className="section" /> */}
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className={css.slider}
@@ -58,16 +58,16 @@ export default function SurgeryAndImplantationPage() {
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className={css.lastSlider}
+				className="section"
 			/>
 			<OurPeopleSection
-				className={css.peoples}
+				className="section"
 				{...EMPLOYEES_SECTION}
 				isSlider
 			/>
-			<CostOfServices className={css.costOfServices} {...COST_OF_SERVICES} />
-			<ImplantTable className={css.implantTable} {...IMPLANT_TABLE} />
-			<AppointmentSchedulingSection {...FORM_DATA} className={css.form} />
+			<CostOfServices className="section" {...COST_OF_SERVICES} />
+			<ImplantTable className="section" {...IMPLANT_TABLE} />
+			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
 }
