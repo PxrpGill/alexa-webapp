@@ -1,224 +1,205 @@
-import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
-import type { DescriptionSectionProps } from "@/widgets/description-section/types/description-section.types";
-import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
-import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
+import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+	GLOBAL_EMPLOYEES,
+} from "@/shared/config/global-constants.constants";
+import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
+import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
+import type { HeroProps } from "@/widgets/hero/types/hero.types";
+import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
+import { RecommendsForChildrenProps } from "@/widgets/recommends-for-children/types/recommends-for-children.types";
 
-export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
-	sectionHeader: {
-		title: "Консультация детского стоматолога",
-		description: "Первый шаг к&nbsp;здоровым зубам вашего ребенка",
-		card: {
-			title:
-				"Запишитесь сейчас и&nbsp;обеспечьте своему ребёнку здоровье и&nbsp;комфорт!",
-			button: { title: "Записаться на прием", isOpenFeedbackModal: true },
-		},
-		poster: {
-			webp: {
-				src: "/mock/pediatric-dental-consultation/pediatric-quadro.webp",
-			},
-		},
-	},
-	cards: [
-		{
-			title: "Осмотр полости рта:",
-			description: "Оценит состояние зубов, десен и&nbsp;прикуса.",
-		},
-		{
-			title: "Рекомендации по&nbsp;гигиене:",
-			description:
-				"Научит правильно чистить зубы и&nbsp;использовать зубную нить.",
-		},
-		{
-			title: "Выявление причины проблем:",
-			description:
-				"Определит причины кариеса, воспаления десен и&nbsp;других заболеваний.",
-		},
-		{
-			title: "План лечения:",
-			description:
-				"Разработает индивидуальный план лечения, учитывая возраст и&nbsp;особенности ребенка.",
-		},
-	],
-};
-
-export const DESCRIPTION_SECTION: DescriptionSectionProps = {
+export const HERO_DATA: HeroProps = {
 	title:
-		"Начните путь к&nbsp;здоровой улыбке вашего <span style='color: var(--color-green-1);'>ребёнка с&nbsp;первой консультации</span>",
+		"Здоровье зубов начинается с&nbsp;первого знакомства со&nbsp;стоматологом",
 	description:
-		"Этот визит поможет малышу познакомиться с&nbsp;врачом и&nbsp;почувствовать себя уверенно. Доверие и&nbsp;положительный опыт у&nbsp;стоматолога&nbsp;&mdash; ключ к&nbsp;успешному лечению на&nbsp;долгие годы.",
+		"Осмотрим зубы ребёнка, ответим на&nbsp;вопросы и&nbsp;составим план дальнейших действий.",
+	poster: {
+		webp: {
+			src: "/mock/pediatric-dental-consultation/pediatric-quadro.webp",
+		},
+	},
+	button: {
+		title: "Записать ребёнка на приём",
+		href: APPOINTMENT_ID.id,
+	},
 };
 
-export const BRICKWORK_SECTION_MOCK: BrickworkSectionProps = {
+export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
 	sectionHeader: {
-		title: "Улыбка ваших детей в&nbsp;руках профессионалов!",
-		description: "Мы&nbsp;предлагаем:",
+		title: "Что входит в&nbsp;детскую гигиену",
+		description:
+			"Профессиональная гигиена&nbsp;&mdash; это не&nbsp;только очищение зубов. Врач помогает понять, где скапливается налёт, и&nbsp;показывает, как правильно ухаживать за&nbsp;зубами каждый день.",
 	},
 	cards: [
 		{
-			icon: "/mock/pediatric-dental-consultation/1-icon.svg",
-			title: "Визуальное и&nbsp;инструментальное обследование:",
-			description: "Проводится осмотр полости рта и&nbsp;зубов вашего ребенка.",
-		},
-		{
-			icon: "/mock/pediatric-dental-consultation/2-icon.svg",
-			title: "Полный анамнез здоровья:",
+			title: "Знакомство и&nbsp;беседа",
 			description:
-				"На&nbsp;первом приеме детский стоматолог собирает полный анамнез здоровья вашего ребенка, чтобы убедиться в&nbsp;безопасности проведения лечения.",
-		},
-		{
-			icon: "/mock/pediatric-dental-consultation/3-icon.svg",
-			title: "Рентгеновское исследование и&nbsp;компьютерная томография:",
-			description:
-				"В&nbsp;случае необходимости мы&nbsp;проводим рентгеновское исследование или направляем на&nbsp;компьютерную томографию с&nbsp;использованием современного оборудования KaVo OP&nbsp;3D&nbsp;и&nbsp;интраоральных мобильных рентгеновских аппаратов FONA X70&nbsp;с системами компьютерной радиовизиографии Gendex GXS&#8209;700.",
-		},
-		{
-			icon: "/mock/pediatric-dental-consultation/4-icon.svg",
-			title: "Консилиум с&nbsp;врачами других пециальностей:",
-			description:
-				"В&nbsp;случае необходимости мы&nbsp;проводим консилиум с&nbsp;врачами других специальностей, чтобы обеспечить комплексный и&nbsp;эффективный подход к&nbsp;лечению вашего ребенка.",
-		},
-		{
-			icon: "/mock/pediatric-dental-consultation/5-icon.svg",
-			title: "Индивидуальный план лечения:",
-			description:
-				"После диагностики мы&nbsp;составляем индивидуальный план лечения и&nbsp;согласовываем время следующих визитов.",
-		},
-		{
-			title: "Скидка&nbsp;10%",
-			description:
-				"Программа лояльности для детей из&nbsp;многодетных семей и&nbsp;детей с&nbsp;особенностями",
-			cardTheme: "green",
-			button: { title: "Записаться на прием", isOpenFeedbackModal: true },
-		},
-	],
-};
-
-export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	title: "Наши преимущества",
-	textBlock: {
-		title: "Современное оборудование",
-		description:
-			"Компьютерная томограмма и&nbsp;рентген, терапия, лечение зубов с&nbsp;микроскопом, гигиена, удаление зубов, имплантация и&nbsp;протезирование, исправление прикуса с&nbsp;применением самого современного оборудования, инновационных материалов и&nbsp;самых передовых протоколов лечения&nbsp;&mdash; залог здоровья наших пациентов!",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/first-slider/first-desktop.webp",
+				"Врач знакомится с&nbsp;ребёнком, узнаёт о&nbsp;жалобах, привычках и&nbsp;особенностях ухода за&nbsp;зубами.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/first.webp",
+				},
 			},
 		},
 		{
-			webp: {
-				src: "/mock/home/first-slider/second-desktop.webp",
+			title: "Осмотр полости рта",
+			description: "Оцениваем состояние зубов, дёсен, прикуса и&nbsp;гигиены.",
+			cardType: "vertical-alexik",
+			poster: {
+				original: {
+					src: "/mock/pediatric-surgery/what-includes-services/happy-alexik.png",
+				},
 			},
 		},
 		{
-			webp: {
-				src: "/mock/home/first-slider/third-desktop.webp",
+			title: "Оценка рисков",
+			description:
+				"Определяем факторы, которые могут повлиять на здоровье зубов и развитие прикуса.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/third.webp",
+				},
 			},
 		},
 		{
-			webp: {
-				src: "/mock/home/first-slider/fourth-desktop.webp",
+			title: "План дальнейших действий",
+			description:
+				"Если требуется лечение или дополнительная диагностика, врач составляет понятный план следующих шагов.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/fourth.webp",
+				},
 			},
 		},
 		{
-			webp: {
-				src: "/mock/home/first-slider/fifth-desktop.webp",
+			title: "Рекомендации",
+			description:
+				"Рассказываем, как ухаживать за&nbsp;зубами дома, какие средства использовать и&nbsp;на&nbsp;что обратить внимание.",
+			cardType: "horizontal-alexik",
+			poster: {
+				original: {
+					src: "/mock/pediatric-surgery/what-includes-services/alexik-with-heart.png",
+				},
 			},
 		},
 	],
 };
 
-export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Комфортная атмосфера:",
-		description:
-			"Мы&nbsp;делаем все возможное, чтобы ваше посещение было приятным и&nbsp;безопасным.",
+export const FORM_DATA: AppointmentSchedulingProps = {
+	title: "Запись на&nbsp;приём",
+	description:
+		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
+	poster: {
+		webp: {
+			src: "/system/form.webp",
+		},
 	},
-	posters: [
+};
+
+export const COST_OF_SERVICES: CostOfServicesProps = {
+	title: "Стоимость услуг:",
+	cards: [
 		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-1-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-1-slide.jpg",
-			},
+			title: "Первичный приём педиатра с&nbsp;адаптационным визитом",
+			description:
+				"<p>Знакомство с&nbsp;клиникой и&nbsp;врачом в&nbsp;спокойном темпе, осмотр полости рта, оценка рисков и&nbsp;план дальнейших действий.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_500,
 		},
 		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-2-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-2-slide.jpg",
-			},
+			title: "Повторный приём педиатра",
+			description:
+				"<p>Контрольный осмотр: оцениваем состояние зубов, дёсен и&nbsp;прикуса, качество домашней гигиены и&nbsp;результат профилактики.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_500,
 		},
 		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-3-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-3-slide.jpg",
-			},
+			title: "Консультация гигиениста",
+			description:
+				"<p>Оценка качества домашнего ухода и&nbsp;подбор индивидуальных средств гигиены для ребёнка&nbsp;&mdash; без оплаты.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 0,
+		},
+		{
+			title: "Снятие острой боли",
+			description:
+				"<p>Приём вне очереди, когда ребёнка беспокоит боль: находим причину и&nbsp;помогаем снять неприятные ощущения.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 3_500,
+		},
+		{
+			title: "Дентальный прицельный снимок",
+			description:
+				"<p>Снимок одного зуба, если во&nbsp;время осмотра нужно уточнить диагноз.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 400,
+		},
+		{
+			title: "Ортопантомограмма (панорамный снимок)",
+			description:
+				"<p>Обзорный снимок обеих челюстей: показывает зачатки постоянных зубов, их положение и&nbsp;скрытые проблемы.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_100,
+		},
+		{
+			title: "Компьютерная томография зубов (1&nbsp;челюсть)",
+			description:
+				"<p>Трёхмерная диагностика по&nbsp;показаниям врача&nbsp;&mdash; когда нужно детально рассмотреть строение челюсти.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_600,
 		},
 	],
 };
 
-export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Лечение зубов &laquo;во&nbsp;сне&raquo;",
-		description:
-			"Позволяет вашим детям проходить стоматологические процедуры без страха и&nbsp;стресса. * Эта услуга особенно полезна для малышей со&nbsp;стоматофобией, обеспечивая комфорт и&nbsp;положительный опыт на&nbsp;каждом этапе лечения.",
+export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
+	title: "Врачи, оказывающие услугу",
+	button: {
+		title: "Смотреть всех специалистов",
+		href: SITE_NAVIGATION.vrachi,
 	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/3-1-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/3-1-slide.jpg",
-			},
-		},
-	],
+	employees: [GLOBAL_EMPLOYEES.nikitin],
 };
 
-export const FOURTH_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Индивидуальный подход:",
+export const RECOMMENDS_FOR_CHILDREN_DATA: RecommendsForChildrenProps = {
+	sectionHeader: {
+		title: "Когда стоит показать ребёнка детскому стоматологу?",
 		description:
-			"Мы&nbsp;учитываем все особенности вашего ребенка и&nbsp;подбираем оптимальный план лечения.",
+			"Не&nbsp;обязательно ждать, пока появится боль. Регулярные осмотры помогают заметить изменения ещё до&nbsp;появления выраженных симптомов.",
+		mockup: "/system/alexik-wash.png",
 	},
-	posters: [
+	cards: [
 		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/4-1-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/4-1-slide.jpg",
-			},
+			title: "Первый визит",
+			description:
+				"Ребёнок ещё ни&nbsp;разу не&nbsp;был у&nbsp;стоматолога&nbsp;&mdash; самое время познакомиться с&nbsp;врачом в&nbsp;спокойной обстановке.",
 		},
 		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/4-2-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/4-2-slide.jpg",
-			},
+			title: "Болит зуб",
+			description:
+				"Ребёнок жалуется на&nbsp;боль, чувствительность или неприятные ощущения во&nbsp;время еды.",
 		},
 		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/4-3-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/4-3-slide.jpg",
-			},
+			title: "Изменился цвет зуба",
+			description:
+				"Появились пятна, потемнение, белые участки или другие изменения эмали.",
 		},
 		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/4-4-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/4-4-slide.jpg",
-			},
+			title: "Проблемы с&nbsp;дёснами",
+			description:
+				"Кровоточивость, отёк, покраснение или неприятный запах изо рта.",
+		},
+		{
+			title: "Меняются молочные зубы",
+			description:
+				"Зубы начинают шататься, появляются первые постоянные зубы или есть вопросы по&nbsp;их&nbsp;прорезыванию.",
+		},
+		{
+			title: "Есть вопросы по&nbsp;прикусу",
+			description:
+				"Родителей беспокоит положение зубов, смыкание челюстей или привычки ребёнка.",
 		},
 	],
 };
