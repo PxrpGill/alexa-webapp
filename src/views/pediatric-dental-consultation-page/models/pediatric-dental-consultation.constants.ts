@@ -7,9 +7,10 @@ import {
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
+import type { FirstVisitSectionProps } from "@/widgets/first-visit-section/types/first-visit-section.types";
 import type { HeroProps } from "@/widgets/hero/types/hero.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
-import { RecommendsForChildrenProps } from "@/widgets/recommends-for-children/types/recommends-for-children.types";
+import type { RecommendsForChildrenProps } from "@/widgets/recommends-for-children/types/recommends-for-children.types";
 
 export const HERO_DATA: HeroProps = {
 	title:
@@ -200,6 +201,56 @@ export const RECOMMENDS_FOR_CHILDREN_DATA: RecommendsForChildrenProps = {
 			title: "Есть вопросы по&nbsp;прикусу",
 			description:
 				"Родителей беспокоит положение зубов, смыкание челюстей или привычки ребёнка.",
+		},
+	],
+};
+
+export const FIRST_VISIT_SECTION_DATA: FirstVisitSectionProps = {
+	sectionHeader: {
+		title: "Первая встреча, после которой не&nbsp;страшно возвращаться",
+		mockup:
+			"/mock/pediatric-dental-consultation/first-visit/alexik-with-stick.webp",
+	},
+	cards: [
+		{
+			title: "Без давления",
+			description:
+				"Не&nbsp;торопим ребёнка и&nbsp;не&nbsp;заставляем делать&nbsp;то, к&nbsp;чему он&nbsp;пока не&nbsp;готов.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-dental-consultation/first-visit/first-card.webp",
+				},
+			},
+		},
+		{
+			title: "Всё понятно родителям",
+			description:
+				"Объясняем состояние зубов простым языком и&nbsp;рассказываем, что делать дальше.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-dental-consultation/first-visit/second-card.webp",
+				},
+			},
+		},
+		{
+			title: "Оцениваем ребёнка комплексно",
+			description:
+				"Смотрим не&nbsp;только на&nbsp;отдельный зуб, но&nbsp;и&nbsp;на&nbsp;состояние полости рта в&nbsp;целом.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-dental-consultation/first-visit/third-card.webp",
+				},
+			},
+		},
+		{
+			title: "Формируем план заранее",
+			description:
+				"Родители понимают, какое лечение или профилактика необходимы и&nbsp;в&nbsp;какой последовательности.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-dental-consultation/first-visit/fourth-card.webp",
+				},
+			},
 		},
 	],
 };
