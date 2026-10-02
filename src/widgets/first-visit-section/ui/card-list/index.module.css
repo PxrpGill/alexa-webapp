@@ -1,0 +1,63 @@
+.root {
+    @mixin responsive gap, 20, 20;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    @mixin responsive border-radius, 30, 30;
+
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--color-white-0);
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+.textContent {
+    @mixin responsive padding-block, 30, 87;
+    @mixin responsive padding-inline, 20, 30;
+
+    @media (max-width: $mobile) {
+        flex-direction: column;
+    }
+}
+
+.textContent {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    @mixin responsive font-size, 18, 20;
+    
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.cardDescription {
+    @mixin text-base;
+
+    line-height: 1.5;
+}
+
+.posterWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @media (max-width) {
+        @mixin responsive height, 230;
+    }
+}

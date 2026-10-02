@@ -120,15 +120,6 @@ export const GLOBAL_EMPLOYEES = {
 		fullname: "Корамагомедов Рамазан Корамагомедович",
 		position: "Врач-стоматолог-терапевт, эндодонтист, стоматолог&#8209;ортопед",
 	},
-	toporov: {
-		poster: {
-			webp: {
-				src: "/mock/employees/employee-6.webp",
-			},
-		},
-		fullname: "Топоров Артур Игоревич",
-		position: "Врач-анестезиолог-реаниматолог",
-	},
 	shahnazaryan: {
 		poster: {
 			webp: {
@@ -173,6 +164,24 @@ export const GLOBAL_EMPLOYEES = {
 		},
 		fullname: "Корнилов Герман Валерьевич",
 		position: "Врач-стоматолог-пародонтолог",
+	},
+	saidgasanov: {
+		poster: {
+			original: {
+				src: "/mock/employees/saidgasanov.jpg",
+			},
+		},
+		fullname: "Саидгасанов Магомед Махмудович",
+		position: "Врач-стоматолог-гигиенист",
+	},
+	shapavalova: {
+		poster: {
+			original: {
+				src: "/mock/employees/shapavalova-darina.jpg",
+			},
+		},
+		fullname: "Шаповалова Дарина Сергеевна",
+		position: "Врач-стоматолог-ортодонт",
 	},
 	tarasova: {
 		poster: {

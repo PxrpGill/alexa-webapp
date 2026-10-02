@@ -1,0 +1,36 @@
+.root {
+    @mixin responsive padding-block-start, 30, 50;
+    @mixin responsive padding-inline, 20, 160;
+    @mixin responsive padding-block-end, 200, 363;
+    @mixin responsive border-radius, 30, 30;
+
+    background-color: var(--color-white-0);
+    position: relative;
+    overflow: hidden;
+
+    &.visible .mockup {
+        translate: -50% 35%;
+    }
+}
+
+.title {
+    @mixin text-6xl;
+
+    text-align: center;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 20;
+    }
+}
+
+.mockup {
+    @mixin responsive width, 300, 686;
+    @mixin transition translate;
+
+    transition-duration: 0.5s;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 100%;
+}
