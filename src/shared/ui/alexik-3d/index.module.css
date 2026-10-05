@@ -1,0 +1,62 @@
+/* Плавающий маскот: правый нижний угол, ниже меню (100) и модалок (100000). */
+.root {
+    @mixin responsive width, 170, 210;
+    @mixin responsive height, 170, 210;
+    @mixin responsive inset-inline-end, 16, 30;
+    @mixin responsive inset-block-end, 16, 30;
+
+    position: fixed;
+    z-index: 90;
+}
+
+/* Реплика всплывает над головой, хвостик смотрит вниз на персонажа. */
+.bubble {
+    @mixin b2;
+    @mixin responsive --tail, 10, 12;
+    @mixin responsive --rise, 8, 10;
+    @mixin responsive --shadow-1, 6, 6;
+    @mixin responsive --shadow-2, 24, 24;
+    @mixin responsive --overlap, 14, 12;
+    @mixin responsive padding-block, 10, 14;
+    @mixin responsive padding-inline, 14, 20;
+    @mixin responsive border-radius, 14, 18;
+    @mixin responsive max-width, 180, 230;
+    @mixin transitionOptions 0.25s;
+
+    position: absolute;
+    inset-inline-end: 0;
+
+    /* над головой: заходит на верх контейнера, но не на саму модель */
+    inset-block-end: calc(100% - var(--overlap));
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(var(--rise)) scale(0.92);
+    transition-property: opacity, transform, visibility;
+    box-shadow: 0 var(--shadow-1) var(--shadow-2) rgb(0 11 48 / 20%);
+    background-color: var(--color-white-1);
+    color: var(--color-black-1);
+    text-align: center;
+    pointer-events: none;
+}
+
+.bubble::after {
+    content: "";
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-end: calc(var(--tail) * 3);
+    border: var(--tail) solid transparent;
+    border-block-start-color: var(--color-white-1);
+    border-block-end-width: 0;
+}
+
+.bubbleVisible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bubble {
+        transition-duration: 0.01ms;
+    }
+}

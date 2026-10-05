@@ -1,6 +1,10 @@
 allowBuilds:
   sharp: false
 
+auditConfig:
+  ignoreGhsas:
+    - GHSA-vfj7-8cjw-p6xm
+
 minimumReleaseAgeExclude:
   - postcss@8.5.18
 

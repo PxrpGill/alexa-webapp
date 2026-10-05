@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Алексик в 3D</title>
+<style>
+  :root {
+    --bg: #e3f3f1;
+    --ink: #2f4a48;
+    --soft: #6c8c89;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #16292a; --ink: #e2f1ef; --soft: #8fb0ac; }
+  }
+  :root[data-theme="dark"] { --bg: #16292a; --ink: #e2f1ef; --soft: #8fb0ac; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Nunito", "Trebuchet MS", system-ui, sans-serif;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  /* Блок, который можно перенести на свой сайт */
+  #alexik {
+    width: min(92vw, 520px);
+    aspect-ratio: 1 / 1;
+    position: relative;
+    cursor: grab;
+    touch-action: none;
+    outline: none;
+  }
+  #alexik:active { cursor: grabbing; }
+  #alexik:focus-visible { box-shadow: 0 0 0 3px var(--soft); border-radius: 24px; }
+  #alexik canvas { display: block; width: 100%; height: 100%; }
+  .hint { margin: 4px 0 0; font-size: 15px; color: var(--soft); text-align: center; }
+</style>
+</head>
+<body>
+
+<div id="alexik" tabindex="0" role="img" aria-label="Зубик Алексик, 3D персонаж. Нажмите, чтобы он помахал."></div>
+<p class="hint">Нажми на Алексика или покрути его мышкой</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- Delaunator 5.0.1, (c) Vladimir Agafonkin, ISC license -->
+<script>!function(t,i){"object"==typeof exports&&"undefined"!=typeof module?module.exports=i():"function"==typeof define&&define.amd?define(i):(t="undefined"!=typeof globalThis?globalThis:t||self).Delaunator=i()}(this,(function(){"use strict";const t=11102230246251565e-32,i=134217729,s=(3+8*t)*t;function e(t,i,s,e,n){let h,r,l,o,a=i[0],f=e[0],c=0,u=0;f>a==f>-a?(h=a,a=i[++c]):(h=f,f=e[++u]);let _=0;if(c<t&&u<s)for(f>a==f>-a?(r=a+h,l=h-(r-a),a=i[++c]):(r=f+h,l=h-(r-f),f=e[++u]),h=r,0!==l&&(n[_++]=l);c<t&&u<s;)f>a==f>-a?(r=h+a,o=r-h,l=h-(r-o)+(a-o),a=i[++c]):(r=h+f,o=r-h,l=h-(r-o)+(f-o),f=e[++u]),h=r,0!==l&&(n[_++]=l);for(;c<t;)r=h+a,o=r-h,l=h-(r-o)+(a-o),a=i[++c],h=r,0!==l&&(n[_++]=l);for(;u<s;)r=h+f,o=r-h,l=h-(r-o)+(f-o),f=e[++u],h=r,0!==l&&(n[_++]=l);return 0===h&&0!==_||(n[_++]=h),_}function n(t){return new Float64Array(t)}const h=22204460492503146e-32,r=11093356479670487e-47,l=n(4),o=n(8),a=n(12),f=n(16),c=n(4);function u(t,n,u,_,d,g){const y=(n-g)*(u-d),w=(t-d)*(_-g),b=y-w,A=Math.abs(y+w);return Math.abs(b)>=33306690738754716e-32*A?b:-function(t,n,u,_,d,g,y){let w,b,A,k,M,p,x,S,T,z,U,m,K,L,v,F,P,E;const H=t-d,I=u-d,N=n-g,j=_-g;L=H*j,p=i*H,x=p-(p-H),S=H-x,p=i*j,T=p-(p-j),z=j-T,v=S*z-(L-x*T-S*T-x*z),F=N*I,p=i*N,x=p-(p-N),S=N-x,p=i*I,T=p-(p-I),z=I-T,P=S*z-(F-x*T-S*T-x*z),U=v-P,M=v-U,l[0]=v-(U+M)+(M-P),m=L+U,M=m-L,K=L-(m-M)+(U-M),U=K-F,M=K-U,l[1]=K-(U+M)+(M-F),E=m+U,M=E-m,l[2]=m-(E-M)+(U-M),l[3]=E;let q=function(t,i){let s=i[0];for(let e=1;e<t;e++)s+=i[e];return s}(4,l),D=h*y;if(q>=D||-q>=D)return q;if(M=t-H,w=t-(H+M)+(M-d),M=u-I,A=u-(I+M)+(M-d),M=n-N,b=n-(N+M)+(M-g),M=_-j,k=_-(j+M)+(M-g),0===w&&0===b&&0===A&&0===k)return q;if(D=r*y+s*Math.abs(q),q+=H*k+j*w-(N*A+I*b),q>=D||-q>=D)return q;L=w*j,p=i*w,x=p-(p-w),S=w-x,p=i*j,T=p-(p-j),z=j-T,v=S*z-(L-x*T-S*T-x*z),F=b*I,p=i*b,x=p-(p-b),S=b-x,p=i*I,T=p-(p-I),z=I-T,P=S*z-(F-x*T-S*T-x*z),U=v-P,M=v-U,c[0]=v-(U+M)+(M-P),m=L+U,M=m-L,K=L-(m-M)+(U-M),U=K-F,M=K-U,c[1]=K-(U+M)+(M-F),E=m+U,M=E-m,c[2]=m-(E-M)+(U-M),c[3]=E;const B=e(4,l,4,c,o);L=H*k,p=i*H,x=p-(p-H),S=H-x,p=i*k,T=p-(p-k),z=k-T,v=S*z-(L-x*T-S*T-x*z),F=N*A,p=i*N,x=p-(p-N),S=N-x,p=i*A,T=p-(p-A),z=A-T,P=S*z-(F-x*T-S*T-x*z),U=v-P,M=v-U,c[0]=v-(U+M)+(M-P),m=L+U,M=m-L,K=L-(m-M)+(U-M),U=K-F,M=K-U,c[1]=K-(U+M)+(M-F),E=m+U,M=E-m,c[2]=m-(E-M)+(U-M),c[3]=E;const C=e(B,o,4,c,a);L=w*k,p=i*w,x=p-(p-w),S=w-x,p=i*k,T=p-(p-k),z=k-T,v=S*z-(L-x*T-S*T-x*z),F=b*A,p=i*b,x=p-(p-b),S=b-x,p=i*A,T=p-(p-A),z=A-T,P=S*z-(F-x*T-S*T-x*z),U=v-P,M=v-U,c[0]=v-(U+M)+(M-P),m=L+U,M=m-L,K=L-(m-M)+(U-M),U=K-F,M=K-U,c[1]=K-(U+M)+(M-F),E=m+U,M=E-m,c[2]=m-(E-M)+(U-M),c[3]=E;const G=e(C,a,4,c,f);return f[G-1]}(t,n,u,_,d,g,A)}const _=Math.pow(2,-52),d=new Uint32Array(512);class g{static from(t,i=M,s=p){const e=t.length,n=new Float64Array(2*e);for(let h=0;h<e;h++){const e=t[h];n[2*h]=i(e),n[2*h+1]=s(e)}return new g(n)}constructor(t){const i=t.length>>1;if(i>0&&"number"!=typeof t[0])throw new Error("Expected coords to contain numbers.");this.coords=t;const s=Math.max(2*i-5,0);this._triangles=new Uint32Array(3*s),this._halfedges=new Int32Array(3*s),this._hashSize=Math.ceil(Math.sqrt(i)),this._hullPrev=new Uint32Array(i),this._hullNext=new Uint32Array(i),this._hullTri=new Uint32Array(i),this._hullHash=new Int32Array(this._hashSize),this._ids=new Uint32Array(i),this._dists=new Float64Array(i),this.update()}update(){const{coords:t,_hullPrev:i,_hullNext:s,_hullTri:e,_hullHash:n}=this,h=t.length>>1;let r=1/0,l=1/0,o=-1/0,a=-1/0;for(let i=0;i<h;i++){const s=t[2*i],e=t[2*i+1];s<r&&(r=s),e<l&&(l=e),s>o&&(o=s),e>a&&(a=e),this._ids[i]=i}const f=(r+o)/2,c=(l+a)/2;let d,g,w;for(let i=0,s=1/0;i<h;i++){const e=y(f,c,t[2*i],t[2*i+1]);e<s&&(d=i,s=e)}const k=t[2*d],M=t[2*d+1];for(let i=0,s=1/0;i<h;i++){if(i===d)continue;const e=y(k,M,t[2*i],t[2*i+1]);e<s&&e>0&&(g=i,s=e)}let p=t[2*g],x=t[2*g+1],S=1/0;for(let i=0;i<h;i++){if(i===d||i===g)continue;const s=b(k,M,p,x,t[2*i],t[2*i+1]);s<S&&(w=i,S=s)}let T=t[2*w],z=t[2*w+1];if(S===1/0){for(let i=0;i<h;i++)this._dists[i]=t[2*i]-t[0]||t[2*i+1]-t[1];A(this._ids,this._dists,0,h-1);const i=new Uint32Array(h);let s=0;for(let t=0,e=-1/0;t<h;t++){const n=this._ids[t],h=this._dists[n];h>e&&(i[s++]=n,e=h)}return this.hull=i.subarray(0,s),this.triangles=new Uint32Array(0),void(this.halfedges=new Uint32Array(0))}if(u(k,M,p,x,T,z)<0){const t=g,i=p,s=x;g=w,p=T,x=z,w=t,T=i,z=s}const U=function(t,i,s,e,n,h){const r=s-t,l=e-i,o=n-t,a=h-i,f=r*r+l*l,c=o*o+a*a,u=.5/(r*a-l*o);return{x:t+(a*f-l*c)*u,y:i+(r*c-o*f)*u}}(k,M,p,x,T,z);this._cx=U.x,this._cy=U.y;for(let i=0;i<h;i++)this._dists[i]=y(t[2*i],t[2*i+1],U.x,U.y);A(this._ids,this._dists,0,h-1),this._hullStart=d;let m=3;s[d]=i[w]=g,s[g]=i[d]=w,s[w]=i[g]=d,e[d]=0,e[g]=1,e[w]=2,n.fill(-1),n[this._hashKey(k,M)]=d,n[this._hashKey(p,x)]=g,n[this._hashKey(T,z)]=w,this.trianglesLen=0,this._addTriangle(d,g,w,-1,-1,-1);for(let h,r,l=0;l<this._ids.length;l++){const o=this._ids[l],a=t[2*o],f=t[2*o+1];if(l>0&&Math.abs(a-h)<=_&&Math.abs(f-r)<=_)continue;if(h=a,r=f,o===d||o===g||o===w)continue;let c=0;for(let t=0,i=this._hashKey(a,f);t<this._hashSize&&(c=n[(i+t)%this._hashSize],-1===c||c===s[c]);t++);c=i[c];let y,b=c;for(;y=s[b],u(a,f,t[2*b],t[2*b+1],t[2*y],t[2*y+1])>=0;)if(b=y,b===c){b=-1;break}if(-1===b)continue;let A=this._addTriangle(b,o,s[b],-1,-1,e[b]);e[o]=this._legalize(A+2),e[b]=A,m++;let k=s[b];for(;y=s[k],u(a,f,t[2*k],t[2*k+1],t[2*y],t[2*y+1])<0;)A=this._addTriangle(k,o,y,e[o],-1,e[k]),e[o]=this._legalize(A+2),s[k]=k,m--,k=y;if(b===c)for(;y=i[b],u(a,f,t[2*y],t[2*y+1],t[2*b],t[2*b+1])<0;)A=this._addTriangle(y,o,b,-1,e[b],e[y]),this._legalize(A+2),e[y]=A,s[b]=b,m--,b=y;this._hullStart=i[o]=b,s[b]=i[k]=o,s[o]=k,n[this._hashKey(a,f)]=o,n[this._hashKey(t[2*b],t[2*b+1])]=b}this.hull=new Uint32Array(m);for(let t=0,i=this._hullStart;t<m;t++)this.hull[t]=i,i=s[i];this.triangles=this._triangles.subarray(0,this.trianglesLen),this.halfedges=this._halfedges.subarray(0,this.trianglesLen)}_hashKey(t,i){return Math.floor(function(t,i){const s=t/(Math.abs(t)+Math.abs(i));return(i>0?3-s:1+s)/4}(t-this._cx,i-this._cy)*this._hashSize)%this._hashSize}_legalize(t){const{_triangles:i,_halfedges:s,coords:e}=this;let n=0,h=0;for(;;){const r=s[t],l=t-t%3;if(h=l+(t+2)%3,-1===r){if(0===n)break;t=d[--n];continue}const o=r-r%3,a=l+(t+1)%3,f=o+(r+2)%3,c=i[h],u=i[t],_=i[a],g=i[f];if(w(e[2*c],e[2*c+1],e[2*u],e[2*u+1],e[2*_],e[2*_+1],e[2*g],e[2*g+1])){i[t]=g,i[r]=c;const e=s[f];if(-1===e){let i=this._hullStart;do{if(this._hullTri[i]===f){this._hullTri[i]=t;break}i=this._hullPrev[i]}while(i!==this._hullStart)}this._link(t,e),this._link(r,s[h]),this._link(h,f);const l=o+(r+1)%3;n<d.length&&(d[n++]=l)}else{if(0===n)break;t=d[--n]}}return h}_link(t,i){this._halfedges[t]=i,-1!==i&&(this._halfedges[i]=t)}_addTriangle(t,i,s,e,n,h){const r=this.trianglesLen;return this._triangles[r]=t,this._triangles[r+1]=i,this._triangles[r+2]=s,this._link(r,e),this._link(r+1,n),this._link(r+2,h),this.trianglesLen+=3,r}}function y(t,i,s,e){const n=t-s,h=i-e;return n*n+h*h}function w(t,i,s,e,n,h,r,l){const o=t-r,a=i-l,f=s-r,c=e-l,u=n-r,_=h-l,d=f*f+c*c,g=u*u+_*_;return o*(c*g-d*_)-a*(f*g-d*u)+(o*o+a*a)*(f*_-c*u)<0}function b(t,i,s,e,n,h){const r=s-t,l=e-i,o=n-t,a=h-i,f=r*r+l*l,c=o*o+a*a,u=.5/(r*a-l*o),_=(a*f-l*c)*u,d=(r*c-o*f)*u;return _*_+d*d}function A(t,i,s,e){if(e-s<=20)for(let n=s+1;n<=e;n++){const e=t[n],h=i[e];let r=n-1;for(;r>=s&&i[t[r]]>h;)t[r+1]=t[r--];t[r+1]=e}else{let n=s+1,h=e;k(t,s+e>>1,n),i[t[s]]>i[t[e]]&&k(t,s,e),i[t[n]]>i[t[e]]&&k(t,n,e),i[t[s]]>i[t[n]]&&k(t,s,n);const r=t[n],l=i[r];for(;;){do{n++}while(i[t[n]]<l);do{h--}while(i[t[h]]>l);if(h<n)break;k(t,n,h)}t[s+1]=t[h],t[h]=r,e-n+1>=h-s?(A(t,i,n,e),A(t,i,s,h-1)):(A(t,i,s,h-1),A(t,i,n,e))}}function k(t,i,s){const e=t[i];t[i]=t[s],t[s]=e}function M(t){return t[0]}function p(t){return t[1]}return g}));</script>
+<script>
+(function () {
+  const host = document.getElementById('alexik');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- Рендер ----------
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.05;
+  host.appendChild(renderer.domElement);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+  camera.position.set(0, 0.2, 13);
+
+  // ---------- Свет ----------
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xb9d9d5, 0.75));
+  const key = new THREE.DirectionalLight(0xffffff, 0.85);
+  key.position.set(4, 6, 7);
+  scene.add(key);
+  const rim = new THREE.DirectionalLight(0xcdf0ff, 0.5);
+  rim.position.set(-6, 3, -5);
+  scene.add(rim);
+  const fill = new THREE.DirectionalLight(0xfff1f4, 0.25);
+  fill.position.set(-5, -2, 6);
+  scene.add(fill);
+
+  // ---------- Материалы ----------
+  const enamel = new THREE.MeshPhysicalMaterial({
+    color: 0xf3f3f1, roughness: 0.38, metalness: 0,
+    clearcoat: 0.7, clearcoatRoughness: 0.25
+  });
+  // Лицо — плоские цвета ровно как в PNG, без влияния света и тонмаппинга
+  const flat = hex => new THREE.MeshBasicMaterial({
+    color: new THREE.Color(hex).convertSRGBToLinear(), toneMapped: false
+  });
+  const dark = flat(0x333333);
+  const pink = flat(0xffa1d3);
+
+  // ---------- Тело: силуэт с картинки (координаты в пикселях исходника) ----------
+  const p = (x, y) => [(x - 325) / 100, -(y - 260) / 100];
+  const shape = new THREE.Shape();
+  shape.moveTo(...p(325, 15));
+  const bz = (a, b, c) => shape.bezierCurveTo(...p(...a), ...p(...b), ...p(...c));
+  bz([470, 12], [545, 28], [566, 95]);
+  bz([588, 160], [584, 232], [570, 272]);
+  bz([545, 365], [482, 470], [428, 502]);
+  bz([398, 518], [372, 500], [364, 448]);
+  bz([352, 370], [348, 285], [325, 283]);
+  bz([302, 285], [298, 370], [286, 448]);
+  bz([278, 500], [252, 518], [222, 502]);
+  bz([168, 470], [105, 365], [84, 272]);
+  bz([70, 232], [64, 160], [86, 95]);
+  bz([106, 28], [180, 12], [325, 15]);
+
+  // «Надувает» плоский силуэт в пухлую форму: спереди и сзади купол,
+  // по краю — круглый бортик, как у мягкой игрушки.
+  function inflate(shape, o) {
+    const C = shape.getSpacedPoints(Math.ceil(shape.getLength() / o.step));
+    C.pop();
+    if (THREE.ShapeUtils.isClockWise(C)) C.reverse();
+    const n = C.length;
+    const sx = C.map(c => c.x), sy = C.map(c => c.y);
+
+    const inside = (x, y) => {
+      let r = false;
+      for (let i = 0, j = n - 1; i < n; j = i++) {
+        if ((sy[i] > y) !== (sy[j] > y) &&
+            x < (sx[j] - sx[i]) * (y - sy[i]) / (sy[j] - sy[i]) + sx[i]) r = !r;
+      }
+      return r;
+    };
+    const dist = (x, y) => {
+      let m = Infinity;
+      for (let i = 0, j = n - 1; i < n; j = i++) {
+        const ax = sx[j], ay = sy[j], dx = sx[i] - ax, dy = sy[i] - ay;
+        let t = ((x - ax) * dx + (y - ay) * dy) / (dx * dx + dy * dy);
+        t = t < 0 ? 0 : t > 1 ? 1 : t;
+        const ex = ax + dx * t - x, ey = ay + dy * t - y;
+        const d = ex * ex + ey * ey;
+        if (d < m) m = d;
+      }
+      return Math.sqrt(m);
+    };
+
+    const P = [], D = [];
+    for (let i = 0; i < n; i++) { P.push(sx[i], sy[i]); D.push(0); }
+
+    // кольца у края — чтобы закругление было гладким
+    for (const off of o.rings) {
+      const every = off < o.step * 1.5 ? 1 : 2;
+      for (let i = 0; i < n; i += every) {
+        const a = (i - 1 + n) % n, b = (i + 1) % n;
+        let tx = sx[b] - sx[a], ty = sy[b] - sy[a];
+        const l = Math.hypot(tx, ty) || 1;
+        const x = sx[i] - ty / l * off, y = sy[i] + tx / l * off;
+        if (!inside(x, y)) continue;
+        const d = dist(x, y);
+        if (Math.abs(d - off) < off * 0.3) { P.push(x, y); D.push(d); }
+      }
+    }
+    // сетка внутри
+    const minD = o.rings[o.rings.length - 1] + o.grid * 0.5;
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    sx.forEach(v => { minX = Math.min(minX, v); maxX = Math.max(maxX, v); });
+    sy.forEach(v => { minY = Math.min(minY, v); maxY = Math.max(maxY, v); });
+    let row = 0;
+    for (let y = minY; y <= maxY; y += o.grid * 0.866, row++) {
+      for (let x = minX + (row % 2) * o.grid / 2; x <= maxX; x += o.grid) {
+        if (!inside(x, y)) continue;
+        const d = dist(x, y);
+        if (d > minD) { P.push(x, y); D.push(d); }
+      }
+    }
+
+    const del = new Delaunator(P);
+    const nv = D.length, tris = [];
+    for (let k = 0; k < del.triangles.length; k += 3) {
+      let a = del.triangles[k], b = del.triangles[k + 1], c = del.triangles[k + 2];
+      const cx = (P[2*a] + P[2*b] + P[2*c]) / 3, cy = (P[2*a+1] + P[2*b+1] + P[2*c+1]) / 3;
+      if (!inside(cx, cy)) continue;
+      const cr = (P[2*b] - P[2*a]) * (P[2*c+1] - P[2*a+1]) - (P[2*b+1] - P[2*a+1]) * (P[2*c] - P[2*a]);
+      if (cr < 0) { const t = b; b = c; c = t; }
+      tris.push(a, b, c);
+    }
+
+    // высота: круглый бортик + мягкий купол
+    const Z = new Float32Array(nv);
+    for (let i = 0; i < nv; i++) {
+      if (D[i] === 0) continue;
+      const t = Math.min(D[i] / o.R, 1);
+      const s = Math.min(D[i] / (o.R * 1.6), 1);
+      Z[i] = o.H * Math.sqrt(1 - (1 - t) * (1 - t)) +
+             o.dome(P[2*i], P[2*i+1]) * s * s * (3 - 2 * s);
+    }
+    // сглаживаем внутренние складки, край не трогаем
+    const nb = Array.from({ length: nv }, () => new Set());
+    for (let k = 0; k < tris.length; k += 3) {
+      const [a, b, c] = [tris[k], tris[k+1], tris[k+2]];
+      nb[a].add(b).add(c); nb[b].add(a).add(c); nb[c].add(a).add(b);
+    }
+    const lock = o.R * 0.45;
+    for (let it = 0; it < o.smooth; it++) {
+      const Z2 = Z.slice();
+      for (let i = 0; i < nv; i++) {
+        if (D[i] < lock || !nb[i].size) continue;
+        let s = 0; nb[i].forEach(j => (s += Z[j]));
+        Z2[i] = 0.5 * Z[i] + 0.5 * s / nb[i].size;
+      }
+      Z.set(Z2);
+    }
+
+    // перед и зад; точки края общие, поэтому шов не виден
+    const back = new Int32Array(nv);
+    const pos = [];
+    for (let i = 0; i < nv; i++) pos.push(P[2*i], P[2*i+1], Z[i]);
+    let next = nv;
+    for (let i = 0; i < nv; i++) {
+      if (D[i] === 0) back[i] = i;
+      else { back[i] = next++; pos.push(P[2*i], P[2*i+1], -Z[i]); }
+    }
+    const idx = [];
+    for (let k = 0; k < tris.length; k += 3) {
+      idx.push(tris[k], tris[k+1], tris[k+2]);
+      idx.push(back[tris[k]], back[tris[k+2]], back[tris[k+1]]);
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    geo.setIndex(idx);
+    geo.computeVertexNormals();
+
+    // точка на поверхности спереди: высота и нормаль ближайшей вершины
+    geo.userData.surfaceAt = (x, y) => {
+      let best = 0, bd = Infinity;
+      for (let i = 0; i < nv; i++) {
+        const d = (P[2*i] - x) ** 2 + (P[2*i+1] - y) ** 2;
+        if (d < bd) { bd = d; best = i; }
+      }
+      const nrm = geo.attributes.normal;
+      return { z: Z[best], normal: new THREE.Vector3(nrm.getX(best), nrm.getY(best), nrm.getZ(best)).normalize() };
+    };
+    return geo;
+  }
+
+  const bodyGeo = inflate(shape, {
+    step: 0.035, grid: 0.075, rings: [0.012, 0.035, 0.07, 0.12, 0.18],
+    R: 0.8, H: 0.8, smooth: 25,
+    dome: (x, y) => 0.45 * Math.max(0, 1 - (x / 2.7) ** 2 - ((y - 0.9) / 2.2) ** 2)
+  });
+
+  const character = new THREE.Group();      // вращение и наклон
+  const bouncer = new THREE.Group();        // прыжки и сжатие
+  scene.add(bouncer);
+  bouncer.add(character);
+  character.add(new THREE.Mesh(bodyGeo, enamel));
+
+  // ставит деталь лица на выпуклую поверхность и поворачивает по нормали
+  const Z_AXIS = new THREE.Vector3(0, 0, 1);
+  function stick(mesh, x, y, lift = 0.012, spin = 0) {
+    const s = bodyGeo.userData.surfaceAt(x, y);
+    mesh.position.set(x, y, s.z).addScaledVector(s.normal, lift);
+    mesh.quaternion.setFromUnitVectors(Z_AXIS, s.normal)
+      .multiply(new THREE.Quaternion().setFromAxisAngle(Z_AXIS, spin));
+  }
+
+  // ---------- Лицо ----------
+  const face = new THREE.Group();
+  character.add(face);
+
+  function roundedBar(w, h) {
+    const r = h / 2, s = new THREE.Shape();
+    s.moveTo(-w / 2 + r, -r);
+    s.lineTo(w / 2 - r, -r);
+    s.absarc(w / 2 - r, 0, r, -Math.PI / 2, Math.PI / 2, false);
+    s.lineTo(-w / 2 + r, r);
+    s.absarc(-w / 2 + r, 0, r, Math.PI / 2, Math.PI * 1.5, false);
+    return new THREE.ExtrudeGeometry(s, { depth: 0.03, bevelEnabled: true, bevelThickness: 0.02, bevelSize: 0.015, bevelSegments: 3 });
+  }
+  const eyeGeo = roundedBar(0.52, 0.1);
+  const eyes = [-1.03, 1.07].map(x => {
+    const m = new THREE.Mesh(eyeGeo, dark);
+    stick(m, x, 1.28, 0.01);
+    face.add(m);
+    return m;
+  });
+
+  // счастливые глазки ^^ (появляются по клику)
+  const happyGeo = new THREE.TorusGeometry(0.2, 0.045, 12, 32, Math.PI);
+  const happyEyes = [-1.03, 1.07].map(x => {
+    const m = new THREE.Mesh(happyGeo, dark);
+    stick(m, x, 1.2, 0.03);
+    m.visible = false;
+    face.add(m);
+    return m;
+  });
+
+  const mouth = new THREE.Mesh(new THREE.TorusGeometry(0.17, 0.045, 12, 32, Math.PI), dark);
+  stick(mouth, 0.07, 1.27, 0.03, Math.PI);
+  face.add(mouth);
+
+  const cheekGeo = new THREE.CircleGeometry(0.15, 40);
+  const cheeks = [[-0.69, 0.88], [0.75, 0.88]].map(([x, y]) => {
+    const m = new THREE.Mesh(cheekGeo, pink);
+    stick(m, x, y, 0.012);
+    face.add(m);
+    return m;
+  });
+
+  // ---------- Ручки ----------
+  // Силуэт ручки снят с PNG (левая ручка), плечо спрятано внутри тела
+  const SH = [95, 258];                         // точка плеча в пикселях
+  const q = (x, y) => [(x - SH[0]) / 100, -(y - SH[1]) / 100];
+  const armShape = new THREE.Shape();
+  armShape.moveTo(...q(118, 222));
+  armShape.bezierCurveTo(...q(96, 222), ...q(84, 262), ...q(58, 279));
+  armShape.bezierCurveTo(...q(42, 289), ...q(22, 288), ...q(13, 296));
+  armShape.bezierCurveTo(...q(2, 306), ...q(8, 324), ...q(26, 324));
+  armShape.bezierCurveTo(...q(58, 324), ...q(88, 306), ...q(104, 286));
+  armShape.bezierCurveTo(...q(118, 270), ...q(128, 240), ...q(118, 222));
+  const armGeo = inflate(armShape, {
+    step: 0.02, grid: 0.035, rings: [0.006, 0.018, 0.04, 0.07],
+    R: 0.22, H: 0.26, smooth: 10, dome: () => 0
+  });
+
+  function makeArm(side) {
+    const pivot = new THREE.Group();
+    const [sx, sy] = p(...SH);
+    pivot.position.set(side * -sx, sy, 0);
+    const mesh = new THREE.Mesh(armGeo, enamel);
+    mesh.scale.x = -side;                       // правая ручка — зеркальная копия
+    pivot.add(mesh);
+    character.add(pivot);
+    return pivot;
+  }
+  const armL = makeArm(-1);
+  const armR = makeArm(1);
+
+  // ---------- Мягкая тень ----------
+  const sc = document.createElement('canvas');
+  sc.width = sc.height = 128;
+  const g = sc.getContext('2d');
+  const grad = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  grad.addColorStop(0, 'rgba(30,60,58,0.35)');
+  grad.addColorStop(1, 'rgba(30,60,58,0)');
+  g.fillStyle = grad; g.fillRect(0, 0, 128, 128);
+  const shadow = new THREE.Mesh(
+    new THREE.PlaneGeometry(5, 1.4),
+    new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(sc), transparent: true, depthWrite: false })
+  );
+  shadow.rotation.x = -Math.PI / 2;
+  shadow.position.y = -3.1;
+  scene.add(shadow);
+
+  // ---------- Размер ----------
+  function resize() {
+    const w = host.clientWidth, h = host.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  new ResizeObserver(resize).observe(host);
+  resize();
+
+  // ---------- Взаимодействие ----------
+  let lookX = 0, lookY = 0;          // куда смотрит за курсором
+  let spin = 0, spinVel = 0;         // вращение перетаскиванием
+  let dragging = false, downX = 0, lastX = 0, moved = 0;
+  let joyT = -10;                    // время последнего клика
+
+  window.addEventListener('pointermove', e => {
+    const r = host.getBoundingClientRect();
+    lookX = THREE.MathUtils.clamp((e.clientX - (r.left + r.width / 2)) / r.width, -1, 1);
+    lookY = THREE.MathUtils.clamp((e.clientY - (r.top + r.height / 2)) / r.height, -1, 1);
+    if (dragging) {
+      const dx = e.clientX - lastX;
+      lastX = e.clientX;
+      moved += Math.abs(dx);
+      spin += dx * 0.012;
+      spinVel = dx * 0.012;
+    }
+  });
+  host.addEventListener('pointerdown', e => {
+    dragging = true; moved = 0; downX = lastX = e.clientX;
+    host.setPointerCapture(e.pointerId);
+  });
+  host.addEventListener('pointerup', () => {
+    dragging = false;
+    if (moved < 6) cheer();
+  });
+  host.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); cheer(); }
+  });
+  function cheer() { joyT = clock.getElapsedTime(); }
+
+  // ---------- Анимация ----------
+  const clock = new THREE.Clock();
+  const ease = (a, b, k) => a + (b - a) * k;
+
+  function tick() {
+    const t = clock.getElapsedTime();
+    const motion = reduceMotion ? 0 : 1;
+
+    // инерция вращения и возврат лицом к зрителю
+    if (!dragging) {
+      spin += spinVel;
+      spinVel *= 0.93;
+      if (Math.abs(spinVel) < 0.002) {
+        const target = Math.round(spin / (Math.PI * 2)) * Math.PI * 2;
+        spin = ease(spin, target, 0.04);
+      }
+    }
+
+    character.rotation.y = ease(character.rotation.y, spin + lookX * 0.45, 0.08);
+    character.rotation.x = ease(character.rotation.x, lookY * 0.18, 0.08);
+    character.rotation.z = Math.sin(t * 1.3) * 0.03 * motion;
+
+    // радость по клику: прыжок, взмах, глазки ^^
+    const j = t - joyT;
+    const joyful = j >= 0 && j < 1.6;
+    let jump = 0, squash = 0;
+    if (j >= 0 && j < 0.7) {
+      jump = Math.sin((j / 0.7) * Math.PI) * 0.9;
+      squash = j < 0.1 ? Math.sin(j / 0.1 * Math.PI) * 0.12 : 0;
+    } else if (j >= 0.7 && j < 0.85) {
+      squash = Math.sin(((j - 0.7) / 0.15) * Math.PI) * 0.1;
+    }
+    jump *= motion || 0.3;
+
+    const float = Math.sin(t * 1.8) * 0.12 * motion;
+    bouncer.position.y = float + jump;
+    bouncer.scale.set(1 + squash, 1 - squash, 1 + squash);
+
+    const shadowScale = 1 - (float + jump) * 0.35;
+    shadow.scale.set(shadowScale, 1, shadowScale);
+    shadow.material.opacity = 0.9 - jump * 0.4;
+
+    // ручки
+    const sway = Math.sin(t * 1.8 + 0.6) * 0.08 * motion;
+    const idleL = -sway;
+    let rTarget = sway;
+    if (joyful) rTarget = 1.5 + Math.sin(j * 16) * 0.3;
+    armL.rotation.z = ease(armL.rotation.z, joyful ? -0.35 : idleL, 0.15);
+    armR.rotation.z = ease(armR.rotation.z, rTarget, 0.15);
+
+    eyes.forEach(m => (m.visible = !joyful));
+    happyEyes.forEach(m => (m.visible = joyful));
+    const blush = joyful ? 1.35 : 1;
+    cheeks.forEach(c => {
+      const s = ease(c.scale.x, blush, 0.12);
+      c.scale.set(s, s, 1);
+    });
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>

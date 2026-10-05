@@ -1,3 +1,4 @@
+import { Alexik3D } from "@/shared/ui/alexik-3d";
 import BrickworkSection from "@/widgets/brickwork-section";
 import FaqSection from "@/widgets/faq-section";
 import PromoSection from "@/widgets/promo-section";
@@ -31,6 +32,7 @@ export default function SleepbasedTreatmentPage() {
 				{...STILL_QUESTIONS_LAST_MOCK}
 				className="section"
 			/>
+			<Alexik3D />
 		</main>
 	);
 }

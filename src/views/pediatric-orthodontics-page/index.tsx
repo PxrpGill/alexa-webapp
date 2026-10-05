@@ -1,3 +1,4 @@
+import { Alexik3D } from "@/shared/ui/alexik-3d";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import HealthForFamily from "@/widgets/health-for-family";
 import HeroSlide from "@/widgets/hero-slider-section/ui/hero-slide";
@@ -38,6 +39,7 @@ export default function PediatricOrthodonticsPage() {
 				className="section"
 				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
 			/>
+			<Alexik3D />
 		</main>
 	);
 }
