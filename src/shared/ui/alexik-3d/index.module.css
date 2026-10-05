@@ -1,0 +1,10 @@
+/* Плавающий маскот: правый нижний угол, ниже меню (100) и модалок (100000). */
+.root {
+    @mixin responsive width, 170, 210;
+    @mixin responsive height, 170, 210;
+    @mixin responsive inset-inline-end, 16, 30;
+    @mixin responsive inset-block-end, 16, 30;
+
+    position: fixed;
+    z-index: 90;
+}
