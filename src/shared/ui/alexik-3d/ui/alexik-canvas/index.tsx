@@ -24,8 +24,15 @@ const ease = (a: number, b: number, k: number) => a + (b - a) * k;
 
 export default function AlexikCanvas({
     ariaLabel = DEFAULT_ARIA_LABEL,
+    onCheer,
 }: AlexikCanvasProps) {
     const hostRef = useRef<HTMLButtonElement>(null);
+    // колбэк в ref: эффект монтируется один раз и не должен пересоздавать сцену
+    const onCheerRef = useRef(onCheer);
+
+    useEffect(() => {
+        onCheerRef.current = onCheer;
+    }, [onCheer]);
 
     useEffect(() => {
         const host = hostRef.current;
@@ -75,6 +82,7 @@ export default function AlexikCanvas({
 
         const cheer = () => {
             cheerAt = time;
+            onCheerRef.current?.();
         };
 
         const onPointerMove = (event: PointerEvent) => {

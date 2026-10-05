@@ -1,4 +1,5 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
+import { Alexik3D } from "@/shared/ui/alexik-3d";
 import ChildWhatIncludesServices from "@/widgets/child-what-includes-services";
 import CostOfServices from "@/widgets/cost-of-services";
 import Hero from "@/widgets/hero";
@@ -29,6 +30,7 @@ export default function HygieneAndPreventionPage() {
 			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
+			<Alexik3D />
 		</main>
 	);
 }

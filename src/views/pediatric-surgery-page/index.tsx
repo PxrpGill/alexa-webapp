@@ -1,4 +1,5 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
+import { Alexik3D } from "@/shared/ui/alexik-3d";
 import ChildWhatIncludesServices from "@/widgets/child-what-includes-services";
 import CostOfServices from "@/widgets/cost-of-services";
 import Hero from "@/widgets/hero";
@@ -28,6 +29,7 @@ export default function PediatricSurgeryPage() {
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
 			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} isSlider />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
+			<Alexik3D />
 		</main>
 	);
 }

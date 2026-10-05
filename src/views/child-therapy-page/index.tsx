@@ -1,3 +1,4 @@
+import { Alexik3D } from "@/shared/ui/alexik-3d";
 import BrickworkSection from "@/widgets/brickwork-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
@@ -34,6 +35,7 @@ export default function ChildTherapyPage() {
 				{...FOURTH_TITLE_DESCRIPTION_SLIDER}
 				className="section"
 			/>
+			<Alexik3D />
 		</main>
 	);
 }
