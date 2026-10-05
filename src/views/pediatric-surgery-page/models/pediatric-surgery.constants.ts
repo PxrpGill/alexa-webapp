@@ -95,7 +95,11 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		title: "Смотреть всех специалистов",
 		href: SITE_NAVIGATION.vrachi,
 	},
-	employees: [GLOBAL_EMPLOYEES.nikitin, GLOBAL_EMPLOYEES.shahnazaryan],
+	employees: [
+		GLOBAL_EMPLOYEES.nikitin,
+		GLOBAL_EMPLOYEES.shahnazaryan,
+		GLOBAL_EMPLOYEES.tarasova,
+	],
 };
 
 export const COST_OF_SERVICES: CostOfServicesProps = {
