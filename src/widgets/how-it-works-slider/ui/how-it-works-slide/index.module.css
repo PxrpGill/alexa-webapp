@@ -1,0 +1,127 @@
+.root {
+    @mixin responsive gap, 10, 60;
+    @mixin responsive min-height, 0, 450;
+
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        justify-content: start;
+        flex-direction: column-reverse;
+    }
+}
+
+.sequenceNumber {
+    @mixin responsive font-size, 290, 640;
+
+    line-height: 0.6;
+    translate: 0 20%;
+    position: absolute;
+    font-weight: 700;
+    left: 0;
+    bottom: 0;
+    opacity: 0.1;
+    pointer-events: none;
+
+    @media (max-width: $mobile) {
+        translate: 0 15%;
+    }
+}
+
+.textContent {
+    @mixin responsive padding-block-start, 0, 120;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $mobile) {
+        height: 100%;
+    }
+}
+
+.title {
+    @mixin text-3xl;
+    @mixin responsive padding-block-end, 10, 20;
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 20;
+    }
+}
+
+.description {
+    @mixin text-xl;
+
+    @media (max-width: $mobile) {
+        line-height: 1.44;
+    }
+}
+
+.posterWrapper {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive margin-block-end, 20, 30;
+    @mixin responsive height, 300;
+
+    background-color: var(--color-white-0);
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: $mobile) {
+        flex-shrink: 0;
+    }
+}
+
+.controllers {
+    @mixin responsive padding-block-end, 40, 30;
+    @mixin responsive padding-block-start, 30;
+
+    margin-block-start: auto;
+}
+
+.controllersWrapper {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    align-items: center;
+}
+
+.controller {
+    @mixin transition opacity;
+    @mixin responsive border-size, 1, 1;
+    @mixin responsive width, 60, 60;
+    @mixin responsive height, 60, 60;
+
+    border-radius: 100%;
+    border-style: solid;
+    border-color: var(--color-white-0);
+    position: relative;
+
+    @media (hover:hover) {
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+.arrow {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: 50%;
+
+    &.leftArrow {
+        translate: -55% -50%;
+        rotate: 90deg;
+    }
+
+    &.rightArrow {
+        translate: -45% -50%;
+        rotate: -90deg;
+    }
+}
+
+.arrow path {
+    fill: var(--color-white-0);
+}
+

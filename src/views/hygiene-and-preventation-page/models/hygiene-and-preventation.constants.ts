@@ -8,6 +8,7 @@ import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { HeroProps } from "@/widgets/hero/types/hero.types";
+import type { HowItWorksSliderProps } from "@/widgets/how-it-works-slider/types/how-it-works-slider.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { RecommendsForChildrenProps } from "@/widgets/recommends-for-children/types/recommends-for-children.types";
 
@@ -217,4 +218,70 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 			src: "/system/form.webp",
 		},
 	},
+};
+
+export const HOW_IT_WORKS_SLIDER: Omit<HowItWorksSliderProps, "className"> = {
+	title: "Как проходит гигиена",
+	slides: [
+		{
+			title: "Знакомимся&nbsp;и осматриваем",
+			description:
+				"Сначала врач знакомится с&nbsp;ребёнком и&nbsp;осматривает полость рта. Оценивает состояние зубов и&nbsp;дёсен, количество налёта и&nbsp;качество домашней гигиены.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/1-slide.webp",
+				},
+			},
+		},
+		{
+			title: "Показываем, где нужен уход",
+			description:
+				"Врач помогает ребёнку увидеть, какие места сложно очищать обычной щёткой. При необходимости используем специальные средства, чтобы сделать налёт заметнее.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/2-slide.webp",
+				},
+			},
+		},
+		{
+			title: "Профессионально очищаем",
+			description:
+				"Бережно удаляем мягкий налёт и&nbsp;отложения с&nbsp;поверхности зубов. Подбираем способ очищения с&nbsp;учётом возраста ребёнка и&nbsp;состояния его зубов.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/3-slide.webp",
+				},
+			},
+		},
+		{
+			title: "Полируем зубы",
+			description:
+				"После очищения полируем поверхность зубов, чтобы убрать остатки налёта и&nbsp;сделать эмаль гладкой.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/4-slide.webp",
+				},
+			},
+		},
+		{
+			title: "Учимся чистить зубы правильно",
+			description:
+				"Врач показывает ребёнку правильную технику чистки и&nbsp;обращает внимание на&nbsp;места, которые часто остаются без внимания.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/5-slide.webp",
+				},
+			},
+		},
+		{
+			title: "Подбираем домашний уход",
+			description:
+				"В&nbsp;конце врач даёт индивидуальные рекомендации ребёнку и&nbsp;родителям: как ухаживать за&nbsp;зубами дома, какие средства использовать и&nbsp;на&nbsp;что обратить внимание.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/6-slide.webp",
+				},
+			},
+		},
+	],
 };
