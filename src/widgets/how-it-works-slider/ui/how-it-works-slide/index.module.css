@@ -74,7 +74,7 @@
 
 .controllers {
     @mixin responsive padding-block-end, 40, 30;
-    @mixin responsive padding-block-start, 30;
+    @mixin responsive padding-block-start, 30, 30;
 
     margin-block-start: auto;
 }

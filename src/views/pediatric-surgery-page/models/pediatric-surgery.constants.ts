@@ -8,6 +8,7 @@ import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { HeroProps } from "@/widgets/hero/types/hero.types";
+import type { HowItWorksSliderProps } from "@/widgets/how-it-works-slider/types/how-it-works-slider.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { RecommendsForChildrenProps } from "@/widgets/recommends-for-children/types/recommends-for-children.types";
 
@@ -228,4 +229,70 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 			src: "/system/form.webp",
 		},
 	},
+};
+
+export const HOW_IT_WORKS_SLIDER: Omit<HowItWorksSliderProps, "className"> = {
+	title: "Как проходит хирургическое лечение?",
+	slides: [
+		{
+			title: "Знакомимся и&nbsp;осматриваем",
+			description:
+				"Врач знакомится с&nbsp;ребёнком и&nbsp;проводит осмотр полости рта. Если необходима дополнительная диагностика, специалист расскажет, какое исследование потребуется и&nbsp;зачем оно нужно.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/1-slide.webp",
+				},
+			},
+		},
+		{
+			title: "Обсуждаем план лечения",
+			description:
+				"Перед процедурой врач подробно рассказывает родителям о&nbsp;предстоящем вмешательстве.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/2-slide.webp",
+				},
+			},
+		},
+		{
+			title: "Подготавливаем ребёнка",
+			description:
+				"Перед началом процедуры создаём спокойную обстановку и&nbsp;даём ребёнку время освоиться.<br /><br/> Врач объясняет происходящее понятными словами и&nbsp;отвечает на&nbsp;вопросы. Важно, чтобы ребёнок понимал, что его ждёт, и&nbsp;чувствовал себя максимально спокойно.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/3-slide.webp",
+				},
+			},
+		},
+		{
+			title: "Проводим процедуру",
+			description:
+				"После подготовки врач выполняет необходимое хирургическое вмешательство.<br/><br/> Процедура проводится с&nbsp;использованием местной анестезии, чтобы ребёнок не&nbsp;чувствовал боли во&nbsp;время лечения.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/4-slide.webp",
+				},
+			},
+		},
+		{
+			title: "Даём рекомендации",
+			description:
+				"После процедуры врач рассказывает родителям, как ухаживать за&nbsp;областью вмешательства и&nbsp;что важно учитывать в&nbsp;период восстановления.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/5-slide.webp",
+				},
+			},
+		},
+		{
+			title: "Контролируем результат",
+			description:
+				"Если ситуация требует наблюдения, врач оценивает процесс восстановления на&nbsp;повторном приёме и&nbsp;отвечает на&nbsp;вопросы родителей.",
+			poster: {
+				webp: {
+					src: "/mock/hygiene-and-preventation/slider/6-slide.webp",
+				},
+			},
+		},
+	],
 };
