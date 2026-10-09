@@ -73,3 +73,13 @@
 
     overflow: hidden;
 }
+
+.group {
+    @mixin b3;
+    @mixin responsive padding-block, 18, 24;
+
+    color: var(--color-green-1);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}

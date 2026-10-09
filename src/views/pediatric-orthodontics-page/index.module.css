@@ -1,12 +1,5 @@
-.heroContent[class],
-.hero {
-    @mixin responsive min-height, 0, 640;
-
-    position: relative;
-}
-
-.heroContent[class] {
-    @mixin responsive border-radius, 0, 30;
-
-    overflow: hidden;
+.alexik {
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }

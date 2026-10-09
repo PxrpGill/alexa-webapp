@@ -51,6 +51,16 @@
                 }
             }
         }
+
+        &:not(:disabled):active {
+            background-color: var(--color-green-1);
+            color: var(--color-white-0);
+            border-color: var(--color-green-1);
+
+            .loader path {
+                fill: var(--color-white-0)
+            }
+        }
     }
 
     &:disabled {

@@ -1,0 +1,64 @@
+.root {
+    @mixin transition translate;
+    @mixin responsive gap, 20, 10;
+    @mixin responsive border-radius, 990, 999;
+    @mixin responsive padding-block, 10, 10;
+    @mixin responsive padding-inline-end, 10, 10;
+    @mixin responsive padding-inline-start, 20, 20;
+    @mixin responsive --shadow-y, 0, 0;
+    @mixin responsive --shadow-blur, 10, 4;
+    @mixin responsive --shadow-spread, 0, 0;
+
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 var(--shadow-y) var(--shadow-blur) var(--shadow-spread) rgb(0 0 0 / 25%);
+    background-color: var(--color-white-0);
+    z-index: 100;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &.visible {
+        translate: -50% -20%;
+    }
+
+    @media (max-width: $mobile) {
+        &.visible {
+            translate: -50% -20%;
+        }
+    }
+}
+
+.buttonsWrapper {
+    @mixin responsive gap, 5, 5;
+
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.title {
+    @mixin text-md;
+
+    font-weight: 600;
+}
+
+.tab.tab[class] {
+    &.active {
+        @media (hover:hover) {
+            &:hover {
+                color: var(--color-white-0);
+                background-color: var(--color-green-1);
+            }
+        }
+    }
+
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 14;
+    }
+}

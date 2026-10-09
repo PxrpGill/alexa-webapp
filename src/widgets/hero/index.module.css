@@ -24,10 +24,13 @@
 
 .content {
     @mixin responsive padding-block, 30, 90;
-    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive padding-inline-start, 20, 30;
+    @mixin responsive padding-inline-end, 20, 40;
     @mixin responsive gap, 30, 30;
+    @mixin responsive min-height, 0, 450;
 
     display: flex;
+    justify-content: center;
     flex-direction: column;
     border-radius: var(--border-radius) 0 0 var(--border-radius);
 
@@ -38,6 +41,8 @@
 
 .title {
     @mixin text-3xl;
+
+    line-height: 1.5;
 
     @media (max-width: $mobile) {
         @mixin responsive font-size, 18;

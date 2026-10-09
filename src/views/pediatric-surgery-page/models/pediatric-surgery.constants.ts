@@ -5,6 +5,7 @@ import {
 	GLOBAL_EMPLOYEES,
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import type { BeforeAfterSectionProps } from "@/widgets/before-after-section/types/before-after-section.types";
 import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { HeroProps } from "@/widgets/hero/types/hero.types";
@@ -295,4 +296,28 @@ export const HOW_IT_WORKS_SLIDER: Omit<HowItWorksSliderProps, "className"> = {
 			},
 		},
 	],
+};
+
+export const BEFORE_AFTER_SECTION: BeforeAfterSectionProps = {
+	beforeAfterCard: {
+		beforePoster: {
+			webp: {
+				src: "/before-after/1-before.webp",
+			},
+		},
+		afterPoster: {
+			webp: {
+				src: "/before-after/1-after.webp",
+			},
+		},
+		beforeLabel: "До",
+		afterLabel: "После",
+		beforeAlt: "Улыбка пациента до лечения",
+		afterAlt: "Улыбка пациента после лечения",
+	},
+	descriptionCard: {
+		title: "Как меняется улыбка ребёнка после&nbsp;лечения",
+		description:
+			"Потяните ползунок, чтобы сравнить снимки одного пациента до&nbsp;и&nbsp;после. Это работы наших врачей&nbsp;&mdash; публикуем их&nbsp;с&nbsp;согласия родителей.",
+	},
 };

@@ -1,0 +1,13 @@
+.root {
+    @mixin responsive --first-col, 0, 590;
+    @mixin responsive gap, 20, 30;
+
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: $small-desktop-min) {
+    .root {
+        grid-template-columns: var(--first-col) auto;
+    }
+}

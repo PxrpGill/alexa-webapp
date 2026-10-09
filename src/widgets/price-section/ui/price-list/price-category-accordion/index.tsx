@@ -1,6 +1,8 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: intentional suppression */
 'use client';
 
+import { Fragment } from 'react';
+
 import type {
     PriceCategory,
     PriceItem,
@@ -45,9 +47,19 @@ export default function PriceCategoryAccordion({
                 aria-hidden={!isOpen}
             >
                 <div className={css.contentInner}>
-                    {items.map((item, i) => (
-                        <PriceRow key={`${item.code ?? ''}-${i}`} {...item} />
-                    ))}
+                    {items.map((item, i) => {
+                        const isGroupStart =
+                            !!item.group && item.group !== items[i - 1]?.group;
+
+                        return (
+                            <Fragment key={`${item.code ?? ''}-${i}`}>
+                                {isGroupStart && (
+                                    <p className={css.group}>{item.group}</p>
+                                )}
+                                <PriceRow {...item} />
+                            </Fragment>
+                        );
+                    })}
                 </div>
             </div>
         </AnimationWrapper>
