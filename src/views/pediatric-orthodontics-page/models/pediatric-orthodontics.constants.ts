@@ -1,22 +1,95 @@
+import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import type { PageContentCategoryType } from "@/features/page-content-filter/types/page-content-filter.types";
+import {
+	APPOINTMENT_ID,
+	COSTS_OF_SERVICES_BUTTON,
+	GLOBAL_EMPLOYEES,
+} from "@/shared/config/global-constants.constants";
+import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
+import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
+import type { CtaHelpSectionProps } from "@/widgets/cta-help-section/types/cta-help-section.types";
 import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
-import type { SlideVariantProps } from "@/widgets/hero-slider-section/types/hero-slider-section.types";
-import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
+import type { HeroProps } from "@/widgets/hero/types/hero.types";
+import type { OrthoHowItWorksProps } from "@/widgets/ortho-how-it-works/models/ortho-how-it-works.types";
+import type { OrthoPriceCardsSectionProps } from "@/widgets/ortho-price-cards/types/ortho-price-cards.types";
+import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 
-export const HERO_MOCK: SlideVariantProps = {
-	title: "алекса",
-	subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
-	legend:
-		"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
+export const HERO_MOCK: HeroProps = {
+	title: "Ровная улыбка&nbsp;&mdash;<br /> с&nbsp;заботой о&nbsp;ребёнке",
+	description:
+		"Помогаем детям и&nbsp;подросткам сформировать правильный прикус и&nbsp;красивую улыбку. Бережно, понятно и&nbsp;без страха&nbsp;&mdash; с&nbsp;индивидуальным планом лечения для каждого ребёнка.",
 	poster: {
 		webp: {
 			src: "/mock/pediatric-orthodontics/hero-desktop.webp",
 		},
 	},
-	card: {
-		title: "Ровные зубы&nbsp;&mdash; уверенность на&nbsp;всю жизнь!",
-		content:
-			"<p>Современные решения для детей и&nbsp;подростков</p><p>Eurokappa Элайнеры&nbsp;&mdash; от&nbsp;90&nbsp;000&nbsp;₽,</p><p> Damon Q&nbsp;брекеты&nbsp;&mdash; от&nbsp;120&nbsp;000&nbsp;₽</p>",
+	button: {
+		title: "Записать ребёнка на приём",
+		href: APPOINTMENT_ID.id,
 	},
+};
+
+export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
+	sectionHeader: {
+		title: "С&nbsp;какими проблемами помогает детский ортодонт",
+		description:
+			"Большинство нарушений проще исправить, пока челюсти ребёнка растут&nbsp;&mdash; ортодонт подбирает решение по&nbsp;возрасту.",
+	},
+	cards: [
+		{
+			title: "Скученность",
+			description:
+				"Зубам не&nbsp;хватает места&nbsp;&mdash; они стоят тесно и&nbsp;заходят друг за&nbsp;друга. Создаём место, пока челюсть растёт.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/first.webp",
+				},
+			},
+		},
+		{
+			title: "Щели между зубами",
+			description:
+				"Находим причину промежутков и&nbsp;аккуратно сближаем зубы.",
+			cardType: "vertical-alexik",
+			poster: {
+				original: {
+					src: "/mock/pediatric-surgery/what-includes-services/happy-alexik.png",
+				},
+			},
+		},
+		{
+			title: "Неправильный прикус",
+			description:
+				"Челюсти смыкаются неверно, из-за этого страдают жевание, дыхание и&nbsp;речь. Направляем рост челюстей и&nbsp;приводим прикус к&nbsp;правильному смыканию.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/third.webp",
+				},
+			},
+		},
+		{
+			title: "Асимметрия",
+			description:
+				"Зубные ряды и&nbsp;черты лица развиваются неравномерно. Выравниваем нагрузку между сторонами, чтобы рост шёл симметрично.",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-surgery/what-includes-services/fourth.webp",
+				},
+			},
+		},
+		{
+			title: "Задержка прорезывания",
+			description:
+				"Зуб не&nbsp;выходит в&nbsp;срок или растёт не&nbsp;на&nbsp;своём месте. По&nbsp;снимку определяем причину и&nbsp;помогаем зубу занять правильное положение.",
+			cardType: "horizontal-alexik",
+			poster: {
+				original: {
+					src: "/mock/pediatric-surgery/what-includes-services/alexik-with-heart.png",
+				},
+			},
+		},
+	],
 };
 
 export const HEALTH_FOR_FAMILY_MOCK: HealthForFamilyProps = {
@@ -226,121 +299,282 @@ export const HEALTH_FOR_FAMILY_MOCK: HealthForFamilyProps = {
 	},
 };
 
-export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	title: "Чем мы&nbsp;отличаемся от&nbsp;других клиник",
-	textBlock: {
-		title: "Новые технологии",
-		description:
-			"Для составления плана лечения мы&nbsp;проводим полноценную диагностику: анализируем профессиональные фотографии зубов и&nbsp;лица, сканы зубных рядов и&nbsp;данные компьютерной томографии. Мы&nbsp;активно работаем высокоточными элайнерами Eurokappa и&nbsp;самыми современными самолигирующими брекетами Damon, благодаря чему уменьшаются сроки лечения.",
+export const PAGE_FILTERS_DICT = {
+	brackets: {
+		title: "Брекеты",
+		slug: "brackets",
 	},
-	posters: [
+	eliners: {
+		title: "Элайнеры",
+		slug: "eliners",
+	},
+};
+
+export const PAGE_FILTERS: Array<PageContentCategoryType> = [
+	...Object.values(PAGE_FILTERS_DICT),
+];
+
+export const FORM_DATA: AppointmentSchedulingProps = {
+	title: "Запись на&nbsp;приём",
+	description:
+		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
+	poster: {
+		webp: {
+			src: "/system/form.webp",
+		},
+	},
+};
+
+export const COST_OF_SERVICES: CostOfServicesProps = {
+	title: "Стоимость услуг:",
+	cards: [
 		{
-			webp: {
-				src: "/mock/home/first-slider/first-desktop.webp",
+			title: "Консультация стоматолога-гигиениста",
+			description:
+				"<p>Осмотр полости рта, оценка качества домашнего ухода и&nbsp;подбор индивидуальных средств гигиены для ребёнка&nbsp;&mdash; без оплаты.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 0,
+		},
+		{
+			title: "Первичный приём педиатра с&nbsp;адаптационным визитом",
+			description:
+				"<p>Знакомство с&nbsp;клиникой и&nbsp;врачом в&nbsp;спокойном темпе, осмотр полости рта и&nbsp;составление плана профилактики.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_500,
+		},
+		{
+			title: "Повторный приём педиатра",
+			description:
+				"<p>Контрольный осмотр: оцениваем состояние зубов и&nbsp;дёсен, качество домашней гигиены и&nbsp;результат профилактики.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_500,
+		},
+		{
+			title: "Профессиональная гигиена, 1&nbsp;уровень сложности",
+			description:
+				"<p>Медобработка, очищение зубов пастой, ультразвук, Airflow, финишная полировка, реминерализующая терапия, стерильный пакет и&nbsp;урок гигиены.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 4_900,
+		},
+		{
+			title: "Профессиональная гигиена, 2&nbsp;уровень сложности",
+			description:
+				"<p>Тот&nbsp;же объём процедуры при меньшем количестве налёта и&nbsp;зубных отложений&nbsp;&mdash; для детей с&nbsp;регулярным домашним уходом.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 4_100,
+		},
+		{
+			title: "Профессиональная гигиена ORTHO",
+			description:
+				"<p>Чистка для детей с&nbsp;брекетами и&nbsp;другими ортодонтическими конструкциями: аккуратное очищение вокруг элементов системы и&nbsp;укрепление эмали.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 4_300,
+		},
+		{
+			title: "Герметизация фиссур",
+			description:
+				"<p>Закрытие природных углублений на&nbsp;жевательных зубах защитным материалом&nbsp;&mdash; там, где кариес появляется чаще всего.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 4_600,
+		},
+		{
+			title: "Реминерализирующая терапия",
+			description:
+				"<p>Насыщение эмали кальцием и&nbsp;фтором после профессиональной чистки: снижает чувствительность зубов и&nbsp;укрепляет защиту от&nbsp;кариеса.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 3_000,
+		},
+		{
+			title: "Глубокое фторирование эмали (1&nbsp;челюсть)",
+			description:
+				"<p>Дополнительная обработка эмали фторсодержащим составом для профилактики кариеса&nbsp;&mdash; по&nbsp;показаниям врача.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_300,
+		},
+	],
+};
+
+export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
+	title: "Врачи, оказывающие услугу",
+	button: {
+		title: "Смотреть всех специалистов",
+		href: SITE_NAVIGATION.vrachi,
+	},
+	employees: [GLOBAL_EMPLOYEES.nikitin, GLOBAL_EMPLOYEES.tarasova],
+};
+
+export const BRACKETS_HOW_IT_WORKS: OrthoHowItWorksProps = {
+	sectionTitle: "Брекет-системы",
+	leftLabel: "Как это работает",
+	rightLabel: "Что исправляют",
+	description:
+		"Брекет-система&nbsp;&mdash; несъёмная конструкция из&nbsp;замков (брекетов), которые фиксируются на&nbsp;зубах, и&nbsp;дуги, соединяющей&nbsp;их. Дуга постепенно перемещает зубы в&nbsp;правильное положение. Брекеты работают круглосуточно и&nbsp;не&nbsp;зависят от&nbsp;дисциплины пациента, поэтому хорошо подходят детям и&nbsp;подросткам.",
+	chips: [
+		"Скученность зубов",
+		"Промежутки между зубами",
+		"Глубокий и&nbsp;открытый прикус",
+		"Перекрёстный прикус",
+		"Дистальный и&nbsp;мезиальный прикус",
+		"Смещение средней линии",
+		"Сложные клинические случаи",
+	],
+};
+
+export const ELINERS_HOW_IT_WORKS: OrthoHowItWorksProps = {
+	sectionTitle: "Элайнеры",
+	leftLabel: "Как это работает",
+	rightLabel: "Что исправляют",
+	description:
+		"Элайнеры&nbsp;&mdash; прозрачные съёмные капы, изготовленные индивидуально по&nbsp;цифровому плану лечения. Каждая новая пара немного смещает зубы, шаг за&nbsp;шагом приближая к&nbsp;результату. Капы практически незаметны, их&nbsp;снимают во&nbsp;время еды и&nbsp;чистки зубов. Для успешного лечения их&nbsp;носят 20&ndash;22 часа в&nbsp;сутки.",
+	chips: [
+		"Скученность зубов",
+		"Промежутки между зубами",
+		"Нарушения прикуса лёгкой степени",
+		"Нарушения прикуса средней степени",
+		"Сложные случаи (Angel Aligner)",
+	],
+};
+
+export const CTA_HELP_SECTION: CtaHelpSectionProps = {
+	title: "Не&nbsp;знаете, что выбрать?",
+	description:
+		"Ортодонт проведёт осмотр и&nbsp;диагностику, расскажет о&nbsp;подходящих вариантах и&nbsp;составит план лечения с&nbsp;точной стоимостью.",
+	button: {
+		title: "Записать ребёнка на приём",
+		isOpenConsultationModal: true,
+	},
+};
+
+export const ORTHO_BRACKETS_CARDS: OrthoPriceCardsSectionProps = {
+	cards: [
+		{
+			title: "Металлические брекеты",
+			indications: [
+				{
+					label: "Возраст",
+					description: "С&nbsp;11&ndash;12&nbsp;лет, подростки и&nbsp;взрослые",
+				},
+				{
+					label: "Показания",
+					description: "Нарушения любой степени сложности",
+				},
+			],
+			price: 120_000,
+			advantages: [
+				"Высокая прочность и&nbsp;надёжность",
+				"Эффективны в&nbsp;сложных случаях",
+				"Небольшой размер замков",
+				"Наиболее доступная стоимость",
+				"Предсказуемый результат",
+			],
+			peculiarities: [
+				"Заметны на&nbsp;зубах&nbsp;&mdash; можно выбрать цветные лигатуры, это нравится многим детям",
+				"Требуют тщательной гигиены и&nbsp;соблюдения рекомендаций по&nbsp;питанию",
+				"Контрольные визиты к&nbsp;ортодонту раз в&nbsp;4&ndash;8 недель",
+			],
+			button: {
+				title: "Записаться на консультацию",
+				isOpenConsultationModal: true,
+			},
+			poster: {
+				webp: {
+					src: "/mock/pediatric-orthodontics/metal-brackets.webp",
+				},
 			},
 		},
 		{
-			webp: {
-				src: "/mock/home/first-slider/second-desktop.webp",
+			title: "Керамические брекеты",
+			indications: [
+				{
+					label: "Возраст",
+					description: "Подростки и&nbsp;взрослые, для кого важна эстетика",
+				},
+				{
+					label: "Показания",
+					description: "Лёгкая, средняя и&nbsp;высокая сложность",
+				},
+			],
+			price: 140_000,
+			advantages: [
+				"Малозаметны&nbsp;&mdash; подбираются под цвет эмал",
+				"Не&nbsp;окрашиваются при правильном уходе",
+				"Гипоаллергенный материал",
+				"Наиболее доступная стоимость",
+				"Эффективность как у&nbsp;металлических систем",
+			],
+			peculiarities: [
+				"Стоимость выше, чем у&nbsp;металлических систем",
+				"Требуют аккуратного обращения и&nbsp;отказа от&nbsp;твёрдой пищи",
+				"Важно соблюдать гигиену и&nbsp;ограничивать красящие продукты",
+			],
+			button: {
+				title: "Записаться на консультацию",
+				isOpenConsultationModal: true,
 			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/third-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/fourth-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/fifth-desktop.webp",
+			poster: {
+				webp: { src: "/mock/pediatric-orthodontics/keramik-brackets.webp" },
 			},
 		},
 	],
 };
 
-export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Комфортная атмосфера:",
-		description:
-			"Мы&nbsp;делаем все возможное, чтобы ваше посещение было приятным и&nbsp;безопасным.",
-	},
-	posters: [
+export const ORTHO_ELINERS_CARDS: OrthoPriceCardsSectionProps = {
+	cards: [
 		{
-			webp: {
-				src: "/mock/adult-orthopedics/second-slider/1-slide.webp",
+			title: "EUROKAPPA",
+			indications: [
+				{
+					label: "Показания",
+					description:
+						"Скученность зубов, промежутки между зубами, нарушения прикуса лёгкой и&nbsp;средней степени",
+				},
+			],
+			chips: ["Россия", "Дети · подростки · взрослые"],
+			price: 120_000,
+			advantages: [
+				"Доступная стоимость при высоком качестве",
+				"Незаметны на&nbsp;зубах",
+				"Не&nbsp;мешают учёбе, спорту и&nbsp;общению",
+			],
+			peculiarities: [
+				"Отечественная система элайнеров",
+				"Быстрое изготовление&nbsp;&mdash; обычно 7&ndash;14 дней",
+				"Цифровое планирование лечения",
+				"Оптимальное сочетание цены и&nbsp;качества",
+			],
+			button: {
+				title: "Записаться на консультацию",
+				isOpenConsultationModal: true,
 			},
 		},
 		{
-			webp: {
-				src: "/mock/home/second-slider/2-4.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/adult-orthopedics/second-slider/3-slide.webp",
-			},
-		},
-	],
-};
-
-export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Комфортная атмосфера:",
-		description:
-			"Мы&nbsp;делаем все возможное, чтобы ваше посещение было приятным и&nbsp;безопасным.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-1-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-1-slide.jpg",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-2-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-2-slide.jpg",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/pediatric-dental-consultation/2-3-slide.webp",
-			},
-			original: {
-				src: "/mock/pediatric-dental-consultation/2-3-slide.jpg",
-			},
-		},
-	],
-};
-
-export const FOURTH_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Комплексный подход",
-		description:
-			"У&nbsp;нас работают врачи всех стоматологических специальностей, между которыми налажено взаимодействие. Все клинические случаи обсуждаются на&nbsp;консилиуме. Для каждого пациента выстраивается полноценный маршрут прохождения специалистов, который координирует администратор.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/adult-orthopedics/fourth-slider/1-slide.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/adult-orthopedics/fourth-slider/2-slide.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/adult-orthopedics/fourth-slider/3-slide.webp",
+			title: "Angel Aligner",
+			indications: [
+				{
+					label: "Показания",
+					description:
+						"Скученность зубов, промежутки между зубами, нарушения прикуса лёгкой, средней и&nbsp;высокой сложности",
+				},
+			],
+			chips: ["Китай", "Дети · подростки · взрослые"],
+			price: 120_000,
+			advantages: [
+				"Подходит для широкого спектра клинических случаев",
+				"Высокая прозрачность и&nbsp;эстетика",
+				"Комфорт при ношении",
+				"Можно заранее увидеть результат лечения",
+			],
+			peculiarities: [
+				"Одна из&nbsp;крупнейших систем элайнеров в&nbsp;мире",
+				"Современный многослойный материал с&nbsp;высокой прозрачностью",
+				"Гладкая поверхность и&nbsp;точная посадка",
+				"Быстрое изготовление&nbsp;&mdash; обычно 7&ndash;14 дней",
+				"Для простых и&nbsp;сложных клинических случаев",
+				"Цифровой план лечения с&nbsp;визуализацией результата до&nbsp;начала терапии",
+			],
+			button: {
+				title: "Записаться на консультацию",
+				isOpenConsultationModal: true,
 			},
 		},
 	],

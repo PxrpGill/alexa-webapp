@@ -1,0 +1,160 @@
+.root {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive padding-block-end, 30, 30;
+    @mixin responsive gap, 20, 40;
+
+    overflow: hidden;
+    background-color: var(--color-white-0);
+    display: flex;
+    flex-direction: column;
+}
+
+.chips {
+    @mixin responsive gap, 5, 5;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chip {
+    @mixin responsive padding, 14, 14;
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive font-size, 14, 14;
+
+    font-weight: 600;
+    background-color: var(--color-white-0);
+}
+
+.title,
+.price {
+    max-width: 45%;
+
+    @media (max-width: $mobile) {
+        max-width: unset;
+    }
+}
+
+.title {
+    @mixin text-3xl;
+
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+}
+
+.price {
+    @mixin text-3xl;
+
+    font-weight: 700;
+}
+
+.icon {
+    @mixin responsive width, 20, 20;
+    @mixin responsive height, 20, 20;
+}
+
+.button[class] {
+    width: fit-content;
+}
+
+.posterWrapper {
+    @mixin responsive min-height, 300, 300;
+    @mixin responsive padding-block, 30, 40;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    background-color: var(--color-green-5);
+}
+
+.peculiaritiesWrapper,
+.controls,
+.advantagesWrapper,
+.posterWrapper,
+.indicationsWrapper {
+    @mixin responsive padding-inline, 20, 30;
+}
+
+.controls {
+    margin-block-start: auto;
+}
+
+.indicationsWrapper {
+    @mixin responsive gap, 20, 15;
+
+    display: flex;
+}
+
+.indicationBlock {
+    @mixin responsive border-radius, 10, 10;
+    @mixin responsive padding, 15, 15;
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white-1);
+}
+
+.indicationLabel {
+    @mixin text-md;
+
+    font-weight: 600;
+}
+
+.indicationDescription {
+    @mixin text-base;
+}
+
+.advantagesWrapper,
+.peculiaritiesWrapper {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.blockLabel {
+    @mixin text-lg;
+
+    font-weight: 600;
+}
+
+.advantagesList,
+.peculiaritiesList {
+    @mixin responsive gap, 5, 10;
+    @mixin responsive padding-inline-end, 40, 120;
+    @mixin responsive padding-inline-start, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+    list-style: disc;
+
+}
+
+.peculiarity,
+.advantage {
+    @mixin text-base;
+}
+
+.poster[class] {
+    @mixin responsive margin-inline-end, 20, 30;
+}
+
+.poster[class],
+.poster[class] img {
+    width: auto;
+    height: 85%;
+    right: 0;
+    left: unset;
+    top: 50%;
+    translate: 0 -50%;
+
+    @media (max-width: $mobile) {
+        position: static;
+        width: 100%;
+        height: auto;
+        top: unset;
+        translate: 0;
+    }
+}
