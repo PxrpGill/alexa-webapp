@@ -1,5 +1,6 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { Alexik3D } from "@/shared/ui/alexik-3d";
+import CertificatesSection from "@/widgets/certificates-section";
 import ChildWhatIncludesServices from "@/widgets/child-what-includes-services";
 import CostOfServices from "@/widgets/cost-of-services";
 import Hero from "@/widgets/hero";
@@ -8,6 +9,7 @@ import OurPeopleSection from "@/widgets/our-people-section";
 import RecommendsForChildren from "@/widgets/recommends-for-children";
 import css from "./index.module.css";
 import {
+	CERTIFICATES_SECTION,
 	CHILD_WHAT_INCLUDES_SERVICES,
 	COST_OF_SERVICES,
 	EMPLOYEES_SECTION,
@@ -32,6 +34,7 @@ export default function HygieneAndPreventionPage() {
 			<HowItWorksSlider className="section" {...HOW_IT_WORKS_SLIDER} />
 			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
+			<CertificatesSection className="section" {...CERTIFICATES_SECTION} />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 			<Alexik3D />
 		</main>

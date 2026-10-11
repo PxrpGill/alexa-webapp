@@ -5,6 +5,7 @@ import {
 	GLOBAL_EMPLOYEES,
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
 import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { FirstVisitSectionProps } from "@/widgets/first-visit-section/types/first-visit-section.types";
@@ -250,6 +251,32 @@ export const FIRST_VISIT_SECTION_DATA: FirstVisitSectionProps = {
 				webp: {
 					src: "/mock/pediatric-dental-consultation/first-visit/fourth-card.webp",
 				},
+			},
+		},
+	],
+};
+
+export const CERTIFICATES_SECTION: CertificatesSectionProps = {
+	sectionHeader: {
+		title: "Бонусная система",
+		card: {
+			title: "Ваше лечение возвращается подарками!",
+			button: {
+				title: "Ознакомиться с акциями",
+				href: SITE_NAVIGATION.akcii,
+			},
+		},
+	},
+	certificateCards: [
+		{ webp: { src: "/system/certificates/1-green.webp" } },
+		{
+			webp: {
+				src: "/system/certificates/2-white.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/system/certificates/3-green.webp",
 			},
 		},
 	],
