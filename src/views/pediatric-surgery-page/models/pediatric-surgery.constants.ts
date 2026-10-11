@@ -300,20 +300,24 @@ export const HOW_IT_WORKS_SLIDER: Omit<HowItWorksSliderProps, "className"> = {
 
 export const BEFORE_AFTER_SECTION: BeforeAfterSectionProps = {
 	beforeAfterCard: {
-		beforePoster: {
-			webp: {
-				src: "/before-after/1-before.webp",
+		pairs: [
+			{
+				beforePoster: {
+					webp: {
+						src: "/before-after/1-before.webp",
+					},
+				},
+				afterPoster: {
+					webp: {
+						src: "/before-after/1-after.webp",
+					},
+				},
+				beforeAlt: "Улыбка пациента до лечения",
+				afterAlt: "Улыбка пациента после лечения",
 			},
-		},
-		afterPoster: {
-			webp: {
-				src: "/before-after/1-after.webp",
-			},
-		},
+		],
 		beforeLabel: "До",
 		afterLabel: "После",
-		beforeAlt: "Улыбка пациента до лечения",
-		afterAlt: "Улыбка пациента после лечения",
 	},
 	descriptionCard: {
 		title: "Как меняется улыбка ребёнка после&nbsp;лечения",

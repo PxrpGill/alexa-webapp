@@ -7,7 +7,10 @@ import {
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
-import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
+import type {
+	CostOfServicesCardProps,
+	CostOfServicesProps,
+} from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { CtaHelpSectionProps } from "@/widgets/cta-help-section/types/cta-help-section.types";
 import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
 import type { HeroProps } from "@/widgets/hero/types/hero.types";
@@ -325,72 +328,301 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 	},
 };
 
-export const COST_OF_SERVICES: CostOfServicesProps = {
+const ORTHO_COMMON_SERVICES: Array<CostOfServicesCardProps> = [
+	{
+		title: "Приём (осмотр, консультация) врача-ортодонта",
+		description:
+			"<p>Осмотр ребёнка, оценка прикуса и&nbsp;этапа смены зубов, ответы на&nbsp;вопросы родителей и&nbsp;подбор подходящего метода лечения.</p>",
+		button: COSTS_OF_SERVICES_BUTTON,
+		price: 1_500,
+	},
+	{
+		title:
+			"Диагностика и&nbsp;составление плана лечения (антропометрические исследования)",
+		description:
+			"<p>Оттиски или цифровое сканирование, диагностические модели и&nbsp;медицинское фотографирование&nbsp;&mdash; на&nbsp;их&nbsp;основе ортодонт составляет план лечения с&nbsp;точной стоимостью.</p>",
+		button: COSTS_OF_SERVICES_BUTTON,
+		price: 6_850,
+	},
+];
+
+const ORTHO_COMMON_APPOINTMENTS: Array<CostOfServicesCardProps> = [
+	{
+		title: "Повторный приём врача-ортодонта",
+		description:
+			"<p>Контрольный осмотр в&nbsp;процессе наблюдения: оцениваем динамику роста челюстей, положение зубов и&nbsp;необходимость начинать лечение.</p>",
+		button: COSTS_OF_SERVICES_BUTTON,
+		price: 1_500,
+	},
+	{
+		title:
+			"Первичный приём ребёнка, находящегося на&nbsp;ортодонтическом лечении в&nbsp;другой клинике",
+		description:
+			"<p>Разбираем текущий план лечения и&nbsp;состояние аппаратуры, говорим о&nbsp;возможности продолжить лечение у&nbsp;нас.</p>",
+		button: COSTS_OF_SERVICES_BUTTON,
+		price: 2_500,
+	},
+];
+
+const ORTHO_COMMON_RETENTION: Array<CostOfServicesCardProps> = [
+	{
+		title: "Установка несъёмного ретейнера (1&nbsp;зубной ряд)",
+		description:
+			"<p>Тонкая проволочная дуга с&nbsp;внутренней стороны зубов&nbsp;&mdash; удерживает результат лечения и&nbsp;незаметна для окружающих.</p>",
+		button: COSTS_OF_SERVICES_BUTTON,
+		price: 6_300,
+	},
+	{
+		title: "Изготовление и&nbsp;установка съёмной ретенционной каппы",
+		description:
+			"<p>Прозрачная каппа для ношения после лечения: закрепляет новое положение зубов и&nbsp;не&nbsp;даёт им&nbsp;вернуться назад.</p>",
+		button: COSTS_OF_SERVICES_BUTTON,
+		price: 7_500,
+	},
+	{
+		title:
+			"Снятие ортодонтического аппарата&nbsp;&mdash; брекет-системы или элайнеров (1&nbsp;зубной ряд)",
+		description:
+			"<p>Аккуратное снятие конструкции и&nbsp;очищение эмали от&nbsp;остатков фиксирующего материала после завершения лечения.</p>",
+		button: COSTS_OF_SERVICES_BUTTON,
+		price: 6_300,
+	},
+];
+
+export const COST_OF_SERVICES_BRACKETS: CostOfServicesProps = {
 	title: "Стоимость услуг:",
 	cards: [
+		...ORTHO_COMMON_SERVICES,
 		{
-			title: "Консультация стоматолога-гигиениста",
+			title:
+				"Самолигирующая металлическая брекет-система, 1&nbsp;зубной ряд&nbsp;&mdash; лабораторный этап",
 			description:
-				"<p>Осмотр полости рта, оценка качества домашнего ухода и&nbsp;подбор индивидуальных средств гигиены для ребёнка&nbsp;&mdash; без оплаты.</p>",
+				"<p>Подготовка системы к&nbsp;установке: расчёт положения замков по&nbsp;моделям и&nbsp;изготовление индивидуального шаблона фиксации.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 0,
+			price: 31_500,
 		},
 		{
-			title: "Первичный приём педиатра с&nbsp;адаптационным визитом",
+			title:
+				"Самолигирующая металлическая брекет-система, 1&nbsp;зубной ряд&nbsp;&mdash; клинический этап",
 			description:
-				"<p>Знакомство с&nbsp;клиникой и&nbsp;врачом в&nbsp;спокойном темпе, осмотр полости рта и&nbsp;составление плана профилактики.</p>",
+				"<p>Фиксация брекетов на&nbsp;зубах и&nbsp;установка первой дуги, урок гигиены и&nbsp;рекомендации по&nbsp;питанию для ребёнка.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 1_500,
+			price: 31_500,
 		},
 		{
-			title: "Повторный приём педиатра",
+			title:
+				"Самолигирующая эстетическая брекет-система, 1&nbsp;зубной ряд&nbsp;&mdash; лабораторный этап",
 			description:
-				"<p>Контрольный осмотр: оцениваем состояние зубов и&nbsp;дёсен, качество домашней гигиены и&nbsp;результат профилактики.</p>",
+				"<p>Та&nbsp;же подготовка для керамической системы: замки подбираются под цвет эмали и&nbsp;почти не&nbsp;видны на&nbsp;зубах.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 1_500,
+			price: 42_000,
 		},
 		{
-			title: "Профессиональная гигиена, 1&nbsp;уровень сложности",
+			title:
+				"Самолигирующая эстетическая брекет-система, 1&nbsp;зубной ряд&nbsp;&mdash; клинический этап",
 			description:
-				"<p>Медобработка, очищение зубов пастой, ультразвук, Airflow, финишная полировка, реминерализующая терапия, стерильный пакет и&nbsp;урок гигиены.</p>",
+				"<p>Фиксация керамических брекетов и&nbsp;дуги&nbsp;&mdash; вариант для подростков, которым важна незаметность лечения.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 4_900,
+			price: 42_000,
 		},
 		{
-			title: "Профессиональная гигиена, 2&nbsp;уровень сложности",
+			title:
+				"Брекет-система 2&times;4, 1&nbsp;зубной ряд&nbsp;&mdash; лабораторный этап",
 			description:
-				"<p>Тот&nbsp;же объём процедуры при меньшем количестве налёта и&nbsp;зубных отложений&nbsp;&mdash; для детей с&nbsp;регулярным домашним уходом.</p>",
+				"<p>Детская частичная система на&nbsp;четыре передних зуба и&nbsp;два моляра: подготовка конструкции для раннего лечения в&nbsp;сменном прикусе.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 4_100,
+			price: 21_000,
 		},
 		{
-			title: "Профессиональная гигиена ORTHO",
+			title:
+				"Брекет-система 2&times;4, 1&nbsp;зубной ряд&nbsp;&mdash; клинический этап",
 			description:
-				"<p>Чистка для детей с&nbsp;брекетами и&nbsp;другими ортодонтическими конструкциями: аккуратное очищение вокруг элементов системы и&nbsp;укрепление эмали.</p>",
+				"<p>Установка системы 2&times;4&nbsp;&mdash; помогает выровнять передние зубы и&nbsp;создать место для постоянных ещё до&nbsp;полной смены зубов.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 4_300,
+			price: 21_000,
 		},
 		{
-			title: "Герметизация фиссур",
+			title:
+				"Частичная самолигирующая брекет-система в&nbsp;пределах одного зубного ряда&nbsp;&mdash; лабораторный этап",
 			description:
-				"<p>Закрытие природных углублений на&nbsp;жевательных зубах защитным материалом&nbsp;&mdash; там, где кариес появляется чаще всего.</p>",
+				"<p>Подготовка системы для локальной задачи: выровнять группу зубов или создать место перед основным этапом лечения.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 4_600,
+			price: 15_750,
 		},
 		{
-			title: "Реминерализирующая терапия",
+			title:
+				"Частичная самолигирующая брекет-система в&nbsp;пределах одного зубного ряда&nbsp;&mdash; клинический этап",
 			description:
-				"<p>Насыщение эмали кальцием и&nbsp;фтором после профессиональной чистки: снижает чувствительность зубов и&nbsp;укрепляет защиту от&nbsp;кариеса.</p>",
+				"<p>Фиксация частичной системы: короче по&nbsp;срокам и&nbsp;доступнее по&nbsp;стоимости, чем лечение на&nbsp;полном зубном ряду.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 3_000,
+			price: 15_750,
 		},
 		{
-			title: "Глубокое фторирование эмали (1&nbsp;челюсть)",
+			title:
+				"Курс лечения самолигирующей брекет-системой, 1&nbsp;зубной ряд",
 			description:
-				"<p>Дополнительная обработка эмали фторсодержащим составом для профилактики кариеса&nbsp;&mdash; по&nbsp;показаниям врача.</p>",
+				"<p>Полный курс ведения лечения на&nbsp;брекетах: плановые визиты, смена дуг и&nbsp;активации до&nbsp;достижения результата.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 1_300,
+			price: 73_500,
+			priceType: "from",
 		},
+		{
+			title:
+				"Курс лечения частичной самолигирующей брекет-системой в&nbsp;пределах одного зубного ряда",
+			description:
+				"<p>Ведение лечения на&nbsp;частичной системе или системе 2&times;4&nbsp;&mdash; для ограниченной ортодонтической задачи.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 52_500,
+			priceType: "from",
+		},
+		{
+			title: "Активация брекет-системы, 1&nbsp;челюсть",
+			description:
+				"<p>Плановый визит раз в&nbsp;4&ndash;8 недель: врач меняет или подтягивает дугу, чтобы зубы продолжали двигаться.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 3_700,
+		},
+		{
+			title: "Активация брекет-системы, 2&nbsp;челюсти",
+			description:
+				"<p>Тот&nbsp;же плановый визит при лечении на&nbsp;обеих челюстях&nbsp;&mdash; выгоднее, чем две активации по&nbsp;отдельности.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 6_800,
+		},
+		{
+			title: "Активация брекет-системы 2&times;4",
+			description:
+				"<p>Контрольный визит для детской частичной системы: оцениваем движение зубов и&nbsp;активируем конструкцию.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 4_700,
+		},
+		{
+			title: "Внеплановое посещение в&nbsp;процессе лечения",
+			description:
+				"<p>Приём вне графика&nbsp;&mdash; если отклеился брекет, беспокоит дуга или ребёнок испытывает дискомфорт.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 2_600,
+		},
+		{
+			title: "Замена вестибулярного металлического брекета (1&nbsp;шт.)",
+			description:
+				"<p>Повторная фиксация замка при поломке или потере&nbsp;&mdash; лечение продолжается без потери времени.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 2_100,
+		},
+		{
+			title: "Дуга для брекет-системы (1&nbsp;шт.)",
+			description:
+				"<p>Ортодонтическая дуга&nbsp;&mdash; основной рабочий элемент системы, который и&nbsp;перемещает зубы.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 1_600,
+		},
+		...ORTHO_COMMON_RETENTION,
+		...ORTHO_COMMON_APPOINTMENTS,
+	],
+};
+
+export const COST_OF_SERVICES_ELINERS: CostOfServicesProps = {
+	title: "Стоимость услуг:",
+	cards: [
+		...ORTHO_COMMON_SERVICES,
+		{
+			title: "3D-моделирование ортодонтического лечения на&nbsp;элайнерах",
+			description:
+				"<p>Цифровой план лечения: показываем, как будут двигаться зубы и&nbsp;каким станет результат, ещё до&nbsp;изготовления кап.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 21_000,
+		},
+		{
+			title: "Элайнеры EUROKAPPA Junior First (12&nbsp;пар)",
+			description:
+				"<p>Стартовый детский курс отечественной системы: раннее выравнивание зубов и&nbsp;коррекция небольших нарушений в&nbsp;сменном прикусе.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 99_000,
+		},
+		{
+			title: "Элайнеры EUROKAPPA Junior Next",
+			description:
+				"<p>Продолжение детского курса&nbsp;&mdash; больше пар кап для задач средней сложности и&nbsp;более длительного лечения.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 169_000,
+		},
+		{
+			title: "Элайнеры EUROKAPPA Junior Full",
+			description:
+				"<p>Полный детский курс без ограничения по&nbsp;количеству кап&nbsp;&mdash; для комплексного лечения прикуса у&nbsp;ребёнка.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 259_000,
+		},
+		{
+			title: "Элайнеры Angel Aligner KID&nbsp;I",
+			description:
+				"<p>Детская линейка Angel Aligner для раннего лечения: мягкое воздействие на&nbsp;растущие челюсти и&nbsp;коррекция вредных привычек.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 195_000,
+		},
+		{
+			title: "Элайнеры Angel Aligner KID&nbsp;II",
+			description:
+				"<p>Расширенный детский курс Angel Aligner&nbsp;&mdash; для более выраженных нарушений прикуса в&nbsp;период смены зубов.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 215_000,
+		},
+		{
+			title: "Элайнеры EUROKAPPA Light (12&nbsp;пар)",
+			description:
+				"<p>Подростковый и&nbsp;взрослый курс для лёгких случаев: скученность передних зубов и&nbsp;небольшие промежутки.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 194_000,
+		},
+		{
+			title: "Элайнеры Angel Aligner Select&nbsp;10",
+			description:
+				"<p>Курс на&nbsp;10&nbsp;пар кап для подростков: прозрачный материал, точная посадка и&nbsp;визуализация результата до&nbsp;начала лечения.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 210_000,
+		},
+		{
+			title:
+				"Плановый визит в&nbsp;процессе лечения на&nbsp;элайнерах EUROKAPPA",
+			description:
+				"<p>Контроль лечения: проверяем посадку кап, прогресс по&nbsp;плану и&nbsp;выдаём следующие пары.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 21_000,
+			priceType: "from",
+		},
+		{
+			title:
+				"Дополнительная ревизия EUROKAPPA JUNIOR (в&nbsp;течение 3&nbsp;мес.)",
+			description:
+				"<p>Доработка плана и&nbsp;изготовление дополнительных кап, если зубы сместились не&nbsp;так, как было запланировано.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 17_200,
+		},
+		{
+			title:
+				"Дополнительная ревизия EUROKAPPA JUNIOR (в&nbsp;течение 6&nbsp;мес.)",
+			description:
+				"<p>Расширенная ревизия для более длительного курса&nbsp;&mdash; включает повторное цифровое планирование.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 34_350,
+		},
+		{
+			title: "Печать дополнительной каппы EUROKAPPA (1&nbsp;зубной ряд)",
+			description:
+				"<p>Изготовление замены, если каппа потерялась или сломалась&nbsp;&mdash; лечение продолжается без паузы.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 7_350,
+		},
+		{
+			title: "Ретенционная каппа EUROKAPPA (1&nbsp;зубной ряд)",
+			description:
+				"<p>Каппа для удержания результата после курса элайнеров: изготавливается по&nbsp;финальному положению зубов.</p>",
+			button: COSTS_OF_SERVICES_BUTTON,
+			price: 6_300,
+		},
+		...ORTHO_COMMON_RETENTION,
+		...ORTHO_COMMON_APPOINTMENTS,
 	],
 };
 
@@ -400,7 +632,7 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		title: "Смотреть всех специалистов",
 		href: SITE_NAVIGATION.vrachi,
 	},
-	employees: [GLOBAL_EMPLOYEES.nikitin, GLOBAL_EMPLOYEES.tarasova],
+	employees: [GLOBAL_EMPLOYEES.kravchenko, GLOBAL_EMPLOYEES.tarasova],
 };
 
 export const BRACKETS_HOW_IT_WORKS: OrthoHowItWorksProps = {
@@ -458,8 +690,13 @@ export const ORTHO_BRACKETS_CARDS: OrthoPriceCardsSectionProps = {
 					label: "Показания",
 					description: "Нарушения любой степени сложности",
 				},
+				{
+					label: "Стоимость",
+					description:
+						"За&nbsp;1&nbsp;зубной ряд&nbsp;&mdash; лабораторный и&nbsp;клинический этапы установки",
+				},
 			],
-			price: 120_000,
+			price: 63_000,
 			advantages: [
 				"Высокая прочность и&nbsp;надёжность",
 				"Эффективны в&nbsp;сложных случаях",
@@ -493,10 +730,15 @@ export const ORTHO_BRACKETS_CARDS: OrthoPriceCardsSectionProps = {
 					label: "Показания",
 					description: "Лёгкая, средняя и&nbsp;высокая сложность",
 				},
+				{
+					label: "Стоимость",
+					description:
+						"За&nbsp;1&nbsp;зубной ряд&nbsp;&mdash; лабораторный и&nbsp;клинический этапы установки",
+				},
 			],
-			price: 140_000,
+			price: 84_000,
 			advantages: [
-				"Малозаметны&nbsp;&mdash; подбираются под цвет эмал",
+				"Малозаметны&nbsp;&mdash; подбираются под цвет эмали",
 				"Не&nbsp;окрашиваются при правильном уходе",
 				"Гипоаллергенный материал",
 				"Наиболее доступная стоимость",
@@ -528,9 +770,14 @@ export const ORTHO_ELINERS_CARDS: OrthoPriceCardsSectionProps = {
 					description:
 						"Скученность зубов, промежутки между зубами, нарушения прикуса лёгкой и&nbsp;средней степени",
 				},
+				{
+					label: "Стоимость",
+					description:
+						"За&nbsp;курс кап: Junior First&nbsp;&mdash; от&nbsp;99&nbsp;000&nbsp;₽, Junior Full&nbsp;&mdash; 259&nbsp;000&nbsp;₽",
+				},
 			],
 			chips: ["Россия", "Дети · подростки · взрослые"],
-			price: 120_000,
+			price: 99_000,
 			advantages: [
 				"Доступная стоимость при высоком качестве",
 				"Незаметны на&nbsp;зубах",
@@ -555,9 +802,14 @@ export const ORTHO_ELINERS_CARDS: OrthoPriceCardsSectionProps = {
 					description:
 						"Скученность зубов, промежутки между зубами, нарушения прикуса лёгкой, средней и&nbsp;высокой сложности",
 				},
+				{
+					label: "Стоимость",
+					description:
+						"За&nbsp;курс кап: KID&nbsp;I&nbsp;&mdash; от&nbsp;195&nbsp;000&nbsp;₽, Select&nbsp;10&nbsp;&mdash; 210&nbsp;000&nbsp;₽",
+				},
 			],
 			chips: ["Китай", "Дети · подростки · взрослые"],
-			price: 120_000,
+			price: 195_000,
 			advantages: [
 				"Подходит для широкого спектра клинических случаев",
 				"Высокая прозрачность и&nbsp;эстетика",

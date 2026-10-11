@@ -1,13 +1,36 @@
 .root {
-    @mixin responsive border-radius, 30, 30;
-    @mixin responsive min-height, 300, 450;
     @mixin responsive --divider-width, 4, 5;
     @mixin responsive --grip-size, 40, 56;
+    @mixin responsive --nav-size, 32, 48;
+    @mixin responsive --nav-shift, 2, 8;
+
+    position: relative;
+    user-select: none;
+}
+
+/* Обрезка слоёв живёт здесь, а не на .root, — иначе кнопки,
+   выходящие за край карточки, срезались бы вместе с картинками */
+.viewport {
+    @mixin responsive border-radius, 30, 30;
+    @mixin responsive min-height, 300, 450;
 
     position: relative;
     overflow: hidden;
     background-color: var(--color-white-0);
-    user-select: none;
+}
+
+/* Каждая пара «до/после» — отдельный слой; видно только активный */
+.layer {
+    @mixin transition opacity, 0.4s;
+
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+
+.layerActive {
+    z-index: 1;
+    opacity: 1;
 }
 
 .poster {
@@ -122,4 +145,65 @@
 .root:has(.slider:focus-visible) .grip {
     outline: 2px solid var(--color-green-1);
     outline-offset: 2px;
+}
+
+/* Кнопки переключения пар: по вертикали — центр карточки, по горизонтали —
+   их собственный центр чуть вынесен за её край */
+.nav {
+    @mixin transition background-color;
+
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--nav-size);
+    height: var(--nav-size);
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-white-0);
+    box-shadow: 0 0 15px 0 rgb(0 0 0 / 15%);
+    cursor: pointer;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color-green-6);
+        }
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-green-1);
+        outline-offset: 2px;
+    }
+}
+
+.navPrev {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.navNext {
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.navArrow {
+    @mixin responsive width, 50, 60;
+
+    flex-shrink: 0;
+    height: auto;
+
+    path {
+        stroke-width: 3 !important;
+
+        @media (max-width: $mobile) {
+            stroke-width: 2 !important;
+        }
+    }
+}
+
+.navPrev .navArrow {
+    transform: rotate(180deg);
 }

@@ -6,14 +6,20 @@ export type DescriptionCardProps = {
     description?: string;
 } & PropsWithClassName;
 
+/** Одна пара снимков: что было до лечения и что стало после */
+export type BeforeAfterPairType = {
+    beforePoster: PictureFormatType;
+    afterPoster: PictureFormatType;
+    beforeAlt?: string;
+    afterAlt?: string;
+};
+
 export type BeforeAfterCardProps = {
-    afterPoster?: PictureFormatType;
-    beforePoster?: PictureFormatType;
+    /** Пары снимков. Вторая и дальше переключаются кнопками по краям карточки */
+    pairs?: BeforeAfterPairType[];
     /** Подписи над слоями: «До» / «После» — рисуются, только если переданы */
     beforeLabel?: string;
     afterLabel?: string;
-    beforeAlt?: string;
-    afterAlt?: string;
     /** Стартовое положение разделителя в процентах, 0–100 */
     initialPosition?: number;
 } & PropsWithClassName;

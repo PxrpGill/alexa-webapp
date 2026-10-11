@@ -15,7 +15,8 @@ import css from "./index.module.css";
 import {
 	BRACKETS_HOW_IT_WORKS,
 	CHILD_WHAT_INCLUDES_SERVICES,
-	COST_OF_SERVICES,
+	COST_OF_SERVICES_BRACKETS,
+	COST_OF_SERVICES_ELINERS,
 	CTA_HELP_SECTION,
 	ELINERS_HOW_IT_WORKS,
 	EMPLOYEES_SECTION,
@@ -50,6 +51,10 @@ export default function PediatricOrthodonticsPage() {
 										className="section"
 										{...ORTHO_BRACKETS_CARDS}
 									/>
+									<CostOfServices
+										className="section"
+										{...COST_OF_SERVICES_BRACKETS}
+									/>
 								</Fragment>,
 							],
 							[
@@ -63,6 +68,10 @@ export default function PediatricOrthodonticsPage() {
 										className="section"
 										{...ORTHO_ELINERS_CARDS}
 									/>
+									<CostOfServices
+										className="section"
+										{...COST_OF_SERVICES_ELINERS}
+									/>
 								</Fragment>,
 							],
 						])
@@ -70,7 +79,6 @@ export default function PediatricOrthodonticsPage() {
 				/>
 				<CtaHelpSection className="section" {...CTA_HELP_SECTION} />
 				<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
-				<CostOfServices className="section" {...COST_OF_SERVICES} />
 				<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 				<Alexik3D className={css.alexik} />
 				<PageContentFilter title="Метод лечения:" />
