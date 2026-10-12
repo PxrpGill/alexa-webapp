@@ -23,10 +23,7 @@ export const HERO_DATA: HeroProps = {
 	},
 	poster: {
 		webp: {
-			src: "/mock/child-therapy/1-desktop.webp",
-		},
-		original: {
-			src: "/mock/child-therapy/1-desktop.jpg",
+			src: "/mock/child-therapy/hero-desktop.webp",
 		},
 	},
 };
