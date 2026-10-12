@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 
 import css from "./index.module.css";
@@ -26,6 +30,8 @@ export type PictureProps = {
 	/** Собственные размеры файла — резервируют место и убирают сдвиг макета */
 	width?: number;
 	height?: number;
+	/** Отключает серый скелетон с переливом, пока картинка не загрузилась */
+	withoutSkeleton?: boolean;
 } & PropsWithClassName &
 	PosterImageType;
 
@@ -38,9 +44,29 @@ export default function Picture({
 	decoding,
 	width,
 	height,
+	withoutSkeleton,
 }: PictureProps) {
+	const imgRef = useRef<HTMLImageElement>(null);
+	const [isLoaded, setIsLoaded] = useState(false);
+
+	// Закэшированная (или eager) картинка успевает отрисоваться до гидратации,
+	// её load уже не придёт — без этой проверки скелетон остался бы висеть.
+	useEffect(() => {
+		const img = imgRef.current;
+
+		if (img?.complete && img.naturalWidth > 0) {
+			setIsLoaded(true);
+		}
+	}, []);
+
+	const isSkeletonVisible = !withoutSkeleton && !isLoaded;
+
 	return (
-		<picture className={`${css.root} ${className}`}>
+		<picture
+			className={[css.root, isSkeletonVisible && css.loading, className]
+				.filter(Boolean)
+				.join(" ")}
+		>
 			{poster.avif && (
 				<>
 					{poster.avif.mobile && (
@@ -81,7 +107,8 @@ export default function Picture({
 				</>
 			)}
 			<img
-				className={css.img}
+				ref={imgRef}
+				className={withoutSkeleton ? css.img : `${css.img} ${css.imgReveal}`}
 				src={
 					poster?.avif?.src ||
 					poster?.webp?.src ||
@@ -98,6 +125,10 @@ export default function Picture({
 				decoding={decoding ?? "async"}
 				width={width}
 				height={height}
+				// Ошибка тоже снимает скелетон: иначе битая картинка
+				// анимировалась бы бесконечно.
+				onLoad={() => setIsLoaded(true)}
+				onError={() => setIsLoaded(true)}
 			/>
 		</picture>
 	);

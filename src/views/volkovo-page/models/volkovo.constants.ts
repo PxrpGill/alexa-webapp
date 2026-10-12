@@ -166,7 +166,8 @@ export const SOLUTIONS_SECTION_MOCK: SolutionsSectionProps = {
 		},
 		{
 			title: "Лечение начального кариеса",
-			description: "Лечение воспаления дёсен и&nbsp;кровоточивости",
+			description:
+				"Лечим кариес на&nbsp;ранней стадии, пока он&nbsp;не&nbsp;стал глубоким",
 			href: APPOINTMENT_ID.id,
 			poster: {
 				webp: {
@@ -176,8 +177,7 @@ export const SOLUTIONS_SECTION_MOCK: SolutionsSectionProps = {
 		},
 		{
 			title: "Отбеливание",
-			description:
-				"Глубокая чистка и&nbsp;полировка для здоровых и&nbsp;чистых зубов",
+			description: "Безопасно осветляем эмаль на&nbsp;несколько тонов",
 			href: APPOINTMENT_ID.id,
 			poster: {
 				webp: {

@@ -7,3 +7,65 @@
     height: 100%;
     object-fit: cover;
 }
+
+/**
+ * Скелетон живёт на самом <picture>: фон задаёт серую подложку, ::after гоняет
+ * по ней белый перелив. Анимируется только transform — работа уходит на
+ * композитный слой, а со снятием класса .loading анимация останавливается
+ * совсем (на главной одновременно висит до 65 картинок).
+ */
+.loading {
+    overflow: hidden;
+    background-color: var(--color-gray-7);
+}
+
+.loading::after {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgb(255 255 255 / 55%) 50%,
+        transparent 100%
+    );
+    animation: picture-shimmer 1.4s linear infinite;
+    content: "";
+}
+
+.imgReveal {
+    @mixin transition opacity, 0.4s;
+}
+
+/**
+ * opacity: 0 прячет картинку до события load, поэтому правило закрыто
+ * проверкой на скрипты: если гидратация не случилась, класс .loading снять
+ * некому — и картинка должна остаться видимой, пусть и без проявления.
+ */
+@media (scripting: enabled) {
+    .loading .imgReveal {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loading::after {
+        animation: none;
+    }
+
+    .imgReveal {
+        transition-duration: 0.01ms;
+    }
+}
+
+@keyframes picture-shimmer {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
