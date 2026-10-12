@@ -40,7 +40,7 @@ export default function CookiesPanel() {
 					Мы&nbsp;используем cookie для работы сайта и&nbsp;улучшения сервиса.<br />
 					Используя сайт, вы&nbsp;соглашаетесь с&nbsp;
 					<Link href={SITE_NAVIGATION.privacyPolicy} target="_blank">
-						Политикой конфиденциальности
+						политикой конфиденциальности
 					</Link>{" "}
 					и
 					<Link href={SITE_NAVIGATION.userAgreement}>

@@ -5,6 +5,7 @@ import {
 	GLOBAL_EMPLOYEES,
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import type { BeforeAfterSectionProps } from "@/widgets/before-after-section/types/before-after-section.types";
 import type { BrickworkSectionProps } from "@/widgets/brickwork-section/types/brickwork-section.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
@@ -437,4 +438,33 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 	],
+};
+
+export const BEFORE_AFTER_SECTION: BeforeAfterSectionProps = {
+	beforeAfterCard: {
+		pairs: [
+			{
+				beforePoster: {
+					webp: {
+						src: "/before-after/zakaryan-before-1-gig.webp",
+					},
+				},
+				afterPoster: {
+					webp: {
+						src: "/before-after/zakaryan-after-1-gig.webp",
+					},
+				},
+				beforeAlt:
+					"Зубы пациента до профессиональной гигиены: налёт подсвечен индикатором",
+				afterAlt: "Зубы пациента после профессиональной гигиены",
+			},
+		],
+		beforeLabel: "До",
+		afterLabel: "После",
+	},
+	descriptionCard: {
+		title: "Как меняется улыбка после профессиональной гигиены",
+		description:
+			"Потяните ползунок, чтобы сравнить снимки одного пациента до&nbsp;и&nbsp;после процедуры. На&nbsp;снимке &laquo;до&raquo; налёт подсвечен индикатором&nbsp;&mdash; так видно, где зубная щётка не&nbsp;справляется. Это работа наших врачей, публикуем её&nbsp;с&nbsp;согласия пациента.",
+	},
 };

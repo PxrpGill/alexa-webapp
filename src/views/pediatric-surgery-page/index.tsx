@@ -33,10 +33,10 @@ export default function PediatricSurgeryPage() {
 				{...RECOMMENDS_FOR_CHILDREN_DATA}
 			/>
 			<HowItWorksSlider className="section" {...HOW_IT_WORKS_SLIDER} />
+			<BeforeAfterSection {...BEFORE_AFTER_SECTION} className="section" />
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
 			<CertificatesSection className="section" {...CERTIFICATES_SECTION} />
 			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} isSlider />
-			<BeforeAfterSection {...BEFORE_AFTER_SECTION} className="section" />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 			<Alexik3D />
 		</main>
