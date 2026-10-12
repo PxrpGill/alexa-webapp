@@ -26,7 +26,7 @@ export default function OrthoPriceCard({
 		<article className={`${css.root} ${className}`}>
 			<div className={css.posterWrapper}>
 				{Array.isArray(chips) && (
-					<ul className={css.chips}>
+					<ul className={`${css.chips}`}>
 						{chips.map((chip, index) => (
 							<li
 								key={index}
@@ -49,7 +49,9 @@ export default function OrthoPriceCard({
 			</div>
 
 			{Array.isArray(indications) && (
-				<ul className={css.indicationsWrapper}>
+				<ul
+					className={`${css.indicationsWrapper} ${indications.length === 2 && css.grid}`}
+				>
 					{indications.map((indication, index) => (
 						<li key={index} className={css.indicationBlock}>
 							{indication.label && (

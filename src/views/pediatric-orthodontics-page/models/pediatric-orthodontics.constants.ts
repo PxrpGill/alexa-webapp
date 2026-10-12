@@ -458,8 +458,7 @@ export const COST_OF_SERVICES_BRACKETS: CostOfServicesProps = {
 			price: 15_750,
 		},
 		{
-			title:
-				"Курс лечения самолигирующей брекет-системой, 1&nbsp;зубной ряд",
+			title: "Курс лечения самолигирующей брекет-системой, 1&nbsp;зубной ряд",
 			description:
 				"<p>Полный курс ведения лечения на&nbsp;брекетах: плановые визиты, смена дуг и&nbsp;активации до&nbsp;достижения результата.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
@@ -754,7 +753,7 @@ export const ORTHO_BRACKETS_CARDS: OrthoPriceCardsSectionProps = {
 				isOpenConsultationModal: true,
 			},
 			poster: {
-				webp: { src: "/mock/pediatric-orthodontics/keramik-brackets.webp" },
+				webp: { src: "/mock/pediatric-orthodontics/keramik-brackets-new.webp" },
 			},
 		},
 	],
@@ -764,6 +763,11 @@ export const ORTHO_ELINERS_CARDS: OrthoPriceCardsSectionProps = {
 	cards: [
 		{
 			title: "EUROKAPPA",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-orthodontics/eliners.webp",
+				},
+			},
 			indications: [
 				{
 					label: "Показания",
@@ -796,6 +800,11 @@ export const ORTHO_ELINERS_CARDS: OrthoPriceCardsSectionProps = {
 		},
 		{
 			title: "Angel Aligner",
+			poster: {
+				webp: {
+					src: "/mock/pediatric-orthodontics/eliners.webp",
+				},
+			},
 			indications: [
 				{
 					label: "Показания",
