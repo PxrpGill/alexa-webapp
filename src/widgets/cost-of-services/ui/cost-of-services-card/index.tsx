@@ -34,7 +34,13 @@ export default function CostOfServicesCard({
 				</div>
 				{typeof price === "number" && (
 					<p className={css.price}>
-						{priceType === "from" && "От"} {formatPrice(price)} ₽
+						{price === 0 ? (
+							"Бесплатно"
+						) : (
+							<>
+								{priceType === "from" && "От"} {formatPrice(price)} ₽
+							</>
+						)}
 					</p>
 				)}
 			</div>
