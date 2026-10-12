@@ -5,6 +5,7 @@ import HealthForFamily from "@/widgets/health-for-family";
 import HeroSliderSection from "@/widgets/hero-slider-section";
 import OurWork from "@/widgets/our-work";
 import ParentNewsSection from "@/widgets/parent-news-section";
+import ReviewsWidget from "@/widgets/reviews-widget";
 import StillQuestions from "@/widgets/still-questions";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import css from "./index.module.css";
@@ -17,6 +18,7 @@ import {
 	MOCK_FAQ_SECTION,
 	OUR_WORK,
 	PARENT_NEWS_SECTION_MOCK,
+	REVIEWS_WIDGET,
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	STILL_QUESTIONS,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
@@ -45,6 +47,7 @@ export default function HomePage({ initialNewsData }: HomePageProps) {
 			<HealthForFamily {...HEALTH_FOR_FAMILY} className="section" />
 			<OurWork className="section" {...OUR_WORK} />
 			<FaqSection {...MOCK_FAQ_SECTION} className="section" />
+			<ReviewsWidget {...REVIEWS_WIDGET} className="section" />
 			<StillQuestions {...STILL_QUESTIONS} className="section" />
 			<ParentNewsSection
 				{...{ ...PARENT_NEWS_SECTION_MOCK, news: initialNewsData }}

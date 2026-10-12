@@ -7,6 +7,7 @@ import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/hea
 import type { HeroSliderSectionProps } from "@/widgets/hero-slider-section/types/hero-slider-section.types";
 import type { OurWorkProps } from "@/widgets/our-work/types/our-work.types";
 import type { ParentNewsSectionProps } from "@/widgets/parent-news-section/types/parent-news-section.types";
+import type { ReviewsWidgetProps } from "@/widgets/reviews-widget/types/reviews-widget.types";
 import type { StillQuestionProps } from "@/widgets/still-questions/types/still-questions.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 
@@ -574,4 +575,8 @@ export const OUR_WORK: OurWorkProps = {
 			},
 		},
 	],
+};
+
+export const REVIEWS_WIDGET: ReviewsWidgetProps = {
+	title: "Пациенты о нас",
 };
