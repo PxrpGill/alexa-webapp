@@ -8,6 +8,7 @@ import type { AnnualCareProgramsProps } from "@/widgets/annual-care-programs/typ
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { PreventionSectionProps } from "@/widgets/prevention-section/types/prevention-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
+import type { ReviewsWidgetProps } from "@/widgets/reviews-widget/types/reviews-widget.types";
 import type { SolutionsSectionProps } from "@/widgets/solutions-section/types/solutions-section.types";
 import type { StomatologyProgramProps } from "@/widgets/stomatology-program/types/stomatology-program.types";
 import type { CtaGreenProps } from "../types/cta-green.types";
@@ -194,4 +195,8 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		href: SITE_NAVIGATION.vrachi,
 	},
 	employees: [GLOBAL_EMPLOYEES.kornilov, GLOBAL_EMPLOYEES.zolotovskaya],
+};
+
+export const REVIEWS_WIDGET: ReviewsWidgetProps = {
+	title: "Пациенты о нас",
 };
