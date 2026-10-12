@@ -1,4 +1,5 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
+import BeforeAfterSection from "@/widgets/before-after-section";
 import CostOfServices from "@/widgets/cost-of-services";
 import DiagnosticProcessSection from "@/widgets/diagnostic-process-section";
 import OurPeopleSection from "@/widgets/our-people-section";
@@ -8,6 +9,7 @@ import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
 // import WhyChooseUs from "@/widgets/why-choose-us";
 import {
+	BEFORE_AFTER_SECTION,
 	COST_OF_SERVICES,
 	DIAGNOSTICS_SECTION_MOCK,
 	EMPLOYEES_SECTION,
@@ -25,18 +27,13 @@ export default function AdultHygieneAndPreventionPage() {
 	return (
 		<main className="page-offset">
 			<QuadroSection {...MOCK_QUADRO_SECTION} className="section" />
-			<WhatServiceIncludes
-				className="section"
-				{...WHAT_SERVICE_INCLUDES}
-			/>
-			<TitleStickySection
-				{...TITLE_STICKY_SECTION}
-				className="section"
-			/>
+			<WhatServiceIncludes className="section" {...WHAT_SERVICE_INCLUDES} />
+			<TitleStickySection {...TITLE_STICKY_SECTION} className="section" />
 			<DiagnosticProcessSection
 				className="section"
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
+			<BeforeAfterSection className="section" {...BEFORE_AFTER_SECTION} />
 			{/* <WhyChooseUs className="section" {...WHY_CHOOSE_US} /> */}
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}

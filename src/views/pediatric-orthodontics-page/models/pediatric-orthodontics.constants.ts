@@ -6,6 +6,7 @@ import {
 	GLOBAL_EMPLOYEES,
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import { BeforeAfterSectionProps } from "@/widgets/before-after-section/types/before-after-section.types";
 import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
 import type {
 	CostOfServicesCardProps,
@@ -839,4 +840,32 @@ export const ORTHO_ELINERS_CARDS: OrthoPriceCardsSectionProps = {
 			},
 		},
 	],
+};
+
+export const BEFORE_AFTER_SECTION: BeforeAfterSectionProps = {
+	beforeAfterCard: {
+		pairs: [
+			{
+				beforePoster: {
+					webp: {
+						src: "/before-after/kravchenko-ortho-before.webp",
+					},
+				},
+				afterPoster: {
+					webp: {
+						src: "/before-after/kravchenko-ortho-after.webp",
+					},
+				},
+				beforeAlt: "Улыбка пациента до лечения",
+				afterAlt: "Улыбка пациента после лечения",
+			},
+		],
+		beforeLabel: "До",
+		afterLabel: "После",
+	},
+	descriptionCard: {
+		title: "Как меняется улыбка ребёнка после&nbsp;лечения",
+		description:
+			"Потяните ползунок, чтобы сравнить снимки одного пациента до&nbsp;и&nbsp;после. Это работы наших врачей&nbsp;&mdash; публикуем их&nbsp;с&nbsp;согласия родителей.",
+	},
 };

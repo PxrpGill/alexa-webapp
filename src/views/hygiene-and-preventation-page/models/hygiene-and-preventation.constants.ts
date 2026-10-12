@@ -5,6 +5,7 @@ import {
 	GLOBAL_EMPLOYEES,
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
+import type { BeforeAfterSectionProps } from "@/widgets/before-after-section/types/before-after-section.types";
 import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
 import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
 import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
@@ -311,4 +312,32 @@ export const CERTIFICATES_SECTION: CertificatesSectionProps = {
 			},
 		},
 	],
+};
+
+export const BEFORE_AFTER_SECTION: BeforeAfterSectionProps = {
+	beforeAfterCard: {
+		pairs: [
+			{
+				beforePoster: {
+					webp: {
+						src: "/before-after/nikitin-before-1-gig.webp",
+					},
+				},
+				afterPoster: {
+					webp: {
+						src: "/before-after/nikitin-after-1-gig.webp",
+					},
+				},
+				beforeAlt: "Улыбка пациента до лечения",
+				afterAlt: "Улыбка пациента после лечения",
+			},
+		],
+		beforeLabel: "До",
+		afterLabel: "После",
+	},
+	descriptionCard: {
+		title: "Как меняется улыбка ребёнка после&nbsp;лечения",
+		description:
+			"Потяните ползунок, чтобы сравнить снимки одного пациента до&nbsp;и&nbsp;после. Это работы наших врачей&nbsp;&mdash; публикуем их&nbsp;с&nbsp;согласия родителей.",
+	},
 };

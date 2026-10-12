@@ -7,9 +7,10 @@ import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
 import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
 import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
-import type { SlideVariantProps } from "@/widgets/hero-slider-section/types/hero-slider-section.types";
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
+import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TableImageSectionProps } from "@/widgets/table-image-section/types/table-image-section.types";
+import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
 import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 import type { InfoTabsProps } from "../types/info-tabs.types";
 
@@ -124,49 +125,72 @@ export const FOURTH_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	],
 };
 
-export const FIFTH_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Заботимся о&nbsp;самых маленьких пациентах",
-		description:
-			"Мы&nbsp;умеем работать даже с&nbsp;детьми, которые боятся стоматологов. При необходимости проводим лечение во&nbsp;сне или под седацией, а&nbsp;также можем установить ортодонтические аппараты во&nbsp;время медикаментозного сна. Всё проходит в&nbsp;комфортных условиях и&nbsp;под контролем опытной команды.",
+export const QUADRO_SECTION: QuadroSectionProps = {
+	sectionHeader: {
+		description: "Брекет-системы и&nbsp;элайнеры для взрослых",
+		title: "Исправление прикуса в&nbsp;любом возрасте",
+		underDescription:
+			"Лечение планирует и&nbsp;контролирует главный врач-ортодонт: срок и&nbsp;стоимость известны до&nbsp;фиксации системы и&nbsp;не&nbsp;меняются в&nbsp;процессе.",
+		card: {
+			title: "Разные системы&nbsp;&mdash; один точный результат",
+			description:
+				"<p>Брекеты или элайнеры&nbsp;&mdash; выбираем путь, который будет эффективнее в&nbsp;вашем случае</p>",
+			button: {
+				href: APPOINTMENT_ID.id,
+				title: "Записаться на прием",
+			},
+		},
+		poster: {
+			webp: {
+				src: "/mock/adult-orthodontics/hero.webp",
+			},
+		},
 	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-3.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-2.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-4.webp",
-			},
-		},
-	],
 };
 
-export const HERO_SECTION: SlideVariantProps = {
-	title: "алекса",
-	subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
-	legend:
-		"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей.",
-	poster: {
-		webp: {
-			src: "/mock/adult-orthodontics/hero.webp",
+export const TITLE_STICKY_SECTION: TitleStickySectionProps = {
+	title: "Когда пора к&nbsp;ортодонту",
+	cards: [
+		{
+			title:
+				"Зубы скучены, развёрнуты или растут криво&nbsp;&mdash; их&nbsp;трудно вычистить до&nbsp;конца.",
 		},
-	},
-	card: {
-		title: "Разные системы&nbsp;&mdash; один точный результат",
-		content:
-			"<p>Брекеты или элайнеры&nbsp;&mdash; выбираем путь, который будет эффективнее в&nbsp;вашем случае</p>",
-		button: {
-			href: APPOINTMENT_ID.id,
-			title: "Записаться на прием",
+		{
+			title:
+				"Между зубами есть щели, которые заметны при разговоре и&nbsp;улыбке.",
 		},
+		{
+			title:
+				"Верхняя челюсть сильно перекрывает нижнюю или нижняя выдвинута вперёд.",
+		},
+		{
+			title:
+				"Эмаль стирается неравномерно: зубы &laquo;сточились&raquo; с&nbsp;одной стороны.",
+		},
+		{
+			title:
+				"Щёлкает, хрустит или болит челюстной сустав, по&nbsp;утрам напряжены жевательные мышцы.",
+		},
+		{
+			title:
+				"Готовитесь к&nbsp;протезированию или имплантации: нужно освободить место и&nbsp;выровнять зубной ряд.",
+		},
+		{
+			title:
+				"Возраст не&nbsp;помеха&nbsp;&mdash; взрослым мы&nbsp;подбираем систему с&nbsp;учётом состояния зубов и&nbsp;дёсен",
+			theme: "green",
+		},
+	],
+	lastCard: {
+		poster: {
+			webp: {
+				src: "/mock/sticky-title/title-sticky.webp",
+			},
+			original: {
+				src: "/mock/sticky-title/title-sticky.jpg",
+			},
+		},
+		button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 	},
 };
 
@@ -743,23 +767,13 @@ export const INFO_TABS: InfoTabsProps = {
 export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 	sectionHeader: {
 		title: "Ваша улыбка в&nbsp;руках профессионалов!",
-		description: "Мы&nbsp;реализуем целостный осмотр для своих пациентов:",
+		description: "Так проходит ортодонтическое лечение в&nbsp;нашей клинике:",
 	},
 	cards: [
 		{
-			title: "Удаление зубов:",
+			title: "01. Консультация ортодонта",
 			description:
-				"Бережное удаление на&nbsp;ультразвуковом аппарате NSK VarioSurg3.",
-			poster: {
-				webp: {
-					src: "/mock/diagnostics/5-desktop.webp",
-				},
-			},
-		},
-		{
-			title: "Имплантация зубов:",
-			description:
-				"Протоколы All-on-4/All-on-6 и&nbsp;установка по&nbsp;точным хирургическим шаблонам.",
+				"Врач-ортодонт выслушивает ваш запрос, осматривает зубы и&nbsp;прикус и&nbsp;рассказывает, какие системы подойдут именно в&nbsp;вашем случае.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/1-desktop.webp",
@@ -767,22 +781,42 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 			},
 		},
 		{
-			title: "Анестезия:",
+			title: "02. Комплексная диагностика",
 			description:
-				"Безболезненное лечение под&nbsp;местной анестезией, седацией или&nbsp;наркозом.",
+				"Профессиональные фотографии, 3D-сканирование зубов и&nbsp;компьютерная томография&nbsp;&mdash; чтобы заранее спланировать перемещение каждого зуба.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/6-desktop.webp",
+					src: "/mock/diagnostics/3-desktop.webp",
 				},
 			},
 		},
 		{
-			title: "Зубосохраняющие операции:",
+			title: "03. Обсуждение плана лечения",
 			description:
-				"Пластика десны и&nbsp;уздечки, микрохирургия и&nbsp;закрытие рецессий.",
+				"Главный врач-ортодонт составляет индивидуальный план и&nbsp;фиксирует стоимость до&nbsp;начала лечения. На&nbsp;элайнерах вы&nbsp;заранее видите 3D-план и&nbsp;будущий результат.",
+			poster: {
+				webp: {
+					src: "/mock/diagnostics/2-desktop.webp",
+				},
+			},
+		},
+		{
+			title: "04. Подготовка и&nbsp;фиксация системы",
+			description:
+				"При необходимости проводим гигиену и&nbsp;лечение зубов, затем повторно сканируем зубы и&nbsp;фиксируем брекет-систему или выдаём первую пару элайнеров.",
 			poster: {
 				webp: {
 					src: "/mock/diagnostics/4-desktop.webp",
+				},
+			},
+		},
+		{
+			title: "05. Контроль и&nbsp;ретенция",
+			description:
+				"Плановые визиты для активации системы и&nbsp;замены дуг, а&nbsp;после снятия&nbsp;&mdash; ретейнер или каппы, которые удерживают зубы в&nbsp;новом положении.",
+			poster: {
+				webp: {
+					src: "/mock/adult-orthopedics/fourth-slider/3-slide.webp",
 				},
 			},
 		},
