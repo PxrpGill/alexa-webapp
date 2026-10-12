@@ -16,7 +16,7 @@ import type { WhatServiceIncludesProps } from "@/widgets/what-service-includes/t
 export const QUADRO_MOCK: QuadroSectionProps = {
 	sectionHeader: {
 		title: "Цифровая ортопедия",
-		description: "с&nbsp;интраоральным сканером Detsply Sirona PrimeScan",
+		description: "с&nbsp;интраоральным сканером Dentsply Sirona PrimeScan",
 		card: {
 			title: "Ваша здоровая улыбка начинается здесь!",
 			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },

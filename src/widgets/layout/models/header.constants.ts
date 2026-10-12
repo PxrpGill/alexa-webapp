@@ -72,7 +72,7 @@ export const HEADER_NAVIGATION_ADULT_DENTISTRY_LINKS: HeaderMenuLinksType = [
 	},
 	{
 		title: "Ортопедия",
-		description: "С&nbsp;интраоральным сканером Detsply Sirona PrimeScan",
+		description: "С&nbsp;интраоральным сканером Dentsply Sirona PrimeScan",
 		IconSvg: MouthSVG,
 		href: SITE_NAVIGATION.landyshevayaServices["ortopediya-vz"],
 	},

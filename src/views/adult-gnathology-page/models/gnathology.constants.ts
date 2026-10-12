@@ -20,7 +20,7 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 		card: {
 			title: "Точная диагностика и&nbsp;контроль результата",
 			description:
-				"<p>Вы&nbsp;получите:</p><ul><li>понятную диагностику</li><li>прозрачный план лечения</li><li>сопровождение врача на&nbsp;каждом этапе</li><ul>",
+				"<p>Вы&nbsp;получите:</p><ul><li>понятную диагностику</li><li>прозрачный план лечения</li><li>сопровождение врача на&nbsp;каждом этапе</li></ul>",
 			button: {
 				title: "Записаться на прием",
 				href: APPOINTMENT_ID.id,
@@ -238,7 +238,7 @@ export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
 		title: "Профессионализм:",
 		description:
-			"Наши врачи обладают опытом и знаниями в области детской стоматологии.",
+			"Наши врачи специализируются на&nbsp;диагностике и&nbsp;лечении нарушений работы височно-челюстного сустава.",
 	},
 	posters: [
 		{
