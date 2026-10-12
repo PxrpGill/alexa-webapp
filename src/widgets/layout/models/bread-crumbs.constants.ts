@@ -46,7 +46,7 @@ export const BREAD_CRUMBS_SEGMENTS = new Map<string, string>([
 	],
 	[
 		SITE_NAVIGATION.landyshevayaServices["ortodontiya-vz"].slice(14),
-		"Взрослая ортодония",
+		"Взрослая ортодонтия",
 	],
 	[
 		SITE_NAVIGATION.landyshevayaServices["ortopediya-vz"].slice(14),
@@ -77,4 +77,21 @@ export const BREAD_CRUMBS_SEGMENTS = new Map<string, string>([
 	[SITE_NAVIGATION.vakansii.slice(1), "Вакансии"],
 	[SITE_NAVIGATION.raspisanievrachej.slice(1), "Расписание врачей"],
 	[SITE_NAVIGATION.pacientu.slice(1), "Пациенту"],
+	[SITE_NAVIGATION.privacyPolicy.slice(1), "Политика конфиденциальности"],
+	[
+		SITE_NAVIGATION.userAgreement.slice(1),
+		"Согласие на обработку персональных данных",
+	],
+	[
+		SITE_NAVIGATION.letter.slice(1),
+		"Согласие рассылки рекламно-информационных материалов",
+	],
+	[
+		SITE_NAVIGATION.pravilaokazaniyamedicinskihuslug.slice(1),
+		"Правила оказания медецинских услуг",
+	],
+	[
+		SITE_NAVIGATION.pravilavneseniyaoplatyzamedicinskieuslugi.slice(1),
+		"Правила внесения оплаты за медицинские услуги",
+	],
 ]);
