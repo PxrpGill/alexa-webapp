@@ -1,0 +1,45 @@
+.root {
+    @mixin responsive gap, 20, 60;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    @mixin h2;
+
+    text-align: center;
+    line-height: 1.33;
+}
+
+/*
+ * У проекта `html { font-size: 1vw }`, то есть на 375px корневой размер —
+ * 3.75px. Вендор для части текста (цифры рейтинга у вкладок площадок) размер
+ * не задаёт вовсе и полагается на корневые 16px, поэтому без этой строки
+ * на мобильных рейтинги схлопываются до нечитаемых 3.75px.
+ */
+.widget {
+    @mixin responsive min-height, 480, 450;
+    @mixin responsive font-size, 16, 16;
+
+    width: 100%;
+}
+
+/*
+ * Вендор задаёт ширину контента виджета ID-селектором
+ * `#sw-app-<key> .sw-app-body { width: 1200px }`, из-за чего блок получается
+ * уже соседних секций. Перебить это селектором по классам без !important
+ * нельзя. Если появится доступ в кабинет SmartWidgets — ширину правильнее
+ * поменять там, а эту переопределяющую пару убрать.
+ */
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown -- :global — синтаксис CSS-модулей */
+.widget :global(.sw-app-body) {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    /* На мобильных вендор добавляет собственные 15px по бокам, из-за чего блок
+       получается уже соседних секций — внутренние отступы задаёт `.container`. */
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
