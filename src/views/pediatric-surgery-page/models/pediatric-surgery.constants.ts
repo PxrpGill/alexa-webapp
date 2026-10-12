@@ -134,7 +134,7 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			description:
 				"<p>Обезболивание, удаление разрушенного зуба с&nbsp;воспалением у&nbsp;корня, очищение лунки, остановка кровотечения и&nbsp;рекомендации по&nbsp;уходу.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 4_600,
+			price: 4_950,
 		},
 		{
 			title: "Лечение перикоронарита",

@@ -217,7 +217,7 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			description:
 				"<p>Лечим воспаление, когда кариес дошёл до&nbsp;нерва или вышел за&nbsp;пределы корня, и&nbsp;сохраняем зуб.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 7_400,
+			price: 7_750,
 		},
 		{
 			title: "Биологическое лечение пульпита",
@@ -231,28 +231,28 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			description:
 				"<p>Ранняя стадия на&nbsp;постоянном зубе&nbsp;&mdash; лечение занимает один визит и&nbsp;минимум вмешательства.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 8_500,
+			price: 8_850,
 		},
 		{
 			title: "Лечение кариеса постоянного зуба",
 			description:
 				"<p>Восстанавливаем форму и&nbsp;жевательную функцию постоянного зуба композитной реставрацией.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 10_700,
+			price: 11_050,
 		},
 		{
 			title: "Эндодонтическое лечение (1&#8209;2&nbsp;канала)",
 			description:
 				"<p>Лечение каналов постоянного зуба под микроскопом и&nbsp;в&nbsp;коффердаме.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 9_900,
+			price: 10_250,
 		},
 		{
 			title: "Эндодонтическое лечение (3&nbsp;и&nbsp;более каналов)",
 			description:
 				"<p>Многоканальные жевательные зубы: проходим и&nbsp;пломбируем каждый канал по&nbsp;всей длине.</p>",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 15_000,
+			price: 15_350,
 		},
 		{
 			title: "Постэндодонтическая реставрация",

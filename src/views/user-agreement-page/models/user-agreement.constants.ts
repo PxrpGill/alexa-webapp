@@ -3,7 +3,7 @@ import type { DocumentHeroProps } from '@/widgets/document-hero/types/document-h
 
 export const DOCUMENT_HERO_MOCK: DocumentHeroProps = {
 	title:
-		'Согласие на&nbsp;обработку персональных данных ООО &laquo;Алекса&raquo;',
+		'Согласие на&nbsp;обработку персональных данных ООО&nbsp;&laquo;Алекса&raquo;',
 	subtitle: 'Общество&nbsp;с ограниченной ответственностью «Алекса»',
 };
 

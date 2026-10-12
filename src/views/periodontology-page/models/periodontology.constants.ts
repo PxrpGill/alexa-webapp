@@ -267,14 +267,14 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			description:
 				"Осмотр дёсен, оценка глубины пародонтальных карманов и&nbsp;степени подвижности зубов, составление индивидуального плана лечения.",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 1_350,
+			price: 1_500,
 		},
 		{
 			title: "Шинирование стекловолоконной лентой в&nbsp;области 1&nbsp;зуба",
 			description:
 				"Фиксация подвижного зуба стекловолоконной лентой: снимает избыточную нагрузку и&nbsp;помогает сохранить зуб при заболеваниях пародонта.",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 3_800,
+			price: 4_000,
 		},
 		{
 			title:
@@ -282,7 +282,7 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			description:
 				"Ультразвуковая обработка всех пародонтальных карманов одной челюсти без разрезов: удаление биоплёнки и&nbsp;поддесневых отложений.",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 8_100,
+			price: 9_000,
 		},
 		{
 			title:
@@ -290,7 +290,7 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			description:
 				"Полная обработка пародонтальных карманов обеих челюстей за&nbsp;один приём&nbsp;&mdash; базовый протокол при генерализованном пародонтите.",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 15_300,
+			price: 17_000,
 		},
 		{
 			title:
@@ -298,13 +298,13 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			description:
 				"Обработка одного участка челюсти аппаратом Vector&nbsp;&mdash; для локальных воспалений без вовлечения всего зубного ряда.",
 			button: COSTS_OF_SERVICES_BUTTON,
-			price: 4_500,
+			price: 5_000,
 		},
 		{
 			title: "Шинирование стекловолоконной лентой в&nbsp;области 4-6 зубов",
 			description:
 				"Объединение группы подвижных зубов в&nbsp;единый блок: равномерно распределяет жевательную нагрузку и&nbsp;останавливает расшатывание.",
-			price: 14_850,
+			price: 16_200,
 			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
@@ -322,31 +322,31 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
-			title: "Пародонтолигическая санация&nbsp;&mdash; первичная процедура",
+			title: "Пародонтологическая санация&nbsp;&mdash; первичная процедура",
 			description:
 				"Первый этап лечения: снятие над- и&nbsp;поддесневых отложений, антисептическая обработка карманов и&nbsp;обучение домашнему уходу.",
-			price: 7_200,
+			price: 8_000,
 			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
 			title: "Пародонтологическая санация&nbsp;&mdash; вторичная процедура",
 			description:
 				"Повторная обработка для закрепления результата: оценка динамики, очищение карманов и&nbsp;медикаментозная терапия дёсен.",
-			price: 5_400,
+			price: 6_000,
 			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
 			title: "Пародонтологическая санация&nbsp;&mdash; 1-3 зуба",
 			description:
 				"Локальная санация в&nbsp;области одного-трёх зубов&nbsp;&mdash; при ограниченном очаге воспаления.",
-			price: 5_400,
+			price: 6_000,
 			button: COSTS_OF_SERVICES_BUTTON,
 		},
 		{
 			title: "Пародонтологическая диагностика Florida Probe",
 			description:
 				"Компьютерное измерение глубины карманов по&nbsp;каждому зубу с&nbsp;формированием пародонтальной карты для контроля динамики лечения.",
-			price: 1_900,
+			price: 2_000,
 			button: COSTS_OF_SERVICES_BUTTON,
 		},
 	],

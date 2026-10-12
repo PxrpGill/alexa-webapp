@@ -639,13 +639,6 @@ export const INFO_TABS: InfoTabsProps = {
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
-						title: "Элайнеры EUROKAPPA Complete (22&nbsp;пары)",
-						description:
-							"Курс из&nbsp;22&nbsp;пар элайнеров для случаев средней сложности: моделирование результата, изготовление и&nbsp;сопровождение врача на&nbsp;всех этапах.",
-						price: 275_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
 						title: "Элайнеры EUROKAPPA Profi",
 						description:
 							"Расширенная комплектация для сложных клинических случаев: полный цифровой протокол лечения и&nbsp;сопровождение до&nbsp;достижения результата.",
@@ -670,7 +663,7 @@ export const INFO_TABS: InfoTabsProps = {
 						title: "Элайнеры Spark Advanced",
 						description:
 							"Расширенный курс Spark без ограничения числа пар&nbsp;&mdash; для комплексной коррекции прикуса у&nbsp;взрослых пациентов.",
-						price: 315_000,
+						price: 415_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
@@ -691,7 +684,7 @@ export const INFO_TABS: InfoTabsProps = {
 						title: "Элайнеры Angel Aligner Select&nbsp;30",
 						description:
 							"Курс до&nbsp;30&nbsp;пар для более выраженных нарушений прикуса: цифровое планирование и&nbsp;контроль на&nbsp;каждом этапе.",
-						price: 285_000,
+						price: 315_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
@@ -731,15 +724,15 @@ export const INFO_TABS: InfoTabsProps = {
 						deliveryTime: "~1 неделя с&nbsp;момента оплаты",
 						stepsTime: "Моделирование лечения дольше",
 						wearingComfort: "Стандартный комфорт",
-						specialCases: "Подходят детям, подросткам, врослым",
+						specialCases: "Подходят детям, подросткам, взрослым",
 					},
 					{
-						name: "Angel Aliner",
+						name: "Angel Aligner",
 						country: "Китай",
 						deliveryTime: "~1 неделя с&nbsp;момента оплаты",
 						stepsTime: "Быстрое моделирование лечения",
 						wearingComfort: "Высокий комфорт благодаря многослойному материалу",
-						specialCases: "Подходят детям, подросткам, врослым",
+						specialCases: "Подходят детям, подросткам, взрослым",
 					},
 				],
 			},
