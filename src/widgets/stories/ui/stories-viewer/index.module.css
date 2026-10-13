@@ -1,0 +1,198 @@
+.modal {
+    /*
+     * Кадр 9:16 по высоте экрана, но не шире, чем позволяет окно: рядом
+     * должны уместиться две плашки соседних групп по 60% ширины кадра.
+     */
+    @mixin responsive --story-gap, 15, 25;
+
+    --story-frame-width: min(calc(90dvh * 9 / 16), 36dvw);
+    --story-side-width: calc(var(--story-frame-width) * 0.6);
+
+    /*
+     * На одну ступень выше панели кукисов (у неё тот же z-index 100000):
+     * иначе она перекрывает нижнюю часть кадра и кнопку звука.
+     */
+    z-index: 100001;
+}
+
+/*
+ * Переопределяем белую карточку модалки: сторис — это кадр 9:16 на тёмном
+ * фоне. На мобиле он занимает весь экран.
+ */
+.content[class] {
+    width: 100dvw;
+    height: 100dvh;
+    overflow: visible;
+    background-color: unset;
+    border-radius: 0;
+
+    /* Клики мимо кадра должны доходить до бэкдропа и закрывать просмотрщик */
+    pointer-events: none;
+}
+
+/*
+ * Превью группы под кадром: пока картинка сториса не отрисовалась, в ячейке
+ * остаётся та же картинка, что была на плашке, — переключение не моргает.
+ */
+.backdrop {
+    z-index: 0;
+}
+
+.stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+ * Ячейка сцены. Положение считается от смещения группы относительно
+ * активной, поэтому переключение — это просто новый --story-delta, а слайд
+ * и укрупнение кадра доезжают одним transition.
+ */
+.cell {
+    @mixin transitionOptions;
+    @mixin responsive border-radius, 20, 20;
+
+    --story-shift: calc(
+        var(--story-delta) * (var(--story-side-width) + var(--story-gap)) +
+            var(--story-sign) *
+            (var(--story-frame-width) - var(--story-side-width)) / 2
+    );
+
+    transition-property: translate, width, opacity;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: var(--story-side-width);
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    translate: calc(-50% + var(--story-shift)) -50%;
+    opacity: 0.45;
+    pointer-events: auto;
+}
+
+.closeButton[class] {
+    @mixin responsive padding, 8, 10;
+
+    position: fixed;
+    pointer-events: auto;
+    top: 0;
+    right: 0;
+    background-color: rgb(0 0 0 / 35%);
+    border-radius: 50%;
+}
+
+.closeButton[class] path {
+    fill: var(--color-white-0);
+}
+
+.frame {
+    width: var(--story-frame-width);
+    background-color: var(--color-black-1);
+    opacity: 1;
+    touch-action: pan-y;
+    user-select: none;
+
+    /*
+     * Затемнение сверху: белые полоски и название кадра иначе теряются на
+     * светлом контенте.
+     */
+    &::before {
+        @mixin responsive height, 70, 90;
+
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        background: linear-gradient(rgb(0 0 0 / 45%), transparent);
+        pointer-events: none;
+        content: "";
+    }
+
+    /*
+     * Без этого мышь на картинке начинает нативный drag: он гасит pointerup,
+     * и свайп между группами на десктопе просто не доезжает.
+     */
+    img,
+    video {
+        pointer-events: none;
+    }
+}
+
+.title {
+    @mixin b3;
+    @mixin responsive padding-inline, 15, 20;
+    @mixin responsive top, 30, 40;
+
+    left: 0;
+    position: absolute;
+    z-index: 2;
+    color: var(--color-white-0);
+    text-shadow: 0 1px 4px rgb(0 0 0 / 50%);
+    pointer-events: none;
+}
+
+.sound {
+    @mixin b4;
+    @mixin transition opacity;
+    @mixin responsive padding-inline, 10, 12;
+    @mixin responsive padding-block, 6, 8;
+    @mixin responsive border-radius, 20, 20;
+    @mixin responsive bottom, 20, 30;
+    @mixin responsive right, 15, 20;
+
+    position: absolute;
+    z-index: 4;
+    color: var(--color-white-0);
+    background-color: rgb(0 0 0 / 40%);
+    cursor: pointer;
+}
+
+.loader {
+    @mixin responsive width, 40, 50;
+    @mixin responsive height, 40, 50;
+
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    z-index: 3;
+    translate: -50% -50%;
+    pointer-events: none;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (hover: hover) {
+    .sound:hover {
+        opacity: 0.7;
+    }
+}
+
+/*
+ * На мобиле кадр во весь экран, а соседи ровно за его краем: получается
+ * тот же слайд, только полноэкранный.
+ */
+@media (max-width: $mobile) {
+    .modal {
+        --story-gap: 0px;
+        --story-frame-width: 100dvw;
+        --story-side-width: 100dvw;
+    }
+
+    .cell {
+        height: 100dvh;
+        aspect-ratio: auto;
+        border-radius: 0;
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cell {
+        transition-duration: 0.01ms;
+    }
+}

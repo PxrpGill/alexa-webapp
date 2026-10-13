@@ -7,8 +7,8 @@ import OurWork from "@/widgets/our-work";
 import ParentNewsSection from "@/widgets/parent-news-section";
 import ReviewsWidget from "@/widgets/reviews-widget";
 import StillQuestions from "@/widgets/still-questions";
+// import Stories from "@/widgets/stories";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import css from "./index.module.css";
 import {
 	CTA_MOCK,
 	DESCRIPTION_SECTION,
@@ -21,6 +21,7 @@ import {
 	REVIEWS_WIDGET,
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	STILL_QUESTIONS,
+	// STORIES,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 } from "./models/home-page.constants";
 import type { HomePageProps } from "./types/home-page.types";
@@ -29,6 +30,7 @@ export default function HomePage({ initialNewsData }: HomePageProps) {
 	return (
 		<main className="page-offset">
 			<HeroSliderSection className="section" {...HERO_SLIDES} />
+			{/* <Stories {...STORIES} className="section" /> */}
 			<CtaSection {...CTA_MOCK} className="section" />
 			<DescriptionSection {...DESCRIPTION_SECTION} className="section" />
 			<TitleDescriptionSlider

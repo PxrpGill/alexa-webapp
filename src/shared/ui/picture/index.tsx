@@ -32,6 +32,12 @@ export type PictureProps = {
 	height?: number;
 	/** Отключает серый скелетон с переливом, пока картинка не загрузилась */
 	withoutSkeleton?: boolean;
+	/**
+	 * Срабатывает, когда картинка готова к показу: load, error или уже
+	 * закэширована. Нужен тем, кто ждёт контент, — например плееру сторисов,
+	 * который не начинает отсчёт, пока кадр не загрузился.
+	 */
+	onReady?: () => void;
 } & PropsWithClassName &
 	PosterImageType;
 
@@ -45,9 +51,25 @@ export default function Picture({
 	width,
 	height,
 	withoutSkeleton,
+	onReady,
 }: PictureProps) {
 	const imgRef = useRef<HTMLImageElement>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
+
+	// Колбэк держим в ref: иначе новая стрелка на каждый рендер родителя
+	// гоняла бы mount-эффект заново. Синхронизация объявлена выше проверки на
+	// complete, а эффекты срабатывают по порядку объявления — к ней ref уже
+	// актуален.
+	const onReadyRef = useRef(onReady);
+
+	useEffect(() => {
+		onReadyRef.current = onReady;
+	});
+
+	const handleLoaded = () => {
+		setIsLoaded(true);
+		onReadyRef.current?.();
+	};
 
 	// Закэшированная (или eager) картинка успевает отрисоваться до гидратации,
 	// её load уже не придёт — без этой проверки скелетон остался бы висеть.
@@ -56,6 +78,7 @@ export default function Picture({
 
 		if (img?.complete && img.naturalWidth > 0) {
 			setIsLoaded(true);
+			onReadyRef.current?.();
 		}
 	}, []);
 
@@ -127,8 +150,8 @@ export default function Picture({
 				height={height}
 				// Ошибка тоже снимает скелетон: иначе битая картинка
 				// анимировалась бы бесконечно.
-				onLoad={() => setIsLoaded(true)}
-				onError={() => setIsLoaded(true)}
+				onLoad={handleLoaded}
+				onError={handleLoaded}
 			/>
 		</picture>
 	);

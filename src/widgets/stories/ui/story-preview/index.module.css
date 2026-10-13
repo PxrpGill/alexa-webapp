@@ -1,0 +1,53 @@
+.root {
+    @mixin responsive --size, 120, 120;
+    @mixin responsive gap, 6, 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: var(--size);
+    scroll-snap-align: start;
+}
+
+.button {
+    @mixin transition border-color;
+    @mixin responsive padding, 3, 3; 
+
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    border: 2px solid var(--color-green-1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.viewed {
+    border-color: var(--color-white-2);
+}
+
+.posterWrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.title {
+    @mixin b4;
+
+    color: var(--color-black-3);
+    text-align: center;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+@media (hover: hover) {
+    .button:hover {
+        border-color: var(--color-green-4);
+    }
+}
