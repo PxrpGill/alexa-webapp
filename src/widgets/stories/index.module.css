@@ -1,0 +1,18 @@
+
+.title {
+    @mixin text-6xl;
+    @mixin responsive margin-block-end, 15, 25;
+}
+
+.list {
+    @mixin responsive gap, 10, 20;
+
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
