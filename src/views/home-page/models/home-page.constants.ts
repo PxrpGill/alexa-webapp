@@ -157,8 +157,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 			},
 			poster: {
 				webp: {
-					src: "/mock/home/hero-slider/3-desktop.webp",
-					mobile: "/mock/home/hero-slider/3-mobile.webp",
+					src: "/mock/home/hero-slider/3-banner-desktop.webp",
 				},
 			},
 			legend:
@@ -173,8 +172,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
 			poster: {
 				webp: {
-					src: "/mock/home/hero-slider/2-desktop.webp",
-					mobile: "/mock/home/hero-slider/2-mobile.webp",
+					src: "/mock/home/hero-slider/2-banner-desktop.webp",
 				},
 			},
 			card: {
@@ -192,8 +190,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
 			poster: {
 				webp: {
-					src: "/mock/home/hero-slider/4-desktop.webp",
-					mobile: "/mock/home/hero-slider/4-mobile.webp",
+					src: "/mock/home/hero-slider/4-banner-desktop.webp",
 				},
 			},
 			card: {
@@ -210,8 +207,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
 			poster: {
 				webp: {
-					src: "/mock/home/hero-slider/5-desktop.webp",
-					mobile: "/mock/home/hero-slider/5-mobile.webp",
+					src: "/mock/home/hero-slider/5-banner-desktop.webp",
 				},
 			},
 			card: {
@@ -228,8 +224,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
 			poster: {
 				webp: {
-					src: "/mock/home/hero-slider/6-desktop.webp",
-					mobile: "/mock/home/hero-slider/6-mobile.webp",
+					src: "/mock/home/hero-slider/6-banner-desktop.webp",
 				},
 			},
 			card: {
