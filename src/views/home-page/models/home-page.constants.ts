@@ -240,7 +240,7 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 export const CTA_MOCK: CtaSectionProps = {
 	poster: {
 		webp: {
-			src: "/mock/home/cta/desktop.webp",
+			src: "/mock/home/cta/first-desktop.webp",
 		},
 	},
 	title: "Кураторы рядом на&nbsp;каждом этапе лечения",
@@ -267,27 +267,27 @@ export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	posters: [
 		{
 			webp: {
-				src: "/mock/home/first-slider/first-desktop.webp",
+				src: "/mock/home/first-slider/first-slide-desktop.webp",
 			},
 		},
 		{
 			webp: {
-				src: "/mock/home/first-slider/second-desktop.webp",
+				src: "/mock/home/first-slider/second-slide-desktop.webp",
 			},
 		},
 		{
 			webp: {
-				src: "/mock/home/first-slider/third-desktop.webp",
+				src: "/mock/home/first-slider/third-slide-desktop.webp",
 			},
 		},
 		{
 			webp: {
-				src: "/mock/home/first-slider/fourth-desktop.webp",
+				src: "/mock/home/first-slider/fourth-slide-desktop.webp",
 			},
 		},
 		{
 			webp: {
-				src: "/mock/home/first-slider/fifth-desktop.webp",
+				src: "/mock/home/first-slider/fifth-slide-desktop.webp",
 			},
 		},
 	],
@@ -295,34 +295,34 @@ export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 
 export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
-		title: "Для самых<br /> маленьких",
+		title: "Для самых маленьких",
 		description:
 			"Красивые кабинеты, оборудованные по&nbsp;самым современным медицинским стандартам, игровая зона с&nbsp;игрушками, книгами и&nbsp;раскрасками, сундучок с&nbsp;чудесными подарками&nbsp;&mdash; мы&nbsp;приложили все усилия, чтобы нашим маленьким пациентам и&nbsp;их&nbsp;родителям было уютно, комфортно и&nbsp;спокойно.",
 	},
 	posters: [
 		{
 			webp: {
-				src: "/mock/home/second-slider/2-1.webp",
+				src: "/mock/home/second-slider/first-slide-desktop.webp",
 			},
 		},
 		{
 			webp: {
-				src: "/mock/home/second-slider/2-2.webp",
+				src: "/mock/home/second-slider/second-slide-desktop.webp",
 			},
 		},
 		{
 			webp: {
-				src: "/mock/home/second-slider/2-3.webp",
+				src: "/mock/home/second-slider/third-slide-desktop.webp",
 			},
 		},
 		{
 			webp: {
-				src: "/mock/home/second-slider/2-4.webp",
+				src: "/mock/home/second-slider/fourth-slide-desktop.webp",
 			},
 		},
 		{
 			webp: {
-				src: "/mock/home/second-slider/2-5.webp",
+				src: "/mock/home/second-slider/fifth-slide-desktop.webp",
 			},
 		},
 	],
