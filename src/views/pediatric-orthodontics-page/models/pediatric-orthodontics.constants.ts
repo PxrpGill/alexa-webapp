@@ -6,7 +6,7 @@ import {
 	GLOBAL_EMPLOYEES,
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
-import { BeforeAfterSectionProps } from "@/widgets/before-after-section/types/before-after-section.types";
+import type { BeforeAfterSectionProps } from "@/widgets/before-after-section/types/before-after-section.types";
 import type { ChildWhatIncludesServicesProps } from "@/widgets/child-what-includes-services/types/child-what-includes-services.types";
 import type {
 	CostOfServicesCardProps,
@@ -25,7 +25,7 @@ export const HERO_MOCK: HeroProps = {
 		"Помогаем детям и&nbsp;подросткам сформировать правильный прикус и&nbsp;красивую улыбку. Бережно, понятно и&nbsp;без страха&nbsp;&mdash; с&nbsp;индивидуальным планом лечения для каждого ребёнка.",
 	poster: {
 		webp: {
-			src: "/mock/pediatric-orthodontics/hero-desktop.webp",
+			src: "/mock/adult-orthodontics/hero-desktop.webp",
 		},
 	},
 	button: {

@@ -40,8 +40,10 @@
 }
 
 .title {
-    @mixin h6;
+    @mixin text-xl;
     @mixin responsive padding-block-end, 11, 8;
+
+    font-weight: 600;
 
     @media (max-width: $mobile) {
         @mixin h5;
@@ -57,13 +59,9 @@
 
 .time,
 .description {
-    @mixin b3;
+    @mixin text-base;
 
     color: var(--color-black-580);
-
-    @media (max-width: $mobile) {
-        @mixin b4;
-    }
 }
 
 .description {
@@ -72,6 +70,7 @@
 
 .time {
     margin-block-start: auto;
+    font-weight: 600;
 }
 
 .link {

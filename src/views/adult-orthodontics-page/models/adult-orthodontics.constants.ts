@@ -142,7 +142,7 @@ export const QUADRO_SECTION: QuadroSectionProps = {
 		},
 		poster: {
 			webp: {
-				src: "/mock/adult-orthodontics/hero.webp",
+				src: "/mock/adult-orthodontics/hero-desktop.webp",
 			},
 		},
 	},
