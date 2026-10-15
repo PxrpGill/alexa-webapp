@@ -12,13 +12,14 @@ import {
 } from "@/shared/config/global-constants.constants";
 import { useLayoutContext } from "@/shared/config/layout-context";
 import { BRANCH_COOKIES_VALUES } from "@/shared/hooks/set-branch-in-cookies";
+import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import css from "./index.module.css";
 
-export default function ContactPart() {
+export default function ContactPart({ className }: PropsWithClassName) {
 	const { isMenuOpen, toggleMenuOpen, currentBranch } = useLayoutContext();
 
 	return (
-		<div className={`${css.root}`.trim()}>
+		<div className={`${css.root} ${className}`.trim()}>
 			<ChangeBranch className={css.changeBranch} />
 			<a
 				href={`tel:${MOBILE_PHONE[currentBranch ?? BRANCH_COOKIES_VALUES.landyshevaya]}`}

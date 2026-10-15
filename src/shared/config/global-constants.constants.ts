@@ -117,7 +117,7 @@ export const GLOBAL_EMPLOYEES = {
 	koramagomedov: {
 		poster: {
 			webp: {
-				src: "/mock/employees/employee-5.webp",
+				src: "/mock/employees/ramazan.webp",
 			},
 		},
 		fullname: "Корамагомедов Рамазан Корамагомедович",

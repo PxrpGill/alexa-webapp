@@ -31,7 +31,7 @@ export default function Header() {
 					<div className={css.divider} />
 					<BreadCrumbs className={css.breadcrumbs} />
 				</div>
-				<ContactPart />
+				<ContactPart className={css.contactPart} />
 			</div>
 		</header>
 	);

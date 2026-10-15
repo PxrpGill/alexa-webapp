@@ -337,7 +337,7 @@ export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	posters: [
 		{
 			webp: {
-				src: "/mock/home/third-slider/3-1.webp",
+				src: "/mock/home/third-slider/first-team.webp",
 			},
 		},
 		{
