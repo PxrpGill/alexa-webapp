@@ -8,6 +8,7 @@ export type DetailPromotionHeroType = {
 	starts_at: string;
 	ends_at?: string | null;
 	is_active: boolean;
+	buttonText?: string;
 };
 
 export type DetailPromotionSectionType = {
@@ -26,9 +27,16 @@ export type DetailPromotionConditionsType = {
 	cards: Array<DetailPromotionConditionCardType>;
 };
 
+export type PromotionFormType = {
+	title?: string;
+	description?: string;
+	button_text?: string;
+};
+
 export type DetailPromotionType = {
 	slug: string;
 	hero: DetailPromotionHeroType;
 	detail: DetailPromotionSectionType;
-	conditions: DetailPromotionConditionsType;
+	detail_content?: string;
+	form?: PromotionFormType;
 };

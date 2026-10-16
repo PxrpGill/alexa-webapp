@@ -93,3 +93,12 @@
 .label {
     font-weight: 600;
 }
+
+.button.button[class] {
+    width: fit-content;
+}
+
+.icon {
+    @mixin responsive width, 20, 20;
+    @mixin responsive height, 20, 20;
+}

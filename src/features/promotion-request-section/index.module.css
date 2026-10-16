@@ -11,6 +11,8 @@
     display: grid;
     grid-template-columns: var(--first-col) auto;
 
+    scroll-margin-block-start: 10vh;
+
     @media (max-width: $mobile) {
         display: flex;
         flex-direction: column-reverse;

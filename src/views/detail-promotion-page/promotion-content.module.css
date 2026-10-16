@@ -1,0 +1,141 @@
+.content {
+    @mixin responsive padding-block, 40, 40;
+    @mixin responsive border-radius, 30, 30;
+
+    p,
+    h3,
+    figure {
+        @mixin responsive padding-inline, 20, 30;
+    }
+
+    background-color: var(--color-white-0);
+
+    i {
+        font-style: italic;
+    }
+
+    b,
+    strong {
+        font-weight: 600;
+    }
+
+    figure:has(+ h3),
+    ol:has(+ h3),
+    ul:has(+ h3),
+    p:has(+ h3) {
+        @mixin responsive padding-block-end, 60, 120;
+    }
+
+    h3 {
+        @mixin text-5xl
+    }
+
+    p:has(+ p) {
+        @mixin responsive padding-block-end, 10, 10;
+    }
+
+    h3:has(+ figure),
+    ol:has(+ p),
+    ul:has(+ p),
+    h3:has(+ ol),
+    h3:has(+ ul),
+    p:has(+ ol),
+    p:has(+ ul),
+    h3:has(+ p) {
+        @mixin responsive padding-block-end, 20, 40;
+    }
+
+    li,
+    p {
+        @mixin text-md;
+    }
+
+    ul,
+    ol {
+        @mixin responsive padding-inline-start, 40, 50;
+        @mixin responsive gap, 10, 10;
+
+        flex-direction: column;
+        display: flex;
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    ol {
+        list-style: decimal;
+    }
+
+    figure:has(> table) {
+        @media (max-width: $mobile) {
+            overflow-x: scroll;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    table {
+        @mixin responsive border-radius, 30, 30;
+        @mixin responsive --border-radius, 1, 1;
+
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+
+        td:first-child {
+            background-color: var(--color-green-2);
+        }
+
+        td:nth-child(2) {
+            background-color: var(--color-green-3);
+        }
+
+        td:nth-child(3) {
+            background-color: var(--color-green-5);
+        }
+
+        td:nth-child(4) {
+            background-color: var(--color-green-6);
+        }
+
+        tr:first-child {
+            td {
+                @mixin text-xl;
+
+                font-weight: 600;
+                border-bottom: var(--border-radius) solid var(--color-white-0);
+                border-right: var(--border-radius) solid var(--color-white-0);
+            }
+
+            td:last-child {
+                border-right: unset;
+            }
+        }
+
+        tr {
+            border-collapse: collapse;
+
+            td {
+                border-bottom: var(--border-radius) solid var(--color-white-0);
+                border-right: var(--border-radius) solid var(--color-white-0);
+            }
+
+            td:last-child {
+                border-right: unset;
+            }
+        }
+
+        td {
+            @mixin text-md;
+            @mixin responsive padding, 30, 30;
+        }
+
+        @media (max-width: $mobile) {
+            width: max-content;
+        }
+    }
+}
