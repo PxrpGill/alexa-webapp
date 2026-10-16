@@ -35,7 +35,7 @@ export default function HygieneAndPreventionPage() {
 			/>
 			<HowItWorksSlider className="section" {...HOW_IT_WORKS_SLIDER} />
 			<BeforeAfterSection className="section" {...BEFORE_AFTER_SECTION} />
-			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
+			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} isSlider />
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
 			<CertificatesSection className="section" {...CERTIFICATES_SECTION} />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />

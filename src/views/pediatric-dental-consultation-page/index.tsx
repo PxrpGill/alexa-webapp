@@ -31,7 +31,7 @@ export default function PediatricDentalConsultationPage() {
 				{...RECOMMENDS_FOR_CHILDREN_DATA}
 			/>
 			<FirstVisitSection className="section" {...FIRST_VISIT_SECTION_DATA} />
-			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
+			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} isSlider />
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
 			<CertificatesSection className="section" {...CERTIFICATES_SECTION} />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />

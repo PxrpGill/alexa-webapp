@@ -81,7 +81,7 @@ export default function PediatricOrthodonticsPage() {
 				/>
 				<CtaHelpSection className="section" {...CTA_HELP_SECTION} />
 				<BeforeAfterSection className="section" {...BEFORE_AFTER_SECTION} />
-				<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
+				<OurPeopleSection className="section" {...EMPLOYEES_SECTION} isSlider />
 				<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 				<Alexik3D className={css.alexik} />
 				<PageContentFilter title="Метод лечения:" />

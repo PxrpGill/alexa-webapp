@@ -28,22 +28,13 @@ export default function AdultOrthopedicsPage() {
 	return (
 		<main className="page-offset">
 			<QuadroSection className="section" {...QUADRO_MOCK} />
-			<WhatServiceIncludes
-				className="section"
-				{...WHAT_INCLUDES_SECTION}
-			/>
-			<TitleStickySection
-				className="section"
-				{...TITLE_STICKY_SECTION_MOCK}
-			/>
+			<WhatServiceIncludes className="section" {...WHAT_INCLUDES_SECTION} />
+			<TitleStickySection className="section" {...TITLE_STICKY_SECTION_MOCK} />
 			<DiagnosticProcessSection
 				className="section"
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
-			<CertificatesSection
-				className="section"
-				{...CERTIFICATES_SECTION}
-			/>
+			<CertificatesSection className="section" {...CERTIFICATES_SECTION} />
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
 				className="section-sm"
@@ -66,7 +57,7 @@ export default function AdultOrthopedicsPage() {
 				{...FIFTH_TITLE_DESCRIPTION_SLIDER}
 				className="section"
 			/>
-			<OurPeopleSection className="section" {...OUR_PEOPLE} />
+			<OurPeopleSection className="section" isSlider {...OUR_PEOPLE} />
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>

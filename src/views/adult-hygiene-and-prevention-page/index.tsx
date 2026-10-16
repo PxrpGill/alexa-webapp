@@ -48,7 +48,7 @@ export default function AdultHygieneAndPreventionPage() {
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
 				className="section"
 			/>
-			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
+			<OurPeopleSection className="section" isSlider {...EMPLOYEES_SECTION} />
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
