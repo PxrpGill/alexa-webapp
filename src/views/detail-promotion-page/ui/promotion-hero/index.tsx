@@ -1,8 +1,14 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
+
+"use client";
+
 import type { DetailPromotionHeroType } from "@/entities/promotion/types/detail-promotion.types";
+import ButtonIconSVG from "@/public/icons/button-teeth.svg";
 import { getTimeLeft } from "@/shared/helpers/get-time-left";
+import { handleSectionScroll } from "@/shared/helpers/handle-section-scroll";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
+import Button from "@/shared/ui/button";
 import Picture from "@/shared/ui/picture";
 import css from "./index.module.css";
 
@@ -13,6 +19,7 @@ export default function PromotionHero({
 	description,
 	ends_at,
 	starts_at,
+	buttonText,
 }: DetailPromotionHeroType & PropsWithClassName) {
 	return (
 		<AnimationWrapper
@@ -40,6 +47,18 @@ export default function PromotionHero({
 						</p>
 					</div>
 				)}
+				<Button
+					className={css.button}
+					onClick={handleSectionScroll}
+					href="#form"
+					rightIcon={<ButtonIconSVG className={css.icon} />}
+				>
+					<span
+						dangerouslySetInnerHTML={{
+							__html: buttonText ?? "Оставить заявку",
+						}}
+					/>
+				</Button>
 			</div>
 			<div className={css.imageWrapper}>
 				{banner && <Picture poster={banner} />}
