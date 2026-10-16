@@ -34,6 +34,9 @@
         @mixin responsive padding-block-end, 10, 10;
     }
 
+    ol:has(+ figure)
+    ul:has(+ figure),
+    p:has(+ figure),
     h3:has(+ figure),
     ol:has(+ p),
     ul:has(+ p),
