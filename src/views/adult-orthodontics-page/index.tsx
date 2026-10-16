@@ -49,7 +49,7 @@ export default function AdultOrthodonticsPage() {
 				className="section"
 				textBlockPosition="right"
 			/>
-			<OurPeopleSection className="section" {...OUR_PEOPLE} />
+			<OurPeopleSection className="section" isSlider {...OUR_PEOPLE} />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);

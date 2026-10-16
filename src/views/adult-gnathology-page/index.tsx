@@ -25,10 +25,7 @@ export default function AdultGnathologyPage() {
 		<main className="page-offset">
 			<QuadroSection className="section" {...QUADRO_SECTION_MOCK} />
 			<WhatServiceIncludes className="section" {...WHAT_INCLUDES} />
-			<TitleStickySection
-				className="section"
-				{...TITLE_STICKY_SECTION_MOCK}
-			/>
+			<TitleStickySection className="section" {...TITLE_STICKY_SECTION_MOCK} />
 			<DiagnosticProcessSection
 				className="section"
 				{...DIAGNOSTICS_SECTION_MOCK}
@@ -46,7 +43,7 @@ export default function AdultGnathologyPage() {
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
 				className="section"
 			/>
-			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} />
+			<OurPeopleSection className="section" isSlider {...EMPLOYEES_SECTION} />
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>

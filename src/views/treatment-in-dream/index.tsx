@@ -38,7 +38,7 @@ export default function TreatmentInDreamPage() {
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
 				className="section"
 			/>
-			<OurPeopleSection className="section" {...OUR_PEOPLE_SECTION} />
+			<OurPeopleSection className="section" {...OUR_PEOPLE_SECTION} isSlider />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>
 	);
