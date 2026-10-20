@@ -2,14 +2,15 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import type { StoryGroup } from '@/entities/story/types/story.types';
+
 import { STORY_IMAGE_DURATION } from '../models/stories.constants';
-import type { StoryGroup } from '../types/stories.types';
 
 type UseStoriesPlayerParams = {
     groups: StoryGroup[];
     initialGroupIndex: number;
     onClose: () => void;
-    onGroupViewed: (groupId: string) => void;
+    onGroupViewed: (group: StoryGroup) => void;
 };
 
 /**
@@ -211,7 +212,7 @@ export function useStoriesPlayer({
     // Группу считаем просмотренной, как только дошли до её последнего кадра.
     useEffect(() => {
         if (group && itemIndex === group.items.length - 1) {
-            onGroupViewed(group.id);
+            onGroupViewed(group);
         }
     }, [group, itemIndex, onGroupViewed]);
 
