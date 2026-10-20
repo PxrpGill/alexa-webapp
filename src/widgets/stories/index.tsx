@@ -14,7 +14,7 @@ export default function Stories({ title, groups, className }: StoriesProps) {
     const [activeGroupIndex, setActiveGroupIndex] = useState<number | null>(
         null
     );
-    const { viewedIds, markViewed } = useViewedStories();
+    const { isViewed, markViewed } = useViewedStories();
 
     if (!groups?.length) {
         return null;
@@ -31,7 +31,7 @@ export default function Stories({ title, groups, className }: StoriesProps) {
                     <StoryPreview
                         key={group.id}
                         group={group}
-                        isViewed={viewedIds.includes(group.id)}
+                        isViewed={isViewed(group)}
                         onClick={() => setActiveGroupIndex(index)}
                     />
                 ))}

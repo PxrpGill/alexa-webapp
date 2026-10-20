@@ -1,6 +1,5 @@
+import type { StoryGroup } from '@/entities/story/types/story.types';
 import Picture from '@/shared/ui/picture';
-
-import type { StoryGroup } from '../../types/stories.types';
 
 import css from './index.module.css';
 

@@ -3,6 +3,7 @@
 import type { CSSProperties } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import type { StoryGroup } from '@/entities/story/types/story.types';
 import LoaderSVG from '@/public/icons/loader.svg';
 import Modal from '@/shared/ui/modal';
 import Picture from '@/shared/ui/picture';
@@ -13,7 +14,6 @@ import {
     SWIPE_CLOSE_THRESHOLD_PX,
     SWIPE_THRESHOLD_PX,
 } from '../../models/stories.constants';
-import type { StoryGroup } from '../../types/stories.types';
 import StoryContent from '../story-content';
 import StoryNavButton from '../story-nav-button';
 import StoryProgress from '../story-progress';
@@ -29,7 +29,7 @@ type StoriesViewerProps = {
     /** null — просмотрщик закрыт */
     activeGroupIndex: number | null;
     onClose: () => void;
-    onGroupViewed: (groupId: string) => void;
+    onGroupViewed: (group: StoryGroup) => void;
 };
 
 export default function StoriesViewer({
@@ -64,7 +64,7 @@ type ViewerPlayerProps = {
     groups: StoryGroup[];
     initialGroupIndex: number;
     onClose: () => void;
-    onGroupViewed: (groupId: string) => void;
+    onGroupViewed: (group: StoryGroup) => void;
 };
 
 /**

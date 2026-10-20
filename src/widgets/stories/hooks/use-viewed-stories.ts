@@ -2,7 +2,17 @@
 
 import { useCallback, useEffect, useState } from 'react';
 
+import type { StoryGroup } from '@/entities/story/types/story.types';
+
 import { VIEWED_STORIES_KEY } from '../models/stories.constants';
+
+/**
+ * Ключ просмотра включает updatedAt: если в админке поменяли группу или
+ * добавили в неё кадр, ключ меняется и группа снова считается непросмотренной
+ */
+function getViewKey(group: StoryGroup) {
+    return `${group.id}:${group.updatedAt}`;
+}
 
 /**
  * Список просмотренных групп в localStorage. Читаем в эффекте, а не в
@@ -10,7 +20,7 @@ import { VIEWED_STORIES_KEY } from '../models/stories.constants';
  * совпасть с серверным, иначе будет рассинхрон гидратации.
  */
 export function useViewedStories() {
-    const [viewedIds, setViewedIds] = useState<string[]>([]);
+    const [viewedKeys, setViewedKeys] = useState<string[]>([]);
 
     useEffect(() => {
         try {
@@ -20,7 +30,9 @@ export function useViewedStories() {
                 const parsed: unknown = JSON.parse(stored);
 
                 if (Array.isArray(parsed)) {
-                    setViewedIds(parsed.filter((id) => typeof id === 'string'));
+                    setViewedKeys(
+                        parsed.filter((key) => typeof key === 'string')
+                    );
                 }
             }
         } catch {
@@ -29,13 +41,25 @@ export function useViewedStories() {
         }
     }, []);
 
-    const markViewed = useCallback((groupId: string) => {
-        setViewedIds((prev) => {
-            if (prev.includes(groupId)) {
+    const isViewed = useCallback(
+        (group: StoryGroup) => viewedKeys.includes(getViewKey(group)),
+        [viewedKeys]
+    );
+
+    const markViewed = useCallback((group: StoryGroup) => {
+        const key = getViewKey(group);
+
+        setViewedKeys((prev) => {
+            if (prev.includes(key)) {
                 return prev;
             }
 
-            const next = [...prev, groupId];
+            // Старые ключи той же группы больше не нужны — без чистки список
+            // рос бы с каждой правкой в админке
+            const next = [
+                ...prev.filter((k) => !k.startsWith(`${group.id}:`)),
+                key,
+            ];
 
             try {
                 localStorage.setItem(VIEWED_STORIES_KEY, JSON.stringify(next));
@@ -47,5 +71,5 @@ export function useViewedStories() {
         });
     }, []);
 
-    return { viewedIds, markViewed };
+    return { isViewed, markViewed };
 }

@@ -2,10 +2,9 @@
 
 import type { RefObject } from 'react';
 
+import type { StoryItem } from '@/entities/story/types/story.types';
 import Picture from '@/shared/ui/picture';
 import Video from '@/shared/ui/video';
-
-import type { StoryItem } from '../../types/stories.types';
 
 import css from './index.module.css';
 
