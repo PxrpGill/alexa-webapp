@@ -3,7 +3,7 @@
 import type { CSSProperties } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import type { StoryGroup } from '@/entities/story/types/story.types';
+import type { StoryGroup, StoryItem } from '@/entities/story/types/story.types';
 import LoaderSVG from '@/public/icons/loader.svg';
 import Modal from '@/shared/ui/modal';
 import Picture from '@/shared/ui/picture';
@@ -87,7 +87,7 @@ function ViewerPlayer({
         isMuted,
         videoRef,
         progressRef,
-        handleReady,
+        markReady,
         toggleMuted,
         setIsHolding,
         next,
@@ -103,6 +103,12 @@ function ViewerPlayer({
     });
 
     const [isKeyPaused, setIsKeyPaused] = useState(false);
+    /**
+     * Переходы ячеек включаем только после первой отрисовки: иначе всё, что
+     * сразу после открытия трогает размеры кадра (блокировка скролла,
+     * монтаж модалки), проигрывается как «раздувание» кадра.
+     */
+    const [isAnimated, setIsAnimated] = useState(false);
 
     const pointerRef = useRef({ x: 0, y: 0, time: 0 });
     const isPointerDownRef = useRef(false);
@@ -110,6 +116,14 @@ function ViewerPlayer({
     const suppressClickRef = useRef(false);
 
     useEffect(() => setIsHolding(isKeyPaused), [isKeyPaused, setIsHolding]);
+
+    useEffect(() => {
+        let frame = requestAnimationFrame(() => {
+            frame = requestAnimationFrame(() => setIsAnimated(true));
+        });
+
+        return () => cancelAnimationFrame(frame);
+    }, []);
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -218,11 +232,25 @@ function ViewerPlayer({
         return null;
     }
 
-    const nextItem =
-        items[itemIndex + 1] ?? groups[groupIndex + 1]?.items[0] ?? null;
+    /*
+     * Окно кадров: текущий и соседи по обе стороны. Все они смонтированы
+     * под стабильным key={id}, и переключение лишь снимает visibility с уже
+     * загруженной картинки — без перемонтажа, пустого кадра и лоадера.
+     */
+    const windowItems = [
+        items[itemIndex - 1],
+        item,
+        items[itemIndex + 1] ?? groups[groupIndex + 1]?.items[0],
+    ].filter(
+        (storyItem, index, list): storyItem is StoryItem =>
+            !!storyItem &&
+            list.findIndex((other) => other?.id === storyItem.id) === index
+    );
 
     return (
-        <div className={css.stage}>
+        <div
+            className={`${css.stage} ${isAnimated ? css.animated : ''}`.trim()}
+        >
             {groups.map((storyGroup, index) => {
                 const delta = index - groupIndex;
 
@@ -269,20 +297,24 @@ function ViewerPlayer({
                                     className={css.backdrop}
                                     withoutSkeleton
                                 />
-                                <StoryContent
-                                    key={item.id}
-                                    item={item}
-                                    videoRef={videoRef}
-                                    isMuted={isMuted}
-                                    onReady={handleReady}
-                                />
-                                {nextItem && (
-                                    <StoryContent
-                                        key={`preload-${nextItem.id}`}
-                                        item={nextItem}
-                                        isHidden
-                                    />
-                                )}
+                                {windowItems.map((storyItem) => {
+                                    const isCurrent = storyItem.id === item.id;
+
+                                    return (
+                                        <StoryContent
+                                            key={storyItem.id}
+                                            item={storyItem}
+                                            videoRef={
+                                                isCurrent ? videoRef : undefined
+                                            }
+                                            isMuted={isMuted}
+                                            onReady={() =>
+                                                markReady(storyItem.id)
+                                            }
+                                            isHidden={!isCurrent}
+                                        />
+                                    );
+                                })}
 
                                 <StoryProgress
                                     count={items.length}

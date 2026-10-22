@@ -30,12 +30,15 @@ export function useStoriesPlayer({
     const [groupIndex, setGroupIndex] = useState(initialGroupIndex);
     const [itemIndex, setItemIndex] = useState(0);
     /**
-     * Готовность храним как ключ кадра, а не как флаг: эффекты ребёнка
-     * срабатывают раньше родительских, поэтому закэшированная картинка
-     * успевала сказать «готово» до сброса флага — и показ замирал навсегда.
-     * Ключ сравнивается прямо в рендере, сбрасывать нечего.
+     * Готовность храним набором id загруженных кадров, а не флагом: эффекты
+     * ребёнка срабатывают раньше родительских, поэтому закэшированная
+     * картинка успевала сказать «готово» до сброса флага — и показ замирал
+     * навсегда. Набор только пополняется, сбрасывать нечего, а предзагруженный
+     * соседний кадр оказывается готовым ещё до того, как до него дошли.
      */
-    const [readyKey, setReadyKey] = useState<string | null>(null);
+    const [readyIds, setReadyIds] = useState<ReadonlySet<number>>(
+        () => new Set()
+    );
     const [isHolding, setIsHolding] = useState(false);
     const [isHidden, setIsHidden] = useState(false);
     const [isMuted, setIsMuted] = useState(true);
@@ -43,8 +46,7 @@ export function useStoriesPlayer({
     const group = groups[groupIndex];
     const items = group?.items ?? [];
     const item = items[itemIndex];
-    const itemKey = item ? `${groupIndex}-${itemIndex}-${item.id}` : null;
-    const isReady = readyKey !== null && readyKey === itemKey;
+    const isReady = item ? readyIds.has(item.id) : false;
 
     const videoRef = useRef<HTMLVideoElement>(null);
     const barRef = useRef<HTMLElement | null>(null);
@@ -122,16 +124,28 @@ export function useStoriesPlayer({
 
     const goToGroup = useCallback((index: number) => goTo(index, 0), [goTo]);
 
-    const handleReady = useCallback(() => setReadyKey(itemKey), [itemKey]);
+    const markReady = useCallback(
+        (id: number) =>
+            setReadyIds((prev) =>
+                prev.has(id) ? prev : new Set(prev).add(id)
+            ),
+        []
+    );
 
     const toggleMuted = useCallback(() => setIsMuted((prev) => !prev), []);
 
     // Новый кадр — обнуляем счётчик и полоску. Индексы здесь не «лишние»:
     // тело эффекта их не читает, но именно их смена и есть повод сбросить.
+    // Видео-кадр остаётся смонтированным, пока он рядом с текущим, поэтому
+    // при возврате к нему перематываем в начало.
     // biome-ignore lint/correctness/useExhaustiveDependencies: эффект намеренно завязан на смену кадра
     useEffect(() => {
         elapsedRef.current = 0;
         setBarProgress(0);
+
+        if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+        }
     }, [groupIndex, itemIndex, setBarProgress]);
 
     // Вкладку свернули — замораживаем показ, иначе сторис «проиграется» в фоне.
@@ -161,6 +175,9 @@ export function useStoriesPlayer({
         } else {
             video.pause();
         }
+
+        // Ушли с кадра — он остаётся в DOM скрытым и не должен играть дальше
+        return () => video.pause();
     }, [item, isReady, isPaused]);
 
     // Тикер: крутится только когда кадр готов и не стоит на паузе. Отсюда и
@@ -227,7 +244,7 @@ export function useStoriesPlayer({
         isMuted,
         videoRef,
         progressRef,
-        handleReady,
+        markReady,
         toggleMuted,
         setIsHolding,
         next,
