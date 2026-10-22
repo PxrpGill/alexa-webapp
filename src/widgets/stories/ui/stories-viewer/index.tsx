@@ -6,7 +6,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { StoryGroup, StoryItem } from '@/entities/story/types/story.types';
 import LoaderSVG from '@/public/icons/loader.svg';
 import Modal from '@/shared/ui/modal';
-import Picture from '@/shared/ui/picture';
 
 import { useStoriesPlayer } from '../../hooks/use-stories-player';
 import {
@@ -292,11 +291,6 @@ function ViewerPlayer({
                     >
                         {isActive ? (
                             <>
-                                <Picture
-                                    poster={storyGroup.preview}
-                                    className={css.backdrop}
-                                    withoutSkeleton
-                                />
                                 {windowItems.map((storyItem) => {
                                     const isCurrent = storyItem.id === item.id;
 
@@ -312,6 +306,7 @@ function ViewerPlayer({
                                                 markReady(storyItem.id)
                                             }
                                             isHidden={!isCurrent}
+                                            isPending={isCurrent && !isReady}
                                         />
                                     );
                                 })}
@@ -323,9 +318,12 @@ function ViewerPlayer({
                                 />
 
                                 {storyGroup.title && (
-                                    <p className={css.title}>
-                                        {storyGroup.title}
-                                    </p>
+                                    <p
+                                        className={css.title}
+                                        dangerouslySetInnerHTML={{
+                                            __html: storyGroup.title,
+                                        }}
+                                    />
                                 )}
 
                                 {item.type === 'video' && (

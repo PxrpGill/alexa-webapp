@@ -30,14 +30,6 @@
     pointer-events: none;
 }
 
-/*
- * Превью группы под кадром: пока картинка сториса не отрисовалась, в ячейке
- * остаётся та же картинка, что была на плашке, — переключение не моргает.
- */
-.backdrop {
-    z-index: 0;
-}
-
 .stage {
     position: relative;
     width: 100%;
@@ -164,25 +156,9 @@
     translate: -50% -50%;
     pointer-events: none;
 
-    /*
-     * Лоадер показываем с задержкой: закэшированный или предзагруженный кадр
-     * готов за доли секунды, и мгновенный лоадер читался бы как мигание.
-     */
-    animation: loader-appear 0.2s 0.3s both;
-
     svg {
         width: 100%;
         height: 100%;
-    }
-}
-
-@keyframes loader-appear {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
     }
 }
 

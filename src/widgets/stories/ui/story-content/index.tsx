@@ -18,6 +18,12 @@ type StoryContentProps = {
      * прогрузиться, но не виден и не участвует в показе.
      */
     isHidden?: boolean;
+    /**
+     * Текущий кадр, который ещё грузится. Прячем его, чтобы вместо
+     * недорисованной картинки был тёмный кадр с лоадером, но грузим
+     * с высоким приоритетом.
+     */
+    isPending?: boolean;
 };
 
 /** Один кадр сториса: картинка или видео */
@@ -27,9 +33,12 @@ export default function StoryContent({
     isMuted,
     onReady,
     isHidden,
+    isPending,
 }: StoryContentProps) {
     return (
-        <div className={`${css.root} ${isHidden ? css.hidden : ''}`.trim()}>
+        <div
+            className={`${css.root} ${isHidden || isPending ? css.hidden : ''}`.trim()}
+        >
             {item.type === 'video' ? (
                 <Video
                     ref={videoRef}
@@ -45,8 +54,8 @@ export default function StoryContent({
                     fetchPriority={isHidden ? 'auto' : 'high'}
                     onReady={onReady}
                     // Серый скелетон с переливом и проявление по opacity на
-                    // смене кадра читаются как мигание: под кадром и так лежит
-                    // превью группы, а на долгую загрузку есть лоадер.
+                    // смене кадра читаются как мигание: пока кадр грузится,
+                    // его прячет isPending, а поверх висит лоадер.
                     withoutSkeleton
                 />
             )}
