@@ -318,9 +318,12 @@ function ViewerPlayer({
                                 />
 
                                 {storyGroup.title && (
-                                    <p className={css.title}>
-                                        {storyGroup.title}
-                                    </p>
+                                    <p
+                                        className={css.title}
+                                        dangerouslySetInnerHTML={{
+                                            __html: storyGroup.title,
+                                        }}
+                                    />
                                 )}
 
                                 {item.type === 'video' && (
