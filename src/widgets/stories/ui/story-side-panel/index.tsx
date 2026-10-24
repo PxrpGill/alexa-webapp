@@ -28,7 +28,12 @@ export default function StorySidePanel({
             }
         >
             <Picture poster={group.preview} withoutSkeleton />
-            {group.title && <span className={css.title}>{group.title}</span>}
+            {group.title && (
+                <span
+                    className={css.title}
+                    dangerouslySetInnerHTML={{ __html: group.title }}
+                />
+            )}
         </button>
     );
 }
