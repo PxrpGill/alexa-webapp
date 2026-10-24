@@ -1,6 +1,7 @@
 import { cache } from 'react';
 
 import { API_URLS } from '@/shared/api/api-urls';
+import { handleFetchError } from '@/shared/api/handle-fetch-error';
 import apiInstance from '@/shared/config/api-instance';
 
 import type { VacanciesListResponseType } from '../types/vacancies-list.types';
@@ -24,7 +25,7 @@ export const getVacanciesByCategory = cache(
 
             return response.data as VacanciesListResponseType;
         } catch (error) {
-            console.error(error);
+            handleFetchError(error);
 
             return { total: 0, results: [], categories: [] };
         }

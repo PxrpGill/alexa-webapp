@@ -73,7 +73,8 @@ nginx :80  →  app :3000
 | Переменная | Описание |
 |-----------|----------|
 | `NEXT_PUBLIC_YANDEX_MAPS_API_KEY` | Ключ Яндекс.Карт |
-| `NEXT_PUBLIC_API_URL` | URL бэкенда (по умолч. `http://localhost:8000`) |
+| `NEXT_PUBLIC_API_URL` | URL бэкенда для браузера (по умолч. `http://localhost:8000`) |
+| `API_URL` | URL бэкенда для сервера Next (приоритетнее `NEXT_PUBLIC_API_URL`) |
 | `APP_PORT` | Порт для dev-окружения (только dev) |
 | `NGINX_PORT` | Порт для nginx (только prod) |
 
@@ -81,7 +82,11 @@ nginx :80  →  app :3000
 
 ```env
 NEXT_PUBLIC_YANDEX_MAPS_API_KEY=твой_ключ
+API_URL=https://api.example.ru
+NEXT_PUBLIC_API_URL=https://api.example.ru
 ```
+
+В prod `API_URL` и `NEXT_PUBLIC_API_URL` нужны **на этапе сборки**, а не только в рантайме: пререндер ISR-страниц ходит в бэкенд, а `NEXT_PUBLIC_*` вшивается в клиентский бандл. `docker/prod/Makefile` читает их из `src/.env.local` и передаёт в `docker compose` как build-аргументы; без них compose остановится с ошибкой. Если бэкенд при сборке недоступен, `pnpm build` упадёт — это намеренно: лучше несобранный образ (старый контейнер продолжит работать), чем сайт с пустыми страницами.
 
 ## Структура
 
