@@ -1,6 +1,7 @@
 import { cache } from 'react';
 
 import { API_URLS } from '@/shared/api/api-urls';
+import { handleFetchError } from '@/shared/api/handle-fetch-error';
 import apiInstance from '@/shared/config/api-instance';
 
 import type { GetStoriesResponseType, StoryGroup } from '../types/story.types';
@@ -26,7 +27,7 @@ export const getStories = cache(
 
             return { groups };
         } catch (error) {
-            console.error(error);
+            return handleFetchError(error);
         }
     }
 );

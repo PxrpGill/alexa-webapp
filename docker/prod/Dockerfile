@@ -14,6 +14,14 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # сборки, поэтому домен обязан быть известен здесь, а не только в рантайме.
 ARG NEXT_PUBLIC_SITE_URL=https://aleksa-dent.ru
 ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
+# Адрес бэкенда тоже нужен на сборке: пререндер ходит в API за данными
+# (без него все страницы запекаются пустыми, а generateStaticParams отдаёт []),
+# а NEXT_PUBLIC_API_URL вшивается в клиентский бандл. .env.local в образ
+# не попадает (.dockerignore), а .env.example Next не читает.
+ARG API_URL
+ARG NEXT_PUBLIC_API_URL
+ENV API_URL=$API_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 RUN pnpm build
 
 FROM node:24-alpine AS runner
