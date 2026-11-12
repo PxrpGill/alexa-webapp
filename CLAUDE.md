@@ -72,7 +72,7 @@ Two coexisting sources — do not assume "all data is mock":
 
 1. **Static content** — typed constants in `views/<page>/models/<page>.constants.ts` (and `widgets/<w>/models/`), typed against `types/`, spread into widgets: `<FaqSection {...MOCK_FAQ_SECTION} />`. Copy is Russian HTML strings with `&nbsp;`/`&#8209;`, rendered via `dangerouslySetInnerHTML` (the Biome rule is deliberately `off`).
 2. **Real backend** — `/api/v1/*` on a separate service. Paths are centralized in `shared/api/api-urls.ts` (never inline a URL). Axios singleton: `shared/config/api-instance.ts`, 30s timeout, base URL `API_URL ?? NEXT_PUBLIC_API_URL ?? http://localhost:8000`.
-   - **Reads**: server-side fetchers wrapped in React `cache()` (`entities/news/api/get-all-news.ts`, `shared/api/get-all-branches.ts`). Called from `app/*/page.tsx` with `export const revalidate = 60`, result passed into the view as `initial*Data`. They swallow errors and return `undefined`/the error — callers must guard.
+   - **Reads**: server-side fetchers wrapped in React `cache()` (`entities/news/api/get-all-news.ts`, `shared/api/get-all-branches.ts`). Called from `app/*/page.tsx` with `export const revalidate = 60`, result passed into the view as `initial*Data`. Their `catch` goes through `shared/api/handle-fetch-error.ts`: a backend **404 returns `undefined`** (→ `notFound()`), **anything else is rethrown** so ISR keeps serving the last good page instead of caching an empty page or a false 404. Never swallow errors in a new server fetcher. `api-instance.ts` retries a GET once on connection errors / 502–504 (not on timeout).
    - **Writes**: `shared/api/post-*.ts` + a per-feature `use-post-*.ts` TanStack mutation hook (`features/consultation-modal/hooks/use-post-consultation.ts`).
    - React Query is wired in `shared/config/react-query-custom-provider.tsx` (`staleTime` 60s, streamed hydration). **Redux Toolkit is a dependency but not wired up** — no store, no slices, no Provider. Shared state is React Context.
 
@@ -156,7 +156,7 @@ Defined in `src/.env.example`; real values go in `src/.env.local` (gitignored).
 |----------|---------|-------|
 | `NEXT_PUBLIC_YANDEX_MAPS_API_KEY` | — | Yandex Maps widget |
 | `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | client-side base URL |
-| `API_URL` | `http://localhost:8000` | server-side; takes precedence. `http://host.docker.internal:8000` in Docker dev |
+| `API_URL` | `http://localhost:8000` | server-side; takes precedence. `http://host.docker.internal:8000` in Docker dev. **Also needed at build time** — prerender fetches data; `docker/prod` passes it (and `NEXT_PUBLIC_API_URL`, which is inlined into the client bundle) as build `ARG`s read from `src/.env.local` by the Makefile |
 | `NEXT_PUBLIC_SITE_URL` | `https://aleksa-dent.ru` | canonical / `og:url` / sitemap origin. **Baked in at build time** — `docker/prod` passes it as a build `ARG`, not just `env_file`, because the 35 static pages are prerendered with it. |
 
 ## Docker

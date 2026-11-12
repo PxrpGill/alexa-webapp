@@ -1,7 +1,7 @@
 const nextConfig = {
 	output: "standalone",
 
-	expireTime: 60,
+	expireTime: 3600,
 
 	reactCompiler: true,
 

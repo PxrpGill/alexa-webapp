@@ -62,7 +62,7 @@ Redux Toolkit is a dependency but **not yet wired up** — no store, slices, or 
 
 ### Data fetching
 
-TanStack React Query is wired via `shared/config/react-query-custom-provider.tsx` (mounted in `app/layout.tsx`). Axios instance lives in `shared/config/api-instance.ts` — base URL falls back to `NEXT_PUBLIC_API_URL`. Form-submit hooks live per-feature as `use-post-*.ts` (e.g. `features/consultation-modal/hooks/use-post-consultation.ts`). `/media/*` requests are rewritten to the API in `next.config.mjs`.
+TanStack React Query is wired via `shared/config/react-query-custom-provider.tsx` (mounted in `app/layout.tsx`). Axios instance lives in `shared/config/api-instance.ts` — base URL `API_URL ?? NEXT_PUBLIC_API_URL`; retries a GET once on connection errors / 502–504. Server fetchers route their `catch` through `shared/api/handle-fetch-error.ts`: backend 404 → `undefined` (→ `notFound()`), any other error is rethrown so ISR keeps the last good page — never swallow errors there. In `docker/prod` both API URLs are build `ARG`s (prerender needs the backend; `NEXT_PUBLIC_*` is inlined at build). Form-submit hooks live per-feature as `use-post-*.ts` (e.g. `features/consultation-modal/hooks/use-post-consultation.ts`). `/media/*` requests are rewritten to the API in `next.config.mjs`.
 
 ## Coding patterns
 

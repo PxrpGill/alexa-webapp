@@ -28,7 +28,8 @@ cd /opt/alexa-webapp
 # secrets
 cp src/.env.example src/.env.local
 nano src/.env.local
-# → заполнить NEXT_PUBLIC_YANDEX_MAPS_API_KEY
+# → заполнить NEXT_PUBLIC_YANDEX_MAPS_API_KEY,
+#   API_URL и NEXT_PUBLIC_API_URL (адрес бэкенда, нужен уже при сборке)
 ```
 
 ### Запуск

@@ -1,6 +1,7 @@
 import { cache } from 'react';
 
 import { API_URLS } from '@/shared/api/api-urls';
+import { handleFetchError } from '@/shared/api/handle-fetch-error';
 import apiInstance from '@/shared/config/api-instance';
 
 import type { DetailPromotionType } from '../types/detail-promotion.types';
@@ -14,9 +15,7 @@ export const getDetailPromotion = cache(
 
             return response.data;
         } catch (error) {
-            console.error(error);
-
-            return;
+            return handleFetchError(error);
         }
     }
 );

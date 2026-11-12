@@ -4,6 +4,9 @@ allowBuilds:
 auditConfig:
   ignoreGhsas:
     - GHSA-vfj7-8cjw-p6xm
+    # zod 3.x приходит только через lighthouse → puppeteer-core → chromium-bidi
+    # (devDependency, в прод-сборку не попадает); фикс есть лишь в мажоре 4.x
+    - GHSA-mrhx-c7xc-m3w5
 
 minimumReleaseAgeExclude:
   - postcss@8.5.18

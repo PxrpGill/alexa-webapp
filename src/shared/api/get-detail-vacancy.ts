@@ -5,6 +5,7 @@ import type { DetailVacancyType } from '@/entities/vacancies/types/detail-vacanc
 import apiInstance from '../config/api-instance';
 
 import { API_URLS } from './api-urls';
+import { handleFetchError } from './handle-fetch-error';
 
 type GetDetailVacancyParams = {
     vacancySlug: string;
@@ -21,9 +22,7 @@ export const getDetailVacancy = cache(
 
             return response.data;
         } catch (error) {
-            console.error(error);
-
-            return;
+            return handleFetchError(error);
         }
     }
 );
