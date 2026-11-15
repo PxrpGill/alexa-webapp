@@ -4,7 +4,7 @@
     @mixin responsive padding-block, 30, 77;
 
     position: relative;
-    background-color: var(--color-white-0);
+    background-color: var(--color-blue-2);
 
     @media (max-width: $mobile) {
         @mixin responsive padding-block-start, 120;
@@ -35,9 +35,8 @@
 }
 
 .mockup {
-    @mixin responsive width, 200, 300;
+    @mixin responsive width, 120, 280;
     @mixin responsive margin-inline-end, 0, 76;
-    @mixin responsive height, 0, 390;
 
     bottom: 0;
     right: 0;
@@ -48,7 +47,7 @@
         bottom: unset;
         top: 0;
         right: unset;
-        left: 0;
-        translate: 0 -45%;
+        left: 50%;
+        translate: -50% -30%;
     }
 }

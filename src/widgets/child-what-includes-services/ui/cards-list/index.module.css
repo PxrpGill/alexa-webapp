@@ -42,8 +42,8 @@
     &.vertical-alexik {
         @mixin responsive padding, 30, 30;
 
-        background-color: var(--color-green-1);
-        color: var(--color-white-0);
+        background-color: var(--color-white-0);
+        color: var(--color-black-1);
     }
 
     &.vertical-alexik .cardTitle,
@@ -54,14 +54,17 @@
 
     &.vertical-alexik .content {
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    &.vertical-alexik .cardDescription {
+    /* &.vertical-alexik .cardDescription {
         position: absolute;
         top: 50%;
         left: 50%;
         translate: -50% -50%;
-    }
+    } */
 
     &.horizontal-alexik {
         display: flex;
@@ -112,11 +115,10 @@
         content: '';
         position: absolute;
         top: 0;
-        opacity: 0.9;
         left: 0%;
         width: 100%;
         height: 100%;
-        background: rgba(255, 255, 255, 0.7);
+        background: var(--color-blue-2);
     }
 }
 

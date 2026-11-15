@@ -71,6 +71,10 @@
     overflow: hidden;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
 
+    &.disablePosterOverflow {
+        overflow: visible;
+    }
+
     @media (max-width: $mobile) {
         @mixin responsive height, 300;
 

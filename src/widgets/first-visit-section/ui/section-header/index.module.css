@@ -1,15 +1,23 @@
 .root {
     @mixin responsive padding-block-start, 30, 50;
     @mixin responsive padding-inline, 20, 160;
-    @mixin responsive padding-block-end, 200, 363;
+    @mixin responsive padding-block-end, 240, 156;
     @mixin responsive border-radius, 30, 30;
+    @mixin responsive gap, 20, 50;
 
-    background-color: var(--color-white-0);
+    background-color: var(--color-blue-2);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &.visible .mockup {
-        translate: -50% 35%;
+        translate: -25% 33%;
+        
+        @media (max-width: $mobile) {
+            translate: -50% 36%;
+        }
     }
 }
 
@@ -17,20 +25,37 @@
     @mixin text-6xl;
 
     text-align: center;
+    z-index: 10;
+    position: relative;
 
     @media (max-width: $mobile) {
         @mixin responsive font-size, 20;
     }
 }
 
+.button[class] {
+    width: fit-content;
+}
+
 .mockup {
-    @mixin responsive width, 300, 686;
+    @mixin responsive width, 300, 622;
     @mixin transition translate;
 
     transition-duration: 0.5s;
 
     position: absolute;
     bottom: 0;
-    left: 50%;
-    translate: -50% 100%;
+    left: 0;
+    translate: -25% 100%;
+    pointer-events: none;
+
+    @media (max-width: $mobile) {
+        left: 50%;
+        translate: -50% 80%;
+    }
+}
+
+.icon {
+    @mixin responsive width, 20, 20;
+    @mixin responsive height, 20, 20;
 }

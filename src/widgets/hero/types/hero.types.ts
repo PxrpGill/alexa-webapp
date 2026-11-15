@@ -7,4 +7,5 @@ export type HeroProps = {
 	description?: string;
 	poster?: PictureFormatType;
 	button?: SiteButtonProps;
+	disablePosterOverflow?: boolean;
 } & PropsWithClassName;
