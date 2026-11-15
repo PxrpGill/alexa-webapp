@@ -158,7 +158,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/form-checklist.webp",
 		},
 	},
 };
@@ -175,7 +175,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Врач выслушивает ваши жалобы, проводит осмотр полости рта и&nbsp;отвечает на&nbsp;все интересующие вопросы.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/1-desktop.webp",
+					src: "/mock/cards/card-lupa.webp",
 				},
 			},
 		},
@@ -185,7 +185,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"При необходимости выполняются фотопротокол, прицельные и&nbsp;панорамные снимки или&nbsp;КТ для полной диагностики и&nbsp;точного планирования лечения.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/2-desktop.webp",
+					src: "/mock/cards/card-zup.webp",
 				},
 			},
 		},
@@ -195,7 +195,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"По&nbsp;результатам диагностики врач подробно объясняет ситуацию, предлагает оптимальные варианты лечения, озвучивает сроки и&nbsp;стоимость каждого этапа.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/3-desktop.webp",
+					src: "/mock/cards/card-checklist.webp",
 				},
 			},
 		},
@@ -205,7 +205,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"При отсутствии противопоказаний лечение можно начать сразу после консультации или выбрать удобную дату для следующего визита.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/4-desktop.webp",
+					src: "/mock/cards/card-mikroscop.webp",
 				},
 			},
 		},

@@ -9,6 +9,10 @@ import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import Button from "@/shared/ui/button";
 
 import css from "./index.module.css";
+import {
+	INITIAL_VISIBLE_COUNT_OF_CARDS,
+	SHOW_MORE_VISIBLE_COUNT_OF_CARDS,
+} from "./models/cost-of-services.constants";
 import type { CostOfServicesProps } from "./types/cost-of-services.types";
 import CostOfServicesCard from "./ui/cost-of-services-card";
 import Tabs from "./ui/tabs";
@@ -19,7 +23,9 @@ export default function CostOfServices({
 	tabs,
 	className,
 }: CostOfServicesProps) {
-	const [visibleCount, setVisibleCount] = useState(4);
+	const [visibleCount, setVisibleCount] = useState(
+		INITIAL_VISIBLE_COUNT_OF_CARDS,
+	);
 	const [activeTabKey, setActiveTab] = useState<string>(
 		(tabs && tabs[0]?.tabKey) ?? "",
 	);
@@ -28,7 +34,7 @@ export default function CostOfServices({
 	const hasMore = visibleCount < (cards?.length ?? 0);
 
 	const handleShowMore = () => {
-		setVisibleCount((prev) => prev + 4);
+		setVisibleCount((prev) => prev + SHOW_MORE_VISIBLE_COUNT_OF_CARDS);
 	};
 
 	const handleTabChange = useCallback((tabKey: string) => {

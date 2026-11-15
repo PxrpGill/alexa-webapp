@@ -142,7 +142,7 @@ export const QUADRO_SECTION: QuadroSectionProps = {
 		},
 		poster: {
 			webp: {
-				src: "/mock/adult-orthodontics/hero-desktop.webp",
+				src: "/mock/adult-orthodontics/orthodontics-hero.webp",
 			},
 		},
 	},
@@ -776,7 +776,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Врач-ортодонт выслушивает ваш запрос, осматривает зубы и&nbsp;прикус и&nbsp;рассказывает, какие системы подойдут именно в&nbsp;вашем случае.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/1-desktop.webp",
+					src: "/mock/cards/card-lupa.webp",
 				},
 			},
 		},
@@ -786,7 +786,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Профессиональные фотографии, 3D-сканирование зубов и&nbsp;компьютерная томография&nbsp;&mdash; чтобы заранее спланировать перемещение каждого зуба.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/3-desktop.webp",
+					src: "/mock/cards/card-zup.webp",
 				},
 			},
 		},
@@ -796,7 +796,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Главный врач-ортодонт составляет индивидуальный план и&nbsp;фиксирует стоимость до&nbsp;начала лечения. На&nbsp;элайнерах вы&nbsp;заранее видите 3D-план и&nbsp;будущий результат.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/2-desktop.webp",
+					src: "/mock/cards/card-checklist.webp",
 				},
 			},
 		},
@@ -806,7 +806,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"При необходимости проводим гигиену и&nbsp;лечение зубов, затем повторно сканируем зубы и&nbsp;фиксируем брекет-систему или выдаём первую пару элайнеров.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/4-desktop.webp",
+					src: "/mock/cards/card-eliners.webp",
 				},
 			},
 		},
@@ -816,7 +816,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Плановые визиты для активации системы и&nbsp;замены дуг, а&nbsp;после снятия&nbsp;&mdash; ретейнер или каппы, которые удерживают зубы в&nbsp;новом положении.",
 			poster: {
 				webp: {
-					src: "/mock/adult-orthopedics/fourth-slider/3-slide.webp",
+					src: "/mock/cards/card-white-calendar.webp",
 				},
 			},
 		},
@@ -829,7 +829,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/form-checklist.webp",
 		},
 	},
 };

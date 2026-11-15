@@ -446,7 +446,7 @@ export const STILL_QUESTIONS: StillQuestionProps = {
 		"Оставьте заявку и&nbsp;мы&nbsp;проконсультируем<br /> вас насчет всех нюансов лечения!",
 	poster: {
 		webp: {
-			src: "/mock/home/still-questions/still-questions-desktop.webp",
+			src: "/mock/home/still-questions/still-questions-alt.webp",
 		},
 	},
 	button: { title: "Оставить заявку", isOpenConsultationModal: true },

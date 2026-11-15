@@ -23,7 +23,7 @@ export const QUADRO_MOCK: QuadroSectionProps = {
 		},
 		poster: {
 			webp: {
-				src: "/mock/adult-orthopedics/quadro.webp",
+				src: "/mock/adult-orthopedics/orthopedics-hero.webp",
 			},
 		},
 	},
@@ -228,7 +228,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Врач проводит осмотр, выполняет фотопротокол, при необходимости назначает КЛКТ и&nbsp;3D-сканирование зубов, после чего составляет индивидуальный план лечения.",
 			poster: {
 				webp: {
-					src: "/mock/adult-orthopedics/diagnostics/4-desktop.webp",
+					src: "/mock/cards/card-lupa.webp",
 				},
 			},
 		},
@@ -238,7 +238,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"При необходимости проводится лечение зубов и&nbsp;дёсен, профессиональная гигиена, удаление зубов или установка имплантатов, если они предусмотрены планом лечения.",
 			poster: {
 				webp: {
-					src: "/mock/adult-orthopedics/diagnostics/5-desktop.webp",
+					src: "/mock/cards/card-vrach.webp",
 				},
 			},
 		},
@@ -248,7 +248,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Врач подготавливает зубы и&nbsp;выполняет цифровое сканирование. По&nbsp;полученным данным изготавливаются коронки, виниры, мосты и&nbsp;другие ортопедические конструкции.",
 			poster: {
 				webp: {
-					src: "/mock/adult-orthopedics/diagnostics/1-desktop.webp",
+					src: "/mock/cards/card-big-zup.webp",
 				},
 			},
 		},
@@ -258,7 +258,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Готовая конструкция примеряется, корректируется и&nbsp;фиксируется. Врач проверяет прикус и&nbsp;комфорт, а&nbsp;также даёт рекомендации по&nbsp;уходу.",
 			poster: {
 				webp: {
-					src: "/mock/adult-orthopedics/diagnostics/2-desktop.webp",
+					src: "/mock/cards/card-calendar.webp",
 				},
 			},
 		},
@@ -309,7 +309,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/form-checklist.webp",
 		},
 	},
 };

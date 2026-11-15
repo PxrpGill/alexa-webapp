@@ -11,7 +11,7 @@ import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
-import { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
+import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 import type { WhatServiceIncludesProps } from "@/widgets/what-service-includes/types/what-service-includes.types";
 import type { WhyChooseUsProps } from "@/widgets/why-choose-us/types/why-choose-us.types";
 
@@ -25,10 +25,7 @@ export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
 		},
 		poster: {
 			webp: {
-				src: "/mock/adult-therapy/quadro.webp",
-			},
-			original: {
-				src: "/mock/adult-therapy/quadro.jpg",
+				src: "/mock/adult-therapy/therapy-hero.webp",
 			},
 		},
 	},
@@ -152,7 +149,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Врач выслушивает ваши жалобы, проводит осмотр полости рта и&nbsp;отвечает на&nbsp;все интересующие вопросы.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/1-desktop.webp",
+					src: "/mock/cards/card-lupa.webp",
 				},
 			},
 		},
@@ -162,7 +159,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"При необходимости выполняются фотопротокол, прицельные и&nbsp;панорамные снимки или&nbsp;КТ для полной диагностики и&nbsp;точного планирования лечения.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/2-desktop.webp",
+					src: "/mock/cards/card-zup.webp",
 				},
 			},
 		},
@@ -172,7 +169,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"По&nbsp;результатам диагностики врач подробно объясняет ситуацию, предлагает оптимальные варианты лечения, озвучивает сроки и&nbsp;стоимость каждого этапа.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/3-desktop.webp",
+					src: "/mock/cards/card-checklist.webp",
 				},
 			},
 		},
@@ -182,7 +179,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"При отсутствии противопоказаний лечение можно начать сразу после консультации или выбрать удобную дату для следующего визита.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/4-desktop.webp",
+					src: "/mock/cards/card-mikroscop.webp",
 				},
 			},
 		},
@@ -296,7 +293,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/form-checklist.webp",
 		},
 	},
 };

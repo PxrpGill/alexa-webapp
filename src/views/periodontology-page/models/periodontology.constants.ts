@@ -27,7 +27,7 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 		},
 		poster: {
 			webp: {
-				src: "/mock/pariodontology/quadro.webp",
+				src: "/mock/pariodontology/pariaodontology-hero.webp",
 			},
 		},
 	},
