@@ -318,7 +318,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Диагностика и&nbsp;Консультация",
 					description:
-						"Правильная диагностика&nbsp;&mdash; успех любого лечения!",
+						"Осмотр, при необходимости&nbsp;&mdash; рентген или&nbsp;КТ, и&nbsp;понятный план лечения с&nbsp;ценами до&nbsp;начала процедур.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices[
 							"konsultaciya-stomatologa"
@@ -328,7 +328,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Гигиена и&nbsp;профилактика",
 					description:
-						"Для качественного лечения и&nbsp;долгосрочного результата практически перед всеми стоматологическими манипуляциями Вам может быть необходимо провести профессиональную гигиену полости рта.",
+						"Профессиональная чистка, удаление налёта и&nbsp;камня, уход при брекетах. Помогает предотвратить кариес и&nbsp;воспаление десен и&nbsp;сохранить результат лечения.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices[
 							"gigiena-i-profilaktika-vz"
@@ -338,7 +338,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Хирургия и&nbsp;имплантация",
 					description:
-						"Хирургическая стоматология в&nbsp;нашей клинике&nbsp;&mdash; это разнообразные оперативные вмешательствах на&nbsp;мягких и&nbsp;твердых тканях ротовой полости.",
+						"Удаление сложных зубов, в&nbsp;том числе восьмёрок, имплантация и&nbsp;костная пластика. Перед операцией врач проводит диагностику и&nbsp;объясняет каждый этап.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices[
 							"hirurgiya-i-implantaciya"
@@ -348,7 +348,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Ортодонтия",
 					description:
-						"Если Вам требуется коррекция и&nbsp;устранения аномалий зубочелюстной системы, Вас беспокоит неправильное расположение зубов или расстояние между ними, неприятные ощущения при жевании пищи, излишняя стираемость зубов, и&nbsp;если&nbsp;Вы готовитесь к&nbsp;имплантации и&nbsp;протезированию, в&nbsp;том числе к&nbsp;установке виниров Вам нужно посетить врача-ортодонта.",
+						"Брекеты, элайнеры и&nbsp;ортодонтические аппараты для исправления прикуса и&nbsp;положения зубов. Систему подбираем под ваш случай, в&nbsp;том числе перед имплантацией и&nbsp;протезированием.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices["ortodontiya"],
 					},
@@ -356,7 +356,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Лечение &laquo;во&nbsp;сне&raquo;",
 					description:
-						"Обеспечивает максимальный комфорт и&nbsp;безопасность для всех пациентов. Пациенты могут избавиться от&nbsp;страха и&nbsp;переживаний, обеспечивая эффективное и&nbsp;качественное лечение без стресса.",
+						"Лечение под наркозом с&nbsp;контролем анестезиолога. Подходит тем, кто сильно боится стоматолога или нуждается в&nbsp;объёмном лечении. Перед процедурой врач оценивает показания и&nbsp;противопоказания.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices["lechenie-vo-sne-vz"],
 					},
@@ -364,7 +364,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Терапия",
 					description:
-						"Если в&nbsp;ходе первого приема у&nbsp;Вас были диагностированы заболевания зубов, начинается этап терапии.",
+						"Лечение кариеса, восстановление зубов пломбами и&nbsp;лечение корневых каналов. Начинаем с&nbsp;диагностики и&nbsp;объясняем, что нужно сделать и&nbsp;в&nbsp;каком порядке.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices["terapiya-vz"],
 					},
@@ -372,7 +372,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Ортопедия",
 					description:
-						"Обнаружение и&nbsp;устранение нарушений целостности зубного ряда, восстановление функций зубочелюстного аппарата&nbsp;&mdash; это задачи врачей-ортопедов нашей клиники.",
+						"Коронки, мосты, протезы и&nbsp;виниры, которые восстанавливают жевание, речь и&nbsp;внешний вид улыбки.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices["ortopediya-vz"],
 					},
@@ -380,7 +380,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Пародонтология",
 					description:
-						"Своевременная оценка состояния десен позволяет остановить заболевание до&nbsp;серьёзных последствий.",
+						"Лечение воспаления и&nbsp;кровоточивости десен. Исследование на&nbsp;Florida Probe поможет выявить проблему на&nbsp;ранней стадии.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices["parodontologiya"],
 					},
@@ -388,7 +388,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Гнатология",
 					description:
-						"Диагностика и&nbsp;лечение нарушений височно-нижнечелюстного сустава.",
+						"Диагностика и&nbsp;лечение височно-нижнечелюстного сустава: щелчки и&nbsp;боль в&nbsp;челюсти, головные боли, стирание зубов.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices["gnatologiya"],
 					},
@@ -401,7 +401,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Консультация детского стоматолога",
 					description:
-						"Правильная диагностика&nbsp;&mdash; успех любого лечения!",
+						"Осмотр ребёнка, оценка прикуса и&nbsp;состояния зубов, рекомендации по&nbsp;уходу. Первый визит помогает познакомиться с&nbsp;врачом и&nbsp;кабинетом без спешки.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices[
 							"konsultaciya-detskogo-stomatologa"
@@ -411,7 +411,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Гигиена и&nbsp;профилактика",
 					description:
-						"Родители часто нас спрашивают: &laquo;Нужна&nbsp;ли гигиена полости рта ребенку? Ведь зубы у&nbsp;него молочные и&nbsp;через какое-то время сменятся постоянными&raquo;.",
+						"Профессиональная чистка, фторирование и&nbsp;обучение правильной чистке зубов. Помогает предотвратить кариес и&nbsp;сохранить здоровье зубов с&nbsp;молочного возраста.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices[
 							"gigiena-i-profilaktika"
@@ -421,7 +421,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Терапия",
 					description:
-						"Всех родителей волнует вопрос: &laquo;Нужно&nbsp;ли лечить кариес молочных зубов? Ведь они все равно выпадут?&raquo;.",
+						"Лечение кариеса и&nbsp;восстановление молочных и&nbsp;постоянных зубов. Врач объясняет ребёнку происходящее простыми словами.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices["detskaya-terapiya"],
 					},
@@ -429,7 +429,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Хирургия",
 					description:
-						"Удаление зубов, коррекция уздечки губ и&nbsp;языка, вестибулопластика.",
+						"Удаление молочных зубов и&nbsp;другие вмешательства, которые требуются детям. Перед процедурой врач оценивает показания и&nbsp;объясняет родителям, что будет происходить.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices["detskaya-hirurgiya"],
 					},
@@ -437,7 +437,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Лечение &laquo;во&nbsp;сне&raquo;",
 					description:
-						"Обеспечивает максимальный комфорт и&nbsp;безопасность для всех пациентов. Пациенты могут избавиться от&nbsp;страха и&nbsp;переживаний, обеспечивая эффективное и&nbsp;качественное лечение без стресса.",
+						"Лечение под наркозом для детей с&nbsp;сильным страхом или при объёмном лечении. Проводится по&nbsp;показаниям, с&nbsp;контролем анестезиолога и&nbsp;согласием родителей. Перед процедурой врач рассказывает, как подготовиться.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices["lechenie-vo-sne"],
 					},
@@ -445,7 +445,7 @@ export const HEALTH_FOR_FAMILY: HealthForFamilyProps = {
 				{
 					title: "Ортодонтия",
 					description:
-						"Если Вашему ребенку требуется коррекция и&nbsp;устранения аномалий зубочелюстной системы, его беспокоит неправильное расположение зубов или расстояние между ними; неприятные ощущения при жевании пищи; излишняя стираемость зубов нужно посетить врача-ортодонта.",
+						"Раннее исправление прикуса и&nbsp;положения зубов. Если нужно, врач подберёт систему лечения и&nbsp;объяснит, когда стоит начинать.",
 					button: {
 						href: SITE_NAVIGATION.landyshevayaServices.ortodontiya,
 					},
