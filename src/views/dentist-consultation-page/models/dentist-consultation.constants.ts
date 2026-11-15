@@ -166,7 +166,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 	sectionHeader: {
 		title: "Ваша улыбка в&nbsp;руках профессионалов!",
-		description: "Мы&nbsp;реализуем целостный осмотр для своих пациентов:",
+		description: "Мы проводим комплексный осмотр каждому пациенту:",
 	},
 	cards: [
 		{
@@ -228,8 +228,6 @@ export const COST_OF_SERVICES: CostOfServicesProps = {
 export const WHY_CHOOSE_US: WhyChooseUsProps = {
 	sectionHeader: {
 		title: "Почему первую консультацию проходят именно у&nbsp;нас",
-		description:
-			"Первый прием&nbsp;&mdash; это возможность получить полную картину состояния полости рта, понять причины проблемы и&nbsp;получить понятный план лечения без навязанных процедур.",
 	},
 	cards: [
 		{
