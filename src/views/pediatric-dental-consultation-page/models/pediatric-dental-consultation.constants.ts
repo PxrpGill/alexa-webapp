@@ -17,10 +17,12 @@ export const HERO_DATA: HeroProps = {
 	title:
 		"Здоровье зубов начинается с&nbsp;первого знакомства со&nbsp;стоматологом",
 	description:
-		"Осмотрим зубы ребёнка, ответим на&nbsp;вопросы и&nbsp;составим план дальнейших действий.",
+		"Осмотрим зубы, объясним всё простыми словами и&nbsp;составим понятный план. Родитель уходит с&nbsp;ответами, а&nbsp;ребёнок с&nbsp;хорошим опытом.",
 	poster: {
 		webp: {
-			src: "/mock/pediatric-dental-consultation/pediatric-quadro.webp",
+			src: "/mock/pediatric-dental-consultation/child-consultation-hero.webp",
+			mobile:
+				"/mock/pediatric-dental-consultation/child-consultation-hero-mobile.webp",
 		},
 	},
 	button: {
@@ -62,7 +64,7 @@ export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
 				"Определяем факторы, которые могут повлиять на здоровье зубов и развитие прикуса.",
 			poster: {
 				webp: {
-					src: "/mock/pediatric-surgery/what-includes-services/third.webp",
+					src: "/mock/pediatric-surgery/what-includes-services/what-includes-1.webp",
 				},
 			},
 		},
@@ -72,7 +74,7 @@ export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
 				"Если требуется лечение или дополнительная диагностика, врач составляет понятный план следующих шагов.",
 			poster: {
 				webp: {
-					src: "/mock/pediatric-surgery/what-includes-services/fourth.webp",
+					src: "/mock/pediatric-surgery/what-includes-services/what-includes-2.webp",
 				},
 			},
 		},
@@ -96,7 +98,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/child-form.webp",
 		},
 	},
 };
@@ -209,8 +211,11 @@ export const RECOMMENDS_FOR_CHILDREN_DATA: RecommendsForChildrenProps = {
 export const FIRST_VISIT_SECTION_DATA: FirstVisitSectionProps = {
 	sectionHeader: {
 		title: "Первая встреча, после которой не&nbsp;страшно возвращаться",
-		mockup:
-			"/mock/pediatric-dental-consultation/first-visit/alexik-with-stick.webp",
+		mockup: "/system/alexik-idea.webp",
+		button: {
+			title: "Записаться на приём",
+			href: APPOINTMENT_ID.id,
+		},
 	},
 	cards: [
 		{

@@ -29,8 +29,8 @@ export default function SectionHeader({
 			</div>
 			{mockup && (
 				<img
-					src={mockup}
-					alt="Алексик - талисман клиники"
+					src="/system/question.webp"
+					alt="Знак вопроса"
 					className={css.mockup}
 				/>
 			)}

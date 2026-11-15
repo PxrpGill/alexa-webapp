@@ -16,6 +16,7 @@ export default function Hero({
 	description,
 	button,
 	poster,
+	disablePosterOverflow = false,
 }: HeroProps) {
 	return (
 		<AnimationWrapper
@@ -47,7 +48,9 @@ export default function Hero({
 					</Button>
 				)}
 			</div>
-			<div className={css.posterWrapper}>
+			<div
+				className={`${css.posterWrapper} ${disablePosterOverflow && css.disablePosterOverflow}`}
+			>
 				{poster && <Picture poster={poster} />}
 			</div>
 		</AnimationWrapper>

@@ -24,13 +24,14 @@
     background-color: var(--color-white-0);
 
     &.green {
-        color: var(--color-white-0);
-        background-color: var(--color-green-1);
+        background-color: var(--color-white-0);
     }
 }
 
 .number {
     @mixin text-6xl;
+
+    color: var(--color-green-1);
 }
 
 .cardTitle {
