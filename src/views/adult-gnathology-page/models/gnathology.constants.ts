@@ -28,7 +28,7 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 		},
 		poster: {
 			webp: {
-				src: "/mock/gnathologia/quadro.webp",
+				src: "/mock/gnathologia/gnatology-hero.webp",
 			},
 		},
 	},
@@ -93,7 +93,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Врач выслушивает ваши жалобы, собирает анамнез и&nbsp;определяет, какие исследования необходимы именно в&nbsp;вашем случае.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/1-desktop.webp",
+					src: "/mock/cards/card-talking.webp",
 				},
 			},
 		},
@@ -103,7 +103,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Оцениваются прикус, работа височно-нижнечелюстного сустава, движения челюсти, состояние зубов и&nbsp;жевательных мышц.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/2-desktop.webp",
+					src: "/mock/cards/card-jaw.webp",
 				},
 			},
 		},
@@ -113,7 +113,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Проводятся необходимые исследования: КЛКТ, МРТ ВНЧС (при показаниях), цифровое сканирование зубов и&nbsp;ортодонтическая диагностика для точной оценки состояния сустава.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/3-desktop.webp",
+					src: "/mock/cards/card-lupa.webp",
 				},
 			},
 		},
@@ -123,7 +123,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Выполняется функциональная диагностика с&nbsp;использованием аксиографии и&nbsp;артикулятора, чтобы определить причину нарушения работы сустава.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/4-desktop.webp",
+					src: "/mock/cards/card-low-jaw.webp",
 				},
 			},
 		},
@@ -133,7 +133,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Врач подробно объясняет результаты диагностики, определяет причину проблемы и&nbsp;составляет индивидуальный план лечения с&nbsp;учетом всех особенностей клинического случая.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/4-desktop.webp",
+					src: "/mock/cards/card-checklist.webp",
 				},
 			},
 		},
@@ -168,7 +168,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/form-checklist.webp",
 		},
 	},
 };

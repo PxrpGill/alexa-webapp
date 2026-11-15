@@ -25,7 +25,7 @@ export const HERO_MOCK: QuadroSectionProps = {
 			"Удаление, восстановление и&nbsp;установка имплантов&nbsp;&mdash; всё в&nbsp;одной клинике, под контролем опытных хирургов с&nbsp;пожизненной гарантией на&nbsp;импланты!<br /> Работаем только с&nbsp;проверенными системами и&nbsp;остаёмся на&nbsp;связи&nbsp;&mdash; до&nbsp;и&nbsp;после лечения.",
 		poster: {
 			webp: {
-				src: "/mock/surgery-and-implantation/surgery-and-implantation-hero.webp",
+				src: "/mock/surgery-and-implantation/hirurgiya-hero.webp",
 			},
 		},
 		card: {
@@ -42,7 +42,7 @@ export const TITLE_STICKY_SECTION_MOCK: TitleStickySectionProps = {
 	lastCard: {
 		poster: {
 			webp: {
-				src: "/mock/surgery-and-implantation/what-includes.webp",
+				src: "/mock/surgery-and-implantation/hirurgiya-title-sticky.webp",
 			},
 		},
 	},
@@ -314,7 +314,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/dark-form-checklist.webp",
 		},
 	},
 };

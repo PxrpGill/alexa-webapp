@@ -27,7 +27,7 @@ export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
 		},
 		poster: {
 			webp: {
-				src: "/mock/hygiene/quadro-desktop.webp",
+				src: "/mock/hygiene/hygiene-hero.webp",
 			},
 		},
 	},
@@ -267,7 +267,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/form-checklist.webp",
 		},
 	},
 };
@@ -413,7 +413,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Врач оценивает состояние зубов и&nbsp;дёсен, проводит индикацию зубного налёта и&nbsp;определяет участки, которым требуется особое внимание.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/1-desktop.webp",
+					src: "/mock/cards/card-lupa.webp",
 				},
 			},
 		},
@@ -423,7 +423,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Подбираем средства ухода и&nbsp;показываем, как правильно пользоваться щёткой, ёршиками и&nbsp;нитью для здоровья зубов и&nbsp;дёсен.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/2-desktop.webp",
+					src: "/mock/cards/card-box.webp",
 				},
 			},
 		},
@@ -433,7 +433,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Проводим комплексную чистку зубов: удаляем налёт ультразвуком и&nbsp;AirFlow, очищаем и&nbsp;полируем зубы, затем укрепляем эмаль реминерализирующей терапией.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/3-desktop.webp",
+					src: "/mock/cards/card-instrument.webp",
 				},
 			},
 		},

@@ -27,7 +27,7 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 		},
 		poster: {
 			webp: {
-				src: "/mock/pariodontology/quadro.webp",
+				src: "/mock/pariodontology/pariaodontology-hero.webp",
 			},
 		},
 	},
@@ -199,7 +199,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Консультация пародонтолога, КЛКТ, диагностика дёсен с&nbsp;помощью Florida Probe и&nbsp;профессиональная гигиена полости рта.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/1-desktop.webp",
+					src: "/mock/cards/card-lupa.webp",
 				},
 			},
 		},
@@ -209,7 +209,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Удаление поддесневых зубных отложений в&nbsp;области верхней челюсти с&nbsp;использованием стоматологического микроскопа.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/2-desktop.webp",
+					src: "/mock/cards/card-green-instrument.webp",
 				},
 			},
 		},
@@ -219,7 +219,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Аналогичная процедура для нижней челюсти, позволяющая тщательно очистить пародонтальные карманы.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/3-desktop.webp",
+					src: "/mock/cards/card-instrument.webp",
 				},
 			},
 		},
@@ -229,7 +229,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 				"Через 3&nbsp;месяца проводится повторный осмотр и&nbsp;повторная диагностика с&nbsp;помощью Florida Probe для оценки эффективности лечения и&nbsp;состояния тканей пародонта.",
 			poster: {
 				webp: {
-					src: "/mock/diagnostics/4-desktop.webp",
+					src: "/mock/cards/card-calendar.webp",
 				},
 			},
 		},
@@ -242,7 +242,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/form-checklist.webp",
 		},
 	},
 };

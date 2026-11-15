@@ -1,0 +1,3 @@
+export const INITIAL_VISIBLE_COUNT_OF_CARDS = 3;
+
+export const SHOW_MORE_VISIBLE_COUNT_OF_CARDS = 3;

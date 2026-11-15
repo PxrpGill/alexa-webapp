@@ -20,23 +20,74 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 	slides: [
 		{
 			title: "алекса",
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
 			card: {
-				title: "Никакого напряжения и&nbsp;тревоги",
-				content: "<p>Имплантация во&nbsp;сне под контролем врачей</p>",
+				title: "День улыбки 28&nbsp;ноября",
+				content:
+					"<p>Брекеты или элайнеры: диагностика 0&nbsp;₽ и&nbsp;подарки при записи</p>",
 				button: MAKE_APPOINTMENT_BUTTON,
 			},
 			poster: {
 				webp: {
-					src: "/mock/home/hero-slider/first.webp",
-				},
-				avif: {
-					src: "/mock/home/hero-slider/first.avif",
+					src: "/mock/home/hero-slider/smile-day.webp",
 				},
 			},
+		},
+		{
+			title: "алекса",
 			legend:
 				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
 			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+			card: {
+				title: "Четверг заботы",
+				content:
+					"<p>Тарасова Ярослава Игоревна, детский прием с&nbsp;особой атмосферой для каждого ребёнка. Каждый четверг&nbsp;&minus;10% на&nbsp;любую услугу</p>",
+				button: MAKE_APPOINTMENT_BUTTON,
+			},
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/tarasova-hero.webp",
+					mobile: "/mock/home/hero-slider/tarasova-hero-mobile.webp",
+				},
+			},
 		},
+		{
+			title: "алекса",
+			legend:
+				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
+			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+			card: {
+				title: "Комплексные программы гигиены",
+				content: "<p>Выгодная цена при покупке пакета на&nbsp;год</p>",
+				button: MAKE_APPOINTMENT_BUTTON,
+			},
+			poster: {
+				webp: {
+					src: "/mock/home/hero-slider/programs-hero.webp",
+				},
+			},
+		},
+		// {
+		// 	title: "алекса",
+		// 	card: {
+		// 		title: "Никакого напряжения и&nbsp;тревоги",
+		// 		content: "<p>Имплантация во&nbsp;сне под контролем врачей</p>",
+		// 		button: MAKE_APPOINTMENT_BUTTON,
+		// 	},
+		// 	poster: {
+		// 		webp: {
+		// 			src: "/mock/home/hero-slider/first.webp",
+		// 		},
+		// 		avif: {
+		// 			src: "/mock/home/hero-slider/first.avif",
+		// 		},
+		// 	},
+		// 	legend:
+		// 		"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
+		// 	subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+		// },
 		{
 			textTheme: "light",
 			title: "алекса",
@@ -91,23 +142,23 @@ export const HERO_SLIDES: HeroSliderSectionProps = {
 				button: MAKE_APPOINTMENT_BUTTON,
 			},
 		},
-		{
-			title: "алекса",
-			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
-			legend:
-				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
-			poster: {
-				webp: {
-					src: "/mock/home/hero-slider/5-banner-desktop.webp",
-				},
-			},
-			card: {
-				title: "Лечение десен начинается с&nbsp;точной диагностики!",
-				content:
-					"<p>Бесплатное исследование на&nbsp;системе Florida Probe для тех, у&nbsp;кого кровоточат или воспалены десны. Выявим проблему на&nbsp;ранней стадии</p>",
-				button: MAKE_APPOINTMENT_BUTTON,
-			},
-		},
+		// {
+		// 	title: "алекса",
+		// 	subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+		// 	legend:
+		// 		"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
+		// 	poster: {
+		// 		webp: {
+		// 			src: "/mock/home/hero-slider/5-banner-desktop.webp",
+		// 		},
+		// 	},
+		// 	card: {
+		// 		title: "Лечение десен начинается с&nbsp;точной диагностики!",
+		// 		content:
+		// 			"<p>Бесплатное исследование на&nbsp;системе Florida Probe для тех, у&nbsp;кого кровоточат или воспалены десны. Выявим проблему на&nbsp;ранней стадии</p>",
+		// 		button: MAKE_APPOINTMENT_BUTTON,
+		// 	},
+		// },
 		{
 			title: "алекса",
 			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
@@ -145,7 +196,7 @@ export const CTA_MOCK: CtaSectionProps = {
 
 export const DESCRIPTION_SECTION: DescriptionSectionProps = {
 	title: "Улыбка. Забота. Комфорт.<br /> Все в&nbsp;одном месте",
-	description: "Более 9000 человек стали нашими постоянными пациентами",
+	description: "Более 10&nbsp000 человек стали нашими постоянными пациентами",
 };
 
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
@@ -223,7 +274,7 @@ export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
 		title: "Команда профессионалов:",
 		description:
-			"12&nbsp;докторов с&nbsp;многолетним опытом нашей клиники в&nbsp;ответе за&nbsp;здоровье ваших зубов.",
+			"13&nbsp;докторов с&nbsp;многолетним опытом нашей клиники в&nbsp;ответе за&nbsp;здоровье ваших зубов.",
 	},
 	posters: [
 		{
@@ -446,7 +497,7 @@ export const STILL_QUESTIONS: StillQuestionProps = {
 		"Оставьте заявку и&nbsp;мы&nbsp;проконсультируем<br /> вас насчет всех нюансов лечения!",
 	poster: {
 		webp: {
-			src: "/mock/home/still-questions/still-questions-desktop.webp",
+			src: "/mock/home/still-questions/still-questions-alt.webp",
 		},
 	},
 	button: { title: "Оставить заявку", isOpenConsultationModal: true },

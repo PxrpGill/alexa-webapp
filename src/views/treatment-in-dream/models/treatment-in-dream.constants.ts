@@ -20,10 +20,7 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 		},
 		poster: {
 			webp: {
-				src: "/mock/treatment-in-dream/treatment-in-dream-hero.webp",
-			},
-			original: {
-				src: "/mock/treatment-in-dream/treatment-in-dream-hero.jpg",
+				src: "/mock/treatment-in-dream/treatment-in-dream-hero-alt.webp",
 			},
 		},
 	},
