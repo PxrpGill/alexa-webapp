@@ -26,7 +26,7 @@ export const YANDEX_MAP_INFO_CARD: InfoCardProps = {
 			locality: "Поселок Янтарный",
 			title: "ул. Ландышевая, д.&nbsp;104",
 			workSchedule:
-				"Пн - пт&nbsp;с&nbsp;9:00 до&nbsp;18:00, суббота с&nbsp;9:00 до&nbsp;18:00",
+				"Пн - пт&nbsp;с&nbsp;9:00 до&nbsp;19:00, суббота с&nbsp;9:00 до&nbsp;18:00",
 			phone: MOBILE_PHONE.landyshevaya,
 			cords: [47.286561, 39.828901],
 			gallery: [
@@ -56,7 +56,7 @@ export const YANDEX_MAP_INFO_CARD: InfoCardProps = {
 			locality: "Ростов-на-Дону",
 			title: "ул. Волкова, д.&nbsp;22",
 			workSchedule:
-				"Пн - пт&nbsp;с&nbsp;9:00 до&nbsp;18:00, суббота с&nbsp;9:00 до&nbsp;18:00",
+				"Пн - пт&nbsp;с&nbsp;9:00 до&nbsp;18:00",
 			phone: MOBILE_PHONE.volkova,
 			cords: [47.283248, 39.720142],
 			gallery: [
