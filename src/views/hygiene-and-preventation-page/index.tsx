@@ -1,5 +1,6 @@
 import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
 import { Alexik3D } from "@/shared/ui/alexik-3d";
+import Picture from "@/shared/ui/picture";
 import BeforeAfterSection from "@/widgets/before-after-section";
 import CertificatesSection from "@/widgets/certificates-section";
 import ChildWhatIncludesServices from "@/widgets/child-what-includes-services";
@@ -24,7 +25,24 @@ import {
 export default function HygieneAndPreventionPage() {
 	return (
 		<main className="page-offset">
-			<Hero {...HERO_DATA} className="section" />
+			<Hero
+				{...HERO_DATA}
+				className="section"
+				disablePosterOverflow
+				alternativePicture={
+					<Picture
+						withoutSkeleton
+						className={css.alternativePicture}
+						poster={{
+							webp: {
+								src: "/mock/hygiene-and-preventation/child-hygiene.webp",
+								mobile:
+									"/mock/hygiene-and-preventation/child-hygiene-mobile.webp",
+							},
+						}}
+					/>
+				}
+			/>
 			<ChildWhatIncludesServices
 				className={`${css.services} section`}
 				{...CHILD_WHAT_INCLUDES_SERVICES}

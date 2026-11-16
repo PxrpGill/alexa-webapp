@@ -17,6 +17,7 @@ export default function Hero({
 	button,
 	poster,
 	disablePosterOverflow = false,
+	alternativePicture,
 }: HeroProps) {
 	return (
 		<AnimationWrapper
@@ -53,6 +54,7 @@ export default function Hero({
 			>
 				{poster && <Picture poster={poster} />}
 			</div>
+			{alternativePicture}
 		</AnimationWrapper>
 	);
 }

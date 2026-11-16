@@ -23,11 +23,6 @@ export const HERO_DATA: HeroProps = {
 		title: "Записать ребёнка на приём",
 		href: APPOINTMENT_ID.id,
 	},
-	poster: {
-		webp: {
-			src: "/mock/pediatric-surgery/hero.webp",
-		},
-	},
 };
 
 export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
@@ -64,7 +59,7 @@ export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
 				"Определяем оптимальный способ лечения с&nbsp;учётом возраста и&nbsp;состояния ребёнка.",
 			poster: {
 				webp: {
-					src: "/mock/pediatric-surgery/what-includes-services/third.webp",
+					src: "/mock/pediatric-surgery/what-includes-8.webp",
 				},
 			},
 		},
@@ -74,7 +69,7 @@ export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
 				"Проводим необходимую процедуру бережно и&nbsp;под местной анестезией.",
 			poster: {
 				webp: {
-					src: "/mock/pediatric-surgery/what-includes-services/fourth.webp",
+					src: "/mock/pediatric-surgery/what-includes-9.webp",
 				},
 			},
 		},
@@ -228,7 +223,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/child-form.webp",
 		},
 	},
 };
