@@ -208,9 +208,12 @@ export const HOW_IT_WORKS_SLIDER: Omit<HowItWorksSliderProps, "className"> = {
 
 export const FIRST_VISIT_SECTION_DATA: FirstVisitSectionProps = {
 	sectionHeader: {
-		title: "Почему лечение во&nbsp;сне безопасно",
-		mockup:
-			"/mock/pediatric-dental-consultation/first-visit/alexik-with-stick.webp",
+		title: "Почему лечение<br /> во&nbsp;сне безопасно",
+		mockup: "/system/alexik-idea.webp",
+		button: {
+			title: "Записаться на приём",
+			href: APPOINTMENT_ID.id,
+		},
 	},
 	cards: [
 		{

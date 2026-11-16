@@ -134,8 +134,11 @@ export const RECOMMENDS_FOR_CHILDREN_DATA: RecommendsForChildrenProps = {
 export const FIRST_VISIT_SECTION_DATA: FirstVisitSectionProps = {
 	sectionHeader: {
 		title: "Лечение, после которого ребёнок не&nbsp;боится врача",
-		mockup:
-			"/mock/pediatric-dental-consultation/first-visit/alexik-with-stick.webp",
+		mockup: "/system/alexik-idea.webp",
+		button: {
+			title: "Записаться на приём",
+			href: APPOINTMENT_ID.id,
+		},
 	},
 	cards: [
 		{
