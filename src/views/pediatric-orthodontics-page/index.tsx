@@ -4,6 +4,7 @@ import PageContentFilter from "@/features/page-content-filter";
 import { PageFilterContentProvider } from "@/features/page-content-filter/models/page-filter-content-context";
 import PageContentResult from "@/features/page-content-filter/ui/page-content-result";
 import { Alexik3D } from "@/shared/ui/alexik-3d";
+import Picture from "@/shared/ui/picture";
 import BeforeAfterSection from "@/widgets/before-after-section";
 import ChildWhatIncludesServices from "@/widgets/child-what-includes-services";
 import CostOfServices from "@/widgets/cost-of-services";
@@ -34,7 +35,23 @@ export default function PediatricOrthodonticsPage() {
 	return (
 		<main className="page-offset">
 			<PageFilterContentProvider categories={PAGE_FILTERS}>
-				<Hero className="section" {...HERO_MOCK} />
+				<Hero
+					className="section"
+					{...HERO_MOCK}
+					alternativePicture={
+						<Picture
+							withoutSkeleton
+							poster={{
+								webp: {
+									src: "/mock/pediatric-orthodontics/child-orthodontics.webp",
+									mobile:
+										"/mock/pediatric-orthodontics/child-orthodontics-mobile.webp",
+								},
+							}}
+							className={css.alternativePicture}
+						/>
+					}
+				/>
 				<ChildWhatIncludesServices
 					className="section"
 					{...CHILD_WHAT_INCLUDES_SERVICES}

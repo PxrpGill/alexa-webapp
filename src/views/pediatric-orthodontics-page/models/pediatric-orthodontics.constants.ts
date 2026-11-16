@@ -23,11 +23,6 @@ export const HERO_MOCK: HeroProps = {
 	title: "Ровная улыбка&nbsp;&mdash;<br /> с&nbsp;заботой о&nbsp;ребёнке",
 	description:
 		"Помогаем детям и&nbsp;подросткам сформировать правильный прикус и&nbsp;красивую улыбку. Бережно, понятно и&nbsp;без страха&nbsp;&mdash; с&nbsp;индивидуальным планом лечения для каждого ребёнка.",
-	poster: {
-		webp: {
-			src: "/mock/adult-orthodontics/hero-desktop.webp",
-		},
-	},
 	button: {
 		title: "Записать ребёнка на приём",
 		href: APPOINTMENT_ID.id,
@@ -68,7 +63,7 @@ export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
 				"Челюсти смыкаются неверно, из-за этого страдают жевание, дыхание и&nbsp;речь. Направляем рост челюстей и&nbsp;приводим прикус к&nbsp;правильному смыканию.",
 			poster: {
 				webp: {
-					src: "/mock/pediatric-surgery/what-includes-services/third.webp",
+					src: "/mock/pediatric-surgery/what-includes-8.webp",
 				},
 			},
 		},
@@ -78,7 +73,7 @@ export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
 				"Зубные ряды и&nbsp;черты лица развиваются неравномерно. Выравниваем нагрузку между сторонами, чтобы рост шёл симметрично.",
 			poster: {
 				webp: {
-					src: "/mock/pediatric-surgery/what-includes-services/fourth.webp",
+					src: "/mock/pediatric-surgery/what-includes-9.webp",
 				},
 			},
 		},

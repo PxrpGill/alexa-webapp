@@ -1,0 +1,15 @@
+.alternativePicture[class] {
+    @mixin responsive width, 357, 929;
+    @mixin responsive height, 255, 498;
+
+    position: absolute;
+    left: unset;
+    right: 0;
+    bottom: 0;
+    top: unset;
+    translate: 0 4.7%;
+
+    @media (max-width: $mobile) {
+        translate: -2% 9%;
+    }
+}
