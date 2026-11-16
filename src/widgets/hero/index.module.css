@@ -3,6 +3,7 @@
     @mixin responsive gap, 20;
 
     display: grid;
+    position: relative;
     grid-template-columns: var(--first-col) auto;
 
     @media (max-width: $mobile) {
@@ -71,7 +72,7 @@
     overflow: hidden;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
 
-    &.disablePosterOverflow {
+    &.disablePosterOverflow[class] {
         overflow: visible;
     }
 

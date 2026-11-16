@@ -5,3 +5,24 @@
         max-width: unset;
     }
 }
+
+.alternativePicture[class] {
+    @mixin responsive width, 357, 822;
+    @mixin responsive height, 268, 485;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: unset;
+    translate: -0.5% 8.6%;
+
+    img {
+        height: auto;
+    }
+
+    @media (max-width: $mobile) {
+        top: unset;
+        bottom: 0;
+        translate: -2% 8.6%;
+    }
+}

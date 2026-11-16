@@ -23,11 +23,6 @@ export const HERO_DATA: HeroProps = {
 		title: "Записать ребёнка на приём",
 		href: APPOINTMENT_ID.id,
 	},
-	poster: {
-		webp: {
-			src: "/mock/hygiene-and-preventation/1-desktop.webp",
-		},
-	},
 };
 
 export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
@@ -64,7 +59,7 @@ export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
 				"Делаем поверхность зубов более гладкой, чтобы налёту было сложнее на&nbsp;ней задерживаться.",
 			poster: {
 				webp: {
-					src: "/mock/pediatric-surgery/what-includes-services/third.webp",
+					src: "/mock/hygiene-and-preventation/what-includes-6.webp",
 				},
 			},
 		},
@@ -74,7 +69,7 @@ export const CHILD_WHAT_INCLUDES_SERVICES: ChildWhatIncludesServicesProps = {
 				"Показываем ребёнку правильную технику чистки зубов и&nbsp;помогаем подобрать средства для ухода.",
 			poster: {
 				webp: {
-					src: "/mock/pediatric-surgery/what-includes-services/fourth.webp",
+					src: "/mock/hygiene-and-preventation/what-includes-7.webp",
 				},
 			},
 		},
@@ -217,7 +212,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/child-form.webp",
 		},
 	},
 };
