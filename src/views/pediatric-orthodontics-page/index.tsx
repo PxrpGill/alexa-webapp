@@ -7,7 +7,7 @@ import { Alexik3D } from "@/shared/ui/alexik-3d";
 import Picture from "@/shared/ui/picture";
 import BeforeAfterSection from "@/widgets/before-after-section";
 import ChildWhatIncludesServices from "@/widgets/child-what-includes-services";
-import CostOfServices from "@/widgets/cost-of-services";
+// import CostOfServices from "@/widgets/cost-of-services";
 import CtaHelpSection from "@/widgets/cta-help-section";
 import Hero from "@/widgets/hero";
 import OrthoHowItWorks from "@/widgets/ortho-how-it-works";
@@ -18,8 +18,8 @@ import {
 	BEFORE_AFTER_SECTION,
 	BRACKETS_HOW_IT_WORKS,
 	CHILD_WHAT_INCLUDES_SERVICES,
-	COST_OF_SERVICES_BRACKETS,
-	COST_OF_SERVICES_ELINERS,
+	// COST_OF_SERVICES_BRACKETS,
+	// COST_OF_SERVICES_ELINERS,
 	CTA_HELP_SECTION,
 	ELINERS_HOW_IT_WORKS,
 	EMPLOYEES_SECTION,
@@ -70,10 +70,10 @@ export default function PediatricOrthodonticsPage() {
 										className="section"
 										{...ORTHO_BRACKETS_CARDS}
 									/>
-									<CostOfServices
+									{/* <CostOfServices
 										className="section"
 										{...COST_OF_SERVICES_BRACKETS}
-									/>
+									/> */}
 								</Fragment>,
 							],
 							[
@@ -87,10 +87,10 @@ export default function PediatricOrthodonticsPage() {
 										className="section"
 										{...ORTHO_ELINERS_CARDS}
 									/>
-									<CostOfServices
+									{/* <CostOfServices
 										className="section"
 										{...COST_OF_SERVICES_ELINERS}
-									/>
+									/> */}
 								</Fragment>,
 							],
 						])

@@ -4,6 +4,7 @@ import type { PictureFormatType } from "@/shared/ui/picture";
 export type HowItWorksSliderProps = {
 	title?: string;
 	slides?: Array<HowItWorksSlideProps>;
+	theme?: "green" | "blue";
 } & PropsWithClassName;
 
 export type HowItWorksSlideProps = {

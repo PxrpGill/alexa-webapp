@@ -2,11 +2,20 @@
     @mixin responsive padding-block-start, 40, 80;
     @mixin responsive gap, 20, 20;
 
-    background-color: var(--color-green-1);
-    color: var(--color-white-0);
+   
     display: flex;
     flex-direction: column;
     overflow: hidden;
+
+    &.green {
+        background-color: var(--color-green-1);
+        color: var(--color-white-0);
+    }
+
+    &.blue {
+        background-color: var(--color-blue-2);
+        color: var(--color-black-1);
+    }
 }
 
 .title {

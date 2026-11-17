@@ -627,7 +627,7 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		title: "Смотреть всех специалистов",
 		href: SITE_NAVIGATION.vrachi,
 	},
-	employees: [GLOBAL_EMPLOYEES.kravchenko, GLOBAL_EMPLOYEES.tarasova],
+	employees: [GLOBAL_EMPLOYEES.kravchenko, GLOBAL_EMPLOYEES.shapavalova],
 };
 
 export const BRACKETS_HOW_IT_WORKS: OrthoHowItWorksProps = {
@@ -740,7 +740,6 @@ export const ORTHO_BRACKETS_CARDS: OrthoPriceCardsSectionProps = {
 				"Эффективность как у&nbsp;металлических систем",
 			],
 			peculiarities: [
-				"Стоимость выше, чем у&nbsp;металлических систем",
 				"Требуют аккуратного обращения и&nbsp;отказа от&nbsp;твёрдой пищи",
 				"Важно соблюдать гигиену и&nbsp;ограничивать красящие продукты",
 			],
@@ -861,6 +860,6 @@ export const BEFORE_AFTER_SECTION: BeforeAfterSectionProps = {
 	descriptionCard: {
 		title: "Как меняется улыбка ребёнка после&nbsp;лечения",
 		description:
-			"Потяните ползунок, чтобы сравнить снимки одного пациента до&nbsp;и&nbsp;после. Это работы наших врачей&nbsp;&mdash; публикуем их&nbsp;с&nbsp;согласия родителей.",
+			"Потяните ползунок, чтобы сравнить снимки одного пациента до&nbsp;и&nbsp;после.",
 	},
 };

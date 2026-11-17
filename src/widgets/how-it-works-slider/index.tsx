@@ -13,6 +13,7 @@ export default function HowItWorksSlider({
 	title,
 	className,
 	slides,
+	theme = "green",
 }: HowItWorksSliderProps) {
 	const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
 
@@ -45,7 +46,7 @@ export default function HowItWorksSlider({
 	return (
 		<AnimationWrapper
 			as="section"
-			className={`${css.root} container ${className}`}
+			className={`${css.root} container ${className} ${css[theme]}`}
 		>
 			{title && (
 				<h2 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />

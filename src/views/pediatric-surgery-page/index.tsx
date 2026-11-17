@@ -50,7 +50,7 @@ export default function PediatricSurgeryPage() {
 				className="section"
 				{...RECOMMENDS_FOR_CHILDREN_DATA}
 			/>
-			{/* <HowItWorksSlider className="section" {...HOW_IT_WORKS_SLIDER} /> */}
+			{/* <HowItWorksSlider className="section" {...HOW_IT_WORKS_SLIDER} theme="blue" /> */}
 			<BeforeAfterSection {...BEFORE_AFTER_SECTION} className="section" />
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
 			<CertificatesSection className="section" {...CERTIFICATES_SECTION} />
