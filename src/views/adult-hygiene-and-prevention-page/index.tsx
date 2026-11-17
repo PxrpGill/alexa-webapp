@@ -6,7 +6,7 @@ import OurPeopleSection from "@/widgets/our-people-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import WhatServiceIncludes from "@/widgets/what-service-includes";
+// import WhatServiceIncludes from "@/widgets/what-service-includes";
 // import WhyChooseUs from "@/widgets/why-choose-us";
 import {
 	BEFORE_AFTER_SECTION,
@@ -19,7 +19,7 @@ import {
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 	TITLE_STICKY_SECTION,
-	WHAT_SERVICE_INCLUDES,
+	// WHAT_SERVICE_INCLUDES,
 	// WHY_CHOOSE_US,
 } from "./models/adult-hygiene-and-prevention.constants";
 
@@ -27,7 +27,7 @@ export default function AdultHygieneAndPreventionPage() {
 	return (
 		<main className="page-offset">
 			<QuadroSection {...MOCK_QUADRO_SECTION} className="section" />
-			<WhatServiceIncludes className="section" {...WHAT_SERVICE_INCLUDES} />
+			{/* <WhatServiceIncludes className="section" {...WHAT_SERVICE_INCLUDES} /> */}
 			<TitleStickySection {...TITLE_STICKY_SECTION} className="section" />
 			<DiagnosticProcessSection
 				className="section"

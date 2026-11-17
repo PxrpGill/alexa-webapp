@@ -3,7 +3,7 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: intentional suppression */
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import Button from "@/shared/ui/button";
@@ -23,6 +23,7 @@ export default function CostOfServices({
 	tabs,
 	className,
 }: CostOfServicesProps) {
+	const timeOutRef = useRef<number>(0);
 	const [visibleCount, setVisibleCount] = useState(
 		INITIAL_VISIBLE_COUNT_OF_CARDS,
 	);
@@ -31,10 +32,37 @@ export default function CostOfServices({
 	);
 
 	const visibleCards = cards?.slice(0, visibleCount);
-	const hasMore = visibleCount < (cards?.length ?? 0);
 
 	const handleShowMore = () => {
+		if (timeOutRef.current) clearTimeout(timeOutRef.current);
+
 		setVisibleCount((prev) => prev + SHOW_MORE_VISIBLE_COUNT_OF_CARDS);
+
+		timeOutRef.current = Number(
+			setTimeout(() => {
+				document.getElementById("controlsOfCosts")?.scrollIntoView({
+					behavior: "smooth",
+					block: "end",
+				});
+			}, 0.167),
+		);
+	};
+
+	const handleClose = () => {
+		if (timeOutRef.current) clearTimeout(timeOutRef.current);
+
+		if (visibleCount <= INITIAL_VISIBLE_COUNT_OF_CARDS) return;
+
+		setVisibleCount((prev) => prev - SHOW_MORE_VISIBLE_COUNT_OF_CARDS);
+
+		timeOutRef.current = Number(
+			setTimeout(() => {
+				document.getElementById("controlsOfCosts")?.scrollIntoView({
+					behavior: "smooth",
+					block: "end",
+				});
+			}, 0.167),
+		);
 	};
 
 	const handleTabChange = useCallback((tabKey: string) => {
@@ -68,10 +96,21 @@ export default function CostOfServices({
 				))}
 			</ul>
 
-			{hasMore && (
-				<div className="container">
-					<Button className={css.getMoreButton} onClick={handleShowMore}>
+			{(cards?.length ?? 0) > INITIAL_VISIBLE_COUNT_OF_CARDS && (
+				<div className={`${css.controls} container`} id="controlsOfCosts">
+					<Button
+						className={css.getMoreButton}
+						onClick={handleShowMore}
+						disabled={visibleCount >= (cards?.length ?? 1)}
+					>
 						Показать еще
+					</Button>
+					<Button
+						className={css.closeButton}
+						onClick={handleClose}
+						disabled={visibleCount <= INITIAL_VISIBLE_COUNT_OF_CARDS}
+					>
+						Показать меньше
 					</Button>
 				</div>
 			)}

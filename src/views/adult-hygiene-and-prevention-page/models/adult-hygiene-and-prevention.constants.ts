@@ -18,11 +18,11 @@ import type { WhyChooseUsProps } from "@/widgets/why-choose-us/types/why-choose-
 
 export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
 	sectionHeader: {
-		description:
-			"Откройте для себя преимущества профессиональной гигиены в&nbsp;клинике &laquo;Алекса&raquo;",
-		title: "Здоровые зубы&nbsp;&mdash; залог уверенности",
+		title: "Здоровье начинается с&nbsp;мелочей",
 		card: {
-			title: "Профессиональная гигиена всех видов",
+			title: "Заботимся о&nbsp;вашей улыбке вместе с&nbsp;вами",
+			description:
+				"Чистка, профилактика и&nbsp;поддержка между визитами. Подскажем, что делать дома, чтобы результат держался дольше.",
 			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 		},
 		poster: {
@@ -352,7 +352,7 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		title: "Смотреть всех специалистов",
 		href: SITE_NAVIGATION.vrachi,
 	},
-	employees: [GLOBAL_EMPLOYEES.kornilov],
+	employees: [GLOBAL_EMPLOYEES.kornilov, GLOBAL_EMPLOYEES.saidgasanov],
 };
 
 export const WHY_CHOOSE_US: WhyChooseUsProps = {
@@ -465,6 +465,6 @@ export const BEFORE_AFTER_SECTION: BeforeAfterSectionProps = {
 	descriptionCard: {
 		title: "Как меняется улыбка после профессиональной гигиены",
 		description:
-			"Потяните ползунок, чтобы сравнить снимки одного пациента до&nbsp;и&nbsp;после процедуры. На&nbsp;снимке &laquo;до&raquo; налёт подсвечен индикатором&nbsp;&mdash; так видно, где зубная щётка не&nbsp;справляется. Это работа наших врачей, публикуем её&nbsp;с&nbsp;согласия пациента.",
+			"Потяните ползунок, чтобы сравнить снимки одного пациента до&nbsp;и&nbsp;после процедуры. На&nbsp;снимке &laquo;до&raquo; налёт подсвечен индикатором&nbsp;&mdash; так видно, где зубная щётка не&nbsp;справляется.",
 	},
 };

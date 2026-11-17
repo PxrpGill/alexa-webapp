@@ -12,6 +12,7 @@ import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process
 import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
 import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
 import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
+import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
 import type { WhatServiceIncludesProps } from "@/widgets/what-service-includes/types/what-service-includes.types";
 import type { WhyChooseUsProps } from "@/widgets/why-choose-us/types/why-choose-us.types";
 
@@ -35,6 +36,82 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 			},
 		},
 	},
+};
+
+export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	title: "Наши преимущества",
+	textBlock: {
+		title: "Оборудование для диагностики",
+		description:
+			"На&nbsp;консультации мы&nbsp;используем цифровой рентген, компьютерную томографию и&nbsp;фотопротокол. Снимки сразу видны врачу и&nbsp;вам на&nbsp;экране, поэтому можно обсудить состояние зубов и&nbsp;план лечения на&nbsp;одном приёме.",
+	},
+	posters: [
+		{
+			webp: {
+				src: "/mock/home/first-slider/first-slide-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/second-slide-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/third-slide-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/fourth-slide-desktop.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/first-slider/fifth-slide-desktop.webp",
+			},
+		},
+	],
+};
+
+export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	textBlock: {
+		title: "Куратор на&nbsp;каждом этапе:",
+		description:
+			"После консультации вас сопровождает персональный куратор. Он&nbsp;подскажет, что делать дальше, напомнит о&nbsp;визите, поможет с&nbsp;организацией и&nbsp;ответит на&nbsp;вопросы между приёмами.",
+	},
+	posters: [
+		{
+			webp: {
+				src: "/mock/home/cta/first-desktop.webp",
+			},
+		},
+	],
+};
+
+export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
+	textBlock: {
+		title: "Команда профессионалов:",
+		description:
+			"13&nbsp;докторов с&nbsp;многолетним опытом нашей клиники в&nbsp;ответе за&nbsp;здоровье ваших зубов.",
+	},
+	posters: [
+		{
+			webp: {
+				src: "/mock/home/third-slider/first-team.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/third-slider/3-2.webp",
+			},
+		},
+		{
+			webp: {
+				src: "/mock/home/third-slider/3-3.webp",
+			},
+		},
+	],
 };
 
 export const TITLE_STICKY_SECTION: TitleStickySectionProps = {

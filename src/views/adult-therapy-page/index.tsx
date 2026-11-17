@@ -5,7 +5,7 @@ import OurPeopleSection from "@/widgets/our-people-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import WhatServiceIncludes from "@/widgets/what-service-includes";
+// import WhatServiceIncludes from "@/widgets/what-service-includes";
 // import WhyChooseUs from "@/widgets/why-choose-us";
 
 import {
@@ -18,7 +18,7 @@ import {
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 	TITLE_STICKY_SECTION_MOCK,
-	WHAT_INCLUDES,
+	// WHAT_INCLUDES,
 	// WHY_CHOOSE_US,
 } from "./models/adult-therapy.constants";
 
@@ -26,7 +26,7 @@ export default function AdultTherapyPage() {
 	return (
 		<main className="page-offset">
 			<QuadroSection className="section" {...MOCK_QUADRO_SECTION} />
-			<WhatServiceIncludes className="section" {...WHAT_INCLUDES} />
+			{/* <WhatServiceIncludes className="section" {...WHAT_INCLUDES} /> */}
 			<TitleStickySection
 				className="section"
 				{...TITLE_STICKY_SECTION_MOCK}

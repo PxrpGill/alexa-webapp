@@ -2,6 +2,7 @@ import type { AppointmentSchedulingProps } from "@/features/appointment-scheduli
 import {
 	APPOINTMENT_ID,
 	COSTS_OF_SERVICES_BUTTON,
+	GLOBAL_EMPLOYEES,
 } from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
@@ -127,14 +128,11 @@ export const FOURTH_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 
 export const QUADRO_SECTION: QuadroSectionProps = {
 	sectionHeader: {
-		description: "Брекет-системы и&nbsp;элайнеры для взрослых",
-		title: "Исправление прикуса в&nbsp;любом возрасте",
-		underDescription:
-			"Лечение планирует и&nbsp;контролирует главный врач-ортодонт: срок и&nbsp;стоимость известны до&nbsp;фиксации системы и&nbsp;не&nbsp;меняются в&nbsp;процессе.",
+		description: "Брекеты и&nbsp;элайнеры для взрослых",
+		title: "Ровная улыбка в&nbsp;любом возрасте",
 		card: {
-			title: "Разные системы&nbsp;&mdash; один точный результат",
-			description:
-				"<p>Брекеты или элайнеры&nbsp;&mdash; выбираем путь, который будет эффективнее в&nbsp;вашем случае</p>",
+			title:
+				"Лечение под контролем главного ортодонта. Срок и&nbsp;стоимость известны до&nbsp;начала лечения",
 			button: {
 				href: APPOINTMENT_ID.id,
 				title: "Записаться на прием",
@@ -557,33 +555,39 @@ export const INFO_TABS: InfoTabsProps = {
 				title: "Стоимость услуг:",
 				cards: [
 					{
-						title:
-							"Ортодонтическая коррекция с&nbsp;применением брекет-системы.&nbsp;2&nbsp;челюсти",
+						title: "Консультация ортодонта",
 						description:
-							"Фиксация самолигирующей брекет-системы на&nbsp;оба зубных ряда, плановые активации и&nbsp;замена дуг на&nbsp;протяжении всего курса лечения.",
+							"Профессиональная консультация стоматолога с&nbsp;осмотром, диагностикой и&nbsp;составлением индивидуального плана лечения.",
+						price: 1_500,
+						button: COSTS_OF_SERVICES_BUTTON,
+					},
+					{
+						title: "Антропометрические исследования",
+						description:
+							"Диагностика и&nbsp;составление плана лечения (включает оттиски 2&nbsp;шт, изготовление диагностических моделей или/и диагностичское сканирование, медицинское фотографирование).",
+						price: 6_850,
+						button: COSTS_OF_SERVICES_BUTTON,
+					},
+					{
+						title:
+							"Ортодонтическая коррекция с применением брекет&#8209;систем (2 челюсти)",
+						description:
+							"Фиксация самолигирующей брекет-системы на&nbsp;оба зубных ряда.",
 						price: 126_000,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
-						title: "Ортодонтическая коррекция с применением брекет-систем",
-						description:
-							"Комплексное лечение на&nbsp;брекет-системе премиум-класса: фиксация, контрольные осмотры и&nbsp;сопровождение врача до&nbsp;завершения коррекции.",
-						price: 168_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
 						title:
-							"Снятие ортодонтического аппарата брекет-системы (1&nbsp;зубной ряд)",
+							"Ортодонтическая коррекция с&nbsp;применением брекет&#8209;системы",
 						description:
-							"Снятие брекетов с&nbsp;одного зубного ряда, удаление остатков фиксирующего материала, шлифовка и&nbsp;полировка эмали.",
-						price: 6_300,
+							"Активация брекет-системы 2&nbsp;челюсти (плановые визиты).",
+						price: 6_800,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 					{
-						title: "Несъемный  ретейнер индивидуального	исполнения",
-						description:
-							"Изготовление и&nbsp;фиксация индивидуальной проволочной конструкции, которая удерживает зубы в&nbsp;новом положении после лечения.",
-						price: 18_900,
+						title: "Ортодонтическая коррекция",
+						description: "Установка несъемного ретейнера. (1 зубной ряд).",
+						price: 6_300,
 						button: COSTS_OF_SERVICES_BUTTON,
 					},
 				],
@@ -773,7 +777,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 		{
 			title: "01. Консультация ортодонта",
 			description:
-				"Врач-ортодонт выслушивает ваш запрос, осматривает зубы и&nbsp;прикус и&nbsp;рассказывает, какие системы подойдут именно в&nbsp;вашем случае.",
+				"Врач-ортодонт узнает ваш запрос, осматривает зубы и&nbsp;прикус и&nbsp;рассказывает, какие системы подойдут именно в&nbsp;вашем случае.",
 			poster: {
 				webp: {
 					src: "/mock/cards/card-lupa.webp",
@@ -783,7 +787,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 		{
 			title: "02. Комплексная диагностика",
 			description:
-				"Профессиональные фотографии, 3D-сканирование зубов и&nbsp;компьютерная томография&nbsp;&mdash; чтобы заранее спланировать перемещение каждого зуба.",
+				"Профессиональные фотографии, 3D-сканирование зубов и&nbsp;компьютерная томография, чтобы заранее спланировать перемещение каждого зуба.",
 			poster: {
 				webp: {
 					src: "/mock/cards/card-zup.webp",
@@ -840,17 +844,7 @@ export const OUR_PEOPLE: OurPeopleSectionProps = {
 		title: "Смотреть всех специалистов",
 		href: SITE_NAVIGATION.vrachi,
 	},
-	employees: [
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-9.webp",
-				},
-			},
-			fullname: "Кравченко Павел Сергеевич",
-			position: "Врач-ортодонт, гнатолог",
-		},
-	],
+	employees: [GLOBAL_EMPLOYEES.kravchenko, GLOBAL_EMPLOYEES.shapavalova],
 };
 
 export const CERTIFICATES_SECTION: CertificatesSectionProps = {

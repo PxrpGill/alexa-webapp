@@ -9,16 +9,15 @@ import TitleDescriptionSlider from "@/widgets/title-description-slider";
 import WhatServiceIncludes from "@/widgets/what-service-includes";
 // import WhyChooseUs from "@/widgets/why-choose-us";
 import {
-	FIRST_TITLE_DESCRIPTION_SLIDER,
-	THIRD_TITLE_DESCRIPTION_SLIDER,
-} from "../home-page/models/home-page.constants";
-import {
 	CERTIFICATES_SECTION,
 	COST_OF_SERVICES,
 	DIAGNOSTICS_SECTION_MOCK,
 	EMPLOYEES_SECTION,
+	FIRST_TITLE_DESCRIPTION_SLIDER,
 	FORM_DATA,
 	QUADRO_SECTION_MOCK,
+	SECOND_TITLE_DESCRIPTION_SLIDER,
+	THIRD_TITLE_DESCRIPTION_SLIDER,
 	TITLE_STICKY_SECTION,
 	WHAT_SERVICE_INCLUDES,
 	// WHY_CHOOSE_US,
@@ -28,19 +27,13 @@ export default function DentistConsultationPage() {
 	return (
 		<main className="page-offset">
 			<QuadroSection {...QUADRO_SECTION_MOCK} className="section" />
-			<WhatServiceIncludes
-				className="section"
-				{...WHAT_SERVICE_INCLUDES}
-			/>
+			<WhatServiceIncludes className="section" {...WHAT_SERVICE_INCLUDES} />
 			<TitleStickySection className="section" {...TITLE_STICKY_SECTION} />
 			<DiagnosticProcessSection
 				className="section"
 				{...DIAGNOSTICS_SECTION_MOCK}
 			/>
-			<CertificatesSection
-				className="section"
-				{...CERTIFICATES_SECTION}
-			/>
+			<CertificatesSection className="section" {...CERTIFICATES_SECTION} />
 			{/* <WhyChooseUs className="section" {...WHY_CHOOSE_US} /> */}
 			<TitleDescriptionSlider
 				{...FIRST_TITLE_DESCRIPTION_SLIDER}
@@ -48,14 +41,14 @@ export default function DentistConsultationPage() {
 			/>
 			<TitleDescriptionSlider
 				{...THIRD_TITLE_DESCRIPTION_SLIDER}
-				className="section"
+				className="section-sm"
 				textBlockPosition="right"
 			/>
-			<OurPeopleSection
+			<TitleDescriptionSlider
+				{...SECOND_TITLE_DESCRIPTION_SLIDER}
 				className="section"
-				{...EMPLOYEES_SECTION}
-				isSlider
 			/>
+			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} isSlider />
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
 			<AppointmentSchedulingSection {...FORM_DATA} className="section" />
 		</main>

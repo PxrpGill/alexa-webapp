@@ -1,5 +1,8 @@
 .root {
-    @mixin responsive --first-col, 0, 590;
+}
+
+.wrapper {
+     @mixin responsive --first-col, 0, 590;
     @mixin responsive gap, 20;
 
     display: grid;
