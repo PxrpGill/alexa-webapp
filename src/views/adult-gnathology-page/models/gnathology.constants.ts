@@ -90,7 +90,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 		{
 			title: "01. Первичная консультация",
 			description:
-				"Врач выслушивает ваши жалобы, собирает анамнез и&nbsp;определяет, какие исследования необходимы именно в&nbsp;вашем случае.",
+				"Врач узнает ваши жалобы, собирает анамнез и&nbsp;определяет, какие исследования необходимы именно в&nbsp;вашем случае.",
 			poster: {
 				webp: {
 					src: "/mock/cards/card-talking.webp",

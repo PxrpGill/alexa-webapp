@@ -29,9 +29,8 @@ export const HERO_MOCK: QuadroSectionProps = {
 			},
 		},
 		card: {
-			title: "Позаботимся о&nbsp;вашей улыбке!",
-			description:
-				"Имплантация проверенными системами Straumann Group MEDENTIKA",
+			title:
+				"Позаботимся о&nbsp;вашей улыбке с&nbsp;пожизненной гарантией на&nbsp;импланты от&nbsp;производителя",
 			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 		},
 	},
@@ -125,7 +124,7 @@ export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 	textBlock: {
 		title: "Цифровое планирование",
 		description:
-			"Перед лечением тщательно рассчитываем положение будущего имплантата для максимальной точности.",
+			"Перед имплантацией мы&nbsp;переходим от&nbsp;снимков к&nbsp;точной 3D-модели. Внутриротовой сканер Dentsply Sirona делает цифровой слепок зубов без неприятной ложки с&nbsp;массой.<br /><br /> КТ&nbsp;показывает кость, нервы и&nbsp;объём для импланта. Совмещаем эти данные в&nbsp;программе и&nbsp;заранее планируем положение импланта, чтобы операция прошла точно и&nbsp;предсказуемо.",
 	},
 	posters: [
 		{

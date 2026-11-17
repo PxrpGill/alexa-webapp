@@ -25,5 +25,22 @@
     @mixin responsive padding-inline, 30, 40;
 
     width: fit-content;
-    margin-inline: auto;
+}
+
+.getMoreButton[class],
+.closeButton[class] {
+    @media (max-width: $mobile) {
+        @mixin responsive font-size, 14;
+    }
+}
+
+.controls {
+    @mixin responsive gap, 0, 30;
+    
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: $mobile) {
+        justify-content: space-between;
+    }
 }

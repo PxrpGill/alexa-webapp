@@ -5,7 +5,7 @@ import OurPeopleSection from "@/widgets/our-people-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import WhatServiceIncludes from "@/widgets/what-service-includes";
+// import WhatServiceIncludes from "@/widgets/what-service-includes";
 
 import {
 	COST_OF_SERVICES,
@@ -17,14 +17,14 @@ import {
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 	TITLE_STICKY_SECTION_MOCK,
-	WHAT_INCLUDES,
+	// WHAT_INCLUDES,
 } from "./models/gnathology.constants";
 
 export default function AdultGnathologyPage() {
 	return (
 		<main className="page-offset">
 			<QuadroSection className="section" {...QUADRO_SECTION_MOCK} />
-			<WhatServiceIncludes className="section" {...WHAT_INCLUDES} />
+			{/* <WhatServiceIncludes className="section" {...WHAT_INCLUDES} /> */}
 			<TitleStickySection className="section" {...TITLE_STICKY_SECTION_MOCK} />
 			<DiagnosticProcessSection
 				className="section"

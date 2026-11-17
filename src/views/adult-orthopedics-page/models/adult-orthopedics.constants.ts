@@ -18,7 +18,9 @@ export const QUADRO_MOCK: QuadroSectionProps = {
 		title: "Цифровая ортопедия",
 		description: "с&nbsp;интраоральным сканером Dentsply Sirona PrimeScan",
 		card: {
-			title: "Ваша здоровая улыбка начинается здесь!",
+			title: "Сканируем зубы за&nbsp;несколько минут",
+			description:
+				"Вы&nbsp;сразу видите результат на&nbsp;экране, а&nbsp;коронки и&nbsp;протезы изготавливаются точнее, чем по&nbsp;традиционным слепкам.",
 			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 		},
 		poster: {

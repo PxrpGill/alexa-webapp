@@ -6,7 +6,7 @@ import OurPeopleSection from "@/widgets/our-people-section";
 import QuadroSection from "@/widgets/quadro-section";
 import TitleStickySection from "@/widgets/tilte-sticky-section";
 import TitleDescriptionSlider from "@/widgets/title-description-slider";
-import WhatServiceIncludes from "@/widgets/what-service-includes";
+// import WhatServiceIncludes from "@/widgets/what-service-includes";
 
 import {
 	CERTIFICATES_SECTION,
@@ -21,14 +21,14 @@ import {
 	SECOND_TITLE_DESCRIPTION_SLIDER,
 	THIRD_TITLE_DESCRIPTION_SLIDER,
 	TITLE_STICKY_SECTION_MOCK,
-	WHAT_INCLUDES_SECTION,
+	// WHAT_INCLUDES_SECTION,
 } from "./models/adult-orthopedics.constants";
 
 export default function AdultOrthopedicsPage() {
 	return (
 		<main className="page-offset">
 			<QuadroSection className="section" {...QUADRO_MOCK} />
-			<WhatServiceIncludes className="section" {...WHAT_INCLUDES_SECTION} />
+			{/* <WhatServiceIncludes className="section" {...WHAT_INCLUDES_SECTION} /> */}
 			<TitleStickySection className="section" {...TITLE_STICKY_SECTION_MOCK} />
 			<DiagnosticProcessSection
 				className="section"

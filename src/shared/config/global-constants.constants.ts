@@ -135,7 +135,7 @@ export const GLOBAL_EMPLOYEES = {
 	kravchenko: {
 		poster: {
 			webp: {
-				src: "/mock/employees/employee-9.webp",
+				src: "/mock/employees/kravchenko.webp",
 			},
 		},
 		fullname: "Кравченко Павел Сергеевич",

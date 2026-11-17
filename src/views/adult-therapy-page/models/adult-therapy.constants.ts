@@ -17,10 +17,11 @@ import type { WhyChooseUsProps } from "@/widgets/why-choose-us/types/why-choose-
 
 export const MOCK_QUADRO_SECTION: QuadroSectionProps = {
 	sectionHeader: {
-		title: "Передовые решения в&nbsp;стоматологии",
-		description: "Здоровье ваших зубов&nbsp;&mdash; наша миссия",
+		title: "Видим больше&nbsp;&mdash; лечим точнее",
+		description: "Терапия под микроскопом в&nbsp;клинике &laquo;Алекса&raquo;",
 		card: {
-			title: "Ваша здоровая улыбка начинается здесь!",
+			title:
+				"Микроскоп помогает врачу увидеть каналы и&nbsp;трещины, которые не&nbsp;видны без увеличения. Лечение становится точнее, а&nbsp;результат надёжнее.",
 			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 		},
 		poster: {
@@ -40,13 +41,9 @@ export const TITLE_STICKY_SECTION_MOCK: TitleStickySectionProps = {
 		},
 		{
 			title:
-				"Боитесь стоматологических процедур и&nbsp;желаете провести лечение под общим наркозом или седацией.",
-		},
-		{
-			title:
 				"Заметили потемнение эмали, дырку в&nbsp;зубе или чувствительность к&nbsp;холодному/горячему.",
 		},
-		{ title: "Страдаете от&nbsp;боли в&nbsp;зубах, пульпит, периодонтит." },
+		{ title: "Страдаете от&nbsp;боли в&nbsp;зубах, пульпита, периодонтита." },
 	],
 	lastCard: {
 		poster: {
@@ -146,7 +143,7 @@ export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
 		{
 			title: "01. Осмотр и&nbsp;консультация",
 			description:
-				"Врач выслушивает ваши жалобы, проводит осмотр полости рта и&nbsp;отвечает на&nbsp;все интересующие вопросы.",
+				"Врач слушает ваши жалобы, проводит осмотр полости рта и&nbsp;отвечает на&nbsp;все интересующие вопросы.",
 			poster: {
 				webp: {
 					src: "/mock/cards/card-lupa.webp",

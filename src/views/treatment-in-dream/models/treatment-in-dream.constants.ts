@@ -1,5 +1,8 @@
 import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
-import { APPOINTMENT_ID } from "@/shared/config/global-constants.constants";
+import {
+	APPOINTMENT_ID,
+	GLOBAL_EMPLOYEES,
+} from "@/shared/config/global-constants.constants";
 import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
 import type { InfoTabsProps } from "@/views/adult-orthodontics-page/types/info-tabs.types";
 import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
@@ -11,11 +14,12 @@ import type { WhyChooseUsProps } from "@/widgets/why-choose-us/types/why-choose-
 
 export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 	sectionHeader: {
-		description: "Комфортное лечение даже в&nbsp;самых сложных случаях",
+		description: "Лечение под наркозом с&nbsp;контролем анестезиолога",
 		title:
 			"Лечение &laquo;во&nbsp;сне&raquo; просыпайтесь с&nbsp;идеальной улыбкой",
 		card: {
-			title: "Ваша здоровая улыбка начинается здесь!",
+			title:
+				"Подберём безопасный вариант и&nbsp;объясним все этапы до&nbsp;начала",
 			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
 		},
 		poster: {
@@ -44,19 +48,19 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 	},
 	content: {
 		narkoz: {
-			whatIncludes: {
-				title: "Что включает наркоз",
-				cards: [
-					{
-						title:
-							"Обеспечиваем непревзойденный комфорт и&nbsp;безопасность для каждого пациента",
-					},
-					{
-						title:
-							"Наши методы позволяют избавиться от&nbsp;страха и&nbsp;тревог, гарантируя высококачественное и&nbsp;эффективное лечение в&nbsp;атмосфере полного спокойствия",
-					},
-				],
-			},
+			// whatIncludes: {
+			// 	title: "Что включает наркоз",
+			// 	cards: [
+			// 		{
+			// 			title:
+			// 				"Обеспечиваем непревзойденный комфорт и&nbsp;безопасность для каждого пациента",
+			// 		},
+			// 		{
+			// 			title:
+			// 				"Наши методы позволяют избавиться от&nbsp;страха и&nbsp;тревог, гарантируя высококачественное и&nbsp;эффективное лечение в&nbsp;атмосфере полного спокойствия",
+			// 		},
+			// 	],
+			// },
 			stickyTitle: {
 				title: "Sevorane&nbsp;&mdash; лечение зубов без боли и&nbsp;страха",
 				lastCard: {
@@ -106,9 +110,9 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 				},
 				cards: [
 					{
-						title: "01. Подготовка:",
+						title: "01. Подготовка после консультации:",
 						description:
-							"В&nbsp;спокойной атмосфере врач и&nbsp;сестра&nbsp;&mdash; анестезист говорят о&nbsp;всех важных моментах и&nbsp;подготавливают вас к&nbsp;процедуре.",
+							"После стоматолога куратор по&nbsp;наркозу подскажет анализы, поможет пройти все этапы и&nbsp;проконтролирует&nbsp;их. Анестезиолог оценит результаты до&nbsp;процедуры.",
 						poster: {
 							webp: {
 								src: "/mock/diagnostics/1-desktop.webp",
@@ -116,9 +120,9 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 						},
 					},
 					{
-						title: "02. Начальная стадия:",
+						title: "02. День процедуры:",
 						description:
-							"Вы&nbsp;вдыхаете наркозный газ &laquo;Севоран&raquo;, который постепенно притупляет сознание и&nbsp;обеспечивает комфортное состояние.",
+							"В&nbsp;день наркоза врач-анестезиолог в&nbsp;спокойной обстановке объясняет все важные моменты, отвечает на&nbsp;вопросы и&nbsp;готовит вас к&nbsp;процедуре вместе с&nbsp;медсестрой-анестезистом.",
 						poster: {
 							webp: {
 								src: "/mock/diagnostics/2-desktop.webp",
@@ -163,8 +167,7 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 				title: "Что включает седация",
 				cards: [
 					{
-						title:
-							"Седация&nbsp;&mdash; спокойное лечение без страха",
+						title: "Седация&nbsp;&mdash; спокойное лечение без страха",
 						description:
 							"Подходит, если вы&nbsp;откладываете визит к&nbsp;стоматологу или испытываете тревогу перед лечением.",
 					},
@@ -255,51 +258,11 @@ export const OUR_PEOPLE_SECTION: OurPeopleSectionProps = {
 		href: SITE_NAVIGATION.vrachi,
 	},
 	employees: [
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-1.webp",
-				},
-			},
-			fullname: "Давыдова Александра Викторовна",
-			position: "Главный врач, врач-стоматолог-терапевт, эндодонтист",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-8.webp",
-				},
-			},
-			fullname: "Шахназарян Эрик Каренович",
-			position: "Врач-стоматолог-хирург",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-5.webp",
-				},
-			},
-			fullname: "Корамагомедов Рамазан Корамагомедович",
-			position: "Врач-стоматолог-терапевт, эндодонтист, стоматолог-ортопед",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-9.webp",
-				},
-			},
-			fullname: "Кравченко Павел Сергеевич",
-			position: "Врач-ортодонт, гнатолог",
-		},
-		{
-			poster: {
-				webp: {
-					src: "/mock/employees/employee-13.webp",
-				},
-			},
-			fullname: "Корнилов Герман Валерьевич",
-			position: "Врач-стоматолог-пародонтолог",
-		},
+		GLOBAL_EMPLOYEES.davidova,
+		GLOBAL_EMPLOYEES.shahnazaryan,
+		GLOBAL_EMPLOYEES.koramagomedov,
+		GLOBAL_EMPLOYEES.kravchenko,
+		GLOBAL_EMPLOYEES.kornilov,
 	],
 };
 

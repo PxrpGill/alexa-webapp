@@ -24,37 +24,39 @@ export default function Hero({
 			as="section"
 			className={`${css.root} container ${className}`}
 		>
-			<div className={css.content}>
-				<div className={css.titleBlock}>
-					{title && (
-						<h1
-							dangerouslySetInnerHTML={{ __html: title }}
-							className={css.title}
-						/>
-					)}
-					{description && (
-						<p
-							dangerouslySetInnerHTML={{ __html: description }}
-							className={css.description}
-						/>
+			<div className={css.wrapper}>
+				<div className={css.content}>
+					<div className={css.titleBlock}>
+						{title && (
+							<h1
+								dangerouslySetInnerHTML={{ __html: title }}
+								className={css.title}
+							/>
+						)}
+						{description && (
+							<p
+								dangerouslySetInnerHTML={{ __html: description }}
+								className={css.description}
+							/>
+						)}
+					</div>
+					{button && (
+						<Button
+							className={css.button}
+							rightIcon={<ButtonIconSVG className={css.icon} />}
+							{...defineButtonProps(button)}
+						>
+							{button.title}
+						</Button>
 					)}
 				</div>
-				{button && (
-					<Button
-						className={css.button}
-						rightIcon={<ButtonIconSVG className={css.icon} />}
-						{...defineButtonProps(button)}
-					>
-						{button.title}
-					</Button>
-				)}
+				<div
+					className={`${css.posterWrapper} ${disablePosterOverflow && css.disablePosterOverflow}`}
+				>
+					{poster && <Picture poster={poster} />}
+				</div>
+				{alternativePicture}
 			</div>
-			<div
-				className={`${css.posterWrapper} ${disablePosterOverflow && css.disablePosterOverflow}`}
-			>
-				{poster && <Picture poster={poster} />}
-			</div>
-			{alternativePicture}
 		</AnimationWrapper>
 	);
 }

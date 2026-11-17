@@ -7,9 +7,9 @@
     right: 0;
     bottom: 0;
     top: unset;
-    translate: 0 4.7%;
+    translate: 3.3% 4.8%;
 
     @media (max-width: $mobile) {
-        translate: -2% 9%;
+        translate: 3% 9%;
     }
 }

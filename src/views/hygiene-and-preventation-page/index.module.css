@@ -14,7 +14,7 @@
     right: 0;
     top: 0;
     left: unset;
-    translate: -0.5% 8.6%;
+    translate: 4.2% 9%;
 
     img {
         height: auto;
@@ -23,6 +23,6 @@
     @media (max-width: $mobile) {
         top: unset;
         bottom: 0;
-        translate: -2% 8.6%;
+        translate: 3% 8.6%;
     }
 }
