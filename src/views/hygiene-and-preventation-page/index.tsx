@@ -6,7 +6,7 @@ import CertificatesSection from "@/widgets/certificates-section";
 import ChildWhatIncludesServices from "@/widgets/child-what-includes-services";
 import CostOfServices from "@/widgets/cost-of-services";
 import Hero from "@/widgets/hero";
-import HowItWorksSlider from "@/widgets/how-it-works-slider";
+// import HowItWorksSlider from "@/widgets/how-it-works-slider";
 import OurPeopleSection from "@/widgets/our-people-section";
 import RecommendsForChildren from "@/widgets/recommends-for-children";
 import css from "./index.module.css";
@@ -18,7 +18,7 @@ import {
 	EMPLOYEES_SECTION,
 	FORM_DATA,
 	HERO_DATA,
-	HOW_IT_WORKS_SLIDER,
+	// HOW_IT_WORKS_SLIDER,
 	RECOMMENDS_FOR_CHILDREN_DATA,
 } from "./models/hygiene-and-preventation.constants";
 
@@ -51,7 +51,7 @@ export default function HygieneAndPreventionPage() {
 				className="section"
 				{...RECOMMENDS_FOR_CHILDREN_DATA}
 			/>
-			<HowItWorksSlider className="section" {...HOW_IT_WORKS_SLIDER} />
+			{/* <HowItWorksSlider className="section" {...HOW_IT_WORKS_SLIDER} /> */}
 			<BeforeAfterSection className="section" {...BEFORE_AFTER_SECTION} />
 			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} isSlider />
 			<CostOfServices className="section" {...COST_OF_SERVICES} />
