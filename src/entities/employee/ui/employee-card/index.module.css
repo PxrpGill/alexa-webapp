@@ -78,7 +78,25 @@
 }
 
 .position {
+    @mixin responsive padding-block-end, 4, 6;
     @mixin text-base;
 
     line-height: 1.2;
+}
+
+.aboutButton {
+    @mixin text-base;
+    @mixin transition color;
+
+    position: relative;
+    z-index: 11;
+    cursor: pointer;
+    color: var(--color-green-1);
+    font-weight: 600;
+
+    @media (hover:hover) {
+        &:hover {
+            color: var(--color-black-1);
+        }
+    }
 }

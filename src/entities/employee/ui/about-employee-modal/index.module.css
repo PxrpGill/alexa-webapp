@@ -1,0 +1,138 @@
+.modalContent[class] {
+    @mixin responsive padding-block-end, 30, 30;
+    @mixin responsive width, 330, 750;
+
+    height: 85vh;
+
+    @media (max-width: $mobile) {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.head {
+    @mixin responsive padding-inline, 20, 30;
+    @mixin responsive --border, 1, 1;
+    @mixin responsive gap, 10, 5;
+    @mixin responsive padding-block-start, 30, 30;
+    @mixin responsive padding-block-end, 15, 30;
+
+    display: flex;
+    border-bottom: var(--border) solid var(--color-gray-8);
+    flex-direction: column;
+}
+
+.fullname {
+    @mixin text-lg;
+}
+
+.position {
+    @mixin text-base;
+    
+    color: var(--color-gray-2);
+}
+
+.tabs {
+    @mixin responsive padding-block, 10, 10;
+    @mixin responsive gap, 15, 20;
+    @mixin responsive --border, 1, 1;
+    @mixin responsive padding-inline, 20, 30;
+
+    overflow-x: scroll;
+    display: flex;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-white-0);
+    border-bottom: var(--border) solid var(--color-gray-8);
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.tab {
+    @mixin text-md;
+    @mixin transitionOptions;
+    @mixin responsive --border, 2, 2;
+    @mixin responsive padding, 10, 10;
+
+    transition-property: opacity, border-bottom-color;
+    border-bottom: var(--border) solid var(--color-white-0);
+    flex-shrink: 0;
+
+    &.activeTab {
+        border-bottom-color: var(--color-green-1);
+    }
+
+    @media (hover:hover) {
+        &:hover {
+            opacity: 0.6;
+            border-bottom-color: var(--color-green-1);
+        }
+    }
+}
+
+.tabContent {
+    @mixin responsive padding-block-start, 20, 30;
+    @mixin responsive padding-inline, 20, 30;
+}
+
+.contentTitle {
+    @mixin text-3xl;
+    @mixin responsive padding-block-end, 10, 15;
+}
+
+.tabContentTitle {
+    @mixin text-md;
+
+    display: block;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.tabContentDescription {
+    @mixin text-base;
+
+    color: var(--color-gray-3);
+}
+
+.tabContentYear {
+    @mixin responsive padding-inline, 10, 15;
+    @mixin responsive padding-block, 5, 5;
+    @mixin text-md;
+    @mixin responsive border-radius, 30, 30;
+
+    background-color: var(--color-green-1);
+    color: var(--color-white-0);
+    font-weight: 600;
+    width: fit-content;
+}
+
+.tabContentList {
+    @mixin responsive gap, 30, 30;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.paragraph {
+    @mixin responsive gap, 15, 15;
+    @mixin responsive padding-block-end, 30, 30;
+    @mixin responsive --border, 1, 1;
+
+    display: flex;
+    flex-direction: column;
+    border-bottom: var(--border) solid var(--color-gray-8);
+}
+
+.tabContentList .paragraph:last-child {
+    border-bottom: unset;
+}
+
+.paragraphWrapper {
+    @mixin responsive gap, 5, 5;
+
+    display: flex;
+    flex-direction: column;
+}
