@@ -43,7 +43,7 @@ export default function OurPeopleSection({
 		toggleAboutEmployeeModalOpen(false);
 
 		clearEmployeeStateTimeoutRef.current = Number(
-			setTimeout(() => selectEmployee(undefined), 75),
+			setTimeout(() => selectEmployee(undefined), 375),
 		);
 	}, []);
 
