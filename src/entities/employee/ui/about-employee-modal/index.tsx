@@ -11,7 +11,7 @@ export default function AboutEmployeeModal({
 	fullname,
 	position,
 	toggleClose,
-	tabs,
+	tabs = [],
 	content,
 }: AboutEmployeeModalProps) {
 	const [activeTabKey, setActiveTabKey] = useState<string>(tabs[0].tabKey);
@@ -37,7 +37,7 @@ export default function AboutEmployeeModal({
 					/>
 				)}
 			</div>
-			{tabs.length > 1 && (
+			{tabs?.length > 1 && (
 				<div className={css.tabs}>
 					{tabs.map((tab, tabKey) => (
 						<button
@@ -51,7 +51,7 @@ export default function AboutEmployeeModal({
 					))}
 				</div>
 			)}
-			{content[activeTabKey] && (
+			{content?.[activeTabKey] && (
 				<div className={css.tabContent}>
 					{content[activeTabKey].title && (
 						<h4

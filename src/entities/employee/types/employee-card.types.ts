@@ -23,8 +23,8 @@ export type AboutEmployeeModalProps = PropsWithClassName &
 	Partial<ModalProps> & {
 		fullname?: string;
 		position?: string;
-		tabs: AboutEmployeeTabType[];
-		content: {
+		tabs?: AboutEmployeeTabType[];
+		content?: {
 			[tabKey: string]: AboutEmployeeTabContentType;
 		};
 	};
@@ -36,4 +36,5 @@ export type EmployeeCardProps = {
 	contentsRef?: Ref<HTMLDivElement>;
 	contentsStyle?: CSSProperties;
 	aboutEmployee?: AboutEmployeeModalProps;
+	onAboutButtonClick?: () => void;
 } & PropsWithClassName;
