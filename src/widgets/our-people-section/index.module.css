@@ -14,23 +14,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
-    &.slider {
-        display: flex;
-        overflow: scroll;
-
-        .paragraph {
-            @mixin responsive width, 338, 338;
-        }
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-
-        @media (max-width: $mobile) {
-            flex-direction: row;
-        }
-    }
-
     @media (max-width: $mobile) {
         @mixin responsive gap, 20;
 
@@ -54,5 +37,64 @@
 
     @media (max-width: $mobile) {
         display: flex;
+    }
+}
+
+.slider[class] {
+    @mixin responsive padding-inline, 20, 40;
+
+    width: 100%;
+    margin: 0;
+    display: flex;
+
+    :global(.swiper-button-prev)[class],
+    :global(.swiper-button-next)[class] {
+        @mixin responsive margin-inline, 20, 40;
+        @mixin responsive width, 32, 40;
+        @mixin responsive height, 32, 40;
+
+        border-radius: 100%;
+        background-color: var(--color-white-0);
+
+        svg {
+            @mixin responsive width, 18, 24;
+            @mixin responsive height, 18, 24;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -45% -50%;
+
+            path {
+                fill: var(--color-green-1);
+                stroke-width: 2;
+            }
+        }
+
+        @media (min-width: 1441px) {
+            margin-inline: calc(2em + (100vw - 1440px) / 2);
+        }
+    }
+
+    :global(.swiper-button-next)[class] {
+        right: 0;
+        translate: 50%;
+
+        svg {
+            translate: -45% -50%;
+        }
+    }
+
+    :global(.swiper-button-prev)[class] {
+        left: 0;
+        translate: -50%;
+
+        svg {
+            translate: -55% -50%;
+        }
+    }
+
+    @media (min-width: 1441px) {
+        padding-inline: calc(2em + (100vw - 1440px) / 2);
     }
 }
