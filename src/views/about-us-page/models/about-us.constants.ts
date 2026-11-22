@@ -6,7 +6,7 @@ import type { TitleDescriptionSliderProps } from "@/widgets/title-description-sl
 export const MOCK_DESCRIPTION_SECTION: DescriptionSectionProps = {
 	title: "Высочайшее качество лечения&nbsp;&mdash; наш приоритет!",
 	description:
-		"Более 2&nbsp;тысяч пациентов стали нашими постоянными клиентами",
+		"Более 10&nbsp;000 пациентов стали нашими постоянными клиентами",
 };
 
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
@@ -106,7 +106,7 @@ export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
 
 export const COMPANY_STATS_MOCK: CompanyStatsSectionProps = {
 	sectionHeader: {
-		title: "Более 2 тысяч пациентов стали нашими постоянными клиентами",
+		title: "Более 10&nbsp;000 пациентов стали нашими постоянными клиентами",
 	},
 	cards: [
 		{
@@ -116,12 +116,12 @@ export const COMPANY_STATS_MOCK: CompanyStatsSectionProps = {
 		},
 		{
 			icon: "/mock/about-us/2-icon.svg",
-			title: "12&nbsp;врачей",
+			title: "13&nbsp;врачей",
 			description: "Врачи общей практики и&nbsp;узкие специалисты",
 		},
 		{
 			icon: "/mock/about-us/3-icon.svg",
-			title: "14&nbsp;лет",
+			title: "17&nbsp;лет",
 			description: "Заботимся о&nbsp;здоровье взрослых и&nbsp;детей",
 		},
 	],
