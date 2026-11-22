@@ -74,5 +74,6 @@
 }
 
 .swiperSlide[class] {
-    width: fit-content;
+    width: fit-content !important;
+    flex-shrink: 0;
 }
