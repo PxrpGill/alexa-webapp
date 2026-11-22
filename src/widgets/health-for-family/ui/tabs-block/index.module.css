@@ -109,6 +109,8 @@
 
 .tab[class].withoutIcon[class] {
     @mixin responsive padding-inline, 20, 60;
+    
+    justify-content: center;
 }
 
 .tab.tab[class].active {
