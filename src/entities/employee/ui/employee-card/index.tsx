@@ -2,10 +2,8 @@
 
 "use client";
 
-import { useCallback, useState } from "react";
 import Picture from "@/shared/ui/picture";
 import type { EmployeeCardProps } from "../../types/employee-card.types";
-import AboutEmployeeModal from "../about-employee-modal";
 import css from "./index.module.css";
 
 export default function EmployeeCard({
@@ -16,13 +14,8 @@ export default function EmployeeCard({
 	contentsRef,
 	contentsStyle,
 	aboutEmployee,
+	onAboutButtonClick,
 }: EmployeeCardProps) {
-	const [isAboutModalOpen, toggleAboutModalOpen] = useState<boolean>(false);
-
-	const handleAboutModalClose = useCallback(() => {
-		toggleAboutModalOpen(false);
-	}, []);
-
 	return (
 		<article className={`${css.root} ${className}`}>
 			<div className={css.wrap}>{poster && <Picture poster={poster} />}</div>
@@ -43,7 +36,7 @@ export default function EmployeeCard({
 					{aboutEmployee && (
 						<button
 							type="button"
-							onClick={() => toggleAboutModalOpen(true)}
+							onClick={onAboutButtonClick}
 							className={css.aboutButton}
 						>
 							Подробнее
@@ -51,15 +44,6 @@ export default function EmployeeCard({
 					)}
 				</div>
 			</div>
-			{aboutEmployee && (
-				<AboutEmployeeModal
-					{...aboutEmployee}
-					isOpen={isAboutModalOpen}
-					fullname={fullname}
-					position={position}
-					toggleClose={handleAboutModalClose}
-				/>
-			)}
 		</article>
 	);
 }

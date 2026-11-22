@@ -6,8 +6,11 @@
 import "swiper/css";
 import "swiper/css/navigation";
 
+import { useCallback, useRef, useState } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { EmployeeCardProps } from "@/entities/employee/types/employee-card.types";
+import AboutEmployeeModal from "@/entities/employee/ui/about-employee-modal";
 import EmployeeCard from "@/entities/employee/ui/employee-card";
 import ButtonIconsSVG from "@/public/icons/button-teeth.svg";
 import { useOneHeightOfCards } from "@/shared/hooks/use-one-height-of-cards";
@@ -25,6 +28,38 @@ export default function OurPeopleSection({
 	isSlider,
 }: OurPeopleSectionProps) {
 	const { contentsRef, maxContentHeight } = useOneHeightOfCards();
+	const [isAboutEmployeeModalOpen, toggleAboutEmployeeModalOpen] =
+		useState<boolean>(false);
+	const [selectedEmployee, selectEmployee] = useState<
+		EmployeeCardProps | undefined
+	>(undefined);
+	const openModalTimeoutRef = useRef<number>(0);
+	const clearEmployeeStateTimeoutRef = useRef<number>(0);
+
+	const toggleAboutEmployeeModalClose = useCallback(() => {
+		if (clearEmployeeStateTimeoutRef.current)
+			clearTimeout(clearEmployeeStateTimeoutRef.current);
+
+		toggleAboutEmployeeModalOpen(false);
+
+		clearEmployeeStateTimeoutRef.current = Number(
+			setTimeout(() => selectEmployee(undefined), 75),
+		);
+	}, []);
+
+	const handleAboutEmployeeClick = useCallback(
+		(employee: EmployeeCardProps) => {
+			if (openModalTimeoutRef.current)
+				clearTimeout(openModalTimeoutRef.current);
+
+			selectEmployee(employee);
+
+			openModalTimeoutRef.current = Number(
+				setTimeout(() => toggleAboutEmployeeModalOpen(true), 67),
+			);
+		},
+		[],
+	);
 
 	if (!employees?.length) return null;
 
@@ -51,6 +86,7 @@ export default function OurPeopleSection({
 								contentsRef={(el) => {
 									contentsRef.current[employeeIndex] = el;
 								}}
+								onAboutButtonClick={() => handleAboutEmployeeClick(employee)}
 								contentsStyle={{
 									minHeight: maxContentHeight
 										? `${maxContentHeight}px`
@@ -93,6 +129,15 @@ export default function OurPeopleSection({
 				>
 					{button.title}
 				</Button>
+			)}
+			{selectedEmployee?.aboutEmployee && (
+				<AboutEmployeeModal
+					isOpen={isAboutEmployeeModalOpen}
+					toggleClose={toggleAboutEmployeeModalClose}
+					fullname={selectedEmployee.fullname}
+					position={selectedEmployee.position}
+					{...selectedEmployee.aboutEmployee}
+				/>
 			)}
 		</AnimationWrapper>
 	);
