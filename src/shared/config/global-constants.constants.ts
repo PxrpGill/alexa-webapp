@@ -320,10 +320,6 @@ export const GLOBAL_EMPLOYEES: { [vrachName: string]: EmployeeCardProps } = {
 					tabKey: "retraining-programs",
 					tabTitle: "Циклы переподготовки",
 				},
-				{
-					tabKey: "professional-development",
-					tabTitle: "Повышение квалификации",
-				},
 			],
 			content: {
 				education: {
