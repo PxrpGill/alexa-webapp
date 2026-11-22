@@ -7,7 +7,7 @@ import CostOfServices from "@/widgets/cost-of-services";
 import CtaHelpSection from "@/widgets/cta-help-section";
 import FirstVisitSection from "@/widgets/first-visit-section";
 import Hero from "@/widgets/hero";
-import HowItWorksSlider from "@/widgets/how-it-works-slider";
+// import HowItWorksSlider from "@/widgets/how-it-works-slider";
 import OurPeopleSection from "@/widgets/our-people-section";
 import RecommendsForChildren from "@/widgets/recommends-for-children";
 import {
@@ -20,7 +20,7 @@ import {
 	FIRST_VISIT_SECTION_DATA,
 	FORM_DATA,
 	HERO_DATA,
-	HOW_IT_WORKS_SLIDER,
+	// HOW_IT_WORKS_SLIDER,
 	RECOMMENDS_FOR_CHILDREN_DATA,
 } from "./models/sleepbased-treatment.constants";
 
@@ -36,7 +36,7 @@ export default function SleepbasedTreatmentPage() {
 				className="section"
 				{...RECOMMENDS_FOR_CHILDREN_DATA}
 			/>
-			<HowItWorksSlider className="section" {...HOW_IT_WORKS_SLIDER} />
+			{/* <HowItWorksSlider className="section" {...HOW_IT_WORKS_SLIDER} /> */}
 			<FirstVisitSection className="section" {...FIRST_VISIT_SECTION_DATA} />
 			<BeforeAfterSection className="section" {...BEFORE_AFTER_SECTION} />
 			<OurPeopleSection className="section" {...EMPLOYEES_SECTION} isSlider />

@@ -66,7 +66,7 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 				lastCard: {
 					poster: {
 						webp: {
-							src: "/mock/sleepbased-treatment/title-sticky.webp",
+							src: "/mock/treatment-in-dream/title-sticky.webp",
 						},
 					},
 					button: { title: "Записаться на приём", href: APPOINTMENT_ID.id },
@@ -115,7 +115,7 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 							"После стоматолога куратор по&nbsp;наркозу подскажет анализы, поможет пройти все этапы и&nbsp;проконтролирует&nbsp;их. Анестезиолог оценит результаты до&nbsp;процедуры.",
 						poster: {
 							webp: {
-								src: "/mock/diagnostics/1-desktop.webp",
+								src: "/mock/treatment-in-dream/sleep-1.webp",
 							},
 						},
 					},
@@ -125,7 +125,7 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 							"В&nbsp;день наркоза врач-анестезиолог в&nbsp;спокойной обстановке объясняет все важные моменты, отвечает на&nbsp;вопросы и&nbsp;готовит вас к&nbsp;процедуре вместе с&nbsp;медсестрой-анестезистом.",
 						poster: {
 							webp: {
-								src: "/mock/diagnostics/2-desktop.webp",
+								src: "/mock/treatment-in-dream/sleep-2.webp",
 							},
 						},
 					},
@@ -135,7 +135,7 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 							"Пациент находится в&nbsp;спокойном и&nbsp;безопасном состоянии глубокого наркоза, пока врач проводит лечение.",
 						poster: {
 							webp: {
-								src: "/mock/diagnostics/3-desktop.webp",
+								src: "/mock/treatment-in-dream/sleep-3.webp",
 							},
 						},
 					},
@@ -145,20 +145,20 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 							"После завершения лечения подача газа прекращается, и&nbsp;вы&nbsp;быстро приходите в&nbsp;сознание.",
 						poster: {
 							webp: {
-								src: "/mock/diagnostics/4-desktop.webp",
+								src: "/mock/treatment-in-dream/sleep-4.webp",
 							},
 						},
 					},
-					{
-						title: "05. Восстановление:",
-						description:
-							"Пробуждение происходит постепенно, и&nbsp;вы&nbsp;возвращаетесь к&nbsp;своему обычному состоянию.",
-						poster: {
-							webp: {
-								src: "/mock/diagnostics/5-desktop.webp",
-							},
-						},
-					},
+					// {
+					// 	title: "05. Восстановление:",
+					// 	description:
+					// 		"Пробуждение происходит постепенно, и&nbsp;вы&nbsp;возвращаетесь к&nbsp;своему обычному состоянию.",
+					// 	poster: {
+					// 		webp: {
+					// 			src: "/mock/diagnostics/5-desktop.webp",
+					// 		},
+					// 	},
+					// },
 				],
 			},
 		},
@@ -209,7 +209,7 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 							"Врач подробно рассказывает, как будет проходить лечение, и&nbsp;отвечает на&nbsp;все ваши вопросы. Вы&nbsp;устраиваетесь в&nbsp;кресле, привыкаете к&nbsp;обстановке и&nbsp;спокойно готовитесь к&nbsp;процедуре.",
 						poster: {
 							webp: {
-								src: "/mock/diagnostics/1-desktop.webp",
+								src: "/mock/treatment-in-dream/sleep-5.webp",
 							},
 						},
 					},
@@ -219,7 +219,7 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 							"Через специальную маску вы&nbsp;вдыхаете смесь кислорода и&nbsp;закиси азота. Состояние расслабления наступает постепенно, при этом вы&nbsp;остаетесь в&nbsp;сознании.",
 						poster: {
 							webp: {
-								src: "/mock/diagnostics/2-desktop.webp",
+								src: "/mock/treatment-in-dream/sleep-6.webp",
 							},
 						},
 					},
@@ -229,7 +229,7 @@ export const INFO_TABS_MOCK: InfoTabsProps = {
 							"Вы&nbsp;общаетесь с&nbsp;врачом и&nbsp;выполняете его инструкции. После расслабления проводится обезболивание и&nbsp;начинается лечение.",
 						poster: {
 							webp: {
-								src: "/mock/diagnostics/3-desktop.webp",
+								src: "/mock/treatment-in-dream/sleep-7.webp",
 							},
 						},
 					},
@@ -245,7 +245,7 @@ export const FORM_DATA: AppointmentSchedulingProps = {
 		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
 	poster: {
 		webp: {
-			src: "/system/form.webp",
+			src: "/mock/appointment-scheduling-section/dark-form-checklist.webp",
 		},
 	},
 };

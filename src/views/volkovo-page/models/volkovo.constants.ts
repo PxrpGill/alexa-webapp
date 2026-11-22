@@ -194,7 +194,13 @@ export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
 		title: "Смотреть всех специалистов",
 		href: SITE_NAVIGATION.vrachi,
 	},
-	employees: [GLOBAL_EMPLOYEES.kornilov, GLOBAL_EMPLOYEES.zolotovskaya],
+	employees: [
+		GLOBAL_EMPLOYEES.kornilov,
+		GLOBAL_EMPLOYEES.zolotovskaya,
+		GLOBAL_EMPLOYEES.davidova,
+		GLOBAL_EMPLOYEES.saidgasanov,
+		GLOBAL_EMPLOYEES.markaryan,
+	],
 };
 
 export const REVIEWS_WIDGET: ReviewsWidgetProps = {

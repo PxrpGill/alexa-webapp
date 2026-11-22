@@ -494,7 +494,7 @@ export const MOCK_FAQ_SECTION: FaqSectionProps = {
 export const STILL_QUESTIONS: StillQuestionProps = {
 	title: "Остались вопросы?",
 	description:
-		"Оставьте заявку и&nbsp;мы&nbsp;проконсультируем<br /> вас насчет всех нюансов лечения!",
+		"Оставьте заявку. Администратор уточнит детали и&nbsp;запишет вас на&nbsp;удобное время, а&nbsp;куратор проконсультирует по&nbsp;всем нюансам и&nbsp;будет сопровождать вас на&nbsp;каждом этапе.",
 	poster: {
 		webp: {
 			src: "/mock/home/still-questions/still-questions-alt.webp",
