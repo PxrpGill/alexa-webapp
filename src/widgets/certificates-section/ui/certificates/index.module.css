@@ -6,21 +6,19 @@
     height: 100%;
     background-color: var(--color-white-0);
 
-    @media (hover: hover) {
-        &:hover {
-            .certificate-0[class] {
-                rotate: -20deg;
-                translate: -120% -50%;
-            }
+    &.visible{
+        .certificate-0[class] {
+            rotate: -20deg;
+            translate: -120% -50%;
+        }
 
-            .certificate-1[class] {
-                rotate: -20deg;
-            }
+        .certificate-1[class] {
+            rotate: -20deg;
+        }
 
-            .certificate-2[class] {
-                rotate: -20deg;
-                translate: 20% -50%;
-            }
+        .certificate-2[class] {
+            rotate: -20deg;
+            translate: 20% -50%;
         }
     }
 
