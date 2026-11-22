@@ -446,6 +446,21 @@ export const BEFORE_AFTER_SECTION: BeforeAfterSectionProps = {
 			{
 				beforePoster: {
 					webp: {
+						src: "/mock/before-after/gigiene-after.webp",
+					},
+				},
+				afterPoster: {
+					webp: {
+						src: "/mock/before-after/gigiene-before.webp",
+					},
+				},
+				beforeAlt:
+					"Зубы пациента до профессиональной гигиены: налёт подсвечен индикатором",
+				afterAlt: "Зубы пациента после профессиональной гигиены",
+			},
+			{
+				beforePoster: {
+					webp: {
 						src: "/before-after/zakaryan-before-1-gig.webp",
 					},
 				},
