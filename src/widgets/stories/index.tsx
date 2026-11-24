@@ -21,27 +21,27 @@ export default function Stories({ title, groups, className }: StoriesProps) {
     }
 
     return (
-        <AnimationWrapper
-            as="section"
-            className={`${css.root} container ${className ?? ''}`.trim()}
-        >
-            {title && <h2 className={css.title}>{title}</h2>}
-            <ul className={css.list}>
-                {groups.map((group, index) => (
-                    <StoryPreview
-                        key={group.id}
-                        group={group}
-                        isViewed={isViewed(group)}
-                        onClick={() => setActiveGroupIndex(index)}
-                    />
-                ))}
-            </ul>
-            <StoriesViewer
-                groups={groups}
-                activeGroupIndex={activeGroupIndex}
-                onClose={() => setActiveGroupIndex(null)}
-                onGroupViewed={markViewed}
-            />
-        </AnimationWrapper>
-    );
+					<AnimationWrapper
+						as="section"
+						className={`${css.root} ${className ?? ""}`.trim()}
+					>
+						{title && <h2 className={`${css.title} container`}>{title}</h2>}
+						<ul className={`${css.list} container`}>
+							{groups.map((group, index) => (
+								<StoryPreview
+									key={group.id}
+									group={group}
+									isViewed={isViewed(group)}
+									onClick={() => setActiveGroupIndex(index)}
+								/>
+							))}
+						</ul>
+						<StoriesViewer
+							groups={groups}
+							activeGroupIndex={activeGroupIndex}
+							onClose={() => setActiveGroupIndex(null)}
+							onGroupViewed={markViewed}
+						/>
+					</AnimationWrapper>
+				);
 }
