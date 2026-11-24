@@ -1,874 +1,876 @@
-import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import type { AppointmentSchedulingProps } from '@/features/appointment-scheduling-section/types/appointment-scheduling.types';
 import {
-	APPOINTMENT_ID,
-	COSTS_OF_SERVICES_BUTTON,
-	GLOBAL_EMPLOYEES,
-} from "@/shared/config/global-constants.constants";
-import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
-import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
-import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
-import type { HealthForFamilyProps } from "@/widgets/health-for-family/types/health-for-family.types";
-import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
-import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
-import type { TableImageSectionProps } from "@/widgets/table-image-section/types/table-image-section.types";
-import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
-import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
-import type { InfoTabsProps } from "../types/info-tabs.types";
+    APPOINTMENT_ID,
+    COSTS_OF_SERVICES_BUTTON,
+    GLOBAL_EMPLOYEES,
+} from '@/shared/config/global-constants.constants';
+import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
+import type { CertificatesSectionProps } from '@/widgets/certificates-section/types/certificates-section.types';
+import type { DiagnosticProcessSectionProps } from '@/widgets/diagnostic-process-section/types/diagnostic-process-section.types';
+import type { HealthForFamilyProps } from '@/widgets/health-for-family/types/health-for-family.types';
+import type { OurPeopleSectionProps } from '@/widgets/our-people-section/types/our-people-section.types';
+import type { QuadroSectionProps } from '@/widgets/quadro-section/types/quadro-section.types';
+import type { TableImageSectionProps } from '@/widgets/table-image-section/types/table-image-section.types';
+import type { TitleStickySectionProps } from '@/widgets/tilte-sticky-section/types/title-sticky-section.types';
+import type { TitleDescriptionSliderProps } from '@/widgets/title-description-slider/types/title-description-slider.types';
+
+import type { InfoTabsProps } from '../types/info-tabs.types';
 
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	title: "Наши преимущества",
-	textBlock: {
-		title: "Командный подход под контролем главного ортодонта",
-		description:
-			"Лечение в&nbsp;нашей клинике проходит по&nbsp;системе командной ортодонтии. Главный врач-ортодонт Кравченко Павел Сергеевич проводит диагностику, составляет индивидуальный план лечения и&nbsp;контролирует его на&nbsp;всех этапах.<br /><br /> Часть плановых манипуляций могут выполнять ординаторы&nbsp;&mdash; врачи, которые проходят углубленную практическую подготовку под постоянным наставничеством главного ортодонта. Каждый этап лечения согласован и&nbsp;находится под его контролем, поэтому пациент получает высокий уровень качества и&nbsp;безопасности.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/first-slider/first-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/second-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/third-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/fourth-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/fifth-desktop.webp",
-			},
-		},
-	],
+    title: 'Наши преимущества',
+    textBlock: {
+        title: 'Командный подход под контролем главного ортодонта',
+        description:
+            'Лечение в&nbsp;нашей клинике проходит по&nbsp;системе командной ортодонтии. Главный врач-ортодонт Кравченко Павел Сергеевич проводит диагностику, составляет индивидуальный план лечения и&nbsp;контролирует его на&nbsp;всех этапах.<br /><br /> Часть плановых манипуляций могут выполнять ординаторы&nbsp;&mdash; врачи, которые проходят углубленную практическую подготовку под постоянным наставничеством главного ортодонта. Каждый этап лечения согласован и&nbsp;находится под его контролем, поэтому пациент получает высокий уровень качества и&nbsp;безопасности.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/home/first-slider/first-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/second-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/third-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/fourth-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/fifth-desktop.webp',
+            },
+        },
+    ],
 };
 
 export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Современные технологии",
-		description:
-			"Для точной диагностики мы&nbsp;используем профессиональные фотографии, 3D-сканирование зубов и&nbsp;компьютерную томографию. Это позволяет заранее спланировать лечение с&nbsp;высокой точностью. Работаем на&nbsp;современных элайнерах и&nbsp;самолигирующих брекетах, которые помогают сделать лечение более комфортным и&nbsp;эффективным.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/adult-orthopedics/second-slider/1-slide.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-4.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/adult-orthopedics/second-slider/3-slide.webp",
-			},
-		},
-	],
+    textBlock: {
+        title: 'Современные технологии',
+        description:
+            'Для точной диагностики мы&nbsp;используем профессиональные фотографии, 3D-сканирование зубов и&nbsp;компьютерную томографию. Это позволяет заранее спланировать лечение с&nbsp;высокой точностью. Работаем на&nbsp;современных элайнерах и&nbsp;самолигирующих брекетах, которые помогают сделать лечение более комфортным и&nbsp;эффективным.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/adult-orthopedics/second-slider/1-slide.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-4.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/adult-orthopedics/second-slider/3-slide.webp',
+            },
+        },
+    ],
 };
 
 export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Стоимость известна заранее",
-		description:
-			"До&nbsp;начала лечения вы&nbsp;получаете полный финансовый план. В&nbsp;стоимость входят все этапы ортодонтического лечения&nbsp;&mdash; от&nbsp;установки системы до&nbsp;её&nbsp;снятия. Цена фиксируется в&nbsp;начале лечения и&nbsp;не&nbsp;меняется в&nbsp;процессе.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-3.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-2.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-4.webp",
-			},
-		},
-	],
+    textBlock: {
+        title: 'Стоимость известна заранее',
+        description:
+            'До&nbsp;начала лечения вы&nbsp;получаете полный финансовый план. В&nbsp;стоимость входят все этапы ортодонтического лечения&nbsp;&mdash; от&nbsp;установки системы до&nbsp;её&nbsp;снятия. Цена фиксируется в&nbsp;начале лечения и&nbsp;не&nbsp;меняется в&nbsp;процессе.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-3.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-2.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-4.webp',
+            },
+        },
+    ],
 };
 
 export const FOURTH_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Комплексное лечение в&nbsp;одном месте",
-		description:
-			"В&nbsp;клинике работают специалисты всех стоматологических направлений. При необходимости ваш случай обсуждается коллегиально, а&nbsp;маршрут лечения координирует администратор. Благодаря этому все этапы проходят последовательно и&nbsp;без лишних визитов.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/adult-orthopedics/fourth-slider/1-slide.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/adult-orthopedics/fourth-slider/2-slide.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/adult-orthopedics/fourth-slider/3-slide.webp",
-			},
-		},
-	],
+    textBlock: {
+        title: 'Комплексное лечение в&nbsp;одном месте',
+        description:
+            'В&nbsp;клинике работают специалисты всех стоматологических направлений. При необходимости ваш случай обсуждается коллегиально, а&nbsp;маршрут лечения координирует администратор. Благодаря этому все этапы проходят последовательно и&nbsp;без лишних визитов.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/adult-orthopedics/fourth-slider/1-slide.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/adult-orthopedics/fourth-slider/2-slide.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/adult-orthopedics/fourth-slider/3-slide.webp',
+            },
+        },
+    ],
 };
 
 export const QUADRO_SECTION: QuadroSectionProps = {
-	sectionHeader: {
-		description: "Брекеты и&nbsp;элайнеры для взрослых",
-		title: "Ровная улыбка в&nbsp;любом возрасте",
-		card: {
-			title:
-				"Лечение под контролем главного ортодонта. Срок и&nbsp;стоимость известны до&nbsp;начала лечения",
-			button: {
-				href: APPOINTMENT_ID.id,
-				title: "Записаться на прием",
-			},
-		},
-		poster: {
-			webp: {
-				src: "/mock/adult-orthodontics/orthodontics-hero.webp",
-			},
-		},
-	},
+    sectionHeader: {
+        description: 'Брекеты и&nbsp;элайнеры для взрослых',
+        title: 'Ровная улыбка в&nbsp;любом возрасте',
+        card: {
+            title: 'Лечение под контролем главного ортодонта. Срок и&nbsp;стоимость известны до&nbsp;начала лечения',
+            button: {
+                href: APPOINTMENT_ID.id,
+                title: 'Записаться на прием',
+            },
+        },
+        poster: {
+            webp: {
+                src: '/mock/adult-orthodontics/orthodontics-hero.webp',
+            },
+        },
+    },
 };
 
 export const TITLE_STICKY_SECTION: TitleStickySectionProps = {
-	title: "Когда пора к&nbsp;ортодонту",
-	cards: [
-		{
-			title:
-				"Зубы скучены, развёрнуты или растут криво&nbsp;&mdash; их&nbsp;трудно вычистить до&nbsp;конца.",
-		},
-		{
-			title:
-				"Между зубами есть щели, которые заметны при разговоре и&nbsp;улыбке.",
-		},
-		{
-			title:
-				"Верхняя челюсть сильно перекрывает нижнюю или нижняя выдвинута вперёд.",
-		},
-		{
-			title:
-				"Эмаль стирается неравномерно: зубы &laquo;сточились&raquo; с&nbsp;одной стороны.",
-		},
-		{
-			title:
-				"Щёлкает, хрустит или болит челюстной сустав, по&nbsp;утрам напряжены жевательные мышцы.",
-		},
-		{
-			title:
-				"Готовитесь к&nbsp;протезированию или имплантации: нужно освободить место и&nbsp;выровнять зубной ряд.",
-		},
-		{
-			title:
-				"Возраст не&nbsp;помеха&nbsp;&mdash; взрослым мы&nbsp;подбираем систему с&nbsp;учётом состояния зубов и&nbsp;дёсен",
-			theme: "green",
-		},
-	],
-	lastCard: {
-		poster: {
-			webp: {
-				src: "/mock/sticky-title/title-sticky.webp",
-			},
-			original: {
-				src: "/mock/sticky-title/title-sticky.jpg",
-			},
-		},
-		button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
-	},
+    title: 'Когда пора к&nbsp;ортодонту',
+    cards: [
+        {
+            title: 'Зубы скучены, развёрнуты или растут криво&nbsp;&mdash; их&nbsp;трудно вычистить до&nbsp;конца.',
+        },
+        {
+            title: 'Между зубами есть щели, которые заметны при разговоре и&nbsp;улыбке.',
+        },
+        {
+            title: 'Верхняя челюсть сильно перекрывает нижнюю или нижняя выдвинута вперёд.',
+        },
+        {
+            title: 'Эмаль стирается неравномерно: зубы &laquo;сточились&raquo; с&nbsp;одной стороны.',
+        },
+        {
+            title: 'Щёлкает, хрустит или болит челюстной сустав, по&nbsp;утрам напряжены жевательные мышцы.',
+        },
+        {
+            title: 'Готовитесь к&nbsp;протезированию или имплантации: нужно освободить место и&nbsp;выровнять зубной ряд.',
+        },
+        {
+            title: 'Возраст не&nbsp;помеха&nbsp;&mdash; взрослым мы&nbsp;подбираем систему с&nbsp;учётом состояния зубов и&nbsp;дёсен',
+            theme: 'green',
+        },
+    ],
+    lastCard: {
+        poster: {
+            webp: {
+                src: '/mock/sticky-title/title-sticky.webp',
+            },
+            original: {
+                src: '/mock/sticky-title/title-sticky.jpg',
+            },
+        },
+        button: { title: 'Записаться на прием', href: APPOINTMENT_ID.id },
+    },
 };
 
 export const HEALTH_FOR_FAMILY_MOCK: HealthForFamilyProps = {
-	tabsBlock: {
-		title: "Выберите подходящее решение для выравнивания зубов",
-		description:
-			"В&nbsp;нашей клинике доступны современные ортодонтические системы, которые помогут вам достичь идеальной улыбки с&nbsp;комфортом и&nbsp;эффективностью",
-		tabs: [
-			{
-				title: "Брекеты Damon&nbsp;Q",
-				slug: "braces-damon-q",
-			},
-			{
-				title: "Элайнеры EUROKAPPA",
-				slug: "eurokappa-eliners",
-			},
-			{
-				title: "Элайнеры Spark",
-				slug: "spark-eliners",
-			},
-		],
-	},
-	tabsContent: {
-		"braces-damon-q": {
-			type: "sliderAdvantages",
-			slider: {
-				textBlock: {
-					title: "Брекеты Damon&nbsp;Q",
-					description:
-						"Современная самолигирующая система от&nbsp;американской компании Ormco, предназначенная для эффективной и&nbsp;комфортной коррекции прикуса у&nbsp;пациентов всех возрастов.​",
-				},
-				posters: [
-					{
-						webp: {
-							src: "/mock/adult-orthopedics/tabs-section/1-1-slider.webp",
-						},
-					},
-					{
-						webp: {
-							src: "/mock/adult-orthopedics/tabs-section/1-2-slider.webp",
-						},
-					},
-					{
-						webp: {
-							src: "/mock/adult-orthopedics/tabs-section/1-3-slider.webp",
-						},
-					},
-				],
-			},
-			advantagesSection: {
-				title: "Преимущества",
-				cards: [
-					"Сокращение времени лечения на&nbsp;20&ndash;30% по&nbsp;сравнению с&nbsp;традиционными системами.",
-					"Самолигирующий механизм SpinTek для свободного скольжения дуги и&nbsp;равномерного распределения нагрузки.",
-					"Быстрая замена дуг и&nbsp;позиционирования брекетов.​",
-					"Упрощённая гигиена полости рта благодаря отсутствию лигатур.",
-					"Минимальный дискомфорт и&nbsp;быстрое привыкание.​",
-					"Компактный размер и&nbsp;эстетичный внешний вид.",
-				],
-			},
-			priceCards: {
-				cards: [
-					{
-						title: "Керамические брекеты Damon&nbsp;Q",
-						content:
-							"<ul><li>Надежное и&nbsp;эффективное решение для коррекции прикуса.​</li><li>Прочные и&nbsp;долговечные, подходят для различных клинических случаев.​</li></ul><p><b>Цена</b>: от&nbsp;150&nbsp;000 ₽</p>",
-						button: { title: "Консультация", isOpenConsultationModal: true },
-					},
-					{
-						title: "Металлические брекеты Damon&nbsp;Q",
-						content:
-							"<ul><li>Обеспечивают комфорт и&nbsp;незаметность при ношении.​​​</li><li>Эстетичный вариант с&nbsp;прозрачными или зубовидными брекетами.​​</li></ul><p><b>Цена</b>: от&nbsp;180&nbsp;000 ₽</p>",
-						button: { title: "Консультация", isOpenConsultationModal: true },
-					},
-				],
-			},
-			stepper: {
-				title: "Пройдите 7&nbsp;шагов к&nbsp;идеальной улыбке",
-				steps: [
-					"Консультация ортодонта",
-					"Диагностика",
-					"Обсуждение плана лечения",
-					"Чистка и&nbsp;лечение зубов (при необходимости)",
-					"Повторное сканирование или снятие слепков",
-					"Обсуждение 3D&nbsp;плана при лечении на&nbsp;элайнерах",
-					"Фиксация элайнеров/брекет-системы и&nbsp;начало лечения",
-				],
-			},
-		},
-		"eurokappa-eliners": {
-			type: "sliderAdvantages",
-			slider: {
-				textBlock: {
-					title: "Элайнеры EUROKAPPA",
-					description:
-						"Прозрачные съёмные ортодонтические каппы, разработанные с&nbsp;использованием 3D-моделирования для точного и&nbsp;предсказуемого выравнивания зубов.​",
-				},
-				textBlockPosition: "right",
-				posters: [
-					{
-						webp: {
-							src: "/mock/adult-orthopedics/tabs-section/2-1-slider.webp",
-						},
-					},
-					{
-						webp: {
-							src: "/mock/adult-orthopedics/tabs-section/2-2-slider.webp",
-						},
-					},
-					{
-						webp: {
-							src: "/mock/adult-orthopedics/tabs-section/2-3-slider.webp",
-						},
-					},
-				],
-			},
-			advantagesSection: {
-				title: "Преимущества",
-				cards: [
-					"Предварительное 3D-планирование позволяет увидеть результат до&nbsp;начала лечения.",
-					"Съёмные конструкции позволяют сохранять привычный образ жизни.​",
-					"Гипоаллергенный материал безопасен для здоровья.​​",
-					"Подходят для большинства случаев коррекции прикуса.​",
-					"Незаметны при ношении, быстрое привыкание.​",
-					"Быстрое изготовление и&nbsp;доставка.",
-				],
-			},
-			stepper: {
-				title: "Пройдите 7&nbsp;шагов к&nbsp;идеальной улыбке",
-				steps: [
-					"Консультация ортодонта",
-					"Диагностика",
-					"Обсуждение плана лечения",
-					"Чистка и&nbsp;лечение зубов (при необходимости)",
-					"Повторное сканирование или снятие слепков",
-					"Обсуждение 3D&nbsp;плана при лечении на&nbsp;элайнерах",
-					"Фиксация элайнеров/брекет-системы и&nbsp;начало лечения",
-				],
-				priceCards: [
-					{
-						title: "Элайнеры EUROKAPPA",
-						content:
-							"<ul><li>Индивидуально изготовленные каппы для комфортного и&nbsp;эффективного выравнивания зубов.​</li><li>Подходят для взрослых и&nbsp;подростков.​</li></ul><p><b>Цена:</b>от&nbsp;170&nbsp;000 ₽</p>",
-						button: { title: "Консультация", isOpenConsultationModal: true },
-					},
-				],
-			},
-		},
-		"spark-eliners": {
-			type: "sliderAdvantages",
-			slider: {
-				textBlock: {
-					title: "Элайнеры Spark",
-					description:
-						"Прозрачные съёмные ортодонтические каппы, изготовленные из&nbsp;инновационного материала TruGEN&trade;. Почти невидимые элайнеры более прозрачны, комфортны и&nbsp;меньше окрашиваются, обеспечивают максимально эффективное и&nbsp;точное перемещения зубов.",
-				},
-				posters: [
-					{
-						webp: {
-							src: "/mock/adult-orthopedics/tabs-section/3-1-slider.webp",
-						},
-					},
-					{
-						webp: {
-							src: "/mock/adult-orthopedics/tabs-section/3-2-slider.webp",
-						},
-					},
-					{
-						webp: {
-							src: "/mock/adult-orthopedics/tabs-section/3-3-slider.webp",
-						},
-					},
-				],
-			},
-			advantagesSection: {
-				title: "Преимущества",
-				cards: [
-					"Предварительное 3D-планирование позволяет увидеть результат до&nbsp;начала лечения.",
-					"Съёмные конструкции позволяют сохранять привычный образ жизни.​",
-					"Гипоаллергенный материал безопасен для здоровья.​​",
-					"Подходят для большинства случаев коррекции прикуса.​",
-					"Незаметны при ношении, быстрое привыкание.​",
-					"Быстрое изготовление и&nbsp;доставка.",
-				],
-			},
-			stepper: {
-				title: "Пройдите 7&nbsp;шагов к&nbsp;идеальной улыбке",
-				steps: [
-					"Консультация ортодонта",
-					"Диагностика",
-					"Обсуждение плана лечения",
-					"Чистка и&nbsp;лечение зубов (при необходимости)",
-					"Повторное сканирование или снятие слепков",
-					"Обсуждение 3D&nbsp;плана при лечении на&nbsp;элайнерах",
-					"Фиксация элайнеров/брекет-системы и&nbsp;начало лечения",
-				],
-				priceCards: [
-					{
-						title: "Элайнеры Spark",
-						content:
-							"<ul><li>Индивидуально изготовленные каппы для комфортного и&nbsp;эффективного выравнивания зубов.​​</li><li>Подходят для взрослых и&nbsp;подростков.​</li></ul><p><b>Цена:</b>от&nbsp;175&nbsp;000 ₽</p>",
-						button: { title: "Консультация", isOpenConsultationModal: true },
-					},
-				],
-			},
-		},
-	},
+    tabsBlock: {
+        title: 'Выберите подходящее решение для выравнивания зубов',
+        description:
+            'В&nbsp;нашей клинике доступны современные ортодонтические системы, которые помогут вам достичь идеальной улыбки с&nbsp;комфортом и&nbsp;эффективностью',
+        tabs: [
+            {
+                title: 'Брекеты Damon&nbsp;Q',
+                slug: 'braces-damon-q',
+            },
+            {
+                title: 'Элайнеры EUROKAPPA',
+                slug: 'eurokappa-eliners',
+            },
+            {
+                title: 'Элайнеры Spark',
+                slug: 'spark-eliners',
+            },
+        ],
+    },
+    tabsContent: {
+        'braces-damon-q': {
+            type: 'sliderAdvantages',
+            slider: {
+                textBlock: {
+                    title: 'Брекеты Damon&nbsp;Q',
+                    description:
+                        'Современная самолигирующая система от&nbsp;американской компании Ormco, предназначенная для эффективной и&nbsp;комфортной коррекции прикуса у&nbsp;пациентов всех возрастов.​',
+                },
+                posters: [
+                    {
+                        webp: {
+                            src: '/mock/adult-orthopedics/tabs-section/1-1-slider.webp',
+                        },
+                    },
+                    {
+                        webp: {
+                            src: '/mock/adult-orthopedics/tabs-section/1-2-slider.webp',
+                        },
+                    },
+                    {
+                        webp: {
+                            src: '/mock/adult-orthopedics/tabs-section/1-3-slider.webp',
+                        },
+                    },
+                ],
+            },
+            advantagesSection: {
+                title: 'Преимущества',
+                cards: [
+                    'Сокращение времени лечения на&nbsp;20&ndash;30% по&nbsp;сравнению с&nbsp;традиционными системами.',
+                    'Самолигирующий механизм SpinTek для свободного скольжения дуги и&nbsp;равномерного распределения нагрузки.',
+                    'Быстрая замена дуг и&nbsp;позиционирования брекетов.​',
+                    'Упрощённая гигиена полости рта благодаря отсутствию лигатур.',
+                    'Минимальный дискомфорт и&nbsp;быстрое привыкание.​',
+                    'Компактный размер и&nbsp;эстетичный внешний вид.',
+                ],
+            },
+            priceCards: {
+                cards: [
+                    {
+                        title: 'Керамические брекеты Damon&nbsp;Q',
+                        content:
+                            '<ul><li>Надежное и&nbsp;эффективное решение для коррекции прикуса.​</li><li>Прочные и&nbsp;долговечные, подходят для различных клинических случаев.​</li></ul><p><b>Цена</b>: от&nbsp;150&nbsp;000 ₽</p>',
+                        button: {
+                            title: 'Консультация',
+                            isOpenConsultationModal: true,
+                        },
+                    },
+                    {
+                        title: 'Металлические брекеты Damon&nbsp;Q',
+                        content:
+                            '<ul><li>Обеспечивают комфорт и&nbsp;незаметность при ношении.​​​</li><li>Эстетичный вариант с&nbsp;прозрачными или зубовидными брекетами.​​</li></ul><p><b>Цена</b>: от&nbsp;180&nbsp;000 ₽</p>',
+                        button: {
+                            title: 'Консультация',
+                            isOpenConsultationModal: true,
+                        },
+                    },
+                ],
+            },
+            stepper: {
+                title: 'Пройдите 7&nbsp;шагов к&nbsp;идеальной улыбке',
+                steps: [
+                    'Консультация ортодонта',
+                    'Диагностика',
+                    'Обсуждение плана лечения',
+                    'Чистка и&nbsp;лечение зубов (при необходимости)',
+                    'Повторное сканирование или снятие слепков',
+                    'Обсуждение 3D&nbsp;плана при лечении на&nbsp;элайнерах',
+                    'Фиксация элайнеров/брекет-системы и&nbsp;начало лечения',
+                ],
+            },
+        },
+        'eurokappa-eliners': {
+            type: 'sliderAdvantages',
+            slider: {
+                textBlock: {
+                    title: 'Элайнеры EUROKAPPA',
+                    description:
+                        'Прозрачные съёмные ортодонтические каппы, разработанные с&nbsp;использованием 3D-моделирования для точного и&nbsp;предсказуемого выравнивания зубов.​',
+                },
+                textBlockPosition: 'right',
+                posters: [
+                    {
+                        webp: {
+                            src: '/mock/adult-orthopedics/tabs-section/2-1-slider.webp',
+                        },
+                    },
+                    {
+                        webp: {
+                            src: '/mock/adult-orthopedics/tabs-section/2-2-slider.webp',
+                        },
+                    },
+                    {
+                        webp: {
+                            src: '/mock/adult-orthopedics/tabs-section/2-3-slider.webp',
+                        },
+                    },
+                ],
+            },
+            advantagesSection: {
+                title: 'Преимущества',
+                cards: [
+                    'Предварительное 3D-планирование позволяет увидеть результат до&nbsp;начала лечения.',
+                    'Съёмные конструкции позволяют сохранять привычный образ жизни.​',
+                    'Гипоаллергенный материал безопасен для здоровья.​​',
+                    'Подходят для большинства случаев коррекции прикуса.​',
+                    'Незаметны при ношении, быстрое привыкание.​',
+                    'Быстрое изготовление и&nbsp;доставка.',
+                ],
+            },
+            stepper: {
+                title: 'Пройдите 7&nbsp;шагов к&nbsp;идеальной улыбке',
+                steps: [
+                    'Консультация ортодонта',
+                    'Диагностика',
+                    'Обсуждение плана лечения',
+                    'Чистка и&nbsp;лечение зубов (при необходимости)',
+                    'Повторное сканирование или снятие слепков',
+                    'Обсуждение 3D&nbsp;плана при лечении на&nbsp;элайнерах',
+                    'Фиксация элайнеров/брекет-системы и&nbsp;начало лечения',
+                ],
+                priceCards: [
+                    {
+                        title: 'Элайнеры EUROKAPPA',
+                        content:
+                            '<ul><li>Индивидуально изготовленные каппы для комфортного и&nbsp;эффективного выравнивания зубов.​</li><li>Подходят для взрослых и&nbsp;подростков.​</li></ul><p><b>Цена:</b>от&nbsp;170&nbsp;000 ₽</p>',
+                        button: {
+                            title: 'Консультация',
+                            isOpenConsultationModal: true,
+                        },
+                    },
+                ],
+            },
+        },
+        'spark-eliners': {
+            type: 'sliderAdvantages',
+            slider: {
+                textBlock: {
+                    title: 'Элайнеры Spark',
+                    description:
+                        'Прозрачные съёмные ортодонтические каппы, изготовленные из&nbsp;инновационного материала TruGEN&trade;. Почти невидимые элайнеры более прозрачны, комфортны и&nbsp;меньше окрашиваются, обеспечивают максимально эффективное и&nbsp;точное перемещения зубов.',
+                },
+                posters: [
+                    {
+                        webp: {
+                            src: '/mock/adult-orthopedics/tabs-section/3-1-slider.webp',
+                        },
+                    },
+                    {
+                        webp: {
+                            src: '/mock/adult-orthopedics/tabs-section/3-2-slider.webp',
+                        },
+                    },
+                    {
+                        webp: {
+                            src: '/mock/adult-orthopedics/tabs-section/3-3-slider.webp',
+                        },
+                    },
+                ],
+            },
+            advantagesSection: {
+                title: 'Преимущества',
+                cards: [
+                    'Предварительное 3D-планирование позволяет увидеть результат до&nbsp;начала лечения.',
+                    'Съёмные конструкции позволяют сохранять привычный образ жизни.​',
+                    'Гипоаллергенный материал безопасен для здоровья.​​',
+                    'Подходят для большинства случаев коррекции прикуса.​',
+                    'Незаметны при ношении, быстрое привыкание.​',
+                    'Быстрое изготовление и&nbsp;доставка.',
+                ],
+            },
+            stepper: {
+                title: 'Пройдите 7&nbsp;шагов к&nbsp;идеальной улыбке',
+                steps: [
+                    'Консультация ортодонта',
+                    'Диагностика',
+                    'Обсуждение плана лечения',
+                    'Чистка и&nbsp;лечение зубов (при необходимости)',
+                    'Повторное сканирование или снятие слепков',
+                    'Обсуждение 3D&nbsp;плана при лечении на&nbsp;элайнерах',
+                    'Фиксация элайнеров/брекет-системы и&nbsp;начало лечения',
+                ],
+                priceCards: [
+                    {
+                        title: 'Элайнеры Spark',
+                        content:
+                            '<ul><li>Индивидуально изготовленные каппы для комфортного и&nbsp;эффективного выравнивания зубов.​​</li><li>Подходят для взрослых и&nbsp;подростков.​</li></ul><p><b>Цена:</b>от&nbsp;175&nbsp;000 ₽</p>',
+                        button: {
+                            title: 'Консультация',
+                            isOpenConsultationModal: true,
+                        },
+                    },
+                ],
+            },
+        },
+    },
 };
 
 export const TABLE_IMAGE_SECTION: TableImageSectionProps = {
-	title: "Какие элайнеры выбрать?<br /> Сравниваем для вас",
-	description:
-		"Все системы&nbsp;&mdash; надёжные. Но&nbsp;каждая подходит под разные задачи.<br /> Показали ключевые отличия, чтобы вам было проще принять решение вместе с&nbsp;врачом",
-	poster: {
-		original: {
-			src: "/mock/adult-orthodontics/table.svg",
-			mobile: "/mock/adult-orthodontics/table-mobile.svg",
-		},
-	},
+    title: 'Какие элайнеры выбрать?<br /> Сравниваем для вас',
+    description:
+        'Все системы&nbsp;&mdash; надёжные. Но&nbsp;каждая подходит под разные задачи.<br /> Показали ключевые отличия, чтобы вам было проще принять решение вместе с&nbsp;врачом',
+    poster: {
+        original: {
+            src: '/mock/adult-orthodontics/table.svg',
+            mobile: '/mock/adult-orthodontics/table-mobile.svg',
+        },
+    },
 };
 
 export const BEFORE_AFTER_SLIDER: TitleDescriptionSliderProps = {
-	title: "До&nbsp;и&nbsp;после: реальные примеры наших пациентов",
-	textBlock: {
-		title: "Ваш результат может быть следующим!",
-		description:
-			"Посмотрите, каких результатов мы&nbsp;достигаем&nbsp;&mdash; аккуратное выравнивание зубов, исправление прикуса и&nbsp;улыбки, которыми хочется делиться.<br /><br />Каждая работа&nbsp;&mdash; это индивидуальный подход, забота врача и&nbsp;внимание к&nbsp;деталям.",
-		withButton: true,
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/before-after/1-before-after.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/before-after/2-before-after.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/before-after/3-before-after.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/before-after/4-before-after.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/before-after/5-before-after.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/before-after/6-before-after.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/before-after/7-before-after.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/before-after/8-before-after.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/before-after/9-before-after.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/before-after/10-before-after.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/before-after/11-before-after.webp",
-			},
-		},
-	],
+    title: 'До&nbsp;и&nbsp;после: реальные примеры наших пациентов',
+    textBlock: {
+        title: 'Ваш результат может быть следующим!',
+        description:
+            'Посмотрите, каких результатов мы&nbsp;достигаем&nbsp;&mdash; аккуратное выравнивание зубов, исправление прикуса и&nbsp;улыбки, которыми хочется делиться.<br /><br />Каждая работа&nbsp;&mdash; это индивидуальный подход, забота врача и&nbsp;внимание к&nbsp;деталям.',
+        withButton: true,
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/before-after/1-before-after.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/before-after/2-before-after.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/before-after/3-before-after.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/before-after/4-before-after.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/before-after/5-before-after.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/before-after/6-before-after.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/before-after/7-before-after.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/before-after/8-before-after.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/before-after/9-before-after.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/before-after/10-before-after.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/before-after/11-before-after.webp',
+            },
+        },
+    ],
 };
 
 export const INFO_TABS: InfoTabsProps = {
-	tabsBlock: {
-		title: "Выберите подходящее решение для выравнивания зубов",
-		description:
-			"В&nbsp;нашей клинике доступны современные ортодонтические системы, которые помогут вам достичь идеальной улыбки с&nbsp;комфортом и&nbsp;эффективностью",
-		tabs: [
-			{
-				title: "Брекеты",
-				slug: "braces",
-			},
-			{
-				title: "Элайнеры",
-				slug: "eliners",
-			},
-		],
-	},
-	content: {
-		braces: {
-			whatIncludes: {
-				title: "Что включает услуга",
-				cards: [
-					{ title: "Комплексная диагностика" },
-					{ title: "Установка брекет-системы" },
-					{ title: "Подготовка к&nbsp;установке" },
-					{
-						title: "Контроль и&nbsp;сопровождение лечения",
-					},
-				],
-			},
-			stickyTitle: {
-				title: "Преимущества брекетов",
-				lastCard: {
-					poster: {
-						webp: {
-							src: "/mock/adult-orthodontics/brecets.webp",
-						},
-					},
-				},
-				cards: [
-					{
-						title:
-							"Сокращение времени лечения на&nbsp;20&ndash;30% по&nbsp;сравнению с&nbsp;традиционными системами.",
-					},
-					{
-						title: "Быстрая замена дуг и&nbsp;позиционирования брекетов.",
-					},
-					{
-						title: "Минимальный дискомфорт и&nbsp;быстрое привыкание.",
-					},
-					{
-						title:
-							"Самолигирующий механизм SpinTek для свободного скольжения дуги и&nbsp;равномерного распределения нагрузки.",
-					},
-					{
-						title:
-							"Упрощённая гигиена полости рта благодаря отсутствию лигатур.​",
-					},
-					{
-						title: "Компактный размер и&nbsp;эстетичный внешний вид.​",
-					},
-				],
-			},
-			// stepsForPerfectSmile: {
-			//     title: 'Пройдите 7&nbsp;шагов к&nbsp;идеальной улыбке',
-			//     steps: [
-			//         '1. Консультация ортодонта',
-			//         '2. Диагностика',
-			//         '3. Обсуждение плана лечения',
-			//         '4. Чистка и&nbsp;лечение зубов (при необходимости)',
-			//         '5. Повторное сканирование или снятие слепков',
-			//         '6. Фиксация элайнеров/брекет-системы и&nbsp;начало лечения',
-			//     ],
-			// },
-			costs: {
-				title: "Стоимость услуг:",
-				cards: [
-					{
-						title: "Консультация ортодонта",
-						description:
-							"Профессиональная консультация стоматолога с&nbsp;осмотром, диагностикой и&nbsp;составлением индивидуального плана лечения.",
-						price: 1_500,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Антропометрические исследования",
-						description:
-							"Диагностика и&nbsp;составление плана лечения (включает оттиски 2&nbsp;шт, изготовление диагностических моделей или/и диагностичское сканирование, медицинское фотографирование).",
-						price: 6_850,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title:
-							"Ортодонтическая коррекция с применением брекет&#8209;систем (2 челюсти)",
-						description:
-							"Фиксация самолигирующей брекет-системы на&nbsp;оба зубных ряда.",
-						price: 126_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title:
-							"Ортодонтическая коррекция с&nbsp;применением брекет&#8209;системы",
-						description:
-							"Активация брекет-системы 2&nbsp;челюсти (плановые визиты).",
-						price: 6_800,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Ортодонтическая коррекция",
-						description: "Установка несъемного ретейнера. (1 зубной ряд).",
-						price: 6_300,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-				],
-			},
-		},
-		eliners: {
-			// whatIncludes: {
-			// 	title: "Что включает услуга",
-			// 	cards: [
-			// 		{ title: "Диагностика и&nbsp;цифровое планирование" },
-			// 		{ title: "Выдача и&nbsp;установка первой пары" },
-			// 		{ title: "Изготовление элайнеров" },
-			// 		{
-			// 			title: "Контроль лечения",
-			// 		},
-			// 	],
-			// },
-			stickyTitle: {
-				title: "Преимущества элайнеров",
-				lastCard: {
-					poster: {
-						webp: {
-							src: "/mock/adult-orthodontics/eliners.webp",
-						},
-					},
-				},
-				cards: [
-					{
-						title:
-							"Предварительное 3D-планирование позволяет увидеть результат до&nbsp;начала лечения",
-					},
-					{
-						title:
-							"Съёмные конструкции позволяют сохранять привычный образ жизни",
-					},
-					{
-						title: "Гипоаллергенный материал безопасен для здоровья​",
-					},
-					{
-						title: "Подходят для большинства случаев коррекции прикуса",
-					},
-					{
-						title: "Незаметны при ношении, быстрое привыкание​",
-					},
-					{
-						title: "Быстрое изготовление и&nbsp;доставка​",
-					},
-				],
-			},
-			// stepsForPerfectSmile: {
-			//     title: 'Пройдите 7&nbsp;шагов к&nbsp;идеальной улыбке',
-			//     steps: [
-			//         '1. Консультация ортодонта',
-			//         '2. Диагностика',
-			//         '3. Обсуждение плана лечения',
-			//         '4. Чистка и&nbsp;лечение зубов (при необходимости)',
-			//         '5. Повторное сканирование или снятие слепков',
-			//         '6. Обсуждение 3D&nbsp;плана при лечении на&nbsp;элайнерах',
-			//         '7. Фиксация элайнеров/брекет-системы и&nbsp;начало лечения',
-			//     ],
-			// },
-			costs: {
-				title: "Стоимость услуг:",
-				cards: [
-					{
-						title: "Элайнеры EUROKAPPA light (12&nbsp;пар)",
-						description:
-							"Российская система для коррекции лёгких нарушений прикуса: цифровое 3D-планирование, изготовление 12&nbsp;пар элайнеров и&nbsp;контроль лечения.",
-						price: 194_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Элайнеры EUROKAPPA Complete (22&nbsp;пары)",
-						description:
-							"Курс из&nbsp;22&nbsp;пар элайнеров для случаев средней сложности: моделирование результата, изготовление и&nbsp;сопровождение врача на&nbsp;всех этапах.",
-						price: 275_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Элайнеры EUROKAPPA Profi",
-						description:
-							"Расширенная комплектация для сложных клинических случаев: полный цифровой протокол лечения и&nbsp;сопровождение до&nbsp;достижения результата.",
-						price: 369_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Элайнеры Spark&nbsp;10",
-						description:
-							"Американские элайнеры из&nbsp;материала TruGEN: курс до&nbsp;10&nbsp;пар для незначительных нарушений положения зубов.",
-						price: 225_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Элайнеры Spark&nbsp;20",
-						description:
-							"Курс до&nbsp;20&nbsp;пар элайнеров Spark для коррекции средней сложности с&nbsp;быстрым цифровым моделированием лечения.",
-						price: 315_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Элайнеры Spark Advanced",
-						description:
-							"Расширенный курс Spark без ограничения числа пар&nbsp;&mdash; для комплексной коррекции прикуса у&nbsp;взрослых пациентов.",
-						price: 415_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Элайнеры Angel Aligner Select&nbsp;10",
-						description:
-							"Многослойный материал повышенного комфорта: курс до&nbsp;10&nbsp;пар для лёгких нарушений положения зубов.",
-						price: 210_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Элайнеры Angel Aligner Select&nbsp;20",
-						description:
-							"Курс до&nbsp;20&nbsp;пар элайнеров Angel Aligner для коррекции средней сложности, изготовление&nbsp;&mdash; около недели.",
-						price: 285_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Элайнеры Angel Aligner Select&nbsp;30",
-						description:
-							"Курс до&nbsp;30&nbsp;пар для более выраженных нарушений прикуса: цифровое планирование и&nbsp;контроль на&nbsp;каждом этапе.",
-						price: 315_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Элайнеры Angel Aligner Select Unlimited",
-						description:
-							"Неограниченное количество пар элайнеров в&nbsp;рамках плана лечения&nbsp;&mdash; для сложных случаев с&nbsp;длительной коррекцией.",
-						price: 350_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-					{
-						title: "Элайнеры Angel Aligner Pro Unlimited",
-						description:
-							"Премиальная линейка Angel Aligner: неограниченное число пар, повышенный комфорт ношения и&nbsp;точный контроль перемещения зубов.",
-						price: 395_000,
-						button: COSTS_OF_SERVICES_BUTTON,
-					},
-				],
-			},
-			eliners: {
-				sectionHeader: {
-					title: "Какие элайнеры выбрать?<br /> Сравниваем для вас",
-					description:
-						"Все системы&nbsp;&mdash; надёжные. Но&nbsp;каждая подходит под разные задачи. Показали ключевые отличия, чтобы вам было проще принять решение вместе с&nbsp;врачом",
-				},
-				eliners: [
-					{
-						name: "Spark",
-						country: "США",
-						deliveryTime: "~1.5 месяца с&nbsp;момента оплаты",
-						stepsTime: "Быстрое моделирование лечения",
-						wearingComfort: "Более удобные, проверенные материалы",
-						specialCases: "Нет детских элайнеров, только взрослые пациенты",
-					},
-					{
-						name: "Eurokappa",
-						country: "Россия",
-						deliveryTime: "~1 неделя с&nbsp;момента оплаты",
-						stepsTime: "Моделирование лечения дольше",
-						wearingComfort: "Стандартный комфорт",
-						specialCases: "Подходят детям, подросткам, взрослым",
-					},
-					{
-						name: "Angel Aligner",
-						country: "Китай",
-						deliveryTime: "~1 неделя с&nbsp;момента оплаты",
-						stepsTime: "Быстрое моделирование лечения",
-						wearingComfort: "Высокий комфорт благодаря многослойному материалу",
-						specialCases: "Подходят детям, подросткам, взрослым",
-					},
-				],
-			},
-		},
-	},
+    tabsBlock: {
+        title: 'Выберите подходящее решение для выравнивания зубов',
+        description:
+            'В&nbsp;нашей клинике доступны современные ортодонтические системы, которые помогут вам достичь идеальной улыбки с&nbsp;комфортом и&nbsp;эффективностью',
+        tabs: [
+            {
+                title: 'Брекеты',
+                slug: 'braces',
+            },
+            {
+                title: 'Элайнеры',
+                slug: 'eliners',
+            },
+        ],
+    },
+    content: {
+        braces: {
+            whatIncludes: {
+                title: 'Что включает услуга',
+                cards: [
+                    { title: 'Комплексная диагностика' },
+                    { title: 'Установка брекет-системы' },
+                    { title: 'Подготовка к&nbsp;установке' },
+                    {
+                        title: 'Контроль и&nbsp;сопровождение лечения',
+                    },
+                ],
+            },
+            stickyTitle: {
+                title: 'Преимущества брекетов',
+                lastCard: {
+                    poster: {
+                        webp: {
+                            src: '/mock/adult-orthodontics/brecets.webp',
+                        },
+                    },
+                },
+                cards: [
+                    {
+                        title: 'Сокращение времени лечения на&nbsp;20&ndash;30% по&nbsp;сравнению с&nbsp;традиционными системами.',
+                    },
+                    {
+                        title: 'Быстрая замена дуг и&nbsp;позиционирования брекетов.',
+                    },
+                    {
+                        title: 'Минимальный дискомфорт и&nbsp;быстрое привыкание.',
+                    },
+                    {
+                        title: 'Самолигирующий механизм SpinTek для свободного скольжения дуги и&nbsp;равномерного распределения нагрузки.',
+                    },
+                    {
+                        title: 'Упрощённая гигиена полости рта благодаря отсутствию лигатур.​',
+                    },
+                    {
+                        title: 'Компактный размер и&nbsp;эстетичный внешний вид.​',
+                    },
+                ],
+            },
+            // stepsForPerfectSmile: {
+            //     title: 'Пройдите 7&nbsp;шагов к&nbsp;идеальной улыбке',
+            //     steps: [
+            //         '1. Консультация ортодонта',
+            //         '2. Диагностика',
+            //         '3. Обсуждение плана лечения',
+            //         '4. Чистка и&nbsp;лечение зубов (при необходимости)',
+            //         '5. Повторное сканирование или снятие слепков',
+            //         '6. Фиксация элайнеров/брекет-системы и&nbsp;начало лечения',
+            //     ],
+            // },
+            costs: {
+                title: 'Стоимость услуг:',
+                cards: [
+                    {
+                        title: 'Консультация ортодонта',
+                        description:
+                            'Профессиональная консультация стоматолога с&nbsp;осмотром, диагностикой и&nbsp;составлением индивидуального плана лечения.',
+                        price: 1_500,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Антропометрические исследования',
+                        description:
+                            'Диагностика и&nbsp;составление плана лечения (включает оттиски 2&nbsp;шт, изготовление диагностических моделей или/и диагностичское сканирование, медицинское фотографирование).',
+                        price: 6_850,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Ортодонтическая коррекция с применением брекет&#8209;систем (2 челюсти)',
+                        description:
+                            'Фиксация самолигирующей брекет-системы на&nbsp;оба зубных ряда.',
+                        price: 126_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Ортодонтическая коррекция с&nbsp;применением брекет&#8209;системы',
+                        description:
+                            'Активация брекет-системы 2&nbsp;челюсти (плановые визиты).',
+                        price: 6_800,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Ортодонтическая коррекция',
+                        description:
+                            'Установка несъемного ретейнера. (1 зубной ряд).',
+                        price: 6_300,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                ],
+            },
+        },
+        eliners: {
+            // whatIncludes: {
+            // 	title: "Что включает услуга",
+            // 	cards: [
+            // 		{ title: "Диагностика и&nbsp;цифровое планирование" },
+            // 		{ title: "Выдача и&nbsp;установка первой пары" },
+            // 		{ title: "Изготовление элайнеров" },
+            // 		{
+            // 			title: "Контроль лечения",
+            // 		},
+            // 	],
+            // },
+            stickyTitle: {
+                title: 'Преимущества элайнеров',
+                lastCard: {
+                    poster: {
+                        webp: {
+                            src: '/mock/adult-orthodontics/eliners.webp',
+                        },
+                    },
+                },
+                cards: [
+                    {
+                        title: 'Предварительное 3D-планирование позволяет увидеть результат до&nbsp;начала лечения',
+                    },
+                    {
+                        title: 'Съёмные конструкции позволяют сохранять привычный образ жизни',
+                    },
+                    {
+                        title: 'Гипоаллергенный материал безопасен для здоровья​',
+                    },
+                    {
+                        title: 'Подходят для большинства случаев коррекции прикуса',
+                    },
+                    {
+                        title: 'Незаметны при ношении, быстрое привыкание​',
+                    },
+                    {
+                        title: 'Быстрое изготовление и&nbsp;доставка​',
+                    },
+                ],
+            },
+            // stepsForPerfectSmile: {
+            //     title: 'Пройдите 7&nbsp;шагов к&nbsp;идеальной улыбке',
+            //     steps: [
+            //         '1. Консультация ортодонта',
+            //         '2. Диагностика',
+            //         '3. Обсуждение плана лечения',
+            //         '4. Чистка и&nbsp;лечение зубов (при необходимости)',
+            //         '5. Повторное сканирование или снятие слепков',
+            //         '6. Обсуждение 3D&nbsp;плана при лечении на&nbsp;элайнерах',
+            //         '7. Фиксация элайнеров/брекет-системы и&nbsp;начало лечения',
+            //     ],
+            // },
+            costs: {
+                title: 'Стоимость услуг:',
+                cards: [
+                    {
+                        title: 'Элайнеры EUROKAPPA light (12&nbsp;пар)',
+                        description:
+                            'Российская система для коррекции лёгких нарушений прикуса: цифровое 3D-планирование, изготовление 12&nbsp;пар элайнеров и&nbsp;контроль лечения.',
+                        price: 194_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Элайнеры EUROKAPPA Complete (22&nbsp;пары)',
+                        description:
+                            'Курс из&nbsp;22&nbsp;пар элайнеров для случаев средней сложности: моделирование результата, изготовление и&nbsp;сопровождение врача на&nbsp;всех этапах.',
+                        price: 275_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Элайнеры EUROKAPPA Profi',
+                        description:
+                            'Расширенная комплектация для сложных клинических случаев: полный цифровой протокол лечения и&nbsp;сопровождение до&nbsp;достижения результата.',
+                        price: 369_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Элайнеры Spark&nbsp;10',
+                        description:
+                            'Американские элайнеры из&nbsp;материала TruGEN: курс до&nbsp;10&nbsp;пар для незначительных нарушений положения зубов.',
+                        price: 225_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Элайнеры Spark&nbsp;20',
+                        description:
+                            'Курс до&nbsp;20&nbsp;пар элайнеров Spark для коррекции средней сложности с&nbsp;быстрым цифровым моделированием лечения.',
+                        price: 315_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Элайнеры Spark Advanced',
+                        description:
+                            'Расширенный курс Spark без ограничения числа пар&nbsp;&mdash; для комплексной коррекции прикуса у&nbsp;взрослых пациентов.',
+                        price: 415_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Элайнеры Angel Aligner Select&nbsp;10',
+                        description:
+                            'Многослойный материал повышенного комфорта: курс до&nbsp;10&nbsp;пар для лёгких нарушений положения зубов.',
+                        price: 210_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Элайнеры Angel Aligner Select&nbsp;20',
+                        description:
+                            'Курс до&nbsp;20&nbsp;пар элайнеров Angel Aligner для коррекции средней сложности, изготовление&nbsp;&mdash; около недели.',
+                        price: 285_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Элайнеры Angel Aligner Select&nbsp;30',
+                        description:
+                            'Курс до&nbsp;30&nbsp;пар для более выраженных нарушений прикуса: цифровое планирование и&nbsp;контроль на&nbsp;каждом этапе.',
+                        price: 315_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Элайнеры Angel Aligner Select Unlimited',
+                        description:
+                            'Неограниченное количество пар элайнеров в&nbsp;рамках плана лечения&nbsp;&mdash; для сложных случаев с&nbsp;длительной коррекцией.',
+                        price: 350_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                    {
+                        title: 'Элайнеры Angel Aligner Pro Unlimited',
+                        description:
+                            'Премиальная линейка Angel Aligner: неограниченное число пар, повышенный комфорт ношения и&nbsp;точный контроль перемещения зубов.',
+                        price: 395_000,
+                        button: COSTS_OF_SERVICES_BUTTON,
+                    },
+                ],
+            },
+            eliners: {
+                sectionHeader: {
+                    title: 'Какие элайнеры выбрать?<br /> Сравниваем для вас',
+                    description:
+                        'Все системы&nbsp;&mdash; надёжные. Но&nbsp;каждая подходит под разные задачи. Показали ключевые отличия, чтобы вам было проще принять решение вместе с&nbsp;врачом',
+                },
+                eliners: [
+                    {
+                        name: 'Spark',
+                        country: 'США',
+                        deliveryTime: '~1.5 месяца с&nbsp;момента оплаты',
+                        stepsTime: 'Быстрое моделирование лечения',
+                        wearingComfort: 'Более удобные, проверенные материалы',
+                        specialCases:
+                            'Нет детских элайнеров, только взрослые пациенты',
+                    },
+                    {
+                        name: 'Eurokappa',
+                        country: 'Россия',
+                        deliveryTime: '~1 неделя с&nbsp;момента оплаты',
+                        stepsTime: 'Моделирование лечения дольше',
+                        wearingComfort: 'Стандартный комфорт',
+                        specialCases: 'Подходят детям, подросткам, взрослым',
+                    },
+                    {
+                        name: 'Angel Aligner',
+                        country: 'Китай',
+                        deliveryTime: '~1 неделя с&nbsp;момента оплаты',
+                        stepsTime: 'Быстрое моделирование лечения',
+                        wearingComfort:
+                            'Высокий комфорт благодаря многослойному материалу',
+                        specialCases: 'Подходят детям, подросткам, взрослым',
+                    },
+                ],
+            },
+        },
+    },
 };
 
 export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
-	sectionHeader: {
-		title: "Ваша улыбка в&nbsp;руках профессионалов!",
-		description: "Так проходит ортодонтическое лечение в&nbsp;нашей клинике:",
-	},
-	cards: [
-		{
-			title: "01. Консультация ортодонта",
-			description:
-				"Врач-ортодонт узнает ваш запрос, осматривает зубы и&nbsp;прикус и&nbsp;рассказывает, какие системы подойдут именно в&nbsp;вашем случае.",
-			poster: {
-				webp: {
-					src: "/mock/cards/card-lupa.webp",
-				},
-			},
-		},
-		{
-			title: "02. Комплексная диагностика",
-			description:
-				"Профессиональные фотографии, 3D-сканирование зубов и&nbsp;компьютерная томография, чтобы заранее спланировать перемещение каждого зуба.",
-			poster: {
-				webp: {
-					src: "/mock/cards/card-zup.webp",
-				},
-			},
-		},
-		{
-			title: "03. Обсуждение плана лечения",
-			description:
-				"Главный врач-ортодонт составляет индивидуальный план и&nbsp;фиксирует стоимость до&nbsp;начала лечения. На&nbsp;элайнерах вы&nbsp;заранее видите 3D-план и&nbsp;будущий результат.",
-			poster: {
-				webp: {
-					src: "/mock/cards/card-checklist.webp",
-				},
-			},
-		},
-		{
-			title: "04. Подготовка и&nbsp;фиксация системы",
-			description:
-				"При необходимости проводим гигиену и&nbsp;лечение зубов, затем повторно сканируем зубы и&nbsp;фиксируем брекет-систему или выдаём первую пару элайнеров.",
-			poster: {
-				webp: {
-					src: "/mock/cards/card-eliners.webp",
-				},
-			},
-		},
-		{
-			title: "05. Контроль и&nbsp;ретенция",
-			description:
-				"Плановые визиты для активации системы и&nbsp;замены дуг, а&nbsp;после снятия&nbsp;&mdash; ретейнер или каппы, которые удерживают зубы в&nbsp;новом положении.",
-			poster: {
-				webp: {
-					src: "/mock/cards/card-white-calendar.webp",
-				},
-			},
-		},
-	],
+    sectionHeader: {
+        title: 'Ваша улыбка в&nbsp;руках профессионалов!',
+        description:
+            'Так проходит ортодонтическое лечение в&nbsp;нашей клинике:',
+    },
+    cards: [
+        {
+            title: '01. Консультация ортодонта',
+            description:
+                'Врач-ортодонт узнает ваш запрос, осматривает зубы и&nbsp;прикус и&nbsp;рассказывает, какие системы подойдут именно в&nbsp;вашем случае.',
+            poster: {
+                webp: {
+                    src: '/mock/cards/card-lupa.webp',
+                },
+            },
+        },
+        {
+            title: '02. Комплексная диагностика',
+            description:
+                'Профессиональные фотографии, 3D-сканирование зубов и&nbsp;компьютерная томография, чтобы заранее спланировать перемещение каждого зуба.',
+            poster: {
+                webp: {
+                    src: '/mock/cards/card-zup.webp',
+                },
+            },
+        },
+        {
+            title: '03. Обсуждение плана лечения',
+            description:
+                'Главный врач-ортодонт составляет индивидуальный план и&nbsp;фиксирует стоимость до&nbsp;начала лечения. На&nbsp;элайнерах вы&nbsp;заранее видите 3D-план и&nbsp;будущий результат.',
+            poster: {
+                webp: {
+                    src: '/mock/cards/card-checklist.webp',
+                },
+            },
+        },
+        {
+            title: '04. Подготовка и&nbsp;фиксация системы',
+            description:
+                'При необходимости проводим гигиену и&nbsp;лечение зубов, затем повторно сканируем зубы и&nbsp;фиксируем брекет-систему или выдаём первую пару элайнеров.',
+            poster: {
+                webp: {
+                    src: '/mock/cards/card-eliners.webp',
+                },
+            },
+        },
+        {
+            title: '05. Контроль и&nbsp;ретенция',
+            description:
+                'Плановые визиты для активации системы и&nbsp;замены дуг, а&nbsp;после снятия&nbsp;&mdash; ретейнер или каппы, которые удерживают зубы в&nbsp;новом положении.',
+            poster: {
+                webp: {
+                    src: '/mock/cards/card-white-calendar.webp',
+                },
+            },
+        },
+    ],
 };
 
 export const FORM_DATA: AppointmentSchedulingProps = {
-	title: "Запись на&nbsp;приём",
-	description:
-		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
-	poster: {
-		webp: {
-			src: "/mock/appointment-scheduling-section/form-checklist.webp",
-		},
-	},
+    title: 'Запись на&nbsp;приём',
+    description:
+        'Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время',
+    poster: {
+        webp: {
+            src: '/mock/appointment-scheduling-section/form-checklist.webp',
+        },
+    },
 };
 
 export const OUR_PEOPLE: OurPeopleSectionProps = {
-	title: "Врачи, оказывающие услугу",
-	button: {
-		title: "Смотреть всех специалистов",
-		href: SITE_NAVIGATION.vrachi,
-	},
-	employees: [GLOBAL_EMPLOYEES.kravchenko, GLOBAL_EMPLOYEES.shapavalova],
+    title: 'Врачи, оказывающие услугу',
+    button: {
+        title: 'Смотреть всех специалистов',
+        href: SITE_NAVIGATION.vrachi,
+    },
+    employees: [GLOBAL_EMPLOYEES.kravchenko, GLOBAL_EMPLOYEES.shapavalova],
 };
 
 export const CERTIFICATES_SECTION: CertificatesSectionProps = {
-	sectionHeader: {
-		title: "Бонусная система",
-		card: {
-			title: "Ваше лечение возвращается подарками!",
-			button: {
-				title: "Ознакомиться с акциями",
-				href: SITE_NAVIGATION.akcii,
-			},
-		},
-	},
-	certificateCards: [
-		{ webp: { src: "/system/certificates/1-green.webp" } },
-		{
-			webp: {
-				src: "/system/certificates/2-white.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/system/certificates/3-green.webp",
-			},
-		},
-	],
+    sectionHeader: {
+        title: 'Бонусная система',
+        card: {
+            title: 'Ваше лечение возвращается подарками!',
+            button: {
+                title: 'Ознакомиться с акциями',
+                href: SITE_NAVIGATION.akcii,
+            },
+        },
+    },
+    certificateCards: [
+        { webp: { src: '/system/certificates/1-green.webp' } },
+        {
+            webp: {
+                src: '/system/certificates/2-white.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/system/certificates/3-green.webp',
+            },
+        },
+    ],
 };

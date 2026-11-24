@@ -1,66 +1,71 @@
-"use client";
+'use client';
 
-import ChangeBranch from "@/features/change-branch";
-import MaxSVG from "@/public/icons/max.svg";
-import MenuSVG from "@/public/icons/menu-icon.svg";
-import PhoneSVG from "@/public/icons/phone.svg";
-import TelegramSVG from "@/public/icons/telegram.svg";
+import ChangeBranch from '@/features/change-branch';
+import MaxSVG from '@/public/icons/max.svg';
+import MenuSVG from '@/public/icons/menu-icon.svg';
+import PhoneSVG from '@/public/icons/phone.svg';
+import TelegramSVG from '@/public/icons/telegram.svg';
 import {
-	MAX,
-	MOBILE_PHONE,
-	TELEGRAM,
-} from "@/shared/config/global-constants.constants";
-import { useLayoutContext } from "@/shared/config/layout-context";
-import { BRANCH_COOKIES_VALUES } from "@/shared/hooks/set-branch-in-cookies";
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
-import css from "./index.module.css";
+    MAX,
+    MOBILE_PHONE,
+    TELEGRAM,
+} from '@/shared/config/global-constants.constants';
+import { useLayoutContext } from '@/shared/config/layout-context';
+import { BRANCH_COOKIES_VALUES } from '@/shared/hooks/set-branch-in-cookies';
+import type { PropsWithClassName } from '@/shared/types/props-with-classname';
+
+import css from './index.module.css';
 
 export default function ContactPart({ className }: PropsWithClassName) {
-	const { isMenuOpen, toggleMenuOpen, currentBranch } = useLayoutContext();
+    const { isMenuOpen, toggleMenuOpen, currentBranch } = useLayoutContext();
 
-	return (
-		<div className={`${css.root} ${className}`.trim()}>
-			<ChangeBranch className={css.changeBranch} />
-			<a
-				href={`tel:${MOBILE_PHONE[currentBranch ?? BRANCH_COOKIES_VALUES.landyshevaya]}`}
-				className={css.phone}
-			>
-				{MOBILE_PHONE[currentBranch ?? BRANCH_COOKIES_VALUES.landyshevaya]}
-			</a>
-			<a
-				className={css.telegram}
-				href={TELEGRAM}
-				target="_blank"
-				aria-label="Перейти в Телеграм"
-				rel="noopener"
-			>
-				<TelegramSVG className={css.circleIcon} />
-			</a>
-			<a
-				href={MAX}
-				className={css.max}
-				aria-label="Перейти в Max"
-				target="_blank"
-				rel="noopener"
-			>
-				<MaxSVG className={css.circleIcon} />
-			</a>
-			<a
-				href={`tel:${MOBILE_PHONE[currentBranch ?? BRANCH_COOKIES_VALUES.landyshevaya]}`}
-				className={css.anotherPhone}
-				aria-label="Позвонить по номеру телефона"
-			>
-				<PhoneSVG className={css.circleIcon} />
-			</a>
-			<button
-				className={css.menuButton}
-				type="button"
-				onClick={() => toggleMenuOpen(true)}
-				aria-label="Открыть меню"
-				aria-expanded={isMenuOpen}
-			>
-				<MenuSVG className={css.menuIcon} />
-			</button>
-		</div>
-	);
+    return (
+        <div className={`${css.root} ${className}`.trim()}>
+            <ChangeBranch className={css.changeBranch} />
+            <a
+                href={`tel:${MOBILE_PHONE[currentBranch ?? BRANCH_COOKIES_VALUES.landyshevaya]}`}
+                className={css.phone}
+            >
+                {
+                    MOBILE_PHONE[
+                        currentBranch ?? BRANCH_COOKIES_VALUES.landyshevaya
+                    ]
+                }
+            </a>
+            <a
+                className={css.telegram}
+                href={TELEGRAM}
+                target="_blank"
+                aria-label="Перейти в Телеграм"
+                rel="noopener"
+            >
+                <TelegramSVG className={css.circleIcon} />
+            </a>
+            <a
+                href={MAX}
+                className={css.max}
+                aria-label="Перейти в Max"
+                target="_blank"
+                rel="noopener"
+            >
+                <MaxSVG className={css.circleIcon} />
+            </a>
+            <a
+                href={`tel:${MOBILE_PHONE[currentBranch ?? BRANCH_COOKIES_VALUES.landyshevaya]}`}
+                className={css.anotherPhone}
+                aria-label="Позвонить по номеру телефона"
+            >
+                <PhoneSVG className={css.circleIcon} />
+            </a>
+            <button
+                className={css.menuButton}
+                type="button"
+                onClick={() => toggleMenuOpen(true)}
+                aria-label="Открыть меню"
+                aria-expanded={isMenuOpen}
+            >
+                <MenuSVG className={css.menuIcon} />
+            </button>
+        </div>
+    );
 }

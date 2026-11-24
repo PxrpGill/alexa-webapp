@@ -1,449 +1,439 @@
-import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import type { AppointmentSchedulingProps } from '@/features/appointment-scheduling-section/types/appointment-scheduling.types';
 import {
-	APPOINTMENT_ID,
-	COSTS_OF_SERVICES_BUTTON,
-	GLOBAL_EMPLOYEES,
-} from "@/shared/config/global-constants.constants";
-import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
-import type { CostOfServicesProps } from "@/widgets/cost-of-services/types/cost-of-services.types";
-import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
-import type { EarlyPeriodontalTreatmentSectionProps } from "@/widgets/early-periodontal-treatment-section/types/early-periodontal-treatment-section.types";
-import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
-import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
-import type { TitleStickySectionProps } from "@/widgets/tilte-sticky-section/types/title-sticky-section.types";
-import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
-import type { TreatmentDelayConsequencesProps } from "@/widgets/treatment-delay-consequences/types/treatment-delay-consequences.types";
-import type { WhatServiceIncludesProps } from "@/widgets/what-service-includes/types/what-service-includes.types";
-import type { WhyChooseUsProps } from "@/widgets/why-choose-us/types/why-choose-us.types";
+    APPOINTMENT_ID,
+    COSTS_OF_SERVICES_BUTTON,
+    GLOBAL_EMPLOYEES,
+} from '@/shared/config/global-constants.constants';
+import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
+import type { CostOfServicesProps } from '@/widgets/cost-of-services/types/cost-of-services.types';
+import type { DiagnosticProcessSectionProps } from '@/widgets/diagnostic-process-section/types/diagnostic-process-section.types';
+import type { EarlyPeriodontalTreatmentSectionProps } from '@/widgets/early-periodontal-treatment-section/types/early-periodontal-treatment-section.types';
+import type { OurPeopleSectionProps } from '@/widgets/our-people-section/types/our-people-section.types';
+import type { QuadroSectionProps } from '@/widgets/quadro-section/types/quadro-section.types';
+import type { TitleStickySectionProps } from '@/widgets/tilte-sticky-section/types/title-sticky-section.types';
+import type { TitleDescriptionSliderProps } from '@/widgets/title-description-slider/types/title-description-slider.types';
+import type { TreatmentDelayConsequencesProps } from '@/widgets/treatment-delay-consequences/types/treatment-delay-consequences.types';
+import type { WhatServiceIncludesProps } from '@/widgets/what-service-includes/types/what-service-includes.types';
+import type { WhyChooseUsProps } from '@/widgets/why-choose-us/types/why-choose-us.types';
 
 export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
-	sectionHeader: {
-		title: "Сохраняем зубы при пародонтите",
-		description: "Здоровье десен&nbsp;&mdash; основа сохранения зубов",
-		card: {
-			title:
-				"Точная диагностика состояния десен с&nbsp;системой Florida Probe&nbsp;&mdash; бесплатно",
-			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
-		},
-		poster: {
-			webp: {
-				src: "/mock/pariodontology/pariaodontology-hero.webp",
-			},
-		},
-	},
+    sectionHeader: {
+        title: 'Сохраняем зубы при пародонтите',
+        description: 'Здоровье десен&nbsp;&mdash; основа сохранения зубов',
+        card: {
+            title: 'Точная диагностика состояния десен с&nbsp;системой Florida Probe&nbsp;&mdash; бесплатно',
+            button: { title: 'Записаться на прием', href: APPOINTMENT_ID.id },
+        },
+        poster: {
+            webp: {
+                src: '/mock/pariodontology/pariaodontology-hero.webp',
+            },
+        },
+    },
 };
 
 export const TITLE_STICKY_SECTION: TitleStickySectionProps = {
-	title: "Показания к&nbsp;пародонтологии в&nbsp;клинике &laquo;Алекса&raquo;",
-	cards: [
-		{ title: "Кровоточивость при чистке зубов" },
-		{ title: "Отечность или болезненность десен" },
-		{ title: "Неприятный запах изо рта" },
-		{
-			title:
-				"Появление промежутков или &laquo;карманов&raquo; между зубом и&nbsp;десной",
-		},
-		{
-			title: "Подвижность зубов",
-		},
-		{
-			title: "Ощущение, что зубы стали &laquo;длиннее&raquo;",
-		},
-		{
-			title:
-				"Даже лёгкая кровоточивость&nbsp;&mdash; это уже признак воспаления",
-			theme: "green",
-		},
-	],
-	lastCard: {
-		poster: {
-			webp: {
-				src: "/mock/sticky-title/title-sticky.webp",
-			},
-			original: {
-				src: "/mock/sticky-title/title-sticky.jpg",
-			},
-		},
-		button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
-	},
+    title: 'Показания к&nbsp;пародонтологии в&nbsp;клинике &laquo;Алекса&raquo;',
+    cards: [
+        { title: 'Кровоточивость при чистке зубов' },
+        { title: 'Отечность или болезненность десен' },
+        { title: 'Неприятный запах изо рта' },
+        {
+            title: 'Появление промежутков или &laquo;карманов&raquo; между зубом и&nbsp;десной',
+        },
+        {
+            title: 'Подвижность зубов',
+        },
+        {
+            title: 'Ощущение, что зубы стали &laquo;длиннее&raquo;',
+        },
+        {
+            title: 'Даже лёгкая кровоточивость&nbsp;&mdash; это уже признак воспаления',
+            theme: 'green',
+        },
+    ],
+    lastCard: {
+        poster: {
+            webp: {
+                src: '/mock/sticky-title/title-sticky.webp',
+            },
+            original: {
+                src: '/mock/sticky-title/title-sticky.jpg',
+            },
+        },
+        button: { title: 'Записаться на прием', href: APPOINTMENT_ID.id },
+    },
 };
 
 export const TREATMENT_DELAY_CONSEQUENCES_MOCK: TreatmentDelayConsequencesProps =
-	{
-		sectionHeader: {
-			title: "Почему важно не&nbsp;откладывать лечение",
-			description:
-				"Заболевания десен развиваются постепенно и&nbsp;часто без выраженной боли",
-		},
-		iconCards: {
-			cards: [
-				{
-					icon: "/mock/pariodontology/treatment-delay-consequences/1-icon.svg",
-					title: "Пародонтит",
-					description:
-						"Воспаление распространяется глубже, затрагивает связки и&nbsp;костную ткань.",
-				},
-				{
-					icon: "/mock/pariodontology/treatment-delay-consequences/2-icon.svg",
-					title: "Гингивит",
-					description:
-						"Воспаление и&nbsp;кровоточивость десны. На&nbsp;этом этапе изменения обратимы.",
-				},
-				{
-					icon: "/mock/pariodontology/treatment-delay-consequences/3-icon.svg",
-					title: "Потеря костной ткани",
-					description: "Зуб теряет опору. Появляется подвижность.",
-				},
-				{
-					icon: "/mock/pariodontology/treatment-delay-consequences/4-icon.svg",
-					title: "Потеря зуба",
-					description: "Финальный этап запущенного процесса.",
-				},
-			],
-		},
-		textCards: {
-			cards: [
-				{
-					title: "Особенность в&nbsp;том, что этот путь может занимать годы.",
-					description:
-						"Этот процесс может длиться годами и&nbsp;часто проходит без боли",
-				},
-			],
-		},
-	};
+    {
+        sectionHeader: {
+            title: 'Почему важно не&nbsp;откладывать лечение',
+            description:
+                'Заболевания десен развиваются постепенно и&nbsp;часто без выраженной боли',
+        },
+        iconCards: {
+            cards: [
+                {
+                    icon: '/mock/pariodontology/treatment-delay-consequences/1-icon.svg',
+                    title: 'Пародонтит',
+                    description:
+                        'Воспаление распространяется глубже, затрагивает связки и&nbsp;костную ткань.',
+                },
+                {
+                    icon: '/mock/pariodontology/treatment-delay-consequences/2-icon.svg',
+                    title: 'Гингивит',
+                    description:
+                        'Воспаление и&nbsp;кровоточивость десны. На&nbsp;этом этапе изменения обратимы.',
+                },
+                {
+                    icon: '/mock/pariodontology/treatment-delay-consequences/3-icon.svg',
+                    title: 'Потеря костной ткани',
+                    description: 'Зуб теряет опору. Появляется подвижность.',
+                },
+                {
+                    icon: '/mock/pariodontology/treatment-delay-consequences/4-icon.svg',
+                    title: 'Потеря зуба',
+                    description: 'Финальный этап запущенного процесса.',
+                },
+            ],
+        },
+        textCards: {
+            cards: [
+                {
+                    title: 'Особенность в&nbsp;том, что этот путь может занимать годы.',
+                    description:
+                        'Этот процесс может длиться годами и&nbsp;часто проходит без боли',
+                },
+            ],
+        },
+    };
 
 export const EARLY_PERIODONTAL_TREATMENT_MOCK: EarlyPeriodontalTreatmentSectionProps =
-	{
-		sectionHeader: {
-			title: "Раннее лечение всегда проще и&nbsp;безопаснее",
-			description:
-				"Раннее лечение гингивита значительно проще и&nbsp;доступнее, чем восстановление утраченной кости или установка импланта.",
-			legend:
-				"Пародонтология&nbsp;&mdash; это не&nbsp;косметическая процедура, а&nbsp;способ сохранить собственные зубы и&nbsp;избежать сложного протезирования в&nbsp;будущем.",
-		},
-		card: {
-			description:
-				"Понять стадию процесса можно только при профессиональном осмотре и&nbsp;точной диагностике.",
-			underDescription:
-				"Своевременная оценка состояния десен позволяет остановить заболевание до&nbsp;серьёзных последствий.",
-			textButton: "Записаться на прием",
-		},
-	};
+    {
+        sectionHeader: {
+            title: 'Раннее лечение всегда проще и&nbsp;безопаснее',
+            description:
+                'Раннее лечение гингивита значительно проще и&nbsp;доступнее, чем восстановление утраченной кости или установка импланта.',
+            legend: 'Пародонтология&nbsp;&mdash; это не&nbsp;косметическая процедура, а&nbsp;способ сохранить собственные зубы и&nbsp;избежать сложного протезирования в&nbsp;будущем.',
+        },
+        card: {
+            description:
+                'Понять стадию процесса можно только при профессиональном осмотре и&nbsp;точной диагностике.',
+            underDescription:
+                'Своевременная оценка состояния десен позволяет остановить заболевание до&nbsp;серьёзных последствий.',
+            textButton: 'Записаться на прием',
+        },
+    };
 
 export const WHAT_SERVICE_INCLUDES: WhatServiceIncludesProps = {
-	title: "Что включает услуга",
-	cards: [
-		{
-			title: "Избавление от&nbsp;боли и&nbsp;дискомфорта.",
-		},
-		{
-			title: "Сохранение зубов на&nbsp;долгие годы.",
-		},
-	],
+    title: 'Что включает услуга',
+    cards: [
+        {
+            title: 'Избавление от&nbsp;боли и&nbsp;дискомфорта.',
+        },
+        {
+            title: 'Сохранение зубов на&nbsp;долгие годы.',
+        },
+    ],
 };
 
 export const WHY_CHOOSE_US: WhyChooseUsProps = {
-	sectionHeader: {
-		title: "Почему выбирают лечение десен именно в&nbsp;нашей клинике",
-		description:
-			"Останавливаем пародонтит на&nbsp;любой стадии и&nbsp;сохраняем ваши зубы &mdash; с&nbsp;точной диагностикой, бережными протоколами и&nbsp;врачами с&nbsp;многолетним опытом.",
-	},
-	cards: [
-		{
-			icon: "/mock/why-choose-us/1-icon.svg",
-			title: "Безболезненное лечение",
-			description:
-				"Современная анестезия и&nbsp;щадящие протоколы&nbsp;&mdash; комфортно даже для чувствительных дёсен.",
-		},
-		{
-			icon: "/mock/why-choose-us/2-icon.svg",
-			title: "Диагностика Florida Probe",
-			description:
-				"Точная компьютерная оценка состояния дёсен и&nbsp;карманов&nbsp;&mdash; бесплатно на&nbsp;первом приёме.",
-		},
-		{
-			icon: "/mock/why-choose-us/3-icon.svg",
-			title: "Сохранение зубов",
-			description:
-				"Останавливаем воспаление и&nbsp;подвижность&nbsp;&mdash; сохраняем зубы на&nbsp;долгие годы без удаления.",
-		},
-	],
-	mainSection: {
-		title: "Причины выбрать именно нас",
-		list: [
-			"Бесплатная диагностика дёсен на&nbsp;первом приёме",
-			"Индивидуальный план лечения под ваш случай",
-			"Гарантия и&nbsp;наблюдение после курса лечения",
-		],
-		poster: {
-			webp: {
-				src: "/mock/why-choose-us/main.webp",
-			},
-		},
-		button: {
-			title: "Записаться на приём",
-			href: "",
-		},
-	},
+    sectionHeader: {
+        title: 'Почему выбирают лечение десен именно в&nbsp;нашей клинике',
+        description:
+            'Останавливаем пародонтит на&nbsp;любой стадии и&nbsp;сохраняем ваши зубы &mdash; с&nbsp;точной диагностикой, бережными протоколами и&nbsp;врачами с&nbsp;многолетним опытом.',
+    },
+    cards: [
+        {
+            icon: '/mock/why-choose-us/1-icon.svg',
+            title: 'Безболезненное лечение',
+            description:
+                'Современная анестезия и&nbsp;щадящие протоколы&nbsp;&mdash; комфортно даже для чувствительных дёсен.',
+        },
+        {
+            icon: '/mock/why-choose-us/2-icon.svg',
+            title: 'Диагностика Florida Probe',
+            description:
+                'Точная компьютерная оценка состояния дёсен и&nbsp;карманов&nbsp;&mdash; бесплатно на&nbsp;первом приёме.',
+        },
+        {
+            icon: '/mock/why-choose-us/3-icon.svg',
+            title: 'Сохранение зубов',
+            description:
+                'Останавливаем воспаление и&nbsp;подвижность&nbsp;&mdash; сохраняем зубы на&nbsp;долгие годы без удаления.',
+        },
+    ],
+    mainSection: {
+        title: 'Причины выбрать именно нас',
+        list: [
+            'Бесплатная диагностика дёсен на&nbsp;первом приёме',
+            'Индивидуальный план лечения под ваш случай',
+            'Гарантия и&nbsp;наблюдение после курса лечения',
+        ],
+        poster: {
+            webp: {
+                src: '/mock/why-choose-us/main.webp',
+            },
+        },
+        button: {
+            title: 'Записаться на приём',
+            href: '',
+        },
+    },
 };
 
 export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
-	sectionHeader: {
-		title: "Ваша улыбка в&nbsp;руках профессионалов!",
-		description: "Мы&nbsp;реализуем целостный осмотр для своих пациентов:",
-	},
-	cards: [
-		{
-			title: "1. Диагностика и&nbsp;профессиональная гигиена",
-			description:
-				"Консультация пародонтолога, КЛКТ, диагностика дёсен с&nbsp;помощью Florida Probe и&nbsp;профессиональная гигиена полости рта.",
-			poster: {
-				webp: {
-					src: "/mock/cards/card-lupa.webp",
-				},
-			},
-		},
-		{
-			title: "2. Глубокая очистка верхней челюсти",
-			description:
-				"Удаление поддесневых зубных отложений в&nbsp;области верхней челюсти с&nbsp;использованием стоматологического микроскопа.",
-			poster: {
-				webp: {
-					src: "/mock/cards/card-green-instrument.webp",
-				},
-			},
-		},
-		{
-			title: "3. Глубокая очистка нижней челюсти",
-			description:
-				"Аналогичная процедура для нижней челюсти, позволяющая тщательно очистить пародонтальные карманы.",
-			poster: {
-				webp: {
-					src: "/mock/cards/card-instrument.webp",
-				},
-			},
-		},
-		{
-			title: "4. Контроль результатов",
-			description:
-				"Через 3&nbsp;месяца проводится повторный осмотр и&nbsp;повторная диагностика с&nbsp;помощью Florida Probe для оценки эффективности лечения и&nbsp;состояния тканей пародонта.",
-			poster: {
-				webp: {
-					src: "/mock/cards/card-calendar.webp",
-				},
-			},
-		},
-	],
+    sectionHeader: {
+        title: 'Ваша улыбка в&nbsp;руках профессионалов!',
+        description: 'Мы&nbsp;реализуем целостный осмотр для своих пациентов:',
+    },
+    cards: [
+        {
+            title: '1. Диагностика и&nbsp;профессиональная гигиена',
+            description:
+                'Консультация пародонтолога, КЛКТ, диагностика дёсен с&nbsp;помощью Florida Probe и&nbsp;профессиональная гигиена полости рта.',
+            poster: {
+                webp: {
+                    src: '/mock/cards/card-lupa.webp',
+                },
+            },
+        },
+        {
+            title: '2. Глубокая очистка верхней челюсти',
+            description:
+                'Удаление поддесневых зубных отложений в&nbsp;области верхней челюсти с&nbsp;использованием стоматологического микроскопа.',
+            poster: {
+                webp: {
+                    src: '/mock/cards/card-green-instrument.webp',
+                },
+            },
+        },
+        {
+            title: '3. Глубокая очистка нижней челюсти',
+            description:
+                'Аналогичная процедура для нижней челюсти, позволяющая тщательно очистить пародонтальные карманы.',
+            poster: {
+                webp: {
+                    src: '/mock/cards/card-instrument.webp',
+                },
+            },
+        },
+        {
+            title: '4. Контроль результатов',
+            description:
+                'Через 3&nbsp;месяца проводится повторный осмотр и&nbsp;повторная диагностика с&nbsp;помощью Florida Probe для оценки эффективности лечения и&nbsp;состояния тканей пародонта.',
+            poster: {
+                webp: {
+                    src: '/mock/cards/card-calendar.webp',
+                },
+            },
+        },
+    ],
 };
 
 export const FORM_DATA: AppointmentSchedulingProps = {
-	title: "Запись на&nbsp;приём",
-	description:
-		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
-	poster: {
-		webp: {
-			src: "/mock/appointment-scheduling-section/form-checklist.webp",
-		},
-	},
+    title: 'Запись на&nbsp;приём',
+    description:
+        'Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время',
+    poster: {
+        webp: {
+            src: '/mock/appointment-scheduling-section/form-checklist.webp',
+        },
+    },
 };
 
 export const EMPLOYEES_SECTION: OurPeopleSectionProps = {
-	title: "Врачи, оказывающие услугу",
-	button: {
-		title: "Смотреть всех специалистов",
-		href: SITE_NAVIGATION.vrachi,
-	},
-	employees: [
-		GLOBAL_EMPLOYEES.kornilov,
-		GLOBAL_EMPLOYEES.shahnazaryan,
-	],
+    title: 'Врачи, оказывающие услугу',
+    button: {
+        title: 'Смотреть всех специалистов',
+        href: SITE_NAVIGATION.vrachi,
+    },
+    employees: [GLOBAL_EMPLOYEES.kornilov, GLOBAL_EMPLOYEES.shahnazaryan],
 };
 
 export const COST_OF_SERVICES: CostOfServicesProps = {
-	title: "Стоимость услуг:",
-	cards: [
-		{
-			title: "Консультация стоматолога-пародонтолога",
-			description:
-				"Осмотр дёсен, оценка глубины пародонтальных карманов и&nbsp;степени подвижности зубов, составление индивидуального плана лечения.",
-			button: COSTS_OF_SERVICES_BUTTON,
-			price: 1_500,
-		},
-		{
-			title: "Шинирование стекловолоконной лентой в&nbsp;области 1&nbsp;зуба",
-			description:
-				"Фиксация подвижного зуба стекловолоконной лентой: снимает избыточную нагрузку и&nbsp;помогает сохранить зуб при заболеваниях пародонта.",
-			button: COSTS_OF_SERVICES_BUTTON,
-			price: 4_000,
-		},
-		{
-			title:
-				"Тотальная неинвазивная пародонтальная терапия пародонтологическим центром &laquo;Vector Paro Pro&raquo;&nbsp;&mdash; 1&nbsp;челюсть",
-			description:
-				"Ультразвуковая обработка всех пародонтальных карманов одной челюсти без разрезов: удаление биоплёнки и&nbsp;поддесневых отложений.",
-			button: COSTS_OF_SERVICES_BUTTON,
-			price: 9_000,
-		},
-		{
-			title:
-				"Тотальная неинвазивная пародонтальная терапия пародонтологическим центром &laquo;Vector Paro Pro&raquo;&nbsp;&mdash; 2&nbsp;челюсти",
-			description:
-				"Полная обработка пародонтальных карманов обеих челюстей за&nbsp;один приём&nbsp;&mdash; базовый протокол при генерализованном пародонтите.",
-			button: COSTS_OF_SERVICES_BUTTON,
-			price: 17_000,
-		},
-		{
-			title:
-				"Неинвазивная пародонтальная терапия пародонтологическим центром &laquo;Vector Paro Pro&raquo;&nbsp;&mdash; 1&nbsp;сегмент",
-			description:
-				"Обработка одного участка челюсти аппаратом Vector&nbsp;&mdash; для локальных воспалений без вовлечения всего зубного ряда.",
-			button: COSTS_OF_SERVICES_BUTTON,
-			price: 5_000,
-		},
-		{
-			title: "Шинирование стекловолоконной лентой в&nbsp;области 4-6 зубов",
-			description:
-				"Объединение группы подвижных зубов в&nbsp;единый блок: равномерно распределяет жевательную нагрузку и&nbsp;останавливает расшатывание.",
-			price: 16_200,
-			button: COSTS_OF_SERVICES_BUTTON,
-		},
-		{
-			title: "Наложение пленки Диплен-дента",
-			description:
-				"Лечебная самоклеящаяся плёнка на&nbsp;десну с&nbsp;пролонгированным действием: снимает воспаление и&nbsp;защищает обработанный участок.",
-			price: 1_600,
-			button: COSTS_OF_SERVICES_BUTTON,
-		},
-		{
-			title: "Введение лекарственного препарата в&nbsp;1&nbsp;челюсть",
-			description:
-				"Инъекционное введение противовоспалительного препарата в&nbsp;область дёсен одной челюсти в&nbsp;составе курса лечения.",
-			price: 350,
-			button: COSTS_OF_SERVICES_BUTTON,
-		},
-		{
-			title: "Пародонтологическая санация&nbsp;&mdash; первичная процедура",
-			description:
-				"Первый этап лечения: снятие над- и&nbsp;поддесневых отложений, антисептическая обработка карманов и&nbsp;обучение домашнему уходу.",
-			price: 8_000,
-			button: COSTS_OF_SERVICES_BUTTON,
-		},
-		{
-			title: "Пародонтологическая санация&nbsp;&mdash; вторичная процедура",
-			description:
-				"Повторная обработка для закрепления результата: оценка динамики, очищение карманов и&nbsp;медикаментозная терапия дёсен.",
-			price: 6_000,
-			button: COSTS_OF_SERVICES_BUTTON,
-		},
-		{
-			title: "Пародонтологическая санация&nbsp;&mdash; 1-3 зуба",
-			description:
-				"Локальная санация в&nbsp;области одного-трёх зубов&nbsp;&mdash; при ограниченном очаге воспаления.",
-			price: 6_000,
-			button: COSTS_OF_SERVICES_BUTTON,
-		},
-		{
-			title: "Пародонтологическая диагностика Florida Probe",
-			description:
-				"Компьютерное измерение глубины карманов по&nbsp;каждому зубу с&nbsp;формированием пародонтальной карты для контроля динамики лечения.",
-			price: 2_000,
-			button: COSTS_OF_SERVICES_BUTTON,
-		},
-	],
+    title: 'Стоимость услуг:',
+    cards: [
+        {
+            title: 'Консультация стоматолога-пародонтолога',
+            description:
+                'Осмотр дёсен, оценка глубины пародонтальных карманов и&nbsp;степени подвижности зубов, составление индивидуального плана лечения.',
+            button: COSTS_OF_SERVICES_BUTTON,
+            price: 1_500,
+        },
+        {
+            title: 'Шинирование стекловолоконной лентой в&nbsp;области 1&nbsp;зуба',
+            description:
+                'Фиксация подвижного зуба стекловолоконной лентой: снимает избыточную нагрузку и&nbsp;помогает сохранить зуб при заболеваниях пародонта.',
+            button: COSTS_OF_SERVICES_BUTTON,
+            price: 4_000,
+        },
+        {
+            title: 'Тотальная неинвазивная пародонтальная терапия пародонтологическим центром &laquo;Vector Paro Pro&raquo;&nbsp;&mdash; 1&nbsp;челюсть',
+            description:
+                'Ультразвуковая обработка всех пародонтальных карманов одной челюсти без разрезов: удаление биоплёнки и&nbsp;поддесневых отложений.',
+            button: COSTS_OF_SERVICES_BUTTON,
+            price: 9_000,
+        },
+        {
+            title: 'Тотальная неинвазивная пародонтальная терапия пародонтологическим центром &laquo;Vector Paro Pro&raquo;&nbsp;&mdash; 2&nbsp;челюсти',
+            description:
+                'Полная обработка пародонтальных карманов обеих челюстей за&nbsp;один приём&nbsp;&mdash; базовый протокол при генерализованном пародонтите.',
+            button: COSTS_OF_SERVICES_BUTTON,
+            price: 17_000,
+        },
+        {
+            title: 'Неинвазивная пародонтальная терапия пародонтологическим центром &laquo;Vector Paro Pro&raquo;&nbsp;&mdash; 1&nbsp;сегмент',
+            description:
+                'Обработка одного участка челюсти аппаратом Vector&nbsp;&mdash; для локальных воспалений без вовлечения всего зубного ряда.',
+            button: COSTS_OF_SERVICES_BUTTON,
+            price: 5_000,
+        },
+        {
+            title: 'Шинирование стекловолоконной лентой в&nbsp;области 4-6 зубов',
+            description:
+                'Объединение группы подвижных зубов в&nbsp;единый блок: равномерно распределяет жевательную нагрузку и&nbsp;останавливает расшатывание.',
+            price: 16_200,
+            button: COSTS_OF_SERVICES_BUTTON,
+        },
+        {
+            title: 'Наложение пленки Диплен-дента',
+            description:
+                'Лечебная самоклеящаяся плёнка на&nbsp;десну с&nbsp;пролонгированным действием: снимает воспаление и&nbsp;защищает обработанный участок.',
+            price: 1_600,
+            button: COSTS_OF_SERVICES_BUTTON,
+        },
+        {
+            title: 'Введение лекарственного препарата в&nbsp;1&nbsp;челюсть',
+            description:
+                'Инъекционное введение противовоспалительного препарата в&nbsp;область дёсен одной челюсти в&nbsp;составе курса лечения.',
+            price: 350,
+            button: COSTS_OF_SERVICES_BUTTON,
+        },
+        {
+            title: 'Пародонтологическая санация&nbsp;&mdash; первичная процедура',
+            description:
+                'Первый этап лечения: снятие над- и&nbsp;поддесневых отложений, антисептическая обработка карманов и&nbsp;обучение домашнему уходу.',
+            price: 8_000,
+            button: COSTS_OF_SERVICES_BUTTON,
+        },
+        {
+            title: 'Пародонтологическая санация&nbsp;&mdash; вторичная процедура',
+            description:
+                'Повторная обработка для закрепления результата: оценка динамики, очищение карманов и&nbsp;медикаментозная терапия дёсен.',
+            price: 6_000,
+            button: COSTS_OF_SERVICES_BUTTON,
+        },
+        {
+            title: 'Пародонтологическая санация&nbsp;&mdash; 1-3 зуба',
+            description:
+                'Локальная санация в&nbsp;области одного-трёх зубов&nbsp;&mdash; при ограниченном очаге воспаления.',
+            price: 6_000,
+            button: COSTS_OF_SERVICES_BUTTON,
+        },
+        {
+            title: 'Пародонтологическая диагностика Florida Probe',
+            description:
+                'Компьютерное измерение глубины карманов по&nbsp;каждому зубу с&nbsp;формированием пародонтальной карты для контроля динамики лечения.',
+            price: 2_000,
+            button: COSTS_OF_SERVICES_BUTTON,
+        },
+    ],
 };
 
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	title: "Наши преимущества",
-	textBlock: {
-		title: "Безболезненное лечение",
-		description:
-			"Современная анестезия и&nbsp;щадящие протоколы&nbsp;&mdash; комфортно даже для чувствительных дёсен.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/first-slider/first-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/second-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/third-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/fourth-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/fifth-desktop.webp",
-			},
-		},
-	],
+    title: 'Наши преимущества',
+    textBlock: {
+        title: 'Безболезненное лечение',
+        description:
+            'Современная анестезия и&nbsp;щадящие протоколы&nbsp;&mdash; комфортно даже для чувствительных дёсен.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/home/first-slider/first-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/second-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/third-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/fourth-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/fifth-desktop.webp',
+            },
+        },
+    ],
 };
 
 export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Диагностика Florida Probe",
-		description:
-			"Точная компьютерная оценка состояния дёсен и&nbsp;карманов&nbsp;&mdash; бесплатно на&nbsp;первом приёме.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-1.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-2.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-3.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-4.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-5.webp",
-			},
-		},
-	],
+    textBlock: {
+        title: 'Диагностика Florida Probe',
+        description:
+            'Точная компьютерная оценка состояния дёсен и&nbsp;карманов&nbsp;&mdash; бесплатно на&nbsp;первом приёме.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-1.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-2.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-3.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-4.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-5.webp',
+            },
+        },
+    ],
 };
 
 export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Сохранение зубов",
-		description:
-			"Останавливаем воспаление и&nbsp;подвижность&nbsp;&mdash; сохраняем зубы на&nbsp;долгие годы без удаления.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/third-slider/3-1.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/third-slider/3-2.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/third-slider/3-3.webp",
-			},
-		},
-	],
+    textBlock: {
+        title: 'Сохранение зубов',
+        description:
+            'Останавливаем воспаление и&nbsp;подвижность&nbsp;&mdash; сохраняем зубы на&nbsp;долгие годы без удаления.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/home/third-slider/3-1.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/third-slider/3-2.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/third-slider/3-3.webp',
+            },
+        },
+    ],
 };

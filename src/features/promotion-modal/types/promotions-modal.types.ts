@@ -1,9 +1,9 @@
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
+import type { PropsWithClassName } from '@/shared/types/props-with-classname';
 
 export type PromotionsFormProps = {
-	toggleSuccess: () => void;
+    toggleSuccess: () => void;
 };
 
 export type PromotionsSuccessFormProps = {
-	isOpen?: boolean;
+    isOpen?: boolean;
 } & PropsWithClassName;

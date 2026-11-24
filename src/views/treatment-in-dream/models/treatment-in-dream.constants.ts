@@ -1,504 +1,504 @@
-import type { AppointmentSchedulingProps } from "@/features/appointment-scheduling-section/types/appointment-scheduling.types";
+import type { AppointmentSchedulingProps } from '@/features/appointment-scheduling-section/types/appointment-scheduling.types';
 import {
-	APPOINTMENT_ID,
-	GLOBAL_EMPLOYEES,
-} from "@/shared/config/global-constants.constants";
-import { SITE_NAVIGATION } from "@/shared/config/site-navigation";
-import type { InfoTabsProps } from "@/views/adult-orthodontics-page/types/info-tabs.types";
-import type { CertificatesSectionProps } from "@/widgets/certificates-section/types/certificates-section.types";
-import type { DiagnosticProcessSectionProps } from "@/widgets/diagnostic-process-section/types/diagnostic-process-section.types";
-import type { OurPeopleSectionProps } from "@/widgets/our-people-section/types/our-people-section.types";
-import type { QuadroSectionProps } from "@/widgets/quadro-section/types/quadro-section.types";
-import type { TitleDescriptionSliderProps } from "@/widgets/title-description-slider/types/title-description-slider.types";
-import type { WhyChooseUsProps } from "@/widgets/why-choose-us/types/why-choose-us.types";
+    APPOINTMENT_ID,
+    GLOBAL_EMPLOYEES,
+} from '@/shared/config/global-constants.constants';
+import { SITE_NAVIGATION } from '@/shared/config/site-navigation';
+import type { InfoTabsProps } from '@/views/adult-orthodontics-page/types/info-tabs.types';
+import type { CertificatesSectionProps } from '@/widgets/certificates-section/types/certificates-section.types';
+import type { DiagnosticProcessSectionProps } from '@/widgets/diagnostic-process-section/types/diagnostic-process-section.types';
+import type { OurPeopleSectionProps } from '@/widgets/our-people-section/types/our-people-section.types';
+import type { QuadroSectionProps } from '@/widgets/quadro-section/types/quadro-section.types';
+import type { TitleDescriptionSliderProps } from '@/widgets/title-description-slider/types/title-description-slider.types';
+import type { WhyChooseUsProps } from '@/widgets/why-choose-us/types/why-choose-us.types';
 
 export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
-	sectionHeader: {
-		description: "Лечение под наркозом с&nbsp;контролем анестезиолога",
-		title:
-			"Лечение &laquo;во&nbsp;сне&raquo; просыпайтесь с&nbsp;идеальной улыбкой",
-		card: {
-			title:
-				"Подберём безопасный вариант и&nbsp;объясним все этапы до&nbsp;начала",
-			button: { title: "Записаться на прием", href: APPOINTMENT_ID.id },
-		},
-		poster: {
-			webp: {
-				src: "/mock/treatment-in-dream/treatment-in-dream-hero-alt.webp",
-			},
-		},
-	},
+    sectionHeader: {
+        description: 'Лечение под наркозом с&nbsp;контролем анестезиолога',
+        title: 'Лечение &laquo;во&nbsp;сне&raquo; просыпайтесь с&nbsp;идеальной улыбкой',
+        card: {
+            title: 'Подберём безопасный вариант и&nbsp;объясним все этапы до&nbsp;начала',
+            button: { title: 'Записаться на прием', href: APPOINTMENT_ID.id },
+        },
+        poster: {
+            webp: {
+                src: '/mock/treatment-in-dream/treatment-in-dream-hero-alt.webp',
+            },
+        },
+    },
 };
 
 export const INFO_TABS_MOCK: InfoTabsProps = {
-	tabsBlock: {
-		title: "Какой вариант лечения выбрать?",
-		description:
-			"В&nbsp;нашей клинике доступны два современных метода, которые помогают сделать лечение комфортным. Ознакомьтесь с&nbsp;их&nbsp;особенностями и&nbsp;выберите подходящий вариант вместе с&nbsp;врачом.",
-		tabs: [
-			{
-				title: "Наркоз",
-				slug: "narkoz",
-			},
-			{
-				title: "Седация",
-				slug: "sedaciya",
-			},
-		],
-	},
-	content: {
-		narkoz: {
-			// whatIncludes: {
-			// 	title: "Что включает наркоз",
-			// 	cards: [
-			// 		{
-			// 			title:
-			// 				"Обеспечиваем непревзойденный комфорт и&nbsp;безопасность для каждого пациента",
-			// 		},
-			// 		{
-			// 			title:
-			// 				"Наши методы позволяют избавиться от&nbsp;страха и&nbsp;тревог, гарантируя высококачественное и&nbsp;эффективное лечение в&nbsp;атмосфере полного спокойствия",
-			// 		},
-			// 	],
-			// },
-			stickyTitle: {
-				title: "Sevorane&nbsp;&mdash; лечение зубов без боли и&nbsp;страха",
-				lastCard: {
-					poster: {
-						webp: {
-							src: "/mock/treatment-in-dream/title-sticky.webp",
-						},
-					},
-					button: { title: "Записаться на приём", href: APPOINTMENT_ID.id },
-				},
-				cards: [
-					{
-						title: "Безопасность и&nbsp;мягкое воздействие:",
-						description:
-							"Этот наркоз, основанный на&nbsp;севофлуране, не&nbsp;имеет запаха и&nbsp;цвета, а&nbsp;также не&nbsp;вызывает раздражения дыхательных путей.",
-					},
-					{
-						title: "Стабильность и&nbsp;контроль:",
-						description:
-							"&laquo;Севоран&raquo; обеспечивает стабильный уровень глубины наркоза, что позволяет врачам контролировать ваше состояние на&nbsp;протяжении всей процедуры.",
-					},
-					{
-						title: "Минимальное влияние на&nbsp;организм:",
-						description:
-							"&laquo;Севоран&raquo; имеет минимальное влияние на&nbsp;сердечно-сосудистую систему и&nbsp;не&nbsp;вступает в&nbsp;химические реакции с&nbsp;организмом.",
-					},
-					{
-						title: "Отсутствие последствий:",
-						description:
-							"&laquo;Севоран&raquo; имеет низкую частоту негативных эффектов и&nbsp;подходит даже для самых чувствительных пациентов. Однако перед процедурой вас обязательно проконсультирует врач-специалист.",
-					},
-					{
-						title: "Современное оборудование:",
-						description:
-							"Наша клиника оснащена наркозным аппаратом Datex-Ohmeda 9100c NXT, который гарантирует полный контроль всех жизненно важных функций во&nbsp;время процедуры, обеспечивая максимальную безопасность и&nbsp;комфорт на&nbsp;протяжении всего лечения.",
-					},
-					{
-						title: "Препарат &laquo;Дантролен&raquo;",
-						description:
-							"Пациентам с&nbsp;генетической предрасположенностью к&nbsp;гипертермии в&nbsp;нашей клинике применяют препарат &laquo;Дантролен&raquo;, который предотвращает тяжелое состояние пациента. Также важно помнить, что процедура проводится натощак, чтобы избежать возможных осложнений.",
-					},
-				],
-			},
-			diagnostics: {
-				sectionHeader: {
-					title: "Ваша улыбка в&nbsp;руках профессионалов!",
-				},
-				cards: [
-					{
-						title: "01. Подготовка после консультации:",
-						description:
-							"После стоматолога куратор по&nbsp;наркозу подскажет анализы, поможет пройти все этапы и&nbsp;проконтролирует&nbsp;их. Анестезиолог оценит результаты до&nbsp;процедуры.",
-						poster: {
-							webp: {
-								src: "/mock/treatment-in-dream/sleep-1.webp",
-							},
-						},
-					},
-					{
-						title: "02. День процедуры:",
-						description:
-							"В&nbsp;день наркоза врач-анестезиолог в&nbsp;спокойной обстановке объясняет все важные моменты, отвечает на&nbsp;вопросы и&nbsp;готовит вас к&nbsp;процедуре вместе с&nbsp;медсестрой-анестезистом.",
-						poster: {
-							webp: {
-								src: "/mock/treatment-in-dream/sleep-2.webp",
-							},
-						},
-					},
-					{
-						title: "03. Глубокий наркоз:",
-						description:
-							"Пациент находится в&nbsp;спокойном и&nbsp;безопасном состоянии глубокого наркоза, пока врач проводит лечение.",
-						poster: {
-							webp: {
-								src: "/mock/treatment-in-dream/sleep-3.webp",
-							},
-						},
-					},
-					{
-						title: "04. Пробуждение:",
-						description:
-							"После завершения лечения подача газа прекращается, и&nbsp;вы&nbsp;быстро приходите в&nbsp;сознание.",
-						poster: {
-							webp: {
-								src: "/mock/treatment-in-dream/sleep-4.webp",
-							},
-						},
-					},
-					// {
-					// 	title: "05. Восстановление:",
-					// 	description:
-					// 		"Пробуждение происходит постепенно, и&nbsp;вы&nbsp;возвращаетесь к&nbsp;своему обычному состоянию.",
-					// 	poster: {
-					// 		webp: {
-					// 			src: "/mock/diagnostics/5-desktop.webp",
-					// 		},
-					// 	},
-					// },
-				],
-			},
-		},
-		sedaciya: {
-			whatIncludes: {
-				title: "Что включает седация",
-				cards: [
-					{
-						title: "Седация&nbsp;&mdash; спокойное лечение без страха",
-						description:
-							"Подходит, если вы&nbsp;откладываете визит к&nbsp;стоматологу или испытываете тревогу перед лечением.",
-					},
-					{
-						title: "Расслабление",
-						description:
-							"Вы&nbsp;остаетесь в&nbsp;сознании, но&nbsp;становитесь спокойнее и&nbsp;расслабленнее, без выраженного страха и&nbsp;напряжения.",
-					},
-					{
-						title: "Маска с&nbsp;приятным запахом",
-						description:
-							"Седация проводится через специальную маску с&nbsp;закисью азота&nbsp;&mdash; без уколов и&nbsp;сложных манипуляций на&nbsp;этапе начала процедуры.",
-					},
-					{
-						title: "Комфортное лечение",
-						description:
-							"Вы&nbsp;можете общаться с&nbsp;врачом и&nbsp;выполнять его просьбы, пока стоматолог проводит необходимые процедуры.",
-					},
-					{
-						title: "Быстрое восстановление",
-						description:
-							"После завершения подачи газа его действие быстро прекращается, и&nbsp;вы&nbsp;возвращаетесь к&nbsp;обычному состоянию.",
-					},
-					{
-						title: "Индивидуальный подход",
-						description:
-							"Необходимость и&nbsp;возможность седации определяет врач после осмотра и&nbsp;оценки вашего состояния.",
-					},
-				],
-			},
-			diagnostics: {
-				sectionHeader: {
-					title: "Ваша улыбка в&nbsp;руках профессионалов!",
-				},
-				cards: [
-					{
-						title: "01. Подготовка и&nbsp;беседа с&nbsp;врачом",
-						description:
-							"Врач подробно рассказывает, как будет проходить лечение, и&nbsp;отвечает на&nbsp;все ваши вопросы. Вы&nbsp;устраиваетесь в&nbsp;кресле, привыкаете к&nbsp;обстановке и&nbsp;спокойно готовитесь к&nbsp;процедуре.",
-						poster: {
-							webp: {
-								src: "/mock/treatment-in-dream/sleep-5.webp",
-							},
-						},
-					},
-					{
-						title: "02. Седация",
-						description:
-							"Через специальную маску вы&nbsp;вдыхаете смесь кислорода и&nbsp;закиси азота. Состояние расслабления наступает постепенно, при этом вы&nbsp;остаетесь в&nbsp;сознании.",
-						poster: {
-							webp: {
-								src: "/mock/treatment-in-dream/sleep-6.webp",
-							},
-						},
-					},
-					{
-						title: "03. Лечение",
-						description:
-							"Вы&nbsp;общаетесь с&nbsp;врачом и&nbsp;выполняете его инструкции. После расслабления проводится обезболивание и&nbsp;начинается лечение.",
-						poster: {
-							webp: {
-								src: "/mock/treatment-in-dream/sleep-7.webp",
-							},
-						},
-					},
-				],
-			},
-		},
-	},
+    tabsBlock: {
+        title: 'Какой вариант лечения выбрать?',
+        description:
+            'В&nbsp;нашей клинике доступны два современных метода, которые помогают сделать лечение комфортным. Ознакомьтесь с&nbsp;их&nbsp;особенностями и&nbsp;выберите подходящий вариант вместе с&nbsp;врачом.',
+        tabs: [
+            {
+                title: 'Наркоз',
+                slug: 'narkoz',
+            },
+            {
+                title: 'Седация',
+                slug: 'sedaciya',
+            },
+        ],
+    },
+    content: {
+        narkoz: {
+            // whatIncludes: {
+            // 	title: "Что включает наркоз",
+            // 	cards: [
+            // 		{
+            // 			title:
+            // 				"Обеспечиваем непревзойденный комфорт и&nbsp;безопасность для каждого пациента",
+            // 		},
+            // 		{
+            // 			title:
+            // 				"Наши методы позволяют избавиться от&nbsp;страха и&nbsp;тревог, гарантируя высококачественное и&nbsp;эффективное лечение в&nbsp;атмосфере полного спокойствия",
+            // 		},
+            // 	],
+            // },
+            stickyTitle: {
+                title: 'Sevorane&nbsp;&mdash; лечение зубов без боли и&nbsp;страха',
+                lastCard: {
+                    poster: {
+                        webp: {
+                            src: '/mock/treatment-in-dream/title-sticky.webp',
+                        },
+                    },
+                    button: {
+                        title: 'Записаться на приём',
+                        href: APPOINTMENT_ID.id,
+                    },
+                },
+                cards: [
+                    {
+                        title: 'Безопасность и&nbsp;мягкое воздействие:',
+                        description:
+                            'Этот наркоз, основанный на&nbsp;севофлуране, не&nbsp;имеет запаха и&nbsp;цвета, а&nbsp;также не&nbsp;вызывает раздражения дыхательных путей.',
+                    },
+                    {
+                        title: 'Стабильность и&nbsp;контроль:',
+                        description:
+                            '&laquo;Севоран&raquo; обеспечивает стабильный уровень глубины наркоза, что позволяет врачам контролировать ваше состояние на&nbsp;протяжении всей процедуры.',
+                    },
+                    {
+                        title: 'Минимальное влияние на&nbsp;организм:',
+                        description:
+                            '&laquo;Севоран&raquo; имеет минимальное влияние на&nbsp;сердечно-сосудистую систему и&nbsp;не&nbsp;вступает в&nbsp;химические реакции с&nbsp;организмом.',
+                    },
+                    {
+                        title: 'Отсутствие последствий:',
+                        description:
+                            '&laquo;Севоран&raquo; имеет низкую частоту негативных эффектов и&nbsp;подходит даже для самых чувствительных пациентов. Однако перед процедурой вас обязательно проконсультирует врач-специалист.',
+                    },
+                    {
+                        title: 'Современное оборудование:',
+                        description:
+                            'Наша клиника оснащена наркозным аппаратом Datex-Ohmeda 9100c NXT, который гарантирует полный контроль всех жизненно важных функций во&nbsp;время процедуры, обеспечивая максимальную безопасность и&nbsp;комфорт на&nbsp;протяжении всего лечения.',
+                    },
+                    {
+                        title: 'Препарат &laquo;Дантролен&raquo;',
+                        description:
+                            'Пациентам с&nbsp;генетической предрасположенностью к&nbsp;гипертермии в&nbsp;нашей клинике применяют препарат &laquo;Дантролен&raquo;, который предотвращает тяжелое состояние пациента. Также важно помнить, что процедура проводится натощак, чтобы избежать возможных осложнений.',
+                    },
+                ],
+            },
+            diagnostics: {
+                sectionHeader: {
+                    title: 'Ваша улыбка в&nbsp;руках профессионалов!',
+                },
+                cards: [
+                    {
+                        title: '01. Подготовка после консультации:',
+                        description:
+                            'После стоматолога куратор по&nbsp;наркозу подскажет анализы, поможет пройти все этапы и&nbsp;проконтролирует&nbsp;их. Анестезиолог оценит результаты до&nbsp;процедуры.',
+                        poster: {
+                            webp: {
+                                src: '/mock/treatment-in-dream/sleep-1.webp',
+                            },
+                        },
+                    },
+                    {
+                        title: '02. День процедуры:',
+                        description:
+                            'В&nbsp;день наркоза врач-анестезиолог в&nbsp;спокойной обстановке объясняет все важные моменты, отвечает на&nbsp;вопросы и&nbsp;готовит вас к&nbsp;процедуре вместе с&nbsp;медсестрой-анестезистом.',
+                        poster: {
+                            webp: {
+                                src: '/mock/treatment-in-dream/sleep-2.webp',
+                            },
+                        },
+                    },
+                    {
+                        title: '03. Глубокий наркоз:',
+                        description:
+                            'Пациент находится в&nbsp;спокойном и&nbsp;безопасном состоянии глубокого наркоза, пока врач проводит лечение.',
+                        poster: {
+                            webp: {
+                                src: '/mock/treatment-in-dream/sleep-3.webp',
+                            },
+                        },
+                    },
+                    {
+                        title: '04. Пробуждение:',
+                        description:
+                            'После завершения лечения подача газа прекращается, и&nbsp;вы&nbsp;быстро приходите в&nbsp;сознание.',
+                        poster: {
+                            webp: {
+                                src: '/mock/treatment-in-dream/sleep-4.webp',
+                            },
+                        },
+                    },
+                    // {
+                    // 	title: "05. Восстановление:",
+                    // 	description:
+                    // 		"Пробуждение происходит постепенно, и&nbsp;вы&nbsp;возвращаетесь к&nbsp;своему обычному состоянию.",
+                    // 	poster: {
+                    // 		webp: {
+                    // 			src: "/mock/diagnostics/5-desktop.webp",
+                    // 		},
+                    // 	},
+                    // },
+                ],
+            },
+        },
+        sedaciya: {
+            whatIncludes: {
+                title: 'Что включает седация',
+                cards: [
+                    {
+                        title: 'Седация&nbsp;&mdash; спокойное лечение без страха',
+                        description:
+                            'Подходит, если вы&nbsp;откладываете визит к&nbsp;стоматологу или испытываете тревогу перед лечением.',
+                    },
+                    {
+                        title: 'Расслабление',
+                        description:
+                            'Вы&nbsp;остаетесь в&nbsp;сознании, но&nbsp;становитесь спокойнее и&nbsp;расслабленнее, без выраженного страха и&nbsp;напряжения.',
+                    },
+                    {
+                        title: 'Маска с&nbsp;приятным запахом',
+                        description:
+                            'Седация проводится через специальную маску с&nbsp;закисью азота&nbsp;&mdash; без уколов и&nbsp;сложных манипуляций на&nbsp;этапе начала процедуры.',
+                    },
+                    {
+                        title: 'Комфортное лечение',
+                        description:
+                            'Вы&nbsp;можете общаться с&nbsp;врачом и&nbsp;выполнять его просьбы, пока стоматолог проводит необходимые процедуры.',
+                    },
+                    {
+                        title: 'Быстрое восстановление',
+                        description:
+                            'После завершения подачи газа его действие быстро прекращается, и&nbsp;вы&nbsp;возвращаетесь к&nbsp;обычному состоянию.',
+                    },
+                    {
+                        title: 'Индивидуальный подход',
+                        description:
+                            'Необходимость и&nbsp;возможность седации определяет врач после осмотра и&nbsp;оценки вашего состояния.',
+                    },
+                ],
+            },
+            diagnostics: {
+                sectionHeader: {
+                    title: 'Ваша улыбка в&nbsp;руках профессионалов!',
+                },
+                cards: [
+                    {
+                        title: '01. Подготовка и&nbsp;беседа с&nbsp;врачом',
+                        description:
+                            'Врач подробно рассказывает, как будет проходить лечение, и&nbsp;отвечает на&nbsp;все ваши вопросы. Вы&nbsp;устраиваетесь в&nbsp;кресле, привыкаете к&nbsp;обстановке и&nbsp;спокойно готовитесь к&nbsp;процедуре.',
+                        poster: {
+                            webp: {
+                                src: '/mock/treatment-in-dream/sleep-5.webp',
+                            },
+                        },
+                    },
+                    {
+                        title: '02. Седация',
+                        description:
+                            'Через специальную маску вы&nbsp;вдыхаете смесь кислорода и&nbsp;закиси азота. Состояние расслабления наступает постепенно, при этом вы&nbsp;остаетесь в&nbsp;сознании.',
+                        poster: {
+                            webp: {
+                                src: '/mock/treatment-in-dream/sleep-6.webp',
+                            },
+                        },
+                    },
+                    {
+                        title: '03. Лечение',
+                        description:
+                            'Вы&nbsp;общаетесь с&nbsp;врачом и&nbsp;выполняете его инструкции. После расслабления проводится обезболивание и&nbsp;начинается лечение.',
+                        poster: {
+                            webp: {
+                                src: '/mock/treatment-in-dream/sleep-7.webp',
+                            },
+                        },
+                    },
+                ],
+            },
+        },
+    },
 };
 
 export const FORM_DATA: AppointmentSchedulingProps = {
-	title: "Запись на&nbsp;приём",
-	description:
-		"Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время",
-	poster: {
-		webp: {
-			src: "/mock/appointment-scheduling-section/dark-form-checklist.webp",
-		},
-	},
+    title: 'Запись на&nbsp;приём',
+    description:
+        'Оставьте свои контактные данные и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время',
+    poster: {
+        webp: {
+            src: '/mock/appointment-scheduling-section/dark-form-checklist.webp',
+        },
+    },
 };
 
 export const OUR_PEOPLE_SECTION: OurPeopleSectionProps = {
-	isSlider: true,
-	title: "Врачи, оказывающие услугу",
-	button: {
-		title: "Смотреть всех специалистов",
-		href: SITE_NAVIGATION.vrachi,
-	},
-	employees: [
-		GLOBAL_EMPLOYEES.davidova,
-		GLOBAL_EMPLOYEES.shahnazaryan,
-		GLOBAL_EMPLOYEES.koramagomedov,
-		GLOBAL_EMPLOYEES.kravchenko,
-		GLOBAL_EMPLOYEES.kornilov,
-	],
+    isSlider: true,
+    title: 'Врачи, оказывающие услугу',
+    button: {
+        title: 'Смотреть всех специалистов',
+        href: SITE_NAVIGATION.vrachi,
+    },
+    employees: [
+        GLOBAL_EMPLOYEES.davidova,
+        GLOBAL_EMPLOYEES.shahnazaryan,
+        GLOBAL_EMPLOYEES.koramagomedov,
+        GLOBAL_EMPLOYEES.kravchenko,
+        GLOBAL_EMPLOYEES.kornilov,
+    ],
 };
 
 export const FIRST_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	title: "Наши преимущества",
-	textBlock: {
-		title: "Без страха и&nbsp;боли",
-		description:
-			"Вы&nbsp;находитесь в&nbsp;состоянии медикаментозного сна и&nbsp;не&nbsp;испытываете тревоги во&nbsp;время лечения.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/first-slider/first-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/second-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/third-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/fourth-desktop.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/first-slider/fifth-desktop.webp",
-			},
-		},
-	],
+    title: 'Наши преимущества',
+    textBlock: {
+        title: 'Без страха и&nbsp;боли',
+        description:
+            'Вы&nbsp;находитесь в&nbsp;состоянии медикаментозного сна и&nbsp;не&nbsp;испытываете тревоги во&nbsp;время лечения.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/home/first-slider/first-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/second-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/third-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/fourth-desktop.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/first-slider/fifth-desktop.webp',
+            },
+        },
+    ],
 };
 
 export const SECOND_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Большой объем лечения за&nbsp;один визит",
-		description:
-			"Можно провести несколько необходимых процедур за&nbsp;один сеанс, не&nbsp;растягивая лечение на&nbsp;множество посещений.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-1.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-2.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-3.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-4.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/second-slider/2-5.webp",
-			},
-		},
-	],
+    textBlock: {
+        title: 'Большой объем лечения за&nbsp;один визит',
+        description:
+            'Можно провести несколько необходимых процедур за&nbsp;один сеанс, не&nbsp;растягивая лечение на&nbsp;множество посещений.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-1.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-2.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-3.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-4.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/second-slider/2-5.webp',
+            },
+        },
+    ],
 };
 
 export const THIRD_TITLE_DESCRIPTION_SLIDER: TitleDescriptionSliderProps = {
-	textBlock: {
-		title: "Контроль со&nbsp;стороны анестезиолога",
-		description:
-			"На&nbsp;протяжении всей процедуры ваше состояние постоянно контролирует врач-анестезиолог.",
-	},
-	posters: [
-		{
-			webp: {
-				src: "/mock/home/third-slider/3-1.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/third-slider/3-2.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/mock/home/third-slider/3-3.webp",
-			},
-		},
-	],
+    textBlock: {
+        title: 'Контроль со&nbsp;стороны анестезиолога',
+        description:
+            'На&nbsp;протяжении всей процедуры ваше состояние постоянно контролирует врач-анестезиолог.',
+    },
+    posters: [
+        {
+            webp: {
+                src: '/mock/home/third-slider/3-1.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/third-slider/3-2.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/mock/home/third-slider/3-3.webp',
+            },
+        },
+    ],
 };
 
 export const WHY_CHOOSE_US: WhyChooseUsProps = {
-	sectionHeader: {
-		title: "Почему профессиональную гигиену проходят именно у&nbsp;нас",
-		description:
-			"Профессиональная гигиена&nbsp;&mdash; это не&nbsp;только удаление налета и&nbsp;зубного камня. Мы&nbsp;учим правильно ухаживать за&nbsp;зубами дома, подбираем средства именно под вашу ситуацию и&nbsp;сопровождаем пациента, чтобы здоровье полости рта сохранялось на&nbsp;долгие годы.",
-	},
-	cards: [
-		{
-			icon: "/mock/why-choose-us/1-icon.svg",
-			title: "Обучаем правильной технике чистки",
-			description:
-				"На&nbsp;приеме врач поставит правильную технику чистки, покажет движения щетки и&nbsp;научит эффективно ухаживать за&nbsp;зубами и&nbsp;деснами в&nbsp;домашних условиях.",
-		},
-		{
-			icon: "/mock/why-choose-us/2-icon.svg",
-			title: "Подбираем индивидуальный домашний уход",
-			description:
-				"Подберем щетку, пасту, ершики, ирригатор и&nbsp;другие средства именно для ваших зубов. Все необходимые средства можно приобрести сразу в&nbsp;клинике.",
-		},
-		{
-			icon: "/mock/why-choose-us/3-icon.svg",
-			title: "Контролируем результат",
-			description:
-				"На&nbsp;каждом профилактическом приеме врач оценивает качество домашней гигиены, показывает плохо очищаемые участки и&nbsp;&laquo;слепые зоны&raquo;, помогает скорректировать уход и&nbsp;отслеживает ваш прогресс.",
-		},
-	],
-	mainSection: {
-		title: "Причины выбрать именно нас",
-		list: [
-			"Не&nbsp;просто чистим зубы&nbsp;&mdash; обучаем правильному домашнему уходу",
-			"Подбираем индивидуальный набор средств гигиены под ваши особенности",
-			"Все рекомендованные средства можно приобрести сразу после приема",
-			"Отслеживаем результат, показываем проблемные зоны и&nbsp;помогаем сохранить здоровье зубов и&nbsp;десен",
-		],
-		poster: {
-			webp: {
-				src: "/mock/why-choose-us/main.webp",
-			},
-		},
-		button: {
-			title: "Записаться на приём",
-			href: "",
-		},
-	},
+    sectionHeader: {
+        title: 'Почему профессиональную гигиену проходят именно у&nbsp;нас',
+        description:
+            'Профессиональная гигиена&nbsp;&mdash; это не&nbsp;только удаление налета и&nbsp;зубного камня. Мы&nbsp;учим правильно ухаживать за&nbsp;зубами дома, подбираем средства именно под вашу ситуацию и&nbsp;сопровождаем пациента, чтобы здоровье полости рта сохранялось на&nbsp;долгие годы.',
+    },
+    cards: [
+        {
+            icon: '/mock/why-choose-us/1-icon.svg',
+            title: 'Обучаем правильной технике чистки',
+            description:
+                'На&nbsp;приеме врач поставит правильную технику чистки, покажет движения щетки и&nbsp;научит эффективно ухаживать за&nbsp;зубами и&nbsp;деснами в&nbsp;домашних условиях.',
+        },
+        {
+            icon: '/mock/why-choose-us/2-icon.svg',
+            title: 'Подбираем индивидуальный домашний уход',
+            description:
+                'Подберем щетку, пасту, ершики, ирригатор и&nbsp;другие средства именно для ваших зубов. Все необходимые средства можно приобрести сразу в&nbsp;клинике.',
+        },
+        {
+            icon: '/mock/why-choose-us/3-icon.svg',
+            title: 'Контролируем результат',
+            description:
+                'На&nbsp;каждом профилактическом приеме врач оценивает качество домашней гигиены, показывает плохо очищаемые участки и&nbsp;&laquo;слепые зоны&raquo;, помогает скорректировать уход и&nbsp;отслеживает ваш прогресс.',
+        },
+    ],
+    mainSection: {
+        title: 'Причины выбрать именно нас',
+        list: [
+            'Не&nbsp;просто чистим зубы&nbsp;&mdash; обучаем правильному домашнему уходу',
+            'Подбираем индивидуальный набор средств гигиены под ваши особенности',
+            'Все рекомендованные средства можно приобрести сразу после приема',
+            'Отслеживаем результат, показываем проблемные зоны и&nbsp;помогаем сохранить здоровье зубов и&nbsp;десен',
+        ],
+        poster: {
+            webp: {
+                src: '/mock/why-choose-us/main.webp',
+            },
+        },
+        button: {
+            title: 'Записаться на приём',
+            href: '',
+        },
+    },
 };
 
 export const SECOND_QUADRO: QuadroSectionProps = {
-	sectionHeader: {
-		title:
-			"Рассрочка на&nbsp;лечение во&nbsp;сне&nbsp;&mdash; удобные условия для вашего комфорта!",
-		card: {
-			description:
-				"<p>В&nbsp;нашей стоматологии теперь доступна рассрочка на&nbsp;лечение во&nbsp;сне:</p><br /><ul><li>Первоначальный взнос: <b>всего 50%</b></li><li>Срок рассрочки: <b>6&nbsp;месяцев</b></li><li>Дальнейшая оплата: равными частями без переплат</li></ul>",
-			button: {
-				title: "Ознакомиться с акциями",
-				href: SITE_NAVIGATION.akcii,
-			},
-		},
-		poster: {
-			webp: {
-				src: "/mock/sleepbased-treatment/quadro-second.webp",
-			},
-		},
-	},
+    sectionHeader: {
+        title: 'Рассрочка на&nbsp;лечение во&nbsp;сне&nbsp;&mdash; удобные условия для вашего комфорта!',
+        card: {
+            description:
+                '<p>В&nbsp;нашей стоматологии теперь доступна рассрочка на&nbsp;лечение во&nbsp;сне:</p><br /><ul><li>Первоначальный взнос: <b>всего 50%</b></li><li>Срок рассрочки: <b>6&nbsp;месяцев</b></li><li>Дальнейшая оплата: равными частями без переплат</li></ul>',
+            button: {
+                title: 'Ознакомиться с акциями',
+                href: SITE_NAVIGATION.akcii,
+            },
+        },
+        poster: {
+            webp: {
+                src: '/mock/sleepbased-treatment/quadro-second.webp',
+            },
+        },
+    },
 };
 
 export const CERTIFICATES_SECTION: CertificatesSectionProps = {
-	sectionHeader: {
-		title: "Бонусная система",
-		card: {
-			title: "Ваше лечение возвращается подарками!",
-			button: {
-				title: "Ознакомиться с акциями",
-				href: SITE_NAVIGATION.akcii,
-			},
-		},
-	},
-	certificateCards: [
-		{ webp: { src: "/system/certificates/1-green.webp" } },
-		{
-			webp: {
-				src: "/system/certificates/2-white.webp",
-			},
-		},
-		{
-			webp: {
-				src: "/system/certificates/3-green.webp",
-			},
-		},
-	],
+    sectionHeader: {
+        title: 'Бонусная система',
+        card: {
+            title: 'Ваше лечение возвращается подарками!',
+            button: {
+                title: 'Ознакомиться с акциями',
+                href: SITE_NAVIGATION.akcii,
+            },
+        },
+    },
+    certificateCards: [
+        { webp: { src: '/system/certificates/1-green.webp' } },
+        {
+            webp: {
+                src: '/system/certificates/2-white.webp',
+            },
+        },
+        {
+            webp: {
+                src: '/system/certificates/3-green.webp',
+            },
+        },
+    ],
 };
 
 export const DIAGNOSTICS_SECTION_MOCK: DiagnosticProcessSectionProps = {
-	sectionHeader: {
-		title: "Ваша улыбка в&nbsp;руках профессионалов!",
-		description: "Мы&nbsp;реализуем целостный осмотр для своих пациентов:",
-	},
-	cards: [
-		{
-			title: "01. Осмотр и&nbsp;консультация",
-			description:
-				"Врач выслушивает ваши жалобы, проводит осмотр полости рта и&nbsp;отвечает на&nbsp;все интересующие вопросы.",
-			poster: {
-				webp: {
-					src: "/mock/diagnostics/1-desktop.webp",
-				},
-			},
-		},
-		{
-			title: "02. Комплексная диагностика",
-			description:
-				"При необходимости выполняются фотопротокол, прицельные и&nbsp;панорамные снимки или&nbsp;КТ для полной диагностики и&nbsp;точного планирования лечения.",
-			poster: {
-				webp: {
-					src: "/mock/diagnostics/2-desktop.webp",
-				},
-			},
-		},
-		{
-			title: "03. Составление плана лечения",
-			description:
-				"По&nbsp;результатам диагностики врач подробно объясняет ситуацию, предлагает оптимальные варианты лечения, озвучивает сроки и&nbsp;стоимость каждого этапа.",
-			poster: {
-				webp: {
-					src: "/mock/diagnostics/3-desktop.webp",
-				},
-			},
-		},
-		{
-			title: "04. Начало лечения",
-			description:
-				"При отсутствии противопоказаний лечение можно начать сразу после консультации или выбрать удобную дату для следующего визита.",
-			poster: {
-				webp: {
-					src: "/mock/diagnostics/4-desktop.webp",
-				},
-			},
-		},
-	],
+    sectionHeader: {
+        title: 'Ваша улыбка в&nbsp;руках профессионалов!',
+        description: 'Мы&nbsp;реализуем целостный осмотр для своих пациентов:',
+    },
+    cards: [
+        {
+            title: '01. Осмотр и&nbsp;консультация',
+            description:
+                'Врач выслушивает ваши жалобы, проводит осмотр полости рта и&nbsp;отвечает на&nbsp;все интересующие вопросы.',
+            poster: {
+                webp: {
+                    src: '/mock/diagnostics/1-desktop.webp',
+                },
+            },
+        },
+        {
+            title: '02. Комплексная диагностика',
+            description:
+                'При необходимости выполняются фотопротокол, прицельные и&nbsp;панорамные снимки или&nbsp;КТ для полной диагностики и&nbsp;точного планирования лечения.',
+            poster: {
+                webp: {
+                    src: '/mock/diagnostics/2-desktop.webp',
+                },
+            },
+        },
+        {
+            title: '03. Составление плана лечения',
+            description:
+                'По&nbsp;результатам диагностики врач подробно объясняет ситуацию, предлагает оптимальные варианты лечения, озвучивает сроки и&nbsp;стоимость каждого этапа.',
+            poster: {
+                webp: {
+                    src: '/mock/diagnostics/3-desktop.webp',
+                },
+            },
+        },
+        {
+            title: '04. Начало лечения',
+            description:
+                'При отсутствии противопоказаний лечение можно начать сразу после консультации или выбрать удобную дату для следующего визита.',
+            poster: {
+                webp: {
+                    src: '/mock/diagnostics/4-desktop.webp',
+                },
+            },
+        },
+    ],
 };

@@ -1,73 +1,75 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 /** biome-ignore-all lint/performance/noImgElement: <explanation> */
 
-"use client";
+'use client';
 
-import ButtonIconSVG from "@/public/icons/button-teeth.svg";
-import { handleSectionScroll } from "@/shared/helpers/handle-section-scroll";
-import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
-import Button from "@/shared/ui/button";
-import Picture from "@/shared/ui/picture";
-import type { VacanciesHeroProps } from "../../types/vacancies-hero.types";
-import css from "./index.module.css";
+import ButtonIconSVG from '@/public/icons/button-teeth.svg';
+import { handleSectionScroll } from '@/shared/helpers/handle-section-scroll';
+import { AnimationWrapper } from '@/shared/ui/animation-wrapper';
+import Button from '@/shared/ui/button';
+import Picture from '@/shared/ui/picture';
+
+import type { VacanciesHeroProps } from '../../types/vacancies-hero.types';
+
+import css from './index.module.css';
 
 export default function VacanciesHero({
-	title,
-	description,
-	poster,
-	className,
+    title,
+    description,
+    poster,
+    className,
 }: VacanciesHeroProps) {
-	return (
-		<AnimationWrapper
-			as="section"
-			className={`${css.root} ${className} container`}
-		>
-			<div className={css.wrapper}>
-				<div className={css.posterWrapper}>
-					{/* Постер первого экрана — LCP-элемент страницы. */}
-					{poster && (
-						<Picture
-							poster={poster}
-							loading="eager"
-							fetchPriority="high"
-						/>
-					)}
-				</div>
-				<article className={css.information}>
-					{title && (
-						<h1
-							dangerouslySetInnerHTML={{ __html: title }}
-							className={css.title}
-						/>
-					)}
-					{description && (
-						<p
-							dangerouslySetInnerHTML={{ __html: description }}
-							className={css.description}
-						/>
-					)}
-					<div className={css.card}>
-						<Button
-							className={css.button}
-							rightIcon={<ButtonIconSVG className={css.icon} />}
-							onClick={handleSectionScroll}
-							href="#vacancies"
-						>
-							Смотреть активные вакансии
-						</Button>
-						<img
-							className={css.leftAlexik}
-							src="/mock/vacancies/alexik-with-heart.png"
-							alt="Алексик с сердцем"
-						/>
-						<img
-							className={css.rightAlexik}
-							src="/mock/vacancies/alexik-hello.png"
-							alt="Алексик приветствует"
-						/>
-					</div>
-				</article>
-			</div>
-		</AnimationWrapper>
-	);
+    return (
+        <AnimationWrapper
+            as="section"
+            className={`${css.root} ${className} container`}
+        >
+            <div className={css.wrapper}>
+                <div className={css.posterWrapper}>
+                    {/* Постер первого экрана — LCP-элемент страницы. */}
+                    {poster && (
+                        <Picture
+                            poster={poster}
+                            loading="eager"
+                            fetchPriority="high"
+                        />
+                    )}
+                </div>
+                <article className={css.information}>
+                    {title && (
+                        <h1
+                            dangerouslySetInnerHTML={{ __html: title }}
+                            className={css.title}
+                        />
+                    )}
+                    {description && (
+                        <p
+                            dangerouslySetInnerHTML={{ __html: description }}
+                            className={css.description}
+                        />
+                    )}
+                    <div className={css.card}>
+                        <Button
+                            className={css.button}
+                            rightIcon={<ButtonIconSVG className={css.icon} />}
+                            onClick={handleSectionScroll}
+                            href="#vacancies"
+                        >
+                            Смотреть активные вакансии
+                        </Button>
+                        <img
+                            className={css.leftAlexik}
+                            src="/mock/vacancies/alexik-with-heart.png"
+                            alt="Алексик с сердцем"
+                        />
+                        <img
+                            className={css.rightAlexik}
+                            src="/mock/vacancies/alexik-hello.png"
+                            alt="Алексик приветствует"
+                        />
+                    </div>
+                </article>
+            </div>
+        </AnimationWrapper>
+    );
 }

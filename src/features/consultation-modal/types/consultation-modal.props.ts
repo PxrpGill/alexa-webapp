@@ -1,9 +1,9 @@
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
+import type { PropsWithClassName } from '@/shared/types/props-with-classname';
 
 export type ConsultationFormProps = {
-	toggleSuccess: () => void;
+    toggleSuccess: () => void;
 };
 
 export type ConsultationSuccessFormProps = {
-	isOpen?: boolean;
+    isOpen?: boolean;
 } & PropsWithClassName;

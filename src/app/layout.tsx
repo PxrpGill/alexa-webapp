@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
+
 import '@/shared/styles/reset.css';
 import '@/shared/styles/colors.css';
 import '@/shared/styles/global.css';
@@ -6,6 +8,7 @@ import '@/shared/styles/sections.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
+import { COOKIES_PANEL_KEY } from '@/features/cookies-panel/models/cookies-panel.constants';
 import Favicon from '@/shared/config/favicon';
 import InvolveFont from '@/shared/config/local-font';
 import { ReactQueryCustomProvider } from '@/shared/config/react-query-custom-provider';
@@ -18,7 +21,6 @@ import {
     SITE_URL,
     TITLE_TEMPLATE,
 } from '@/shared/config/seo/seo.constants';
-import { COOKIES_PANEL_KEY } from '@/features/cookies-panel/models/cookies-panel.constants';
 import { toJsonLd } from '@/shared/helpers/to-json-ld';
 import Layout from '@/widgets/layout';
 

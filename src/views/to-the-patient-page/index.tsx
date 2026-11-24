@@ -1,16 +1,16 @@
-import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
-import DocumentsList from "@/widgets/documents-list";
+import { AnimationWrapper } from '@/shared/ui/animation-wrapper';
+import DocumentsList from '@/widgets/documents-list';
 
-import css from "./index.module.css";
-import { DOCUMENTS_MOCK } from "./models/to-the-patient.constants";
+import css from './index.module.css';
+import { DOCUMENTS_MOCK } from './models/to-the-patient.constants';
 
 export default function ToThePatientPage() {
-	return (
-		<main className="page-offset">
-			<AnimationWrapper className={`${css.titleBlock} container`}>
-				<h1 className={css.title}>Пациенту</h1>
-			</AnimationWrapper>
-			<DocumentsList {...DOCUMENTS_MOCK} className="section" />
-		</main>
-	);
+    return (
+        <main className="page-offset">
+            <AnimationWrapper className={`${css.titleBlock} container`}>
+                <h1 className={css.title}>Пациенту</h1>
+            </AnimationWrapper>
+            <DocumentsList {...DOCUMENTS_MOCK} className="section" />
+        </main>
+    );
 }

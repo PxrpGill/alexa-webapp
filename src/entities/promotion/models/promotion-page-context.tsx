@@ -1,47 +1,49 @@
-"use client";
+'use client';
 
 import {
-	createContext,
-	type PropsWithChildren,
-	useContext,
-	useState,
-} from "react";
+    createContext,
+    type PropsWithChildren,
+    useContext,
+    useState,
+} from 'react';
+
 import type {
-	PromotionPageContextProps,
-	SelectedPromotionType,
-} from "../types/promotion-page-context.types";
+    PromotionPageContextProps,
+    SelectedPromotionType,
+} from '../types/promotion-page-context.types';
 
 const PromotionPageContext = createContext<
-	PromotionPageContextProps | undefined
+    PromotionPageContextProps | undefined
 >(undefined);
 
 export const PromotionPageProvider = ({ children }: PropsWithChildren) => {
-	const [selectedPromotion, selectPromotion] = useState<
-		SelectedPromotionType | undefined
-	>(undefined);
-	const [isPromotionModalOpen, togglePromotionModal] = useState<boolean>(false);
+    const [selectedPromotion, selectPromotion] = useState<
+        SelectedPromotionType | undefined
+    >(undefined);
+    const [isPromotionModalOpen, togglePromotionModal] =
+        useState<boolean>(false);
 
-	return (
-		<PromotionPageContext.Provider
-			value={{
-				selectPromotion,
-				selectedPromotion,
-				togglePromotionModal,
-				isPromotionModalOpen,
-			}}
-		>
-			{children}
-		</PromotionPageContext.Provider>
-	);
+    return (
+        <PromotionPageContext.Provider
+            value={{
+                selectPromotion,
+                selectedPromotion,
+                togglePromotionModal,
+                isPromotionModalOpen,
+            }}
+        >
+            {children}
+        </PromotionPageContext.Provider>
+    );
 };
 
 export const usePromotionPageContext = () => {
-	const context = useContext(PromotionPageContext);
+    const context = useContext(PromotionPageContext);
 
-	if (!context)
-		throw new Error(
-			"Оберните рабочую область PromotionProvider перед использованием usePromotionPageContext",
-		);
+    if (!context)
+        throw new Error(
+            'Оберните рабочую область PromotionProvider перед использованием usePromotionPageContext'
+        );
 
-	return context;
+    return context;
 };

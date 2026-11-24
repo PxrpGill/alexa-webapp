@@ -1,24 +1,27 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
-import type { SectionHeaderProps } from "../../types/child-what-includes-services.types";
+import type { SectionHeaderProps } from '../../types/child-what-includes-services.types';
 
-import css from "./index.module.css";
+import css from './index.module.css';
 
 export default function SectionHeader({
-	title,
-	description,
-	className,
+    title,
+    description,
+    className,
 }: SectionHeaderProps) {
-	return (
-		<div className={`${css.root} ${className}`}>
-			{title && (
-				<h2 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
-			)}
-			{description && (
-				<p
-					dangerouslySetInnerHTML={{ __html: description }}
-					className={css.description}
-				/>
-			)}
-		</div>
-	);
+    return (
+        <div className={`${css.root} ${className}`}>
+            {title && (
+                <h2
+                    dangerouslySetInnerHTML={{ __html: title }}
+                    className={css.title}
+                />
+            )}
+            {description && (
+                <p
+                    dangerouslySetInnerHTML={{ __html: description }}
+                    className={css.description}
+                />
+            )}
+        </div>
+    );
 }

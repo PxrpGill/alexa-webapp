@@ -1,68 +1,73 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */
 
-"use client";
+'use client';
 
-import { useCallback, useState } from "react";
-import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
-import css from "./index.module.css";
-import type { HowItWorksSliderProps } from "./types/how-it-works-slider.types";
-import HowItWorksSlide from "./ui/how-it-works-slide";
+import { useCallback, useState } from 'react';
+
+import { AnimationWrapper } from '@/shared/ui/animation-wrapper';
+
+import css from './index.module.css';
+import type { HowItWorksSliderProps } from './types/how-it-works-slider.types';
+import HowItWorksSlide from './ui/how-it-works-slide';
 
 export default function HowItWorksSlider({
-	title,
-	className,
-	slides,
-	theme = "green",
+    title,
+    className,
+    slides,
+    theme = 'green',
 }: HowItWorksSliderProps) {
-	const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
+    const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
 
-	const handleNextSlide = useCallback(() => {
-		if (!slides?.length) return;
+    const handleNextSlide = useCallback(() => {
+        if (!slides?.length) return;
 
-		if (activeSlideIndex === slides.length - 1) {
-			setActiveSlideIndex(0);
+        if (activeSlideIndex === slides.length - 1) {
+            setActiveSlideIndex(0);
 
-			return;
-		}
+            return;
+        }
 
-		setActiveSlideIndex((prev) => prev + 1);
-	}, [activeSlideIndex, slides]);
+        setActiveSlideIndex((prev) => prev + 1);
+    }, [activeSlideIndex, slides]);
 
-	const handlePrevSlide = useCallback(() => {
-		if (!slides?.length) return;
+    const handlePrevSlide = useCallback(() => {
+        if (!slides?.length) return;
 
-		if (activeSlideIndex === 0) {
-			setActiveSlideIndex(slides.length - 1);
+        if (activeSlideIndex === 0) {
+            setActiveSlideIndex(slides.length - 1);
 
-			return;
-		}
+            return;
+        }
 
-		setActiveSlideIndex((prev) => prev - 1);
-	}, [activeSlideIndex, slides]);
+        setActiveSlideIndex((prev) => prev - 1);
+    }, [activeSlideIndex, slides]);
 
-	if (!slides?.length) return null;
+    if (!slides?.length) return null;
 
-	return (
-		<AnimationWrapper
-			as="section"
-			className={`${css.root} container ${className} ${css[theme]}`}
-		>
-			{title && (
-				<h2 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
-			)}
-			<div className={css.slider}>
-				{slides.map((slide, index) => (
-					<HowItWorksSlide
-						key={index}
-						{...slide}
-						className={`${css.slide} ${activeSlideIndex === index ? css.activeSlide : ""}`}
-						sequenceNumber={index + 1}
-						handleNextSlide={handleNextSlide}
-						handlePrevSlide={handlePrevSlide}
-					/>
-				))}
-			</div>
-		</AnimationWrapper>
-	);
+    return (
+        <AnimationWrapper
+            as="section"
+            className={`${css.root} container ${className} ${css[theme]}`}
+        >
+            {title && (
+                <h2
+                    dangerouslySetInnerHTML={{ __html: title }}
+                    className={css.title}
+                />
+            )}
+            <div className={css.slider}>
+                {slides.map((slide, index) => (
+                    <HowItWorksSlide
+                        key={index}
+                        {...slide}
+                        className={`${css.slide} ${activeSlideIndex === index ? css.activeSlide : ''}`}
+                        sequenceNumber={index + 1}
+                        handleNextSlide={handleNextSlide}
+                        handlePrevSlide={handlePrevSlide}
+                    />
+                ))}
+            </div>
+        </AnimationWrapper>
+    );
 }

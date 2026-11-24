@@ -1,26 +1,26 @@
-import type { SiteButtonProps } from "@/shared/types/button.types";
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
+import type { SiteButtonProps } from '@/shared/types/button.types';
+import type { PropsWithClassName } from '@/shared/types/props-with-classname';
 
-export type PriceType = "from" | "exact";
+export type PriceType = 'from' | 'exact';
 
 export type CostOfServicesCardProps = {
-	title?: string;
-	description?: string;
-	price?: number;
-	priceType?: PriceType;
-	button?: SiteButtonProps;
+    title?: string;
+    description?: string;
+    price?: number;
+    priceType?: PriceType;
+    button?: SiteButtonProps;
 } & PropsWithClassName;
 
 export type TabProps = {
-	title: string;
-	tabKey: string;
+    title: string;
+    tabKey: string;
 };
 
 export type CostOfServicesProps = {
-	title?: string;
-	cards?: Array<CostOfServicesCardProps>;
-	tabs?: TabProps[];
-	tabsContent?: {
-		[tabKey: string]: Array<CostOfServicesCardProps>;
-	};
+    title?: string;
+    cards?: Array<CostOfServicesCardProps>;
+    tabs?: TabProps[];
+    tabsContent?: {
+        [tabKey: string]: Array<CostOfServicesCardProps>;
+    };
 } & PropsWithClassName;

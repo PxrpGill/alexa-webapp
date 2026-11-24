@@ -88,7 +88,8 @@ export function useAnimatedEntering({
         el.style.transition = 'none';
         el.style.opacity = '0';
 
-        if (!opacityOnly) el.style.transform = getTransform(direction, distance);
+        if (!opacityOnly)
+            el.style.transform = getTransform(direction, distance);
 
         const onProgress = (progress: number) => {
             el.style.transition = 'none';
@@ -155,7 +156,7 @@ export function useAnimatedEntering({
             willChange: opacityOnly ? 'opacity' : 'opacity, transform',
             ...(customStyle ?? {}),
         };
-    }, [revealed, direction, distance, opacityOnly, customStyle]);
+    }, [revealed, direction, opacityOnly, customStyle]);
 
     return { ref, animatedStyle, isVisible: revealed } as const;
 }

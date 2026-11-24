@@ -1,21 +1,20 @@
-const API_V1_PREFIX = "/api/v1";
+const API_V1_PREFIX = '/api/v1';
 
 export const API_URLS = {
-	postConsultation: API_V1_PREFIX + "/consultation",
-	postDMS: API_V1_PREFIX + "/dms",
-	postAppointments: API_V1_PREFIX + "/appointments",
-	getAllBranches: API_V1_PREFIX + "/branches",
-	getAllBlogs: API_V1_PREFIX + "/blog",
-	getSingleBlog: (slug: string) => API_V1_PREFIX + "/blog/" + slug,
-	getAllPromotions: API_V1_PREFIX + "/promotions",
-	getDetailPromotion: (slug: string) =>
-		API_V1_PREFIX + "/promotions/" + slug,
-	requestToPromotion: API_V1_PREFIX + "/promotions/request",
-	getStories: API_V1_PREFIX + "/stories",
-	getAvailableVacancies: API_V1_PREFIX + "/vacancies",
-	requestToSaitable: API_V1_PREFIX + "/vacancies/apply",
-	requestToVacancy: (vacancySlug: string) =>
-		API_V1_PREFIX + "/vacancies/" + vacancySlug + "/apply",
-	getDetailVacancy: (vacancySlug: string) =>
-		API_V1_PREFIX + "/vacancies/" + vacancySlug,
+    postConsultation: API_V1_PREFIX + '/consultation',
+    postDMS: API_V1_PREFIX + '/dms',
+    postAppointments: API_V1_PREFIX + '/appointments',
+    getAllBranches: API_V1_PREFIX + '/branches',
+    getAllBlogs: API_V1_PREFIX + '/blog',
+    getSingleBlog: (slug: string) => API_V1_PREFIX + '/blog/' + slug,
+    getAllPromotions: API_V1_PREFIX + '/promotions',
+    getDetailPromotion: (slug: string) => API_V1_PREFIX + '/promotions/' + slug,
+    requestToPromotion: API_V1_PREFIX + '/promotions/request',
+    getStories: API_V1_PREFIX + '/stories',
+    getAvailableVacancies: API_V1_PREFIX + '/vacancies',
+    requestToSaitable: API_V1_PREFIX + '/vacancies/apply',
+    requestToVacancy: (vacancySlug: string) =>
+        API_V1_PREFIX + '/vacancies/' + vacancySlug + '/apply',
+    getDetailVacancy: (vacancySlug: string) =>
+        API_V1_PREFIX + '/vacancies/' + vacancySlug,
 };

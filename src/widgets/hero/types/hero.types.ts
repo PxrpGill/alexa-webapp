@@ -1,13 +1,14 @@
-import type { ReactNode } from "react";
-import type { SiteButtonProps } from "@/shared/types/button.types";
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
-import type { PictureFormatType } from "@/shared/ui/picture";
+import type { ReactNode } from 'react';
+
+import type { SiteButtonProps } from '@/shared/types/button.types';
+import type { PropsWithClassName } from '@/shared/types/props-with-classname';
+import type { PictureFormatType } from '@/shared/ui/picture';
 
 export type HeroProps = {
-	title?: string;
-	description?: string;
-	poster?: PictureFormatType;
-	button?: SiteButtonProps;
-	disablePosterOverflow?: boolean;
-	alternativePicture?: ReactNode;
+    title?: string;
+    description?: string;
+    poster?: PictureFormatType;
+    button?: SiteButtonProps;
+    disablePosterOverflow?: boolean;
+    alternativePicture?: ReactNode;
 } & PropsWithClassName;

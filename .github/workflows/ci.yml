@@ -55,7 +55,7 @@ jobs:
           cache-dependency-path: src/pnpm-lock.yaml
 
       - run: pnpm install --frozen-lockfile
-      - run: tsc --noEmit
+      - run: pnpm exec tsc --noEmit
 
   build:
     runs-on: ubuntu-latest
