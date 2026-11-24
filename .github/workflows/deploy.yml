@@ -2,8 +2,11 @@ name: Deploy
 
 on:
   push:
-    branches: [main]
-    paths: ["src/**"]
+    branches: [master]
+    paths:
+      - "src/**"
+      - "docker/**"
+  workflow_dispatch:
 
 concurrency:
   group: deploy
@@ -16,7 +19,7 @@ jobs:
   deploy:
     needs: [ci]
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
 
     steps:
       - uses: actions/checkout@v4
