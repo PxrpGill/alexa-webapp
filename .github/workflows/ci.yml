@@ -1,9 +1,8 @@
 name: CI
 
 on:
-  push:
-    branches: [master]
-    paths: ["src/**"]
+  # На push в master CI не дублируем: deploy.yml вызывает этот файл как
+  # reusable workflow и сам прогоняет lint/typecheck/build перед выкаткой.
   pull_request:
     branches: [master]
     paths: ["src/**"]
