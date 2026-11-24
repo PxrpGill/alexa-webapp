@@ -23,10 +23,14 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
+        with:
+          # package.json лежит в src/, а working-directory на `uses` не влияет —
+          # без этого action не находит packageManager и падает
+          package_json_file: src/package.json
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
           cache-dependency-path: src/pnpm-lock.yaml
 
@@ -39,10 +43,14 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
+        with:
+          # package.json лежит в src/, а working-directory на `uses` не влияет —
+          # без этого action не находит packageManager и падает
+          package_json_file: src/package.json
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
           cache-dependency-path: src/pnpm-lock.yaml
 
@@ -55,12 +63,22 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
+        with:
+          # package.json лежит в src/, а working-directory на `uses` не влияет —
+          # без этого action не находит packageManager и падает
+          package_json_file: src/package.json
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
           cache-dependency-path: src/pnpm-lock.yaml
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
+        env:
+          # Страницы пререндерятся и на этапе сборки ходят в API; без
+          # доступного бэкенда `next build` падает. Адрес можно переопределить
+          # через Settings → Secrets and variables → Actions → Variables.
+          API_URL: ${{ vars.API_URL || 'https://pxrpgill-cloudy.com' }}
+          NEXT_PUBLIC_API_URL: ${{ vars.API_URL || 'https://pxrpgill-cloudy.com' }}
