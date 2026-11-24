@@ -8,6 +8,9 @@ on:
     branches: [master]
     paths: ["src/**"]
   workflow_dispatch:
+  # ci.yml вызывается из deploy.yml как reusable workflow (jobs.ci: uses: ...),
+  # для этого обязателен триггер workflow_call.
+  workflow_call:
 
 defaults:
   run:
