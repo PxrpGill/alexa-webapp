@@ -1,26 +1,26 @@
-import type { SiteButtonProps } from "@/shared/types/button.types";
-import type { PropsWithClassName } from "@/shared/types/props-with-classname";
-import type { PictureFormatType } from "@/shared/ui/picture";
+import type { SiteButtonProps } from '@/shared/types/button.types';
+import type { PropsWithClassName } from '@/shared/types/props-with-classname';
+import type { PictureFormatType } from '@/shared/ui/picture';
 
 export type SlideCardProps = {
-	title?: string;
-	content?: string;
-	button?: SiteButtonProps;
+    title?: string;
+    content?: string;
+    button?: SiteButtonProps;
 } & PropsWithClassName;
 
 export type SlideVariantProps = {
-	title?: string;
-	subtitle?: string;
-	card?: SlideCardProps;
-	legend?: string;
-	poster?: PictureFormatType;
-	textTheme?: "light" | "dark";
-	/** Первый слайд виден сразу — его постер грузим в высоком приоритете */
-	isPriority?: boolean;
-	/** Постер рендерится только у показанных слайдов, см. hero-slider-section */
-	hasPoster?: boolean;
+    title?: string;
+    subtitle?: string;
+    card?: SlideCardProps;
+    legend?: string;
+    poster?: PictureFormatType;
+    textTheme?: 'light' | 'dark';
+    /** Первый слайд виден сразу — его постер грузим в высоком приоритете */
+    isPriority?: boolean;
+    /** Постер рендерится только у показанных слайдов, см. hero-slider-section */
+    hasPoster?: boolean;
 } & PropsWithClassName;
 
 export type HeroSliderSectionProps = {
-	slides?: Array<SlideVariantProps>;
+    slides?: Array<SlideVariantProps>;
 } & PropsWithClassName;

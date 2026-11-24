@@ -1,5 +1,5 @@
-import type { GetAllNewsResponseType } from "@/entities/news/types/news.types";
+import type { GetAllNewsResponseType } from '@/entities/news/types/news.types';
 
 export type BlogPageProps = {
-	initialNewsData?: GetAllNewsResponseType;
+    initialNewsData?: GetAllNewsResponseType;
 };

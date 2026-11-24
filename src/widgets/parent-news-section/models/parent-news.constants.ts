@@ -1,1 +1,1 @@
-export const EMPTY_TITLE = "Нет активных новостей";
+export const EMPTY_TITLE = 'Нет активных новостей';

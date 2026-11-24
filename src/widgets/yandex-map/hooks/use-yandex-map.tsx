@@ -29,10 +29,10 @@ export const useYandexMap = (
     const [center, setCenter] = useState<[number, number]>(initialCenter);
     const [zoom, setZoom] = useState(placemarks.length > 1 ? 10 : DEFAULT_ZOOM);
 
-	const handleBranchSelect = (cords: [number, number]) => {
-		setCenter([cords[0] + CENTER_LAT_OFFSET, cords[1]]);
-		setZoom(BRANCH_ZOOM);
-	};
+    const handleBranchSelect = (cords: [number, number]) => {
+        setCenter([cords[0] + CENTER_LAT_OFFSET, cords[1]]);
+        setZoom(BRANCH_ZOOM);
+    };
 
     return {
         center,

@@ -21,7 +21,10 @@ export default function AnnualCarePrograms({
     if (!programs?.length) return null;
 
     return (
-        <AnimationWrapper className={`${css.root} ${className}`} id="annual-care">
+        <AnimationWrapper
+            className={`${css.root} ${className}`}
+            id="annual-care"
+        >
             <SectionHeader {...sectionHeader} className={css.sectionHeader} />
 
             <ul className={`${css.list} container`}>

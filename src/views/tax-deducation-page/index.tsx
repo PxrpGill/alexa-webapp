@@ -1,27 +1,29 @@
-import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
-import AlgorithmOfActions from "@/widgets/algorithm-of-actions";
+import { AnimationWrapper } from '@/shared/ui/animation-wrapper';
+import AlgorithmOfActions from '@/widgets/algorithm-of-actions';
 
-import css from "./index.module.css";
+import css from './index.module.css';
 import {
-	ALGORITHM_OF_ACTIONS_MOCK,
-	DESCRIPTION_SECTION_MOCK,
-} from "./models/tax-deducation.constants";
-import DescriptionCard from "./ui/description-card";
+    ALGORITHM_OF_ACTIONS_MOCK,
+    DESCRIPTION_SECTION_MOCK,
+} from './models/tax-deducation.constants';
+import DescriptionCard from './ui/description-card';
 
 export default function TaxDeducationPage() {
-	return (
-		<main className="page-offset">
-			<AnimationWrapper className={`${css.titleBlock} section-md container`}>
-				<h1 className={css.title}>Налоговый вычет</h1>
-			</AnimationWrapper>
-			<DescriptionCard
-				{...DESCRIPTION_SECTION_MOCK}
-				className="section"
-			/>
-			<AlgorithmOfActions
-				className="section"
-				{...ALGORITHM_OF_ACTIONS_MOCK}
-			/>
-		</main>
-	);
+    return (
+        <main className="page-offset">
+            <AnimationWrapper
+                className={`${css.titleBlock} section-md container`}
+            >
+                <h1 className={css.title}>Налоговый вычет</h1>
+            </AnimationWrapper>
+            <DescriptionCard
+                {...DESCRIPTION_SECTION_MOCK}
+                className="section"
+            />
+            <AlgorithmOfActions
+                className="section"
+                {...ALGORITHM_OF_ACTIONS_MOCK}
+            />
+        </main>
+    );
 }

@@ -1,72 +1,72 @@
-import { usePathname } from "next/navigation";
-import { useEffect, useSyncExternalStore } from "react";
+import { usePathname } from 'next/navigation';
+import { useEffect, useSyncExternalStore } from 'react';
 
 import {
-	INFORMATION_NAVIGATION,
-	LANDYSHEVAYA_NAVIGATION,
-	VOLKOVA_NAVIGATION,
-} from "../config/site-navigation";
-import { getCookie } from "../helpers/get-cookie";
-import { setCookie } from "../helpers/set-cookie";
+    INFORMATION_NAVIGATION,
+    LANDYSHEVAYA_NAVIGATION,
+    VOLKOVA_NAVIGATION,
+} from '../config/site-navigation';
+import { getCookie } from '../helpers/get-cookie';
+import { setCookie } from '../helpers/set-cookie';
 
-export const BRANCH_COOKIES_KEY = "current_branch";
+export const BRANCH_COOKIES_KEY = 'current_branch';
 export const BRANCH_COOKIES_VALUES = {
-	landyshevaya: "landyshevaya",
-	volkova: "volkova",
+    landyshevaya: 'landyshevaya',
+    volkova: 'volkova',
 } as const;
 
 export type BranchType = keyof typeof BRANCH_COOKIES_VALUES;
 
 const BRANCH_PATHS: Record<BranchType, string[]> = {
-	landyshevaya: [
-		LANDYSHEVAYA_NAVIGATION.landyshevayaBase,
-		...Object.values(LANDYSHEVAYA_NAVIGATION.landyshevayaServices),
-	],
-	volkova: [VOLKOVA_NAVIGATION.volkovaBase],
+    landyshevaya: [
+        LANDYSHEVAYA_NAVIGATION.landyshevayaBase,
+        ...Object.values(LANDYSHEVAYA_NAVIGATION.landyshevayaServices),
+    ],
+    volkova: [VOLKOVA_NAVIGATION.volkovaBase],
 };
 
 const getBranchByPathname = (pathname: string): BranchType | undefined =>
-	(Object.keys(BRANCH_PATHS) as BranchType[]).find((branch) =>
-		BRANCH_PATHS[branch].some(
-			(path) => pathname === path || pathname.startsWith(`${path}/`),
-		),
-	);
+    (Object.keys(BRANCH_PATHS) as BranchType[]).find((branch) =>
+        BRANCH_PATHS[branch].some(
+            (path) => pathname === path || pathname.startsWith(`${path}/`)
+        )
+    );
 
 const isInformationPage = (pathname: string): boolean =>
-	Object.values(INFORMATION_NAVIGATION).some(
-		(path) => pathname === path || pathname.startsWith(`${path}/`),
-	);
+    Object.values(INFORMATION_NAVIGATION).some(
+        (path) => pathname === path || pathname.startsWith(`${path}/`)
+    );
 
 const isBranchType = (value?: string): value is BranchType =>
-	!!value && value in BRANCH_COOKIES_VALUES;
+    !!value && value in BRANCH_COOKIES_VALUES;
 
 const emptySubscribe = (): (() => void) => () => {};
 
 const readCookieBranch = (): BranchType | undefined => {
-	if (typeof document === "undefined") return undefined;
+    if (typeof document === 'undefined') return undefined;
 
-	const savedBranch = getCookie(BRANCH_COOKIES_KEY);
+    const savedBranch = getCookie(BRANCH_COOKIES_KEY);
 
-	return isBranchType(savedBranch) ? savedBranch : undefined;
+    return isBranchType(savedBranch) ? savedBranch : undefined;
 };
 
 export const useSetBranchInCookies = () => {
-	const pathname = usePathname();
-	const branch = getBranchByPathname(pathname);
-	const cookieBranch = useSyncExternalStore(
-		emptySubscribe,
-		readCookieBranch,
-		() => undefined,
-	);
+    const pathname = usePathname();
+    const branch = getBranchByPathname(pathname);
+    const cookieBranch = useSyncExternalStore(
+        emptySubscribe,
+        readCookieBranch,
+        () => undefined
+    );
 
-	useEffect(() => {
-		if (typeof document === "undefined") return;
-		if (!branch || getCookie(BRANCH_COOKIES_KEY) === branch) return;
+    useEffect(() => {
+        if (typeof document === 'undefined') return;
+        if (!branch || getCookie(BRANCH_COOKIES_KEY) === branch) return;
 
-		setCookie(BRANCH_COOKIES_KEY, branch);
-	}, [branch]);
+        setCookie(BRANCH_COOKIES_KEY, branch);
+    }, [branch]);
 
-	if (isInformationPage(pathname)) return cookieBranch;
+    if (isInformationPage(pathname)) return cookieBranch;
 
-	return branch;
+    return branch;
 };

@@ -1,47 +1,48 @@
-"use client";
+'use client';
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from 'react';
+
 import type {
-	PageFilterContentProviderType,
-	PageFilterContextType,
-} from "../types/page-content-filter.types";
+    PageFilterContentProviderType,
+    PageFilterContextType,
+} from '../types/page-content-filter.types';
 
 const PageFilterContentContext = createContext<
-	PageFilterContextType | undefined
+    PageFilterContextType | undefined
 >(undefined);
 
 export const PageFilterContentProvider = ({
-	children,
-	categories,
+    children,
+    categories,
 }: PageFilterContentProviderType) => {
-	const [activeCategorySlug, setActiveCategorySlug] = useState<string>(
-		categories[0].slug,
-	);
-	const [isChangePanelVisible, toggleChangePanelVisible] =
-		useState<boolean>(false);
+    const [activeCategorySlug, setActiveCategorySlug] = useState<string>(
+        categories[0].slug
+    );
+    const [isChangePanelVisible, toggleChangePanelVisible] =
+        useState<boolean>(false);
 
-	return (
-		<PageFilterContentContext.Provider
-			value={{
-				activeCategorySlug,
-				categories,
-				isChangePanelVisible,
-				toggleChangePanelVisible,
-				setActiveCategorySlug,
-			}}
-		>
-			{children}
-		</PageFilterContentContext.Provider>
-	);
+    return (
+        <PageFilterContentContext.Provider
+            value={{
+                activeCategorySlug,
+                categories,
+                isChangePanelVisible,
+                toggleChangePanelVisible,
+                setActiveCategorySlug,
+            }}
+        >
+            {children}
+        </PageFilterContentContext.Provider>
+    );
 };
 
 export const usePageFilterContentContext = () => {
-	const context = useContext(PageFilterContentContext);
+    const context = useContext(PageFilterContentContext);
 
-	if (!context)
-		throw new Error(
-			"Перед использованием usePageFilterContentContext оберните React компонент PageFilterContentProvider",
-		);
+    if (!context)
+        throw new Error(
+            'Перед использованием usePageFilterContentContext оберните React компонент PageFilterContentProvider'
+        );
 
-	return context;
+    return context;
 };
