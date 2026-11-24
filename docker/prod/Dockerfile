@@ -1,11 +1,17 @@
 FROM node:24-alpine AS deps
 WORKDIR /app
+# Версия pnpm берётся из package.json (packageManager), а не "последняя"
+# из corepack: иначе сборка может приехать на другом мажоре pnpm.
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 RUN corepack enable
-COPY src/package.json src/pnpm-lock.yaml ./
+# pnpm-workspace.yaml обязателен: в нём лежат overrides, без него
+# `--frozen-lockfile` падает с ERR_PNPM_LOCKFILE_CONFIG_MISMATCH.
+COPY src/package.json src/pnpm-lock.yaml src/pnpm-workspace.yaml src/.npmrc ./
 RUN pnpm install --frozen-lockfile
 
 FROM node:24-alpine AS builder
 WORKDIR /app
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 RUN corepack enable
 COPY src/ ./
 COPY --from=deps /app/node_modules ./node_modules
