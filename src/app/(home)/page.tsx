@@ -13,6 +13,7 @@ export const metadata: Metadata = buildMetadata(
 );
 
 export default async function Home() {
+    // Тестовый комментарий
     const [initialNewsPageData, initialStoriesData] = await Promise.all([
         getAllNews(),
         getStories(),
