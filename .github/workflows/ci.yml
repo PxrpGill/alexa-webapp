@@ -80,5 +80,5 @@ jobs:
           # Страницы пререндерятся и на этапе сборки ходят в API; без
           # доступного бэкенда `next build` падает. Адрес можно переопределить
           # через Settings → Secrets and variables → Actions → Variables.
-          API_URL: ${{ vars.API_URL || 'https://pxrpgill-cloudy.com' }}
-          NEXT_PUBLIC_API_URL: ${{ vars.API_URL || 'https://pxrpgill-cloudy.com' }}
+          API_URL: ${{ vars.API_URL || 'https://aleksa.pxrpgill-cloudy.com' }}
+          NEXT_PUBLIC_API_URL: ${{ vars.API_URL || 'https://aleksa.pxrpgill-cloudy.com' }}
