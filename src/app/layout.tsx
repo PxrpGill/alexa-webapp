@@ -59,7 +59,6 @@ export default async function RootLayout({
             <Favicon />
             <body>
                 <script
-                    // biome-ignore lint/security/noDangerouslySetInnerHtml: инлайн-скрипт обязан выполниться до первой отрисовки
                     dangerouslySetInnerHTML={{
                         __html: HIDE_ACCEPTED_COOKIES_PANEL,
                     }}

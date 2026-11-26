@@ -1,119 +1,111 @@
-import { Fragment } from 'react';
+import { Fragment } from "react";
 
-import AppointmentSchedulingSection from '@/features/appointment-scheduling-section';
-import PageContentFilter from '@/features/page-content-filter';
-import { PageFilterContentProvider } from '@/features/page-content-filter/models/page-filter-content-context';
-import PageContentResult from '@/features/page-content-filter/ui/page-content-result';
-import { Alexik3D } from '@/shared/ui/alexik-3d';
-import Picture from '@/shared/ui/picture';
-import BeforeAfterSection from '@/widgets/before-after-section';
-import ChildWhatIncludesServices from '@/widgets/child-what-includes-services';
+import AppointmentSchedulingSection from "@/features/appointment-scheduling-section";
+import PageContentFilter from "@/features/page-content-filter";
+import { PageFilterContentProvider } from "@/features/page-content-filter/models/page-filter-content-context";
+import PageContentResult from "@/features/page-content-filter/ui/page-content-result";
+import { Alexik3D } from "@/shared/ui/alexik-3d";
+import Picture from "@/shared/ui/picture";
+import BeforeAfterSection from "@/widgets/before-after-section";
+import ChildWhatIncludesServices from "@/widgets/child-what-includes-services";
 // import CostOfServices from "@/widgets/cost-of-services";
-import CtaHelpSection from '@/widgets/cta-help-section';
-import Hero from '@/widgets/hero';
-import OrthoHowItWorks from '@/widgets/ortho-how-it-works';
-import OrthoPriceCards from '@/widgets/ortho-price-cards';
-import OurPeopleSection from '@/widgets/our-people-section';
-
-import css from './index.module.css';
+import CtaHelpSection from "@/widgets/cta-help-section";
+import Hero from "@/widgets/hero";
+import BreadCrumbs from "@/widgets/layout/ui/header/bread-crumbs";
+import OrthoHowItWorks from "@/widgets/ortho-how-it-works";
+import OrthoPriceCards from "@/widgets/ortho-price-cards";
+import OurPeopleSection from "@/widgets/our-people-section";
+import css from "./index.module.css";
 import {
-    BEFORE_AFTER_SECTION,
-    BRACKETS_HOW_IT_WORKS,
-    CHILD_WHAT_INCLUDES_SERVICES,
-    // COST_OF_SERVICES_BRACKETS,
-    // COST_OF_SERVICES_ELINERS,
-    CTA_HELP_SECTION,
-    ELINERS_HOW_IT_WORKS,
-    EMPLOYEES_SECTION,
-    FORM_DATA,
-    HERO_MOCK,
-    ORTHO_BRACKETS_CARDS,
-    ORTHO_ELINERS_CARDS,
-    PAGE_FILTERS,
-    PAGE_FILTERS_DICT,
-} from './models/pediatric-orthodontics.constants';
+	BEFORE_AFTER_SECTION,
+	BRACKETS_HOW_IT_WORKS,
+	CHILD_WHAT_INCLUDES_SERVICES,
+	// COST_OF_SERVICES_BRACKETS,
+	// COST_OF_SERVICES_ELINERS,
+	CTA_HELP_SECTION,
+	ELINERS_HOW_IT_WORKS,
+	EMPLOYEES_SECTION,
+	FORM_DATA,
+	HERO_MOCK,
+	ORTHO_BRACKETS_CARDS,
+	ORTHO_ELINERS_CARDS,
+	PAGE_FILTERS,
+	PAGE_FILTERS_DICT,
+} from "./models/pediatric-orthodontics.constants";
 
 export default function PediatricOrthodonticsPage() {
-    return (
-        <main className="page-offset">
-            <PageFilterContentProvider categories={PAGE_FILTERS}>
-                <Hero
-                    className="section"
-                    {...HERO_MOCK}
-                    alternativePicture={
-                        <Picture
-                            withoutSkeleton
-                            poster={{
-                                webp: {
-                                    src: '/mock/pediatric-orthodontics/child-orthodontics.webp',
-                                    mobile: '/mock/pediatric-orthodontics/child-orthodontics-mobile.webp',
-                                },
-                            }}
-                            className={css.alternativePicture}
-                        />
-                    }
-                />
-                <ChildWhatIncludesServices
-                    className="section"
-                    {...CHILD_WHAT_INCLUDES_SERVICES}
-                />
-                <PageContentResult
-                    content={
-                        new Map([
-                            [
-                                PAGE_FILTERS_DICT.brackets.slug,
-                                <Fragment key={PAGE_FILTERS_DICT.brackets.slug}>
-                                    <OrthoHowItWorks
-                                        {...BRACKETS_HOW_IT_WORKS}
-                                        className="section"
-                                    />
-                                    <OrthoPriceCards
-                                        className="section"
-                                        {...ORTHO_BRACKETS_CARDS}
-                                    />
-                                    {/* <CostOfServices
+	return (
+		<main className="page-offset">
+			<BreadCrumbs className="container mobileBreadCrumbs" />
+			<PageFilterContentProvider categories={PAGE_FILTERS}>
+				<Hero
+					className="section"
+					{...HERO_MOCK}
+					alternativePicture={
+						<Picture
+							withoutSkeleton
+							poster={{
+								webp: {
+									src: "/mock/pediatric-orthodontics/child-orthodontics.webp",
+									mobile:
+										"/mock/pediatric-orthodontics/child-orthodontics-mobile.webp",
+								},
+							}}
+							className={css.alternativePicture}
+						/>
+					}
+				/>
+				<ChildWhatIncludesServices
+					className="section"
+					{...CHILD_WHAT_INCLUDES_SERVICES}
+				/>
+				<PageContentResult
+					content={
+						new Map([
+							[
+								PAGE_FILTERS_DICT.brackets.slug,
+								<Fragment key={PAGE_FILTERS_DICT.brackets.slug}>
+									<OrthoHowItWorks
+										{...BRACKETS_HOW_IT_WORKS}
+										className="section"
+									/>
+									<OrthoPriceCards
+										className="section"
+										{...ORTHO_BRACKETS_CARDS}
+									/>
+									{/* <CostOfServices
 										className="section"
 										{...COST_OF_SERVICES_BRACKETS}
 									/> */}
-                                </Fragment>,
-                            ],
-                            [
-                                PAGE_FILTERS_DICT.eliners.slug,
-                                <Fragment key={PAGE_FILTERS_DICT.eliners.slug}>
-                                    <OrthoHowItWorks
-                                        {...ELINERS_HOW_IT_WORKS}
-                                        className="section"
-                                    />
-                                    <OrthoPriceCards
-                                        className="section"
-                                        {...ORTHO_ELINERS_CARDS}
-                                    />
-                                    {/* <CostOfServices
+								</Fragment>,
+							],
+							[
+								PAGE_FILTERS_DICT.eliners.slug,
+								<Fragment key={PAGE_FILTERS_DICT.eliners.slug}>
+									<OrthoHowItWorks
+										{...ELINERS_HOW_IT_WORKS}
+										className="section"
+									/>
+									<OrthoPriceCards
+										className="section"
+										{...ORTHO_ELINERS_CARDS}
+									/>
+									{/* <CostOfServices
 										className="section"
 										{...COST_OF_SERVICES_ELINERS}
 									/> */}
-                                </Fragment>,
-                            ],
-                        ])
-                    }
-                />
-                <CtaHelpSection className="section" {...CTA_HELP_SECTION} />
-                <BeforeAfterSection
-                    className="section"
-                    {...BEFORE_AFTER_SECTION}
-                />
-                <OurPeopleSection
-                    className="section"
-                    {...EMPLOYEES_SECTION}
-                    isSlider
-                />
-                <AppointmentSchedulingSection
-                    {...FORM_DATA}
-                    className="section"
-                />
-                <Alexik3D className={css.alexik} />
-                <PageContentFilter title="Метод лечения:" />
-            </PageFilterContentProvider>
-        </main>
-    );
+								</Fragment>,
+							],
+						])
+					}
+				/>
+				<CtaHelpSection className="section" {...CTA_HELP_SECTION} />
+				<BeforeAfterSection className="section" {...BEFORE_AFTER_SECTION} />
+				<OurPeopleSection className="section" {...EMPLOYEES_SECTION} isSlider />
+				<AppointmentSchedulingSection {...FORM_DATA} className="section" />
+				<Alexik3D className={css.alexik} />
+				<PageContentFilter title="Метод лечения:" />
+			</PageFilterContentProvider>
+		</main>
+	);
 }

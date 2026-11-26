@@ -2,6 +2,12 @@
     @mixin b2;
     
     font-weight: 600;
+
+    @media (max-width: $mobile) {
+        @mixin text-sm;
+        
+        font-weight: 600;
+    }
 }
 
 .link {
