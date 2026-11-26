@@ -31,6 +31,7 @@ export const QUADRO_SECTION_MOCK: QuadroSectionProps = {
 export const INFO_TABS_MOCK: InfoTabsProps = {
     tabsBlock: {
         title: 'Какой вариант лечения выбрать?',
+        additionalTabsTitle: "Метод лечения:",
         description:
             'В&nbsp;нашей клинике доступны два современных метода, которые помогают сделать лечение комфортным. Ознакомьтесь с&nbsp;их&nbsp;особенностями и&nbsp;выберите подходящий вариант вместе с&nbsp;врачом.',
         tabs: [
