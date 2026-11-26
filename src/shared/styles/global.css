@@ -41,3 +41,13 @@ main {
 body.child-theme {
     background-color: var(--color-blue-1);
 }
+
+.mobileBreadCrumbs[class] {
+    @mixin responsive padding-block-end, 30;
+
+    display: none; 
+
+    @media (max-width: $mobile) {
+        display: block;
+    }
+}
