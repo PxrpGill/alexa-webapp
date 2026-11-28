@@ -18,23 +18,23 @@ export const MAKE_APPOINTMENT_BUTTON: SiteButtonProps = {
 
 export const HERO_SLIDES: HeroSliderSectionProps = {
 	slides: [
-		{
-			title: "алекса",
-			legend:
-				"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
-			subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
-			card: {
-				title: "День улыбки 28&nbsp;ноября",
-				content:
-					"<p>Брекеты или элайнеры: диагностика 0&nbsp;₽ и&nbsp;подарки при записи</p>",
-				button: MAKE_APPOINTMENT_BUTTON,
-			},
-			poster: {
-				webp: {
-					src: "/mock/home/hero-slider/smile-day.webp",
-				},
-			},
-		},
+		// {
+		// 	title: "алекса",
+		// 	legend:
+		// 		"<b>С&nbsp;2009 года</b> предоставляем весь спектр стоматологических услуг для взрослых и&nbsp;детей",
+		// 	subtitle: "Семейная стоматологическая клиника в&nbsp;Ростове-на-Дону",
+		// 	card: {
+		// 		title: "День улыбки 28&nbsp;ноября",
+		// 		content:
+		// 			"<p>Брекеты или элайнеры: диагностика 0&nbsp;₽ и&nbsp;подарки при записи</p>",
+		// 		button: MAKE_APPOINTMENT_BUTTON,
+		// 	},
+		// 	poster: {
+		// 		webp: {
+		// 			src: "/mock/home/hero-slider/smile-day.webp",
+		// 		},
+		// 	},
+		// },
 		{
 			title: "алекса",
 			legend:
