@@ -36,7 +36,7 @@ export type PromotionFormType = {
 export type DetailPromotionType = {
     slug: string;
     hero: DetailPromotionHeroType;
-    detail: DetailPromotionSectionType;
+    detail?: DetailPromotionSectionType;
     detail_content?: string;
     form?: PromotionFormType;
 };
